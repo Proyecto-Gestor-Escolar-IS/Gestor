@@ -60,7 +60,7 @@ namespace SistemaGestorEscolar
             this.panelCentral.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panelCentral.Location = new System.Drawing.Point(0, 0);
             this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(995, 630);
+            this.panelCentral.Size = new System.Drawing.Size(995, 675);
             this.panelCentral.TabIndex = 2;
             this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
             // 
@@ -71,7 +71,7 @@ namespace SistemaGestorEscolar
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(373, 530);
+            this.button6.Location = new System.Drawing.Point(362, 566);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(272, 53);
             this.button6.TabIndex = 8;
@@ -102,7 +102,7 @@ namespace SistemaGestorEscolar
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(-9, -8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1017, 472);
+            this.groupBox1.Size = new System.Drawing.Size(1017, 521);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
@@ -258,7 +258,7 @@ namespace SistemaGestorEscolar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 630);
+            this.ClientSize = new System.Drawing.Size(995, 675);
             this.Controls.Add(this.panelCentral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IRegistroPago";
