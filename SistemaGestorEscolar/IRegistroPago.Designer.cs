@@ -60,7 +60,7 @@ namespace SistemaGestorEscolar
             this.panelCentral.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panelCentral.Location = new System.Drawing.Point(0, 0);
             this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(994, 631);
+            this.panelCentral.Size = new System.Drawing.Size(995, 630);
             this.panelCentral.TabIndex = 2;
             this.panelCentral.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentral_Paint);
             // 
@@ -258,7 +258,7 @@ namespace SistemaGestorEscolar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 631);
+            this.ClientSize = new System.Drawing.Size(995, 630);
             this.Controls.Add(this.panelCentral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IRegistroPago";
