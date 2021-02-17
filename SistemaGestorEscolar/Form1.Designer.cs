@@ -35,7 +35,7 @@ namespace SistemaGestorEscolar
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(248, 126);
+            this.button1.Location = new System.Drawing.Point(392, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(321, 160);
             this.button1.TabIndex = 0;
@@ -45,7 +45,7 @@ namespace SistemaGestorEscolar
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(248, 316);
+            this.button2.Location = new System.Drawing.Point(392, 426);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(321, 101);
             this.button2.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace SistemaGestorEscolar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1146, 706);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
