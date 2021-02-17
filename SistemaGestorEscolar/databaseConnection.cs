@@ -15,6 +15,10 @@ namespace SistemaGestorEscolar
         
         //Prueba de GitHub 3
 
+        /*Pero quesn Lorem ipsum he he heh e
+         quejn vojn a bueno master te vale licha alexis
+        */
+
         public void establecerConexion()
         {
             try
