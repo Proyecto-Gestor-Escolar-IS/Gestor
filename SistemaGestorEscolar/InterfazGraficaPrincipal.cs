@@ -16,5 +16,10 @@ namespace SistemaGestorEscolar
         {
             InitializeComponent();
         }
+
+        private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
