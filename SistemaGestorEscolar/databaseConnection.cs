@@ -14,6 +14,9 @@ namespace SistemaGestorEscolar
         //SqlConnection databaseIntermediary = new SqlConnection("server=DESKTOP-P4A3L4O; database = StaMariaNazarethDatabaseService; Integrated Security=True");
         
         //Prueba de GitHub 3
+        //que paso muchacho, yo digo que no se va a poder
+        /*pero que ha pasao*/
+        /*esto es una prueba de insercion*/
 
         public void establecerConexion()
         {
