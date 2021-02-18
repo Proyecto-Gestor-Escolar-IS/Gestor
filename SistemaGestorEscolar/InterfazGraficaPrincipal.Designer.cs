@@ -31,15 +31,15 @@ namespace SistemaGestorEscolar
         {
             this.panSuperior = new System.Windows.Forms.Panel();
             this.panLateral = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMenuAtras = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMenuMatriculaEstudiante = new System.Windows.Forms.Button();
-            this.btnMenuVistaMatricula = new System.Windows.Forms.Button();
-            this.btnMenuCursosDisponibles = new System.Windows.Forms.Button();
-            this.btnMenuIngresoNotas = new System.Windows.Forms.Button();
-            this.btnMenuRegistroPago = new System.Windows.Forms.Button();
             this.btnMenuPersonal = new System.Windows.Forms.Button();
+            this.btnMenuRegistroPago = new System.Windows.Forms.Button();
+            this.btnMenuIngresoNotas = new System.Windows.Forms.Button();
+            this.btnMenuCursosDisponibles = new System.Windows.Forms.Button();
+            this.btnMenuVistaMatricula = new System.Windows.Forms.Button();
+            this.btnMenuMatriculaEstudiante = new System.Windows.Forms.Button();
+            this.btnMenuAtras = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@ namespace SistemaGestorEscolar
             this.panSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panSuperior.Location = new System.Drawing.Point(0, 0);
             this.panSuperior.Name = "panSuperior";
-            this.panSuperior.Size = new System.Drawing.Size(1280, 45);
+            this.panSuperior.Size = new System.Drawing.Size(1920, 45);
             this.panSuperior.TabIndex = 0;
             // 
             // panLateral
@@ -67,106 +67,8 @@ namespace SistemaGestorEscolar
             this.panLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panLateral.Location = new System.Drawing.Point(0, 45);
             this.panLateral.Name = "panLateral";
-            this.panLateral.Size = new System.Drawing.Size(285, 675);
+            this.panLateral.Size = new System.Drawing.Size(285, 1035);
             this.panLateral.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logohd;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(158, 159);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnMenuAtras
-            // 
-            this.btnMenuAtras.BackColor = System.Drawing.Color.Red;
-            this.btnMenuAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuAtras.ForeColor = System.Drawing.Color.White;
-            this.btnMenuAtras.Location = new System.Drawing.Point(0, 209);
-            this.btnMenuAtras.Name = "btnMenuAtras";
-            this.btnMenuAtras.Size = new System.Drawing.Size(285, 44);
-            this.btnMenuAtras.TabIndex = 1;
-            this.btnMenuAtras.Text = "ATRAS";
-            this.btnMenuAtras.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(285, 45);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(995, 675);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // btnMenuMatriculaEstudiante
-            // 
-            this.btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnMenuMatriculaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuMatriculaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuMatriculaEstudiante.ForeColor = System.Drawing.Color.Black;
-            this.btnMenuMatriculaEstudiante.Location = new System.Drawing.Point(0, 286);
-            this.btnMenuMatriculaEstudiante.Name = "btnMenuMatriculaEstudiante";
-            this.btnMenuMatriculaEstudiante.Size = new System.Drawing.Size(285, 48);
-            this.btnMenuMatriculaEstudiante.TabIndex = 2;
-            this.btnMenuMatriculaEstudiante.Text = "MATRICULAR ESTUDIANTE";
-            this.btnMenuMatriculaEstudiante.UseVisualStyleBackColor = false;
-            // 
-            // btnMenuVistaMatricula
-            // 
-            this.btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnMenuVistaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuVistaMatricula.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuVistaMatricula.ForeColor = System.Drawing.Color.Black;
-            this.btnMenuVistaMatricula.Location = new System.Drawing.Point(0, 340);
-            this.btnMenuVistaMatricula.Name = "btnMenuVistaMatricula";
-            this.btnMenuVistaMatricula.Size = new System.Drawing.Size(285, 48);
-            this.btnMenuVistaMatricula.TabIndex = 3;
-            this.btnMenuVistaMatricula.Text = "VISTA DE MATRICULAS";
-            this.btnMenuVistaMatricula.UseVisualStyleBackColor = false;
-            // 
-            // btnMenuCursosDisponibles
-            // 
-            this.btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnMenuCursosDisponibles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuCursosDisponibles.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuCursosDisponibles.ForeColor = System.Drawing.Color.Black;
-            this.btnMenuCursosDisponibles.Location = new System.Drawing.Point(0, 394);
-            this.btnMenuCursosDisponibles.Name = "btnMenuCursosDisponibles";
-            this.btnMenuCursosDisponibles.Size = new System.Drawing.Size(285, 48);
-            this.btnMenuCursosDisponibles.TabIndex = 4;
-            this.btnMenuCursosDisponibles.Text = "CURSOS DISPONIBLES";
-            this.btnMenuCursosDisponibles.UseVisualStyleBackColor = false;
-            // 
-            // btnMenuIngresoNotas
-            // 
-            this.btnMenuIngresoNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnMenuIngresoNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuIngresoNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuIngresoNotas.ForeColor = System.Drawing.Color.Black;
-            this.btnMenuIngresoNotas.Location = new System.Drawing.Point(0, 448);
-            this.btnMenuIngresoNotas.Name = "btnMenuIngresoNotas";
-            this.btnMenuIngresoNotas.Size = new System.Drawing.Size(285, 48);
-            this.btnMenuIngresoNotas.TabIndex = 5;
-            this.btnMenuIngresoNotas.Text = "INGRESO DE NOTAS";
-            this.btnMenuIngresoNotas.UseVisualStyleBackColor = false;
-            // 
-            // btnMenuRegistroPago
-            // 
-            this.btnMenuRegistroPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnMenuRegistroPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuRegistroPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuRegistroPago.ForeColor = System.Drawing.Color.Black;
-            this.btnMenuRegistroPago.Location = new System.Drawing.Point(0, 502);
-            this.btnMenuRegistroPago.Name = "btnMenuRegistroPago";
-            this.btnMenuRegistroPago.Size = new System.Drawing.Size(285, 48);
-            this.btnMenuRegistroPago.TabIndex = 6;
-            this.btnMenuRegistroPago.Text = "REGISTRAR PAGO";
-            this.btnMenuRegistroPago.UseVisualStyleBackColor = false;
             // 
             // btnMenuPersonal
             // 
@@ -181,12 +83,110 @@ namespace SistemaGestorEscolar
             this.btnMenuPersonal.Text = "PERSONAL";
             this.btnMenuPersonal.UseVisualStyleBackColor = false;
             // 
+            // btnMenuRegistroPago
+            // 
+            this.btnMenuRegistroPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnMenuRegistroPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuRegistroPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuRegistroPago.ForeColor = System.Drawing.Color.Black;
+            this.btnMenuRegistroPago.Location = new System.Drawing.Point(0, 502);
+            this.btnMenuRegistroPago.Name = "btnMenuRegistroPago";
+            this.btnMenuRegistroPago.Size = new System.Drawing.Size(285, 48);
+            this.btnMenuRegistroPago.TabIndex = 6;
+            this.btnMenuRegistroPago.Text = "REGISTRAR PAGO";
+            this.btnMenuRegistroPago.UseVisualStyleBackColor = false;
+            // 
+            // btnMenuIngresoNotas
+            // 
+            this.btnMenuIngresoNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnMenuIngresoNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuIngresoNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuIngresoNotas.ForeColor = System.Drawing.Color.Black;
+            this.btnMenuIngresoNotas.Location = new System.Drawing.Point(0, 448);
+            this.btnMenuIngresoNotas.Name = "btnMenuIngresoNotas";
+            this.btnMenuIngresoNotas.Size = new System.Drawing.Size(285, 48);
+            this.btnMenuIngresoNotas.TabIndex = 5;
+            this.btnMenuIngresoNotas.Text = "INGRESO DE NOTAS";
+            this.btnMenuIngresoNotas.UseVisualStyleBackColor = false;
+            // 
+            // btnMenuCursosDisponibles
+            // 
+            this.btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnMenuCursosDisponibles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuCursosDisponibles.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuCursosDisponibles.ForeColor = System.Drawing.Color.Black;
+            this.btnMenuCursosDisponibles.Location = new System.Drawing.Point(0, 394);
+            this.btnMenuCursosDisponibles.Name = "btnMenuCursosDisponibles";
+            this.btnMenuCursosDisponibles.Size = new System.Drawing.Size(285, 48);
+            this.btnMenuCursosDisponibles.TabIndex = 4;
+            this.btnMenuCursosDisponibles.Text = "CURSOS DISPONIBLES";
+            this.btnMenuCursosDisponibles.UseVisualStyleBackColor = false;
+            // 
+            // btnMenuVistaMatricula
+            // 
+            this.btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnMenuVistaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuVistaMatricula.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuVistaMatricula.ForeColor = System.Drawing.Color.Black;
+            this.btnMenuVistaMatricula.Location = new System.Drawing.Point(0, 340);
+            this.btnMenuVistaMatricula.Name = "btnMenuVistaMatricula";
+            this.btnMenuVistaMatricula.Size = new System.Drawing.Size(285, 48);
+            this.btnMenuVistaMatricula.TabIndex = 3;
+            this.btnMenuVistaMatricula.Text = "VISTA DE MATRICULAS";
+            this.btnMenuVistaMatricula.UseVisualStyleBackColor = false;
+            // 
+            // btnMenuMatriculaEstudiante
+            // 
+            this.btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnMenuMatriculaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuMatriculaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuMatriculaEstudiante.ForeColor = System.Drawing.Color.Black;
+            this.btnMenuMatriculaEstudiante.Location = new System.Drawing.Point(0, 286);
+            this.btnMenuMatriculaEstudiante.Name = "btnMenuMatriculaEstudiante";
+            this.btnMenuMatriculaEstudiante.Size = new System.Drawing.Size(285, 48);
+            this.btnMenuMatriculaEstudiante.TabIndex = 2;
+            this.btnMenuMatriculaEstudiante.Text = "MATRICULAR ESTUDIANTE";
+            this.btnMenuMatriculaEstudiante.UseVisualStyleBackColor = false;
+            // 
+            // btnMenuAtras
+            // 
+            this.btnMenuAtras.BackColor = System.Drawing.Color.Red;
+            this.btnMenuAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuAtras.ForeColor = System.Drawing.Color.White;
+            this.btnMenuAtras.Location = new System.Drawing.Point(0, 209);
+            this.btnMenuAtras.Name = "btnMenuAtras";
+            this.btnMenuAtras.Size = new System.Drawing.Size(285, 44);
+            this.btnMenuAtras.TabIndex = 1;
+            this.btnMenuAtras.Text = "ATRAS";
+            this.btnMenuAtras.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logohd;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(158, 159);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(285, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1635, 1035);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // InterfazGraficaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panLateral);
             this.Controls.Add(this.panSuperior);
