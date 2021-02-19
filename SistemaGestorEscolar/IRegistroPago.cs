@@ -111,5 +111,15 @@ namespace SistemaGestorEscolar
         {
 
         }
+
+        private void grpDatosPago_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdentidadEstudiante_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

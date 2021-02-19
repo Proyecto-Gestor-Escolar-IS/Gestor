@@ -16,7 +16,7 @@ namespace SistemaGestorEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IRegistroPago());
+            Application.Run(new InterfazGraficaPrincipal());
         }
     }
 }
