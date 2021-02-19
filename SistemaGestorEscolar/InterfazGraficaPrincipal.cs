@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SistemaGestorEscolar
 {
     public partial class InterfazGraficaPrincipal : Form
     {
+
         public InterfazGraficaPrincipal()
         {
             InitializeComponent();
@@ -42,11 +44,16 @@ namespace SistemaGestorEscolar
             if (panLateral.Width <= 160)
             {
                 this.tmrOcultarMenu.Enabled = false;
+                btnMenuAtras.Width = 145;
+                btnMenuAtras.BackgroundImageLayout = ImageLayout.Zoom;
+                btnMenuAtras.BackgroundImage = Properties.Resources.exitButton;
             }
             else 
             {
-                this.panLateral.Width = panLateral.Width - 50;
+                this.panLateral.Width = panLateral.Width - 70;
             }
+
+
 
         }
 
@@ -55,12 +62,13 @@ namespace SistemaGestorEscolar
             if (panLateral.Width >= 285)
             {
                 this.tmrMostrarMenu.Enabled = false;
+
             }
             else
             {
-                this.panLateral.Width = panLateral.Width + 50;
+                this.panLateral.Width = panLateral.Width + 70;
             }
-            picImagotipo.Location = new Point(60, 15);
+            
 
         }
 
@@ -69,16 +77,24 @@ namespace SistemaGestorEscolar
             if (panLateral.Width == 285)
             {
                 tmrOcultarMenu.Enabled = true;
-                picImagotipo.Location = new Point(140, 15);
-                
+                btnMenuAtras.Text = "";
+
+
+
             }
-            else if (panLateral.Width == 135)
+            else if (panLateral.Width == 145)
             {
                 tmrMostrarMenu.Enabled = true;
+
+                btnMenuAtras.Width = 285;
+                btnMenuAtras.Text = "ATRAS";
+                btnMenuAtras.BackgroundImage = null;
 
             }
             MessageBox.Show(""+panLateral.Width);
             
+
+
         }
 
         private void btnCerrarPrograma_Click(object sender, EventArgs e)
