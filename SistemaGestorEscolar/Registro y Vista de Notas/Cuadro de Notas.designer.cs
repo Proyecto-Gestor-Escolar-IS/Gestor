@@ -42,7 +42,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(599, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(486, 56);
+            this.label1.Size = new System.Drawing.Size(472, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "Notas de los Alumnos:";
             // 
@@ -70,10 +70,11 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Linen;
+            this.btnSearch.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.search2_32px;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Image = global::SistemaGestorEscolar.Properties.Resources.search2_32px1;
             this.btnSearch.Location = new System.Drawing.Point(1251, 65);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(39, 32);

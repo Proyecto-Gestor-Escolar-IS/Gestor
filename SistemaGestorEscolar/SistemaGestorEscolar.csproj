@@ -199,6 +199,9 @@
   <ItemGroup>
     <None Include="Resources\Logo Nazaret.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\search2_32px.png" />
+    <None Include="Resources\search2_32px1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

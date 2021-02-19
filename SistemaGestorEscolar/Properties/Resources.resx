@@ -127,10 +127,13 @@
   <data name="exitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logo Nazaret" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo Nazaret.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logohd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logohd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo Nazaret" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Nazaret.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search2_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search2_32px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
