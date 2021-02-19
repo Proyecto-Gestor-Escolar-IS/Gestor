@@ -119,7 +119,7 @@ namespace SistemaGestorEscolar
 
         private void txtIdentidadEstudiante_TextChanged(object sender, EventArgs e)
         {
-
+            /*Hola*/
         }
     }
 }
