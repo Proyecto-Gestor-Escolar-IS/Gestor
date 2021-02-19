@@ -72,7 +72,7 @@ namespace SistemaGestorEscolar
             }
         }
 
-        //Metodo para llenar combobox (se envia el TextBox a llenar) e (instruccion sql)
+        //Metodo para llenar textBox (se envia el TextBox a llenar) e (instruccion sql)
         public void llenarTextBox(TextBox text, string instruccion)
         {
             try

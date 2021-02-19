@@ -16,6 +16,7 @@ namespace SistemaGestorEscolar
         {
             InitializeComponent();
         }
+        databaseConnection dbConn = new databaseConnection();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -47,10 +48,7 @@ namespace SistemaGestorEscolar
 
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -119,7 +117,99 @@ namespace SistemaGestorEscolar
 
         private void txtIdentidadEstudiante_TextChanged(object sender, EventArgs e)
         {
-            /*Hola*/
+            int idUltimaMensualidad;
+            long number = 0;
+            try
+            {
+                if (txtIdentidadEstudiante.Text != String.Empty)
+                {
+                    txtIdentidadEstudiante.ForeColor = Color.Black;
+                    errorIdentidad.Clear();
+                    if (long.TryParse(txtIdentidadEstudiante.Text, out number))
+                    {
+                        txtIdentidadEstudiante.ForeColor = Color.Black;
+                        errorIdentidad.Clear();
+
+                        if (txtIdentidadEstudiante.TextLength == 13)
+                        {
+                            txtIdentidadEstudiante.ForeColor = Color.Green;
+                            errorIdentidad.Clear();
+                            //dbConn.llenarTextBox(txtNombreEstudiante, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = " + txtIdentidadEstudiante.Text);
+                            //idUltimaMensualidad = dbConn.obtenerVariableEntera("SELECT MAX(id_Mensualidad) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
+
+                            //dbConn.llenarTextBox(txtNoFactura, "SELECT count(*) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
+                            //dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad); dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                            //dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                            //dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+
+                        }
+                        else if (txtIdentidadEstudiante.TextLength > 13)
+                        {
+                            txtIdentidadEstudiante.ForeColor = Color.Red;
+                            errorIdentidad.SetError(this.txtIdentidadEstudiante, "El numero de Identidad excede el limite!");
+                        }
+                    }
+                    else
+                    {
+                        txtIdentidadEstudiante.ForeColor = Color.Red;
+                        errorIdentidad.SetError(this.txtIdentidadEstudiante, "Solo se Permiten Numeros!");
+                    }
+                }
+                else
+                {
+                    errorIdentidad.Clear();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        private void txtNoFactura_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSaldoDisponible_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalPagar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFechaFacturacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkDescuento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkDescuento.Checked == true)
+            {
+                txtDescuento.Enabled = true;
+            }
+            else if (chkDescuento.Checked == false)
+            {
+                txtDescuento.Clear();
+                txtDescuento.Enabled = false;
+            }
         }
     }
 }
