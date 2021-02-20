@@ -50,12 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexiones BD\databaseConnection.cs" />
-    <Compile Include="IAperturaExpedienteMedico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IAperturaExpedienteMedico.Designer.cs">
-      <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
-    </Compile>
     <Compile Include="InterfazGraficaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,30 +61,6 @@
     </Compile>
     <Compile Include="IRegistroPago.Designer.cs">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IRegistroVisitaMedica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IRegistroVisitaMedica.Designer.cs">
-      <DependentUpon>IRegistroVisitaMedica.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISubMenuEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuEstudiante.Designer.cs">
-      <DependentUpon>ISubMenuEstudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISubMenuPagos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuPagos.Designer.cs">
-      <DependentUpon>ISubMenuPagos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISubMenuPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuPersonal.Designer.cs">
-      <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -136,26 +106,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
-      <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Registro y Vista de Notas\Cuadro de Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Cuadro de Notas.designer.cs">
+      <DependentUpon>Cuadro de Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Registro_Datos_Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Registro_Datos_Notas.designer.cs">
+      <DependentUpon>Registro_Datos_Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Seleccion de Curso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Seleccion de Curso.designer.cs">
+      <DependentUpon>Seleccion de Curso.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InterfazGraficaPrincipal.resx">
       <DependentUpon>InterfazGraficaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IRegistroPago.resx">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IRegistroVisitaMedica.resx">
-      <DependentUpon>IRegistroVisitaMedica.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuEstudiante.resx">
-      <DependentUpon>ISubMenuEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuPagos.resx">
-      <DependentUpon>ISubMenuPagos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuPersonal.resx">
-      <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -188,6 +161,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registro y Vista de Notas\Cuadro de Notas.resx">
+      <DependentUpon>Cuadro de Notas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro y Vista de Notas\Registro_Datos_Notas.resx">
+      <DependentUpon>Registro_Datos_Notas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro y Vista de Notas\Seleccion de Curso.resx">
+      <DependentUpon>Seleccion de Curso.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -217,6 +199,9 @@
   <ItemGroup>
     <None Include="Resources\Logo Nazaret.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\search2_32px.png" />
+    <None Include="Resources\search2_32px1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
