@@ -16,5 +16,10 @@ namespace SistemaGestorEscolar
         {
             InitializeComponent();
         }
+
+        private void ISubMenuPagos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -62,12 +62,6 @@
     <Compile Include="InterfazGraficaPrincipal.Designer.cs">
       <DependentUpon>InterfazGraficaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="IRegistroPago.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IRegistroPago.Designer.cs">
-      <DependentUpon>IRegistroPago.cs</DependentUpon>
-    </Compile>
     <Compile Include="IRegistroVisitaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazGraficaPrincipal.resx">
       <DependentUpon>InterfazGraficaPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IRegistroPago.resx">
-      <DependentUpon>IRegistroPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IRegistroVisitaMedica.resx">
       <DependentUpon>IRegistroVisitaMedica.cs</DependentUpon>
@@ -227,6 +218,13 @@
     <None Include="Resources\Logo Nazaret.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\iconBackResized2.png" />
+    <None Include="Resources\iconCursosResized2.png" />
+    <None Include="Resources\iconMatriculaResized1.png" />
+    <None Include="Resources\iconMoneyResized1.png" />
+    <None Include="Resources\iconNotasResized2.png" />
+    <None Include="Resources\iconPersonalResized2.png" />
+    <None Include="Resources\iconAddEstudianteRedimensionado4.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>

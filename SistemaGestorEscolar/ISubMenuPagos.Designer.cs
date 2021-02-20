@@ -40,7 +40,7 @@ namespace SistemaGestorEscolar
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(743, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 41);
+            this.label1.Size = new System.Drawing.Size(136, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = " PAGOS";
             // 
@@ -86,6 +86,7 @@ namespace SistemaGestorEscolar
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ISubMenuPagos";
             this.Text = "ISubMenuPagos";
+            this.Load += new System.EventHandler(this.ISubMenuPagos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,7 +14,7 @@ namespace SistemaGestorEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IRegistroVisitaMedica());
+            Application.Run(new InterfazGraficaPrincipal());
         }
     }
 }
