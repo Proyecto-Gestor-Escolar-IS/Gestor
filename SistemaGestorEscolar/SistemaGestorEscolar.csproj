@@ -50,16 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexiones BD\databaseConnection.cs" />
-    <Compile Include="InterfazGraficaPrincipal.cs">
+    <Compile Include="Interfaz Grafica\InterfazGraficaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazGraficaPrincipal.Designer.cs">
+    <Compile Include="Interfaz Grafica\InterfazGraficaPrincipal.Designer.cs">
       <DependentUpon>InterfazGraficaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="IRegistroPago.cs">
+    <Compile Include="Modulos de Pagos\IRegistroPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IRegistroPago.Designer.cs">
+    <Compile Include="Modulos de Pagos\IRegistroPago.Designer.cs">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\frmLogin.cs">
@@ -106,10 +106,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="InterfazGraficaPrincipal.resx">
+    <EmbeddedResource Include="Interfaz Grafica\InterfazGraficaPrincipal.resx">
       <DependentUpon>InterfazGraficaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IRegistroPago.resx">
+    <EmbeddedResource Include="Modulos de Pagos\IRegistroPago.resx">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
@@ -135,19 +135,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -172,6 +172,74 @@
   <ItemGroup>
     <None Include="Resources\Logo Nazaret.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\iconAddEstudiante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCursos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMatricula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMoney.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconNotas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPersonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconAddEstudianteRedimensionado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconAddEstudianteRedimensionado1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconAddEstudianteRedimensionado2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconAddEstudianteRedimensionado3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconBackResized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCursosResized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMatriculaResized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconMoneyResized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconNotasResized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPersonalResized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCursosResized1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconNotasResized1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconPersonalResized1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconBackResized1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adds.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

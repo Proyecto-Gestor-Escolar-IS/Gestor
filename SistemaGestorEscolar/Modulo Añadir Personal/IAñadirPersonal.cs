@@ -21,5 +21,15 @@ namespace SistemaGestorEscolar.Modulo_Añadir_Personal
         {
 
         }
+
+        private void btnBuscarId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

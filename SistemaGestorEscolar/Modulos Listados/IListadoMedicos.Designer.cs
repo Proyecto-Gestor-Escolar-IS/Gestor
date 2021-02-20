@@ -30,39 +30,32 @@ namespace SistemaGestorEscolar
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IListadoMedicos));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvListadoMedicos = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.dgvListadoMedicos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoMedicos)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // label1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.panel1.Controls.Add(this.dgvListadoMedicos);
-            this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.txtBusqueda);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1635, 1035);
-            this.panel1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(663, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(325, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "LISTADO DE MEDICOS";
             // 
-            // dgvListadoMedicos
+            // txtBusqueda
             // 
-            this.dgvListadoMedicos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvListadoMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoMedicos.Location = new System.Drawing.Point(23, 93);
-            this.dgvListadoMedicos.Name = "dgvListadoMedicos";
-            this.dgvListadoMedicos.RowHeadersWidth = 51;
-            this.dgvListadoMedicos.RowTemplate.Height = 24;
-            this.dgvListadoMedicos.Size = new System.Drawing.Size(1600, 930);
-            this.dgvListadoMedicos.TabIndex = 3;
+            this.txtBusqueda.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(1254, 42);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(356, 31);
+            this.txtBusqueda.TabIndex = 1;
             // 
             // btnBuscar
             // 
@@ -71,52 +64,50 @@ namespace SistemaGestorEscolar
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(1193, 32);
+            this.btnBuscar.Location = new System.Drawing.Point(1222, 43);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(38, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(28, 29);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // txtBusqueda
+            // dgvListadoMedicos
             // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(1231, 32);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(307, 36);
-            this.txtBusqueda.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(259, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(385, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "LISTADO DE MEDICOS";
+            this.dgvListadoMedicos.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvListadoMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoMedicos.Location = new System.Drawing.Point(17, 90);
+            this.dgvListadoMedicos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvListadoMedicos.Name = "dgvListadoMedicos";
+            this.dgvListadoMedicos.RowHeadersWidth = 51;
+            this.dgvListadoMedicos.RowTemplate.Height = 24;
+            this.dgvListadoMedicos.Size = new System.Drawing.Size(1607, 934);
+            this.dgvListadoMedicos.TabIndex = 3;
             // 
             // IListadoMedicos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dgvListadoMedicos);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBusqueda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "IListadoMedicos";
             this.Text = "FrmListadoMedicos";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoMedicos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvListadoMedicos;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView dgvListadoMedicos;
     }
 }

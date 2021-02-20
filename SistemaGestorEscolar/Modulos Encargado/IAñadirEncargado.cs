@@ -21,5 +21,45 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
 
         }
+
+        private void txtcorreoElectronico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbldireccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblfechaNacimiento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtfechaNacimiento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtprimerTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsegundoTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltelefonos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
