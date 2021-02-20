@@ -16,5 +16,10 @@ namespace SistemaGestorEscolar
         {
             InitializeComponent();
         }
+
+        private void ISubMenuPersonal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
