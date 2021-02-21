@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace SistemaGestorEscolar
 {
@@ -34,7 +35,7 @@ namespace SistemaGestorEscolar
         }
 
         //Comprueba la existencia de los usuarios en la base de datos
-        public Boolean comprobarUsuario(string usuario, string contra)
+        public bool comprobarUsuario(string usuario, string contra)
         {
             databaseIntermediary.Open();
             string comandoSql = "SELECT COUNT(*) FROM datosEmpleados WHERE identidadPersona = '" + usuario + "' AND contraseniaEmpleado = '" + contra + "'";
@@ -178,7 +179,7 @@ namespace SistemaGestorEscolar
         }
 
         //Metodo enviar COMANDOS SQL donde se quiera hacer operaciones de DELETE, UPDATE, (se envia comando SQL)     [RETORNA null SI HAY UN ERROR DE EJECUCION]
-        public Boolean ejecutarComandoSQL(string instruccion)
+        public bool ejecutarComandoSQL(string instruccion)
         {
             try
             {
@@ -202,6 +203,60 @@ namespace SistemaGestorEscolar
                 return false;
             }
 
+        }
+
+        public bool PAOperacionEmpleado(string idPerona, string nombre1, string nombre2, string apellido1, string apellido2, int tel, string fechaN,
+            string mail, string estado, string contra, int idCargo, int cargoAnterior, int codigo)
+        {
+            try
+            {
+                
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAOperacionEmpleados";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idPersona", idPerona);
+                comando.Parameters.AddWithValue("@prNombre", nombre1);
+                comando.Parameters.AddWithValue("@sgNombre", nombre2);
+                comando.Parameters.AddWithValue("@prApellido", apellido1);
+                comando.Parameters.AddWithValue("@sgApellido", apellido2);
+                comando.Parameters.AddWithValue("@numTelefono", tel);
+                comando.Parameters.AddWithValue("@fNacimiento", fechaN);
+                comando.Parameters.AddWithValue("@mail", mail);
+                comando.Parameters.AddWithValue("@estEmpleado", estado);
+                comando.Parameters.AddWithValue("@contra", contra);
+                comando.Parameters.AddWithValue("@idCargo", idCargo);
+
+                if (codigo == 1)
+                {
+                    comando.Parameters.AddWithValue("@CODIGO", 1);
+                    comando.Parameters.AddWithValue("@idCargoAnterior", -1);
+                }
+                else if (codigo == 2)
+                {
+                    comando.Parameters.AddWithValue("@CODIGO", 2);
+                    comando.Parameters.AddWithValue("@idCargoAnteriora", cargoAnterior);
+                }
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Insercion Usuario", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
         }
 
 
