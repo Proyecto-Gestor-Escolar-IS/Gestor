@@ -41,12 +41,12 @@ namespace SistemaGestorEscolar.Listados
             // 
             this.dgvListadoDocentes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvListadoDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoDocentes.Location = new System.Drawing.Point(17, 90);
-            this.dgvListadoDocentes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvListadoDocentes.Location = new System.Drawing.Point(23, 111);
+            this.dgvListadoDocentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvListadoDocentes.Name = "dgvListadoDocentes";
             this.dgvListadoDocentes.RowHeadersWidth = 51;
             this.dgvListadoDocentes.RowTemplate.Height = 24;
-            this.dgvListadoDocentes.Size = new System.Drawing.Size(1607, 934);
+            this.dgvListadoDocentes.Size = new System.Drawing.Size(2143, 1150);
             this.dgvListadoDocentes.TabIndex = 3;
             // 
             // btnBuscar
@@ -56,46 +56,45 @@ namespace SistemaGestorEscolar.Listados
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(1222, 43);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(1629, 53);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(28, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(37, 36);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(1254, 42);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(1672, 52);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(356, 31);
+            this.txtBusqueda.Size = new System.Drawing.Size(473, 34);
             this.txtBusqueda.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(663, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(884, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 31);
+            this.label1.Size = new System.Drawing.Size(424, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "LISTADO DE DOCENTES";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // IListadoDocentes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.ClientSize = new System.Drawing.Size(1942, 1102);
             this.Controls.Add(this.dgvListadoDocentes);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBusqueda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "IListadoDocentes";
             this.Text = "IListadoDocentes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoDocentes)).EndInit();
