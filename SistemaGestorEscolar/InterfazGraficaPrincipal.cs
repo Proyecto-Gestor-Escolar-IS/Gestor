@@ -19,6 +19,7 @@ namespace SistemaGestorEscolar
             InitializeComponent();
         }
 
+        bool windowMove = false;
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
 
@@ -178,6 +179,35 @@ namespace SistemaGestorEscolar
         private void btnMenuMatriculaEstudiante_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panSuperior_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            windowMove = true;
+        }
+
+        private void panSuperior_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(windowMove == true)
+            {
+                this.Location = Cursor.Position;
+
+            }
+        }
+
+        private void panSuperior_MouseUp(object sender, MouseEventArgs e)
+        {
+            windowMove = false;
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

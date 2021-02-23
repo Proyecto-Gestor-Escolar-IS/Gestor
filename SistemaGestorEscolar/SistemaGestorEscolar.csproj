@@ -33,11 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.8.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.8\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="MailKit, Version=2.10.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.10.1\lib\net47\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=2.10.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.10.1\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,7 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
+    <Compile Include="FormRegistro_Notas_Alumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistro_Notas_Alumno.Designer.cs">
+      <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="IAperturaExpedienteMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,17 +142,35 @@
     <Compile Include="ISubMenuPersonal.Designer.cs">
       <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\frmLogin.cs">
+    <Compile Include="Login\frmIngresoAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="Login\frmIngresoAdmin.Designer.cs">
+      <DependentUpon>frmIngresoAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmRecuperacionContrasenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmRecuperacionContrasenia.Designer.cs">
+      <DependentUpon>frmRecuperacionContrasenia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\IfrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\IfrmLogin.Designer.cs">
+      <DependentUpon>IfrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulo Añadir Personal\IAñadirPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulo Añadir Personal\IAñadirPersonal.Designer.cs">
       <DependentUpon>IAñadirPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo de Pagos\IHistorialPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo de Pagos\IHistorialPagos.Designer.cs">
+      <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos Encargado\IAñadirEncargado.cs">
       <SubType>Form</SubType>
@@ -166,6 +204,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormRegistro_Notas_Alumno.resx">
+      <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,11 +243,20 @@
     <EmbeddedResource Include="ISubMenuPersonal.resx">
       <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Login\frmIngresoAdmin.resx">
+      <DependentUpon>frmIngresoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmRecuperacionContrasenia.resx">
+      <DependentUpon>frmRecuperacionContrasenia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\IfrmLogin.resx">
+      <DependentUpon>IfrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Añadir Personal\IAñadirPersonal.resx">
       <DependentUpon>IAñadirPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo de Pagos\IHistorialPagos.resx">
+      <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\IAñadirEncargado.resx">
       <DependentUpon>IAñadirEncargado.cs</DependentUpon>
@@ -272,6 +322,7 @@
     <None Include="Resources\Logo Nazaret.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Usuario.png" />
     <None Include="Resources\iconBackResized2.png" />
     <None Include="Resources\iconCursosResized2.png" />
     <None Include="Resources\iconMatriculaResized1.png" />
@@ -281,6 +332,9 @@
     <None Include="Resources\iconAddEstudianteRedimensionado4.png" />
     <None Include="Resources\adds1.png" />
     <None Include="Resources\add1.png" />
+    <None Include="Resources\Contra.png" />
+    <None Include="Resources\contra 2.png" />
+    <Content Include="Login\MensajeRecuperacionContra.html" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>
