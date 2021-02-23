@@ -56,6 +56,36 @@
     <Compile Include="IAperturaExpedienteMedico.Designer.cs">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="IMassageBoxInformacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMassageBoxInformacion.Designer.cs">
+      <DependentUpon>IMassageBoxInformacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMessageBoxCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMessageBoxCheck.Designer.cs">
+      <DependentUpon>IMessageBoxCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMessageBoxError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMessageBoxError.Designer.cs">
+      <DependentUpon>IMessageBoxError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMessageBoxInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMessageBoxInformation.Designer.cs">
+      <DependentUpon>IMessageBoxInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMessageBoxWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMessageBoxWarning.Designer.cs">
+      <DependentUpon>IMessageBoxWarning.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfazGraficaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +168,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMassageBoxInformacion.resx">
+      <DependentUpon>IMassageBoxInformacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMessageBoxCheck.resx">
+      <DependentUpon>IMessageBoxCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMessageBoxError.resx">
+      <DependentUpon>IMessageBoxError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMessageBoxInformation.resx">
+      <DependentUpon>IMessageBoxInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMessageBoxWarning.resx">
+      <DependentUpon>IMessageBoxWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazGraficaPrincipal.resx">
       <DependentUpon>InterfazGraficaPrincipal.cs</DependentUpon>

@@ -48,6 +48,8 @@ namespace SistemaGestorEscolar
             this.panSintomas = new System.Windows.Forms.Panel();
             this.panPosibleEnfermedad = new System.Windows.Forms.Panel();
             this.panMedicamentos = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtNumeroIdentidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +107,7 @@ namespace SistemaGestorEscolar
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1044, 210);
+            this.label5.Location = new System.Drawing.Point(1047, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 31);
             this.label5.TabIndex = 20;
@@ -135,16 +137,17 @@ namespace SistemaGestorEscolar
             // txtNoExpediente
             // 
             this.txtNoExpediente.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoExpediente.Location = new System.Drawing.Point(1264, 210);
+            this.txtNoExpediente.Location = new System.Drawing.Point(1267, 135);
             this.txtNoExpediente.Name = "txtNoExpediente";
             this.txtNoExpediente.Size = new System.Drawing.Size(191, 28);
             this.txtNoExpediente.TabIndex = 23;
             this.txtNoExpediente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNoExpediente.TextChanged += new System.EventHandler(this.txtNoExpediente_TextChanged);
             // 
             // txtFechaRegistro
             // 
             this.txtFechaRegistro.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaRegistro.Location = new System.Drawing.Point(1264, 120);
+            this.txtFechaRegistro.Location = new System.Drawing.Point(1267, 210);
             this.txtFechaRegistro.Name = "txtFechaRegistro";
             this.txtFechaRegistro.Size = new System.Drawing.Size(191, 28);
             this.txtFechaRegistro.TabIndex = 24;
@@ -210,7 +213,7 @@ namespace SistemaGestorEscolar
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1044, 120);
+            this.label8.Location = new System.Drawing.Point(1047, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(165, 31);
             this.label8.TabIndex = 30;
@@ -241,12 +244,33 @@ namespace SistemaGestorEscolar
             this.panMedicamentos.Size = new System.Drawing.Size(605, 2);
             this.panMedicamentos.TabIndex = 33;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(175, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(261, 31);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Número de Identidad ";
+            // 
+            // txtNumeroIdentidad
+            // 
+            this.txtNumeroIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroIdentidad.Location = new System.Drawing.Point(475, 138);
+            this.txtNumeroIdentidad.Name = "txtNumeroIdentidad";
+            this.txtNumeroIdentidad.Size = new System.Drawing.Size(288, 28);
+            this.txtNumeroIdentidad.TabIndex = 35;
+            this.txtNumeroIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // IRegistroVisitaMedica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.txtNumeroIdentidad);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panMedicamentos);
             this.Controls.Add(this.panPosibleEnfermedad);
             this.Controls.Add(this.panSintomas);
@@ -296,5 +320,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Panel panSintomas;
         private System.Windows.Forms.Panel panPosibleEnfermedad;
         private System.Windows.Forms.Panel panMedicamentos;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtNumeroIdentidad;
     }
 }

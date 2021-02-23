@@ -40,6 +40,8 @@ namespace SistemaGestorEscolar
             this.txtAntecedenteMedico = new System.Windows.Forms.TextBox();
             this.btnRegistrarAntecedente = new System.Windows.Forms.Button();
             this.panAntecedentes = new System.Windows.Forms.Panel();
+            this.txtNumeroIdentidad = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +68,7 @@ namespace SistemaGestorEscolar
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(509, 335);
+            this.label3.Location = new System.Drawing.Point(509, 392);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(275, 31);
             this.label3.TabIndex = 3;
@@ -76,7 +78,7 @@ namespace SistemaGestorEscolar
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(509, 425);
+            this.label4.Location = new System.Drawing.Point(509, 482);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(232, 31);
             this.label4.TabIndex = 4;
@@ -104,7 +106,7 @@ namespace SistemaGestorEscolar
             // txtNombreEstudiante
             // 
             this.txtNombreEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstudiante.Location = new System.Drawing.Point(830, 335);
+            this.txtNombreEstudiante.Location = new System.Drawing.Point(830, 392);
             this.txtNombreEstudiante.Name = "txtNombreEstudiante";
             this.txtNombreEstudiante.Size = new System.Drawing.Size(329, 28);
             this.txtNombreEstudiante.TabIndex = 17;
@@ -113,7 +115,7 @@ namespace SistemaGestorEscolar
             // txtFechaCreacion
             // 
             this.txtFechaCreacion.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaCreacion.Location = new System.Drawing.Point(829, 427);
+            this.txtFechaCreacion.Location = new System.Drawing.Point(829, 484);
             this.txtFechaCreacion.Name = "txtFechaCreacion";
             this.txtFechaCreacion.Size = new System.Drawing.Size(279, 28);
             this.txtFechaCreacion.TabIndex = 18;
@@ -154,12 +156,33 @@ namespace SistemaGestorEscolar
             this.panAntecedentes.Size = new System.Drawing.Size(1053, 2);
             this.panAntecedentes.TabIndex = 22;
             // 
+            // txtNumeroIdentidad
+            // 
+            this.txtNumeroIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroIdentidad.Location = new System.Drawing.Point(830, 315);
+            this.txtNumeroIdentidad.Name = "txtNumeroIdentidad";
+            this.txtNumeroIdentidad.Size = new System.Drawing.Size(278, 28);
+            this.txtNumeroIdentidad.TabIndex = 37;
+            this.txtNumeroIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(509, 315);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(261, 31);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Número de Identidad ";
+            // 
             // IAperturaExpedienteMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.txtNumeroIdentidad);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panAntecedentes);
             this.Controls.Add(this.btnRegistrarAntecedente);
             this.Controls.Add(this.txtAntecedenteMedico);
@@ -193,5 +216,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.TextBox txtAntecedenteMedico;
         private System.Windows.Forms.Button btnRegistrarAntecedente;
         private System.Windows.Forms.Panel panAntecedentes;
+        private System.Windows.Forms.TextBox txtNumeroIdentidad;
+        private System.Windows.Forms.Label label9;
     }
 }

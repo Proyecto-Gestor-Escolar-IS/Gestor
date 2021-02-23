@@ -36,5 +36,10 @@ namespace SistemaGestorEscolar
         {
 
         }
+
+        private void txtNoExpediente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
