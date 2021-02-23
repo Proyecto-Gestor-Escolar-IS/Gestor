@@ -136,6 +136,12 @@
     <Compile Include="Modulo Añadir Personal\IAñadirPersonal.Designer.cs">
       <DependentUpon>IAñadirPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo de Pagos\IHistorialPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo de Pagos\IHistorialPagos.Designer.cs">
+      <DependentUpon>IHistorialPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos Encargado\IAñadirEncargado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Añadir Personal\IAñadirPersonal.resx">
       <DependentUpon>IAñadirPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo de Pagos\IHistorialPagos.resx">
+      <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\IAñadirEncargado.resx">
       <DependentUpon>IAñadirEncargado.cs</DependentUpon>

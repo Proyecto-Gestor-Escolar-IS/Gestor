@@ -31,6 +31,9 @@ namespace SistemaGestorEscolar
         {
             this.components = new System.ComponentModel.Container();
             this.panSuperior = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnCerrarPrograma = new System.Windows.Forms.Button();
             this.panLateral = new System.Windows.Forms.Panel();
             this.btnMenuPersonal = new System.Windows.Forms.Button();
             this.btnMenuRegistroPago = new System.Windows.Forms.Button();
@@ -38,14 +41,11 @@ namespace SistemaGestorEscolar
             this.btnMenuCursosDisponibles = new System.Windows.Forms.Button();
             this.btnMenuVistaMatricula = new System.Windows.Forms.Button();
             this.btnMenuMatriculaEstudiante = new System.Windows.Forms.Button();
+            this.btnMenuAtras = new System.Windows.Forms.Button();
+            this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.btnMenuAtras = new System.Windows.Forms.Button();
-            this.picImagotipo = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrarPrograma = new System.Windows.Forms.Button();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -63,6 +63,51 @@ namespace SistemaGestorEscolar
             this.panSuperior.Name = "panSuperior";
             this.panSuperior.Size = new System.Drawing.Size(1920, 45);
             this.panSuperior.TabIndex = 0;
+            this.panSuperior.Paint += new System.Windows.Forms.PaintEventHandler(this.panSuperior_Paint);
+            this.panSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseDown);
+            this.panSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseMove);
+            this.panSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseUp);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(1786, 12);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
+            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Location = new System.Drawing.Point(1830, 4);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(34, 34);
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnCerrarPrograma
+            // 
+            this.btnCerrarPrograma.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
+            this.btnCerrarPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrarPrograma.FlatAppearance.BorderSize = 0;
+            this.btnCerrarPrograma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCerrarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarPrograma.Location = new System.Drawing.Point(1872, 3);
+            this.btnCerrarPrograma.Name = "btnCerrarPrograma";
+            this.btnCerrarPrograma.Size = new System.Drawing.Size(36, 36);
+            this.btnCerrarPrograma.TabIndex = 0;
+            this.btnCerrarPrograma.UseVisualStyleBackColor = true;
+            this.btnCerrarPrograma.Click += new System.EventHandler(this.btnCerrarPrograma_Click);
             // 
             // panLateral
             // 
@@ -168,26 +213,6 @@ namespace SistemaGestorEscolar
             this.btnMenuMatriculaEstudiante.UseVisualStyleBackColor = false;
             this.btnMenuMatriculaEstudiante.Click += new System.EventHandler(this.btnMenuMatriculaEstudiante_Click);
             // 
-            // panelPrincipal
-            // 
-            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipal.Location = new System.Drawing.Point(285, 45);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(1635, 1035);
-            this.panelPrincipal.TabIndex = 2;
-            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // tmrOcultarMenu
-            // 
-            this.tmrOcultarMenu.Interval = 2;
-            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
-            // 
-            // tmrMostrarMenu
-            // 
-            this.tmrMostrarMenu.Interval = 2;
-            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
-            // 
             // btnMenuAtras
             // 
             this.btnMenuAtras.BackColor = System.Drawing.Color.Red;
@@ -215,45 +240,25 @@ namespace SistemaGestorEscolar
             this.picImagotipo.TabStop = false;
             this.picImagotipo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btnMinimizar
+            // panelPrincipal
             // 
-            this.btnMinimizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
-            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(1786, 12);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
-            this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrincipal.Location = new System.Drawing.Point(285, 45);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(1635, 1035);
+            this.panelPrincipal.TabIndex = 2;
+            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnMaximizar
+            // tmrOcultarMenu
             // 
-            this.btnMaximizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
-            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(1830, 4);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(34, 34);
-            this.btnMaximizar.TabIndex = 1;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.tmrOcultarMenu.Interval = 2;
+            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
             // 
-            // btnCerrarPrograma
+            // tmrMostrarMenu
             // 
-            this.btnCerrarPrograma.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
-            this.btnCerrarPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrarPrograma.FlatAppearance.BorderSize = 0;
-            this.btnCerrarPrograma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPrograma.Location = new System.Drawing.Point(1872, 3);
-            this.btnCerrarPrograma.Name = "btnCerrarPrograma";
-            this.btnCerrarPrograma.Size = new System.Drawing.Size(36, 36);
-            this.btnCerrarPrograma.TabIndex = 0;
-            this.btnCerrarPrograma.UseVisualStyleBackColor = true;
-            this.btnCerrarPrograma.Click += new System.EventHandler(this.btnCerrarPrograma_Click);
+            this.tmrMostrarMenu.Interval = 2;
+            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
             // 
             // InterfazGraficaPrincipal
             // 
