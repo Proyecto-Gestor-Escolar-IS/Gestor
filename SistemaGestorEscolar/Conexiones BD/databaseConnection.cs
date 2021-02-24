@@ -16,7 +16,7 @@ namespace SistemaGestorEscolar
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         SqlConnection databaseIntermediary = new SqlConnection("server=HACKNEL; database = StaMariaNazarethDatabaseService; Integrated Security=True");
         public SqlDataAdapter adaptador;
-        public DataTable tablaDatos1;
+        public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
         public SqlCommand comando;
 
@@ -34,6 +34,42 @@ namespace SistemaGestorEscolar
             }
         }
 
+        //Agrega informacion de una consulta SQL a un datagridview
+        public bool llenarDGV(DataGridView dgv, string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                adaptador = new SqlDataAdapter(instruccion, databaseIntermediary);
+                tablaDatos = new DataTable();
+                adaptador.Fill(tablaDatos);
+                dgv.DataSource = tablaDatos;
+                databaseIntermediary.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                return false;
+            }
+        }
+
+        /*
+         Public Sub LlenarDGV(ByVal dgv As DataGridView, instruccion As String)
+        Try
+            conexion.Open()
+            adaptador = New SqlDataAdapter(instruccion, conexion)
+            tablaDatos1 = New DataTable
+            adaptador.Fill(tablaDatos1)
+            dgv.DataSource = tablaDatos1
+            conexion.Close()
+        Catch ex As Exception
+            conexion.Close()
+            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
+        End Try
+    End Sub
+         
+         */
         //Comprueba la existencia de los usuarios en la base de datos
         public bool comprobarUsuario(string usuario, string contra)
         {

@@ -481,7 +481,7 @@
                     &lt;tr&gt;
                       &lt;td&gt;
                         &lt;p&gt;Hola &lt;input type="text" id="nombre" value="@nombre" class="sinborde"&gt;&lt;/p&gt;
-                        &lt;p&gt;Al parecer has olvidado tu contraseña ten mas cuidado la proxima vez. 😊 &lt;/p&gt;
+                        &lt;p&gt;Al parecer has olvidado tu contraseña ten mas cuidado la proxima vez. &lt;/p&gt;
                         &lt;table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary"&gt;
                           &lt;tbody&gt;
                             &lt;tr&gt;

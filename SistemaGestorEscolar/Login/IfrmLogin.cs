@@ -41,7 +41,10 @@ namespace SistemaGestorEscolar.Login
             {
                 if (dbConn.comprobarUsuario(txtdentidad.Text, utilidad.EncriptarTexto(txtContrase.Text)))
                 {
-                    MessageBox.Show("HOLA MUNDO");
+                    clsVariablesGlobales.NumIdentidad = txtdentidad.Text;
+                    IfrmSeleccionarTipoInicio frmTipoI = new IfrmSeleccionarTipoInicio();
+                    frmTipoI.Show();
+                    this.Hide();
                 }
                 else
                 {
