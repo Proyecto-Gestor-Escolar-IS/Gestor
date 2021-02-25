@@ -14,7 +14,7 @@ namespace SistemaGestorEscolar
     {
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("server=HACKNEL; database = StaMariaNazarethDatabaseService; Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("server=DESKTOP-P4A3L4O; database = StaMariaNazarethDatabaseService; Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos1;
         public SqlDataReader lectorVariables;
@@ -158,6 +158,7 @@ namespace SistemaGestorEscolar
                 if (lectorVariables.Read())
                 {
                     valor = Convert.ToString(lectorVariables.GetValue(0));
+                  
                 }
                 else
                 {
@@ -258,7 +259,118 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
+        
+        public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento)
+        {
+            try
+            {
 
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PARegistroPago";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadEstudiante", identidadEstudiante);
+                comando.Parameters.AddWithValue("@montoPago", montoPago);
+                comando.Parameters.AddWithValue("@fechaPago", fechaPago);
+                comando.Parameters.AddWithValue("@descuento", descuento);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Pago", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public DateTime obtenerVariableDate(string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                DateTime valor;
+                comando = new SqlCommand(instruccion, databaseIntermediary);
+                lectorVariables = comando.ExecuteReader();
+                if (lectorVariables.Read())
+                {
+                    valor = Convert.ToDateTime(lectorVariables.GetValue(0));
+
+                }
+                else
+                {
+                    lectorVariables.Close();
+                    databaseIntermediary.Close();
+                    return default(DateTime);
+                }
+                lectorVariables.Close();
+                databaseIntermediary.Close();
+                return valor;
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return default(DateTime);
+            }
+
+        }
+
+        public bool PAGeneracionPagos(DateTime fechaFacturacion)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAGeneracionPagos";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@fechaFacturacion", fechaFacturacion);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Pago", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public void llenarDataGridPagos(DataGridView dgv, string idEstudiante)
+        {
+            SqlCommand cmd = new SqlCommand("Select id_Mensualidad as 'ID', fechaFacturacion as 'FECHA DE FACTURACION', fechaPago as 'FECHA DE PAGO', deudaPendiente as 'DEUDA', saldoDisponible as 'SALDO', descuentoMensualidad as 'DESCUENTO' from detalleMensualidades WHERE id_Estudiante = '" + idEstudiante + "'", databaseIntermediary);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dgv.DataSource = ds.Tables[0];
+            databaseIntermediary.Close();
+        }
 
     }
 }

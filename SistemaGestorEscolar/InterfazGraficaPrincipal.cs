@@ -19,20 +19,58 @@ namespace SistemaGestorEscolar
             InitializeComponent();
         }
 
+        Modulos_de_Arranque.verficacionArranque actualizarModulos = new Modulos_de_Arranque.verficacionArranque();
+        public static Form formulario = new Form();
+        int posicionX;
         bool windowMove = false;
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                actualizarModulos.verificarFecha();
+                panelMostrador.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
+
+
+        public void AbrirFormulario<T>() where T : Form, new()
+        {
+            panelMostrador.Controls.Clear();
+            formulario = panelMostrador.Controls.OfType<T>().FirstOrDefault();
+            if (formulario != null)
+            {
+                //Si la instancia esta minimizada la dejamos en su estado normal
+                if (formulario.WindowState == FormWindowState.Minimized)
+                {
+                    formulario.WindowState = FormWindowState.Normal;
+                }
+                //Si la instancia existe la pongo en primer plano
+                formulario.BringToFront();
+                return;
+            }
+            //Se abre el form
+            formulario = new T();
+            formulario.TopLevel = false;
+            panelMostrador.Controls.Add(formulario);
+            panelMostrador.Tag = formulario;
+            formulario.Show();
+            
+        }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+           
         }
 
         private void btnMenuAtras_Click(object sender, EventArgs e)
         {
-   
+            panelMostrador.Visible = false;
+            panelMostrador.Controls.Clear();
         }
 
         private void panLateral_Paint(object sender, PaintEventArgs e)
@@ -44,9 +82,11 @@ namespace SistemaGestorEscolar
         {
             try
             {
+                
                 if (panLateral.Width <= 160)
                 {
                     this.tmrOcultarMenu.Enabled = false;
+                    posicionX = 0;
                     btnMenuAtras.Width = 145;
                     btnMenuMatriculaEstudiante.Width = 145;
                     btnMenuVistaMatricula.Width = 145;
@@ -75,12 +115,28 @@ namespace SistemaGestorEscolar
 
                     btnMenuPersonal.BackgroundImageLayout = ImageLayout.Center;
                     btnMenuPersonal.BackgroundImage = Properties.Resources.iconPersonalResized;
+
+
+                    //formulario.Location = new Point(90, 0);
                 }
                 else
                 {
+                    posicionX += posicionX + 27;
+                    formulario.Location = new Point(posicionX, 0);
                     this.panLateral.Width = panLateral.Width - 70;
-                }
 
+                    btnMatricularEstudiante.Location = new Point(205, 209);
+                    btnPersonal.Location = new Point(205, 483);
+
+                    btnVistaMatriculas.Location = new Point(705, 209);
+                    btnPagos.Location = new Point(705, 483);
+
+                    btnCursos.Location = new Point(1205, 209);
+                    btnIngresarNotas.Location = new Point(1205, 483);
+
+                    btnEstudiante.Location = new Point(705, 751);
+                    lblMenuTitle.Location = new Point(730, 98);
+                }
             }
             catch (Exception ex)
             {
@@ -95,13 +151,13 @@ namespace SistemaGestorEscolar
             if (panLateral.Width >= 285)
             {
                 this.tmrMostrarMenu.Enabled = false;
-
+                posicionX = 0;
             }
             else
             {
                 this.panLateral.Width = panLateral.Width + 70;
+
             }
-            
 
         }
 
@@ -111,7 +167,9 @@ namespace SistemaGestorEscolar
             {
                 if (panLateral.Width == 285)
                 {
+                    
                     tmrOcultarMenu.Enabled = true;
+                    
                     btnMenuAtras.Text = "";
                     btnMenuMatriculaEstudiante.Text = "";
                     btnMenuVistaMatricula.Text = "";
@@ -125,7 +183,7 @@ namespace SistemaGestorEscolar
                 else if (panLateral.Width == 145)
                 {
                     tmrMostrarMenu.Enabled = true;
-
+                    
                     btnMenuAtras.Width = 285;
                     btnMenuMatriculaEstudiante.Width = 285;
                     btnMenuVistaMatricula.Width = 285;
@@ -151,8 +209,21 @@ namespace SistemaGestorEscolar
                     btnMenuRegistroPago.BackgroundImage = null;
                     btnMenuPersonal.BackgroundImage = null;
 
+                    formulario.Location = new Point(0, 0);
+
+                    btnMatricularEstudiante.Location = new Point(103, 209);
+                    btnPersonal.Location = new Point(103, 483);
+
+
+                    btnVistaMatriculas.Location = new Point(649, 209);
+                    btnPagos.Location = new Point(649, 483);
+
+                    btnCursos.Location = new Point(1178, 209);
+                    btnIngresarNotas.Location = new Point(1178, 483);
+
+                    btnEstudiante.Location = new Point(649, 751);
+                    lblMenuTitle.Location = new Point(682, 98);
                 }
-                //MessageBox.Show("" + panLateral.Width);
             }
             catch (Exception ex)
             {
@@ -178,7 +249,7 @@ namespace SistemaGestorEscolar
 
         private void btnMenuMatriculaEstudiante_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void panSuperior_Paint(object sender, PaintEventArgs e)
@@ -208,6 +279,42 @@ namespace SistemaGestorEscolar
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnMenuPersonal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuRegistroPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuIngresoNotas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuCursosDisponibles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuVistaMatricula_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            panelMostrador.Visible = true;
+            AbrirFormulario<IRegistroPago>();
         }
     }
 }

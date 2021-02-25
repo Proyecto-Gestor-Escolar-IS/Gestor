@@ -130,6 +130,12 @@
     <Compile Include="Login\IfrmLogin.Designer.cs">
       <DependentUpon>IfrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu Principal\IMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu Principal\IMenuPrincipal.Designer.cs">
+      <DependentUpon>IMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulo Añadir Personal\IAñadirPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,7 @@
     <Compile Include="Modulo de Pagos\IHistorialPagos.Designer.cs">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos de Arranque\verficacionArranque.cs" />
     <Compile Include="Modulos Encargado\IAñadirEncargado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\IfrmLogin.resx">
       <DependentUpon>IfrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu Principal\IMenuPrincipal.resx">
+      <DependentUpon>IMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Añadir Personal\IAñadirPersonal.resx">
       <DependentUpon>IAñadirPersonal.cs</DependentUpon>

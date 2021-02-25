@@ -42,7 +42,9 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvHistorialPagos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.grpDataGrid = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialPagos)).BeginInit();
+            this.grpDataGrid.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -103,6 +105,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.txtNoIdentidadEstudiante.Name = "txtNoIdentidadEstudiante";
             this.txtNoIdentidadEstudiante.Size = new System.Drawing.Size(369, 28);
             this.txtNoIdentidadEstudiante.TabIndex = 6;
+            this.txtNoIdentidadEstudiante.TextChanged += new System.EventHandler(this.txtNoIdentidadEstudiante_TextChanged);
             // 
             // txtNombrePadre
             // 
@@ -132,6 +135,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.btnConsultarID.TabIndex = 9;
             this.btnConsultarID.Text = "CONSULTAR";
             this.btnConsultarID.UseVisualStyleBackColor = false;
+            this.btnConsultarID.Click += new System.EventHandler(this.btnConsultarID_Click);
             // 
             // btnLimpiar
             // 
@@ -161,10 +165,13 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             // 
             // dgvHistorialPagos
             // 
+            this.dgvHistorialPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistorialPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorialPagos.Location = new System.Drawing.Point(12, 292);
+            this.dgvHistorialPagos.Location = new System.Drawing.Point(6, 14);
             this.dgvHistorialPagos.Name = "dgvHistorialPagos";
-            this.dgvHistorialPagos.Size = new System.Drawing.Size(1611, 539);
+            this.dgvHistorialPagos.ReadOnly = true;
+            this.dgvHistorialPagos.RowTemplate.ReadOnly = true;
+            this.dgvHistorialPagos.Size = new System.Drawing.Size(1572, 519);
             this.dgvHistorialPagos.TabIndex = 12;
             // 
             // label6
@@ -177,14 +184,24 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.label6.TabIndex = 13;
             this.label6.Text = "Pendiente de Pago: Lps. 0.00";
             // 
+            // grpDataGrid
+            // 
+            this.grpDataGrid.Controls.Add(this.dgvHistorialPagos);
+            this.grpDataGrid.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpDataGrid.Location = new System.Drawing.Point(28, 304);
+            this.grpDataGrid.Name = "grpDataGrid";
+            this.grpDataGrid.Size = new System.Drawing.Size(1584, 539);
+            this.grpDataGrid.TabIndex = 14;
+            this.grpDataGrid.TabStop = false;
+            // 
             // IHistorialPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.grpDataGrid);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dgvHistorialPagos);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnConsultarID);
@@ -201,6 +218,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.Text = "IHistorialPagos";
             this.Load += new System.EventHandler(this.IHistorialPagos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialPagos)).EndInit();
+            this.grpDataGrid.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +239,6 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView dgvHistorialPagos;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox grpDataGrid;
     }
 }
