@@ -54,6 +54,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkregistrarEncargado = new System.Windows.Forms.CheckBox();
             this.lblSeleccionarOperacion = new System.Windows.Forms.Label();
             this.lblregistroEncargado = new System.Windows.Forms.Label();
+            this.chkeliminarEncargado = new System.Windows.Forms.CheckBox();
             this.PanregistroEncargado.SuspendLayout();
             this.gbOperaciones.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtprimerTelefono
             // 
             this.txtprimerTelefono.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprimerTelefono.Location = new System.Drawing.Point(1242, 170);
+            this.txtprimerTelefono.Location = new System.Drawing.Point(1245, 223);
             this.txtprimerTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtprimerTelefono.Multiline = true;
             this.txtprimerTelefono.Name = "txtprimerTelefono";
@@ -102,7 +103,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtsegundoTelefono
             // 
             this.txtsegundoTelefono.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsegundoTelefono.Location = new System.Drawing.Point(1397, 170);
+            this.txtsegundoTelefono.Location = new System.Drawing.Point(1400, 223);
             this.txtsegundoTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtsegundoTelefono.Multiline = true;
             this.txtsegundoTelefono.Name = "txtsegundoTelefono";
@@ -113,7 +114,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(1243, 344);
+            this.txtDireccion.Location = new System.Drawing.Point(1246, 397);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
@@ -124,7 +125,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtfechaNacimiento
             // 
             this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfechaNacimiento.Location = new System.Drawing.Point(1242, 259);
+            this.txtfechaNacimiento.Location = new System.Drawing.Point(1245, 312);
             this.txtfechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtfechaNacimiento.Multiline = true;
             this.txtfechaNacimiento.Name = "txtfechaNacimiento";
@@ -135,7 +136,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtcorreoElectronico
             // 
             this.txtcorreoElectronico.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcorreoElectronico.Location = new System.Drawing.Point(1243, 84);
+            this.txtcorreoElectronico.Location = new System.Drawing.Point(1246, 137);
             this.txtcorreoElectronico.Margin = new System.Windows.Forms.Padding(2);
             this.txtcorreoElectronico.Multiline = true;
             this.txtcorreoElectronico.Name = "txtcorreoElectronico";
@@ -146,7 +147,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtprimerApellido
             // 
             this.txtprimerApellido.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprimerApellido.Location = new System.Drawing.Point(280, 407);
+            this.txtprimerApellido.Location = new System.Drawing.Point(280, 478);
             this.txtprimerApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtprimerApellido.Multiline = true;
             this.txtprimerApellido.Name = "txtprimerApellido";
@@ -156,7 +157,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtsegundoApellido
             // 
             this.txtsegundoApellido.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsegundoApellido.Location = new System.Drawing.Point(433, 407);
+            this.txtsegundoApellido.Location = new System.Drawing.Point(433, 478);
             this.txtsegundoApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtsegundoApellido.Multiline = true;
             this.txtsegundoApellido.Name = "txtsegundoApellido";
@@ -166,7 +167,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtprimerNombre
             // 
             this.txtprimerNombre.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprimerNombre.Location = new System.Drawing.Point(280, 329);
+            this.txtprimerNombre.Location = new System.Drawing.Point(280, 400);
             this.txtprimerNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtprimerNombre.Multiline = true;
             this.txtprimerNombre.Name = "txtprimerNombre";
@@ -176,7 +177,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtsegundoNombre
             // 
             this.txtsegundoNombre.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsegundoNombre.Location = new System.Drawing.Point(433, 328);
+            this.txtsegundoNombre.Location = new System.Drawing.Point(433, 399);
             this.txtsegundoNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtsegundoNombre.Multiline = true;
             this.txtsegundoNombre.Name = "txtsegundoNombre";
@@ -186,7 +187,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtIdentidad
             // 
             this.txtIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidad.Location = new System.Drawing.Point(325, 250);
+            this.txtIdentidad.Location = new System.Drawing.Point(353, 321);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentidad.Multiline = true;
             this.txtIdentidad.Name = "txtIdentidad";
@@ -197,10 +198,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lbldireccion.AutoSize = true;
             this.lbldireccion.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldireccion.Location = new System.Drawing.Point(972, 345);
+            this.lbldireccion.Location = new System.Drawing.Point(975, 398);
             this.lbldireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbldireccion.Name = "lbldireccion";
-            this.lbldireccion.Size = new System.Drawing.Size(127, 31);
+            this.lbldireccion.Size = new System.Drawing.Size(138, 35);
             this.lbldireccion.TabIndex = 9;
             this.lbldireccion.Text = "Dirección";
             this.lbldireccion.Click += new System.EventHandler(this.lbldireccion_Click);
@@ -209,10 +210,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lblfechaNacimiento.AutoSize = true;
             this.lblfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfechaNacimiento.Location = new System.Drawing.Point(972, 259);
+            this.lblfechaNacimiento.Location = new System.Drawing.Point(975, 312);
             this.lblfechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechaNacimiento.Name = "lblfechaNacimiento";
-            this.lblfechaNacimiento.Size = new System.Drawing.Size(225, 31);
+            this.lblfechaNacimiento.Size = new System.Drawing.Size(248, 35);
             this.lblfechaNacimiento.TabIndex = 8;
             this.lblfechaNacimiento.Text = "Fecha Nacimiento";
             this.lblfechaNacimiento.Click += new System.EventHandler(this.lblfechaNacimiento_Click);
@@ -221,10 +222,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lbltelefonos.AutoSize = true;
             this.lbltelefonos.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltelefonos.Location = new System.Drawing.Point(972, 170);
+            this.lbltelefonos.Location = new System.Drawing.Point(975, 223);
             this.lbltelefonos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltelefonos.Name = "lbltelefonos";
-            this.lbltelefonos.Size = new System.Drawing.Size(138, 31);
+            this.lbltelefonos.Size = new System.Drawing.Size(145, 35);
             this.lbltelefonos.TabIndex = 7;
             this.lbltelefonos.Text = "Teléfonos";
             this.lbltelefonos.Click += new System.EventHandler(this.lbltelefonos_Click);
@@ -233,10 +234,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lblcorreoElectronico.AutoSize = true;
             this.lblcorreoElectronico.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcorreoElectronico.Location = new System.Drawing.Point(972, 86);
+            this.lblcorreoElectronico.Location = new System.Drawing.Point(975, 139);
             this.lblcorreoElectronico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblcorreoElectronico.Name = "lblcorreoElectronico";
-            this.lblcorreoElectronico.Size = new System.Drawing.Size(244, 31);
+            this.lblcorreoElectronico.Size = new System.Drawing.Size(261, 35);
             this.lblcorreoElectronico.TabIndex = 6;
             this.lblcorreoElectronico.Text = "Correo Electrónico";
             this.lblcorreoElectronico.Click += new System.EventHandler(this.label3_Click);
@@ -245,10 +246,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidos.Location = new System.Drawing.Point(91, 409);
+            this.lblApellidos.Location = new System.Drawing.Point(91, 480);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(123, 31);
+            this.lblApellidos.Size = new System.Drawing.Size(131, 35);
             this.lblApellidos.TabIndex = 5;
             this.lblApellidos.Text = "Apellidos";
             // 
@@ -256,10 +257,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lblnombres.AutoSize = true;
             this.lblnombres.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombres.Location = new System.Drawing.Point(91, 328);
+            this.lblnombres.Location = new System.Drawing.Point(91, 399);
             this.lblnombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnombres.Name = "lblnombres";
-            this.lblnombres.Size = new System.Drawing.Size(123, 31);
+            this.lblnombres.Size = new System.Drawing.Size(134, 35);
             this.lblnombres.TabIndex = 4;
             this.lblnombres.Text = "Nombres";
             // 
@@ -267,10 +268,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lblnumeroIdentidad.AutoSize = true;
             this.lblnumeroIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnumeroIdentidad.Location = new System.Drawing.Point(91, 252);
+            this.lblnumeroIdentidad.Location = new System.Drawing.Point(91, 323);
             this.lblnumeroIdentidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnumeroIdentidad.Name = "lblnumeroIdentidad";
-            this.lblnumeroIdentidad.Size = new System.Drawing.Size(230, 31);
+            this.lblnumeroIdentidad.Size = new System.Drawing.Size(248, 35);
             this.lblnumeroIdentidad.TabIndex = 3;
             this.lblnumeroIdentidad.Text = "Numero Identidad";
             // 
@@ -289,6 +290,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             // gbOperaciones
             // 
+            this.gbOperaciones.Controls.Add(this.chkeliminarEncargado);
             this.gbOperaciones.Controls.Add(this.chkbuscarEncargado);
             this.gbOperaciones.Controls.Add(this.chkactualizarEncargado);
             this.gbOperaciones.Controls.Add(this.chkregistrarEncargado);
@@ -299,7 +301,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbOperaciones.Margin = new System.Windows.Forms.Padding(2);
             this.gbOperaciones.Name = "gbOperaciones";
             this.gbOperaciones.Padding = new System.Windows.Forms.Padding(2);
-            this.gbOperaciones.Size = new System.Drawing.Size(621, 184);
+            this.gbOperaciones.Size = new System.Drawing.Size(642, 184);
             this.gbOperaciones.TabIndex = 0;
             this.gbOperaciones.TabStop = false;
             // 
@@ -310,7 +312,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkbuscarEncargado.Location = new System.Drawing.Point(354, 82);
             this.chkbuscarEncargado.Margin = new System.Windows.Forms.Padding(2);
             this.chkbuscarEncargado.Name = "chkbuscarEncargado";
-            this.chkbuscarEncargado.Size = new System.Drawing.Size(232, 31);
+            this.chkbuscarEncargado.Size = new System.Drawing.Size(245, 35);
             this.chkbuscarEncargado.TabIndex = 5;
             this.chkbuscarEncargado.Text = "Buscar Encargado";
             this.chkbuscarEncargado.UseVisualStyleBackColor = true;
@@ -319,10 +321,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.chkactualizarEncargado.AutoSize = true;
             this.chkactualizarEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkactualizarEncargado.Location = new System.Drawing.Point(175, 136);
+            this.chkactualizarEncargado.Location = new System.Drawing.Point(25, 136);
             this.chkactualizarEncargado.Margin = new System.Windows.Forms.Padding(2);
             this.chkactualizarEncargado.Name = "chkactualizarEncargado";
-            this.chkactualizarEncargado.Size = new System.Drawing.Size(267, 31);
+            this.chkactualizarEncargado.Size = new System.Drawing.Size(280, 35);
             this.chkactualizarEncargado.TabIndex = 4;
             this.chkactualizarEncargado.Text = "Actualizar Encargado";
             this.chkactualizarEncargado.UseVisualStyleBackColor = true;
@@ -334,7 +336,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkregistrarEncargado.Location = new System.Drawing.Point(25, 82);
             this.chkregistrarEncargado.Margin = new System.Windows.Forms.Padding(2);
             this.chkregistrarEncargado.Name = "chkregistrarEncargado";
-            this.chkregistrarEncargado.Size = new System.Drawing.Size(261, 31);
+            this.chkregistrarEncargado.Size = new System.Drawing.Size(272, 35);
             this.chkregistrarEncargado.TabIndex = 3;
             this.chkregistrarEncargado.Text = "Registrar Encargado";
             this.chkregistrarEncargado.UseVisualStyleBackColor = true;
@@ -346,7 +348,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblSeleccionarOperacion.Location = new System.Drawing.Point(97, 16);
             this.lblSeleccionarOperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSeleccionarOperacion.Name = "lblSeleccionarOperacion";
-            this.lblSeleccionarOperacion.Size = new System.Drawing.Size(397, 33);
+            this.lblSeleccionarOperacion.Size = new System.Drawing.Size(392, 38);
             this.lblSeleccionarOperacion.TabIndex = 2;
             this.lblSeleccionarOperacion.Text = "Seleccione una operación";
             // 
@@ -357,9 +359,21 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblregistroEncargado.Location = new System.Drawing.Point(715, 29);
             this.lblregistroEncargado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblregistroEncargado.Name = "lblregistroEncargado";
-            this.lblregistroEncargado.Size = new System.Drawing.Size(312, 36);
+            this.lblregistroEncargado.Size = new System.Drawing.Size(325, 41);
             this.lblregistroEncargado.TabIndex = 1;
             this.lblregistroEncargado.Text = "Registro Encargado";
+            // 
+            // chkeliminarEncargado
+            // 
+            this.chkeliminarEncargado.AutoSize = true;
+            this.chkeliminarEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkeliminarEncargado.Location = new System.Drawing.Point(354, 136);
+            this.chkeliminarEncargado.Margin = new System.Windows.Forms.Padding(2);
+            this.chkeliminarEncargado.Name = "chkeliminarEncargado";
+            this.chkeliminarEncargado.Size = new System.Drawing.Size(251, 35);
+            this.chkeliminarEncargado.TabIndex = 6;
+            this.chkeliminarEncargado.Text = "Eliminar Encargado";
+            this.chkeliminarEncargado.UseVisualStyleBackColor = true;
             // 
             // IAñadirEncargado
             // 
@@ -409,5 +423,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private System.Windows.Forms.CheckBox chkregistrarEncargado;
         private System.Windows.Forms.TextBox txtprimerTelefono;
         private System.Windows.Forms.TextBox txtsegundoTelefono;
+        private System.Windows.Forms.CheckBox chkeliminarEncargado;
     }
 }
