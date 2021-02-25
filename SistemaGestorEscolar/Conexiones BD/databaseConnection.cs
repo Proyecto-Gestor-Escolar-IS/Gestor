@@ -16,7 +16,7 @@ namespace SistemaGestorEscolar
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         SqlConnection databaseIntermediary = new SqlConnection("server=DESKTOP-P4A3L4O; database = StaMariaNazarethDatabaseService; Integrated Security=True");
         public SqlDataAdapter adaptador;
-        public DataTable tablaDatos1;
+        public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
         public SqlCommand comando;
 
@@ -31,6 +31,27 @@ namespace SistemaGestorEscolar
             {
                 MessageBox.Show("No se pudo conectar, error: " + ex.ToString());
                 databaseIntermediary.Close();
+            }
+        }
+
+        //Agrega informacion de una consulta SQL a un datagridview
+        public bool llenarDGV(DataGridView dgv, string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                adaptador = new SqlDataAdapter(instruccion, databaseIntermediary);
+                tablaDatos = new DataTable();
+                adaptador.Fill(tablaDatos);
+                dgv.DataSource = tablaDatos;
+                databaseIntermediary.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("No se pudo conectar, error: " + ex.ToString());
+                return false;
             }
         }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaGestorEscolar.MessageBox_Personalizados;
 
 namespace SistemaGestorEscolar.Login
 {
@@ -19,6 +20,8 @@ namespace SistemaGestorEscolar.Login
 
         databaseConnection dbConn = new databaseConnection();
         clsUtilidades utilidad = new clsUtilidades();
+        IMessageBoxLoginIncorrecto message = new IMessageBoxLoginIncorrecto();
+        IMessageBoxInformation message2 = new IMessageBoxInformation();
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -27,30 +30,40 @@ namespace SistemaGestorEscolar.Login
 
         private void btnIngresar_Click_1(object sender, EventArgs e)
         {
-            Properties.Settings.Default.isPrimerInicio = false;
-            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.isPrimerInicio = false;
+            //Properties.Settings.Default.Save();
             if (Properties.Settings.Default.isPrimerInicio == true && txtdentidad.Text == String.Empty && txtContrase.Text == String.Empty)
             {
-                MessageBox.Show("Esta es su primera vez iniciando el sistema, por favor cree un usuario/personal para continuar.", "Requisito de Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                message2.lblError.Text = "ESTA ES SU PRIMERA VEZ INICIANDO \r\nEL SISTEMA, POR FAVOR CREE UN \r\nSUPER USUARIO PARA CONTINUAR.";
+                message2.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                message2.lblError.Location = new Point(100, 60);
+                message2.ShowDialog();
                 Form frmRegistro = new frmIngresoAdmin();
                 frmRegistro.ShowDialog();
-                /*Properties.Settings.Default.isPrimerInicio = false;
-                Properties.Settings.Default.Save();*/
+                Properties.Settings.Default.isPrimerInicio = false;
+                Properties.Settings.Default.Save();
             }
             else if (txtdentidad.Text != String.Empty && txtContrase.Text != String.Empty && Properties.Settings.Default.isPrimerInicio == false)
             {
                 if (dbConn.comprobarUsuario(txtdentidad.Text, utilidad.EncriptarTexto(txtContrase.Text)))
                 {
-                    MessageBox.Show("HOLA MUNDO");
+                    clsVariablesGlobales.NumIdentidad = txtdentidad.Text;
+                    IfrmSeleccionarTipoInicio frmTipoI = new IfrmSeleccionarTipoInicio();
+                    frmTipoI.Show();
+                    this.Hide();
                 }
                 else
                 {
-                      MessageBox.Show("Usuario o Contraseña incorrectos!", "Error de Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message.lblError.Location = new Point(118, 65);
+                    message.lblError.Text = "USUARIO O CONTRASEÑA \r\nINCORRECTOS";
+                    message.ShowDialog();
                 }
             }
             else
             {
-                MessageBox.Show("Introduzca Valores!", "Error de Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message.lblError.Location = new Point(129, 65);
+                message.lblError.Text = "INTRODUZCA VALORES";
+                message.ShowDialog();
             }
         }
 
@@ -80,6 +93,11 @@ namespace SistemaGestorEscolar.Login
             {
                 txtContrase.PasswordChar = '●';
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
