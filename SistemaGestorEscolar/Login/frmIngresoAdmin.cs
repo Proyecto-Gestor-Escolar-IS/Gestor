@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows;
+using SistemaGestorEscolar.MessageBox_Personalizados;
 
 namespace SistemaGestorEscolar.Login
 {
@@ -21,25 +22,45 @@ namespace SistemaGestorEscolar.Login
 
         databaseConnection dbConn = new databaseConnection();
         clsUtilidades utilidad = new clsUtilidades();
+        IMessageBoxError message = new IMessageBoxError();
+        IMessageBoxCheck messageOk = new IMessageBoxCheck();
+        IMessageBoxYesCancel messageYesNo = new IMessageBoxYesCancel();
+        IMessageBoxWarning messageWarning = new IMessageBoxWarning();
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            if (txtIdentidad.Text!= string.Empty && txtNombre1.Text != string.Empty && txtNombre2.Text != string.Empty && txtApellido1.Text != string.Empty && txtApellido2.Text != string.Empty &&
-                txtCorreo.Text != string.Empty && txtContra.Text != string.Empty && txtConfirmContra.Text != string.Empty && txtFechaNa.Text != string.Empty)
+            string txtIdentid = txtIdentidad.Text;
+            string txtNum = txtTel.Text;
+            if (txtIdentid.Trim() != string.Empty && txtNombre1.Text != string.Empty && txtApellido1.Text != string.Empty && txtNum != string.Empty &&
+                txtCorreo.Text != string.Empty && txtContra.Text != string.Empty && txtConfirmContra.Text != string.Empty && txtFechaNa.Text != string.Empty && txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8)
             {
-                if (utilidad.verificarCorreo(txtCorreo.Text))
+                if (txtConfirmContra.TextLength >= 6)
                 {
-                    pnlPrincipal.Visible = false;
-                    pnlRecuperacion.Visible = true;
+                    if (utilidad.verificarCorreo(txtCorreo.Text))
+                    {
+                        pnlPrincipal.Visible = false;
+                        pnlRecuperacion.Visible = true;
+                    }
+                    else
+                    {
+                        message.lblError.Text = "VERIFIQUE CORREO \n\rELECTRÓNICO";
+                        message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        message.lblError.Location = new Point(130, 75);
+                        message.ShowDialog();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Verifique su correo electronico!", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messageWarning.ShowDialog();
+                    txtContra.Focus();
                 }
+                    
             }
             else
             {
-                MessageBox.Show("Verifique los Valores!", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message.lblError.Text = "VERIFIQUE LOS VALORES";
+                message.lblError.Location = new Point(130, 82);
+                message.ShowDialog();
             }
 
             
@@ -89,26 +110,50 @@ namespace SistemaGestorEscolar.Login
             {
                 if (utilidad.verificarCorreo(txtCorreoRecuperacion.Text))
                 {
-                    DialogResult result =  MessageBox.Show("¿Ha revisado sus datos y desea continuar?", "Continuar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if ( result == DialogResult.Yes )
+                    messageYesNo.lblError.Text = "¿HA REVISADO SUS DATOS \r\nY DESEA CONTINUAR?";
+                    messageYesNo.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                    messageYesNo.ShowDialog();
+
+                    //DialogResult result =  MessageBox.Show("¿Ha revisado sus datos y desea continuar?", "Continuar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if ( IMessageBoxYesCancel.isCodigoForm == true )
                     {
-                        if (dbConn.PAOperacionEmpleado(txtIdentidad.Text, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
-                        txtCorreo.Text, "Activo", utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
+                        if(utilidad.enviarCorreo("","",txtCorreoRecuperacion.Text,"",txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text) == true)
                         {
-                            MessageBox.Show("Registro Realizado Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                            if (dbConn.PAOperacionEmpleado(txtIdentidad.Text, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
+                            txtCorreo.Text, "Activo", utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
+                            {
+                                messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
+                                messageOk.ShowDialog();
+                                Properties.Settings.Default.correoRecu = txtCorreoRecuperacion.Text;
+                                Properties.Settings.Default.contraRecu = txtContraseRecuperacion.Text;
+                                Properties.Settings.Default.Save();
+                                this.Close();
+                            }
                         }
+                        else
+                        {
+                            message.lblError.Text = "CREDENCIALES DE CORREO \r\nELECTRONICO INCORRECTAS";
+                            message.lblError.Location = new Point(105, 75);
+                            message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            message.ShowDialog();
+                        }
+                            
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Verifique su correo electronico!", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message.lblError.Text = "VERIFIQUE\n\r CORREO ELECTRÓNICO";
+                    message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                    message.lblError.Location = new Point(130, 75);
+                    message.ShowDialog();
                 }
                
             }
             else
             {
-                MessageBox.Show("Verifique los Valores!", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message.lblError.Text = "VERIFIQUE LOS VALORES";
+                message.lblError.Location = new Point(130, 82);
+                message.ShowDialog();
             }
         }
 
@@ -124,5 +169,16 @@ namespace SistemaGestorEscolar.Login
             }
         }
 
+        private void txtContra_TextChanged(object sender, EventArgs e)
+        {
+            if (txtContra.Text == txtConfirmContra.Text)
+            {
+                btnSiguiente.Enabled = true;
+            }
+            else
+            {
+                btnSiguiente.Enabled = false;
+            }
+        }
     }
 }

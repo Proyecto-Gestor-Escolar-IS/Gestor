@@ -50,26 +50,11 @@ namespace SistemaGestorEscolar
             catch (Exception ex)
             {
                 databaseIntermediary.Close();
+                MessageBox.Show("No se pudo conectar, error: " + ex.ToString());
                 return false;
             }
         }
 
-        /*
-         Public Sub LlenarDGV(ByVal dgv As DataGridView, instruccion As String)
-        Try
-            conexion.Open()
-            adaptador = New SqlDataAdapter(instruccion, conexion)
-            tablaDatos1 = New DataTable
-            adaptador.Fill(tablaDatos1)
-            dgv.DataSource = tablaDatos1
-            conexion.Close()
-        Catch ex As Exception
-            conexion.Close()
-            MessageBox.Show("Error de Base de datos! " & vbCrLf + ex.ToString)
-        End Try
-    End Sub
-         
-         */
         //Comprueba la existencia de los usuarios en la base de datos
         public bool comprobarUsuario(string usuario, string contra)
         {

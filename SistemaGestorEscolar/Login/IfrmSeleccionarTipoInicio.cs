@@ -81,6 +81,27 @@ namespace SistemaGestorEscolar.Login
             frmLogin.Show();
             this.Close();
         }
+
+        private void btnSuperUsuario_Click(object sender, EventArgs e)
+        {
+            clsVariablesGlobales.CodigoAcceso = 0;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            clsVariablesGlobales.CodigoAcceso = 1;
+        }
+
+        private void btnDocenteMasAdmin_Click(object sender, EventArgs e)
+        {
+            clsVariablesGlobales.CodigoAcceso = 2;
+        }
+
+        private void btnMedico_Click(object sender, EventArgs e)
+        {
+            clsVariablesGlobales.CodigoAcceso = 3;
+        }
+
         
     }
 }

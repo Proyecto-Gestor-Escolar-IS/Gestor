@@ -38,7 +38,8 @@ namespace SistemaGestorEscolar.Login
                     string corr = correo.Substring(0, 5);
                     rtxtHtml.Text = rtxtHtml.Text.Replace("@contra", " " + contra);
                     rtxtHtml.Text = rtxtHtml.Text.Replace("@nombre", " " + nombre);
-                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, asunto: "Recuperación de Contraseña", destinatario: correo, ruta: ""))
+                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, asunto: "Recuperación de Contraseña", destinatario: correo, ruta: "", 
+                        Properties.Settings.Default.correoRecu, Properties.Settings.Default.contraRecu))
                     {
                         MessageBox.Show("Revise la bandeja de entrada, spam de su correo: " + corr + "********", "Recuperacion de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
