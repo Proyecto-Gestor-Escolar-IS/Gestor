@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar
+namespace SistemaGestorEscolar.Modulos_Estudiante
 {
-    public partial class IMessageBoxInformation : Form
+    public partial class ICrudEstudiante : Form
     {
-        public IMessageBoxInformation()
+        public ICrudEstudiante()
         {
             InitializeComponent();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

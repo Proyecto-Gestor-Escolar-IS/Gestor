@@ -36,7 +36,7 @@ namespace SistemaGestorEscolar
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.grpDatosPago = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMontoPagar = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.chkDescuento = new System.Windows.Forms.CheckBox();
@@ -48,7 +48,7 @@ namespace SistemaGestorEscolar
             this.txtNoFactura = new System.Windows.Forms.TextBox();
             this.txtNombreEstudiante = new System.Windows.Forms.TextBox();
             this.txtIdentidadEstudiante = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombreEncargado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegistrarPago = new System.Windows.Forms.Button();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
@@ -119,7 +119,7 @@ namespace SistemaGestorEscolar
             // 
             // grpDatosPago
             // 
-            this.grpDatosPago.Controls.Add(this.textBox1);
+            this.grpDatosPago.Controls.Add(this.txtMontoPagar);
             this.grpDatosPago.Controls.Add(this.label8);
             this.grpDatosPago.Controls.Add(this.txtDescuento);
             this.grpDatosPago.Controls.Add(this.chkDescuento);
@@ -131,7 +131,7 @@ namespace SistemaGestorEscolar
             this.grpDatosPago.Controls.Add(this.txtNoFactura);
             this.grpDatosPago.Controls.Add(this.txtNombreEstudiante);
             this.grpDatosPago.Controls.Add(this.txtIdentidadEstudiante);
-            this.grpDatosPago.Controls.Add(this.textBox2);
+            this.grpDatosPago.Controls.Add(this.txtNombreEncargado);
             this.grpDatosPago.Controls.Add(this.label6);
             this.grpDatosPago.Controls.Add(this.label2);
             this.grpDatosPago.Controls.Add(this.label3);
@@ -144,15 +144,15 @@ namespace SistemaGestorEscolar
             this.grpDatosPago.TabStop = false;
             this.grpDatosPago.Enter += new System.EventHandler(this.grpDatosPago_Enter);
             // 
-            // textBox1
+            // txtMontoPagar
             // 
-            this.textBox1.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(926, 421);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(187, 28);
-            this.textBox1.TabIndex = 26;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMontoPagar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMontoPagar.Location = new System.Drawing.Point(926, 421);
+            this.txtMontoPagar.Name = "txtMontoPagar";
+            this.txtMontoPagar.Size = new System.Drawing.Size(187, 28);
+            this.txtMontoPagar.TabIndex = 26;
+            this.txtMontoPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMontoPagar.TextChanged += new System.EventHandler(this.txtMontoPagar_TextChanged);
             // 
             // label8
             // 
@@ -174,6 +174,7 @@ namespace SistemaGestorEscolar
             this.txtDescuento.Size = new System.Drawing.Size(173, 28);
             this.txtDescuento.TabIndex = 24;
             this.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
             // 
             // chkDescuento
             // 
@@ -275,16 +276,16 @@ namespace SistemaGestorEscolar
             this.txtIdentidadEstudiante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIdentidadEstudiante.TextChanged += new System.EventHandler(this.txtIdentidadEstudiante_TextChanged);
             // 
-            // textBox2
+            // txtNombreEncargado
             // 
-            this.textBox2.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(778, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(279, 28);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtNombreEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreEncargado.Location = new System.Drawing.Point(778, 100);
+            this.txtNombreEncargado.Name = "txtNombreEncargado";
+            this.txtNombreEncargado.ReadOnly = true;
+            this.txtNombreEncargado.Size = new System.Drawing.Size(279, 28);
+            this.txtNombreEncargado.TabIndex = 9;
+            this.txtNombreEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNombreEncargado.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -300,6 +301,7 @@ namespace SistemaGestorEscolar
             // btnRegistrarPago
             // 
             this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnRegistrarPago.Enabled = false;
             this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
             this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,6 +312,7 @@ namespace SistemaGestorEscolar
             this.btnRegistrarPago.TabIndex = 16;
             this.btnRegistrarPago.Text = "REGISTRAR PAGO";
             this.btnRegistrarPago.UseVisualStyleBackColor = false;
+            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
             // 
             // errorIdentidad
             // 
@@ -401,7 +404,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.TextBox txtFechaFacturacion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombreEncargado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTotalPagar;
         private System.Windows.Forms.TextBox txtSaldoDisponible;
@@ -409,7 +412,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.CheckBox chkDescuento;
         private System.Windows.Forms.ErrorProvider errorIdentidad;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMontoPagar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;

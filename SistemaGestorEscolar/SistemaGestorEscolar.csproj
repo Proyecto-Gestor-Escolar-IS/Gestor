@@ -65,6 +65,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulos Estudiante\ICrudEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\ICrudEstudiante.Designer.cs">
+      <DependentUpon>ICrudEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\IMessaggeBoxLoginIncorrecto.cs" />
+    <Compile Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.Designer.cs">
+      <DependentUpon>IMessageBoxLoginIncorrecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.Designer.cs">
+      <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="FormRegistro_Notas_Alumno.cs">
@@ -79,34 +98,28 @@
     <Compile Include="IAperturaExpedienteMedico.Designer.cs">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMassageBoxInformacion.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxCheck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMassageBoxInformacion.Designer.cs">
-      <DependentUpon>IMassageBoxInformacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IMessageBoxCheck.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IMessageBoxCheck.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxCheck.Designer.cs">
       <DependentUpon>IMessageBoxCheck.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMessageBoxError.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxError.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMessageBoxError.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxError.Designer.cs">
       <DependentUpon>IMessageBoxError.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMessageBoxInformation.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMessageBoxInformation.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxInformation.Designer.cs">
       <DependentUpon>IMessageBoxInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMessageBoxWarning.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxWarning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMessageBoxWarning.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxWarning.Designer.cs">
       <DependentUpon>IMessageBoxWarning.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfazGraficaPrincipal.cs">
@@ -181,6 +194,7 @@
     <Compile Include="Modulo de Pagos\IHistorialPagos.Designer.cs">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos de Arranque\verficacionArranque.cs" />
     <Compile Include="Modulos Encargado\IAñadirEncargado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,19 +234,19 @@
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMassageBoxInformacion.resx">
-      <DependentUpon>IMassageBoxInformacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxCheck.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxCheck.resx">
       <DependentUpon>IMessageBoxCheck.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxError.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxError.resx">
       <DependentUpon>IMessageBoxError.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxInformation.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxInformation.resx">
       <DependentUpon>IMessageBoxInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxWarning.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.resx">
+      <DependentUpon>IMessageBoxLoginIncorrecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxWarning.resx">
       <DependentUpon>IMessageBoxWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazGraficaPrincipal.resx">
@@ -265,6 +279,9 @@
     <EmbeddedResource Include="Login\IfrmSeleccionarTipoInicio.resx">
       <DependentUpon>IfrmSeleccionarTipoInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxYesCancel.resx">
+      <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo Añadir Personal\IAñadirPersonal.resx">
       <DependentUpon>IAñadirPersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\IAñadirEncargado.resx">
       <DependentUpon>IAñadirEncargado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\ICrudEstudiante.resx">
+      <DependentUpon>ICrudEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.resx">
       <DependentUpon>IMatriculaPrematriculaEstudiante.cs</DependentUpon>

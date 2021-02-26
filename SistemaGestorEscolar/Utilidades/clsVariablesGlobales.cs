@@ -27,8 +27,12 @@ namespace SistemaGestorEscolar
         private static string numIdentidad;
         //Metodo para acceder a la variable
         public static string NumIdentidad { get => numIdentidad; set => numIdentidad = value; }
+        
 
-
+        //Variable global que almacena el CODIGO DE TIPO DE ENTRADA al programa, es decir si entro como SUPER USUARIO ,ADMINITRADOR, DOCENTE, MEDICO
+        private static int codigoAcceso;
+        //Metodo para acceder a la variable
+        public static int CodigoAcceso { get => codigoAcceso; set => codigoAcceso = value; }
 
 
     }
