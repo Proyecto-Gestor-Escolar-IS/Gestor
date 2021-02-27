@@ -551,17 +551,6 @@ namespace SistemaGestorEscolar
             
         }
 
-
-
-
-
-
-
-
-
-        /*
-         con = new SqlConnection("Data Source=MCNDESKTOP03;Initial Catalog=pulkit;User ID=sa;Password=wintellect@123");
-
         //comprobar Existencia (manda instruccion, si existe retorna true caso contrario false)
         public bool ComprobarExistencia(string instruccion)
         {
