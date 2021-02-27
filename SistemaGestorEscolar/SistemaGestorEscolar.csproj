@@ -62,6 +62,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo Historial Medico\Historial medico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Historial Medico\Historial medico.Designer.cs">
+      <DependentUpon>Historial medico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha de Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha de Estudiante.Designer.cs">
+      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.Designer.cs">
+      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.Designer.cs">
+      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.Designer.cs">
+      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos Estudiante\ICrudEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,8 +304,23 @@
     <EmbeddedResource Include="Modulo de Pagos\IHistorialPagos.resx">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Historial Medico\Historial medico.resx">
+      <DependentUpon>Historial medico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\IAñadirEncargado.resx">
       <DependentUpon>IAñadirEncargado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha de Estudiante.resx">
+      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha Encargados del Estudiante.resx">
+      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.resx">
+      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha notas del estudiante.resx">
+      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\ICrudEstudiante.resx">
       <DependentUpon>ICrudEstudiante.cs</DependentUpon>
