@@ -413,31 +413,7 @@ namespace SistemaGestorEscolar
             }
         }
 
-        /*
-         con = new SqlConnection("Data Source=MCNDESKTOP03;Initial Catalog=pulkit;User ID=sa;Password=wintellect@123");
-
-            con.Open();
-
-            cmd = new SqlCommand("select picname from pic where id=2", con);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataSet ds = new DataSet();
-
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
-
-            {
-
-                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["picname"]);
-
-                pictureBox1.Image = new Bitmap(ms);
-
-            }
-         */
-
-        /*public void llenarDataGridPagos(DataGridView dgv, string idEstudiante)
+        public void llenarDataGridPagos(DataGridView dgv, string idEstudiante)
         {
             SqlCommand cmd = new SqlCommand("Select id_Mensualidad as 'ID', fechaFacturacion as 'FECHA DE FACTURACION', fechaPago as 'FECHA DE PAGO', deudaPendiente as 'DEUDA', saldoDisponible as 'SALDO', descuentoMensualidad as 'DESCUENTO' from detalleMensualidades WHERE id_Estudiante = '" + idEstudiante + "'", databaseIntermediary);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -446,29 +422,6 @@ namespace SistemaGestorEscolar
             dgv.DataSource = ds.Tables[0];
             databaseIntermediary.Close();
         }
-
-         //Validar Cualquier CorreoElectronico(se envia el Email, si es correcto retorna verdadero caso contrario se retornara falso)
-        public Boolean VereficacionEmail(String email)
-        {
-            String expresion;
-            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(email, expresion))
-            {
-            if (Regex.Replace(email, expresion, String.Empty).Length == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            }
-            else
-            {
-            return false;
-            }
-        }
-
 
         public bool PARegistroEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
             string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo, string fechaNacimiento)
