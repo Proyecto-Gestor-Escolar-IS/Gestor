@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HACKNEL;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-7MB4NES;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -129,7 +129,7 @@ namespace SistemaGestorEscolar
                 int valor = 0;
                 comando = new SqlCommand(instruccion, databaseIntermediary);
                 lectorVariables = comando.ExecuteReader();
-                if(lectorVariables.Read())
+                if (lectorVariables.Read())
                 {
                     valor = Convert.ToInt16(lectorVariables.GetValue(0));
                 }
@@ -143,7 +143,7 @@ namespace SistemaGestorEscolar
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return -1;
             }
-            
+
         }
 
         //Metodo para obtener variables DOUBLE de la base de datos. (Se envia el comando sql) de donde se quiere obtener la variable [RETORNA -1 SI NO ENCUENTRA UN VALOR]
@@ -236,7 +236,7 @@ namespace SistemaGestorEscolar
         {
             try
             {
-                
+
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "PAOperacionEmpleados";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -284,7 +284,7 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
-        
+
         public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento, Image img)
         {
             try
@@ -548,8 +548,10 @@ namespace SistemaGestorEscolar
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return false;
             }
-            
+
         }
+    }
+}
 
 
 
@@ -629,4 +631,4 @@ namespace SistemaGestorEscolar
 
 
 
-}
+}*/
