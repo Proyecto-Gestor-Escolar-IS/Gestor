@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,6 +85,36 @@
     </Compile>
     <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.Designer.cs">
       <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo Historial Medico\Historial medico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Historial Medico\Historial medico.Designer.cs">
+      <DependentUpon>Historial medico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha de Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha de Estudiante.Designer.cs">
+      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.Designer.cs">
+      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.Designer.cs">
+      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.Designer.cs">
+      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos Estudiante\ICrudEstudiante.cs">
       <SubType>Form</SubType>
@@ -316,8 +361,23 @@
     <EmbeddedResource Include="Modulo de Pagos\IHistorialPagos.resx">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Historial Medico\Historial medico.resx">
+      <DependentUpon>Historial medico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\IAñadirEncargado.resx">
       <DependentUpon>IAñadirEncargado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha de Estudiante.resx">
+      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha Encargados del Estudiante.resx">
+      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.resx">
+      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha notas del estudiante.resx">
+      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\ICrudEstudiante.resx">
       <DependentUpon>ICrudEstudiante.cs</DependentUpon>
@@ -399,6 +459,18 @@
     <None Include="Resources\gui_order_pending_icon_158418.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

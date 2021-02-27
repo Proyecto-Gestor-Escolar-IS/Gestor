@@ -316,5 +316,10 @@ namespace SistemaGestorEscolar
             panelMostrador.Visible = true;
             AbrirFormulario<IRegistroPago>();
         }
+
+        private void panelMostrador_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
