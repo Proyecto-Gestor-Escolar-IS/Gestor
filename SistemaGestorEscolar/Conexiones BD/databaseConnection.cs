@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace SistemaGestorEscolar
 {
@@ -14,7 +15,7 @@ namespace SistemaGestorEscolar
     {
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("server=DESKTOP-P4A3L4O; database = StaMariaNazarethDatabaseService; Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HECTOREOC\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -179,7 +180,6 @@ namespace SistemaGestorEscolar
                 if (lectorVariables.Read())
                 {
                     valor = Convert.ToString(lectorVariables.GetValue(0));
-                  
                 }
                 else
                 {
@@ -393,5 +393,136 @@ namespace SistemaGestorEscolar
             databaseIntermediary.Close();
         }
 
+         //Validar Cualquier CorreoElectronico(se envia el Email, si es correcto retorna verdadero caso contrario se retornara falso)
+        public Boolean VereficacionEmail(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+            if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            }
+            else
+            {
+            return false;
+            }
+        }
+
+
+        public bool PARegistroEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
+            string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo, string fechaNacimiento)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "RegistrarEncargado";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Numidentidad", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+                comando.Parameters.AddWithValue("@correoElectronico", correoElectronico);
+                comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono);
+                comando.Parameters.AddWithValue("@numeroTelefonoAlt", numeroTelefonoAlt);
+                comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
+                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Encargado", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool PAActualizarEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
+      string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "ActualizarEncargado";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Numidentidad", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+                comando.Parameters.AddWithValue("@correoElectronico", correoElectronico);
+                comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono);
+                comando.Parameters.AddWithValue("@numeroTelefonoAlt", numeroTelefonoAlt);
+                comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Actualizacion de Encargado", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        //comprobar Existencia (manda instruccion, si existe retorna true caso contrario false)
+        public bool ComprobarExistencia(string instruccion)
+        {
+            databaseIntermediary.Open();
+            comando = new SqlCommand(instruccion, databaseIntermediary);
+
+            var t = Convert.ToInt32(comando.ExecuteScalar());
+            databaseIntermediary.Close();
+
+            if (t != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
     }
+
+
+
 }
