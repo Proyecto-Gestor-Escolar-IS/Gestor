@@ -84,6 +84,25 @@
     <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.Designer.cs">
       <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.designer.cs">
+      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Herencia de Variables.cs" />
+    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.designer.cs">
+      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
+      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="FormRegistro_Notas_Alumno.cs">
@@ -316,14 +335,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro y Vista de Notas\Cuadro de Notas.resx">
-      <DependentUpon>Cuadro de Notas.cs</DependentUpon>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmCuadro de Notas.resx">
+      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\Registro_Datos_Notas.resx">
-      <DependentUpon>Registro_Datos_Notas.cs</DependentUpon>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.resx">
+      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\Seleccion de Curso.resx">
-      <DependentUpon>Seleccion de Curso.cs</DependentUpon>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
+      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
