@@ -8,11 +8,15 @@ using System.Windows.Forms;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using System.Drawing;
+using System.IO;
 
 namespace SistemaGestorEscolar
 {
     class databaseConnection
     {
+        clsUtilidades utilidades = new clsUtilidades();
+
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         SqlConnection databaseIntermediary = new SqlConnection("Data Source=HECTOREOC\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
@@ -360,6 +364,7 @@ namespace SistemaGestorEscolar
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@fechaFacturacion", fechaFacturacion);
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(Properties.Resources.imgComprobantePendiente));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -383,7 +388,56 @@ namespace SistemaGestorEscolar
             }
         }
 
-        public void llenarDataGridPagos(DataGridView dgv, string idEstudiante)
+        public Image obtenerImagen(string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                comando = new SqlCommand(instruccion, databaseIntermediary);
+                adaptador = new SqlDataAdapter(comando);
+                DataSet ds = new DataSet();
+                adaptador.Fill(ds);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    MemoryStream memoryStream = new MemoryStream((byte[])ds.Tables[0].Rows[0]["comprobantePago"]);
+                    databaseIntermediary.Close();
+                    return new Bitmap(memoryStream);
+                }
+                databaseIntermediary.Close();
+                return null;
+            }
+            catch
+            {
+                databaseIntermediary.Close();
+                return null;
+            }
+        }
+
+        /*
+         con = new SqlConnection("Data Source=MCNDESKTOP03;Initial Catalog=pulkit;User ID=sa;Password=wintellect@123");
+
+            con.Open();
+
+            cmd = new SqlCommand("select picname from pic where id=2", con);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+            da.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+
+            {
+
+                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["picname"]);
+
+                pictureBox1.Image = new Bitmap(ms);
+
+            }
+         */
+
+        /*public void llenarDataGridPagos(DataGridView dgv, string idEstudiante)
         {
             SqlCommand cmd = new SqlCommand("Select id_Mensualidad as 'ID', fechaFacturacion as 'FECHA DE FACTURACION', fechaPago as 'FECHA DE PAGO', deudaPendiente as 'DEUDA', saldoDisponible as 'SALDO', descuentoMensualidad as 'DESCUENTO' from detalleMensualidades WHERE id_Estudiante = '" + idEstudiante + "'", databaseIntermediary);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
