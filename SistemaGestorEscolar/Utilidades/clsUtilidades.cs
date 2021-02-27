@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
 
 namespace SistemaGestorEscolar
 {
-    class clsUtilidades
+    internal class clsUtilidades
     {
-
         //Se le envia una cadena a desencriptar [ENVIAR STRING]
         public string EncriptarTexto(string textoEncriptar)
         {
@@ -74,14 +72,11 @@ namespace SistemaGestorEscolar
             {
                 return false;
             }
-
-
         }
 
         //FUNCION QUE SE LE ENVIA UN STRING Y DETERMINA SI ES NUMERO
         public bool isNumeric(string texto)
         {
-
             if (Regex.IsMatch(texto, @"^\d+$"))
             {
                 return true;
@@ -92,20 +87,21 @@ namespace SistemaGestorEscolar
             }
         }
 
-        public bool enviarCorreo(string mensaje, string asunto, string destinatario, string ruta)
+        public bool enviarCorreo(string mensaje, string asunto, string destinatario, string ruta, string correo, string contra)
         {
             System.Net.Mail.MailMessage _Message = new System.Net.Mail.MailMessage();
             System.Net.Mail.SmtpClient _SMTP = new System.Net.Mail.SmtpClient();
 
             _SMTP.UseDefaultCredentials = false;
-            _SMTP.Credentials = new System.Net.NetworkCredential("sigua.netco@gmail.com", "Siguanet2020");
+            _SMTP.Credentials = new System.Net.NetworkCredential(correo, contra);
+            //_SMTP.Credentials = new System.Net.NetworkCredential("sigua.netco@gmail.com", "Siguanet2020");
             _SMTP.Host = "smtp.gmail.com";
             _SMTP.Port = 587;
             _SMTP.EnableSsl = true;
 
-            // 
+            //
             _Message.To.Add(destinatario.ToString());
-            _Message.From = new System.Net.Mail.MailAddress("sigua.netco@gmail.com", "Santa Maria de Nazareth No Reply", System.Text.Encoding.UTF8);
+            _Message.From = new System.Net.Mail.MailAddress(correo, "Santa Maria de Nazareth Admin No Reply", System.Text.Encoding.UTF8);
             _Message.Subject = asunto.ToString();
             _Message.SubjectEncoding = System.Text.Encoding.UTF8;
             _Message.Body = mensaje;
@@ -118,13 +114,38 @@ namespace SistemaGestorEscolar
                 _SMTP.Send(_Message);
                 return true;
             }
-            catch (System.Net.Mail.SmtpException ex)
+            catch
             {
-                MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK);
                 return false;
             }
         }
 
+        public byte[] imagenAByte(Image img)
+        {
+            using (MemoryStream mStream = new MemoryStream())
+            {
+                img.Save(mStream, img.RawFormat);
+                return mStream.ToArray();
+            }
+        }
 
+        /*public Image ByteAImagen(byte[] byteArrayIn)
+        {
+            using (MemoryStream mStream = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(mStream);
+            }
+        }*/
+
+        public void limpiarTextBox(Control cont)
+        {
+            foreach (Control control in cont.Controls)
+            {
+                if (control is TextBox)
+                    control.Text = string.Empty;
+                if (control is MaskedTextBox)
+                    control.Text = string.Empty;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SistemaGestorEscolar.Login;
+using SistemaGestorEscolar.Modulo_de_Pagos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace SistemaGestorEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IfrmLogin());
+            Application.Run(new InterfazGraficaPrincipal());
         }
     }
 }

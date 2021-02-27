@@ -4,27 +4,28 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaGestorEscolar
 {
-    public partial class IMassageBoxInformacion : Form
+    public partial class IMessageBoxWarning : Form
     {
-        public IMassageBoxInformacion()
+        public IMessageBoxWarning()
         {
             InitializeComponent();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void IMessageBoxWarning_Load(object sender, EventArgs e)
         {
-            this.Close();
+            SystemSounds.Exclamation.Play();
         }
     }
 }

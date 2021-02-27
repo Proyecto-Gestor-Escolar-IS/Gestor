@@ -36,13 +36,13 @@
             this.btnMenuAtras = new System.Windows.Forms.Button();
             this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvTiposCargos = new System.Windows.Forms.DataGridView();
+            this.btnMedico = new System.Windows.Forms.Button();
+            this.btnSuperUsuario = new System.Windows.Forms.Button();
             this.btnDocenteSolo = new System.Windows.Forms.Button();
             this.btnDocenteMasAdmin = new System.Windows.Forms.Button();
+            this.dgvTiposCargos = new System.Windows.Forms.DataGridView();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnSuperUsuario = new System.Windows.Forms.Button();
-            this.btnMedico = new System.Windows.Forms.Button();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -156,17 +156,33 @@
             this.panel1.Size = new System.Drawing.Size(1635, 1035);
             this.panel1.TabIndex = 17;
             // 
-            // dgvTiposCargos
+            // btnMedico
             // 
-            this.dgvTiposCargos.AllowUserToAddRows = false;
-            this.dgvTiposCargos.AllowUserToDeleteRows = false;
-            this.dgvTiposCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTiposCargos.Location = new System.Drawing.Point(6, 885);
-            this.dgvTiposCargos.Name = "dgvTiposCargos";
-            this.dgvTiposCargos.ReadOnly = true;
-            this.dgvTiposCargos.Size = new System.Drawing.Size(240, 150);
-            this.dgvTiposCargos.TabIndex = 18;
-            this.dgvTiposCargos.Visible = false;
+            this.btnMedico.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedico.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedico.Location = new System.Drawing.Point(696, 543);
+            this.btnMedico.Name = "btnMedico";
+            this.btnMedico.Size = new System.Drawing.Size(402, 130);
+            this.btnMedico.TabIndex = 21;
+            this.btnMedico.Text = "MEDICO";
+            this.btnMedico.UseVisualStyleBackColor = false;
+            this.btnMedico.Visible = false;
+            this.btnMedico.Click += new System.EventHandler(this.btnMedico_Click);
+            // 
+            // btnSuperUsuario
+            // 
+            this.btnSuperUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuperUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuperUsuario.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuperUsuario.Location = new System.Drawing.Point(696, 543);
+            this.btnSuperUsuario.Name = "btnSuperUsuario";
+            this.btnSuperUsuario.Size = new System.Drawing.Size(402, 130);
+            this.btnSuperUsuario.TabIndex = 19;
+            this.btnSuperUsuario.Text = "SUPER USUARIO";
+            this.btnSuperUsuario.UseVisualStyleBackColor = false;
+            this.btnSuperUsuario.Visible = false;
+            this.btnSuperUsuario.Click += new System.EventHandler(this.btnSuperUsuario_Click);
             // 
             // btnDocenteSolo
             // 
@@ -193,6 +209,19 @@
             this.btnDocenteMasAdmin.Text = "DOCENTE";
             this.btnDocenteMasAdmin.UseVisualStyleBackColor = false;
             this.btnDocenteMasAdmin.Visible = false;
+            this.btnDocenteMasAdmin.Click += new System.EventHandler(this.btnDocenteMasAdmin_Click);
+            // 
+            // dgvTiposCargos
+            // 
+            this.dgvTiposCargos.AllowUserToAddRows = false;
+            this.dgvTiposCargos.AllowUserToDeleteRows = false;
+            this.dgvTiposCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTiposCargos.Location = new System.Drawing.Point(6, 885);
+            this.dgvTiposCargos.Name = "dgvTiposCargos";
+            this.dgvTiposCargos.ReadOnly = true;
+            this.dgvTiposCargos.Size = new System.Drawing.Size(240, 150);
+            this.dgvTiposCargos.TabIndex = 18;
+            this.dgvTiposCargos.Visible = false;
             // 
             // btnAdmin
             // 
@@ -206,6 +235,7 @@
             this.btnAdmin.Text = "ADMINISTRADOR";
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Visible = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // label4
             // 
@@ -218,32 +248,6 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "SELECCIONE CÓMO QUIERE INGRESAR\r\n A LA PLATAFORMA DE ADMINISTRACIÓN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSuperUsuario
-            // 
-            this.btnSuperUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuperUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuperUsuario.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuperUsuario.Location = new System.Drawing.Point(696, 543);
-            this.btnSuperUsuario.Name = "btnSuperUsuario";
-            this.btnSuperUsuario.Size = new System.Drawing.Size(402, 130);
-            this.btnSuperUsuario.TabIndex = 19;
-            this.btnSuperUsuario.Text = "SUPER USUARIO";
-            this.btnSuperUsuario.UseVisualStyleBackColor = false;
-            this.btnSuperUsuario.Visible = false;
-            // 
-            // btnMedico
-            // 
-            this.btnMedico.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedico.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedico.Location = new System.Drawing.Point(696, 543);
-            this.btnMedico.Name = "btnMedico";
-            this.btnMedico.Size = new System.Drawing.Size(402, 130);
-            this.btnMedico.TabIndex = 21;
-            this.btnMedico.Text = "MEDICO";
-            this.btnMedico.UseVisualStyleBackColor = false;
-            this.btnMedico.Visible = false;
             // 
             // IfrmSeleccionarTipoInicio
             // 

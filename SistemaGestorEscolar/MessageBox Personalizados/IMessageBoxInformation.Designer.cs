@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaGestorEscolar
 {
-    partial class IMessageBoxError
+    partial class IMessageBoxInformation
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,33 @@ namespace SistemaGestorEscolar
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IMessageBoxError));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IMessageBoxInformation));
             this.panEncabezado = new System.Windows.Forms.Panel();
-            this.btnOK = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
-            this.pctError = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pctError)).BeginInit();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.pctWarning = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctWarning)).BeginInit();
             this.SuspendLayout();
             // 
             // panEncabezado
             // 
-            this.panEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(170)))));
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
             this.panEncabezado.Size = new System.Drawing.Size(432, 30);
             this.panEncabezado.TabIndex = 1;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Black;
+            this.lblError.Location = new System.Drawing.Point(104, 67);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(287, 44);
+            this.lblError.TabIndex = 11;
+            this.lblError.Text = "El número de identidad ingresado\r\nno existe como usuario registrado";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOK
             // 
@@ -51,50 +63,40 @@ namespace SistemaGestorEscolar
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(181, 131);
+            this.btnOK.Location = new System.Drawing.Point(179, 133);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(78, 41);
-            this.btnOK.TabIndex = 3;
+            this.btnOK.TabIndex = 13;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // lblError
+            // pctWarning
             // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(45)))), ((int)(((byte)(44)))));
-            this.lblError.Location = new System.Drawing.Point(103, 82);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(294, 22);
-            this.lblError.TabIndex = 4;
-            this.lblError.Text = "ERROR AL INGRESAR LOS DATOS";
+            this.pctWarning.Image = ((System.Drawing.Image)(resources.GetObject("pctWarning.Image")));
+            this.pctWarning.Location = new System.Drawing.Point(25, 61);
+            this.pctWarning.Name = "pctWarning";
+            this.pctWarning.Size = new System.Drawing.Size(65, 59);
+            this.pctWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctWarning.TabIndex = 9;
+            this.pctWarning.TabStop = false;
             // 
-            // pctError
-            // 
-            this.pctError.Image = ((System.Drawing.Image)(resources.GetObject("pctError.Image")));
-            this.pctError.Location = new System.Drawing.Point(24, 65);
-            this.pctError.Name = "pctError";
-            this.pctError.Size = new System.Drawing.Size(65, 59);
-            this.pctError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctError.TabIndex = 2;
-            this.pctError.TabStop = false;
-            // 
-            // IMessageBoxError
+            // IMessageBoxInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(432, 193);
-            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.pctError);
+            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.pctWarning);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "IMessageBoxError";
+            this.Name = "IMessageBoxInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "s";
-            ((System.ComponentModel.ISupportInitialize)(this.pctError)).EndInit();
+            this.Text = "IMessageBoxInformation";
+            this.Load += new System.EventHandler(this.IMessageBoxInformation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pctWarning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,8 +105,8 @@ namespace SistemaGestorEscolar
         #endregion
 
         private System.Windows.Forms.Panel panEncabezado;
-        private System.Windows.Forms.PictureBox pctError;
+        private System.Windows.Forms.PictureBox pctWarning;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Label lblError;
+        public System.Windows.Forms.Label lblError;
     }
 }

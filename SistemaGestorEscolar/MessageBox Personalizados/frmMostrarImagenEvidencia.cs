@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
+namespace SistemaGestorEscolar.MessageBox_Personalizados
 {
-    public partial class Seleccion_de_Curso : Form
+    public partial class frmMostrarImagenEvidencia : Form
     {
-        public Seleccion_de_Curso()
+        public frmMostrarImagenEvidencia()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void frmMostrarImagenEvidencia_Load(object sender, EventArgs e)
         {
 
         }

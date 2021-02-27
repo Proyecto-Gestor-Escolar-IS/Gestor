@@ -93,6 +93,7 @@ namespace SistemaGestorEscolar
             this.Name = "IMessageBoxCheck";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxCheck";
+            this.Load += new System.EventHandler(this.IMessageBoxCheck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,8 +103,8 @@ namespace SistemaGestorEscolar
         #endregion
 
         private System.Windows.Forms.Panel panEncabezado;
-        private System.Windows.Forms.Label lblCheck;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.PictureBox pctError;
+        public System.Windows.Forms.Label lblCheck;
     }
 }

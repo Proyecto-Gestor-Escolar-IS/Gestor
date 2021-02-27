@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SistemaGestorEscolar.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.8.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
@@ -62,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.Designer.cs">
+      <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulo Historial Medico\Historial medico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +122,38 @@
     <Compile Include="Modulos Estudiante\ICrudEstudiante.Designer.cs">
       <DependentUpon>ICrudEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\IMessaggeBoxLoginIncorrecto.cs" />
+    <Compile Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.Designer.cs">
+      <DependentUpon>IMessageBoxLoginIncorrecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.Designer.cs">
+      <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.designer.cs">
+      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Herencia de Variables.cs" />
+    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.designer.cs">
+      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
+      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="FormRegistro_Notas_Alumno.cs">
@@ -112,34 +168,28 @@
     <Compile Include="IAperturaExpedienteMedico.Designer.cs">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMassageBoxInformacion.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxCheck.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMassageBoxInformacion.Designer.cs">
-      <DependentUpon>IMassageBoxInformacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IMessageBoxCheck.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IMessageBoxCheck.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxCheck.Designer.cs">
       <DependentUpon>IMessageBoxCheck.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMessageBoxError.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxError.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMessageBoxError.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxError.Designer.cs">
       <DependentUpon>IMessageBoxError.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMessageBoxInformation.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMessageBoxInformation.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxInformation.Designer.cs">
       <DependentUpon>IMessageBoxInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMessageBoxWarning.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxWarning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IMessageBoxWarning.Designer.cs">
+    <Compile Include="MessageBox Personalizados\IMessageBoxWarning.Designer.cs">
       <DependentUpon>IMessageBoxWarning.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfazGraficaPrincipal.cs">
@@ -214,6 +264,7 @@
     <Compile Include="Modulo de Pagos\IHistorialPagos.Designer.cs">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos de Arranque\verficacionArranque.cs" />
     <Compile Include="Modulos Encargado\IAñadirEncargado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,19 +304,22 @@
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMassageBoxInformacion.resx">
-      <DependentUpon>IMassageBoxInformacion.cs</DependentUpon>
+    <EmbeddedResource Include="MessageBox Personalizados\frmMostrarImagenEvidencia.resx">
+      <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxCheck.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxCheck.resx">
       <DependentUpon>IMessageBoxCheck.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxError.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxError.resx">
       <DependentUpon>IMessageBoxError.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxInformation.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxInformation.resx">
       <DependentUpon>IMessageBoxInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IMessageBoxWarning.resx">
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.resx">
+      <DependentUpon>IMessageBoxLoginIncorrecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxWarning.resx">
       <DependentUpon>IMessageBoxWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfazGraficaPrincipal.resx">
@@ -297,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\IfrmSeleccionarTipoInicio.resx">
       <DependentUpon>IfrmSeleccionarTipoInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxYesCancel.resx">
+      <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo Añadir Personal\IAñadirPersonal.resx">
       <DependentUpon>IAñadirPersonal.cs</DependentUpon>
@@ -338,7 +395,7 @@
       <DependentUpon>IListadoPesonalAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -347,14 +404,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro y Vista de Notas\Cuadro de Notas.resx">
-      <DependentUpon>Cuadro de Notas.cs</DependentUpon>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmCuadro de Notas.resx">
+      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\Registro_Datos_Notas.resx">
-      <DependentUpon>Registro_Datos_Notas.cs</DependentUpon>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.resx">
+      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\Seleccion de Curso.resx">
-      <DependentUpon>Seleccion de Curso.cs</DependentUpon>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
+      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -399,8 +456,21 @@
     <None Include="Resources\Contra.png" />
     <None Include="Resources\contra 2.png" />
     <Content Include="Login\MensajeRecuperacionContra.html" />
+    <None Include="Resources\gui_order_pending_icon_158418.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

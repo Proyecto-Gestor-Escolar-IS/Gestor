@@ -29,11 +29,12 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanregistroEncargado = new System.Windows.Forms.Panel();
+            this.txtfechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.txtprimerTelefono = new System.Windows.Forms.TextBox();
             this.txtsegundoTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtfechaNacimiento = new System.Windows.Forms.TextBox();
             this.txtcorreoElectronico = new System.Windows.Forms.TextBox();
             this.txtprimerApellido = new System.Windows.Forms.TextBox();
             this.txtsegundoApellido = new System.Windows.Forms.TextBox();
@@ -49,24 +50,26 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblnumeroIdentidad = new System.Windows.Forms.Label();
             this.btnrealizarOperacion = new System.Windows.Forms.Button();
             this.gbOperaciones = new System.Windows.Forms.GroupBox();
+            this.chkeliminarEncargado = new System.Windows.Forms.CheckBox();
             this.chkbuscarEncargado = new System.Windows.Forms.CheckBox();
             this.chkactualizarEncargado = new System.Windows.Forms.CheckBox();
             this.chkregistrarEncargado = new System.Windows.Forms.CheckBox();
             this.lblSeleccionarOperacion = new System.Windows.Forms.Label();
             this.lblregistroEncargado = new System.Windows.Forms.Label();
-            this.chkeliminarEncargado = new System.Windows.Forms.CheckBox();
+            this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.PanregistroEncargado.SuspendLayout();
             this.gbOperaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
             // 
             // PanregistroEncargado
             // 
             this.PanregistroEncargado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.PanregistroEncargado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanregistroEncargado.Controls.Add(this.txtfechaNacimiento);
             this.PanregistroEncargado.Controls.Add(this.txtprimerTelefono);
             this.PanregistroEncargado.Controls.Add(this.txtsegundoTelefono);
             this.PanregistroEncargado.Controls.Add(this.txtDireccion);
-            this.PanregistroEncargado.Controls.Add(this.txtfechaNacimiento);
             this.PanregistroEncargado.Controls.Add(this.txtcorreoElectronico);
             this.PanregistroEncargado.Controls.Add(this.txtprimerApellido);
             this.PanregistroEncargado.Controls.Add(this.txtsegundoApellido);
@@ -89,6 +92,16 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.PanregistroEncargado.Size = new System.Drawing.Size(1615, 919);
             this.PanregistroEncargado.TabIndex = 0;
             // 
+            // txtfechaNacimiento
+            // 
+            this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfechaNacimiento.Location = new System.Drawing.Point(1256, 312);
+            this.txtfechaNacimiento.Mask = "00/00/0000";
+            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
+            this.txtfechaNacimiento.Size = new System.Drawing.Size(163, 41);
+            this.txtfechaNacimiento.TabIndex = 22;
+            this.txtfechaNacimiento.ValidatingType = typeof(System.DateTime);
+            // 
             // txtprimerTelefono
             // 
             this.txtprimerTelefono.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,6 +112,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.txtprimerTelefono.Size = new System.Drawing.Size(140, 32);
             this.txtprimerTelefono.TabIndex = 21;
             this.txtprimerTelefono.TextChanged += new System.EventHandler(this.txtprimerTelefono_TextChanged);
+            this.txtprimerTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerTelefono_KeyPress);
             // 
             // txtsegundoTelefono
             // 
@@ -110,6 +124,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.txtsegundoTelefono.Size = new System.Drawing.Size(140, 32);
             this.txtsegundoTelefono.TabIndex = 20;
             this.txtsegundoTelefono.TextChanged += new System.EventHandler(this.txtsegundoTelefono_TextChanged);
+            this.txtsegundoTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoTelefono_KeyPress);
             // 
             // txtDireccion
             // 
@@ -121,17 +136,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.txtDireccion.Size = new System.Drawing.Size(302, 153);
             this.txtDireccion.TabIndex = 19;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
-            // 
-            // txtfechaNacimiento
-            // 
-            this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfechaNacimiento.Location = new System.Drawing.Point(1245, 312);
-            this.txtfechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
-            this.txtfechaNacimiento.Multiline = true;
-            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
-            this.txtfechaNacimiento.Size = new System.Drawing.Size(283, 32);
-            this.txtfechaNacimiento.TabIndex = 18;
-            this.txtfechaNacimiento.TextChanged += new System.EventHandler(this.txtfechaNacimiento_TextChanged);
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtcorreoElectronico
             // 
@@ -153,6 +158,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.txtprimerApellido.Name = "txtprimerApellido";
             this.txtprimerApellido.Size = new System.Drawing.Size(140, 32);
             this.txtprimerApellido.TabIndex = 15;
+            this.txtprimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerApellido_KeyPress);
             // 
             // txtsegundoApellido
             // 
@@ -163,6 +169,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.txtsegundoApellido.Name = "txtsegundoApellido";
             this.txtsegundoApellido.Size = new System.Drawing.Size(140, 32);
             this.txtsegundoApellido.TabIndex = 14;
+            this.txtsegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoApellido_KeyPress);
             // 
             // txtprimerNombre
             // 
@@ -173,6 +180,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.txtprimerNombre.Name = "txtprimerNombre";
             this.txtprimerNombre.Size = new System.Drawing.Size(140, 32);
             this.txtprimerNombre.TabIndex = 13;
+            this.txtprimerNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerNombre_KeyPress);
             // 
             // txtsegundoNombre
             // 
@@ -183,16 +191,20 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.txtsegundoNombre.Name = "txtsegundoNombre";
             this.txtsegundoNombre.Size = new System.Drawing.Size(140, 32);
             this.txtsegundoNombre.TabIndex = 12;
+            this.txtsegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombre_KeyPress);
             // 
             // txtIdentidad
             // 
             this.txtIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentidad.Location = new System.Drawing.Point(353, 321);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdentidad.MaxLength = 13;
             this.txtIdentidad.Multiline = true;
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(283, 32);
             this.txtIdentidad.TabIndex = 10;
+            this.txtIdentidad.TextChanged += new System.EventHandler(this.txtIdentidad_TextChanged);
+            this.txtIdentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentidad_KeyPress);
             // 
             // lbldireccion
             // 
@@ -287,6 +299,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnrealizarOperacion.TabIndex = 1;
             this.btnrealizarOperacion.Text = "Realizar Operación";
             this.btnrealizarOperacion.UseVisualStyleBackColor = false;
+            this.btnrealizarOperacion.Click += new System.EventHandler(this.btnrealizarOperacion_Click);
             // 
             // gbOperaciones
             // 
@@ -305,6 +318,19 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbOperaciones.TabIndex = 0;
             this.gbOperaciones.TabStop = false;
             // 
+            // chkeliminarEncargado
+            // 
+            this.chkeliminarEncargado.AutoSize = true;
+            this.chkeliminarEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkeliminarEncargado.Location = new System.Drawing.Point(354, 136);
+            this.chkeliminarEncargado.Margin = new System.Windows.Forms.Padding(2);
+            this.chkeliminarEncargado.Name = "chkeliminarEncargado";
+            this.chkeliminarEncargado.Size = new System.Drawing.Size(251, 35);
+            this.chkeliminarEncargado.TabIndex = 6;
+            this.chkeliminarEncargado.Text = "Eliminar Encargado";
+            this.chkeliminarEncargado.UseVisualStyleBackColor = true;
+            this.chkeliminarEncargado.CheckedChanged += new System.EventHandler(this.chkeliminarEncargado_CheckedChanged);
+            // 
             // chkbuscarEncargado
             // 
             this.chkbuscarEncargado.AutoSize = true;
@@ -316,6 +342,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkbuscarEncargado.TabIndex = 5;
             this.chkbuscarEncargado.Text = "Buscar Encargado";
             this.chkbuscarEncargado.UseVisualStyleBackColor = true;
+            this.chkbuscarEncargado.CheckedChanged += new System.EventHandler(this.chkbuscarEncargado_CheckedChanged);
             // 
             // chkactualizarEncargado
             // 
@@ -328,6 +355,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkactualizarEncargado.TabIndex = 4;
             this.chkactualizarEncargado.Text = "Actualizar Encargado";
             this.chkactualizarEncargado.UseVisualStyleBackColor = true;
+            this.chkactualizarEncargado.CheckedChanged += new System.EventHandler(this.chkactualizarEncargado_CheckedChanged);
             // 
             // chkregistrarEncargado
             // 
@@ -340,6 +368,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkregistrarEncargado.TabIndex = 3;
             this.chkregistrarEncargado.Text = "Registrar Encargado";
             this.chkregistrarEncargado.UseVisualStyleBackColor = true;
+            this.chkregistrarEncargado.Click += new System.EventHandler(this.chkregistrarEncargado_Click);
             // 
             // lblSeleccionarOperacion
             // 
@@ -363,17 +392,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblregistroEncargado.TabIndex = 1;
             this.lblregistroEncargado.Text = "Registro Encargado";
             // 
-            // chkeliminarEncargado
+            // errorIdentidad
             // 
-            this.chkeliminarEncargado.AutoSize = true;
-            this.chkeliminarEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkeliminarEncargado.Location = new System.Drawing.Point(354, 136);
-            this.chkeliminarEncargado.Margin = new System.Windows.Forms.Padding(2);
-            this.chkeliminarEncargado.Name = "chkeliminarEncargado";
-            this.chkeliminarEncargado.Size = new System.Drawing.Size(251, 35);
-            this.chkeliminarEncargado.TabIndex = 6;
-            this.chkeliminarEncargado.Text = "Eliminar Encargado";
-            this.chkeliminarEncargado.UseVisualStyleBackColor = true;
+            this.errorIdentidad.ContainerControl = this;
             // 
             // IAñadirEncargado
             // 
@@ -391,6 +412,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.PanregistroEncargado.PerformLayout();
             this.gbOperaciones.ResumeLayout(false);
             this.gbOperaciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,7 +436,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private System.Windows.Forms.TextBox txtsegundoNombre;
         private System.Windows.Forms.TextBox txtIdentidad;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtfechaNacimiento;
         private System.Windows.Forms.TextBox txtcorreoElectronico;
         private System.Windows.Forms.TextBox txtprimerApellido;
         private System.Windows.Forms.TextBox txtsegundoApellido;
@@ -424,5 +445,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private System.Windows.Forms.TextBox txtprimerTelefono;
         private System.Windows.Forms.TextBox txtsegundoTelefono;
         private System.Windows.Forms.CheckBox chkeliminarEncargado;
+        private System.Windows.Forms.ErrorProvider errorIdentidad;
+        private System.Windows.Forms.MaskedTextBox txtfechaNacimiento;
     }
 }

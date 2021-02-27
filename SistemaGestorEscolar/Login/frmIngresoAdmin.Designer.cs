@@ -339,6 +339,7 @@
             this.txtContra.PasswordChar = '●';
             this.txtContra.Size = new System.Drawing.Size(182, 24);
             this.txtContra.TabIndex = 7;
+            this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             // 
             // lblContra
             // 
