@@ -29,8 +29,14 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSuperior = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnCerrarPrograma = new System.Windows.Forms.Button();
             this.panLateral = new System.Windows.Forms.Panel();
             this.btnMenuPersonal = new System.Windows.Forms.Button();
             this.btnMenuRegistroPago = new System.Windows.Forms.Button();
@@ -39,15 +45,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnMenuVistaMatricula = new System.Windows.Forms.Button();
             this.btnMenuMatriculaEstudiante = new System.Windows.Forms.Button();
             this.btnMenuAtras = new System.Windows.Forms.Button();
+            this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnmatricular = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clases = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.primer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.segundo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,17 +55,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cuarto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.final = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picImagotipo = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrarPrograma = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnmatricular = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panSuperior
@@ -81,8 +81,86 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panSuperior.Location = new System.Drawing.Point(0, 0);
             this.panSuperior.Name = "panSuperior";
-            this.panSuperior.Size = new System.Drawing.Size(1635, 45);
+            this.panSuperior.Size = new System.Drawing.Size(1556, 45);
             this.panSuperior.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(1501, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 35);
+            this.button1.TabIndex = 8;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(1545, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 34);
+            this.button3.TabIndex = 7;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(1587, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(36, 36);
+            this.button4.TabIndex = 6;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(1786, 12);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
+            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Location = new System.Drawing.Point(1830, 4);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(34, 34);
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrarPrograma
+            // 
+            this.btnCerrarPrograma.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
+            this.btnCerrarPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrarPrograma.FlatAppearance.BorderSize = 0;
+            this.btnCerrarPrograma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCerrarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarPrograma.Location = new System.Drawing.Point(1872, 3);
+            this.btnCerrarPrograma.Name = "btnCerrarPrograma";
+            this.btnCerrarPrograma.Size = new System.Drawing.Size(36, 36);
+            this.btnCerrarPrograma.TabIndex = 0;
+            this.btnCerrarPrograma.UseVisualStyleBackColor = true;
             // 
             // panLateral
             // 
@@ -98,7 +176,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panLateral.Location = new System.Drawing.Point(0, 45);
             this.panLateral.Name = "panLateral";
-            this.panLateral.Size = new System.Drawing.Size(285, 990);
+            this.panLateral.Size = new System.Drawing.Size(285, 839);
             this.panLateral.TabIndex = 2;
             // 
             // btnMenuPersonal
@@ -200,6 +278,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnMenuAtras.Text = "ATRAS";
             this.btnMenuAtras.UseVisualStyleBackColor = false;
             // 
+            // picImagotipo
+            // 
+            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.Logo_Nazaret;
+            this.picImagotipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picImagotipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picImagotipo.Location = new System.Drawing.Point(0, 0);
+            this.picImagotipo.Name = "picImagotipo";
+            this.picImagotipo.Size = new System.Drawing.Size(285, 182);
+            this.picImagotipo.TabIndex = 0;
+            this.picImagotipo.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -226,6 +315,50 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1194, 636);
             this.dataGridView1.TabIndex = 26;
+            // 
+            // clases
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.clases.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clases.HeaderText = "Clases";
+            this.clases.Name = "clases";
+            this.clases.Width = 200;
+            // 
+            // primer
+            // 
+            this.primer.HeaderText = "Primer Parcial";
+            this.primer.Name = "primer";
+            this.primer.Width = 130;
+            // 
+            // segundo
+            // 
+            this.segundo.HeaderText = "Segundo Parcial";
+            this.segundo.Name = "segundo";
+            this.segundo.Width = 130;
+            // 
+            // tercer
+            // 
+            this.tercer.HeaderText = "Tercer Parcial";
+            this.tercer.Name = "tercer";
+            this.tercer.Width = 130;
+            // 
+            // cuarto
+            // 
+            this.cuarto.HeaderText = "Cuarto Parcial";
+            this.cuarto.Name = "cuarto";
+            this.cuarto.Width = 130;
+            // 
+            // final
+            // 
+            this.final.HeaderText = "Nota Final";
+            this.final.Name = "final";
+            this.final.Width = 130;
+            // 
+            // observacion
+            // 
+            this.observacion.HeaderText = "Observaciones";
+            this.observacion.Name = "observacion";
+            this.observacion.Width = 300;
             // 
             // label4
             // 
@@ -307,145 +440,12 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.comboBox1.Size = new System.Drawing.Size(173, 32);
             this.comboBox1.TabIndex = 31;
             // 
-            // clases
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.clases.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clases.HeaderText = "Clases";
-            this.clases.Name = "clases";
-            this.clases.Width = 200;
-            // 
-            // primer
-            // 
-            this.primer.HeaderText = "Primer Parcial";
-            this.primer.Name = "primer";
-            this.primer.Width = 130;
-            // 
-            // segundo
-            // 
-            this.segundo.HeaderText = "Segundo Parcial";
-            this.segundo.Name = "segundo";
-            this.segundo.Width = 130;
-            // 
-            // tercer
-            // 
-            this.tercer.HeaderText = "Tercer Parcial";
-            this.tercer.Name = "tercer";
-            this.tercer.Width = 130;
-            // 
-            // cuarto
-            // 
-            this.cuarto.HeaderText = "Cuarto Parcial";
-            this.cuarto.Name = "cuarto";
-            this.cuarto.Width = 130;
-            // 
-            // final
-            // 
-            this.final.HeaderText = "Nota Final";
-            this.final.Name = "final";
-            this.final.Width = 130;
-            // 
-            // observacion
-            // 
-            this.observacion.HeaderText = "Observaciones";
-            this.observacion.Name = "observacion";
-            this.observacion.Width = 300;
-            // 
-            // picImagotipo
-            // 
-            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.Logo_Nazaret;
-            this.picImagotipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picImagotipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picImagotipo.Location = new System.Drawing.Point(0, 0);
-            this.picImagotipo.Name = "picImagotipo";
-            this.picImagotipo.Size = new System.Drawing.Size(285, 182);
-            this.picImagotipo.TabIndex = 0;
-            this.picImagotipo.TabStop = false;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
-            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(1786, 12);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
-            this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
-            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(1830, 4);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(34, 34);
-            this.btnMaximizar.TabIndex = 1;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            // 
-            // btnCerrarPrograma
-            // 
-            this.btnCerrarPrograma.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
-            this.btnCerrarPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrarPrograma.FlatAppearance.BorderSize = 0;
-            this.btnCerrarPrograma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPrograma.Location = new System.Drawing.Point(1872, 3);
-            this.btnCerrarPrograma.Name = "btnCerrarPrograma";
-            this.btnCerrarPrograma.Size = new System.Drawing.Size(36, 36);
-            this.btnCerrarPrograma.TabIndex = 0;
-            this.btnCerrarPrograma.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1501, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 35);
-            this.button1.TabIndex = 8;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1545, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(34, 34);
-            this.button3.TabIndex = 7;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(1587, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(36, 36);
-            this.button4.TabIndex = 6;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // Ficha_notas_del_estudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnmatricular);
@@ -462,8 +462,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.Text = "Ficha_notas_del_estudiante";
             this.panSuperior.ResumeLayout(false);
             this.panLateral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

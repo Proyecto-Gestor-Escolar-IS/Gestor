@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar
+namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
 {
-    public partial class FormRegistro_Notas_Alumno : Form
+    public partial class FrmIngreso_Notas : Form
     {
-        public FormRegistro_Notas_Alumno()
+        public FrmIngreso_Notas()
         {
             InitializeComponent();
         }
