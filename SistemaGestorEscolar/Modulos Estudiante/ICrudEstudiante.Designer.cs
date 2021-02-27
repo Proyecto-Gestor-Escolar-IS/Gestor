@@ -29,8 +29,12 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblEstudiante = new System.Windows.Forms.Label();
             this.PanregistroEncargado = new System.Windows.Forms.Panel();
+            this.cmbgeneroEstudiante = new System.Windows.Forms.ComboBox();
+            this.lblgenero = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtprimerApellido = new System.Windows.Forms.TextBox();
             this.txtsegundoApellido = new System.Windows.Forms.TextBox();
             this.txtprimerNombre = new System.Windows.Forms.TextBox();
@@ -45,12 +49,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.chkeliminarEstudiante = new System.Windows.Forms.CheckBox();
             this.chkmodificarEstudiante = new System.Windows.Forms.CheckBox();
             this.lblSeleccionarOperacion = new System.Windows.Forms.Label();
-            this.cmbgeneroEstudiante = new System.Windows.Forms.ComboBox();
-            this.lblgenero = new System.Windows.Forms.Label();
-            this.txtfechaNacimientoEstudiante = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtfechaNacimiento = new System.Windows.Forms.TextBox();
             this.PanregistroEncargado.SuspendLayout();
             this.gbOperaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEstudiante
@@ -68,9 +71,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.PanregistroEncargado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.PanregistroEncargado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanregistroEncargado.Controls.Add(this.txtfechaNacimiento);
             this.PanregistroEncargado.Controls.Add(this.cmbgeneroEstudiante);
             this.PanregistroEncargado.Controls.Add(this.lblgenero);
-            this.PanregistroEncargado.Controls.Add(this.txtfechaNacimientoEstudiante);
             this.PanregistroEncargado.Controls.Add(this.label1);
             this.PanregistroEncargado.Controls.Add(this.txtprimerApellido);
             this.PanregistroEncargado.Controls.Add(this.txtsegundoApellido);
@@ -89,6 +92,41 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.PanregistroEncargado.Size = new System.Drawing.Size(1615, 919);
             this.PanregistroEncargado.TabIndex = 47;
             // 
+            // cmbgeneroEstudiante
+            // 
+            this.cmbgeneroEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbgeneroEstudiante.FormattingEnabled = true;
+            this.cmbgeneroEstudiante.Items.AddRange(new object[] {
+            "F",
+            "M"});
+            this.cmbgeneroEstudiante.Location = new System.Drawing.Point(1237, 386);
+            this.cmbgeneroEstudiante.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbgeneroEstudiante.Name = "cmbgeneroEstudiante";
+            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(283, 39);
+            this.cmbgeneroEstudiante.TabIndex = 31;
+            // 
+            // lblgenero
+            // 
+            this.lblgenero.AutoSize = true;
+            this.lblgenero.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgenero.Location = new System.Drawing.Point(892, 385);
+            this.lblgenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblgenero.Name = "lblgenero";
+            this.lblgenero.Size = new System.Drawing.Size(120, 37);
+            this.lblgenero.TabIndex = 30;
+            this.lblgenero.Text = "Género";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(892, 304);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(270, 37);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Fecha Nacimiento";
+            // 
             // txtprimerApellido
             // 
             this.txtprimerApellido.Font = new System.Drawing.Font("Balsamiq Sans", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,6 +136,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtprimerApellido.Name = "txtprimerApellido";
             this.txtprimerApellido.Size = new System.Drawing.Size(176, 32);
             this.txtprimerApellido.TabIndex = 15;
+            this.txtprimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerApellido_KeyPress);
             // 
             // txtsegundoApellido
             // 
@@ -108,6 +147,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtsegundoApellido.Name = "txtsegundoApellido";
             this.txtsegundoApellido.Size = new System.Drawing.Size(168, 32);
             this.txtsegundoApellido.TabIndex = 14;
+            this.txtsegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoApellido_KeyPress);
             // 
             // txtprimerNombre
             // 
@@ -118,6 +158,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtprimerNombre.Name = "txtprimerNombre";
             this.txtprimerNombre.Size = new System.Drawing.Size(176, 32);
             this.txtprimerNombre.TabIndex = 13;
+            this.txtprimerNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerNombre_KeyPress);
             // 
             // txtsegundoNombre
             // 
@@ -128,6 +169,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtsegundoNombre.Name = "txtsegundoNombre";
             this.txtsegundoNombre.Size = new System.Drawing.Size(168, 32);
             this.txtsegundoNombre.TabIndex = 12;
+            this.txtsegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoNombre_KeyPress);
             // 
             // txtIdentidad
             // 
@@ -138,6 +180,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(348, 32);
             this.txtIdentidad.TabIndex = 10;
+            this.txtIdentidad.TextChanged += new System.EventHandler(this.txtIdentidad_TextChanged);
+            this.txtIdentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentidad_KeyPress);
             // 
             // lblApellidos
             // 
@@ -184,6 +228,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnrealizarOperacion.TabIndex = 1;
             this.btnrealizarOperacion.Text = "Realizar Operación";
             this.btnrealizarOperacion.UseVisualStyleBackColor = false;
+            this.btnrealizarOperacion.Click += new System.EventHandler(this.btnrealizarOperacion_Click);
             // 
             // gbOperaciones
             // 
@@ -212,6 +257,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.chkbuscarEstudiante.TabIndex = 5;
             this.chkbuscarEstudiante.Text = "Buscar Estudiante";
             this.chkbuscarEstudiante.UseVisualStyleBackColor = true;
+            this.chkbuscarEstudiante.CheckedChanged += new System.EventHandler(this.chkbuscarEstudiante_CheckedChanged);
             // 
             // chkeliminarEstudiante
             // 
@@ -224,6 +270,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.chkeliminarEstudiante.TabIndex = 4;
             this.chkeliminarEstudiante.Text = "Eliminar Estudiante";
             this.chkeliminarEstudiante.UseVisualStyleBackColor = true;
+            this.chkeliminarEstudiante.CheckedChanged += new System.EventHandler(this.chkeliminarEstudiante_CheckedChanged);
             // 
             // chkmodificarEstudiante
             // 
@@ -236,6 +283,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.chkmodificarEstudiante.TabIndex = 3;
             this.chkmodificarEstudiante.Text = "Modificar Estudiante";
             this.chkmodificarEstudiante.UseVisualStyleBackColor = true;
+            this.chkmodificarEstudiante.CheckedChanged += new System.EventHandler(this.chkmodificarEstudiante_CheckedChanged);
             // 
             // lblSeleccionarOperacion
             // 
@@ -248,50 +296,18 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblSeleccionarOperacion.TabIndex = 2;
             this.lblSeleccionarOperacion.Text = "Seleccione una operación";
             // 
-            // cmbgeneroEstudiante
+            // errorIdentidad
             // 
-            this.cmbgeneroEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbgeneroEstudiante.FormattingEnabled = true;
-            this.cmbgeneroEstudiante.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
-            this.cmbgeneroEstudiante.Location = new System.Drawing.Point(1237, 386);
-            this.cmbgeneroEstudiante.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbgeneroEstudiante.Name = "cmbgeneroEstudiante";
-            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(283, 39);
-            this.cmbgeneroEstudiante.TabIndex = 31;
+            this.errorIdentidad.ContainerControl = this;
             // 
-            // lblgenero
+            // txtfechaNacimiento
             // 
-            this.lblgenero.AutoSize = true;
-            this.lblgenero.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgenero.Location = new System.Drawing.Point(892, 385);
-            this.lblgenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblgenero.Name = "lblgenero";
-            this.lblgenero.Size = new System.Drawing.Size(120, 37);
-            this.lblgenero.TabIndex = 30;
-            this.lblgenero.Text = "Género";
-            // 
-            // txtfechaNacimientoEstudiante
-            // 
-            this.txtfechaNacimientoEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfechaNacimientoEstudiante.Location = new System.Drawing.Point(1237, 311);
-            this.txtfechaNacimientoEstudiante.Margin = new System.Windows.Forms.Padding(2);
-            this.txtfechaNacimientoEstudiante.Multiline = true;
-            this.txtfechaNacimientoEstudiante.Name = "txtfechaNacimientoEstudiante";
-            this.txtfechaNacimientoEstudiante.Size = new System.Drawing.Size(283, 32);
-            this.txtfechaNacimientoEstudiante.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(892, 304);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 37);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Fecha Nacimiento";
+            this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfechaNacimiento.Location = new System.Drawing.Point(1235, 304);
+            this.txtfechaNacimiento.Multiline = true;
+            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
+            this.txtfechaNacimiento.Size = new System.Drawing.Size(285, 33);
+            this.txtfechaNacimiento.TabIndex = 32;
             // 
             // ICrudEstudiante
             // 
@@ -308,6 +324,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.PanregistroEncargado.PerformLayout();
             this.gbOperaciones.ResumeLayout(false);
             this.gbOperaciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +350,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private System.Windows.Forms.Label lblSeleccionarOperacion;
         private System.Windows.Forms.ComboBox cmbgeneroEstudiante;
         private System.Windows.Forms.Label lblgenero;
-        private System.Windows.Forms.TextBox txtfechaNacimientoEstudiante;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorIdentidad;
+        private System.Windows.Forms.TextBox txtfechaNacimiento;
     }
 }

@@ -87,9 +87,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void chkeliminarEncargado_CheckedChanged(object sender, EventArgs e)
         {
-            {
-                {
-                    if (chkeliminarEncargado.Checked == true)
+              
+                   if (chkeliminarEncargado.Checked == true)
                     {
                         chkregistrarEncargado.Checked = false;
                         chkactualizarEncargado.Checked = false;
@@ -122,9 +121,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                         txtfechaNacimiento.Enabled = true;
                         txtDireccion.Enabled = true;
                     }
-                }
-            }
+            
+            
         }
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -185,7 +185,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                     if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
                      txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "" && txtfechaNacimiento.Text == "")
                     {
-                        MessageBox.Show("Debe llenar todos los campos nece", "Error Inesperado", MessageBoxButtons.OK);
+                        MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
                     }
                     else
                     {
@@ -196,20 +196,20 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                         if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
                                            txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "")
                         {
-                            MessageBox.Show("Debe llenar todos los campos nece", "Error Inesperado", MessageBoxButtons.OK);
+                            MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
                         }
                         else
                         {
-                            RegistrarEncargado();
+                            ActualizarEncargado();
                         }
                     }
                     else if(chkeliminarEncargado.Checked == true)
                     {
                         EliminarEncargado();
                     }
-                    else if(chkactualizarEncargado.Checked == true)
+                    else if(chkbuscarEncargado.Checked == true)
                     {
-                        ActualizarEncargado();
+                        BuscarEncargado();
                     }
                 }
             }
