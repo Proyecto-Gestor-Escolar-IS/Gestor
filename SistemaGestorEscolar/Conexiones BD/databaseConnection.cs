@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HECTOREOC\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -298,7 +298,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@montoPago", montoPago);
                 comando.Parameters.AddWithValue("@fechaPago", fechaPago);
                 comando.Parameters.AddWithValue("@descuento", descuento);
-
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(Properties.Resources.imgComprobantePendiente));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -364,7 +364,6 @@ namespace SistemaGestorEscolar
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@fechaFacturacion", fechaFacturacion);
-                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(Properties.Resources.imgComprobantePendiente));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
