@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.Designer.cs">
+      <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos Estudiante\ICrudEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox Personalizados\frmMostrarImagenEvidencia.resx">
+      <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxCheck.resx">
       <DependentUpon>IMessageBoxCheck.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,7 +313,7 @@
       <DependentUpon>IListadoPesonalAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -365,6 +374,7 @@
     <None Include="Resources\Contra.png" />
     <None Include="Resources\contra 2.png" />
     <Content Include="Login\MensajeRecuperacionContra.html" />
+    <None Include="Resources\gui_order_pending_icon_158418.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>

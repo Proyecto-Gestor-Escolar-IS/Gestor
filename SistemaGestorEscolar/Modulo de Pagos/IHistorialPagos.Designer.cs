@@ -30,7 +30,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblFechaActual = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvHistorialPagos = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPendientePago = new System.Windows.Forms.Label();
             this.grpDataGrid = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialPagos)).BeginInit();
             this.grpDataGrid.SuspendLayout();
@@ -53,20 +53,20 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(644, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(382, 36);
+            this.label1.Size = new System.Drawing.Size(370, 41);
             this.label1.TabIndex = 1;
             this.label1.Text = "CONSULTA DE PAGOS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblFechaActual
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 21F);
-            this.label2.Location = new System.Drawing.Point(1263, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(299, 32);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fecha Actual: --/--/----";
+            this.lblFechaActual.AutoSize = true;
+            this.lblFechaActual.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaActual.Location = new System.Drawing.Point(1263, 51);
+            this.lblFechaActual.Name = "lblFechaActual";
+            this.lblFechaActual.Size = new System.Drawing.Size(278, 31);
+            this.lblFechaActual.TabIndex = 2;
+            this.lblFechaActual.Text = "Fecha Actual: --/--/----";
             // 
             // label3
             // 
@@ -74,7 +74,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 120);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(627, 31);
+            this.label3.Size = new System.Drawing.Size(620, 35);
             this.label3.TabIndex = 3;
             this.label3.Text = "Ingrese el número de Identidad del Estudiante";
             // 
@@ -84,7 +84,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(524, 31);
+            this.label4.Size = new System.Drawing.Size(521, 35);
             this.label4.TabIndex = 4;
             this.label4.Text = "Nombre del Padre, Madre o Encargado";
             // 
@@ -94,7 +94,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 232);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(313, 31);
+            this.label5.Size = new System.Drawing.Size(313, 35);
             this.label5.TabIndex = 5;
             this.label5.Text = "Nombre del Estudiante";
             // 
@@ -112,14 +112,16 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.txtNombrePadre.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombrePadre.Location = new System.Drawing.Point(561, 177);
             this.txtNombrePadre.Name = "txtNombrePadre";
+            this.txtNombrePadre.ReadOnly = true;
             this.txtNombrePadre.Size = new System.Drawing.Size(465, 28);
             this.txtNombrePadre.TabIndex = 7;
             // 
             // txtNombreEstudiante
             // 
             this.txtNombreEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstudiante.Location = new System.Drawing.Point(351, 232);
+            this.txtNombreEstudiante.Location = new System.Drawing.Point(344, 237);
             this.txtNombreEstudiante.Name = "txtNombreEstudiante";
+            this.txtNombreEstudiante.ReadOnly = true;
             this.txtNombreEstudiante.Size = new System.Drawing.Size(465, 28);
             this.txtNombreEstudiante.TabIndex = 8;
             // 
@@ -149,6 +151,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "LIMPIAR";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnActualizar
             // 
@@ -162,6 +165,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.btnActualizar.TabIndex = 11;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // dgvHistorialPagos
             // 
@@ -173,16 +177,17 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.dgvHistorialPagos.RowTemplate.ReadOnly = true;
             this.dgvHistorialPagos.Size = new System.Drawing.Size(1572, 519);
             this.dgvHistorialPagos.TabIndex = 12;
+            this.dgvHistorialPagos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorialPagos_CellContentDoubleClick);
             // 
-            // label6
+            // lblPendientePago
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 889);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(399, 31);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Pendiente de Pago: Lps. 0.00";
+            this.lblPendientePago.AutoSize = true;
+            this.lblPendientePago.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendientePago.Location = new System.Drawing.Point(22, 889);
+            this.lblPendientePago.Name = "lblPendientePago";
+            this.lblPendientePago.Size = new System.Drawing.Size(392, 35);
+            this.lblPendientePago.TabIndex = 13;
+            this.lblPendientePago.Text = "Pendiente de Pago: Lps. 0.00";
             // 
             // grpDataGrid
             // 
@@ -201,7 +206,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
             this.Controls.Add(this.grpDataGrid);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblPendientePago);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnConsultarID);
@@ -211,7 +216,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblFechaActual);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IHistorialPagos";
@@ -227,7 +232,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFechaActual;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -238,7 +243,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView dgvHistorialPagos;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPendientePago;
         private System.Windows.Forms.GroupBox grpDataGrid;
     }
 }
