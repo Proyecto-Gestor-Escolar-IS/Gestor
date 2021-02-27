@@ -4,6 +4,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
 
 namespace SistemaGestorEscolar
 {
@@ -115,6 +117,34 @@ namespace SistemaGestorEscolar
             catch
             {
                 return false;
+            }
+        }
+
+        public byte[] imagenAByte(Image img)
+        {
+            using (MemoryStream mStream = new MemoryStream())
+            {
+                img.Save(mStream, img.RawFormat);
+                return mStream.ToArray();
+            }
+        }
+
+        /*public Image ByteAImagen(byte[] byteArrayIn)
+        {
+            using (MemoryStream mStream = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(mStream);
+            }
+        }*/
+
+        public void limpiarTextBox(Control cont)
+        {
+            foreach (Control control in cont.Controls)
+            {
+                if (control is TextBox)
+                    control.Text = string.Empty;
+                if (control is MaskedTextBox)
+                    control.Text = string.Empty;
             }
         }
     }
