@@ -44,8 +44,7 @@ namespace SistemaGestorEscolar
             this.btnMenuAtras = new System.Windows.Forms.Button();
             this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.panelMostrador = new System.Windows.Forms.Panel();
             this.btnEstudiante = new System.Windows.Forms.Button();
             this.btnIngresarNotas = new System.Windows.Forms.Button();
             this.btnPagos = new System.Windows.Forms.Button();
@@ -54,7 +53,8 @@ namespace SistemaGestorEscolar
             this.btnPersonal = new System.Windows.Forms.Button();
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.btnMatricularEstudiante = new System.Windows.Forms.Button();
-            this.panelMostrador = new System.Windows.Forms.Panel();
+            this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -279,15 +279,15 @@ namespace SistemaGestorEscolar
             this.panelPrincipal.TabIndex = 2;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // tmrOcultarMenu
+            // panelMostrador
             // 
-            this.tmrOcultarMenu.Interval = 2;
-            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
-            // 
-            // tmrMostrarMenu
-            // 
-            this.tmrMostrarMenu.Interval = 2;
-            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
+            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panelMostrador.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMostrador.Location = new System.Drawing.Point(0, 0);
+            this.panelMostrador.Name = "panelMostrador";
+            this.panelMostrador.Size = new System.Drawing.Size(1635, 1035);
+            this.panelMostrador.TabIndex = 39;
+            this.panelMostrador.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrador_Paint);
             // 
             // btnEstudiante
             // 
@@ -398,14 +398,15 @@ namespace SistemaGestorEscolar
             this.btnMatricularEstudiante.Text = "MATRICULAR UN ESTUDIANTE";
             this.btnMatricularEstudiante.UseVisualStyleBackColor = false;
             // 
-            // panelMostrador
+            // tmrOcultarMenu
             // 
-            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.panelMostrador.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMostrador.Location = new System.Drawing.Point(0, 0);
-            this.panelMostrador.Name = "panelMostrador";
-            this.panelMostrador.Size = new System.Drawing.Size(1635, 1035);
-            this.panelMostrador.TabIndex = 39;
+            this.tmrOcultarMenu.Interval = 2;
+            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
+            // 
+            // tmrMostrarMenu
+            // 
+            this.tmrMostrarMenu.Interval = 2;
+            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
             // 
             // InterfazGraficaPrincipal
             // 
