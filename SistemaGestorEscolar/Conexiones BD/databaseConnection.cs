@@ -550,8 +550,6 @@ namespace SistemaGestorEscolar
             }
 
         }
-    }
-}
 
         //comprobar Existencia (manda instruccion, si existe retorna true caso contrario false)
         public bool ComprobarExistencia(string instruccion)
@@ -572,52 +570,47 @@ namespace SistemaGestorEscolar
 
 
 
-    public bool PAActualizarEstudiante(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido)
-    {
-        try
+        public bool PAActualizarEstudiante(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido)
         {
-
-            SqlCommand comando = databaseIntermediary.CreateCommand();
-            comando.CommandText = "ActualizarEstudiante";
-            comando.CommandType = CommandType.StoredProcedure;
-
-            comando.Parameters.AddWithValue("@identidadEstudiante", Numidentidad);
-            comando.Parameters.AddWithValue("@primerNombre", primerNombre);
-            comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
-            comando.Parameters.AddWithValue("@primerApellido", primerApellido);
-            comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
-
-
-
-            databaseIntermediary.Open();
-            if (comando.ExecuteNonQuery() != -1)
+            try
             {
-                databaseIntermediary.Close();
-                return true;
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "ActualizarEstudiante";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadEstudiante", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Actualizacion de Encargado", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
             }
-            else
+            catch (Exception ex)
             {
                 databaseIntermediary.Close();
-                MessageBox.Show("Error de Actualizacion de Encargado", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return false;
             }
 
         }
-        catch (Exception ex)
-        {
-            databaseIntermediary.Close();
-            MessageBox.Show("Error de base de datos! \n" + ex.ToString());
-            return false;
-        }
-   
-        }
-
-
-
-
 
     }
 
+}
 
-
-}*/
