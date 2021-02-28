@@ -32,6 +32,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.components = new System.ComponentModel.Container();
             this.lblEstudiante = new System.Windows.Forms.Label();
             this.PanregistroEncargado = new System.Windows.Forms.Panel();
+            this.txtfechaNacimiento = new System.Windows.Forms.TextBox();
             this.cmbgeneroEstudiante = new System.Windows.Forms.ComboBox();
             this.lblgenero = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,15 +45,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblnombres = new System.Windows.Forms.Label();
             this.lblnumeroIdentidad = new System.Windows.Forms.Label();
             this.btnrealizarOperacion = new System.Windows.Forms.Button();
-            this.gbOperaciones = new System.Windows.Forms.GroupBox();
-            this.chkbuscarEstudiante = new System.Windows.Forms.CheckBox();
-            this.chkeliminarEstudiante = new System.Windows.Forms.CheckBox();
-            this.chkmodificarEstudiante = new System.Windows.Forms.CheckBox();
-            this.lblSeleccionarOperacion = new System.Windows.Forms.Label();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtfechaNacimiento = new System.Windows.Forms.TextBox();
             this.PanregistroEncargado.SuspendLayout();
-            this.gbOperaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +84,16 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.PanregistroEncargado.Name = "PanregistroEncargado";
             this.PanregistroEncargado.Size = new System.Drawing.Size(1478, 672);
             this.PanregistroEncargado.TabIndex = 47;
+            this.PanregistroEncargado.Paint += new System.Windows.Forms.PaintEventHandler(this.PanregistroEncargado_Paint);
+            // 
+            // txtfechaNacimiento
+            // 
+            this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfechaNacimiento.Location = new System.Drawing.Point(1235, 304);
+            this.txtfechaNacimiento.Multiline = true;
+            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
+            this.txtfechaNacimiento.Size = new System.Drawing.Size(285, 33);
+            this.txtfechaNacimiento.TabIndex = 32;
             // 
             // cmbgeneroEstudiante
             // 
@@ -101,7 +105,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbgeneroEstudiante.Location = new System.Drawing.Point(1237, 386);
             this.cmbgeneroEstudiante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbgeneroEstudiante.Name = "cmbgeneroEstudiante";
-            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(283, 39);
+            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(283, 35);
             this.cmbgeneroEstudiante.TabIndex = 31;
             // 
             // lblgenero
@@ -111,7 +115,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblgenero.Location = new System.Drawing.Point(892, 385);
             this.lblgenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblgenero.Name = "lblgenero";
-            this.lblgenero.Size = new System.Drawing.Size(120, 37);
+            this.lblgenero.Size = new System.Drawing.Size(114, 33);
             this.lblgenero.TabIndex = 30;
             this.lblgenero.Text = "Género";
             // 
@@ -122,7 +126,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label1.Location = new System.Drawing.Point(892, 304);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 37);
+            this.label1.Size = new System.Drawing.Size(251, 33);
             this.label1.TabIndex = 28;
             this.label1.Text = "Fecha Nacimiento";
             // 
@@ -227,86 +231,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnrealizarOperacion.TabIndex = 1;
             this.btnrealizarOperacion.Text = "Realizar Operación";
             this.btnrealizarOperacion.UseVisualStyleBackColor = false;
-            this.btnrealizarOperacion.Click += new System.EventHandler(this.btnrealizarOperacion_Click);
-            // 
-            // gbOperaciones
-            // 
-            this.gbOperaciones.Controls.Add(this.chkbuscarEstudiante);
-            this.gbOperaciones.Controls.Add(this.chkeliminarEstudiante);
-            this.gbOperaciones.Controls.Add(this.chkmodificarEstudiante);
-            this.gbOperaciones.Controls.Add(this.lblSeleccionarOperacion);
-            this.gbOperaciones.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.gbOperaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbOperaciones.Location = new System.Drawing.Point(319, 29);
-            this.gbOperaciones.Margin = new System.Windows.Forms.Padding(2);
-            this.gbOperaciones.Name = "gbOperaciones";
-            this.gbOperaciones.Padding = new System.Windows.Forms.Padding(2);
-            this.gbOperaciones.Size = new System.Drawing.Size(974, 184);
-            this.gbOperaciones.TabIndex = 0;
-            this.gbOperaciones.TabStop = false;
-            // 
-            // chkbuscarEstudiante
-            // 
-            this.chkbuscarEstudiante.AutoSize = true;
-            this.chkbuscarEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkbuscarEstudiante.Location = new System.Drawing.Point(375, 82);
-            this.chkbuscarEstudiante.Margin = new System.Windows.Forms.Padding(2);
-            this.chkbuscarEstudiante.Name = "chkbuscarEstudiante";
-            this.chkbuscarEstudiante.Size = new System.Drawing.Size(244, 35);
-            this.chkbuscarEstudiante.TabIndex = 5;
-            this.chkbuscarEstudiante.Text = "Buscar Estudiante";
-            this.chkbuscarEstudiante.UseVisualStyleBackColor = true;
-            this.chkbuscarEstudiante.CheckedChanged += new System.EventHandler(this.chkbuscarEstudiante_CheckedChanged);
-            // 
-            // chkeliminarEstudiante
-            // 
-            this.chkeliminarEstudiante.AutoSize = true;
-            this.chkeliminarEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkeliminarEstudiante.Location = new System.Drawing.Point(706, 82);
-            this.chkeliminarEstudiante.Margin = new System.Windows.Forms.Padding(2);
-            this.chkeliminarEstudiante.Name = "chkeliminarEstudiante";
-            this.chkeliminarEstudiante.Size = new System.Drawing.Size(250, 35);
-            this.chkeliminarEstudiante.TabIndex = 4;
-            this.chkeliminarEstudiante.Text = "Eliminar Estudiante";
-            this.chkeliminarEstudiante.UseVisualStyleBackColor = true;
-            this.chkeliminarEstudiante.CheckedChanged += new System.EventHandler(this.chkeliminarEstudiante_CheckedChanged);
-            // 
-            // chkmodificarEstudiante
-            // 
-            this.chkmodificarEstudiante.AutoSize = true;
-            this.chkmodificarEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkmodificarEstudiante.Location = new System.Drawing.Point(25, 82);
-            this.chkmodificarEstudiante.Margin = new System.Windows.Forms.Padding(2);
-            this.chkmodificarEstudiante.Name = "chkmodificarEstudiante";
-            this.chkmodificarEstudiante.Size = new System.Drawing.Size(269, 35);
-            this.chkmodificarEstudiante.TabIndex = 3;
-            this.chkmodificarEstudiante.Text = "Modificar Estudiante";
-            this.chkmodificarEstudiante.UseVisualStyleBackColor = true;
-            this.chkmodificarEstudiante.CheckedChanged += new System.EventHandler(this.chkmodificarEstudiante_CheckedChanged);
-            // 
-            // lblSeleccionarOperacion
-            // 
-            this.lblSeleccionarOperacion.AutoSize = true;
-            this.lblSeleccionarOperacion.Font = new System.Drawing.Font("Balsamiq Sans", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeleccionarOperacion.Location = new System.Drawing.Point(323, 16);
-            this.lblSeleccionarOperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSeleccionarOperacion.Name = "lblSeleccionarOperacion";
-            this.lblSeleccionarOperacion.Size = new System.Drawing.Size(392, 38);
-            this.lblSeleccionarOperacion.TabIndex = 2;
-            this.lblSeleccionarOperacion.Text = "Seleccione una operación";
+            //this.btnrealizarOperacion.Click += new System.EventHandler(this.btnrealizarOperacion_Click);
             // 
             // errorIdentidad
             // 
             this.errorIdentidad.ContainerControl = this;
-            // 
-            // txtfechaNacimiento
-            // 
-            this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfechaNacimiento.Location = new System.Drawing.Point(1235, 304);
-            this.txtfechaNacimiento.Multiline = true;
-            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
-            this.txtfechaNacimiento.Size = new System.Drawing.Size(285, 33);
-            this.txtfechaNacimiento.TabIndex = 32;
             // 
             // ICrudEstudiante
             // 
@@ -321,8 +250,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.Text = "ICrudEstudiante";
             this.PanregistroEncargado.ResumeLayout(false);
             this.PanregistroEncargado.PerformLayout();
-            this.gbOperaciones.ResumeLayout(false);
-            this.gbOperaciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

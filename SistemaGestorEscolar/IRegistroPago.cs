@@ -12,8 +12,7 @@ namespace SistemaGestorEscolar
             InitializeComponent();
         }
         public static Image image;
-        IMessageBoxCheck box = new IMessageBoxCheck();
-        IMessageBoxError boxError = new IMessageBoxError();
+
         clsUtilidades utilidades = new clsUtilidades();
         IMessageBoxCheck message = new IMessageBoxCheck();
         private databaseConnection dbConn = new databaseConnection();
@@ -125,10 +124,9 @@ namespace SistemaGestorEscolar
                             if (!string.IsNullOrEmpty(idEstudiante))
                             {
                                 dbConn.llenarTextBox(txtNombreEstudiante, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = " + txtIdentidadEstudiante.Text);
+                                dbConn.llenarTextBox(txtNombreEncargado, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEncargado INNER JOIN detalleEncargado ON datosEncargado.identidadEncargado = detalleEncargado.id_encargadoAlumno WHERE detalleEncargado.id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 idUltimaMensualidad = dbConn.obtenerVariableEntera("SELECT MAX(id_Mensualidad) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 txtMontoPagar.Enabled = true;
-                                dbConn.llenarTextBox(txtNombreEncargado, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) " +
-                                                        "FROM datosEncargado de inner join matricula m on de.identidadEncargado = m.id_EncargadoAlumno WHERE m.id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 dbConn.llenarTextBox(txtNoFactura, "SELECT count(*) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad); dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
                                 dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
@@ -270,32 +268,6 @@ namespace SistemaGestorEscolar
                     {
                         MessageBox.Show("Ingrese un Comprobante de Pago", "Sin Comprobante", MessageBoxButtons.OK);
                     }
-                }
-            }
-                if(image != null)
-                {
-                    if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, 0, image))
-                    {
-                        box.lblCheck.Text = "PAGO REGISTRADO EXITOSAMENTE";
-                        box.ShowDialog();
-                        //MessageBox.Show("Pago Registrado Exitosamente", "Pago Realizado", MessageBoxButtons.OK);
-                        dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                        dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                        txtMontoPagar.Clear();
-                        txtDescuento.Clear();
-                        chkDescuento.Checked = false;
-                    }
-                    else
-                    {
-                        boxError.lblError.Text = "ERROR INESPERADO EN PAGO";
-                        boxError.ShowDialog();
-                        //MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
-                    }
-                }
-                else
-                {
-                    boxError.lblError.Text = "INGRESE UN COMPROBANTE";
-                    boxError.ShowDialog();
                 }
             }
             catch (Exception ex)

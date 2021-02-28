@@ -68,84 +68,84 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
         }
 
-        private void chkmodificarEstudiante_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkmodificarEstudiante.Checked == true)
-            {
+        //private void chkmodificarEstudiante_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chkmodificarEstudiante.Checked == true)
+        //    {
            
-                chkbuscarEstudiante.Checked = false;
-                chkeliminarEstudiante.Checked = false;
-                txtfechaNacimiento.Enabled = false;
-                txtfechaNacimiento.Clear(); 
-                cmbgeneroEstudiante.Enabled = false;
-            }
-            else
-                txtfechaNacimiento.Enabled = true;
-                cmbgeneroEstudiante.Enabled = true;
-        }
+        //        chkbuscarEstudiante.Checked = false;
+        //        chkeliminarEstudiante.Checked = false;
+        //        txtfechaNacimiento.Enabled = false;
+        //        txtfechaNacimiento.Clear(); 
+        //        cmbgeneroEstudiante.Enabled = false;
+        //    }
+        //    else
+        //        txtfechaNacimiento.Enabled = true;
+        //        cmbgeneroEstudiante.Enabled = true;
+        //}
 
-        private void chkbuscarEstudiante_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-                if (chkbuscarEstudiante.Checked == true)
-                {
-                    chkmodificarEstudiante.Checked = false;
-                    chkeliminarEstudiante.Checked = false;
-
-
-                    txtprimerNombre.Enabled = false;
-                    txtsegundoNombre.Enabled = false;
-                    txtprimerApellido.Enabled = false;
-                    txtsegundoApellido.Enabled = false;
-                    txtfechaNacimiento.Enabled = false;
-                    cmbgeneroEstudiante.Enabled = false;
-
-                }
-                else
-                {
+        //private void chkbuscarEstudiante_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    {
+        //        if (chkbuscarEstudiante.Checked == true)
+        //        {
+        //            chkmodificarEstudiante.Checked = false;
+        //            chkeliminarEstudiante.Checked = false;
 
 
-                    txtprimerNombre.Enabled = true;
-                    txtsegundoNombre.Enabled = true;
-                    txtprimerApellido.Enabled = true;
-                    txtsegundoApellido.Enabled = true;
-                    txtfechaNacimiento.Enabled = true;
-                    cmbgeneroEstudiante.Enabled = true;
+        //            txtprimerNombre.Enabled = false;
+        //            txtsegundoNombre.Enabled = false;
+        //            txtprimerApellido.Enabled = false;
+        //            txtsegundoApellido.Enabled = false;
+        //            txtfechaNacimiento.Enabled = false;
+        //            cmbgeneroEstudiante.Enabled = false;
+
+        //        }
+        //        else
+        //        {
+
+
+        //            txtprimerNombre.Enabled = true;
+        //            txtsegundoNombre.Enabled = true;
+        //            txtprimerApellido.Enabled = true;
+        //            txtsegundoApellido.Enabled = true;
+        //            txtfechaNacimiento.Enabled = true;
+        //            cmbgeneroEstudiante.Enabled = true;
                 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
-        private void chkeliminarEstudiante_CheckedChanged(object sender, EventArgs e)
-        {
+        //private void chkeliminarEstudiante_CheckedChanged(object sender, EventArgs e)
+        //{
 
-            if (chkeliminarEstudiante.Checked == true)
-            {
-                chkmodificarEstudiante.Checked = false;
-                chkbuscarEstudiante.Checked = false;
+        //    if (chkeliminarEstudiante.Checked == true)
+        //    {
+        //        chkmodificarEstudiante.Checked = false;
+        //        chkbuscarEstudiante.Checked = false;
 
 
-                txtprimerNombre.Enabled = false;
-                txtsegundoNombre.Enabled = false;
-                txtprimerApellido.Enabled = false;
-                txtsegundoApellido.Enabled = false;
-                txtfechaNacimiento.Enabled = false;
-                cmbgeneroEstudiante.Enabled = false;
+        //        txtprimerNombre.Enabled = false;
+        //        txtsegundoNombre.Enabled = false;
+        //        txtprimerApellido.Enabled = false;
+        //        txtsegundoApellido.Enabled = false;
+        //        txtfechaNacimiento.Enabled = false;
+        //        cmbgeneroEstudiante.Enabled = false;
                
-            }
-            else
-            {
+        //    }
+        //    else
+        //    {
 
 
 
-                txtprimerNombre.Enabled = true;
-                txtsegundoNombre.Enabled = true;
-                txtprimerApellido.Enabled = true;
-                txtsegundoApellido.Enabled = true;
-                txtfechaNacimiento.Enabled = true;
-                cmbgeneroEstudiante.Enabled = true;
-            }
-        }
+        //        txtprimerNombre.Enabled = true;
+        //        txtsegundoNombre.Enabled = true;
+        //        txtprimerApellido.Enabled = true;
+        //        txtsegundoApellido.Enabled = true;
+        //        txtfechaNacimiento.Enabled = true;
+        //        cmbgeneroEstudiante.Enabled = true;
+        //    }
+        //}
 
         private void limpiarPantalla()
         {
@@ -162,42 +162,42 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
 
 
-        private void btnrealizarOperacion_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
-                {
-                    MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
-                    limpiarPantalla();
-                }
-                else
-                {
-                    if (chkmodificarEstudiante.Checked == true)
-                        if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
-                          txtfechaNacimiento.Text == "")
-                        {
-                            MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
-                        }
-                        else
-                        {
-                            ActualizarEstudiante();
-                        }
-                    else if (chkeliminarEstudiante.Checked == true)
-                    {
-                        EliminarEstudiante();
-                    }
-                    else if (chkbuscarEstudiante.Checked == true)
-                    {
-                        BuscarEstudiante();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        //private void btnrealizarOperacion_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
+        //        {
+        //            MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
+        //            limpiarPantalla();
+        //        }
+        //        else
+        //        {
+        //            if (chkmodificarEstudiante.Checked == true)
+        //                if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
+        //                  txtfechaNacimiento.Text == "")
+        //                {
+        //                    MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
+        //                }
+        //                else
+        //                {
+        //                    ActualizarEstudiante();
+        //                }
+        //            else if (chkeliminarEstudiante.Checked == true)
+        //            {
+        //                EliminarEstudiante();
+        //            }
+        //            else if (chkbuscarEstudiante.Checked == true)
+        //            {
+        //                BuscarEstudiante();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
 
 
 
@@ -310,6 +310,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void PanregistroEncargado_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
