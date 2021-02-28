@@ -101,6 +101,12 @@
     <Compile Include="Modulo Historial Medico\Historial medico.Designer.cs">
       <DependentUpon>Historial medico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos Encargado\IFrmGestionEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Encargado\IFrmGestionEmpleados.Designer.cs">
+      <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos Estudiante\Ficha de Estudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     <Compile Include="Utilidades\clsVariablesGlobales.cs" />
     <EmbeddedResource Include="IRegistroPago.resx">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Encargado\IFrmGestionEmpleados.resx">
+      <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.resx">
       <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>

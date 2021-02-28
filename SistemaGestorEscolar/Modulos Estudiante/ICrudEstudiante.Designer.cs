@@ -79,7 +79,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.PanregistroEncargado.Controls.Add(this.lblnumeroIdentidad);
             this.PanregistroEncargado.Controls.Add(this.btnrealizarOperacion);
             this.PanregistroEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanregistroEncargado.Location = new System.Drawing.Point(50, 27);
+            this.PanregistroEncargado.Location = new System.Drawing.Point(59, 80);
             this.PanregistroEncargado.Margin = new System.Windows.Forms.Padding(2);
             this.PanregistroEncargado.Name = "PanregistroEncargado";
             this.PanregistroEncargado.Size = new System.Drawing.Size(1478, 672);
@@ -231,7 +231,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnrealizarOperacion.TabIndex = 1;
             this.btnrealizarOperacion.Text = "Realizar Operación";
             this.btnrealizarOperacion.UseVisualStyleBackColor = false;
-            //this.btnrealizarOperacion.Click += new System.EventHandler(this.btnrealizarOperacion_Click);
             // 
             // errorIdentidad
             // 
