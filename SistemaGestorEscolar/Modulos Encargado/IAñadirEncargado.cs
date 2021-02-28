@@ -27,9 +27,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 chkactualizarEncargado.Checked = false;
                 chkbuscarEncargado.Checked = false;
                 chkeliminarEncargado.Checked = false;
- 
+
             }
-      
+
         }
 
         private void chkactualizarEncargado_CheckedChanged(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                     chkactualizarEncargado.Checked = false;
                     chkeliminarEncargado.Checked = false;
 
-                  
+
                     txtprimerNombre.Enabled = false;
                     txtsegundoNombre.Enabled = false;
                     txtprimerApellido.Enabled = false;
@@ -65,7 +65,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                     txtsegundoTelefono.Enabled = false;
                     txtfechaNacimiento.Enabled = false;
                     txtDireccion.Enabled = false;
-                
+
                 }
                 else
                 {
@@ -87,44 +87,44 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void chkeliminarEncargado_CheckedChanged(object sender, EventArgs e)
         {
+
+            if (chkeliminarEncargado.Checked == true)
             {
-                {
-                    if (chkeliminarEncargado.Checked == true)
-                    {
-                        chkregistrarEncargado.Checked = false;
-                        chkactualizarEncargado.Checked = false;
-                        chkbuscarEncargado.Checked = false;
+                chkregistrarEncargado.Checked = false;
+                chkactualizarEncargado.Checked = false;
+                chkbuscarEncargado.Checked = false;
 
 
-                        txtprimerNombre.Enabled = false;
-                        txtsegundoNombre.Enabled = false;
-                        txtprimerApellido.Enabled = false;
-                        txtsegundoApellido.Enabled = false;
-                        txtcorreoElectronico.Enabled = false;
-                        txtprimerTelefono.Enabled = false;
-                        txtsegundoTelefono.Enabled = false;
-                        txtfechaNacimiento.Enabled = false;
-                        txtDireccion.Enabled = false;
+                txtprimerNombre.Enabled = false;
+                txtsegundoNombre.Enabled = false;
+                txtprimerApellido.Enabled = false;
+                txtsegundoApellido.Enabled = false;
+                txtcorreoElectronico.Enabled = false;
+                txtprimerTelefono.Enabled = false;
+                txtsegundoTelefono.Enabled = false;
+                txtfechaNacimiento.Enabled = false;
+                txtDireccion.Enabled = false;
 
-                    }
-                    else
-                    {
-
-
-
-                        txtprimerNombre.Enabled = true;
-                        txtsegundoNombre.Enabled = true;
-                        txtprimerApellido.Enabled = true;
-                        txtsegundoApellido.Enabled = true;
-                        txtcorreoElectronico.Enabled = true;
-                        txtprimerTelefono.Enabled = true;
-                        txtsegundoTelefono.Enabled = true;
-                        txtfechaNacimiento.Enabled = true;
-                        txtDireccion.Enabled = true;
-                    }
-                }
             }
+            else
+            {
+
+
+
+                txtprimerNombre.Enabled = true;
+                txtsegundoNombre.Enabled = true;
+                txtprimerApellido.Enabled = true;
+                txtsegundoApellido.Enabled = true;
+                txtcorreoElectronico.Enabled = true;
+                txtprimerTelefono.Enabled = true;
+                txtsegundoTelefono.Enabled = true;
+                txtfechaNacimiento.Enabled = true;
+                txtDireccion.Enabled = true;
+            }
+
+
         }
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -181,35 +181,35 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 }
                 else
                 {
-                    if(chkregistrarEncargado.Checked == true)
-                    if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
-                     txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "" && txtfechaNacimiento.Text == "")
-                    {
-                        MessageBox.Show("Debe llenar todos los campos nece", "Error Inesperado", MessageBoxButtons.OK);
-                    }
-                    else
-                    {
-                        RegistrarEncargado();
-                    }
-                    else if(chkactualizarEncargado.Checked == true)
-                    {
+                    if (chkregistrarEncargado.Checked == true)
                         if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
-                                           txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "")
+                         txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "" && txtfechaNacimiento.Text == "")
                         {
-                            MessageBox.Show("Debe llenar todos los campos nece", "Error Inesperado", MessageBoxButtons.OK);
+                            MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
                         }
                         else
                         {
                             RegistrarEncargado();
                         }
+                    else if (chkactualizarEncargado.Checked == true)
+                    {
+                        if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
+                                           txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "")
+                        {
+                            MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            ActualizarEncargado();
+                        }
                     }
-                    else if(chkeliminarEncargado.Checked == true)
+                    else if (chkeliminarEncargado.Checked == true)
                     {
                         EliminarEncargado();
                     }
-                    else if(chkactualizarEncargado.Checked == true)
+                    else if (chkbuscarEncargado.Checked == true)
                     {
-                        ActualizarEncargado();
+                        BuscarEncargado();
                     }
                 }
             }
@@ -224,7 +224,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
             try
             {
-                if (dbConn.PARegistroEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtcorreoElectronico.Text,txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text, txtfechaNacimiento.Text))
+                if (dbConn.PARegistroEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtcorreoElectronico.Text, txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text, txtfechaNacimiento.Text))
                 {
                     MessageBox.Show("Encargado Registrado Exitosamente", "Registro Realizado", MessageBoxButtons.OK);
                     limpiarPantalla();
@@ -276,7 +276,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
 
 
-            
+
 
 
 
@@ -296,7 +296,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 txtsegundoTelefono.Text = dbConn.obtenerVariableString("select numeroTelefonoAlt from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
                 txtDireccion.Text = dbConn.obtenerVariableString("select direccionTrabajo from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
                 fechaNacimiento = dbConn.obtenerVariableString("select fechaNacimiento from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-    
+
                 txtfechaNacimiento.Text = fechaNacimiento;
                 //MessageBox.Show( estado, "Error Inesperado", MessageBoxButtons.OK);
 
@@ -312,7 +312,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (dbConn.ComprobarExistencia("select estado from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'"))
             {
-                dbConn.ejecutarComandoSQL("update datosEncargado set estado = 0 where identidadEncargado = '"+ txtIdentidad.Text +"'");
+                dbConn.ejecutarComandoSQL("update datosEncargado set estado = 0 where identidadEncargado = '" + txtIdentidad.Text + "'");
 
                 MessageBox.Show("Encargado Eliminado Exitosamente", "Eliminar Realizado", MessageBoxButtons.OK);
             }
@@ -417,13 +417,13 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                             txtIdentidad.ForeColor = Color.Green;
                             errorIdentidad.Clear();
 
-                      
+
                         }
                         else if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
                         {
                             txtIdentidad.ForeColor = Color.Red;
-                            errorIdentidad.SetError(this.txtIdentidad, "El numero de Identidad no es Correcto!"); 
-             
+                            errorIdentidad.SetError(this.txtIdentidad, "El numero de Identidad no es Correcto!");
+
                         }
                     }
                     else

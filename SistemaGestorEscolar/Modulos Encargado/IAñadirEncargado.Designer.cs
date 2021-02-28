@@ -31,6 +31,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             this.components = new System.ComponentModel.Container();
             this.PanregistroEncargado = new System.Windows.Forms.Panel();
+            this.txtfechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.txtprimerTelefono = new System.Windows.Forms.TextBox();
             this.txtsegundoTelefono = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblSeleccionarOperacion = new System.Windows.Forms.Label();
             this.lblregistroEncargado = new System.Windows.Forms.Label();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtfechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.PanregistroEncargado.SuspendLayout();
             this.gbOperaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
@@ -91,6 +91,16 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.PanregistroEncargado.Name = "PanregistroEncargado";
             this.PanregistroEncargado.Size = new System.Drawing.Size(1615, 919);
             this.PanregistroEncargado.TabIndex = 0;
+            // 
+            // txtfechaNacimiento
+            // 
+            this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfechaNacimiento.Location = new System.Drawing.Point(1256, 312);
+            this.txtfechaNacimiento.Mask = "00/00/0000";
+            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
+            this.txtfechaNacimiento.Size = new System.Drawing.Size(163, 41);
+            this.txtfechaNacimiento.TabIndex = 22;
+            this.txtfechaNacimiento.ValidatingType = typeof(System.DateTime);
             // 
             // txtprimerTelefono
             // 
@@ -385,16 +395,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // errorIdentidad
             // 
             this.errorIdentidad.ContainerControl = this;
-            // 
-            // txtfechaNacimiento
-            // 
-            this.txtfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfechaNacimiento.Location = new System.Drawing.Point(1256, 312);
-            this.txtfechaNacimiento.Mask = "00/00/0000";
-            this.txtfechaNacimiento.Name = "txtfechaNacimiento";
-            this.txtfechaNacimiento.Size = new System.Drawing.Size(163, 41);
-            this.txtfechaNacimiento.TabIndex = 22;
-            this.txtfechaNacimiento.ValidatingType = typeof(System.DateTime);
             // 
             // IAñadirEncargado
             // 

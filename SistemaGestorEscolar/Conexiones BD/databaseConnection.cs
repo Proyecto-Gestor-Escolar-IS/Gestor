@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-7MB4NES;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -129,7 +129,7 @@ namespace SistemaGestorEscolar
                 int valor = 0;
                 comando = new SqlCommand(instruccion, databaseIntermediary);
                 lectorVariables = comando.ExecuteReader();
-                if(lectorVariables.Read())
+                if (lectorVariables.Read())
                 {
                     valor = Convert.ToInt16(lectorVariables.GetValue(0));
                 }
@@ -143,7 +143,7 @@ namespace SistemaGestorEscolar
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return -1;
             }
-            
+
         }
 
         //Metodo para obtener variables DOUBLE de la base de datos. (Se envia el comando sql) de donde se quiere obtener la variable [RETORNA -1 SI NO ENCUENTRA UN VALOR]
@@ -236,7 +236,7 @@ namespace SistemaGestorEscolar
         {
             try
             {
-                
+
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "PAOperacionEmpleados";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -284,7 +284,7 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
-        
+
         public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento, Image img)
         {
             try
@@ -510,6 +510,47 @@ namespace SistemaGestorEscolar
             }
         }
 
+        //Registro de Notas
+
+        public bool PAAgregarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm)
+        {
+
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "agregarNota";
+                comando.Parameters.AddWithValue("@id_DetalleMatricula", id_detalleMatricula);
+                comando.Parameters.AddWithValue("@id_Clase", id_Clase);
+                comando.Parameters.AddWithValue("@nota1erParcial", nota1);
+                comando.Parameters.AddWithValue("@nota2doParcial", nota2);
+                comando.Parameters.AddWithValue("@nota3erParcial", nota3);
+                comando.Parameters.AddWithValue("@nota4toParcial", nota4);
+                comando.Parameters.AddWithValue("@notaFinal", notaProm);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de las Notas", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
         //comprobar Existencia (manda instruccion, si existe retorna true caso contrario false)
         public bool ComprobarExistencia(string instruccion)
         {
@@ -528,8 +569,48 @@ namespace SistemaGestorEscolar
 
 
 
+
+        public bool PAActualizarEstudiante(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "ActualizarEstudiante";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadEstudiante", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Actualizacion de Encargado", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
     }
 
-
-
 }
+

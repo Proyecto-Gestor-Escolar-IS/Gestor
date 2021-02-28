@@ -89,6 +89,36 @@
     <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.Designer.cs">
       <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo Historial Medico\Historial medico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Historial Medico\Historial medico.Designer.cs">
+      <DependentUpon>Historial medico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha de Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha de Estudiante.Designer.cs">
+      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.Designer.cs">
+      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.Designer.cs">
+      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.Designer.cs">
+      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos Estudiante\ICrudEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +137,12 @@
     </Compile>
     <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.Designer.cs">
       <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.Designer.cs">
+      <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.cs">
       <SubType>Form</SubType>
@@ -132,10 +168,10 @@
     </Compile>
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
-    <Compile Include="FormRegistro_Notas_Alumno.cs">
+    <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistro_Notas_Alumno.Designer.cs">
+    <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.Designer.cs">
       <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
     </Compile>
     <Compile Include="IAperturaExpedienteMedico.cs">
@@ -274,7 +310,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\clsVariablesGlobales.cs" />
-    <EmbeddedResource Include="FormRegistro_Notas_Alumno.resx">
+    <EmbeddedResource Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.resx">
       <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
@@ -337,8 +373,23 @@
     <EmbeddedResource Include="Modulo de Pagos\IHistorialPagos.resx">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Historial Medico\Historial medico.resx">
+      <DependentUpon>Historial medico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\IAñadirEncargado.resx">
       <DependentUpon>IAñadirEncargado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha de Estudiante.resx">
+      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha Encargados del Estudiante.resx">
+      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.resx">
+      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\Ficha notas del estudiante.resx">
+      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\ICrudEstudiante.resx">
       <DependentUpon>ICrudEstudiante.cs</DependentUpon>
@@ -365,6 +416,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.resx">
+      <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmCuadro de Notas.resx">
       <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
     </EmbeddedResource>
