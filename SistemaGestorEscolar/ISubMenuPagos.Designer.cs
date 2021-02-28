@@ -38,7 +38,7 @@ namespace SistemaGestorEscolar
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(743, 138);
+            this.label1.Location = new System.Drawing.Point(747, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 36);
             this.label1.TabIndex = 3;
@@ -47,27 +47,26 @@ namespace SistemaGestorEscolar
             // btnRegistrarPago
             // 
             this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarPago.Enabled = false;
             this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
             this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarPago.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarPago.Location = new System.Drawing.Point(246, 426);
+            this.btnRegistrarPago.Location = new System.Drawing.Point(250, 398);
             this.btnRegistrarPago.Name = "btnRegistrarPago";
             this.btnRegistrarPago.Size = new System.Drawing.Size(407, 200);
             this.btnRegistrarPago.TabIndex = 21;
             this.btnRegistrarPago.Text = "REGISTRAR PAGO";
             this.btnRegistrarPago.UseVisualStyleBackColor = false;
+            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
             // 
             // btnHistorialPagos
             // 
             this.btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnHistorialPagos.Enabled = false;
             this.btnHistorialPagos.FlatAppearance.BorderSize = 0;
             this.btnHistorialPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorialPagos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorialPagos.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorialPagos.Location = new System.Drawing.Point(983, 426);
+            this.btnHistorialPagos.Location = new System.Drawing.Point(987, 398);
             this.btnHistorialPagos.Name = "btnHistorialPagos";
             this.btnHistorialPagos.Size = new System.Drawing.Size(407, 200);
             this.btnHistorialPagos.TabIndex = 22;

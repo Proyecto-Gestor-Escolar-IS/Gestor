@@ -29,6 +29,8 @@ namespace SistemaGestorEscolar
             {
                 actualizarModulos.verificarFecha();
                 panelMostrador.Visible = false;
+                panSubMenuPagos.Visible = false;
+                panSubMenuEstudiante.Visible = false;
             }
             catch (Exception ex)
             {
@@ -70,7 +72,9 @@ namespace SistemaGestorEscolar
         private void btnMenuAtras_Click(object sender, EventArgs e)
         {
             panelMostrador.Visible = false;
+            panSubMenuPagos.Visible = false;
             panelMostrador.Controls.Clear();
+            formulario.Close();
         }
 
         private void panLateral_Paint(object sender, PaintEventArgs e)
@@ -288,7 +292,7 @@ namespace SistemaGestorEscolar
 
         private void btnMenuRegistroPago_Click(object sender, EventArgs e)
         {
-
+            panSubMenuPagos.Visible = true;
         }
 
         private void btnMenuIngresoNotas_Click(object sender, EventArgs e)
@@ -313,13 +317,43 @@ namespace SistemaGestorEscolar
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
-            panelMostrador.Visible = true;
-            AbrirFormulario<IRegistroPago>();
+            panSubMenuPagos.Visible = true;
+            panSubMenuPagos.Dock = DockStyle.Fill;
         }
 
         private void panelMostrador_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnMatricularEstudiante_Click(object sender, EventArgs e)
+        {
+            panelMostrador.Visible = true;
+            AbrirFormulario<Modulos_Estudiante.IMatriculaPrematriculaEstudiante>();
+        }
+
+        private void btnRegistrarPago_Click(object sender, EventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
+            AbrirFormulario<IRegistroPago>();
+        }
+
+        private void btnHistorialPagos_Click(object sender, EventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
+            AbrirFormulario<Modulo_de_Pagos.IHistorialPagos>();
+        }
+
+        private void btnEstudiante_Click(object sender, EventArgs e)
+        {
+            panSubMenuEstudiante.Visible = true;
+            panSubMenuEstudiante.Dock = DockStyle.Fill;
         }
     }
 }

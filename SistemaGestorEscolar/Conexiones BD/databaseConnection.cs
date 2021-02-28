@@ -285,7 +285,7 @@ namespace SistemaGestorEscolar
             }
         }
         
-        public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento)
+        public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento, Image img)
         {
             try
             {
@@ -298,7 +298,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@montoPago", montoPago);
                 comando.Parameters.AddWithValue("@fechaPago", fechaPago);
                 comando.Parameters.AddWithValue("@descuento", descuento);
-                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(Properties.Resources.imgComprobantePendiente));
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(img));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -364,6 +364,7 @@ namespace SistemaGestorEscolar
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@fechaFacturacion", fechaFacturacion);
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(Properties.Resources.imgComprobantePendiente));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)

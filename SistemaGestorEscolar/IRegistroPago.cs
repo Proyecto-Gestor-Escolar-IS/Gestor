@@ -14,7 +14,9 @@ namespace SistemaGestorEscolar
         public static Image image;
 
         clsUtilidades utilidades = new clsUtilidades();
+        IMessageBoxCheck message = new IMessageBoxCheck();
         private databaseConnection dbConn = new databaseConnection();
+        
         private int idUltimaMensualidad;
 
         private void button1_Click(object sender, EventArgs e)
@@ -122,6 +124,7 @@ namespace SistemaGestorEscolar
                             if (!string.IsNullOrEmpty(idEstudiante))
                             {
                                 dbConn.llenarTextBox(txtNombreEstudiante, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = " + txtIdentidadEstudiante.Text);
+                                dbConn.llenarTextBox(txtNombreEncargado, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEncargado INNER JOIN detalleEncargado ON datosEncargado.identidadEncargado = detalleEncargado.id_encargadoAlumno WHERE detalleEncargado.id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 idUltimaMensualidad = dbConn.obtenerVariableEntera("SELECT MAX(id_Mensualidad) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 txtMontoPagar.Enabled = true;
                                 dbConn.llenarTextBox(txtNoFactura, "SELECT count(*) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
@@ -216,18 +219,55 @@ namespace SistemaGestorEscolar
         {
             try
             {
-                if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, 0))
+                if (chkDescuento.Checked == true)
                 {
-                    MessageBox.Show("Pago Registrado Exitosamente", "Pago Realizado", MessageBoxButtons.OK);
-                    dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                    dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                    txtMontoPagar.Clear();
-                    txtDescuento.Clear();
-                    chkDescuento.Checked = false;
+                        if (image != null)
+                        {
+                            if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, Double.Parse(txtDescuento.Text), image))
+                            {
+
+                                message.lblCheck.Text = "PAGO REGISTRADO";
+                                message.ShowDialog();
+
+                                dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                                dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                                txtMontoPagar.Clear();
+                                txtDescuento.Clear();
+                                chkDescuento.Checked = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
+                            }
+                    }
+                    else
+                    {
+                            MessageBox.Show("Ingrese un Comprobante de Pago", "Sin Comprobante", MessageBoxButtons.OK);
+                    }
                 }
-                else
+                else if (chkDescuento.Checked == false)
                 {
-                    MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
+                    if (image != null)
+                    {
+                        if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, 0, image))
+                        {
+                        message.lblCheck.Text = "PAGO REGISTRADO";
+                        message.ShowDialog();
+                        dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                        dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                        txtMontoPagar.Clear();
+                        txtDescuento.Clear();
+                        chkDescuento.Checked = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese un Comprobante de Pago", "Sin Comprobante", MessageBoxButtons.OK);
+                    }
                 }
             }
             catch (Exception ex)
@@ -288,6 +328,7 @@ namespace SistemaGestorEscolar
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
             int number = 0;
+
             try
             {
                 if (txtDescuento.Text != String.Empty)
@@ -303,6 +344,7 @@ namespace SistemaGestorEscolar
                             {
                                 txtDescuento.ForeColor = Color.Green;
                                 txtMontoPagar.Enabled = true;
+                      
                             }
                             else
                             {

@@ -16,5 +16,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             InitializeComponent();
         }
+
+        private void txtIdentidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

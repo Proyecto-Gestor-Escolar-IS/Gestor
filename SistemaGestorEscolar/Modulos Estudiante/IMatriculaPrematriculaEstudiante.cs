@@ -16,5 +16,21 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             InitializeComponent();
         }
+        private databaseConnection dbConn = new databaseConnection();
+
+        private void IMatriculaPrematriculaEstudiante_Load(object sender, EventArgs e)
+        {
+            dbConn.llenarComboBox(cmbCurso, "SELECT nombreCurso FROM cursos");
+        }
+
+        private void btnmatricular_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -80,6 +80,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +126,9 @@
     </Compile>
     <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoundedButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />

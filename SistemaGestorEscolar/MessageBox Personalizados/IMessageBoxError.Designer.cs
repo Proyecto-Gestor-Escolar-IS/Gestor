@@ -66,7 +66,7 @@ namespace SistemaGestorEscolar
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(45)))), ((int)(((byte)(44)))));
             this.lblError.Location = new System.Drawing.Point(103, 82);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(294, 22);
+            this.lblError.Size = new System.Drawing.Size(316, 20);
             this.lblError.TabIndex = 4;
             this.lblError.Text = "ERROR AL INGRESAR LOS DATOS";
             // 

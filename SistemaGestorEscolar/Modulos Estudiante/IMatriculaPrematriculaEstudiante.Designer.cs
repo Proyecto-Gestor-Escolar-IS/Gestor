@@ -104,21 +104,19 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panmatriculaEstudiante.Location = new System.Drawing.Point(10, 110);
             this.panmatriculaEstudiante.Margin = new System.Windows.Forms.Padding(2);
             this.panmatriculaEstudiante.Name = "panmatriculaEstudiante";
-            this.panmatriculaEstudiante.Size = new System.Drawing.Size(1614, 888);
+            this.panmatriculaEstudiante.Size = new System.Drawing.Size(1614, 849);
             this.panmatriculaEstudiante.TabIndex = 1;
             // 
             // cmbCurso
             // 
             this.cmbCurso.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCurso.FormattingEnabled = true;
-            this.cmbCurso.Items.AddRange(new object[] {
-            "Femenino",
-            "Masculino"});
             this.cmbCurso.Location = new System.Drawing.Point(1141, 107);
             this.cmbCurso.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCurso.Name = "cmbCurso";
-            this.cmbCurso.Size = new System.Drawing.Size(283, 39);
+            this.cmbCurso.Size = new System.Drawing.Size(283, 35);
             this.cmbCurso.TabIndex = 44;
+            this.cmbCurso.SelectedIndexChanged += new System.EventHandler(this.cmbCurso_SelectedIndexChanged);
             // 
             // txttotal
             // 
@@ -137,7 +135,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lbltotal.Location = new System.Drawing.Point(1076, 538);
             this.lbltotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(84, 36);
+            this.lbltotal.Size = new System.Drawing.Size(81, 32);
             this.lbltotal.TabIndex = 42;
             this.lbltotal.Text = "Total";
             // 
@@ -158,7 +156,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblSV.Location = new System.Drawing.Point(1076, 444);
             this.lblSV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSV.Name = "lblSV";
-            this.lblSV.Size = new System.Drawing.Size(62, 36);
+            this.lblSV.Size = new System.Drawing.Size(62, 32);
             this.lblSV.TabIndex = 40;
             this.lblSV.Text = "ISV";
             // 
@@ -179,7 +177,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblsubtotal.Location = new System.Drawing.Point(1076, 490);
             this.lblsubtotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblsubtotal.Name = "lblsubtotal";
-            this.lblsubtotal.Size = new System.Drawing.Size(127, 36);
+            this.lblsubtotal.Size = new System.Drawing.Size(123, 32);
             this.lblsubtotal.TabIndex = 38;
             this.lblsubtotal.Text = "Subtotal";
             // 
@@ -200,7 +198,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblprecio.Location = new System.Drawing.Point(966, 257);
             this.lblprecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblprecio.Name = "lblprecio";
-            this.lblprecio.Size = new System.Drawing.Size(108, 37);
+            this.lblprecio.Size = new System.Drawing.Size(99, 33);
             this.lblprecio.TabIndex = 34;
             this.lblprecio.Text = "Precio";
             // 
@@ -221,7 +219,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblfecha.Location = new System.Drawing.Point(966, 332);
             this.lblfecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(103, 37);
+            this.lblfecha.Size = new System.Drawing.Size(95, 33);
             this.lblfecha.TabIndex = 32;
             this.lblfecha.Text = "Fecha";
             // 
@@ -232,7 +230,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblcurso.Location = new System.Drawing.Point(966, 105);
             this.lblcurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblcurso.Name = "lblcurso";
-            this.lblcurso.Size = new System.Drawing.Size(100, 37);
+            this.lblcurso.Size = new System.Drawing.Size(95, 33);
             this.lblcurso.TabIndex = 30;
             this.lblcurso.Text = "Curso";
             // 
@@ -253,7 +251,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblSeccion.Location = new System.Drawing.Point(966, 181);
             this.lblSeccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSeccion.Name = "lblSeccion";
-            this.lblSeccion.Size = new System.Drawing.Size(129, 37);
+            this.lblSeccion.Size = new System.Drawing.Size(122, 33);
             this.lblSeccion.TabIndex = 28;
             this.lblSeccion.Text = "Sección";
             // 
@@ -267,7 +265,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbgeneroEstudiante.Location = new System.Drawing.Point(456, 486);
             this.cmbgeneroEstudiante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbgeneroEstudiante.Name = "cmbgeneroEstudiante";
-            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(283, 39);
+            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(283, 35);
             this.cmbgeneroEstudiante.TabIndex = 27;
             // 
             // txtidentidadEncargado
@@ -287,7 +285,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblnumIdentidadEncargado.Location = new System.Drawing.Point(111, 105);
             this.lblnumIdentidadEncargado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnumIdentidadEncargado.Name = "lblnumIdentidadEncargado";
-            this.lblnumIdentidadEncargado.Size = new System.Drawing.Size(352, 37);
+            this.lblnumIdentidadEncargado.Size = new System.Drawing.Size(338, 33);
             this.lblnumIdentidadEncargado.TabIndex = 25;
             this.lblnumIdentidadEncargado.Text = "N- Identidad Encargado";
             // 
@@ -298,7 +296,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblgenero.Location = new System.Drawing.Point(111, 485);
             this.lblgenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblgenero.Name = "lblgenero";
-            this.lblgenero.Size = new System.Drawing.Size(120, 37);
+            this.lblgenero.Size = new System.Drawing.Size(114, 33);
             this.lblgenero.TabIndex = 23;
             this.lblgenero.Text = "Género";
             // 
@@ -319,7 +317,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblfechaNacimiento.Location = new System.Drawing.Point(111, 404);
             this.lblfechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechaNacimiento.Name = "lblfechaNacimiento";
-            this.lblfechaNacimiento.Size = new System.Drawing.Size(270, 37);
+            this.lblfechaNacimiento.Size = new System.Drawing.Size(251, 33);
             this.lblfechaNacimiento.TabIndex = 21;
             this.lblfechaNacimiento.Text = "Fecha Nacimiento";
             // 
@@ -330,7 +328,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnreingreso.Location = new System.Drawing.Point(936, 17);
             this.btnreingreso.Margin = new System.Windows.Forms.Padding(2);
             this.btnreingreso.Name = "btnreingreso";
-            this.btnreingreso.Size = new System.Drawing.Size(182, 42);
+            this.btnreingreso.Size = new System.Drawing.Size(176, 37);
             this.btnreingreso.TabIndex = 20;
             this.btnreingreso.Text = "Reingreso";
             this.btnreingreso.UseVisualStyleBackColor = true;
@@ -342,7 +340,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.chkprimerIngreso.Location = new System.Drawing.Point(524, 17);
             this.chkprimerIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.chkprimerIngreso.Name = "chkprimerIngreso";
-            this.chkprimerIngreso.Size = new System.Drawing.Size(252, 42);
+            this.chkprimerIngreso.Size = new System.Drawing.Size(242, 37);
             this.chkprimerIngreso.TabIndex = 19;
             this.chkprimerIngreso.Text = "Primer Ingreso";
             this.chkprimerIngreso.UseVisualStyleBackColor = true;
@@ -404,7 +402,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblApellidosEstudiante.Location = new System.Drawing.Point(112, 329);
             this.lblApellidosEstudiante.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellidosEstudiante.Name = "lblApellidosEstudiante";
-            this.lblApellidosEstudiante.Size = new System.Drawing.Size(303, 37);
+            this.lblApellidosEstudiante.Size = new System.Drawing.Size(287, 33);
             this.lblApellidosEstudiante.TabIndex = 5;
             this.lblApellidosEstudiante.Text = "Apellidos Estudiante";
             // 
@@ -415,7 +413,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblnombresEstudiante.Location = new System.Drawing.Point(111, 254);
             this.lblnombresEstudiante.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnombresEstudiante.Name = "lblnombresEstudiante";
-            this.lblnombresEstudiante.Size = new System.Drawing.Size(305, 37);
+            this.lblnombresEstudiante.Size = new System.Drawing.Size(287, 33);
             this.lblnombresEstudiante.TabIndex = 4;
             this.lblnombresEstudiante.Text = "Nombres Estudiante";
             // 
@@ -426,7 +424,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblnumIdentidadEstudiante.Location = new System.Drawing.Point(111, 178);
             this.lblnumIdentidadEstudiante.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnumIdentidadEstudiante.Name = "lblnumIdentidadEstudiante";
-            this.lblnumIdentidadEstudiante.Size = new System.Drawing.Size(355, 37);
+            this.lblnumIdentidadEstudiante.Size = new System.Drawing.Size(334, 33);
             this.lblnumIdentidadEstudiante.TabIndex = 3;
             this.lblnumIdentidadEstudiante.Text = "N- Identidad Estudiante";
             // 
@@ -442,6 +440,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnmatricular.TabIndex = 1;
             this.btnmatricular.Text = "Matricular";
             this.btnmatricular.UseVisualStyleBackColor = false;
+            this.btnmatricular.Click += new System.EventHandler(this.btnmatricular_Click);
             // 
             // lblMatriculaEstudiante
             // 
@@ -450,7 +449,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblMatriculaEstudiante.Location = new System.Drawing.Point(681, 37);
             this.lblMatriculaEstudiante.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMatriculaEstudiante.Name = "lblMatriculaEstudiante";
-            this.lblMatriculaEstudiante.Size = new System.Drawing.Size(340, 41);
+            this.lblMatriculaEstudiante.Size = new System.Drawing.Size(319, 36);
             this.lblMatriculaEstudiante.TabIndex = 45;
             this.lblMatriculaEstudiante.Text = "Matricula Estudiante";
             // 
@@ -466,6 +465,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IMatriculaPrematriculaEstudiante";
             this.Text = "IMatriculaPrematriculaEstudiante";
+            this.Load += new System.EventHandler(this.IMatriculaPrematriculaEstudiante_Load);
             this.panmatriculaEstudiante.ResumeLayout(false);
             this.panmatriculaEstudiante.PerformLayout();
             this.ResumeLayout(false);
