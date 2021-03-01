@@ -17,42 +17,65 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             InitializeComponent();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
+        databaseConnection dbConn = new databaseConnection();
 
+        private void IFrmGestionEmpleados_Load(object sender, EventArgs e)
+        {
+            dbConn.establecerConexion();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRegistrarEmpleado_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("hoolg");
-            //pnlSelector.Hide();
-            grpRegistroEmpleado.Show();
-        }
-
-        private void button_WOC1_Click(object sender, EventArgs e)
+        private void altoButton1_Click(object sender, EventArgs e)
         {
             pnlSelector.Hide();
             grpRegistroEmpleado.Show();
         }
 
-        private void roundedButton2_Click(object sender, EventArgs e)
+        private void btnActualizacion_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hoolg");
+            pnlSelector.Hide();
+            pnldgv.Show();
+            dgvEmpleados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
-        private void altoButton1_Click(object sender, EventArgs e)
+        private void btnRegresarDGVAct_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hoolg");
+            pnldgv.Hide();
+            pnlSelector.Show();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            grpRegistroEmpleado.Hide();
+            pnlSelector.Show();
+        }
+
+        private void btnAdministradores_Click(object sender, EventArgs e)
+        {
+            lblTitulo.Text = "ADMINISTRADORES";
+            dbConn.llenarDGV(dgvEmpleados, "SELECT * FROM datosEmpleados");
+        }
+
+        private void btnDocentes_Click(object sender, EventArgs e)
+        {
+            lblTitulo.Text = "DOCENTES";
+        }
+
+        private void btnMedicos_Click(object sender, EventArgs e)
+        {
+            lblTitulo.Text = "MEDICOS";
+        }
+
+        private void btnActRegresar_Click(object sender, EventArgs e)
+        {
+            grpActualizar.Hide();
+            pnldgv.Show();
+        }
+
+        private void btnSiguienteDGVAct_Click(object sender, EventArgs e)
+        {
+            pnldgv.Hide();
+            grpActualizar.Show();
         }
     }
 }

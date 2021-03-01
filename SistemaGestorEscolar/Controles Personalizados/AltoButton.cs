@@ -98,7 +98,7 @@ namespace AltoControls
                     using (LinearGradientBrush downGB = new LinearGradientBrush(rect, Color.FromArgb(R1, G1, B1), Color.FromArgb(R2, G2, B2), 90f))
                         e.Graphics.FillPath(downGB, roundedRect.Path);
                 if (stroke)
-                    using (Pen pen = new Pen(strokeColor, 1))
+                    using (Pen pen = new Pen(strokeColor, 3))
                     using (GraphicsPath path = new RoundedRectangleF(Width - (radius > 0 ? 0 : 1), Height - (radius > 0 ? 0 : 1), radius).Path)
                         e.Graphics.DrawPath(pen, path);
             }
