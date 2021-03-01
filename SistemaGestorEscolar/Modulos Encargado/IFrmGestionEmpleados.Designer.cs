@@ -31,6 +31,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grpRegistroEmpleado = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnRegresar = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnRegistrar = new SistemaGestorEscolar.Controls.RoundedButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdentidad = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaNa = new System.Windows.Forms.MaskedTextBox();
@@ -54,13 +57,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblNombres = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlSelector = new System.Windows.Forms.Panel();
+            this.altoTextBox1 = new AltoControls.AltoTextBox();
             this.altoButton1 = new AltoControls.AltoButton();
             this.roundedButton1 = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnRegistrarEmpleado = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnLimpiar = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnRegresar = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnRegistrar = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.altoTextBox1 = new AltoControls.AltoTextBox();
             this.grpRegistroEmpleado.SuspendLayout();
             this.pnlSelector.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +71,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(567, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 41);
+            this.label1.Size = new System.Drawing.Size(415, 36);
             this.label1.TabIndex = 25;
             this.label1.Text = "GESTION DE EMPLEADOS";
             // 
@@ -111,6 +111,64 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.grpRegistroEmpleado.Text = "REGISTRAR EMPLEADO";
             this.grpRegistroEmpleado.Visible = false;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiar.BorderDownColor = System.Drawing.Color.Silver;
+            this.btnLimpiar.BorderDownWidth = 0F;
+            this.btnLimpiar.BorderOverColor = System.Drawing.Color.AliceBlue;
+            this.btnLimpiar.BorderOverWidth = 0F;
+            this.btnLimpiar.BorderRadius = 50;
+            this.btnLimpiar.BorderWidth = 3F;
+            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(1212, 800);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
+            this.btnLimpiar.TabIndex = 77;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresar.BorderDownColor = System.Drawing.Color.Silver;
+            this.btnRegresar.BorderDownWidth = 0F;
+            this.btnRegresar.BorderOverColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRegresar.BorderOverWidth = 0F;
+            this.btnRegresar.BorderRadius = 50;
+            this.btnRegresar.BorderWidth = 3F;
+            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresar.ImageKey = "(none)";
+            this.btnRegresar.Location = new System.Drawing.Point(44, 800);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresar.TabIndex = 76;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistrar.BorderDownColor = System.Drawing.Color.Silver;
+            this.btnRegistrar.BorderDownWidth = 0F;
+            this.btnRegistrar.BorderOverColor = System.Drawing.Color.SlateGray;
+            this.btnRegistrar.BorderOverWidth = 0F;
+            this.btnRegistrar.BorderRadius = 50;
+            this.btnRegistrar.BorderWidth = 3F;
+            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(615, 781);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
+            this.btnRegistrar.TabIndex = 75;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -118,7 +176,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label2.Location = new System.Drawing.Point(848, 547);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 27);
+            this.label2.Size = new System.Drawing.Size(144, 24);
             this.label2.TabIndex = 74;
             this.label2.Text = "dd/mm/aaaa";
             // 
@@ -166,7 +224,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkVerContras.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerContras.Location = new System.Drawing.Point(899, 444);
             this.chkVerContras.Name = "chkVerContras";
-            this.chkVerContras.Size = new System.Drawing.Size(201, 31);
+            this.chkVerContras.Size = new System.Drawing.Size(208, 28);
             this.chkVerContras.TabIndex = 73;
             this.chkVerContras.Text = "Ver Contraseñas";
             this.chkVerContras.UseVisualStyleBackColor = true;
@@ -178,7 +236,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblContra.Location = new System.Drawing.Point(553, 445);
             this.lblContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(129, 27);
+            this.lblContra.Size = new System.Drawing.Size(132, 24);
             this.lblContra.TabIndex = 72;
             this.lblContra.Text = "Contraseña";
             // 
@@ -199,7 +257,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblConfiContra.Location = new System.Drawing.Point(445, 492);
             this.lblConfiContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfiContra.Name = "lblConfiContra";
-            this.lblConfiContra.Size = new System.Drawing.Size(237, 27);
+            this.lblConfiContra.Size = new System.Drawing.Size(244, 24);
             this.lblConfiContra.TabIndex = 71;
             this.lblConfiContra.Text = "Confirmar Contraseña";
             // 
@@ -258,7 +316,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.cmbCargosSec.Location = new System.Drawing.Point(698, 596);
             this.cmbCargosSec.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCargosSec.Name = "cmbCargosSec";
-            this.cmbCargosSec.Size = new System.Drawing.Size(305, 35);
+            this.cmbCargosSec.Size = new System.Drawing.Size(305, 32);
             this.cmbCargosSec.TabIndex = 70;
             // 
             // lblCargo
@@ -269,7 +327,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblCargo.Location = new System.Drawing.Point(610, 599);
             this.lblCargo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(72, 27);
+            this.lblCargo.Size = new System.Drawing.Size(75, 24);
             this.lblCargo.TabIndex = 69;
             this.lblCargo.Text = "Cargo";
             // 
@@ -280,7 +338,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblFechaNa.Location = new System.Drawing.Point(459, 547);
             this.lblFechaNa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaNa.Name = "lblFechaNa";
-            this.lblFechaNa.Size = new System.Drawing.Size(223, 27);
+            this.lblFechaNa.Size = new System.Drawing.Size(225, 24);
             this.lblFechaNa.TabIndex = 68;
             this.lblFechaNa.Text = "Fecha de Nacimiento";
             // 
@@ -291,7 +349,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblCoreeo.Location = new System.Drawing.Point(480, 396);
             this.lblCoreeo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCoreeo.Name = "lblCoreeo";
-            this.lblCoreeo.Size = new System.Drawing.Size(202, 27);
+            this.lblCoreeo.Size = new System.Drawing.Size(206, 24);
             this.lblCoreeo.TabIndex = 67;
             this.lblCoreeo.Text = "Correo Electronico";
             // 
@@ -302,7 +360,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblTele.Location = new System.Drawing.Point(579, 346);
             this.lblTele.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTele.Name = "lblTele";
-            this.lblTele.Size = new System.Drawing.Size(103, 27);
+            this.lblTele.Size = new System.Drawing.Size(102, 24);
             this.lblTele.TabIndex = 66;
             this.lblTele.Text = "Teléfono";
             // 
@@ -313,7 +371,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblApellidos.Location = new System.Drawing.Point(580, 292);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(102, 27);
+            this.lblApellidos.Size = new System.Drawing.Size(103, 24);
             this.lblApellidos.TabIndex = 65;
             this.lblApellidos.Text = "Apellidos";
             // 
@@ -324,7 +382,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblNombres.Location = new System.Drawing.Point(579, 240);
             this.lblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(103, 27);
+            this.lblNombres.Size = new System.Drawing.Size(103, 24);
             this.lblNombres.TabIndex = 64;
             this.lblNombres.Text = "Nombres";
             // 
@@ -335,7 +393,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label4.Location = new System.Drawing.Point(461, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 27);
+            this.label4.Size = new System.Drawing.Size(229, 24);
             this.label4.TabIndex = 63;
             this.label4.Text = "Numero de Identidad";
             // 
@@ -350,6 +408,18 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.pnlSelector.Name = "pnlSelector";
             this.pnlSelector.Size = new System.Drawing.Size(1510, 944);
             this.pnlSelector.TabIndex = 80;
+            // 
+            // altoTextBox1
+            // 
+            this.altoTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.altoTextBox1.Br = System.Drawing.Color.White;
+            this.altoTextBox1.Font = new System.Drawing.Font("Comic Sans MS", 11F);
+            this.altoTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.altoTextBox1.Location = new System.Drawing.Point(352, 303);
+            this.altoTextBox1.Name = "altoTextBox1";
+            this.altoTextBox1.Size = new System.Drawing.Size(253, 40);
+            this.altoTextBox1.TabIndex = 83;
+            this.altoTextBox1.Text = "altoTextBox1";
             // 
             // altoButton1
             // 
@@ -410,76 +480,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegistrarEmpleado.Text = "REGISTRAR EMPLEADO";
             this.btnRegistrarEmpleado.UseVisualStyleBackColor = false;
             this.btnRegistrarEmpleado.Click += new System.EventHandler(this.btnRegistrarEmpleado_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiar.BorderDownColor = System.Drawing.Color.Silver;
-            this.btnLimpiar.BorderDownWidth = 0F;
-            this.btnLimpiar.BorderOverColor = System.Drawing.Color.AliceBlue;
-            this.btnLimpiar.BorderOverWidth = 0F;
-            this.btnLimpiar.BorderRadius = 50;
-            this.btnLimpiar.BorderWidth = 3F;
-            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(1212, 800);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
-            this.btnLimpiar.TabIndex = 77;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegresar.BorderDownColor = System.Drawing.Color.Silver;
-            this.btnRegresar.BorderDownWidth = 0F;
-            this.btnRegresar.BorderOverColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRegresar.BorderOverWidth = 0F;
-            this.btnRegresar.BorderRadius = 50;
-            this.btnRegresar.BorderWidth = 3F;
-            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresar.ImageKey = "(none)";
-            this.btnRegresar.Location = new System.Drawing.Point(44, 800);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(269, 65);
-            this.btnRegresar.TabIndex = 76;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegistrar.BorderDownColor = System.Drawing.Color.Silver;
-            this.btnRegistrar.BorderDownWidth = 0F;
-            this.btnRegistrar.BorderOverColor = System.Drawing.Color.SlateGray;
-            this.btnRegistrar.BorderOverWidth = 0F;
-            this.btnRegistrar.BorderRadius = 50;
-            this.btnRegistrar.BorderWidth = 3F;
-            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(615, 781);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
-            this.btnRegistrar.TabIndex = 75;
-            this.btnRegistrar.Text = "REGISTRAR";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            // 
-            // altoTextBox1
-            // 
-            this.altoTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.altoTextBox1.Br = System.Drawing.Color.White;
-            this.altoTextBox1.Font = new System.Drawing.Font("Comic Sans MS", 11F);
-            this.altoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.altoTextBox1.Location = new System.Drawing.Point(352, 303);
-            this.altoTextBox1.Name = "altoTextBox1";
-            this.altoTextBox1.Size = new System.Drawing.Size(253, 40);
-            this.altoTextBox1.TabIndex = 83;
-            this.altoTextBox1.Text = "altoTextBox1";
             // 
             // IFrmGestionEmpleados
             // 
