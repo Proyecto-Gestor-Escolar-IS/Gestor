@@ -45,10 +45,10 @@ namespace SistemaGestorEscolar
             this.btnMenuAtras = new System.Windows.Forms.Button();
             this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.btnPersonal = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnIngresarNotas = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnPagos = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnPersonal = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnCursos = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
@@ -60,12 +60,12 @@ namespace SistemaGestorEscolar
             this.label2 = new System.Windows.Forms.Label();
             this.panelMostrador = new System.Windows.Forms.Panel();
             this.panSubMenuPagos = new System.Windows.Forms.Panel();
+            this.btnHistorialPagos = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnRegistrarPago = new SistemaGestorEscolar.Controls.RoundedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.btnRegistrarPago = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnHistorialPagos = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -313,6 +313,25 @@ namespace SistemaGestorEscolar
             this.panelPrincipal.TabIndex = 2;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnPersonal
+            // 
+            this.btnPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnPersonal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnPersonal.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnPersonal.BorderDownWidth = 0F;
+            this.btnPersonal.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnPersonal.BorderOverWidth = 0F;
+            this.btnPersonal.BorderRadius = 25;
+            this.btnPersonal.BorderWidth = 4F;
+            this.btnPersonal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnPersonal.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnPersonal.Location = new System.Drawing.Point(103, 478);
+            this.btnPersonal.Name = "btnPersonal";
+            this.btnPersonal.Size = new System.Drawing.Size(353, 155);
+            this.btnPersonal.TabIndex = 43;
+            this.btnPersonal.Text = "PERSONAL";
+            this.btnPersonal.UseVisualStyleBackColor = false;
+            // 
             // btnEstudiante
             // 
             this.btnEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
@@ -372,25 +391,6 @@ namespace SistemaGestorEscolar
             this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click_1);
             this.btnPagos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPagos_MouseDown);
             // 
-            // btnPersonal
-            // 
-            this.btnPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnPersonal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.btnPersonal.BorderDownColor = System.Drawing.Color.Empty;
-            this.btnPersonal.BorderDownWidth = 0F;
-            this.btnPersonal.BorderOverColor = System.Drawing.Color.Empty;
-            this.btnPersonal.BorderOverWidth = 0F;
-            this.btnPersonal.BorderRadius = 25;
-            this.btnPersonal.BorderWidth = 4F;
-            this.btnPersonal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
-            this.btnPersonal.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnPersonal.Location = new System.Drawing.Point(103, 478);
-            this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(353, 155);
-            this.btnPersonal.TabIndex = 43;
-            this.btnPersonal.Text = "PERSONAL";
-            this.btnPersonal.UseVisualStyleBackColor = false;
-            // 
             // btnCursos
             // 
             this.btnCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
@@ -441,7 +441,7 @@ namespace SistemaGestorEscolar
             this.btnMatricularEstudiante.BorderWidth = 4F;
             this.btnMatricularEstudiante.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
             this.btnMatricularEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnMatricularEstudiante.Location = new System.Drawing.Point(103, 209);
+            this.btnMatricularEstudiante.Location = new System.Drawing.Point(130, 209);
             this.btnMatricularEstudiante.Name = "btnMatricularEstudiante";
             this.btnMatricularEstudiante.Size = new System.Drawing.Size(353, 155);
             this.btnMatricularEstudiante.TabIndex = 40;
@@ -549,6 +549,45 @@ namespace SistemaGestorEscolar
             this.panSubMenuPagos.Size = new System.Drawing.Size(284, 50);
             this.panSubMenuPagos.TabIndex = 0;
             // 
+            // btnHistorialPagos
+            // 
+            this.btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnHistorialPagos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnHistorialPagos.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnHistorialPagos.BorderDownWidth = 0F;
+            this.btnHistorialPagos.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnHistorialPagos.BorderOverWidth = 0F;
+            this.btnHistorialPagos.BorderRadius = 25;
+            this.btnHistorialPagos.BorderWidth = 4F;
+            this.btnHistorialPagos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnHistorialPagos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnHistorialPagos.Location = new System.Drawing.Point(952, 401);
+            this.btnHistorialPagos.Name = "btnHistorialPagos";
+            this.btnHistorialPagos.Size = new System.Drawing.Size(353, 155);
+            this.btnHistorialPagos.TabIndex = 48;
+            this.btnHistorialPagos.Text = "HISTORIAL PAGOS";
+            this.btnHistorialPagos.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistrarPago
+            // 
+            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnRegistrarPago.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnRegistrarPago.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnRegistrarPago.BorderDownWidth = 0F;
+            this.btnRegistrarPago.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnRegistrarPago.BorderOverWidth = 0F;
+            this.btnRegistrarPago.BorderRadius = 25;
+            this.btnRegistrarPago.BorderWidth = 4F;
+            this.btnRegistrarPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrarPago.Location = new System.Drawing.Point(337, 401);
+            this.btnRegistrarPago.Name = "btnRegistrarPago";
+            this.btnRegistrarPago.Size = new System.Drawing.Size(353, 155);
+            this.btnRegistrarPago.TabIndex = 47;
+            this.btnRegistrarPago.Text = "REGISTRAR PAGO";
+            this.btnRegistrarPago.UseVisualStyleBackColor = false;
+            this.btnRegistrarPago.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistrarPago_MouseDown);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -579,45 +618,6 @@ namespace SistemaGestorEscolar
             // 
             this.tmrMostrarMenu.Interval = 2;
             this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
-            // 
-            // btnRegistrarPago
-            // 
-            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarPago.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.btnRegistrarPago.BorderDownColor = System.Drawing.Color.Empty;
-            this.btnRegistrarPago.BorderDownWidth = 0F;
-            this.btnRegistrarPago.BorderOverColor = System.Drawing.Color.Empty;
-            this.btnRegistrarPago.BorderOverWidth = 0F;
-            this.btnRegistrarPago.BorderRadius = 25;
-            this.btnRegistrarPago.BorderWidth = 4F;
-            this.btnRegistrarPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
-            this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrarPago.Location = new System.Drawing.Point(337, 401);
-            this.btnRegistrarPago.Name = "btnRegistrarPago";
-            this.btnRegistrarPago.Size = new System.Drawing.Size(353, 155);
-            this.btnRegistrarPago.TabIndex = 47;
-            this.btnRegistrarPago.Text = "REGISTRAR PAGO";
-            this.btnRegistrarPago.UseVisualStyleBackColor = false;
-            this.btnRegistrarPago.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistrarPago_MouseDown);
-            // 
-            // btnHistorialPagos
-            // 
-            this.btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnHistorialPagos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.btnHistorialPagos.BorderDownColor = System.Drawing.Color.Empty;
-            this.btnHistorialPagos.BorderDownWidth = 0F;
-            this.btnHistorialPagos.BorderOverColor = System.Drawing.Color.Empty;
-            this.btnHistorialPagos.BorderOverWidth = 0F;
-            this.btnHistorialPagos.BorderRadius = 25;
-            this.btnHistorialPagos.BorderWidth = 4F;
-            this.btnHistorialPagos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
-            this.btnHistorialPagos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHistorialPagos.Location = new System.Drawing.Point(952, 401);
-            this.btnHistorialPagos.Name = "btnHistorialPagos";
-            this.btnHistorialPagos.Size = new System.Drawing.Size(353, 155);
-            this.btnHistorialPagos.TabIndex = 48;
-            this.btnHistorialPagos.Text = "HISTORIAL PAGOS";
-            this.btnHistorialPagos.UseVisualStyleBackColor = false;
             // 
             // InterfazGraficaPrincipal
             // 
