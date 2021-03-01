@@ -31,5 +31,28 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
 
         }
+
+        private void btnRegistrarEmpleado_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hoolg");
+            //pnlSelector.Hide();
+            grpRegistroEmpleado.Show();
+        }
+
+        private void button_WOC1_Click(object sender, EventArgs e)
+        {
+            pnlSelector.Hide();
+            grpRegistroEmpleado.Show();
+        }
+
+        private void roundedButton2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hoolg");
+        }
+
+        private void altoButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hoolg");
+        }
     }
 }

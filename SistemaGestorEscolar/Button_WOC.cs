@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace ePOSOne.btnProduct
 {
@@ -50,7 +51,7 @@ namespace ePOSOne.btnProduct
             brush = new SolidBrush(_isHovering ? _onHoverButtonColor : _buttonColor);
 
             //Inner part. Button itself
-            g.FillEllipse(brush, _borderThicknessByTwo, _borderThicknessByTwo, Height - _borderThickness,
+            g.FillEllipse(brush, _borderThicknessByTwo, _borderThicknessByTwo, Height,
                 Height - _borderThickness);
             g.FillEllipse(brush, (Width - Height) + _borderThicknessByTwo, _borderThicknessByTwo,
                 Height - _borderThickness, Height - _borderThickness);
