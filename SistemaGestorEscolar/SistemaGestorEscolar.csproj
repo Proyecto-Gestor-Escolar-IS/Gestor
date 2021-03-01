@@ -481,6 +481,12 @@
     <None Include="Resources\contra 2.png" />
     <Content Include="Login\MensajeRecuperacionContra.html" />
     <None Include="Resources\gui_order_pending_icon_158418.png" />
+    <None Include="Resources\kisspng-lunar-phase-computer-icons-full-moon-crescent-5b01d45b8b7f60.4401773315268465555714.jpg" />
+    <None Include="Resources\png-transparent-half-moon-full-moon-shape-lunar-phase-computer-icons-moon-icon-text-logo-monochrome.png" />
+    <None Include="Resources\1033.png" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\button2.png" />
+    <None Include="Resources\buttonHoover.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>

@@ -35,6 +35,7 @@ namespace SistemaGestorEscolar
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrarPrograma = new System.Windows.Forms.Button();
             this.panLateral = new System.Windows.Forms.Panel();
+            this.btnCambioTema = new System.Windows.Forms.Button();
             this.btnMenuPersonal = new System.Windows.Forms.Button();
             this.btnMenuRegistroPago = new System.Windows.Forms.Button();
             this.btnMenuIngresoNotas = new System.Windows.Forms.Button();
@@ -59,13 +60,12 @@ namespace SistemaGestorEscolar
             this.btnIngresarNotas = new System.Windows.Forms.Button();
             this.btnPagos = new System.Windows.Forms.Button();
             this.btnCursos = new System.Windows.Forms.Button();
-            this.btnVistaMatriculas = new System.Windows.Forms.Button();
             this.btnPersonal = new System.Windows.Forms.Button();
             this.lblMenuTitle = new System.Windows.Forms.Label();
-            this.btnMatricularEstudiante = new System.Windows.Forms.Button();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.roundedButton1 = new BrbVideoManager.Controls.RoundedButton();
+            this.btnMatriEstudiante = new BrbVideoManager.Controls.RoundedButton();
+            this.btnVistaMatriculas = new BrbVideoManager.Controls.RoundedButton();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -76,7 +76,7 @@ namespace SistemaGestorEscolar
             // 
             // panSuperior
             // 
-            this.panSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
+            this.panSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
             this.panSuperior.Controls.Add(this.btnMinimizar);
             this.panSuperior.Controls.Add(this.btnMaximizar);
             this.panSuperior.Controls.Add(this.btnCerrarPrograma);
@@ -84,7 +84,7 @@ namespace SistemaGestorEscolar
             this.panSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panSuperior.Location = new System.Drawing.Point(0, 0);
             this.panSuperior.Name = "panSuperior";
-            this.panSuperior.Size = new System.Drawing.Size(1556, 45);
+            this.panSuperior.Size = new System.Drawing.Size(1920, 45);
             this.panSuperior.TabIndex = 0;
             this.panSuperior.Paint += new System.Windows.Forms.PaintEventHandler(this.panSuperior_Paint);
             this.panSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseDown);
@@ -138,7 +138,8 @@ namespace SistemaGestorEscolar
             // 
             // panLateral
             // 
-            this.panLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
+            this.panLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.panLateral.Controls.Add(this.btnCambioTema);
             this.panLateral.Controls.Add(this.btnMenuPersonal);
             this.panLateral.Controls.Add(this.btnMenuRegistroPago);
             this.panLateral.Controls.Add(this.btnMenuIngresoNotas);
@@ -150,16 +151,34 @@ namespace SistemaGestorEscolar
             this.panLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panLateral.Location = new System.Drawing.Point(0, 45);
             this.panLateral.Name = "panLateral";
-            this.panLateral.Size = new System.Drawing.Size(285, 839);
+            this.panLateral.Size = new System.Drawing.Size(285, 1035);
             this.panLateral.TabIndex = 1;
             this.panLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panLateral_Paint);
+            // 
+            // btnCambioTema
+            // 
+            this.btnCambioTema.BackColor = System.Drawing.Color.Transparent;
+            this.btnCambioTema.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources._1033;
+            this.btnCambioTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCambioTema.FlatAppearance.BorderSize = 0;
+            this.btnCambioTema.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCambioTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCambioTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambioTema.ForeColor = System.Drawing.Color.Black;
+            this.btnCambioTema.Location = new System.Drawing.Point(3, 991);
+            this.btnCambioTema.Name = "btnCambioTema";
+            this.btnCambioTema.Size = new System.Drawing.Size(43, 41);
+            this.btnCambioTema.TabIndex = 8;
+            this.btnCambioTema.UseVisualStyleBackColor = false;
+            this.btnCambioTema.Click += new System.EventHandler(this.btnCambioTema_Click);
             // 
             // btnMenuPersonal
             // 
             this.btnMenuPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnMenuPersonal.FlatAppearance.BorderSize = 0;
             this.btnMenuPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPersonal.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPersonal.ForeColor = System.Drawing.Color.Black;
             this.btnMenuPersonal.Location = new System.Drawing.Point(0, 556);
             this.btnMenuPersonal.Name = "btnMenuPersonal";
@@ -174,7 +193,7 @@ namespace SistemaGestorEscolar
             this.btnMenuRegistroPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnMenuRegistroPago.FlatAppearance.BorderSize = 0;
             this.btnMenuRegistroPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuRegistroPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuRegistroPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuRegistroPago.ForeColor = System.Drawing.Color.Black;
             this.btnMenuRegistroPago.Location = new System.Drawing.Point(0, 502);
             this.btnMenuRegistroPago.Name = "btnMenuRegistroPago";
@@ -189,7 +208,7 @@ namespace SistemaGestorEscolar
             this.btnMenuIngresoNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnMenuIngresoNotas.FlatAppearance.BorderSize = 0;
             this.btnMenuIngresoNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuIngresoNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuIngresoNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuIngresoNotas.ForeColor = System.Drawing.Color.Black;
             this.btnMenuIngresoNotas.Location = new System.Drawing.Point(0, 448);
             this.btnMenuIngresoNotas.Name = "btnMenuIngresoNotas";
@@ -204,7 +223,7 @@ namespace SistemaGestorEscolar
             this.btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnMenuCursosDisponibles.FlatAppearance.BorderSize = 0;
             this.btnMenuCursosDisponibles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuCursosDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuCursosDisponibles.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuCursosDisponibles.ForeColor = System.Drawing.Color.Black;
             this.btnMenuCursosDisponibles.Location = new System.Drawing.Point(0, 394);
             this.btnMenuCursosDisponibles.Name = "btnMenuCursosDisponibles";
@@ -219,7 +238,7 @@ namespace SistemaGestorEscolar
             this.btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnMenuVistaMatricula.FlatAppearance.BorderSize = 0;
             this.btnMenuVistaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuVistaMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuVistaMatricula.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuVistaMatricula.ForeColor = System.Drawing.Color.Black;
             this.btnMenuVistaMatricula.Location = new System.Drawing.Point(0, 340);
             this.btnMenuVistaMatricula.Name = "btnMenuVistaMatricula";
@@ -235,7 +254,7 @@ namespace SistemaGestorEscolar
             this.btnMenuMatriculaEstudiante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMenuMatriculaEstudiante.FlatAppearance.BorderSize = 0;
             this.btnMenuMatriculaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuMatriculaEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuMatriculaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuMatriculaEstudiante.ForeColor = System.Drawing.Color.Black;
             this.btnMenuMatriculaEstudiante.Location = new System.Drawing.Point(0, 286);
             this.btnMenuMatriculaEstudiante.Name = "btnMenuMatriculaEstudiante";
@@ -250,7 +269,7 @@ namespace SistemaGestorEscolar
             this.btnMenuAtras.BackColor = System.Drawing.Color.Red;
             this.btnMenuAtras.FlatAppearance.BorderSize = 0;
             this.btnMenuAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuAtras.ForeColor = System.Drawing.Color.White;
             this.btnMenuAtras.Location = new System.Drawing.Point(0, 209);
             this.btnMenuAtras.Name = "btnMenuAtras";
@@ -274,8 +293,9 @@ namespace SistemaGestorEscolar
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
-            this.panelPrincipal.Controls.Add(this.roundedButton1);
+            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panelPrincipal.Controls.Add(this.btnVistaMatriculas);
+            this.panelPrincipal.Controls.Add(this.btnMatriEstudiante);
             this.panelPrincipal.Controls.Add(this.panSubMenuEstudiante);
             this.panelPrincipal.Controls.Add(this.panelMostrador);
             this.panelPrincipal.Controls.Add(this.panSubMenuPagos);
@@ -283,15 +303,13 @@ namespace SistemaGestorEscolar
             this.panelPrincipal.Controls.Add(this.btnIngresarNotas);
             this.panelPrincipal.Controls.Add(this.btnPagos);
             this.panelPrincipal.Controls.Add(this.btnCursos);
-            this.panelPrincipal.Controls.Add(this.btnVistaMatriculas);
             this.panelPrincipal.Controls.Add(this.btnPersonal);
             this.panelPrincipal.Controls.Add(this.lblMenuTitle);
-            this.panelPrincipal.Controls.Add(this.btnMatricularEstudiante);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrincipal.Location = new System.Drawing.Point(285, 45);
             this.panelPrincipal.Margin = new System.Windows.Forms.Padding(145, 3, 3, 3);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(1271, 839);
+            this.panelPrincipal.Size = new System.Drawing.Size(1635, 1035);
             this.panelPrincipal.TabIndex = 2;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -379,7 +397,7 @@ namespace SistemaGestorEscolar
             // 
             // panelMostrador
             // 
-            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(69)))));
+            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.panelMostrador.Location = new System.Drawing.Point(76, 677);
             this.panelMostrador.Name = "panelMostrador";
             this.panelMostrador.Size = new System.Drawing.Size(484, 187);
@@ -438,10 +456,14 @@ namespace SistemaGestorEscolar
             // 
             // btnEstudiante
             // 
-            this.btnEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnEstudiante.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstudiante.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.button2;
+            this.btnEstudiante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEstudiante.FlatAppearance.BorderSize = 0;
+            this.btnEstudiante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstudiante.ForeColor = System.Drawing.Color.Black;
             this.btnEstudiante.Location = new System.Drawing.Point(649, 751);
             this.btnEstudiante.Name = "btnEstudiante";
@@ -453,10 +475,14 @@ namespace SistemaGestorEscolar
             // 
             // btnIngresarNotas
             // 
-            this.btnIngresarNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnIngresarNotas.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarNotas.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.button2;
+            this.btnIngresarNotas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnIngresarNotas.FlatAppearance.BorderSize = 0;
+            this.btnIngresarNotas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnIngresarNotas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnIngresarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresarNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresarNotas.ForeColor = System.Drawing.Color.Black;
             this.btnIngresarNotas.Location = new System.Drawing.Point(1178, 483);
             this.btnIngresarNotas.Name = "btnIngresarNotas";
@@ -467,12 +493,16 @@ namespace SistemaGestorEscolar
             // 
             // btnPagos
             // 
-            this.btnPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnPagos.BackColor = System.Drawing.Color.Transparent;
+            this.btnPagos.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.button2;
+            this.btnPagos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPagos.FlatAppearance.BorderSize = 0;
+            this.btnPagos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagos.ForeColor = System.Drawing.Color.Black;
-            this.btnPagos.Location = new System.Drawing.Point(649, 483);
+            this.btnPagos.Location = new System.Drawing.Point(641, 483);
             this.btnPagos.Name = "btnPagos";
             this.btnPagos.Size = new System.Drawing.Size(353, 155);
             this.btnPagos.TabIndex = 36;
@@ -482,10 +512,14 @@ namespace SistemaGestorEscolar
             // 
             // btnCursos
             // 
-            this.btnCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnCursos.BackColor = System.Drawing.Color.Transparent;
+            this.btnCursos.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.button2;
+            this.btnCursos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCursos.FlatAppearance.BorderSize = 0;
+            this.btnCursos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCursos.ForeColor = System.Drawing.Color.Black;
             this.btnCursos.Location = new System.Drawing.Point(1178, 209);
             this.btnCursos.Name = "btnCursos";
@@ -494,27 +528,16 @@ namespace SistemaGestorEscolar
             this.btnCursos.Text = "CURSOS";
             this.btnCursos.UseVisualStyleBackColor = false;
             // 
-            // btnVistaMatriculas
-            // 
-            this.btnVistaMatriculas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnVistaMatriculas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnVistaMatriculas.FlatAppearance.BorderSize = 3;
-            this.btnVistaMatriculas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVistaMatriculas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVistaMatriculas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnVistaMatriculas.Location = new System.Drawing.Point(649, 209);
-            this.btnVistaMatriculas.Name = "btnVistaMatriculas";
-            this.btnVistaMatriculas.Size = new System.Drawing.Size(353, 155);
-            this.btnVistaMatriculas.TabIndex = 33;
-            this.btnVistaMatriculas.Text = "VISTA DE MATRICULAS";
-            this.btnVistaMatriculas.UseVisualStyleBackColor = false;
-            // 
             // btnPersonal
             // 
-            this.btnPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnPersonal.BackColor = System.Drawing.Color.Transparent;
+            this.btnPersonal.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.button2;
+            this.btnPersonal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPersonal.FlatAppearance.BorderSize = 0;
+            this.btnPersonal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonal.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPersonal.ForeColor = System.Drawing.Color.Black;
             this.btnPersonal.Location = new System.Drawing.Point(103, 483);
             this.btnPersonal.Name = "btnPersonal";
@@ -530,26 +553,9 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
             this.lblMenuTitle.Location = new System.Drawing.Point(669, 92);
             this.lblMenuTitle.Name = "lblMenuTitle";
-            this.lblMenuTitle.Size = new System.Drawing.Size(301, 37);
+            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
             this.lblMenuTitle.TabIndex = 32;
             this.lblMenuTitle.Text = "MENU PRINCIPAL";
-            // 
-            // btnMatricularEstudiante
-            // 
-            this.btnMatricularEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnMatricularEstudiante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMatricularEstudiante.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnMatricularEstudiante.FlatAppearance.BorderSize = 3;
-            this.btnMatricularEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMatricularEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMatricularEstudiante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnMatricularEstudiante.Location = new System.Drawing.Point(1016, 36);
-            this.btnMatricularEstudiante.Name = "btnMatricularEstudiante";
-            this.btnMatricularEstudiante.Size = new System.Drawing.Size(353, 155);
-            this.btnMatricularEstudiante.TabIndex = 31;
-            this.btnMatricularEstudiante.Text = "MATRICULAR UN ESTUDIANTE";
-            this.btnMatricularEstudiante.UseVisualStyleBackColor = false;
-            this.btnMatricularEstudiante.Click += new System.EventHandler(this.btnMatricularEstudiante_Click);
             // 
             // tmrOcultarMenu
             // 
@@ -561,31 +567,54 @@ namespace SistemaGestorEscolar
             this.tmrMostrarMenu.Interval = 2;
             this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
             // 
-            // roundedButton1
+            // btnMatriEstudiante
             // 
-            this.roundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.roundedButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.roundedButton1.BorderDownColor = System.Drawing.Color.Empty;
-            this.roundedButton1.BorderDownWidth = 0F;
-            this.roundedButton1.BorderOverColor = System.Drawing.Color.Empty;
-            this.roundedButton1.BorderOverWidth = 0F;
-            this.roundedButton1.BorderRadius = 50;
-            this.roundedButton1.BorderWidth = 3F;
-            this.roundedButton1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.roundedButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.roundedButton1.Location = new System.Drawing.Point(103, 209);
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.Size = new System.Drawing.Size(353, 155);
-            this.roundedButton1.TabIndex = 41;
-            this.roundedButton1.Text = "MATRICULAR UN ESTUDIANTE";
-            this.roundedButton1.UseVisualStyleBackColor = false;
+            this.btnMatriEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnMatriEstudiante.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnMatriEstudiante.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnMatriEstudiante.BorderDownWidth = 3F;
+            this.btnMatriEstudiante.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnMatriEstudiante.BorderOverWidth = 0F;
+            this.btnMatriEstudiante.BorderRadius = 30;
+            this.btnMatriEstudiante.BorderWidth = 4F;
+            this.btnMatriEstudiante.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMatriEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnMatriEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnMatriEstudiante.Location = new System.Drawing.Point(103, 214);
+            this.btnMatriEstudiante.Name = "btnMatriEstudiante";
+            this.btnMatriEstudiante.Size = new System.Drawing.Size(353, 146);
+            this.btnMatriEstudiante.TabIndex = 41;
+            this.btnMatriEstudiante.Text = "MATRICULAR ESTUDIANTE";
+            this.btnMatriEstudiante.UseVisualStyleBackColor = false;
+            this.btnMatriEstudiante.Click += new System.EventHandler(this.roundedButton1_Click_1);
+            this.btnMatriEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.roundedButton1_MouseDown);
+            // 
+            // btnVistaMatriculas
+            // 
+            this.btnVistaMatriculas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnVistaMatriculas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnVistaMatriculas.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnVistaMatriculas.BorderDownWidth = 3F;
+            this.btnVistaMatriculas.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnVistaMatriculas.BorderOverWidth = 0F;
+            this.btnVistaMatriculas.BorderRadius = 30;
+            this.btnVistaMatriculas.BorderWidth = 4F;
+            this.btnVistaMatriculas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnVistaMatriculas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnVistaMatriculas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnVistaMatriculas.Location = new System.Drawing.Point(641, 209);
+            this.btnVistaMatriculas.Name = "btnVistaMatriculas";
+            this.btnVistaMatriculas.Size = new System.Drawing.Size(353, 146);
+            this.btnVistaMatriculas.TabIndex = 42;
+            this.btnVistaMatriculas.Text = "VISTA DE MATRICULAS";
+            this.btnVistaMatriculas.UseVisualStyleBackColor = false;
             // 
             // InterfazGraficaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1556, 884);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panLateral);
             this.Controls.Add(this.panSuperior);
@@ -629,10 +658,8 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Button btnIngresarNotas;
         public System.Windows.Forms.Button btnPagos;
         private System.Windows.Forms.Button btnCursos;
-        private System.Windows.Forms.Button btnVistaMatriculas;
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Label lblMenuTitle;
-        private System.Windows.Forms.Button btnMatricularEstudiante;
         private System.Windows.Forms.Panel panelMostrador;
         private System.Windows.Forms.Panel panSubMenuPagos;
         private System.Windows.Forms.Button btnHistorialPagos;
@@ -644,6 +671,8 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Button btnRegistrarVisitaMedica;
         private System.Windows.Forms.Button btnHistorialMedico;
         private System.Windows.Forms.Label label2;
-        private BrbVideoManager.Controls.RoundedButton roundedButton1;
+        private System.Windows.Forms.Button btnCambioTema;
+        private BrbVideoManager.Controls.RoundedButton btnMatriEstudiante;
+        private BrbVideoManager.Controls.RoundedButton btnVistaMatriculas;
     }
 }
