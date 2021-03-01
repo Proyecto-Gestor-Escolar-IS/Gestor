@@ -65,7 +65,7 @@ namespace SistemaGestorEscolar
             this.btnMatricularEstudiante = new System.Windows.Forms.Button();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.roundedButton1 = new BrbVideoManager.Controls.RoundedButton();
+            this.roundedButton1 = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -644,6 +644,6 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Button btnRegistrarVisitaMedica;
         private System.Windows.Forms.Button btnHistorialMedico;
         private System.Windows.Forms.Label label2;
-        private BrbVideoManager.Controls.RoundedButton roundedButton1;
+        private SistemaGestorEscolar.Controls.RoundedButton roundedButton1;
     }
 }

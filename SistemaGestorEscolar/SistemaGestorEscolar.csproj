@@ -83,6 +83,36 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles Personalizados\AltoButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\AltoNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\AltoProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\AltoSlidingLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\AltoTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\Circular Progress Bar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\ExtensionMethods.cs" />
+    <Compile Include="Controles Personalizados\ProcessingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\RoundedRectangleF.cs" />
+    <Compile Include="Controles Personalizados\SpinningCircles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\SwitchButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles Personalizados\Transparenter.cs" />
     <Compile Include="IRegistroPago.cs">
       <SubType>Form</SubType>
     </Compile>
