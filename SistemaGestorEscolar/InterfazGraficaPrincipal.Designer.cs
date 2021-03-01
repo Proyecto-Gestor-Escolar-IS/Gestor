@@ -441,12 +441,13 @@ namespace SistemaGestorEscolar
             this.btnMatricularEstudiante.BorderWidth = 4F;
             this.btnMatricularEstudiante.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
             this.btnMatricularEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnMatricularEstudiante.Location = new System.Drawing.Point(130, 209);
+            this.btnMatricularEstudiante.Location = new System.Drawing.Point(103, 209);
             this.btnMatricularEstudiante.Name = "btnMatricularEstudiante";
             this.btnMatricularEstudiante.Size = new System.Drawing.Size(353, 155);
             this.btnMatricularEstudiante.TabIndex = 40;
             this.btnMatricularEstudiante.Text = "MATRICULAR ESTUDIANTE";
             this.btnMatricularEstudiante.UseVisualStyleBackColor = false;
+            this.btnMatricularEstudiante.Click += new System.EventHandler(this.btnMatricularEstudiante_Click_1);
             // 
             // panSubMenuEstudiante
             // 

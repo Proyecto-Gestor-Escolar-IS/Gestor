@@ -86,6 +86,7 @@ namespace SistemaGestorEscolar
                 databaseIntermediary.Open();
                 comando = new SqlCommand(instruccion, databaseIntermediary);
                 lectorVariables = comando.ExecuteReader();
+                
                 while (lectorVariables.Read())
                 {
                     cmb.Items.Add(lectorVariables.GetValue(0).ToString());
@@ -285,6 +286,7 @@ namespace SistemaGestorEscolar
             }
         }
 
+        /*MEJIASOC-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
         public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento, Image img)
         {
             try
@@ -422,6 +424,48 @@ namespace SistemaGestorEscolar
             dgv.DataSource = ds.Tables[0];
             databaseIntermediary.Close();
         }
+
+        public bool PARegistrarMatricula(string identidadEmpleado, string identidadEncargado, string identidadEstudiante, int idCurso, int idSeccion, float totalMatricula, int tipoMatricula, int mesesPago, int estado, int codigoOperacion)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PARegistroMatricula";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadAdministracion", identidadEmpleado);
+                comando.Parameters.AddWithValue("@identidadEncargado", identidadEncargado);
+                comando.Parameters.AddWithValue("@identidadEstudiante", identidadEstudiante);
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
+                comando.Parameters.AddWithValue("@idSeccion", idSeccion);
+                comando.Parameters.AddWithValue("@totalMatricula", totalMatricula);
+                comando.Parameters.AddWithValue("@tipoMatricula", tipoMatricula);
+                comando.Parameters.AddWithValue("@mesesPago", mesesPago);
+                comando.Parameters.AddWithValue("@estado", estado);
+                comando.Parameters.AddWithValue("@codigoOperacion", codigoOperacion);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Matricula", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+        /*MEJIASOC-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
         public bool PARegistroEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
             string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo, string fechaNacimiento)
