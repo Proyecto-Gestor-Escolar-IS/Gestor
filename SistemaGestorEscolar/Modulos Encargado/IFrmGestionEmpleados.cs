@@ -1,5 +1,4 @@
-﻿using SistemaGestorEscolar.MessageBox_Personalizados;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +18,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         }
 
         databaseConnection dbConn = new databaseConnection();
-        IMessageBoxError boxError = new IMessageBoxError();
-        clsUtilidades utilidades = new clsUtilidades();
-        IMessageBoxWarning boxWarning = new IMessageBoxWarning();
-        IMessageBoxCheck messageOk = new IMessageBoxCheck();
-        IMessageBoxYesCancel messageYesNo = new IMessageBoxYesCancel();
-
-        int codigoCargo;
-        string identidad;
 
         private void IFrmGestionEmpleados_Load(object sender, EventArgs e)
         {
@@ -62,37 +53,23 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void btnAdministradores_Click(object sender, EventArgs e)
         {
             lblTitulo.Text = "ADMINISTRADORES";
-            iniciarDGV(2);
-            codigoCargo = 2;
+            dbConn.llenarDGV(dgvEmpleados, "SELECT * FROM datosEmpleados");
         }
 
         private void btnDocentes_Click(object sender, EventArgs e)
         {
             lblTitulo.Text = "DOCENTES";
-            iniciarDGV(3);
-            codigoCargo = 3;
         }
 
         private void btnMedicos_Click(object sender, EventArgs e)
         {
             lblTitulo.Text = "MEDICOS";
-            iniciarDGV(4);
-            codigoCargo = 4;
-        }
-
-        private void iniciarDGV(int idC)
-        {
-            dbConn.llenarDGV(dgvEmpleados, "SELECT id_Registro as 'ID', identidadPersona as 'N° IDENTIDAD', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'NOMBRE'," +
-                " numeroTelefono as 'TELÉFONO', fechaNacimiento as 'FECHA DE NACIMIENTO', descripcionEstado as 'ESTADO' " +
-                "FROM datosEmpleados de INNER JOIN estados es ON de.estadoEmpleado = es.id_Estado " +
-                "INNER JOIN detalleCargos dc on de.identidadPersona = dc.identidadEmpleado INNER JOIN cargos c on dc.idCargoAsociado = c.id_Cargo WHERE c.id_Cargo = '"+idC+"' AND es.id_Estado <> 2");
         }
 
         private void btnActRegresar_Click(object sender, EventArgs e)
         {
             grpActualizar.Hide();
             pnldgv.Show();
-            txtLikeIdentidad.Clear();
         }
 
         private void btnSiguienteDGVAct_Click(object sender, EventArgs e)

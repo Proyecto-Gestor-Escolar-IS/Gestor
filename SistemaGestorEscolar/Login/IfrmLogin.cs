@@ -30,8 +30,9 @@ namespace SistemaGestorEscolar.Login
 
         private void btnIngresar_Click_1(object sender, EventArgs e)
         {
-            int primerInicio = dbConn.obtenerVariableEntera("SELECT COUNT(*) FROM datosEmpleados");
-            if (primerInicio == 0 && txtdentidad.Text == String.Empty && txtContrase.Text == String.Empty)
+            //Properties.Settings.Default.isPrimerInicio = false;
+            //Properties.Settings.Default.Save();
+            if (Properties.Settings.Default.isPrimerInicio == true && txtdentidad.Text == String.Empty && txtContrase.Text == String.Empty)
             {
                 message2.lblError.Text = "ESTA ES SU PRIMERA VEZ INICIANDO \r\nEL SISTEMA, POR FAVOR CREE UN \r\nSUPER USUARIO PARA CONTINUAR.";
                 message2.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -39,8 +40,10 @@ namespace SistemaGestorEscolar.Login
                 message2.ShowDialog();
                 Form frmRegistro = new frmIngresoAdmin();
                 frmRegistro.ShowDialog();
+                Properties.Settings.Default.isPrimerInicio = false;
+                Properties.Settings.Default.Save();
             }
-            else if (txtdentidad.Text != String.Empty && txtContrase.Text != String.Empty && primerInicio != 0)
+            else if (txtdentidad.Text != String.Empty && txtContrase.Text != String.Empty && Properties.Settings.Default.isPrimerInicio == false)
             {
                 if (dbConn.comprobarUsuario(txtdentidad.Text, utilidad.EncriptarTexto(txtContrase.Text)))
                 {

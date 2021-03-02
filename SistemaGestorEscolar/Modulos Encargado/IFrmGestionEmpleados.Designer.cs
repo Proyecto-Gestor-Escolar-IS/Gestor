@@ -29,10 +29,13 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.grpRegistroEmpleado = new System.Windows.Forms.GroupBox();
+            this.btnRegistrar = new AltoControls.AltoButton();
+            this.btnLimpiar = new AltoControls.AltoButton();
+            this.btnRegresar = new AltoControls.AltoButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdentidad = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaNa = new System.Windows.Forms.MaskedTextBox();
@@ -56,23 +59,46 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblNombres = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlSelector = new System.Windows.Forms.Panel();
+            this.btnActualizacion = new AltoControls.AltoButton();
+            this.btnRegistrarEmpleado = new AltoControls.AltoButton();
             this.pnldgv = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnMedicos = new AltoControls.AltoButton();
+            this.btnDocentes = new AltoControls.AltoButton();
+            this.btnAdministradores = new AltoControls.AltoButton();
+            this.btnSiguienteDGVAct = new AltoControls.AltoButton();
+            this.btnRegresarDGVAct = new AltoControls.AltoButton();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.grpActualizar = new System.Windows.Forms.GroupBox();
+            this.txtActFechaNac = new AltoControls.AltoTextBox();
+            this.txtAConfContra = new AltoControls.AltoTextBox();
+            this.txtActContra = new AltoControls.AltoTextBox();
+            this.altoTextBox1 = new AltoControls.AltoTextBox();
+            this.txtActTelefono = new AltoControls.AltoTextBox();
+            this.txtActApellido2 = new AltoControls.AltoTextBox();
+            this.txtActApellido1 = new AltoControls.AltoTextBox();
+            this.txtActNombre2 = new AltoControls.AltoTextBox();
+            this.txtActNombre1 = new AltoControls.AltoTextBox();
+            this.txtIActdentidadAct = new AltoControls.AltoTextBox();
+            this.btnBorrar = new AltoControls.AltoButton();
+            this.btnActualizar = new AltoControls.AltoButton();
+            this.btnActBorrar = new AltoControls.AltoButton();
+            this.btnActRegresar = new AltoControls.AltoButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtActIdent = new System.Windows.Forms.MaskedTextBox();
-            this.txtActFechaNac = new System.Windows.Forms.MaskedTextBox();
-            this.txtActTelef = new System.Windows.Forms.MaskedTextBox();
-            this.txtActContra = new System.Windows.Forms.TextBox();
-            this.chkActVerContra = new System.Windows.Forms.CheckBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtActMail = new System.Windows.Forms.TextBox();
-            this.txtActApellido2 = new System.Windows.Forms.TextBox();
-            this.txtActApellido1 = new System.Windows.Forms.TextBox();
-            this.txtActNombre2 = new System.Windows.Forms.TextBox();
-            this.txtActNombre1 = new System.Windows.Forms.TextBox();
-            this.cmbActCargo = new System.Windows.Forms.ComboBox();
+            this.txtAConf = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAMail = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -110,7 +136,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.pnldgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.grpActualizar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -119,7 +144,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(567, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 41);
+            this.label1.Size = new System.Drawing.Size(415, 36);
             this.label1.TabIndex = 25;
             this.label1.Text = "GESTION DE EMPLEADOS";
             // 
@@ -159,6 +184,67 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.grpRegistroEmpleado.Text = "REGISTRAR EMPLEADO";
             this.grpRegistroEmpleado.Visible = false;
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(615, 781);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Radius = 20;
+            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
+            this.btnRegistrar.Stroke = true;
+            this.btnRegistrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistrar.TabIndex = 84;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.Transparency = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(1210, 800);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Radius = 20;
+            this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
+            this.btnLimpiar.Stroke = true;
+            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiar.TabIndex = 83;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.Transparency = false;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresar.Location = new System.Drawing.Point(44, 800);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Radius = 20;
+            this.btnRegresar.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresar.Stroke = true;
+            this.btnRegresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresar.TabIndex = 82;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.Transparency = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -166,7 +252,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label2.Location = new System.Drawing.Point(848, 547);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 27);
+            this.label2.Size = new System.Drawing.Size(144, 24);
             this.label2.TabIndex = 74;
             this.label2.Text = "dd/mm/aaaa";
             // 
@@ -214,7 +300,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.chkVerContras.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerContras.Location = new System.Drawing.Point(899, 444);
             this.chkVerContras.Name = "chkVerContras";
-            this.chkVerContras.Size = new System.Drawing.Size(201, 31);
+            this.chkVerContras.Size = new System.Drawing.Size(208, 28);
             this.chkVerContras.TabIndex = 73;
             this.chkVerContras.Text = "Ver Contraseñas";
             this.chkVerContras.UseVisualStyleBackColor = true;
@@ -226,7 +312,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblContra.Location = new System.Drawing.Point(553, 445);
             this.lblContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(129, 27);
+            this.lblContra.Size = new System.Drawing.Size(132, 24);
             this.lblContra.TabIndex = 72;
             this.lblContra.Text = "Contraseña";
             // 
@@ -247,7 +333,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblConfiContra.Location = new System.Drawing.Point(445, 492);
             this.lblConfiContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfiContra.Name = "lblConfiContra";
-            this.lblConfiContra.Size = new System.Drawing.Size(237, 27);
+            this.lblConfiContra.Size = new System.Drawing.Size(244, 24);
             this.lblConfiContra.TabIndex = 71;
             this.lblConfiContra.Text = "Confirmar Contraseña";
             // 
@@ -306,7 +392,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.cmbCargosSec.Location = new System.Drawing.Point(698, 596);
             this.cmbCargosSec.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCargosSec.Name = "cmbCargosSec";
-            this.cmbCargosSec.Size = new System.Drawing.Size(305, 35);
+            this.cmbCargosSec.Size = new System.Drawing.Size(305, 32);
             this.cmbCargosSec.TabIndex = 70;
             // 
             // lblCargo
@@ -317,7 +403,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblCargo.Location = new System.Drawing.Point(610, 599);
             this.lblCargo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(72, 27);
+            this.lblCargo.Size = new System.Drawing.Size(75, 24);
             this.lblCargo.TabIndex = 69;
             this.lblCargo.Text = "Cargo";
             // 
@@ -328,7 +414,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblFechaNa.Location = new System.Drawing.Point(459, 547);
             this.lblFechaNa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaNa.Name = "lblFechaNa";
-            this.lblFechaNa.Size = new System.Drawing.Size(223, 27);
+            this.lblFechaNa.Size = new System.Drawing.Size(225, 24);
             this.lblFechaNa.TabIndex = 68;
             this.lblFechaNa.Text = "Fecha de Nacimiento";
             // 
@@ -339,7 +425,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblCoreeo.Location = new System.Drawing.Point(480, 396);
             this.lblCoreeo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCoreeo.Name = "lblCoreeo";
-            this.lblCoreeo.Size = new System.Drawing.Size(202, 27);
+            this.lblCoreeo.Size = new System.Drawing.Size(206, 24);
             this.lblCoreeo.TabIndex = 67;
             this.lblCoreeo.Text = "Correo Electronico";
             // 
@@ -350,7 +436,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblTele.Location = new System.Drawing.Point(579, 346);
             this.lblTele.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTele.Name = "lblTele";
-            this.lblTele.Size = new System.Drawing.Size(103, 27);
+            this.lblTele.Size = new System.Drawing.Size(102, 24);
             this.lblTele.TabIndex = 66;
             this.lblTele.Text = "Teléfono";
             // 
@@ -361,7 +447,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblApellidos.Location = new System.Drawing.Point(580, 292);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(102, 27);
+            this.lblApellidos.Size = new System.Drawing.Size(103, 24);
             this.lblApellidos.TabIndex = 65;
             this.lblApellidos.Text = "Apellidos";
             // 
@@ -372,7 +458,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblNombres.Location = new System.Drawing.Point(579, 240);
             this.lblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(103, 27);
+            this.lblNombres.Size = new System.Drawing.Size(103, 24);
             this.lblNombres.TabIndex = 64;
             this.lblNombres.Text = "Nombres";
             // 
@@ -383,7 +469,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label4.Location = new System.Drawing.Point(461, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 27);
+            this.label4.Size = new System.Drawing.Size(229, 24);
             this.label4.TabIndex = 63;
             this.label4.Text = "Numero de Identidad";
             // 
@@ -398,12 +484,50 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.pnlSelector.Size = new System.Drawing.Size(1510, 944);
             this.pnlSelector.TabIndex = 80;
             // 
+            // btnActualizacion
+            // 
+            this.btnActualizacion.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizacion.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizacion.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizacion.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActualizacion.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnActualizacion.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizacion.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizacion.Location = new System.Drawing.Point(824, 370);
+            this.btnActualizacion.Name = "btnActualizacion";
+            this.btnActualizacion.Radius = 20;
+            this.btnActualizacion.Size = new System.Drawing.Size(407, 200);
+            this.btnActualizacion.Stroke = true;
+            this.btnActualizacion.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnActualizacion.TabIndex = 82;
+            this.btnActualizacion.Text = "ACTUALIZACIÓN DE EMPLEADO";
+            this.btnActualizacion.Transparency = false;
+            this.btnActualizacion.Click += new System.EventHandler(this.btnActualizacion_Click);
+            // 
+            // btnRegistrarEmpleado
+            // 
+            this.btnRegistrarEmpleado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrarEmpleado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrarEmpleado.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarEmpleado.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistrarEmpleado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrarEmpleado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(318, 370);
+            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
+            this.btnRegistrarEmpleado.Radius = 20;
+            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(407, 200);
+            this.btnRegistrarEmpleado.Stroke = true;
+            this.btnRegistrarEmpleado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistrarEmpleado.TabIndex = 81;
+            this.btnRegistrarEmpleado.Text = "REGISTRAR EMPLEADO";
+            this.btnRegistrarEmpleado.Transparency = false;
+            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.altoButton1_Click);
+            // 
             // pnldgv
             // 
-            this.pnldgv.Controls.Add(this.txtLikeIdentidad);
-            this.pnldgv.Controls.Add(this.pictureBox1);
-            this.pnldgv.Controls.Add(this.btnInactivos);
-            this.pnldgv.Controls.Add(this.btnEditarSuperUser);
             this.pnldgv.Controls.Add(this.lblTitulo);
             this.pnldgv.Controls.Add(this.btnMedicos);
             this.pnldgv.Controls.Add(this.btnDocentes);
@@ -423,7 +547,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblTitulo.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(683, 23);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(249, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(255, 27);
             this.lblTitulo.TabIndex = 88;
             this.lblTitulo.Text = "ADMINISTRADORES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -463,34 +587,38 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.dgvEmpleados.RowHeadersWidth = 20;
             this.dgvEmpleados.Size = new System.Drawing.Size(1444, 684);
             this.dgvEmpleados.TabIndex = 0;
-            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             // 
             // grpActualizar
             // 
-            this.grpActualizar.Controls.Add(this.lblActCargoActual);
-            this.grpActualizar.Controls.Add(this.label15);
-            this.grpActualizar.Controls.Add(this.txtActConfContra);
-            this.grpActualizar.Controls.Add(this.lblActEstado);
-            this.grpActualizar.Controls.Add(this.lblActEs);
-            this.grpActualizar.Controls.Add(this.label6);
-            this.grpActualizar.Controls.Add(this.btnEliminarCargo);
-            this.grpActualizar.Controls.Add(this.btnBorrar);
-            this.grpActualizar.Controls.Add(this.btnActualizar);
-            this.grpActualizar.Controls.Add(this.btnActLimpiar);
-            this.grpActualizar.Controls.Add(this.btnActRegresar);
-            this.grpActualizar.Controls.Add(this.label3);
-            this.grpActualizar.Controls.Add(this.txtActIdent);
             this.grpActualizar.Controls.Add(this.txtActFechaNac);
-            this.grpActualizar.Controls.Add(this.txtActTelef);
+            this.grpActualizar.Controls.Add(this.txtAConfContra);
             this.grpActualizar.Controls.Add(this.txtActContra);
-            this.grpActualizar.Controls.Add(this.chkActVerContra);
-            this.grpActualizar.Controls.Add(this.label5);
-            this.grpActualizar.Controls.Add(this.txtActMail);
+            this.grpActualizar.Controls.Add(this.altoTextBox1);
+            this.grpActualizar.Controls.Add(this.txtActTelefono);
             this.grpActualizar.Controls.Add(this.txtActApellido2);
             this.grpActualizar.Controls.Add(this.txtActApellido1);
             this.grpActualizar.Controls.Add(this.txtActNombre2);
             this.grpActualizar.Controls.Add(this.txtActNombre1);
-            this.grpActualizar.Controls.Add(this.cmbActCargo);
+            this.grpActualizar.Controls.Add(this.txtIActdentidadAct);
+            this.grpActualizar.Controls.Add(this.btnBorrar);
+            this.grpActualizar.Controls.Add(this.btnActualizar);
+            this.grpActualizar.Controls.Add(this.btnActBorrar);
+            this.grpActualizar.Controls.Add(this.btnActRegresar);
+            this.grpActualizar.Controls.Add(this.label3);
+            this.grpActualizar.Controls.Add(this.maskedTextBox1);
+            this.grpActualizar.Controls.Add(this.maskedTextBox2);
+            this.grpActualizar.Controls.Add(this.maskedTextBox3);
+            this.grpActualizar.Controls.Add(this.textBox1);
+            this.grpActualizar.Controls.Add(this.checkBox1);
+            this.grpActualizar.Controls.Add(this.label5);
+            this.grpActualizar.Controls.Add(this.txtAConf);
+            this.grpActualizar.Controls.Add(this.label6);
+            this.grpActualizar.Controls.Add(this.txtAMail);
+            this.grpActualizar.Controls.Add(this.textBox4);
+            this.grpActualizar.Controls.Add(this.textBox5);
+            this.grpActualizar.Controls.Add(this.textBox6);
+            this.grpActualizar.Controls.Add(this.textBox7);
+            this.grpActualizar.Controls.Add(this.comboBox1);
             this.grpActualizar.Controls.Add(this.label7);
             this.grpActualizar.Controls.Add(this.label8);
             this.grpActualizar.Controls.Add(this.label9);
@@ -499,7 +627,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.grpActualizar.Controls.Add(this.label12);
             this.grpActualizar.Controls.Add(this.label13);
             this.grpActualizar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpActualizar.Location = new System.Drawing.Point(53, 39);
+            this.grpActualizar.Location = new System.Drawing.Point(53, 37);
             this.grpActualizar.Name = "grpActualizar";
             this.grpActualizar.Size = new System.Drawing.Size(1522, 906);
             this.grpActualizar.TabIndex = 85;
@@ -511,7 +639,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(853, 508);
+            this.label3.Location = new System.Drawing.Point(894, 544);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 27);
@@ -572,7 +700,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(560, 412);
+            this.label5.Location = new System.Drawing.Point(553, 445);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 27);
@@ -581,50 +709,50 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             // txtActMail
             // 
-            this.txtActMail.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActMail.Location = new System.Drawing.Point(705, 358);
-            this.txtActMail.Margin = new System.Windows.Forms.Padding(2);
-            this.txtActMail.Name = "txtActMail";
-            this.txtActMail.Size = new System.Drawing.Size(323, 34);
-            this.txtActMail.TabIndex = 59;
+            this.txtAMail.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAMail.Location = new System.Drawing.Point(101, 389);
+            this.txtAMail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAMail.Name = "txtAMail";
+            this.txtAMail.Size = new System.Drawing.Size(307, 34);
+            this.txtAMail.TabIndex = 59;
             // 
-            // txtActApellido2
+            // textBox4
             // 
-            this.txtActApellido2.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActApellido2.Location = new System.Drawing.Point(906, 257);
-            this.txtActApellido2.Margin = new System.Windows.Forms.Padding(2);
-            this.txtActApellido2.Name = "txtActApellido2";
-            this.txtActApellido2.Size = new System.Drawing.Size(182, 34);
-            this.txtActApellido2.TabIndex = 57;
+            this.textBox4.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(302, 292);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(182, 34);
+            this.textBox4.TabIndex = 57;
             // 
-            // txtActApellido1
+            // textBox5
             // 
-            this.txtActApellido1.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActApellido1.Location = new System.Drawing.Point(705, 257);
-            this.txtActApellido1.Margin = new System.Windows.Forms.Padding(2);
-            this.txtActApellido1.Name = "txtActApellido1";
-            this.txtActApellido1.Size = new System.Drawing.Size(182, 34);
-            this.txtActApellido1.TabIndex = 56;
+            this.textBox5.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(101, 292);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(182, 34);
+            this.textBox5.TabIndex = 56;
             // 
-            // txtActNombre2
+            // textBox6
             // 
-            this.txtActNombre2.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActNombre2.Location = new System.Drawing.Point(906, 202);
-            this.txtActNombre2.Margin = new System.Windows.Forms.Padding(2);
-            this.txtActNombre2.Name = "txtActNombre2";
-            this.txtActNombre2.Size = new System.Drawing.Size(182, 34);
-            this.txtActNombre2.TabIndex = 55;
+            this.textBox6.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(302, 237);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(182, 34);
+            this.textBox6.TabIndex = 55;
             // 
-            // txtActNombre1
+            // textBox7
             // 
-            this.txtActNombre1.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActNombre1.Location = new System.Drawing.Point(705, 202);
-            this.txtActNombre1.Margin = new System.Windows.Forms.Padding(2);
-            this.txtActNombre1.Name = "txtActNombre1";
-            this.txtActNombre1.Size = new System.Drawing.Size(182, 34);
-            this.txtActNombre1.TabIndex = 54;
+            this.textBox7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(101, 237);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(182, 34);
+            this.textBox7.TabIndex = 54;
             // 
-            // cmbActCargo
+            // comboBox1
             // 
             this.cmbActCargo.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbActCargo.FormattingEnabled = true;
@@ -639,19 +767,18 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label7.AutoSize = true;
             this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkRed;
-            this.label7.Location = new System.Drawing.Point(490, 598);
+            this.label7.Location = new System.Drawing.Point(610, 599);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(199, 27);
             this.label7.TabIndex = 69;
-            this.label7.Text = "Cargo a Actualizar";
+            this.label7.Text = "Cargo";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(466, 514);
+            this.label8.Location = new System.Drawing.Point(459, 547);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(223, 27);
@@ -662,7 +789,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(487, 361);
+            this.label9.Location = new System.Drawing.Point(480, 396);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(202, 27);
@@ -673,7 +800,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(586, 313);
+            this.label10.Location = new System.Drawing.Point(579, 346);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 27);
@@ -684,7 +811,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(587, 259);
+            this.label11.Location = new System.Drawing.Point(580, 292);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 27);
@@ -695,7 +822,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(586, 207);
+            this.label12.Location = new System.Drawing.Point(579, 240);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(103, 27);
@@ -706,7 +833,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(468, 108);
+            this.label13.Location = new System.Drawing.Point(461, 141);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(223, 27);
@@ -1053,56 +1180,118 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegistrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(615, 781);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Radius = 20;
-            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
-            this.btnRegistrar.Stroke = true;
-            this.btnRegistrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegistrar.TabIndex = 84;
-            this.btnRegistrar.Text = "REGISTRAR";
-            this.btnRegistrar.Transparency = false;
+            // txtAMail
             // 
-            // btnLimpiar
+            this.txtAMail.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAMail.Location = new System.Drawing.Point(101, 389);
+            this.txtAMail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAMail.Name = "txtAMail";
+            this.txtAMail.Size = new System.Drawing.Size(307, 34);
+            this.txtAMail.TabIndex = 59;
             // 
-            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(1210, 800);
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(302, 292);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(182, 34);
+            this.textBox4.TabIndex = 57;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(101, 292);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(182, 34);
+            this.textBox5.TabIndex = 56;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(302, 237);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(182, 34);
+            this.textBox6.TabIndex = 55;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(101, 237);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(182, 34);
+            this.textBox7.TabIndex = 54;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Administrador"});
+            this.comboBox1.Location = new System.Drawing.Point(698, 596);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(305, 32);
+            this.comboBox1.TabIndex = 70;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Enabled = false;
+            this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(610, 599);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 24);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "Cargo";
+            // 
+            // label8
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Radius = 20;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(459, 547);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(225, 24);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Fecha de Nacimiento";
             this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
-            this.btnLimpiar.Stroke = true;
-            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiar.TabIndex = 83;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.Transparency = false;
+            // label9
             // 
-            // btnRegresar
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(480, 396);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(206, 24);
+            this.label9.TabIndex = 67;
+            this.label9.Text = "Correo Electronico";
             // 
-            this.btnRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.Location = new System.Drawing.Point(44, 800);
-            this.btnRegresar.Name = "btnRegresar";
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(579, 346);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(102, 24);
+            this.label10.TabIndex = 66;
+            this.label10.Text = "Teléfono";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(580, 292);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 24);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Apellidos";
             this.btnRegresar.Radius = 20;
             this.btnRegresar.Size = new System.Drawing.Size(269, 65);
             this.btnRegresar.Stroke = true;
@@ -1112,47 +1301,27 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegresar.Transparency = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // btnActualizacion
+            // label12
             // 
-            this.btnActualizacion.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizacion.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizacion.BackColor = System.Drawing.Color.Transparent;
-            this.btnActualizacion.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnActualizacion.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnActualizacion.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizacion.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizacion.Location = new System.Drawing.Point(824, 370);
-            this.btnActualizacion.Name = "btnActualizacion";
-            this.btnActualizacion.Radius = 20;
-            this.btnActualizacion.Size = new System.Drawing.Size(407, 200);
-            this.btnActualizacion.Stroke = true;
-            this.btnActualizacion.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnActualizacion.TabIndex = 82;
-            this.btnActualizacion.Text = "ACTUALIZACIÓN DE EMPLEADO";
-            this.btnActualizacion.Transparency = false;
-            this.btnActualizacion.Click += new System.EventHandler(this.btnActualizacion_Click);
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(579, 240);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 24);
+            this.label12.TabIndex = 64;
+            this.label12.Text = "Nombres";
             // 
-            // btnRegistrarEmpleado
+            // label13
             // 
-            this.btnRegistrarEmpleado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrarEmpleado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrarEmpleado.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrarEmpleado.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegistrarEmpleado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrarEmpleado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(318, 370);
-            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
-            this.btnRegistrarEmpleado.Radius = 20;
-            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(407, 200);
-            this.btnRegistrarEmpleado.Stroke = true;
-            this.btnRegistrarEmpleado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegistrarEmpleado.TabIndex = 81;
-            this.btnRegistrarEmpleado.Text = "REGISTRAR EMPLEADO";
-            this.btnRegistrarEmpleado.Transparency = false;
-            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.altoButton1_Click);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(461, 141);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(229, 24);
+            this.label13.TabIndex = 63;
+            this.label13.Text = "Numero de Identidad";
             // 
             // IFrmGestionEmpleados
             // 
@@ -1160,8 +1329,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1619, 996);
-            this.Controls.Add(this.grpActualizar);
             this.Controls.Add(this.pnldgv);
+            this.Controls.Add(this.grpActualizar);
             this.Controls.Add(this.grpRegistroEmpleado);
             this.Controls.Add(this.pnlSelector);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1177,7 +1346,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.grpActualizar.ResumeLayout(false);
             this.grpActualizar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1222,23 +1390,35 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private AltoControls.AltoButton btnAdministradores;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.GroupBox grpActualizar;
+        private AltoControls.AltoTextBox txtActFechaNac;
+        private AltoControls.AltoTextBox txtAConfContra;
+        private AltoControls.AltoTextBox txtActContra;
+        private AltoControls.AltoTextBox altoTextBox1;
+        private AltoControls.AltoTextBox txtActTelefono;
+        private AltoControls.AltoTextBox txtActApellido2;
+        private AltoControls.AltoTextBox txtActApellido1;
+        private AltoControls.AltoTextBox txtActNombre2;
+        private AltoControls.AltoTextBox txtActNombre1;
+        private AltoControls.AltoTextBox txtIActdentidadAct;
         private AltoControls.AltoButton btnBorrar;
         private AltoControls.AltoButton btnActualizar;
-        private AltoControls.AltoButton btnActLimpiar;
+        private AltoControls.AltoButton btnActBorrar;
         private AltoControls.AltoButton btnActRegresar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox txtActIdent;
-        private System.Windows.Forms.MaskedTextBox txtActFechaNac;
-        private System.Windows.Forms.MaskedTextBox txtActTelef;
-        private System.Windows.Forms.TextBox txtActContra;
-        private System.Windows.Forms.CheckBox chkActVerContra;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtActMail;
-        private System.Windows.Forms.TextBox txtActApellido2;
-        private System.Windows.Forms.TextBox txtActApellido1;
-        private System.Windows.Forms.TextBox txtActNombre2;
-        private System.Windows.Forms.TextBox txtActNombre1;
-        private System.Windows.Forms.ComboBox cmbActCargo;
+        private System.Windows.Forms.TextBox txtAConf;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtAMail;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -1246,16 +1426,5 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private AltoControls.AltoButton btnEditarSuperUser;
-        private AltoControls.AltoButton btnInactivos;
-        private AltoControls.AltoButton btnEliminarCargo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblActEstado;
-        private System.Windows.Forms.Label lblActEs;
-        private System.Windows.Forms.TextBox txtActConfContra;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtLikeIdentidad;
-        private System.Windows.Forms.Label lblActCargoActual;
-        private System.Windows.Forms.Label label15;
     }
 }
