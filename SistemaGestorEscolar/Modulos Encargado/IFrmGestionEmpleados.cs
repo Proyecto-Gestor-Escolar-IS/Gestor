@@ -100,6 +100,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
             if(dgvEmpleados.CurrentCell != null && dgvEmpleados.DataSource != null)
             {
+                /**/
                 cmbActCargo.Items.Clear();
                 pnldgv.Hide();
                 grpActualizar.Show();
