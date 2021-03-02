@@ -178,8 +178,8 @@
   <data name="Logo Nazaret" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo Nazaret.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adds" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adds1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="adds" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adds1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,9 +193,9 @@
   <data name="iconMatriculaResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconMatriculaResized1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buscarIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buscarIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   <data name="buttonHoover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonHoover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buscarIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buscarIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
