@@ -233,7 +233,7 @@ namespace SistemaGestorEscolar
         }
 
         public bool PAOperacionEmpleado(string idPerona, string nombre1, string nombre2, string apellido1, string apellido2, int tel, string fechaN,
-            string mail, int estado, string contra, int idCargo, int cargoAnterior, int codigo)
+            string mail, string estado, string contra, int idCargo, int cargoAnterior, int codigo)
         {
             try
             {
@@ -262,7 +262,7 @@ namespace SistemaGestorEscolar
                 else if (codigo == 2)
                 {
                     comando.Parameters.AddWithValue("@CODIGO", 2);
-                    comando.Parameters.AddWithValue("@idCargoAnterior", cargoAnterior);
+                    comando.Parameters.AddWithValue("@idCargoAnteriora", cargoAnterior);
                 }
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
