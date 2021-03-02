@@ -101,7 +101,7 @@ namespace SistemaGestorEscolar
             // 
             this.txtNoExpediente.Enabled = false;
             this.txtNoExpediente.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoExpediente.Location = new System.Drawing.Point(830, 242);
+            this.txtNoExpediente.Location = new System.Drawing.Point(829, 242);
             this.txtNoExpediente.Name = "txtNoExpediente";
             this.txtNoExpediente.Size = new System.Drawing.Size(191, 28);
             this.txtNoExpediente.TabIndex = 16;
