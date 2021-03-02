@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
+namespace SistemaGestorEscolar.Modulos_Estudiante
 {
-    public partial class Cuadro_de_Notas : Form
+    public partial class Ficha_Encargados_del_Estudiante : Form
     {
-        public Cuadro_de_Notas()
+        public Ficha_Encargados_del_Estudiante()
         {
             InitializeComponent();
         }

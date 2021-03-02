@@ -40,9 +40,10 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(313, 421);
+            this.label1.Location = new System.Drawing.Point(155, 295);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1055, 51);
+            this.label1.Size = new System.Drawing.Size(851, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione el curso y la seccion que desea consultar:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -51,9 +52,10 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(396, 129);
+            this.label2.Location = new System.Drawing.Point(220, 99);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(894, 204);
+            this.label2.Size = new System.Drawing.Size(716, 162);
             this.label2.TabIndex = 1;
             this.label2.Text = "REGISTRO DE NOTAS\r\n   DE LOS ALUMNOS";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -70,11 +72,13 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             "Pre Kinder",
             "Kinder",
             "Primer Grado"});
-            this.cmbCursos.Location = new System.Drawing.Point(733, 573);
+            this.cmbCursos.Location = new System.Drawing.Point(479, 424);
+            this.cmbCursos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCursos.Name = "cmbCursos";
-            this.cmbCursos.Size = new System.Drawing.Size(306, 55);
+            this.cmbCursos.Size = new System.Drawing.Size(230, 46);
             this.cmbCursos.TabIndex = 2;
             this.cmbCursos.Text = "CURSO";
+            this.cmbCursos.SelectedIndexChanged += new System.EventHandler(this.cmbCursos_SelectedIndexChanged);
             // 
             // btnContinuar
             // 
@@ -82,12 +86,14 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnContinuar.FlatAppearance.BorderSize = 0;
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuar.Font = new System.Drawing.Font("Balsamiq Sans", 21.2F, System.Drawing.FontStyle.Bold);
-            this.btnContinuar.Location = new System.Drawing.Point(760, 882);
+            this.btnContinuar.Location = new System.Drawing.Point(486, 619);
+            this.btnContinuar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(250, 70);
+            this.btnContinuar.Size = new System.Drawing.Size(223, 57);
             this.btnContinuar.TabIndex = 3;
             this.btnContinuar.Text = "CONTINUAR";
             this.btnContinuar.UseVisualStyleBackColor = false;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // cmbSeccion
             // 
@@ -105,25 +111,30 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             "I",
             "J",
             "K"});
-            this.cmbSeccion.Location = new System.Drawing.Point(733, 727);
+            this.cmbSeccion.Location = new System.Drawing.Point(479, 517);
+            this.cmbSeccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbSeccion.Name = "cmbSeccion";
-            this.cmbSeccion.Size = new System.Drawing.Size(306, 55);
+            this.cmbSeccion.Size = new System.Drawing.Size(230, 46);
             this.cmbSeccion.TabIndex = 4;
             this.cmbSeccion.Text = "SECCION";
+            this.cmbSeccion.SelectedIndexChanged += new System.EventHandler(this.cmbSeccion_SelectedIndexChanged);
             // 
             // Seleccion_de_Curso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.ClientSize = new System.Drawing.Size(1167, 718);
             this.Controls.Add(this.cmbSeccion);
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.cmbCursos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Seleccion_de_Curso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Seleccion_de_Curso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

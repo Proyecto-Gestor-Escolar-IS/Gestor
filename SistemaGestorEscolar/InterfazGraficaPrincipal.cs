@@ -23,12 +23,16 @@ namespace SistemaGestorEscolar
         public static Form formulario = new Form();
         int posicionX;
         bool windowMove = false;
+        int codigoColor = 1;
+
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
             try
             {
                 actualizarModulos.verificarFecha();
                 panelMostrador.Visible = false;
+                panSubMenuPagos.Visible = false;
+                panSubMenuEstudiante.Visible = false;
             }
             catch (Exception ex)
             {
@@ -70,7 +74,10 @@ namespace SistemaGestorEscolar
         private void btnMenuAtras_Click(object sender, EventArgs e)
         {
             panelMostrador.Visible = false;
+            panSubMenuPagos.Visible = false;
             panelMostrador.Controls.Clear();
+            formulario.Close();
+            mostrarBotones();
         }
 
         private void panLateral_Paint(object sender, PaintEventArgs e)
@@ -125,8 +132,9 @@ namespace SistemaGestorEscolar
                     formulario.Location = new Point(posicionX, 0);
                     this.panLateral.Width = panLateral.Width - 70;
 
-                    btnMatricularEstudiante.Location = new Point(205, 209);
+          
                     btnPersonal.Location = new Point(205, 483);
+                    btnMatricularEstudiante.Location = new Point(205, 209);
 
                     btnVistaMatriculas.Location = new Point(705, 209);
                     btnPagos.Location = new Point(705, 483);
@@ -211,9 +219,10 @@ namespace SistemaGestorEscolar
 
                     formulario.Location = new Point(0, 0);
 
-                    btnMatricularEstudiante.Location = new Point(103, 209);
+                    
                     btnPersonal.Location = new Point(103, 483);
 
+                    btnMatricularEstudiante.Location = new Point(103, 209);
 
                     btnVistaMatriculas.Location = new Point(649, 209);
                     btnPagos.Location = new Point(649, 483);
@@ -288,7 +297,7 @@ namespace SistemaGestorEscolar
 
         private void btnMenuRegistroPago_Click(object sender, EventArgs e)
         {
-
+            panSubMenuPagos.Visible = true;
         }
 
         private void btnMenuIngresoNotas_Click(object sender, EventArgs e)
@@ -313,8 +322,327 @@ namespace SistemaGestorEscolar
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
+     
+    
+        }
+
+        private void panelMostrador_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnMatricularEstudiante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistrarPago_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btnHistorialPagos_Click(object sender, EventArgs e)
+        {
             panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
+            AbrirFormulario<Modulo_de_Pagos.IHistorialPagos>();
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
+
+        private void btnEstudiante_Click(object sender, EventArgs e)
+        {
+            panSubMenuEstudiante.Visible = true;
+            panSubMenuEstudiante.Dock = DockStyle.Fill;
+        }
+
+        private void btnCambioTema_Click(object sender, EventArgs e)
+        {
+            if (codigoColor == 1)
+            {
+                panLateral.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                panSuperior.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                panelPrincipal.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                panSubMenuPagos.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+
+                btnMenuAtras.BackColor = System.Drawing.Color.FromArgb(249, 212, 69);
+                btnMenuAtras.ForeColor = Color.Black;
+                
+                btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnMenuIngresoNotas.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnMenuRegistroPago.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnMenuPersonal.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+
+                btnMenuMatriculaEstudiante.ForeColor = Color.Black;
+                btnMenuVistaMatricula.ForeColor = Color.Black;
+                btnMenuCursosDisponibles.ForeColor = Color.Black;
+                btnMenuIngresoNotas.ForeColor = Color.Black;
+                btnMenuRegistroPago.ForeColor = Color.Black;
+                btnMenuPersonal.ForeColor = Color.Black;
+                btnRegistrarPago.ForeColor = Color.Black;
+                btnHistorialPagos.ForeColor = Color.Black;
+
+                btnMatricularEstudiante.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnVistaMatriculas.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnCursos.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnPersonal.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnPagos.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnIngresarNotas.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnEstudiante.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+
+                btnMatricularEstudiante.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnVistaMatriculas.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnCursos.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnPersonal.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnPagos.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnIngresarNotas.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnEstudiante.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnRegistrarPago.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                btnHistorialPagos.BorderColor = System.Drawing.Color.FromArgb(41, 40, 55);
+
+                btnMatricularEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnVistaMatriculas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnIngresarNotas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnRegistrarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+                btnHistorialPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(228, 212, 154);
+
+                btnMatricularEstudiante.ForeColor = Color.Black;
+                btnVistaMatriculas.ForeColor = Color.Black;
+                btnCursos.ForeColor = Color.Black;
+                btnPersonal.ForeColor = Color.Black;
+                btnPagos.ForeColor = Color.Black;
+                btnIngresarNotas.ForeColor = Color.Black;
+                btnEstudiante.ForeColor = Color.Black;
+                btnRegistrarPago.ForeColor = Color.Black;
+                btnHistorialPagos.ForeColor = Color.Black;
+
+                codigoColor = 2;
+
+            }
+            else if (codigoColor == 2)
+            {
+                panLateral.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                panSuperior.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                panelPrincipal.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                panSubMenuPagos.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+
+                btnMenuAtras.BackColor = Color.Red;
+                btnMenuAtras.ForeColor = Color.Black;
+
+                btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnMenuIngresoNotas.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnMenuRegistroPago.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnMenuPersonal.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+
+                btnMenuMatriculaEstudiante.ForeColor = Color.Black;
+                btnMenuVistaMatricula.ForeColor = Color.Black;
+                btnMenuCursosDisponibles.ForeColor = Color.Black;
+                btnMenuIngresoNotas.ForeColor = Color.Black;
+                btnMenuRegistroPago.ForeColor = Color.Black;
+                btnMenuPersonal.ForeColor = Color.Black;
+                btnRegistrarPago.ForeColor = Color.Black;
+                btnHistorialPagos.ForeColor = Color.Black;
+
+                btnMatricularEstudiante.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnVistaMatriculas.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnCursos.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnPersonal.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnPagos.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnIngresarNotas.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnEstudiante.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+                btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+
+                btnMatricularEstudiante.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnVistaMatriculas.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnCursos.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnPersonal.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnPagos.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnIngresarNotas.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnEstudiante.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnRegistrarPago.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                btnHistorialPagos.BorderColor = System.Drawing.Color.FromArgb(0, 97, 169);
+
+                btnMatricularEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnVistaMatriculas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnIngresarNotas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnEstudiante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnRegistrarPago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+                btnHistorialPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(143, 177, 223);
+
+                btnMatricularEstudiante.ForeColor = Color.Black;
+                btnVistaMatriculas.ForeColor = Color.Black;
+                btnCursos.ForeColor = Color.Black;
+                btnPersonal.ForeColor = Color.Black;
+                btnPagos.ForeColor = Color.Black;
+                btnIngresarNotas.ForeColor = Color.Black;
+                btnEstudiante.ForeColor = Color.Black;
+                btnRegistrarPago.ForeColor = Color.Black;
+                btnHistorialPagos.ForeColor = Color.Black;
+
+                codigoColor = 1;
+            }
+        }
+
+        private void btnMatriEstudiante_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnVistaMatriculas_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnVistaMatriculas_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnVistaMatriculas_MouseLeave(object sender, EventArgs e)
+        {
+        
+            
+        }
+
+        private void btnMatriEstudiante_Click_1(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void btnMatriEstudiante_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMatriEstudiante_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButton1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void roundedButton1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMatriEstudiante_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPagos_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPagos_MouseDown(object sender, MouseEventArgs e)
+        {
+            panSubMenuPagos.Visible = true;
+            panSubMenuPagos.Dock = DockStyle.Fill;
+            ocultarBotones();
+        }
+
+        private void ocultarBotones()
+        {
+            btnMatricularEstudiante.Visible = false;
+            btnVistaMatriculas.Visible = false;
+            btnCursos.Visible = false;
+            btnPersonal.Visible = false;
+            btnPagos.Visible = false;
+            btnIngresarNotas.Visible = false;
+            btnEstudiante.Visible = false;
+        }
+        private void mostrarBotones()
+        {
+            btnMatricularEstudiante.Visible = true;
+            btnVistaMatriculas.Visible = true;
+            btnCursos.Visible = true;
+            btnPersonal.Visible = true;
+            btnPagos.Visible = true;
+            btnIngresarNotas.Visible = true;
+            btnEstudiante.Visible = true;
+        }
+
+        private void btnRegistrarPago_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
             AbrirFormulario<IRegistroPago>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
+
+        private void btnMatricularEstudiante_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMatricularEstudiante_MouseDown(object sender, MouseEventArgs e)
+        {
+            ocultarBotones();
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
+            AbrirFormulario<Modulos_Estudiante.IMatriculaIndividual>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
         }
     }
 }

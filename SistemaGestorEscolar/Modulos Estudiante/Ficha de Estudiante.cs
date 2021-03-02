@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
+namespace SistemaGestorEscolar.Modulos_Estudiante
 {
-    public partial class Seleccion_de_Curso : Form
+    public partial class Ficha_de_Estudiante : Form
     {
-        public Seleccion_de_Curso()
+        public Ficha_de_Estudiante()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void Ficha_de_Estudiante_Load(object sender, EventArgs e)
         {
 
         }

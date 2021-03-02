@@ -7,14 +7,19 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
+using System.Drawing;
+using System.IO;
 
 namespace SistemaGestorEscolar
 {
     class databaseConnection
     {
+        clsUtilidades utilidades = new clsUtilidades();
+
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("server=DESKTOP-2KKKGON; database = StaMariaNazarethDatabaseService; Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HACKNEL;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -81,6 +86,7 @@ namespace SistemaGestorEscolar
                 databaseIntermediary.Open();
                 comando = new SqlCommand(instruccion, databaseIntermediary);
                 lectorVariables = comando.ExecuteReader();
+                
                 while (lectorVariables.Read())
                 {
                     cmb.Items.Add(lectorVariables.GetValue(0).ToString());
@@ -124,7 +130,7 @@ namespace SistemaGestorEscolar
                 int valor = 0;
                 comando = new SqlCommand(instruccion, databaseIntermediary);
                 lectorVariables = comando.ExecuteReader();
-                if(lectorVariables.Read())
+                if (lectorVariables.Read())
                 {
                     valor = Convert.ToInt16(lectorVariables.GetValue(0));
                 }
@@ -138,7 +144,7 @@ namespace SistemaGestorEscolar
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return -1;
             }
-            
+
         }
 
         //Metodo para obtener variables DOUBLE de la base de datos. (Se envia el comando sql) de donde se quiere obtener la variable [RETORNA -1 SI NO ENCUENTRA UN VALOR]
@@ -179,7 +185,6 @@ namespace SistemaGestorEscolar
                 if (lectorVariables.Read())
                 {
                     valor = Convert.ToString(lectorVariables.GetValue(0));
-                  
                 }
                 else
                 {
@@ -229,11 +234,11 @@ namespace SistemaGestorEscolar
 
 
         public bool PAOperacionEmpleado(string idPerona, string nombre1, string nombre2, string apellido1, string apellido2, int tel, string fechaN,
-            string mail, string estado, string contra, int idCargo, int cargoAnterior, int codigo)
+            string mail, int estado, string contra, int idCargo, int cargoAnterior, int codigo)
         {
             try
             {
-                
+
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "PAOperacionEmpleados";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -258,7 +263,7 @@ namespace SistemaGestorEscolar
                 else if (codigo == 2)
                 {
                     comando.Parameters.AddWithValue("@CODIGO", 2);
-                    comando.Parameters.AddWithValue("@idCargoAnteriora", cargoAnterior);
+                    comando.Parameters.AddWithValue("@idCargoAnterior", cargoAnterior);
                 }
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -314,8 +319,8 @@ namespace SistemaGestorEscolar
            
         }
 
-
-        public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento)
+        /*MEJIASOC-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+        public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento, Image img)
         {
             try
             {
@@ -328,7 +333,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@montoPago", montoPago);
                 comando.Parameters.AddWithValue("@fechaPago", fechaPago);
                 comando.Parameters.AddWithValue("@descuento", descuento);
-
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(img));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -394,6 +399,7 @@ namespace SistemaGestorEscolar
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@fechaFacturacion", fechaFacturacion);
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(Properties.Resources.imgComprobantePendiente));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -417,6 +423,31 @@ namespace SistemaGestorEscolar
             }
         }
 
+        public Image obtenerImagen(string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                comando = new SqlCommand(instruccion, databaseIntermediary);
+                adaptador = new SqlDataAdapter(comando);
+                DataSet ds = new DataSet();
+                adaptador.Fill(ds);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    MemoryStream memoryStream = new MemoryStream((byte[])ds.Tables[0].Rows[0]["comprobantePago"]);
+                    databaseIntermediary.Close();
+                    return new Bitmap(memoryStream);
+                }
+                databaseIntermediary.Close();
+                return null;
+            }
+            catch
+            {
+                databaseIntermediary.Close();
+                return null;
+            }
+        }
+
         public void llenarDataGridPagos(DataGridView dgv, string idEstudiante)
         {
             SqlCommand cmd = new SqlCommand("Select id_Mensualidad as 'ID', fechaFacturacion as 'FECHA DE FACTURACION', fechaPago as 'FECHA DE PAGO', deudaPendiente as 'DEUDA', saldoDisponible as 'SALDO', descuentoMensualidad as 'DESCUENTO' from detalleMensualidades WHERE id_Estudiante = '" + idEstudiante + "'", databaseIntermediary);
@@ -427,18 +458,25 @@ namespace SistemaGestorEscolar
             databaseIntermediary.Close();
         }
 
-        public bool abrirExpediente(string id_Estudiante, string antecedentesMedicos)
+        public bool PARegistrarMatricula(string identidadEmpleado, string identidadEncargado, string identidadEstudiante, int idCurso, int idSeccion, float totalMatricula, int tipoMatricula, int mesesPago, int estado, int codigoOperacion)
         {
             try
             {
-
                 SqlCommand comando = databaseIntermediary.CreateCommand();
-                comando.CommandText = "abrirExpediente";
+                comando.CommandText = "PARegistroMatricula";
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@id_Estudiante", id_Estudiante);
-                comando.Parameters.AddWithValue("@antecedentesMedicos", antecedentesMedicos);
-               
+                comando.Parameters.AddWithValue("@identidadAdministracion", identidadEmpleado);
+                comando.Parameters.AddWithValue("@identidadEncargado", identidadEncargado);
+                comando.Parameters.AddWithValue("@identidadEstudiante", identidadEstudiante);
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
+                comando.Parameters.AddWithValue("@idSeccion", idSeccion);
+                comando.Parameters.AddWithValue("@totalMatricula", totalMatricula);
+                comando.Parameters.AddWithValue("@tipoMatricula", tipoMatricula);
+                comando.Parameters.AddWithValue("@mesesPago", mesesPago);
+                comando.Parameters.AddWithValue("@estado", estado);
+                comando.Parameters.AddWithValue("@codigoOperacion", codigoOperacion);
+
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
                 {
@@ -448,7 +486,7 @@ namespace SistemaGestorEscolar
                 else
                 {
                     databaseIntermediary.Close();
-                    MessageBox.Show("Error de Apertura de Expediente Médico", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error de Registro de Matricula", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -461,7 +499,217 @@ namespace SistemaGestorEscolar
             }
         }
 
-       
+        public void llenarComboBoxValorInicial(ComboBox cmb, string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                comando = new SqlCommand(instruccion, databaseIntermediary);
+                lectorVariables = comando.ExecuteReader();
+                cmb.Items.Add("<SELECCIONE>");
+                while (lectorVariables.Read())
+                {
+                    cmb.Items.Add(lectorVariables.GetValue(0).ToString());
+                }
+                lectorVariables.Close();
+                databaseIntermediary.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+            }
+        }
+
+        /*MEJIASOC-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+        public bool PARegistroEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
+            string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo, string fechaNacimiento)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "RegistrarEncargado";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Numidentidad", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+                comando.Parameters.AddWithValue("@correoElectronico", correoElectronico);
+                comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono);
+                comando.Parameters.AddWithValue("@numeroTelefonoAlt", numeroTelefonoAlt);
+                comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
+                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Encargado", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool PAActualizarEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
+      string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "ActualizarEncargado";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Numidentidad", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+                comando.Parameters.AddWithValue("@correoElectronico", correoElectronico);
+                comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono);
+                comando.Parameters.AddWithValue("@numeroTelefonoAlt", numeroTelefonoAlt);
+                comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Actualizacion de Encargado", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        //Registro de Notas
+
+        public bool PAAgregarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm)
+        {
+
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "agregarNota";
+                comando.Parameters.AddWithValue("@id_DetalleMatricula", id_detalleMatricula);
+                comando.Parameters.AddWithValue("@id_Clase", id_Clase);
+                comando.Parameters.AddWithValue("@nota1erParcial", nota1);
+                comando.Parameters.AddWithValue("@nota2doParcial", nota2);
+                comando.Parameters.AddWithValue("@nota3erParcial", nota3);
+                comando.Parameters.AddWithValue("@nota4toParcial", nota4);
+                comando.Parameters.AddWithValue("@notaFinal", notaProm);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de las Notas", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
+        //comprobar Existencia (manda instruccion, si existe retorna true caso contrario false)
+        public bool ComprobarExistencia(string instruccion)
+        {
+            databaseIntermediary.Open();
+            comando = new SqlCommand(instruccion, databaseIntermediary);
+
+            var t = Convert.ToInt32(comando.ExecuteScalar());
+            databaseIntermediary.Close();
+
+            if (t != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
+
+        public bool PAActualizarEstudiante(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "ActualizarEstudiante";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadEstudiante", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Actualizacion de Encargado", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
 
     }
+
 }
+

@@ -54,8 +54,8 @@ namespace SistemaGestorEscolar
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImagenExistente = new System.Windows.Forms.Button();
+            this.btnImagenAgregar = new System.Windows.Forms.Button();
             this.grpDatosPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
@@ -341,29 +341,31 @@ namespace SistemaGestorEscolar
             this.label11.Text = "Ver Imagen de Evidencia";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button2
+            // btnImagenExistente
             // 
-            this.button2.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.adds;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1052, 717);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 66);
-            this.button2.TabIndex = 30;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnImagenExistente.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.adds;
+            this.btnImagenExistente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImagenExistente.FlatAppearance.BorderSize = 0;
+            this.btnImagenExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagenExistente.Location = new System.Drawing.Point(1052, 717);
+            this.btnImagenExistente.Name = "btnImagenExistente";
+            this.btnImagenExistente.Size = new System.Drawing.Size(70, 66);
+            this.btnImagenExistente.TabIndex = 30;
+            this.btnImagenExistente.UseVisualStyleBackColor = true;
+            this.btnImagenExistente.Click += new System.EventHandler(this.btnImagenExistente_Click);
             // 
-            // button1
+            // btnImagenAgregar
             // 
-            this.button1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.add;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(546, 717);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 77);
-            this.button1.TabIndex = 28;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnImagenAgregar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.add;
+            this.btnImagenAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImagenAgregar.FlatAppearance.BorderSize = 0;
+            this.btnImagenAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagenAgregar.Location = new System.Drawing.Point(546, 717);
+            this.btnImagenAgregar.Name = "btnImagenAgregar";
+            this.btnImagenAgregar.Size = new System.Drawing.Size(77, 77);
+            this.btnImagenAgregar.TabIndex = 28;
+            this.btnImagenAgregar.UseVisualStyleBackColor = true;
+            this.btnImagenAgregar.Click += new System.EventHandler(this.btnImagenAgregar_Click);
             // 
             // IRegistroPago
             // 
@@ -371,9 +373,9 @@ namespace SistemaGestorEscolar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnImagenExistente);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnImagenAgregar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnRegistrarPago);
             this.Controls.Add(this.grpDatosPago);
@@ -415,8 +417,8 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.TextBox txtMontoPagar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnImagenExistente;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImagenAgregar;
     }
 }

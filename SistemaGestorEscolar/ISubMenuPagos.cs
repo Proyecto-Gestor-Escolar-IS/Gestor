@@ -16,10 +16,15 @@ namespace SistemaGestorEscolar
         {
             InitializeComponent();
         }
-
+        InterfazGraficaPrincipal interfaz = new InterfazGraficaPrincipal();
         private void ISubMenuPagos_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnRegistrarPago_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -27,5 +27,10 @@ namespace SistemaGestorEscolar
         {
             SystemSounds.Beep.Play();
         }
+
+        private void panEncabezado_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
