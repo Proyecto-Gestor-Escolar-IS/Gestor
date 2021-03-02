@@ -625,5 +625,24 @@ namespace SistemaGestorEscolar
         {
 
         }
+
+        private void btnMatricularEstudiante_MouseDown(object sender, MouseEventArgs e)
+        {
+            ocultarBotones();
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
+            AbrirFormulario<Modulos_Estudiante.IMatriculaIndividual>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
     }
 }

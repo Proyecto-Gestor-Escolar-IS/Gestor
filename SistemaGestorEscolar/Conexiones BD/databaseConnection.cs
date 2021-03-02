@@ -465,6 +465,28 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
+
+        public void llenarComboBoxValorInicial(ComboBox cmb, string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                comando = new SqlCommand(instruccion, databaseIntermediary);
+                lectorVariables = comando.ExecuteReader();
+                cmb.Items.Add("<SELECCIONE>");
+                while (lectorVariables.Read())
+                {
+                    cmb.Items.Add(lectorVariables.GetValue(0).ToString());
+                }
+                lectorVariables.Close();
+                databaseIntermediary.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+            }
+        }
+
         /*MEJIASOC-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
         public bool PARegistroEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
