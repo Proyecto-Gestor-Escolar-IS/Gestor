@@ -527,6 +527,7 @@
     <None Include="Resources\button.png" />
     <None Include="Resources\button2.png" />
     <None Include="Resources\buttonHoover.png" />
+    <None Include="Resources\buscarIcono.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>
