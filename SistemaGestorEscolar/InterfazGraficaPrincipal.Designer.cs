@@ -45,6 +45,13 @@ namespace SistemaGestorEscolar
             this.btnMenuAtras = new System.Windows.Forms.Button();
             this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.btnPersonal = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnIngresarNotas = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnPagos = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnCursos = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSubMenuEstudiante = new System.Windows.Forms.Panel();
             this.btnFichaEstudiante = new System.Windows.Forms.Button();
             this.btnHistorialCursos = new System.Windows.Forms.Button();
@@ -53,19 +60,12 @@ namespace SistemaGestorEscolar
             this.label2 = new System.Windows.Forms.Label();
             this.panelMostrador = new System.Windows.Forms.Panel();
             this.panSubMenuPagos = new System.Windows.Forms.Panel();
+            this.btnHistorialPagos = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnRegistrarPago = new SistemaGestorEscolar.Controls.RoundedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.btnPersonal = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnIngresarNotas = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnPagos = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnCursos = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnHistorialPagos = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnRegistrarPago = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -313,138 +313,6 @@ namespace SistemaGestorEscolar
             this.panelPrincipal.TabIndex = 2;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panSubMenuEstudiante
-            // 
-            this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
-            this.panSubMenuEstudiante.Controls.Add(this.btnHistorialCursos);
-            this.panSubMenuEstudiante.Controls.Add(this.btnRegistrarVisitaMedica);
-            this.panSubMenuEstudiante.Controls.Add(this.btnHistorialMedico);
-            this.panSubMenuEstudiante.Controls.Add(this.label2);
-            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 779);
-            this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
-            this.panSubMenuEstudiante.Size = new System.Drawing.Size(284, 55);
-            this.panSubMenuEstudiante.TabIndex = 26;
-            // 
-            // btnFichaEstudiante
-            // 
-            this.btnFichaEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnFichaEstudiante.Enabled = false;
-            this.btnFichaEstudiante.FlatAppearance.BorderSize = 0;
-            this.btnFichaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFichaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFichaEstudiante.ForeColor = System.Drawing.Color.Black;
-            this.btnFichaEstudiante.Location = new System.Drawing.Point(615, 665);
-            this.btnFichaEstudiante.Name = "btnFichaEstudiante";
-            this.btnFichaEstudiante.Size = new System.Drawing.Size(407, 200);
-            this.btnFichaEstudiante.TabIndex = 30;
-            this.btnFichaEstudiante.Text = "FICHA DE ESTUDIANTE";
-            this.btnFichaEstudiante.UseVisualStyleBackColor = false;
-            // 
-            // btnHistorialCursos
-            // 
-            this.btnHistorialCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnHistorialCursos.Enabled = false;
-            this.btnHistorialCursos.FlatAppearance.BorderSize = 0;
-            this.btnHistorialCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorialCursos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialCursos.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorialCursos.Location = new System.Drawing.Point(1130, 357);
-            this.btnHistorialCursos.Name = "btnHistorialCursos";
-            this.btnHistorialCursos.Size = new System.Drawing.Size(407, 200);
-            this.btnHistorialCursos.TabIndex = 29;
-            this.btnHistorialCursos.Text = "HISTORIAL DE CURSOS ";
-            this.btnHistorialCursos.UseVisualStyleBackColor = false;
-            // 
-            // btnRegistrarVisitaMedica
-            // 
-            this.btnRegistrarVisitaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarVisitaMedica.Enabled = false;
-            this.btnRegistrarVisitaMedica.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarVisitaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarVisitaMedica.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVisitaMedica.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(615, 357);
-            this.btnRegistrarVisitaMedica.Name = "btnRegistrarVisitaMedica";
-            this.btnRegistrarVisitaMedica.Size = new System.Drawing.Size(407, 200);
-            this.btnRegistrarVisitaMedica.TabIndex = 28;
-            this.btnRegistrarVisitaMedica.Text = "REGISTRAR VISITA MEDICA";
-            this.btnRegistrarVisitaMedica.UseVisualStyleBackColor = false;
-            // 
-            // btnHistorialMedico
-            // 
-            this.btnHistorialMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnHistorialMedico.Enabled = false;
-            this.btnHistorialMedico.FlatAppearance.BorderSize = 0;
-            this.btnHistorialMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorialMedico.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialMedico.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorialMedico.Location = new System.Drawing.Point(98, 357);
-            this.btnHistorialMedico.Name = "btnHistorialMedico";
-            this.btnHistorialMedico.Size = new System.Drawing.Size(407, 200);
-            this.btnHistorialMedico.TabIndex = 27;
-            this.btnHistorialMedico.Text = "HISTORIAL MEDICO";
-            this.btnHistorialMedico.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(697, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 36);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "ESTUDIANTES";
-            // 
-            // panelMostrador
-            // 
-            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.panelMostrador.Location = new System.Drawing.Point(45, 746);
-            this.panelMostrador.Name = "panelMostrador";
-            this.panelMostrador.Size = new System.Drawing.Size(484, 187);
-            this.panelMostrador.TabIndex = 39;
-            this.panelMostrador.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrador_Paint);
-            // 
-            // panSubMenuPagos
-            // 
-            this.panSubMenuPagos.Controls.Add(this.btnHistorialPagos);
-            this.panSubMenuPagos.Controls.Add(this.btnRegistrarPago);
-            this.panSubMenuPagos.Controls.Add(this.label1);
-            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 883);
-            this.panSubMenuPagos.Name = "panSubMenuPagos";
-            this.panSubMenuPagos.Size = new System.Drawing.Size(284, 50);
-            this.panSubMenuPagos.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(742, 273);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 36);
-            this.label1.TabIndex = 23;
-            this.label1.Text = " PAGOS";
-            // 
-            // lblMenuTitle
-            // 
-            this.lblMenuTitle.AutoSize = true;
-            this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
-            this.lblMenuTitle.Location = new System.Drawing.Point(677, 101);
-            this.lblMenuTitle.Name = "lblMenuTitle";
-            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
-            this.lblMenuTitle.TabIndex = 32;
-            this.lblMenuTitle.Text = "MENU PRINCIPAL";
-            // 
-            // tmrOcultarMenu
-            // 
-            this.tmrOcultarMenu.Interval = 2;
-            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
-            // 
-            // tmrMostrarMenu
-            // 
-            this.tmrMostrarMenu.Interval = 2;
-            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
-            // 
             // btnPersonal
             // 
             this.btnPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
@@ -582,6 +450,107 @@ namespace SistemaGestorEscolar
             this.btnMatricularEstudiante.Click += new System.EventHandler(this.btnMatricularEstudiante_Click_1);
             this.btnMatricularEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMatricularEstudiante_MouseDown);
             // 
+            // panSubMenuEstudiante
+            // 
+            this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
+            this.panSubMenuEstudiante.Controls.Add(this.btnHistorialCursos);
+            this.panSubMenuEstudiante.Controls.Add(this.btnRegistrarVisitaMedica);
+            this.panSubMenuEstudiante.Controls.Add(this.btnHistorialMedico);
+            this.panSubMenuEstudiante.Controls.Add(this.label2);
+            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 779);
+            this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
+            this.panSubMenuEstudiante.Size = new System.Drawing.Size(284, 55);
+            this.panSubMenuEstudiante.TabIndex = 26;
+            // 
+            // btnFichaEstudiante
+            // 
+            this.btnFichaEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnFichaEstudiante.Enabled = false;
+            this.btnFichaEstudiante.FlatAppearance.BorderSize = 0;
+            this.btnFichaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFichaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFichaEstudiante.ForeColor = System.Drawing.Color.Black;
+            this.btnFichaEstudiante.Location = new System.Drawing.Point(615, 665);
+            this.btnFichaEstudiante.Name = "btnFichaEstudiante";
+            this.btnFichaEstudiante.Size = new System.Drawing.Size(407, 200);
+            this.btnFichaEstudiante.TabIndex = 30;
+            this.btnFichaEstudiante.Text = "FICHA DE ESTUDIANTE";
+            this.btnFichaEstudiante.UseVisualStyleBackColor = false;
+            // 
+            // btnHistorialCursos
+            // 
+            this.btnHistorialCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnHistorialCursos.Enabled = false;
+            this.btnHistorialCursos.FlatAppearance.BorderSize = 0;
+            this.btnHistorialCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorialCursos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialCursos.ForeColor = System.Drawing.Color.Black;
+            this.btnHistorialCursos.Location = new System.Drawing.Point(1130, 357);
+            this.btnHistorialCursos.Name = "btnHistorialCursos";
+            this.btnHistorialCursos.Size = new System.Drawing.Size(407, 200);
+            this.btnHistorialCursos.TabIndex = 29;
+            this.btnHistorialCursos.Text = "HISTORIAL DE CURSOS ";
+            this.btnHistorialCursos.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistrarVisitaMedica
+            // 
+            this.btnRegistrarVisitaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnRegistrarVisitaMedica.Enabled = false;
+            this.btnRegistrarVisitaMedica.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarVisitaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarVisitaMedica.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarVisitaMedica.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(615, 357);
+            this.btnRegistrarVisitaMedica.Name = "btnRegistrarVisitaMedica";
+            this.btnRegistrarVisitaMedica.Size = new System.Drawing.Size(407, 200);
+            this.btnRegistrarVisitaMedica.TabIndex = 28;
+            this.btnRegistrarVisitaMedica.Text = "REGISTRAR VISITA MEDICA";
+            this.btnRegistrarVisitaMedica.UseVisualStyleBackColor = false;
+            // 
+            // btnHistorialMedico
+            // 
+            this.btnHistorialMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnHistorialMedico.Enabled = false;
+            this.btnHistorialMedico.FlatAppearance.BorderSize = 0;
+            this.btnHistorialMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorialMedico.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialMedico.ForeColor = System.Drawing.Color.Black;
+            this.btnHistorialMedico.Location = new System.Drawing.Point(98, 357);
+            this.btnHistorialMedico.Name = "btnHistorialMedico";
+            this.btnHistorialMedico.Size = new System.Drawing.Size(407, 200);
+            this.btnHistorialMedico.TabIndex = 27;
+            this.btnHistorialMedico.Text = "HISTORIAL MEDICO";
+            this.btnHistorialMedico.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(697, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(240, 36);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "ESTUDIANTES";
+            // 
+            // panelMostrador
+            // 
+            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panelMostrador.Location = new System.Drawing.Point(45, 746);
+            this.panelMostrador.Name = "panelMostrador";
+            this.panelMostrador.Size = new System.Drawing.Size(484, 187);
+            this.panelMostrador.TabIndex = 39;
+            this.panelMostrador.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrador_Paint);
+            // 
+            // panSubMenuPagos
+            // 
+            this.panSubMenuPagos.Controls.Add(this.btnHistorialPagos);
+            this.panSubMenuPagos.Controls.Add(this.btnRegistrarPago);
+            this.panSubMenuPagos.Controls.Add(this.label1);
+            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 883);
+            this.panSubMenuPagos.Name = "panSubMenuPagos";
+            this.panSubMenuPagos.Size = new System.Drawing.Size(284, 50);
+            this.panSubMenuPagos.TabIndex = 0;
+            // 
             // btnHistorialPagos
             // 
             this.btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
@@ -620,6 +589,37 @@ namespace SistemaGestorEscolar
             this.btnRegistrarPago.Text = "REGISTRAR PAGO";
             this.btnRegistrarPago.UseVisualStyleBackColor = false;
             this.btnRegistrarPago.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistrarPago_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(742, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 36);
+            this.label1.TabIndex = 23;
+            this.label1.Text = " PAGOS";
+            // 
+            // lblMenuTitle
+            // 
+            this.lblMenuTitle.AutoSize = true;
+            this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
+            this.lblMenuTitle.Location = new System.Drawing.Point(677, 101);
+            this.lblMenuTitle.Name = "lblMenuTitle";
+            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
+            this.lblMenuTitle.TabIndex = 32;
+            this.lblMenuTitle.Text = "MENU PRINCIPAL";
+            // 
+            // tmrOcultarMenu
+            // 
+            this.tmrOcultarMenu.Interval = 2;
+            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
+            // 
+            // tmrMostrarMenu
+            // 
+            this.tmrMostrarMenu.Interval = 2;
+            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
             // 
             // InterfazGraficaPrincipal
             // 
