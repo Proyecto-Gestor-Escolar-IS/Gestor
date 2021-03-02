@@ -512,6 +512,7 @@
     <None Include="Resources\contra 2.png" />
     <Content Include="Login\MensajeRecuperacionContra.html" />
     <None Include="Resources\gui_order_pending_icon_158418.png" />
+    <None Include="Resources\buscarIcono.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>

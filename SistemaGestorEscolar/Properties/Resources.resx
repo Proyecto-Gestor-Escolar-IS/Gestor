@@ -127,6 +127,9 @@
   <data name="iconAddEstudianteRedimensionado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconAddEstudianteRedimensionado4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="exitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconBackResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBackResized2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,17 +142,17 @@
   <data name="iconPersonalResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconPersonalResized2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgComprobantePendiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gui_order_pending_icon_158418.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconNotasResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconNotasResized2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconMoneyResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconMoneyResized1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconCursosResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconCursosResized2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="adds" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adds1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +163,11 @@
   <data name="Logo Nazaret" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo Nazaret.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="exitButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exitButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="adds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adds1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconNotasResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconNotasResized2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Contra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Contra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +175,7 @@
   <data name="iconMatriculaResized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconMatriculaResized1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgComprobantePendiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gui_order_pending_icon_158418.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buscarIcono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buscarIcono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
