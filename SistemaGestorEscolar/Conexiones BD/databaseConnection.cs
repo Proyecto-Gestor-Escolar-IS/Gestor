@@ -709,6 +709,40 @@ namespace SistemaGestorEscolar
 
         }
 
+        public bool abrirExpediente(string id_Estudiante, string antecedentesMedicos)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "abrirExpediente";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@id_Estudiante", id_Estudiante);
+                comando.Parameters.AddWithValue("@antecedentesMedicos", antecedentesMedicos);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al abrir Expediente Médico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
     }
 
 }
