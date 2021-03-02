@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HACKNEL;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -233,7 +233,7 @@ namespace SistemaGestorEscolar
         }
 
         public bool PAOperacionEmpleado(string idPerona, string nombre1, string nombre2, string apellido1, string apellido2, int tel, string fechaN,
-            string mail, string estado, string contra, int idCargo, int cargoAnterior, int codigo)
+            string mail, int estado, string contra, int idCargo, int cargoAnterior, int codigo)
         {
             try
             {
@@ -262,7 +262,7 @@ namespace SistemaGestorEscolar
                 else if (codigo == 2)
                 {
                     comando.Parameters.AddWithValue("@CODIGO", 2);
-                    comando.Parameters.AddWithValue("@idCargoAnteriora", cargoAnterior);
+                    comando.Parameters.AddWithValue("@idCargoAnterior", cargoAnterior);
                 }
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
