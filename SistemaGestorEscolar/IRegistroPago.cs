@@ -250,6 +250,7 @@ namespace SistemaGestorEscolar
             try
             {
                 if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, 0))
+                  
                 {
                     MessageBox.Show("Pago Registrado Exitosamente", "Pago Realizado", MessageBoxButtons.OK);
                     dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);

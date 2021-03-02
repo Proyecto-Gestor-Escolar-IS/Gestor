@@ -50,6 +50,8 @@ namespace SistemaGestorEscolar
             this.panMedicamentos = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNumeroIdentidad = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@ namespace SistemaGestorEscolar
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(175, 210);
+            this.label2.Location = new System.Drawing.Point(175, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(275, 31);
             this.label2.TabIndex = 3;
@@ -76,7 +78,7 @@ namespace SistemaGestorEscolar
             // txtNombreEstudiantetxtNombreEstudiante
             // 
             this.txtNombreEstudiantetxtNombreEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstudiantetxtNombreEstudiante.Location = new System.Drawing.Point(475, 210);
+            this.txtNombreEstudiantetxtNombreEstudiante.Location = new System.Drawing.Point(475, 196);
             this.txtNombreEstudiantetxtNombreEstudiante.Name = "txtNombreEstudiantetxtNombreEstudiante";
             this.txtNombreEstudiantetxtNombreEstudiante.Size = new System.Drawing.Size(427, 28);
             this.txtNombreEstudiantetxtNombreEstudiante.TabIndex = 17;
@@ -87,7 +89,7 @@ namespace SistemaGestorEscolar
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(175, 475);
+            this.label3.Location = new System.Drawing.Point(175, 501);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 31);
             this.label3.TabIndex = 18;
@@ -97,7 +99,7 @@ namespace SistemaGestorEscolar
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(175, 381);
+            this.label4.Location = new System.Drawing.Point(175, 407);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(245, 31);
             this.label4.TabIndex = 19;
@@ -118,7 +120,7 @@ namespace SistemaGestorEscolar
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(175, 294);
+            this.label6.Location = new System.Drawing.Point(175, 320);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 31);
             this.label6.TabIndex = 21;
@@ -128,7 +130,7 @@ namespace SistemaGestorEscolar
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(747, 586);
+            this.label7.Location = new System.Drawing.Point(747, 596);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(146, 31);
             this.label7.TabIndex = 22;
@@ -147,7 +149,7 @@ namespace SistemaGestorEscolar
             // txtFechaRegistro
             // 
             this.txtFechaRegistro.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaRegistro.Location = new System.Drawing.Point(1267, 210);
+            this.txtFechaRegistro.Location = new System.Drawing.Point(1267, 196);
             this.txtFechaRegistro.Name = "txtFechaRegistro";
             this.txtFechaRegistro.Size = new System.Drawing.Size(191, 28);
             this.txtFechaRegistro.TabIndex = 24;
@@ -158,7 +160,7 @@ namespace SistemaGestorEscolar
             this.txtSintomas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.txtSintomas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSintomas.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSintomas.Location = new System.Drawing.Point(475, 298);
+            this.txtSintomas.Location = new System.Drawing.Point(475, 324);
             this.txtSintomas.Name = "txtSintomas";
             this.txtSintomas.Size = new System.Drawing.Size(913, 21);
             this.txtSintomas.TabIndex = 25;
@@ -170,7 +172,7 @@ namespace SistemaGestorEscolar
             this.txtPosibleEnfermedad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.txtPosibleEnfermedad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPosibleEnfermedad.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosibleEnfermedad.Location = new System.Drawing.Point(475, 385);
+            this.txtPosibleEnfermedad.Location = new System.Drawing.Point(475, 411);
             this.txtPosibleEnfermedad.Name = "txtPosibleEnfermedad";
             this.txtPosibleEnfermedad.Size = new System.Drawing.Size(605, 21);
             this.txtPosibleEnfermedad.TabIndex = 26;
@@ -181,7 +183,7 @@ namespace SistemaGestorEscolar
             this.txtMedicamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.txtMedicamentos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMedicamentos.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicamentos.Location = new System.Drawing.Point(475, 479);
+            this.txtMedicamentos.Location = new System.Drawing.Point(475, 505);
             this.txtMedicamentos.Name = "txtMedicamentos";
             this.txtMedicamentos.Size = new System.Drawing.Size(605, 21);
             this.txtMedicamentos.TabIndex = 27;
@@ -194,7 +196,7 @@ namespace SistemaGestorEscolar
             this.btnRegistrarVisitaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarVisitaMedica.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarVisitaMedica.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(1183, 415);
+            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(1183, 441);
             this.btnRegistrarVisitaMedica.Name = "btnRegistrarVisitaMedica";
             this.btnRegistrarVisitaMedica.Size = new System.Drawing.Size(272, 53);
             this.btnRegistrarVisitaMedica.TabIndex = 28;
@@ -204,7 +206,7 @@ namespace SistemaGestorEscolar
             // dgvHistorial
             // 
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Location = new System.Drawing.Point(34, 629);
+            this.dgvHistorial.Location = new System.Drawing.Point(34, 639);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.Size = new System.Drawing.Size(1565, 379);
             this.dgvHistorial.TabIndex = 29;
@@ -213,7 +215,7 @@ namespace SistemaGestorEscolar
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1047, 210);
+            this.label8.Location = new System.Drawing.Point(1047, 196);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(165, 31);
             this.label8.TabIndex = 30;
@@ -222,7 +224,7 @@ namespace SistemaGestorEscolar
             // panSintomas
             // 
             this.panSintomas.BackColor = System.Drawing.Color.Black;
-            this.panSintomas.Location = new System.Drawing.Point(475, 328);
+            this.panSintomas.Location = new System.Drawing.Point(475, 354);
             this.panSintomas.Name = "panSintomas";
             this.panSintomas.Size = new System.Drawing.Size(913, 2);
             this.panSintomas.TabIndex = 31;
@@ -230,7 +232,7 @@ namespace SistemaGestorEscolar
             // panPosibleEnfermedad
             // 
             this.panPosibleEnfermedad.BackColor = System.Drawing.Color.Black;
-            this.panPosibleEnfermedad.Location = new System.Drawing.Point(475, 415);
+            this.panPosibleEnfermedad.Location = new System.Drawing.Point(475, 441);
             this.panPosibleEnfermedad.Name = "panPosibleEnfermedad";
             this.panPosibleEnfermedad.Size = new System.Drawing.Size(605, 2);
             this.panPosibleEnfermedad.TabIndex = 32;
@@ -239,7 +241,7 @@ namespace SistemaGestorEscolar
             // panMedicamentos
             // 
             this.panMedicamentos.BackColor = System.Drawing.Color.Black;
-            this.panMedicamentos.Location = new System.Drawing.Point(475, 509);
+            this.panMedicamentos.Location = new System.Drawing.Point(475, 535);
             this.panMedicamentos.Name = "panMedicamentos";
             this.panMedicamentos.Size = new System.Drawing.Size(605, 2);
             this.panMedicamentos.TabIndex = 33;
@@ -263,12 +265,33 @@ namespace SistemaGestorEscolar
             this.txtNumeroIdentidad.TabIndex = 35;
             this.txtNumeroIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(175, 259);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(225, 31);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Médico Encargado";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(475, 257);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(247, 29);
+            this.comboBox1.TabIndex = 37;
+            // 
             // IRegistroVisitaMedica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNumeroIdentidad);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panMedicamentos);
@@ -322,5 +345,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Panel panMedicamentos;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNumeroIdentidad;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

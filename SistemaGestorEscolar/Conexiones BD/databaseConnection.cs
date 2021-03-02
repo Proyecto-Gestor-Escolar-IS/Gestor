@@ -14,7 +14,7 @@ namespace SistemaGestorEscolar
     {
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("server=DESKTOP-P4A3L4O; database = StaMariaNazarethDatabaseService; Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("server=DESKTOP-2KKKGON; database = StaMariaNazarethDatabaseService; Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -227,6 +227,7 @@ namespace SistemaGestorEscolar
 
         }
 
+
         public bool PAOperacionEmpleado(string idPerona, string nombre1, string nombre2, string apellido1, string apellido2, int tel, string fechaN,
             string mail, string estado, string contra, int idCargo, int cargoAnterior, int codigo)
         {
@@ -280,7 +281,40 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
-        
+
+        public int retornarIdExpediente()
+        {
+           // try
+           // {
+                int valorARetornar;
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = ("SELECT MAX(id_Expediente) FROM expedienteMedico");
+
+                databaseIntermediary.Open();
+
+                object value = comando.ExecuteScalar();
+                if (value != DBNull.Value) {
+                    valorARetornar = Convert.ToInt32(value);
+                }
+                else
+                {
+                  valorARetornar = 0;
+                }
+                databaseIntermediary.Close();
+
+                return valorARetornar;
+         //   }
+
+           /* catch (Exception ex)
+            {
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                databaseIntermediary.Close();
+                return default;
+            }*/
+           
+        }
+
+
         public bool PARegistroPago(string identidadEstudiante, double montoPago, DateTime fechaPago, double descuento)
         {
             try
@@ -392,6 +426,42 @@ namespace SistemaGestorEscolar
             dgv.DataSource = ds.Tables[0];
             databaseIntermediary.Close();
         }
+
+        public bool abrirExpediente(string id_Estudiante, string antecedentesMedicos)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "abrirExpediente";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@id_Estudiante", id_Estudiante);
+                comando.Parameters.AddWithValue("@antecedentesMedicos", antecedentesMedicos);
+               
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Apertura de Expediente Médico", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+       
 
     }
 }
