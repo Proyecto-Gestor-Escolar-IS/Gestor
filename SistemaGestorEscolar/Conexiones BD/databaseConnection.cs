@@ -287,6 +287,37 @@ namespace SistemaGestorEscolar
             }
         }
 
+        public bool PAAgregarCargo(string idPerona, int cargo)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAAgregarCargo";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidad", idPerona);
+                comando.Parameters.AddWithValue("@cCargo", cargo);
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                return false;
+            }
+        }
+
         public int retornarIdExpediente()
         {
            // try
