@@ -29,6 +29,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdentidad = new System.Windows.Forms.TextBox();
             this.btnAgregarNota = new System.Windows.Forms.Button();
@@ -55,6 +56,8 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnCambiarEstado = new System.Windows.Forms.Button();
             this.txtIdClase = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.errorPrvIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorPrvIdentidad)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,6 +112,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnModificarNota.TabIndex = 3;
             this.btnModificarNota.Text = "Modificar Nota";
             this.btnModificarNota.UseVisualStyleBackColor = false;
+            this.btnModificarNota.Click += new System.EventHandler(this.btnModificarNota_Click);
             // 
             // btnMostarCuadroN
             // 
@@ -119,7 +123,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnMostarCuadroN.Location = new System.Drawing.Point(602, 639);
             this.btnMostarCuadroN.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostarCuadroN.Name = "btnMostarCuadroN";
-            this.btnMostarCuadroN.Size = new System.Drawing.Size(236, 41);
+            this.btnMostarCuadroN.Size = new System.Drawing.Size(248, 41);
             this.btnMostarCuadroN.TabIndex = 4;
             this.btnMostarCuadroN.Text = "Ver Cuadro de Notas";
             this.btnMostarCuadroN.UseVisualStyleBackColor = false;
@@ -177,6 +181,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtNombreAlumno.Location = new System.Drawing.Point(400, 242);
             this.txtNombreAlumno.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreAlumno.Name = "txtNombreAlumno";
+            this.txtNombreAlumno.ReadOnly = true;
             this.txtNombreAlumno.Size = new System.Drawing.Size(485, 35);
             this.txtNombreAlumno.TabIndex = 8;
             this.txtNombreAlumno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -373,6 +378,10 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.label11.TabIndex = 24;
             this.label11.Text = "ID Clase:";
             // 
+            // errorPrvIdentidad
+            // 
+            this.errorPrvIdentidad.ContainerControl = this;
+            // 
             // Registro_Datos_Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +420,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro_Datos_Notas";
             this.Load += new System.EventHandler(this.Registro_Datos_Notas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorPrvIdentidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +454,6 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         private System.Windows.Forms.Button btnCambiarEstado;
         private System.Windows.Forms.TextBox txtIdClase;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ErrorProvider errorPrvIdentidad;
     }
 }

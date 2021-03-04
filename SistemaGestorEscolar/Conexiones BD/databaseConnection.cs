@@ -287,6 +287,37 @@ namespace SistemaGestorEscolar
             }
         }
 
+        public bool PAAgregarCargo(string idPerona, int cargo)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAAgregarCargo";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidad", idPerona);
+                comando.Parameters.AddWithValue("@cCargo", cargo);
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                return false;
+            }
+        }
+
         public int retornarIdExpediente()
         {
            // try
@@ -682,6 +713,45 @@ namespace SistemaGestorEscolar
                 return false;
             }
 
+        }
+
+        //Modificar una Nota 
+
+        public bool PAModificarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "modificarNota";
+                comando.Parameters.AddWithValue("@id_DetalleMatricula", id_detalleMatricula);
+                comando.Parameters.AddWithValue("@id_Clase", id_Clase);
+                comando.Parameters.AddWithValue("@nota1erParcial", nota1);
+                comando.Parameters.AddWithValue("@nota2doParcial", nota2);
+                comando.Parameters.AddWithValue("@nota3erParcial", nota3);
+                comando.Parameters.AddWithValue("@nota4toParcial", nota4);
+                comando.Parameters.AddWithValue("@notaFinal", notaProm);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de las Notas", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
         }
 
         //comprobar Existencia (manda instruccion, si existe retorna true caso contrario false)
