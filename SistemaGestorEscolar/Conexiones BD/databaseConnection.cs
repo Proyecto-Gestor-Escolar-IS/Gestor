@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HACKNEL;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -423,6 +423,39 @@ namespace SistemaGestorEscolar
             }
         }
 
+        public bool PAGeneracionPrimerPago(string identidadEstudiante)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAFacturacionPrimerPago";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadEstudiante", identidadEstudiante);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Pago", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
         public Image obtenerImagen(string instruccion)
         {
             try
@@ -507,6 +540,7 @@ namespace SistemaGestorEscolar
                 comando = new SqlCommand(instruccion, databaseIntermediary);
                 lectorVariables = comando.ExecuteReader();
                 cmb.Items.Add("<SELECCIONE>");
+
                 while (lectorVariables.Read())
                 {
                     cmb.Items.Add(lectorVariables.GetValue(0).ToString());
