@@ -15,6 +15,8 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
     public partial class Registro_Datos_Notas : Form
     {
         databaseConnection dbConn = new databaseConnection();
+        IMessageBoxCheck messageOk = new IMessageBoxCheck();
+        IMessageBoxError message = new IMessageBoxError();
 
         public int id_detalleMatricula;
         public string id_detalleMatriculaTemp;
@@ -30,6 +32,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             InitializeComponent();
         }
 
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -37,7 +40,60 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
 
         private void txtIdentidad_TextChanged(object sender, EventArgs e)
         {
+            string idEstudiante;
+            long number = 0; 
+            try
+            { 
+                if (txtIdentidad.Text != string.Empty)
+                {
+                    txtIdentidad.ForeColor = Color.Black;
+                    errorPrvIdentidad.Clear();
+                    if (long.TryParse(txtIdentidad.Text, out number))
+                    {
+                        txtIdentidad.ForeColor = Color.Black;
+                        errorPrvIdentidad.Clear();
 
+                        if (txtIdentidad.TextLength == 13)
+                        {
+                            txtIdentidad.ForeColor = Color.Green;
+                            errorPrvIdentidad.Clear();
+
+                            idEstudiante = dbConn.obtenerVariableString("SELECT id_Registro FROM datosEstudiante WHERE identidadEstudiante = " + txtIdentidad.Text);
+
+                            if (!string.IsNullOrEmpty(idEstudiante))
+                            {
+                                dbConn.llenarTextBox(txtNombreAlumno, "SELECT CONCAT(primerNombre,' ',segundoNombre,' ',primerApellido,' ',segundoApellido) as 'Nombre Estudiante' " +
+                                    "FROM  dbo.datosEstudiante Where identidadEstudiante = " + txtIdentidad.Text);
+                            }
+                            else
+                            {
+                                txtIdentidad.ForeColor = Color.Red;
+                                errorPrvIdentidad.SetError(this.txtIdentidad, "El Alumno ya tiene un registro de notas");
+                            }
+                        }
+                        else
+                        {
+                            txtIdentidad.ForeColor = Color.Red;
+                            errorPrvIdentidad.SetError(this.txtIdentidad, "No se encontró el alumno especificado");
+                        }
+                    }
+                    else if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
+                    {
+                        txtIdentidad.ForeColor = Color.Red;
+                        errorPrvIdentidad.SetError(this.txtIdentidad, "El numero de indentidad ingresado es invalido!");
+                        txtIdentidad.ResetText();
+                        txtNombreAlumno.ResetText();
+                    }
+                }
+                else
+                {
+                    errorPrvIdentidad.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }   
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -146,20 +202,14 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
 
         private void btnMostarCuadroN_Click(object sender, EventArgs e)
         {
-            //dbConn.llenarDGV(dgvNotaAlumnos, "SELECT CONCAT(dbo.datosEstudiante.primerNombre,' ',dbo.datosEstudiante.segundoNombre,' ',dbo.datosEstudiante.primerApellido,' ',dbo.datosEstudiante.segundoApellido) as 'Nombre del Estudiante', dbo.datosEstudiante.identidadEstudiante as 'Identidad del Estudiante', dbo.cursos.nombreCurso as 'Curso', " +
-            //    "dbo.seccion.nombreSeccion as 'Sección', dbo.detalleNotas.nota1erParcial as 'Nota Primer Parcial', dbo.detalleNotas.nota2doParcial as 'Segundo Parcial', dbo.detalleNotas.nota3erParcial as 'Tercer Parcial', dbo.detalleNotas.nota4toParcial as 'Cuarto Parcial', dbo.detalleNotas.notaFinal as 'Nota Final'" +
-            //     "FROM     dbo.seccion INNER JOIN" +
-            //     "dbo.cursos ON dbo.seccion.id_Curso = dbo.cursos.id_Curso INNER JOIN" +
-            //     "dbo.detalleMatricula ON dbo.seccion.id_Seccion = dbo.detalleMatricula.id_Seccion AND dbo.cursos.id_Curso = dbo.detalleMatricula.id_Curso INNER JOIN" +
-            //     "dbo.detalleNotas ON dbo.detalleMatricula.id_DetalleMatricula = dbo.detalleNotas.id_DetalleMatricula INNER JOIN" +
-            //     "dbo.matricula ON dbo.detalleMatricula.id_RegistroMatricula = dbo.matricula.id_RegistroMatricula INNER JOIN" +
-            //      "dbo.datosEstudiante ON dbo.matricula.id_Estudiante = dbo.datosEstudiante.identidadEstudiante");
 
             this.Hide();
             Cuadro_de_Notas form = new Cuadro_de_Notas();
             form.Show(this);
 
         }
+
+
 
         private void txtNota3_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -240,39 +290,53 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             nota4 = float.Parse(txtNota4.Text);
             notaFinal = float.Parse(txtNotaProm.Text);
 
-            /*string comando = ("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM dbo.datosEstudiante INNER JOIN" +
-            "dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN" +
-            "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula inner join" +
-            "dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join" +
-            "dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion" +
-            "where dbo.datosEstudiante.identidadEstudiante = '"+identidad+"' and dbo.cursos.nombreCurso = '"+curso+"' and dbo.seccion.nombreSeccion = '"+seccion+"'");*/
-
-
-            /*
-             SELECT dbo.detalleMatricula.id_DetalleMatricula
-FROM     dbo.datosEstudiante INNER JOIN
-                  dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN
-                  dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula inner join
-				  dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join 
-				  dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion
-where dbo.datosEstudiante.identidadEstudiante = '1002201000251' and dbo.cursos.nombreCurso = 'Kinder' and dbo.seccion.nombreSeccion = 'B'
-
-
-             */
             id_detalleMatricula = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
                 "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' and dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
                   
-                //MessageBox.Show("Shit" + id_detalleMatricula);
 
                if (dbConn.PAAgregarNota(id_detalleMatricula, Id_Clase, nota1, nota2, nota3, nota4, notaFinal))
                 {
-                MessageBox.Show("Las Notas del Alumno se ingresaron correctamente", "Nota Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //MessageBox.Show("Las Notas del Alumno se ingresaron correctamente", "Nota Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageOk.lblCheck.Text = "Las Notas se ingresaron correctamente!";
+                messageOk.ShowDialog();
                 }
                else
                 {
-                MessageBox.Show("Se produjo un error al ingresar los datos!", "Nota Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Se produjo un error al ingresar los datos!", "Nota Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                message.lblError.Text = "Error al ingresar las Notas!";
+                message.ShowDialog();
                 }
         
         }
+
+        private void btnModificarNota_Click(object sender, EventArgs e)
+        {
+            identidad = txtIdentidad.Text;
+            Id_Clase = Int16.Parse(txtIdClase.Text);
+            curso = txtCurso.Text;
+            seccion = txtSeccion.Text;
+            nombreAlumno = txtNombreAlumno.Text;
+            nota1 = float.Parse(txtNota1.Text);
+            nota2 = float.Parse(txtNota2.Text);
+            nota3 = float.Parse(txtNota3.Text);
+            nota4 = float.Parse(txtNota4.Text);
+            notaFinal = float.Parse(txtNotaProm.Text);
+
+            id_detalleMatricula = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
+                "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' and dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
+
+            if (dbConn.PAModificarNota(id_detalleMatricula, Id_Clase, nota1, nota2, nota3, nota4, notaFinal))
+            {
+                messageOk.lblCheck.Text = "Las Notas se Modificó correctamente!";
+                messageOk.ShowDialog();
+            }
+            else
+            {
+                message.lblError.Text = "Error al Modificar las Notas!";
+                message.ShowDialog();
+            }
+
+        }
+
     }
 }

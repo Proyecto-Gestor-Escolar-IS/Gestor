@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar.Modulos_Encargado
+namespace SistemaGestorEscolar.Modulos_de_Empleados
 {
     public partial class IFrmGestionEmpleados : Form
     {
@@ -98,7 +98,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void btnSiguienteDGVAct_Click(object sender, EventArgs e)
         {
 
-            if(dgvEmpleados.CurrentCell != null && dgvEmpleados.DataSource != null)
+            if(dgvEmpleados.CurrentCell != null && dgvEmpleados.DataSource != null && identidad != null)
             {
                 cmbActCargo.Items.Clear();
                 pnldgv.Hide();
@@ -137,8 +137,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                         dbConn.llenarComboBox(cmbActCargo, "SELECT descripcionCargo FROM cargos WHERE descripcionCargo <> 'Super Usuario'");
                         break;
                     default:
-                        lblActCargoActual.Text = dbConn.obtenerVariableString("SELECT TOP 1(descripcionCargo) FROM datosEmpleados de INNER JOIN detalleCargos det ON de.identidadPersona = det.identidadEmpleado " +
-                            "INNER JOIN cargos ca ON det.idCargoAsociado = ca.id_Cargo where de.identidadPersona = '" + identidad + "' ");
+                        lblActCargoActual.Text = dgvEmpleados.CurrentRow.Cells[5].Value.ToString();
                         dbConn.llenarComboBox(cmbActCargo, "SELECT descripcionCargo FROM cargos WHERE descripcionCargo <> 'Super Usuario'");
                         break;
                 }
@@ -189,7 +188,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             actReset();
         }
 
-        private void actReset()
+        
+        private void actReset()//Limpia los valores que esten en el groupBox Actualizar
         {
             utilidades.limpiarTextBox(grpActualizar);
             cmbActCargo.Items.Clear();
@@ -206,9 +206,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void iniciarDGV(string text)
         {
             dbConn.llenarDGV(dgvEmpleados, "SELECT id_Registro as 'ID', identidadPersona as 'N° IDENTIDAD', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'NOMBRE'," +
-                " numeroTelefono as 'TELÉFONO', fechaNacimiento as 'FECHA DE NACIMIENTO', descripcionEstado as 'ESTADO' " +
+                " numeroTelefono as 'TELÉFONO', fechaNacimiento as 'FECHA DE NACIMIENTO', c.descripcionCargo as 'CARGO', descripcionEstado as 'ESTADO' " +
                 "FROM datosEmpleados de INNER JOIN estados es ON de.estadoEmpleado = es.id_Estado " +
-                "INNER JOIN detalleCargos dc on de.identidadPersona = dc.identidadEmpleado INNER JOIN cargos c on dc.idCargoAsociado = c.id_Cargo WHERE es.id_Estado <> 2 AND identidadEmpleado like '"+text+"%' ");
+                "INNER JOIN detalleCargos dc on de.identidadPersona = dc.identidadEmpleado INNER JOIN cargos c on dc.idCargoAsociado = c.id_Cargo WHERE es.id_Estado <> 2 AND (identidadEmpleado like '"+text+"%' OR primerNombre like '"+text+"%') ");
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -216,7 +216,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             int vaActualizar;
             if (comprobaciones())
             {
-                if(cmbActCargo.Text == "NO ACTUALIZAR")
+                if (cmbActCargo.Text == "NO ACTUALIZAR")
                 {
                     vaActualizar = -1;
                     dbConn.PAOperacionEmpleado(txtActIdent.Text, txtActNombre1.Text, txtActNombre2.Text, txtActApellido1.Text, txtActApellido2.Text, Convert.ToInt32(txtActTelef.Text), txtActFechaNac.Text,
@@ -229,6 +229,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 }
                 else
                 {
+                    if (codigoCargo == -1)
+                    {
+                        codigoCargo = dbConn.obtenerVariableEntera("SELECT id_Cargo FROM cargos WHERE descripcionCargo = '" + lblActCargoActual.Text + "' ");
+                    }
                     vaActualizar = dbConn.obtenerVariableEntera("SELECT id_Cargo FROM cargos WHERE descripcionCargo = '"+cmbActCargo.Text+"' ");
                     dbConn.PAOperacionEmpleado(txtActIdent.Text, txtActNombre1.Text, txtActNombre2.Text, txtActApellido1.Text, txtActApellido2.Text, Convert.ToInt32(txtActTelef.Text), txtActFechaNac.Text,
                             txtActMail.Text, 1, utilidades.EncriptarTexto(txtActConfContra.Text), vaActualizar, codigoCargo, 2);
@@ -284,6 +288,55 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 boxError.ShowDialog();
             }
             return false;
+        }
+
+        private void cmbActCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void btnEliminarCargo_Click(object sender, EventArgs e)
+        {
+            cmbActCargo.Text = "NO APLICA";
+            cmbActCargo.Enabled = false;
+            if (comprobaciones())
+            {
+                codigoCargo = dbConn.obtenerVariableEntera("SELECT id_Cargo FROM cargos WHERE descripcionCargo = '" + lblActCargoActual.Text + "' ");
+                if (dbConn.ejecutarComandoSQL("DELETE FROM detalleCargos WHERE idCargoAsociado = '" + codigoCargo + "' AND identidadEmpleado = '" + identidad + "' "))
+                {
+                    messageOk.lblCheck.Text = "ELIMINADO CORRECTAMENTE";
+                    messageOk.ShowDialog();
+                    grpActualizar.Hide();
+                    pnldgv.Show();
+                    txtLikeIdentidad.Clear();
+                    actReset();
+                }
+            }
+        }
+
+        private void btnAgregarCargo_Click(object sender, EventArgs e)
+        {
+            if (comprobaciones())
+            {
+                codigoCargo = dbConn.obtenerVariableEntera("SELECT id_Cargo FROM cargos WHERE descripcionCargo = '" + cmbActCargo.Text + "' ");
+                if (dbConn.PAAgregarCargo(identidad, codigoCargo))
+                {
+                    messageOk.lblCheck.Text = "AGREGADO CORRECTAMENTE";
+                    messageOk.ShowDialog();
+                    grpActualizar.Hide();
+                    pnldgv.Show();
+                    txtLikeIdentidad.Clear();
+                    actReset();
+                }
+                else
+                {
+                    boxError.lblError.Text = "ESTA PERSONA \n\rYA TIENE ESTE CARGO\n\r REGISTRADO";
+                    boxError.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                    boxError.lblError.Location = new Point(125, 60);
+                    boxError.ShowDialog();
+                }
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using SistemaGestorEscolar.Login;
 using SistemaGestorEscolar.Modulo_de_Pagos;
+using SistemaGestorEscolar.Modulos_de_Empleados;
 using SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas;
 using SistemaGestorEscolar.Modulos_Encargado;
 using System;
