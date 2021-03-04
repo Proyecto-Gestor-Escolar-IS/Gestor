@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HACKNEL;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-2KKKGON;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -289,8 +289,8 @@ namespace SistemaGestorEscolar
 
         public int retornarIdExpediente()
         {
-           // try
-           // {
+            try
+            {
                 int valorARetornar;
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = ("SELECT MAX(id_Expediente) FROM expedienteMedico");
@@ -308,14 +308,14 @@ namespace SistemaGestorEscolar
                 databaseIntermediary.Close();
 
                 return valorARetornar;
-         //   }
+           }
 
-           /* catch (Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 databaseIntermediary.Close();
                 return default;
-            }*/
+            }
            
         }
 
@@ -731,6 +731,43 @@ namespace SistemaGestorEscolar
                 {
                     databaseIntermediary.Close();
                     MessageBox.Show("Error al abrir Expediente Médico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool registroVisitaMedica(int id_expediente, string id_DoctorEncargado, string sintomas, string posibleEnfermedad, string medicamentos)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "registroVisitaMedica";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@id_expediente", id_expediente);
+                comando.Parameters.AddWithValue("@id_DoctorEncargado", id_DoctorEncargado);
+                comando.Parameters.AddWithValue("@sintomas", sintomas);
+                comando.Parameters.AddWithValue("@posibleEnfermedad", posibleEnfermedad);
+                comando.Parameters.AddWithValue("@medicamentos", medicamentos);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al Registrar la Visita Médica", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
