@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Drawing;
-using System.IO;
 
 namespace SistemaGestorEscolar
 {
@@ -36,7 +36,6 @@ namespace SistemaGestorEscolar
             {
                 return null;
             }
-            
         }
 
         //Se le envia una cadena a desencriptar [ENVIAR STRING]
@@ -65,7 +64,6 @@ namespace SistemaGestorEscolar
             {
                 return null;
             }
-            
         }
 
         //Se le envia un STRING y verifica que el correo ingresado cumpla el formato especifico
@@ -98,6 +96,19 @@ namespace SistemaGestorEscolar
                 return true;
             }
             else
+            {
+                return false;
+            }
+        }
+
+        public bool isDate(string fecha)
+        {
+            try
+            {
+                DateTime dt = DateTime.Parse(fecha);
+                return true;
+            }
+            catch
             {
                 return false;
             }

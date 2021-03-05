@@ -28,7 +28,7 @@ namespace SistemaGestorEscolar.Login
             dbConn.establecerConexion();
         }
 
-        private void btnIngresar_Click_1(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
             int primerInicio = dbConn.obtenerVariableEntera("SELECT COUNT(*) FROM datosEmpleados");
             if (primerInicio == 0 && txtdentidad.Text == String.Empty && txtContrase.Text == String.Empty)
