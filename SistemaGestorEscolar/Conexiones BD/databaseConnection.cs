@@ -344,8 +344,8 @@ namespace SistemaGestorEscolar
 
         public int retornarIdExpediente()
         {
-           // try
-           // {
+            try
+            {
                 int valorARetornar;
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = ("SELECT MAX(id_Expediente) FROM expedienteMedico");
@@ -363,14 +363,14 @@ namespace SistemaGestorEscolar
                 databaseIntermediary.Close();
 
                 return valorARetornar;
-         //   }
+           }
 
-           /* catch (Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 databaseIntermediary.Close();
                 return default;
-            }*/
+            }
            
         }
 
@@ -455,6 +455,39 @@ namespace SistemaGestorEscolar
 
                 comando.Parameters.AddWithValue("@fechaFacturacion", fechaFacturacion);
                 comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(Properties.Resources.imgComprobantePendiente));
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Pago", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool PAGeneracionPrimerPago(string identidadEstudiante)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAFacturacionPrimerPago";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadEstudiante", identidadEstudiante);
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -804,6 +837,43 @@ namespace SistemaGestorEscolar
                 {
                     databaseIntermediary.Close();
                     MessageBox.Show("Error al abrir Expediente Médico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool registroVisitaMedica(int id_expediente, string id_DoctorEncargado, string sintomas, string posibleEnfermedad, string medicamentos)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "registroVisitaMedica";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@id_expediente", id_expediente);
+                comando.Parameters.AddWithValue("@id_DoctorEncargado", id_DoctorEncargado);
+                comando.Parameters.AddWithValue("@sintomas", sintomas);
+                comando.Parameters.AddWithValue("@posibleEnfermedad", posibleEnfermedad);
+                comando.Parameters.AddWithValue("@medicamentos", medicamentos);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al Registrar la Visita Médica", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 

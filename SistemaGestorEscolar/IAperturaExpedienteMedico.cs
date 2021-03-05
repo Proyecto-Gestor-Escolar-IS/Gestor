@@ -195,5 +195,10 @@ namespace SistemaGestorEscolar
                 return;
             }
         }
+
+        private void txtFechaCreacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

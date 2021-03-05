@@ -128,6 +128,7 @@ namespace SistemaGestorEscolar
             this.txtFechaCreacion.Size = new System.Drawing.Size(279, 28);
             this.txtFechaCreacion.TabIndex = 18;
             this.txtFechaCreacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFechaCreacion.TextChanged += new System.EventHandler(this.txtFechaCreacion_TextChanged);
             // 
             // txtAntecedenteMedico
             // 
