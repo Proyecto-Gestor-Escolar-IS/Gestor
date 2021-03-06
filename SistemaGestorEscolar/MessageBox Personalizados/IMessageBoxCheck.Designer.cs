@@ -51,9 +51,9 @@ namespace SistemaGestorEscolar
             this.lblCheck.AutoSize = true;
             this.lblCheck.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(164)))), ((int)(((byte)(12)))));
-            this.lblCheck.Location = new System.Drawing.Point(145, 83);
+            this.lblCheck.Location = new System.Drawing.Point(114, 82);
             this.lblCheck.Name = "lblCheck";
-            this.lblCheck.Size = new System.Drawing.Size(275, 20);
+            this.lblCheck.Size = new System.Drawing.Size(258, 22);
             this.lblCheck.TabIndex = 7;
             this.lblCheck.Text = "ACTUALIZACIÓN REALIZADA";
             // 

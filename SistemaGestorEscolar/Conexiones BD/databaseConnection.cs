@@ -19,7 +19,8 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HECTOREOC\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -64,7 +65,7 @@ namespace SistemaGestorEscolar
         public bool comprobarUsuario(string usuario, string contra)
         {
             databaseIntermediary.Open();
-            string comandoSql = "SELECT COUNT(*) FROM datosEmpleados WHERE identidadPersona = '" + usuario + "' AND contraseniaEmpleado = '" + contra + "'";
+            string comandoSql = "SELECT COUNT(*) FROM datosEmpleados WHERE identidadPersona = '" + usuario + "' AND contraseniaEmpleado = '" + contra + "' AND estadoEmpleado <> 2";
             comando = databaseIntermediary.CreateCommand();
             comando.CommandText = comandoSql;
 
@@ -111,6 +112,27 @@ namespace SistemaGestorEscolar
                 while (lectorVariables.Read())
                 {
                     text.Text = lectorVariables.GetValue(0).ToString();
+                }
+                lectorVariables.Close();
+                databaseIntermediary.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+            }
+        }
+
+        public void llenarComboBoxValorInicial(ComboBox cmb, string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                comando = new SqlCommand(instruccion, databaseIntermediary);
+                lectorVariables = comando.ExecuteReader();
+                cmb.Items.Add("<SELECCIONE>");
+                while (lectorVariables.Read())
+                {
+                    cmb.Items.Add(lectorVariables.GetValue(0).ToString());
                 }
                 lectorVariables.Close();
                 databaseIntermediary.Close();
@@ -243,6 +265,7 @@ namespace SistemaGestorEscolar
                 comando.CommandText = "PAOperacionEmpleados";
                 comando.CommandType = CommandType.StoredProcedure;
 
+
                 comando.Parameters.AddWithValue("@idPersona", idPerona);
                 comando.Parameters.AddWithValue("@prNombre", nombre1);
                 comando.Parameters.AddWithValue("@sgNombre", nombre2);
@@ -287,17 +310,20 @@ namespace SistemaGestorEscolar
             }
         }
 
-        public bool PAAgregarCargo(string idPerona, int cargo)
+        //  1 para agregar y comprobar, 2 para solo comprobar si ya tiene ese cargo
+        public bool PAAgregarYComprobarCargo(string idPersona, int cargo, int codigo)
         {
             try
             {
 
                 SqlCommand comando = databaseIntermediary.CreateCommand();
-                comando.CommandText = "PAAgregarCargo";
+                comando.CommandText = "PAAgregaYComprobarCargo";
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@identidad", idPerona);
-                comando.Parameters.AddWithValue("@cCargo", cargo);
+                comando.Parameters.AddWithValue("@identidad", idPersona);
+                comando.Parameters.AddWithValue("@cCargo", Convert.ToInt32(cargo));
+                comando.Parameters.AddWithValue("@CODIGO", Convert.ToInt32(codigo));
+
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
                 {
@@ -560,28 +586,6 @@ namespace SistemaGestorEscolar
                 databaseIntermediary.Close();
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return false;
-            }
-        }
-
-        public void llenarComboBoxValorInicial(ComboBox cmb, string instruccion)
-        {
-            try
-            {
-                databaseIntermediary.Open();
-                comando = new SqlCommand(instruccion, databaseIntermediary);
-                lectorVariables = comando.ExecuteReader();
-                cmb.Items.Add("<SELECCIONE>");
-
-                while (lectorVariables.Read())
-                {
-                    cmb.Items.Add(lectorVariables.GetValue(0).ToString());
-                }
-                lectorVariables.Close();
-                databaseIntermediary.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
             }
         }
 

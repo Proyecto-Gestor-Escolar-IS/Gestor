@@ -18,14 +18,15 @@ namespace SistemaGestorEscolar.Login
         }
 
         databaseConnection dbConn = new databaseConnection();
-
+        InterfazGraficaPrincipal interfazPrincipal = new InterfazGraficaPrincipal();
         private void IfrmSeleccionarTipoInicio_Load(object sender, EventArgs e)
         {
             int codigoTipos = 0;
             dbConn.llenarDGV(dgvTiposCargos, "SELECT descripcionCargo FROM datosEmpleados de INNER JOIN detalleCargos dc ON de.identidadPersona = dc.identidadEmpleado " +
                 "INNER JOIN cargos c ON dc.idCargoAsociado = c.id_Cargo WHERE de.identidadPersona = '" + clsVariablesGlobales.NumIdentidad + "' ");
-
-            foreach(DataGridViewRow Datarow in dgvTiposCargos.Rows)
+            string nombre = dbConn.obtenerVariableString("SELECT CONCAT(primerNombre, ' ', segundoNombre) FROM datosEmpleados WHERE identidadPersona = '" + clsVariablesGlobales.NumIdentidad + "' ");
+            lblSaludo.Text = "BUEN DÍA " + nombre.ToUpper() + ", ESPERAMOS QUE TENGAS UN EXCELENTE DÍA.";
+            foreach (DataGridViewRow Datarow in dgvTiposCargos.Rows)
             {
                 if(Datarow.Cells[0].Value.ToString() == "Super Usuario")
                 {
@@ -33,7 +34,7 @@ namespace SistemaGestorEscolar.Login
                 }
                 else if(Datarow.Cells[0].Value.ToString() == "Administrador")
                 {
-                    codigoTipos = 1;
+                    codigoTipos +=1;
                 }
                 else if(Datarow.Cells[0].Value.ToString() == "Docente")
                 {
@@ -41,31 +42,41 @@ namespace SistemaGestorEscolar.Login
                 }
                 else if(Datarow.Cells[0].Value.ToString() == "Medico")
                 {
-                    codigoTipos = 5;
+                    codigoTipos +=5;
                 }
             }
 
-            MessageBox.Show(codigoTipos.ToString());
-            if (codigoTipos == -1)
+            switch (codigoTipos)
             {
-                btnSuperUsuario.Visible = true;
-            }
-            else if(codigoTipos == 1)
-            {
-                btnAdmin.Visible = true;
-            }
-            else if(codigoTipos == 2)
-            {
-                btnDocenteSolo.Visible = true;
-            }
-            else if(codigoTipos == 3)
-            {
-                btnDocenteMasAdmin.Visible = true;
-                btnAdmin.Visible = true;
-            }
-            else if(codigoTipos == 5)
-            {
-                btnMedico.Visible = true;
+                case -1:
+                    btnSuperUsuario.Visible = true;
+                    break;
+                case 1:
+                    btnAdmin.Visible = true;
+                    break;
+                case 2:
+                    btnDocenteSolo.Visible = true;
+                    break;
+                case 3:
+                    btnDocenteMasAdmin.Visible = true;
+                    btnAdmin.Visible = true;
+                    break;
+                case 5:
+                    btnMedico.Visible = true;
+                    break;
+                case 6:
+                    btnAdmin.Visible = true;
+                    btnMedico.Visible = true;
+                    break;
+                case 7:
+                    btnDocenteMasAdmin.Visible = true;
+                    btnMedico.Visible = true;
+                    break;
+                case 8:
+                    btnAdmin.Visible = true;
+                    btnDocenteMasAdmin.Visible = true;
+                    btnMedico.Visible = true;
+                    break;
             }
 
         }
@@ -85,23 +96,40 @@ namespace SistemaGestorEscolar.Login
         private void btnSuperUsuario_Click(object sender, EventArgs e)
         {
             clsVariablesGlobales.CodigoAcceso = 0;
+
+            interfazPrincipal.Show();
+            this.Close();
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             clsVariablesGlobales.CodigoAcceso = 1;
+
+            interfazPrincipal.Show();
+            this.Hide();
         }
 
         private void btnDocenteMasAdmin_Click(object sender, EventArgs e)
         {
             clsVariablesGlobales.CodigoAcceso = 2;
+
+            interfazPrincipal.Show();
+            this.Close();
         }
 
         private void btnMedico_Click(object sender, EventArgs e)
         {
             clsVariablesGlobales.CodigoAcceso = 3;
+
+            interfazPrincipal.Show();
+            this.Close();
         }
 
-        
+        private void btnDocenteSolo_Click(object sender, EventArgs e)
+        {
+            clsVariablesGlobales.CodigoAcceso = 2;
+            interfazPrincipal.Show();
+            this.Close();
+        }
     }
 }

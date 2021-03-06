@@ -30,7 +30,7 @@ namespace SistemaGestorEscolar.Login
         {
             if (mtxtIdentidad.Text != string.Empty)
             {
-                if (dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "'") != null)
+                if (dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "' AND estadoEmpleado <> 2") != null)
                 {
                     string correo = dbConn.obtenerVariableString("SELECT correoElectronico FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "'");
                     string nombre = dbConn.obtenerVariableString("SELECT CONCAT(primerNombre, ' ', segundoNombre) FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "'");
@@ -38,8 +38,18 @@ namespace SistemaGestorEscolar.Login
                     string corr = correo.Substring(0, 5);
                     rtxtHtml.Text = rtxtHtml.Text.Replace("@contra", " " + contra);
                     rtxtHtml.Text = rtxtHtml.Text.Replace("@nombre", " " + nombre);
-                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, asunto: "Recuperación de Contraseña", destinatario: correo, ruta: "", 
-                        Properties.Settings.Default.correoRecu, Properties.Settings.Default.contraRecu))
+                    string correoRecu = "";
+                    string contraRecu = "";
+                    try
+                    {
+                        correoRecu = dbConn.obtenerVariableString("SELECT correo FROM informacionCorreoRecuperacion");
+                        contraRecu = utilidad.DesEncriptar(dbConn.obtenerVariableString("SELECT contra FROM informacionCorreoRecuperacion"));
+                    }
+                    catch
+                    {
+                        MessageBox.Show("ERROR AL OBTENER CREDENCIALES DE RECUPERACION");
+                    }
+                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, asunto: "Recuperación de Contraseña", destinatario: correo, ruta: "", correoRecu, contraRecu))
                     {
                         MessageBox.Show("Revise la bandeja de entrada, spam de su correo: " + corr + "********", "Recuperacion de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
