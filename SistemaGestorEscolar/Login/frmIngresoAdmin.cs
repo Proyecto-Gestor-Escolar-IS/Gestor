@@ -131,8 +131,8 @@ namespace SistemaGestorEscolar.Login
                     if ( IMessageBoxYesCancel.isCodigoForm == true )
                     {
              
-                        if(utilidad.enviarCorreo("","",txtCorreoRecuperacion.Text,"",txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text) == true)
-                        {
+                        //if(utilidad.enviarCorreo("","",txtCorreoRecuperacion.Text,"",txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text) == true)
+                        //{
                             if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
                             txtCorreo.Text, 1, utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
                             {
@@ -141,14 +141,14 @@ namespace SistemaGestorEscolar.Login
                                 dbConn.ejecutarComandoSQL("INSERT INTO informacionCorreoRecuperacion VALUES('"+txtCorreoRecuperacion.Text+"', '"+utilidad.EncriptarTexto(txtContraseRecuperacion.Text)+"')");
                                 this.Close();
                             }
-                        }
-                        else
-                        {
-                            message.lblError.Text = "CREDENCIALES DE CORREO \r\nELECTRONICO INCORRECTAS";
-                            message.lblError.Location = new Point(105, 75);
-                            message.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                            message.ShowDialog();
-                        }
+                        //}
+                        //else
+                        //{
+                        //    message.lblError.Text = "CREDENCIALES DE CORREO \r\nELECTRONICO INCORRECTAS";
+                        //    message.lblError.Location = new Point(105, 75);
+                        //    message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        //    message.ShowDialog();
+                        //}
                             
                     }
                 }

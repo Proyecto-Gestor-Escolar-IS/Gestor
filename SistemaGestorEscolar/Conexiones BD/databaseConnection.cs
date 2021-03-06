@@ -19,7 +19,8 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HACKNEL;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -264,6 +265,7 @@ namespace SistemaGestorEscolar
                 comando.CommandText = "PAOperacionEmpleados";
                 comando.CommandType = CommandType.StoredProcedure;
 
+
                 comando.Parameters.AddWithValue("@idPersona", idPerona);
                 comando.Parameters.AddWithValue("@prNombre", nombre1);
                 comando.Parameters.AddWithValue("@sgNombre", nombre2);
@@ -303,7 +305,7 @@ namespace SistemaGestorEscolar
             catch (Exception ex)
             {
                 databaseIntermediary.Close();
-                //MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return false;
             }
         }

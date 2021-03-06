@@ -46,8 +46,6 @@ namespace SistemaGestorEscolar.Login
                 }
             }
 
-            codigoTipos = 1;
-
             switch (codigoTipos)
             {
                 case -1:
@@ -129,7 +127,9 @@ namespace SistemaGestorEscolar.Login
 
         private void btnDocenteSolo_Click(object sender, EventArgs e)
         {
-
+            clsVariablesGlobales.CodigoAcceso = 2;
+            interfazPrincipal.Show();
+            this.Close();
         }
     }
 }
