@@ -99,8 +99,10 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
 
         private void btnActRegresar_Click(object sender, EventArgs e)
         {
+            identidad = null;
                 lblTitulo.Text = "EMPLEADOS";
                 isInactivo = false;
+            isSuper = false;
                 dgvEmpleados.DataSource = null;
                 actReset();
                 grpActualizar.Hide();
@@ -110,28 +112,29 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
 
         private void btnSiguienteDGVAct_Click(object sender, EventArgs e)
         {
+            isSuper = false;
             if (isInactivo)
             {
                 btnActualizar.Enabled = false;
                 btnEliminarCargo.Enabled = false;
                 btnBorrar.Enabled = false;
             }
-            else if (!isInactivo)
+            else
             {
                 btnActualizar.Enabled = true;
                 btnEliminarCargo.Enabled = true;
                 btnBorrar.Enabled = true;
             }
 
-            isSuper = false;
             btnEliminarCargo.Visible = true;
             btnBorrar.Visible = true;
             btnAgregarCargo.Visible = true;
             btnActualizar.Visible = true;
             btnSiguiente.Visible = true;
-            btnLimpiar.Visible = true;
+            btnActLimpiar.Visible = false;
             btnSiguiente.Visible = false;
             btnRecuActualizar.Visible = false;
+            btnLimpiarRecu.Visible = false;
 
             if (dgvEmpleados.CurrentCell != null && dgvEmpleados.DataSource != null && identidad != null)
             {
@@ -152,7 +155,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 string contra = utilidades.DesEncriptar(dbConn.obtenerVariableString("SELECT contraseniaEmpleado FROM datosEmpleados WHERE identidadPersona = '" + identidad + "' "));
                 txtActContra.Text = contra;
                 txtActConfContra.Text = contra;
-                txtActFechaNac.Text = dbConn.obtenerVariableDate("SELECT fechaNacimiento FROM datosEmpleados WHERE identidadPersona = '" + identidad + "' ").ToShortDateString();
+                txtActFechaNac.Text = dbConn.obtenerVariableDate("SELECT fechaNacimiento FROM datosEmpleados WHERE identidadPersona = '" + identidad + "' ").ToString("dd/MM/yyyy");
                 lblActEstado.Text = dgvEmpleados.CurrentRow.Cells[5].Value.ToString();
 
                 dbConn.llenarComboBoxValorInicial(cmbActCargo, "SELECT descripcionCargo FROM cargos WHERE descripcionCargo <> 'Super Usuario'");
@@ -242,19 +245,23 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         private void actReset()//Limpia los valores que esten en el groupBox Actualizar
         {
             utilidades.limpiarTextBox(grpActualizar);
+            cmbActCargo.Items.Clear();
+            cmbActCargo.DropDownStyle = ComboBoxStyle.DropDownList;
+            lblActEstado.Text = "Elija un Empleado";
+            lblActCargoActual.Text = "Elija un Empleado";
             if (isSuper)
             {
                 txtActIdent.Text = identidadAdmin;
+                cmbActCargo.DropDownStyle = ComboBoxStyle.DropDown;
+                cmbActCargo.Text = "NO APLICA";
+                lblActEstado.Text = "Activo";
+                lblActCargoActual.Text = "Super Usuario";
             }
             else
             {
                 txtActIdent.Text = identidad;
             }
-            
-            cmbActCargo.Items.Clear();
-            cmbActCargo.DropDownStyle = ComboBoxStyle.DropDownList;
-            lblActEstado.Text = "Elija un Empleado";
-            lblActCargoActual.Text = "Elija un Empleado";
+           
         }
 
         private void txtLikeIdentidad_TextChanged(object sender, EventArgs e)
@@ -512,7 +519,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             btnAgregarCargo.Visible = false;
             btnActualizar.Visible = false;
             btnSiguiente.Visible = true;
-            btnLimpiar.Visible = false;
+            btnActLimpiar.Visible = true;
             isSuper = true;
 
             
@@ -529,7 +536,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             string contra = utilidades.DesEncriptar(dbConn.obtenerVariableString("SELECT contraseniaEmpleado FROM datosEmpleados WHERE identidadPersona = '" + identidadAdmin + "' "));
             txtActContra.Text = contra;
             txtActConfContra.Text = contra;
-            txtActFechaNac.Text = dbConn.obtenerVariableDate("SELECT fechaNacimiento FROM datosEmpleados WHERE identidadPersona = '" + identidadAdmin + "' ").ToShortDateString();
+            txtActFechaNac.Text = dbConn.obtenerVariableDate("SELECT fechaNacimiento FROM datosEmpleados WHERE identidadPersona = '" + identidadAdmin + "' ").ToString("dd/MM/yyyy");
             lblActEstado.Text = "Activo";
             cmbActCargo.DropDownStyle = ComboBoxStyle.DropDown;
             cmbActCargo.Text = "NO APLICA";
@@ -546,6 +553,8 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 btnSiguiente.Visible = false;
                 pnlRecuperacion.Visible = true;
                 btnRecuActualizar.Visible = true;
+                btnActLimpiar.Visible = false;
+                btnLimpiarRecu.Visible = true;
                 string contra = utilidades.DesEncriptar(dbConn.obtenerVariableString("SELECT contra FROM informacionCorreoRecuperacion"));
                 dbConn.llenarTextBox(txtCorreoRecuperacion, "SELECT correo FROM informacionCorreoRecuperacion");
                 txtContraseRecuperacion.Text = contra;
@@ -570,9 +579,9 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             if (dbConn.PAOperacionEmpleado(identidadAdmin, txtActNombre1.Text, txtActNombre2.Text, txtActApellido1.Text, txtActApellido2.Text, Convert.ToInt32(txtActTelef.Text), txtActFechaNac.Text,
                             txtActMail.Text, 1, utilidades.EncriptarTexto(txtActConfContra.Text), 1, -1, 2))
                             {
+                                dbConn.ejecutarComandoSQL("UPDATE informacionCorreoRecuperacion SET correo = '" + txtCorreoRecuperacion.Text + "', contra = '" + utilidades.EncriptarTexto(txtContraseRecuperacion.Text) + "' ");
                                 messageOk.lblCheck.Text = "ACTUALIZADO CORRECTAMENTE";
                                 messageOk.ShowDialog();
-                                dbConn.ejecutarComandoSQL("UPDATE informacionCorreoRecuperacion SET correo = '" + txtCorreoRecuperacion.Text + "', contra = '" + utilidades.EncriptarTexto(txtContraseRecuperacion.Text) + "' ");
                                 pnlRecuperacion.Visible = false;
                                 utilidades.limpiarTextBox(pnlRecuperacion);
                                 grpActualizar.Hide();
@@ -608,8 +617,17 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             }
         }
 
+        private void btnLimpiarRecu_Click(object sender, EventArgs e)
+        {
+            txtContraseRecuperacion.Clear();
+            txtCorreoRecuperacion.Clear();
+            chkVerContraRecuperacion.Checked = false;
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            chkActVerContra.Checked = false;
+            cmbCargosSec.SelectedItem = "<SELECCIONE>";
             string txtIdentid = txtIdentidad.Text;
             string txtNum = txtTel.Text;
             if (txtIdentid.Trim() != string.Empty && txtNombre1.Text != string.Empty && txtApellido1.Text != string.Empty && txtNum != string.Empty &&
@@ -631,7 +649,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                                 if (IMessageBoxYesCancel.isCodigoForm)
                                 {
                                     int codigoCargoI = dbConn.obtenerVariableEntera("SELECT id_Cargo FROM cargos WHERE descripcionCargo = '" + cmbCargosSec.Text + "' ");
-                                    if(dbConn.PAOperacionEmpleado(txtIdentidad.Text, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
+                                    if(dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
                                         txtCorreo.Text, 1, utilidades.EncriptarTexto(txtConfirmContra.Text), codigoCargoI, -1, 1))
                                     {
                                         messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
@@ -727,6 +745,8 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             btnRecuAtras.Visible = false;
             pnlRecuperacion.Visible = false;
             btnSiguiente.Visible = true;
+            btnLimpiarRecu.Visible = false;
+            btnActLimpiar.Visible = true;
         }
 
     }

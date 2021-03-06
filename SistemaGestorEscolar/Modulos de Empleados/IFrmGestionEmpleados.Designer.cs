@@ -34,6 +34,9 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IFrmGestionEmpleados));
             this.label1 = new System.Windows.Forms.Label();
             this.grpRegistroEmpleado = new System.Windows.Forms.GroupBox();
+            this.btnRegistrar = new AltoControls.AltoButton();
+            this.btnLimpiar = new AltoControls.AltoButton();
+            this.btnRegresar = new AltoControls.AltoButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdentidad = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaNa = new System.Windows.Forms.MaskedTextBox();
@@ -57,18 +60,44 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblNombres = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlSelector = new System.Windows.Forms.Panel();
+            this.btnActualizacion = new AltoControls.AltoButton();
+            this.btnRegistrarEmpleado = new AltoControls.AltoButton();
             this.pnldgv = new System.Windows.Forms.Panel();
             this.txtLikeIdentidad = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnInactivos = new AltoControls.AltoButton();
+            this.btnEditarSuperUser = new AltoControls.AltoButton();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnMedicos = new AltoControls.AltoButton();
+            this.btnDocentes = new AltoControls.AltoButton();
+            this.btnAdministradores = new AltoControls.AltoButton();
+            this.btnSiguienteDGVAct = new AltoControls.AltoButton();
+            this.btnRegresarDGVAct = new AltoControls.AltoButton();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.grpActualizar = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarRecu = new AltoControls.AltoButton();
+            this.btnRecuActualizar = new AltoControls.AltoButton();
+            this.btnRecuAtras = new AltoControls.AltoButton();
+            this.pnlRecuperacion = new System.Windows.Forms.Panel();
+            this.txtCorreoRecuperacion = new System.Windows.Forms.TextBox();
+            this.lblInstruccion = new System.Windows.Forms.Label();
+            this.chkVerContraRecuperacion = new System.Windows.Forms.CheckBox();
+            this.lblContraRecuperacion = new System.Windows.Forms.Label();
+            this.lblCorreoRecuperacion = new System.Windows.Forms.Label();
+            this.txtContraseRecuperacion = new System.Windows.Forms.TextBox();
+            this.btnSiguiente = new AltoControls.AltoButton();
+            this.btnAgregarCargo = new AltoControls.AltoButton();
             this.lblActCargoActual = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtActConfContra = new System.Windows.Forms.TextBox();
             this.lblActEstado = new System.Windows.Forms.Label();
             this.lblActEs = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnEliminarCargo = new AltoControls.AltoButton();
+            this.btnBorrar = new AltoControls.AltoButton();
+            this.btnActualizar = new AltoControls.AltoButton();
+            this.btnActLimpiar = new AltoControls.AltoButton();
+            this.btnActRegresar = new AltoControls.AltoButton();
             this.label3 = new System.Windows.Forms.Label();
             this.txtActIdent = new System.Windows.Forms.MaskedTextBox();
             this.txtActFechaNac = new System.Windows.Forms.MaskedTextBox();
@@ -89,34 +118,6 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.pnlRecuperacion = new System.Windows.Forms.Panel();
-            this.txtCorreoRecuperacion = new System.Windows.Forms.TextBox();
-            this.lblInstruccion = new System.Windows.Forms.Label();
-            this.chkVerContraRecuperacion = new System.Windows.Forms.CheckBox();
-            this.lblContraRecuperacion = new System.Windows.Forms.Label();
-            this.lblCorreoRecuperacion = new System.Windows.Forms.Label();
-            this.txtContraseRecuperacion = new System.Windows.Forms.TextBox();
-            this.btnRecuActualizar = new AltoControls.AltoButton();
-            this.btnRecuAtras = new AltoControls.AltoButton();
-            this.btnSiguiente = new AltoControls.AltoButton();
-            this.btnAgregarCargo = new AltoControls.AltoButton();
-            this.btnEliminarCargo = new AltoControls.AltoButton();
-            this.btnBorrar = new AltoControls.AltoButton();
-            this.btnActualizar = new AltoControls.AltoButton();
-            this.btnActLimpiar = new AltoControls.AltoButton();
-            this.btnActRegresar = new AltoControls.AltoButton();
-            this.btnRegistrar = new AltoControls.AltoButton();
-            this.btnLimpiar = new AltoControls.AltoButton();
-            this.btnRegresar = new AltoControls.AltoButton();
-            this.btnActualizacion = new AltoControls.AltoButton();
-            this.btnRegistrarEmpleado = new AltoControls.AltoButton();
-            this.btnInactivos = new AltoControls.AltoButton();
-            this.btnEditarSuperUser = new AltoControls.AltoButton();
-            this.btnMedicos = new AltoControls.AltoButton();
-            this.btnDocentes = new AltoControls.AltoButton();
-            this.btnAdministradores = new AltoControls.AltoButton();
-            this.btnSiguienteDGVAct = new AltoControls.AltoButton();
-            this.btnRegresarDGVAct = new AltoControls.AltoButton();
             this.grpRegistroEmpleado.SuspendLayout();
             this.pnlSelector.SuspendLayout();
             this.pnldgv.SuspendLayout();
@@ -171,6 +172,69 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.grpRegistroEmpleado.TabStop = false;
             this.grpRegistroEmpleado.Text = "REGISTRAR EMPLEADO";
             this.grpRegistroEmpleado.Visible = false;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(615, 781);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Radius = 20;
+            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
+            this.btnRegistrar.Stroke = true;
+            this.btnRegistrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistrar.TabIndex = 84;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.Transparency = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(1210, 800);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Radius = 20;
+            this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
+            this.btnLimpiar.Stroke = true;
+            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiar.TabIndex = 83;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.Transparency = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresar.Location = new System.Drawing.Point(44, 800);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Radius = 20;
+            this.btnRegresar.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresar.Stroke = true;
+            this.btnRegresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresar.TabIndex = 82;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.Transparency = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // label2
             // 
@@ -410,6 +474,48 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.pnlSelector.Size = new System.Drawing.Size(1510, 944);
             this.pnlSelector.TabIndex = 80;
             // 
+            // btnActualizacion
+            // 
+            this.btnActualizacion.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizacion.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizacion.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizacion.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActualizacion.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnActualizacion.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizacion.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizacion.Location = new System.Drawing.Point(824, 370);
+            this.btnActualizacion.Name = "btnActualizacion";
+            this.btnActualizacion.Radius = 20;
+            this.btnActualizacion.Size = new System.Drawing.Size(407, 200);
+            this.btnActualizacion.Stroke = true;
+            this.btnActualizacion.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnActualizacion.TabIndex = 82;
+            this.btnActualizacion.Text = "VISUALIZAR Y ACTUALIZAR\n EMPLEADOS";
+            this.btnActualizacion.Transparency = false;
+            this.btnActualizacion.Click += new System.EventHandler(this.btnActualizacion_Click);
+            // 
+            // btnRegistrarEmpleado
+            // 
+            this.btnRegistrarEmpleado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrarEmpleado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrarEmpleado.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarEmpleado.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistrarEmpleado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrarEmpleado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(318, 370);
+            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
+            this.btnRegistrarEmpleado.Radius = 20;
+            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(407, 200);
+            this.btnRegistrarEmpleado.Stroke = true;
+            this.btnRegistrarEmpleado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistrarEmpleado.TabIndex = 81;
+            this.btnRegistrarEmpleado.Text = "REGISTRAR EMPLEADO";
+            this.btnRegistrarEmpleado.Transparency = false;
+            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.altoButton1_Click);
+            // 
             // pnldgv
             // 
             this.pnldgv.Controls.Add(this.txtLikeIdentidad);
@@ -449,6 +555,48 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.pictureBox1.TabIndex = 91;
             this.pictureBox1.TabStop = false;
             // 
+            // btnInactivos
+            // 
+            this.btnInactivos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnInactivos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnInactivos.BackColor = System.Drawing.Color.Transparent;
+            this.btnInactivos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnInactivos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInactivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnInactivos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnInactivos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnInactivos.Location = new System.Drawing.Point(777, 90);
+            this.btnInactivos.Name = "btnInactivos";
+            this.btnInactivos.Radius = 0;
+            this.btnInactivos.Size = new System.Drawing.Size(223, 43);
+            this.btnInactivos.Stroke = false;
+            this.btnInactivos.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnInactivos.TabIndex = 90;
+            this.btnInactivos.Text = "INACTIVOS";
+            this.btnInactivos.Transparency = false;
+            this.btnInactivos.Click += new System.EventHandler(this.btnInactivos_Click);
+            // 
+            // btnEditarSuperUser
+            // 
+            this.btnEditarSuperUser.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnEditarSuperUser.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnEditarSuperUser.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarSuperUser.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnEditarSuperUser.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarSuperUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnEditarSuperUser.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnEditarSuperUser.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnEditarSuperUser.Location = new System.Drawing.Point(1000, 90);
+            this.btnEditarSuperUser.Name = "btnEditarSuperUser";
+            this.btnEditarSuperUser.Radius = 0;
+            this.btnEditarSuperUser.Size = new System.Drawing.Size(223, 43);
+            this.btnEditarSuperUser.Stroke = false;
+            this.btnEditarSuperUser.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnEditarSuperUser.TabIndex = 89;
+            this.btnEditarSuperUser.Text = "SUPER USUARIO";
+            this.btnEditarSuperUser.Transparency = false;
+            this.btnEditarSuperUser.Click += new System.EventHandler(this.btnEditarSuperUser_Click);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -459,6 +607,111 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblTitulo.TabIndex = 88;
             this.lblTitulo.Text = "ADMINISTRADORES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMedicos
+            // 
+            this.btnMedicos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnMedicos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnMedicos.BackColor = System.Drawing.Color.Transparent;
+            this.btnMedicos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnMedicos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedicos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnMedicos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnMedicos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnMedicos.Location = new System.Drawing.Point(472, 90);
+            this.btnMedicos.Name = "btnMedicos";
+            this.btnMedicos.Radius = 0;
+            this.btnMedicos.Size = new System.Drawing.Size(223, 43);
+            this.btnMedicos.Stroke = false;
+            this.btnMedicos.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnMedicos.TabIndex = 87;
+            this.btnMedicos.Text = "MEDICOS";
+            this.btnMedicos.Transparency = false;
+            this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
+            // 
+            // btnDocentes
+            // 
+            this.btnDocentes.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDocentes.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDocentes.BackColor = System.Drawing.Color.Transparent;
+            this.btnDocentes.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnDocentes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnDocentes.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnDocentes.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnDocentes.Location = new System.Drawing.Point(249, 90);
+            this.btnDocentes.Name = "btnDocentes";
+            this.btnDocentes.Radius = 0;
+            this.btnDocentes.Size = new System.Drawing.Size(223, 43);
+            this.btnDocentes.Stroke = false;
+            this.btnDocentes.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnDocentes.TabIndex = 86;
+            this.btnDocentes.Text = "DOCENTES";
+            this.btnDocentes.Transparency = false;
+            this.btnDocentes.Click += new System.EventHandler(this.btnDocentes_Click);
+            // 
+            // btnAdministradores
+            // 
+            this.btnAdministradores.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAdministradores.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAdministradores.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdministradores.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAdministradores.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministradores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAdministradores.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAdministradores.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAdministradores.Location = new System.Drawing.Point(26, 90);
+            this.btnAdministradores.Name = "btnAdministradores";
+            this.btnAdministradores.Radius = 0;
+            this.btnAdministradores.Size = new System.Drawing.Size(223, 43);
+            this.btnAdministradores.Stroke = false;
+            this.btnAdministradores.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAdministradores.TabIndex = 85;
+            this.btnAdministradores.Text = "ADMINISTRADORES";
+            this.btnAdministradores.Transparency = false;
+            this.btnAdministradores.Click += new System.EventHandler(this.btnAdministradores_Click);
+            // 
+            // btnSiguienteDGVAct
+            // 
+            this.btnSiguienteDGVAct.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteDGVAct.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteDGVAct.BackColor = System.Drawing.Color.Transparent;
+            this.btnSiguienteDGVAct.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSiguienteDGVAct.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteDGVAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSiguienteDGVAct.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteDGVAct.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteDGVAct.Location = new System.Drawing.Point(1201, 841);
+            this.btnSiguienteDGVAct.Name = "btnSiguienteDGVAct";
+            this.btnSiguienteDGVAct.Radius = 20;
+            this.btnSiguienteDGVAct.Size = new System.Drawing.Size(269, 65);
+            this.btnSiguienteDGVAct.Stroke = true;
+            this.btnSiguienteDGVAct.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnSiguienteDGVAct.TabIndex = 84;
+            this.btnSiguienteDGVAct.Text = "SIGUIENTE";
+            this.btnSiguienteDGVAct.Transparency = false;
+            this.btnSiguienteDGVAct.Click += new System.EventHandler(this.btnSiguienteDGVAct_Click);
+            // 
+            // btnRegresarDGVAct
+            // 
+            this.btnRegresarDGVAct.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarDGVAct.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarDGVAct.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresarDGVAct.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresarDGVAct.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarDGVAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresarDGVAct.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarDGVAct.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarDGVAct.Location = new System.Drawing.Point(26, 841);
+            this.btnRegresarDGVAct.Name = "btnRegresarDGVAct";
+            this.btnRegresarDGVAct.Radius = 20;
+            this.btnRegresarDGVAct.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresarDGVAct.Stroke = true;
+            this.btnRegresarDGVAct.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresarDGVAct.TabIndex = 83;
+            this.btnRegresarDGVAct.Text = "REGRESAR";
+            this.btnRegresarDGVAct.Transparency = false;
+            this.btnRegresarDGVAct.Click += new System.EventHandler(this.btnRegresarDGVAct_Click);
             // 
             // dgvEmpleados
             // 
@@ -498,9 +751,10 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             // 
             // grpActualizar
             // 
+            this.grpActualizar.Controls.Add(this.pnlRecuperacion);
+            this.grpActualizar.Controls.Add(this.btnLimpiarRecu);
             this.grpActualizar.Controls.Add(this.btnRecuActualizar);
             this.grpActualizar.Controls.Add(this.btnRecuAtras);
-            this.grpActualizar.Controls.Add(this.pnlRecuperacion);
             this.grpActualizar.Controls.Add(this.btnSiguiente);
             this.grpActualizar.Controls.Add(this.btnAgregarCargo);
             this.grpActualizar.Controls.Add(this.lblActCargoActual);
@@ -542,6 +796,194 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.grpActualizar.TabStop = false;
             this.grpActualizar.Text = "ACTUALIZAR EMPLEADO";
             this.grpActualizar.Visible = false;
+            // 
+            // btnLimpiarRecu
+            // 
+            this.btnLimpiarRecu.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiarRecu.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiarRecu.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiarRecu.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiarRecu.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarRecu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiarRecu.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiarRecu.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiarRecu.Location = new System.Drawing.Point(1210, 800);
+            this.btnLimpiarRecu.Name = "btnLimpiarRecu";
+            this.btnLimpiarRecu.Radius = 20;
+            this.btnLimpiarRecu.Size = new System.Drawing.Size(269, 65);
+            this.btnLimpiarRecu.Stroke = true;
+            this.btnLimpiarRecu.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiarRecu.TabIndex = 99;
+            this.btnLimpiarRecu.Text = "LIMPIAR";
+            this.btnLimpiarRecu.Transparency = false;
+            this.btnLimpiarRecu.Visible = false;
+            this.btnLimpiarRecu.Click += new System.EventHandler(this.btnLimpiarRecu_Click);
+            // 
+            // btnRecuActualizar
+            // 
+            this.btnRecuActualizar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRecuActualizar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRecuActualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecuActualizar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRecuActualizar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecuActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRecuActualizar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRecuActualizar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRecuActualizar.Location = new System.Drawing.Point(640, 781);
+            this.btnRecuActualizar.Name = "btnRecuActualizar";
+            this.btnRecuActualizar.Radius = 20;
+            this.btnRecuActualizar.Size = new System.Drawing.Size(303, 84);
+            this.btnRecuActualizar.Stroke = true;
+            this.btnRecuActualizar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRecuActualizar.TabIndex = 98;
+            this.btnRecuActualizar.Text = "ACTUALIZAR";
+            this.btnRecuActualizar.Transparency = false;
+            this.btnRecuActualizar.Visible = false;
+            this.btnRecuActualizar.Click += new System.EventHandler(this.btnRecuActualizar_Click);
+            // 
+            // btnRecuAtras
+            // 
+            this.btnRecuAtras.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRecuAtras.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRecuAtras.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecuAtras.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRecuAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecuAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRecuAtras.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRecuAtras.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRecuAtras.Location = new System.Drawing.Point(44, 800);
+            this.btnRecuAtras.Name = "btnRecuAtras";
+            this.btnRecuAtras.Radius = 20;
+            this.btnRecuAtras.Size = new System.Drawing.Size(269, 65);
+            this.btnRecuAtras.Stroke = true;
+            this.btnRecuAtras.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRecuAtras.TabIndex = 97;
+            this.btnRecuAtras.Text = "REGRESAR";
+            this.btnRecuAtras.Transparency = false;
+            this.btnRecuAtras.Visible = false;
+            this.btnRecuAtras.Click += new System.EventHandler(this.btnRecuAtras_Click);
+            // 
+            // pnlRecuperacion
+            // 
+            this.pnlRecuperacion.Controls.Add(this.txtCorreoRecuperacion);
+            this.pnlRecuperacion.Controls.Add(this.lblInstruccion);
+            this.pnlRecuperacion.Controls.Add(this.chkVerContraRecuperacion);
+            this.pnlRecuperacion.Controls.Add(this.lblContraRecuperacion);
+            this.pnlRecuperacion.Controls.Add(this.lblCorreoRecuperacion);
+            this.pnlRecuperacion.Controls.Add(this.txtContraseRecuperacion);
+            this.pnlRecuperacion.Location = new System.Drawing.Point(440, 92);
+            this.pnlRecuperacion.Name = "pnlRecuperacion";
+            this.pnlRecuperacion.Size = new System.Drawing.Size(685, 620);
+            this.pnlRecuperacion.TabIndex = 96;
+            this.pnlRecuperacion.Visible = false;
+            // 
+            // txtCorreoRecuperacion
+            // 
+            this.txtCorreoRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoRecuperacion.Location = new System.Drawing.Point(173, 286);
+            this.txtCorreoRecuperacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCorreoRecuperacion.Name = "txtCorreoRecuperacion";
+            this.txtCorreoRecuperacion.Size = new System.Drawing.Size(350, 34);
+            this.txtCorreoRecuperacion.TabIndex = 0;
+            // 
+            // lblInstruccion
+            // 
+            this.lblInstruccion.AutoSize = true;
+            this.lblInstruccion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstruccion.Location = new System.Drawing.Point(28, 82);
+            this.lblInstruccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInstruccion.Name = "lblInstruccion";
+            this.lblInstruccion.Size = new System.Drawing.Size(633, 135);
+            this.lblInstruccion.TabIndex = 47;
+            this.lblInstruccion.Text = resources.GetString("lblInstruccion.Text");
+            // 
+            // chkVerContraRecuperacion
+            // 
+            this.chkVerContraRecuperacion.AutoSize = true;
+            this.chkVerContraRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkVerContraRecuperacion.Location = new System.Drawing.Point(432, 341);
+            this.chkVerContraRecuperacion.Name = "chkVerContraRecuperacion";
+            this.chkVerContraRecuperacion.Size = new System.Drawing.Size(190, 31);
+            this.chkVerContraRecuperacion.TabIndex = 44;
+            this.chkVerContraRecuperacion.Text = "Ver Contraseña";
+            this.chkVerContraRecuperacion.UseVisualStyleBackColor = true;
+            this.chkVerContraRecuperacion.CheckedChanged += new System.EventHandler(this.chkVerContraRecuperacion_CheckedChanged);
+            // 
+            // lblContraRecuperacion
+            // 
+            this.lblContraRecuperacion.AutoSize = true;
+            this.lblContraRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraRecuperacion.Location = new System.Drawing.Point(40, 342);
+            this.lblContraRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContraRecuperacion.Name = "lblContraRecuperacion";
+            this.lblContraRecuperacion.Size = new System.Drawing.Size(129, 27);
+            this.lblContraRecuperacion.TabIndex = 40;
+            this.lblContraRecuperacion.Text = "Contraseña";
+            // 
+            // lblCorreoRecuperacion
+            // 
+            this.lblCorreoRecuperacion.AutoSize = true;
+            this.lblCorreoRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoRecuperacion.Location = new System.Drawing.Point(87, 293);
+            this.lblCorreoRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCorreoRecuperacion.Name = "lblCorreoRecuperacion";
+            this.lblCorreoRecuperacion.Size = new System.Drawing.Size(82, 27);
+            this.lblCorreoRecuperacion.TabIndex = 45;
+            this.lblCorreoRecuperacion.Text = "Correo";
+            // 
+            // txtContraseRecuperacion
+            // 
+            this.txtContraseRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseRecuperacion.Location = new System.Drawing.Point(173, 339);
+            this.txtContraseRecuperacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContraseRecuperacion.Name = "txtContraseRecuperacion";
+            this.txtContraseRecuperacion.PasswordChar = '●';
+            this.txtContraseRecuperacion.Size = new System.Drawing.Size(243, 34);
+            this.txtContraseRecuperacion.TabIndex = 1;
+            this.txtContraseRecuperacion.WordWrap = false;
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguiente.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguiente.BackColor = System.Drawing.Color.Transparent;
+            this.btnSiguiente.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSiguiente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSiguiente.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguiente.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguiente.Location = new System.Drawing.Point(640, 781);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Radius = 20;
+            this.btnSiguiente.Size = new System.Drawing.Size(303, 84);
+            this.btnSiguiente.Stroke = true;
+            this.btnSiguiente.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnSiguiente.TabIndex = 95;
+            this.btnSiguiente.Text = "SIGUIENTE";
+            this.btnSiguiente.Transparency = false;
+            this.btnSiguiente.Visible = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnAgregarCargo
+            // 
+            this.btnAgregarCargo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAgregarCargo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAgregarCargo.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarCargo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAgregarCargo.Font = new System.Drawing.Font("Balsamiq Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAgregarCargo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAgregarCargo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAgregarCargo.Location = new System.Drawing.Point(1036, 588);
+            this.btnAgregarCargo.Name = "btnAgregarCargo";
+            this.btnAgregarCargo.Radius = 20;
+            this.btnAgregarCargo.Size = new System.Drawing.Size(197, 42);
+            this.btnAgregarCargo.Stroke = true;
+            this.btnAgregarCargo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAgregarCargo.TabIndex = 94;
+            this.btnAgregarCargo.Text = "AGREGAR CARGO";
+            this.btnAgregarCargo.Transparency = false;
+            this.btnAgregarCargo.Click += new System.EventHandler(this.btnAgregarCargo_Click);
             // 
             // lblActCargoActual
             // 
@@ -611,6 +1053,111 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label6.Size = new System.Drawing.Size(237, 27);
             this.label6.TabIndex = 88;
             this.label6.Text = "Confirmar Contraseña";
+            // 
+            // btnEliminarCargo
+            // 
+            this.btnEliminarCargo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnEliminarCargo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnEliminarCargo.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarCargo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnEliminarCargo.Font = new System.Drawing.Font("Balsamiq Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnEliminarCargo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnEliminarCargo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnEliminarCargo.Location = new System.Drawing.Point(1036, 540);
+            this.btnEliminarCargo.Name = "btnEliminarCargo";
+            this.btnEliminarCargo.Radius = 20;
+            this.btnEliminarCargo.Size = new System.Drawing.Size(197, 42);
+            this.btnEliminarCargo.Stroke = true;
+            this.btnEliminarCargo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnEliminarCargo.TabIndex = 86;
+            this.btnEliminarCargo.Text = "ELIMINAR DEL CARGO";
+            this.btnEliminarCargo.Transparency = false;
+            this.btnEliminarCargo.Click += new System.EventHandler(this.btnEliminarCargo_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnBorrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnBorrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnBorrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnBorrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnBorrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnBorrar.Location = new System.Drawing.Point(822, 781);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Radius = 20;
+            this.btnBorrar.Size = new System.Drawing.Size(303, 84);
+            this.btnBorrar.Stroke = true;
+            this.btnBorrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnBorrar.TabIndex = 85;
+            this.btnBorrar.Text = "INHABILITAR";
+            this.btnBorrar.Transparency = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActualizar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnActualizar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizar.Location = new System.Drawing.Point(1176, 781);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Radius = 20;
+            this.btnActualizar.Size = new System.Drawing.Size(303, 84);
+            this.btnActualizar.Stroke = true;
+            this.btnActualizar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnActualizar.TabIndex = 84;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.Transparency = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnActLimpiar
+            // 
+            this.btnActLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnActLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActLimpiar.Location = new System.Drawing.Point(1210, 800);
+            this.btnActLimpiar.Name = "btnActLimpiar";
+            this.btnActLimpiar.Radius = 20;
+            this.btnActLimpiar.Size = new System.Drawing.Size(269, 65);
+            this.btnActLimpiar.Stroke = true;
+            this.btnActLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnActLimpiar.TabIndex = 83;
+            this.btnActLimpiar.Text = "LIMPIAR";
+            this.btnActLimpiar.Transparency = false;
+            this.btnActLimpiar.Click += new System.EventHandler(this.btnActBorrar_Click);
+            // 
+            // btnActRegresar
+            // 
+            this.btnActRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnActRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActRegresar.Location = new System.Drawing.Point(44, 800);
+            this.btnActRegresar.Name = "btnActRegresar";
+            this.btnActRegresar.Radius = 20;
+            this.btnActRegresar.Size = new System.Drawing.Size(269, 65);
+            this.btnActRegresar.Stroke = true;
+            this.btnActRegresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnActRegresar.TabIndex = 82;
+            this.btnActRegresar.Text = "REGRESAR";
+            this.btnActRegresar.Transparency = false;
+            this.btnActRegresar.Click += new System.EventHandler(this.btnActRegresar_Click);
             // 
             // label3
             // 
@@ -821,529 +1368,6 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label13.TabIndex = 63;
             this.label13.Text = "Numero de Identidad";
             // 
-            // pnlRecuperacion
-            // 
-            this.pnlRecuperacion.Controls.Add(this.txtCorreoRecuperacion);
-            this.pnlRecuperacion.Controls.Add(this.lblInstruccion);
-            this.pnlRecuperacion.Controls.Add(this.chkVerContraRecuperacion);
-            this.pnlRecuperacion.Controls.Add(this.lblContraRecuperacion);
-            this.pnlRecuperacion.Controls.Add(this.lblCorreoRecuperacion);
-            this.pnlRecuperacion.Controls.Add(this.txtContraseRecuperacion);
-            this.pnlRecuperacion.Location = new System.Drawing.Point(440, 92);
-            this.pnlRecuperacion.Name = "pnlRecuperacion";
-            this.pnlRecuperacion.Size = new System.Drawing.Size(685, 620);
-            this.pnlRecuperacion.TabIndex = 96;
-            this.pnlRecuperacion.Visible = false;
-            // 
-            // txtCorreoRecuperacion
-            // 
-            this.txtCorreoRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoRecuperacion.Location = new System.Drawing.Point(173, 286);
-            this.txtCorreoRecuperacion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCorreoRecuperacion.Name = "txtCorreoRecuperacion";
-            this.txtCorreoRecuperacion.Size = new System.Drawing.Size(350, 34);
-            this.txtCorreoRecuperacion.TabIndex = 0;
-            // 
-            // lblInstruccion
-            // 
-            this.lblInstruccion.AutoSize = true;
-            this.lblInstruccion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstruccion.Location = new System.Drawing.Point(28, 82);
-            this.lblInstruccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInstruccion.Name = "lblInstruccion";
-            this.lblInstruccion.Size = new System.Drawing.Size(633, 135);
-            this.lblInstruccion.TabIndex = 47;
-            this.lblInstruccion.Text = resources.GetString("lblInstruccion.Text");
-            // 
-            // chkVerContraRecuperacion
-            // 
-            this.chkVerContraRecuperacion.AutoSize = true;
-            this.chkVerContraRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkVerContraRecuperacion.Location = new System.Drawing.Point(432, 341);
-            this.chkVerContraRecuperacion.Name = "chkVerContraRecuperacion";
-            this.chkVerContraRecuperacion.Size = new System.Drawing.Size(190, 31);
-            this.chkVerContraRecuperacion.TabIndex = 44;
-            this.chkVerContraRecuperacion.Text = "Ver Contraseña";
-            this.chkVerContraRecuperacion.UseVisualStyleBackColor = true;
-            this.chkVerContraRecuperacion.CheckedChanged += new System.EventHandler(this.chkVerContraRecuperacion_CheckedChanged);
-            // 
-            // lblContraRecuperacion
-            // 
-            this.lblContraRecuperacion.AutoSize = true;
-            this.lblContraRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraRecuperacion.Location = new System.Drawing.Point(40, 342);
-            this.lblContraRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblContraRecuperacion.Name = "lblContraRecuperacion";
-            this.lblContraRecuperacion.Size = new System.Drawing.Size(129, 27);
-            this.lblContraRecuperacion.TabIndex = 40;
-            this.lblContraRecuperacion.Text = "Contraseña";
-            // 
-            // lblCorreoRecuperacion
-            // 
-            this.lblCorreoRecuperacion.AutoSize = true;
-            this.lblCorreoRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreoRecuperacion.Location = new System.Drawing.Point(87, 293);
-            this.lblCorreoRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCorreoRecuperacion.Name = "lblCorreoRecuperacion";
-            this.lblCorreoRecuperacion.Size = new System.Drawing.Size(82, 27);
-            this.lblCorreoRecuperacion.TabIndex = 45;
-            this.lblCorreoRecuperacion.Text = "Correo";
-            // 
-            // txtContraseRecuperacion
-            // 
-            this.txtContraseRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseRecuperacion.Location = new System.Drawing.Point(173, 339);
-            this.txtContraseRecuperacion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtContraseRecuperacion.Name = "txtContraseRecuperacion";
-            this.txtContraseRecuperacion.PasswordChar = '●';
-            this.txtContraseRecuperacion.Size = new System.Drawing.Size(243, 34);
-            this.txtContraseRecuperacion.TabIndex = 1;
-            this.txtContraseRecuperacion.WordWrap = false;
-            // 
-            // btnRecuActualizar
-            // 
-            this.btnRecuActualizar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRecuActualizar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRecuActualizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecuActualizar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRecuActualizar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecuActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRecuActualizar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRecuActualizar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRecuActualizar.Location = new System.Drawing.Point(640, 781);
-            this.btnRecuActualizar.Name = "btnRecuActualizar";
-            this.btnRecuActualizar.Radius = 20;
-            this.btnRecuActualizar.Size = new System.Drawing.Size(303, 84);
-            this.btnRecuActualizar.Stroke = true;
-            this.btnRecuActualizar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRecuActualizar.TabIndex = 98;
-            this.btnRecuActualizar.Text = "ACTUALIZAR";
-            this.btnRecuActualizar.Transparency = false;
-            this.btnRecuActualizar.Visible = false;
-            this.btnRecuActualizar.Click += new System.EventHandler(this.btnRecuActualizar_Click);
-            // 
-            // btnRecuAtras
-            // 
-            this.btnRecuAtras.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRecuAtras.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRecuAtras.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecuAtras.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRecuAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecuAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRecuAtras.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRecuAtras.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRecuAtras.Location = new System.Drawing.Point(44, 800);
-            this.btnRecuAtras.Name = "btnRecuAtras";
-            this.btnRecuAtras.Radius = 20;
-            this.btnRecuAtras.Size = new System.Drawing.Size(269, 65);
-            this.btnRecuAtras.Stroke = true;
-            this.btnRecuAtras.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRecuAtras.TabIndex = 97;
-            this.btnRecuAtras.Text = "REGRESAR";
-            this.btnRecuAtras.Transparency = false;
-            this.btnRecuAtras.Visible = false;
-            this.btnRecuAtras.Click += new System.EventHandler(this.btnRecuAtras_Click);
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguiente.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguiente.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguiente.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSiguiente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSiguiente.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguiente.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguiente.Location = new System.Drawing.Point(640, 781);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Radius = 20;
-            this.btnSiguiente.Size = new System.Drawing.Size(303, 84);
-            this.btnSiguiente.Stroke = true;
-            this.btnSiguiente.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSiguiente.TabIndex = 95;
-            this.btnSiguiente.Text = "SIGUIENTE";
-            this.btnSiguiente.Transparency = false;
-            this.btnSiguiente.Visible = false;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // btnAgregarCargo
-            // 
-            this.btnAgregarCargo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAgregarCargo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAgregarCargo.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarCargo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAgregarCargo.Font = new System.Drawing.Font("Balsamiq Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAgregarCargo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAgregarCargo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAgregarCargo.Location = new System.Drawing.Point(1036, 588);
-            this.btnAgregarCargo.Name = "btnAgregarCargo";
-            this.btnAgregarCargo.Radius = 20;
-            this.btnAgregarCargo.Size = new System.Drawing.Size(197, 42);
-            this.btnAgregarCargo.Stroke = true;
-            this.btnAgregarCargo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAgregarCargo.TabIndex = 94;
-            this.btnAgregarCargo.Text = "AGREGAR CARGO";
-            this.btnAgregarCargo.Transparency = false;
-            this.btnAgregarCargo.Click += new System.EventHandler(this.btnAgregarCargo_Click);
-            // 
-            // btnEliminarCargo
-            // 
-            this.btnEliminarCargo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnEliminarCargo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnEliminarCargo.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminarCargo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnEliminarCargo.Font = new System.Drawing.Font("Balsamiq Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnEliminarCargo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEliminarCargo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEliminarCargo.Location = new System.Drawing.Point(1036, 540);
-            this.btnEliminarCargo.Name = "btnEliminarCargo";
-            this.btnEliminarCargo.Radius = 20;
-            this.btnEliminarCargo.Size = new System.Drawing.Size(197, 42);
-            this.btnEliminarCargo.Stroke = true;
-            this.btnEliminarCargo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnEliminarCargo.TabIndex = 86;
-            this.btnEliminarCargo.Text = "ELIMINAR DEL CARGO";
-            this.btnEliminarCargo.Transparency = false;
-            this.btnEliminarCargo.Click += new System.EventHandler(this.btnEliminarCargo_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnBorrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnBorrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBorrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnBorrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnBorrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnBorrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnBorrar.Location = new System.Drawing.Point(440, 781);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Radius = 20;
-            this.btnBorrar.Size = new System.Drawing.Size(303, 84);
-            this.btnBorrar.Stroke = true;
-            this.btnBorrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnBorrar.TabIndex = 85;
-            this.btnBorrar.Text = "INHABILITAR";
-            this.btnBorrar.Transparency = false;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnActualizar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnActualizar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnActualizar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizar.Location = new System.Drawing.Point(797, 781);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Radius = 20;
-            this.btnActualizar.Size = new System.Drawing.Size(303, 84);
-            this.btnActualizar.Stroke = true;
-            this.btnActualizar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnActualizar.TabIndex = 84;
-            this.btnActualizar.Text = "ACTUALIZAR";
-            this.btnActualizar.Transparency = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnActLimpiar
-            // 
-            this.btnActLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActLimpiar.BackColor = System.Drawing.Color.Transparent;
-            this.btnActLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnActLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnActLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActLimpiar.Location = new System.Drawing.Point(1210, 800);
-            this.btnActLimpiar.Name = "btnActLimpiar";
-            this.btnActLimpiar.Radius = 20;
-            this.btnActLimpiar.Size = new System.Drawing.Size(269, 65);
-            this.btnActLimpiar.Stroke = true;
-            this.btnActLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnActLimpiar.TabIndex = 83;
-            this.btnActLimpiar.Text = "LIMPIAR";
-            this.btnActLimpiar.Transparency = false;
-            this.btnActLimpiar.Click += new System.EventHandler(this.btnActBorrar_Click);
-            // 
-            // btnActRegresar
-            // 
-            this.btnActRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActRegresar.BackColor = System.Drawing.Color.Transparent;
-            this.btnActRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnActRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnActRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActRegresar.Location = new System.Drawing.Point(44, 800);
-            this.btnActRegresar.Name = "btnActRegresar";
-            this.btnActRegresar.Radius = 20;
-            this.btnActRegresar.Size = new System.Drawing.Size(269, 65);
-            this.btnActRegresar.Stroke = true;
-            this.btnActRegresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnActRegresar.TabIndex = 82;
-            this.btnActRegresar.Text = "REGRESAR";
-            this.btnActRegresar.Transparency = false;
-            this.btnActRegresar.Click += new System.EventHandler(this.btnActRegresar_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegistrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(615, 781);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Radius = 20;
-            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
-            this.btnRegistrar.Stroke = true;
-            this.btnRegistrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegistrar.TabIndex = 84;
-            this.btnRegistrar.Text = "REGISTRAR";
-            this.btnRegistrar.Transparency = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(1210, 800);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Radius = 20;
-            this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
-            this.btnLimpiar.Stroke = true;
-            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiar.TabIndex = 83;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.Transparency = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.Location = new System.Drawing.Point(44, 800);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Radius = 20;
-            this.btnRegresar.Size = new System.Drawing.Size(269, 65);
-            this.btnRegresar.Stroke = true;
-            this.btnRegresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegresar.TabIndex = 82;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.Transparency = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // btnActualizacion
-            // 
-            this.btnActualizacion.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizacion.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizacion.BackColor = System.Drawing.Color.Transparent;
-            this.btnActualizacion.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnActualizacion.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnActualizacion.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizacion.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizacion.Location = new System.Drawing.Point(824, 370);
-            this.btnActualizacion.Name = "btnActualizacion";
-            this.btnActualizacion.Radius = 20;
-            this.btnActualizacion.Size = new System.Drawing.Size(407, 200);
-            this.btnActualizacion.Stroke = true;
-            this.btnActualizacion.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnActualizacion.TabIndex = 82;
-            this.btnActualizacion.Text = "VISUALIZAR Y ACTUALIZAR\n EMPLEADOS";
-            this.btnActualizacion.Transparency = false;
-            this.btnActualizacion.Click += new System.EventHandler(this.btnActualizacion_Click);
-            // 
-            // btnRegistrarEmpleado
-            // 
-            this.btnRegistrarEmpleado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrarEmpleado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrarEmpleado.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrarEmpleado.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegistrarEmpleado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrarEmpleado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(318, 370);
-            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
-            this.btnRegistrarEmpleado.Radius = 20;
-            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(407, 200);
-            this.btnRegistrarEmpleado.Stroke = true;
-            this.btnRegistrarEmpleado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegistrarEmpleado.TabIndex = 81;
-            this.btnRegistrarEmpleado.Text = "REGISTRAR EMPLEADO";
-            this.btnRegistrarEmpleado.Transparency = false;
-            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.altoButton1_Click);
-            // 
-            // btnInactivos
-            // 
-            this.btnInactivos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnInactivos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnInactivos.BackColor = System.Drawing.Color.Transparent;
-            this.btnInactivos.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnInactivos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInactivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnInactivos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnInactivos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnInactivos.Location = new System.Drawing.Point(777, 90);
-            this.btnInactivos.Name = "btnInactivos";
-            this.btnInactivos.Radius = 0;
-            this.btnInactivos.Size = new System.Drawing.Size(223, 43);
-            this.btnInactivos.Stroke = false;
-            this.btnInactivos.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnInactivos.TabIndex = 90;
-            this.btnInactivos.Text = "INACTIVOS";
-            this.btnInactivos.Transparency = false;
-            this.btnInactivos.Click += new System.EventHandler(this.btnInactivos_Click);
-            // 
-            // btnEditarSuperUser
-            // 
-            this.btnEditarSuperUser.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnEditarSuperUser.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnEditarSuperUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditarSuperUser.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnEditarSuperUser.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarSuperUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnEditarSuperUser.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEditarSuperUser.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEditarSuperUser.Location = new System.Drawing.Point(1000, 90);
-            this.btnEditarSuperUser.Name = "btnEditarSuperUser";
-            this.btnEditarSuperUser.Radius = 0;
-            this.btnEditarSuperUser.Size = new System.Drawing.Size(223, 43);
-            this.btnEditarSuperUser.Stroke = false;
-            this.btnEditarSuperUser.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnEditarSuperUser.TabIndex = 89;
-            this.btnEditarSuperUser.Text = "SUPER USUARIO";
-            this.btnEditarSuperUser.Transparency = false;
-            this.btnEditarSuperUser.Click += new System.EventHandler(this.btnEditarSuperUser_Click);
-            // 
-            // btnMedicos
-            // 
-            this.btnMedicos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnMedicos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnMedicos.BackColor = System.Drawing.Color.Transparent;
-            this.btnMedicos.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnMedicos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedicos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnMedicos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnMedicos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnMedicos.Location = new System.Drawing.Point(472, 90);
-            this.btnMedicos.Name = "btnMedicos";
-            this.btnMedicos.Radius = 0;
-            this.btnMedicos.Size = new System.Drawing.Size(223, 43);
-            this.btnMedicos.Stroke = false;
-            this.btnMedicos.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnMedicos.TabIndex = 87;
-            this.btnMedicos.Text = "MEDICOS";
-            this.btnMedicos.Transparency = false;
-            this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
-            // 
-            // btnDocentes
-            // 
-            this.btnDocentes.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDocentes.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDocentes.BackColor = System.Drawing.Color.Transparent;
-            this.btnDocentes.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnDocentes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnDocentes.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnDocentes.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnDocentes.Location = new System.Drawing.Point(249, 90);
-            this.btnDocentes.Name = "btnDocentes";
-            this.btnDocentes.Radius = 0;
-            this.btnDocentes.Size = new System.Drawing.Size(223, 43);
-            this.btnDocentes.Stroke = false;
-            this.btnDocentes.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnDocentes.TabIndex = 86;
-            this.btnDocentes.Text = "DOCENTES";
-            this.btnDocentes.Transparency = false;
-            this.btnDocentes.Click += new System.EventHandler(this.btnDocentes_Click);
-            // 
-            // btnAdministradores
-            // 
-            this.btnAdministradores.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAdministradores.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAdministradores.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdministradores.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAdministradores.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministradores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAdministradores.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAdministradores.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAdministradores.Location = new System.Drawing.Point(26, 90);
-            this.btnAdministradores.Name = "btnAdministradores";
-            this.btnAdministradores.Radius = 0;
-            this.btnAdministradores.Size = new System.Drawing.Size(223, 43);
-            this.btnAdministradores.Stroke = false;
-            this.btnAdministradores.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAdministradores.TabIndex = 85;
-            this.btnAdministradores.Text = "ADMINISTRADORES";
-            this.btnAdministradores.Transparency = false;
-            this.btnAdministradores.Click += new System.EventHandler(this.btnAdministradores_Click);
-            // 
-            // btnSiguienteDGVAct
-            // 
-            this.btnSiguienteDGVAct.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteDGVAct.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteDGVAct.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguienteDGVAct.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSiguienteDGVAct.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguienteDGVAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSiguienteDGVAct.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteDGVAct.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteDGVAct.Location = new System.Drawing.Point(1201, 841);
-            this.btnSiguienteDGVAct.Name = "btnSiguienteDGVAct";
-            this.btnSiguienteDGVAct.Radius = 20;
-            this.btnSiguienteDGVAct.Size = new System.Drawing.Size(269, 65);
-            this.btnSiguienteDGVAct.Stroke = true;
-            this.btnSiguienteDGVAct.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSiguienteDGVAct.TabIndex = 84;
-            this.btnSiguienteDGVAct.Text = "SIGUIENTE";
-            this.btnSiguienteDGVAct.Transparency = false;
-            this.btnSiguienteDGVAct.Click += new System.EventHandler(this.btnSiguienteDGVAct_Click);
-            // 
-            // btnRegresarDGVAct
-            // 
-            this.btnRegresarDGVAct.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarDGVAct.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarDGVAct.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegresarDGVAct.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegresarDGVAct.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresarDGVAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresarDGVAct.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarDGVAct.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarDGVAct.Location = new System.Drawing.Point(26, 841);
-            this.btnRegresarDGVAct.Name = "btnRegresarDGVAct";
-            this.btnRegresarDGVAct.Radius = 20;
-            this.btnRegresarDGVAct.Size = new System.Drawing.Size(269, 65);
-            this.btnRegresarDGVAct.Stroke = true;
-            this.btnRegresarDGVAct.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegresarDGVAct.TabIndex = 83;
-            this.btnRegresarDGVAct.Text = "REGRESAR";
-            this.btnRegresarDGVAct.Transparency = false;
-            this.btnRegresarDGVAct.Click += new System.EventHandler(this.btnRegresarDGVAct_Click);
-            // 
             // IFrmGestionEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1460,5 +1484,6 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         private System.Windows.Forms.TextBox txtContraseRecuperacion;
         private AltoControls.AltoButton btnRecuAtras;
         private AltoControls.AltoButton btnRecuActualizar;
+        private AltoControls.AltoButton btnLimpiarRecu;
     }
 }

@@ -18,7 +18,7 @@ namespace SistemaGestorEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIngresoAdmin());
+            Application.Run(new IfrmLogin());
         }
     }
 }

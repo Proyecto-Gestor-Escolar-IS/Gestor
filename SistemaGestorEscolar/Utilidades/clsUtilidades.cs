@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace SistemaGestorEscolar
 {
@@ -105,7 +106,8 @@ namespace SistemaGestorEscolar
         {
             try
             {
-                DateTime dt = DateTime.Parse(fecha);
+                DateTime dt;
+                DateTime.TryParseExact(fecha, "dd/MM/yyyy", CultureInfo.GetCultureInfo("es-HN"), DateTimeStyles.None, out dt);
                 return true;
             }
             catch
