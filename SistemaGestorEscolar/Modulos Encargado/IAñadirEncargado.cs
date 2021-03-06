@@ -172,72 +172,72 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void btnrealizarOperacion_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
-                {
-                    MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
-                    limpiarPantalla();
-                }
-                else
-                {
-                    if (chkregistrarEncargado.Checked == true)
-                        if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
-                         txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "" && txtfechaNacimiento.Text == "")
-                        {
-                            MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
-                        }
-                        else
-                        {
-                            RegistrarEncargado();
-                        }
-                    else if (chkactualizarEncargado.Checked == true)
-                    {
-                        if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
-                                           txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "")
-                        {
-                            MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
-                        }
-                        else
-                        {
-                            ActualizarEncargado();
-                        }
-                    }
-                    else if (chkeliminarEncargado.Checked == true)
-                    {
-                        EliminarEncargado();
-                    }
-                    else if (chkbuscarEncargado.Checked == true)
-                    {
-                        BuscarEncargado();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+        //    try
+        //    {
+        //        if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
+        //        {
+        //            MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
+        //            limpiarPantalla();
+        //        }
+        //        else
+        //        {
+        //            if (chkregistrarEncargado.Checked == true)
+        //                if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
+        //                 txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "" && txtfechaNacimiento.Text == "")
+        //                {
+        //                    MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
+        //                }
+        //                else
+        //                {
+        //                    RegistrarEncargado();
+        //                }
+        //            else if (chkactualizarEncargado.Checked == true)
+        //            {
+        //                if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
+        //                                   txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" && txtsegundoTelefono.Text == "" && txtDireccion.Text == "")
+        //                {
+        //                    MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
+        //                }
+        //                else
+        //                {
+        //                    ActualizarEncargado();
+        //                }
+        //            }
+        //            else if (chkeliminarEncargado.Checked == true)
+        //            {
+        //                EliminarEncargado();
+        //            }
+        //            else if (chkbuscarEncargado.Checked == true)
+        //            {
+        //                BuscarEncargado();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
 
-        public void RegistrarEncargado()
-        {
+        //public void RegistrarEncargado()
+        //{
 
-            try
-            {
-                if (dbConn.PARegistroEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtcorreoElectronico.Text, txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text, txtfechaNacimiento.Text))
-                {
-                    MessageBox.Show("Encargado Registrado Exitosamente", "Registro Realizado", MessageBoxButtons.OK);
-                    limpiarPantalla();
-                }
-                else
-                {
-                    MessageBox.Show("Error al Registrar el Encargado", "Error Inesperado", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+        //    try
+        //    {
+        //        if (dbConn.PARegistroEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtcorreoElectronico.Text, txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text, txtfechaNacimiento.Text))
+        //        {
+        //            MessageBox.Show("Encargado Registrado Exitosamente", "Registro Realizado", MessageBoxButtons.OK);
+        //            limpiarPantalla();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Error al Registrar el Encargado", "Error Inesperado", MessageBoxButtons.OK);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
 
 
         }

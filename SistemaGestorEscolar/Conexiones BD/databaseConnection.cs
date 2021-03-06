@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-2KKKGON;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HECTOREOC\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -587,7 +587,7 @@ namespace SistemaGestorEscolar
 
         /*MEJIASOC-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-        public bool PARegistroEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
+        public bool PARegistroEncargado(string NumidentidadEstud, string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
             string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo, string fechaNacimiento)
         {
             try
@@ -597,6 +597,7 @@ namespace SistemaGestorEscolar
                 comando.CommandText = "RegistrarEncargado";
                 comando.CommandType = CommandType.StoredProcedure;
 
+                comando.Parameters.AddWithValue("@NumidentidadEstudiante", NumidentidadEstud);
                 comando.Parameters.AddWithValue("@Numidentidad", Numidentidad);
                 comando.Parameters.AddWithValue("@primerNombre", primerNombre);
                 comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
@@ -883,6 +884,47 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
+
+        public bool PARegistrarEstudiante(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string fechaNacimiento,string genero)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "RegistrarEstudiante";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@identidadEstudiante", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                comando.Parameters.AddWithValue("@genero", genero);
+                
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro del Estudiante", "Error de Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
 
     }
 
