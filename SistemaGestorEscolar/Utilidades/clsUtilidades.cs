@@ -145,7 +145,7 @@ namespace SistemaGestorEscolar
             }
             catch
             {
-                return false;
+                return true;
             }
         }
 

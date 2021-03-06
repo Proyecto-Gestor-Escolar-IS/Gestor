@@ -130,6 +130,7 @@ namespace SistemaGestorEscolar.Login
                     //DialogResult result =  MessageBox.Show("¿Ha revisado sus datos y desea continuar?", "Continuar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if ( IMessageBoxYesCancel.isCodigoForm == true )
                     {
+             
                         if(utilidad.enviarCorreo("","",txtCorreoRecuperacion.Text,"",txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text) == true)
                         {
                             if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
