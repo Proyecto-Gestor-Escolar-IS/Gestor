@@ -40,10 +40,11 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         {
             pnlSelector.Hide();
             grpRegistroEmpleado.Show();
+            identidad = "0";
             utilidades.limpiarTextBox(grpRegistroEmpleado);
             cmbCargosSec.Items.Clear();
             dbConn.llenarComboBoxValorInicial(cmbCargosSec, "SELECT descripcionCargo FROM cargos WHERE descripcionCargo <> 'Super Usuario'");
-            cmbActCargo.SelectedItem = "<SELECCIONE>";
+            cmbCargosSec.SelectedItem = "<SELECCIONE>";
         }
 
         private void btnActualizacion_Click(object sender, EventArgs e)
@@ -555,15 +556,17 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 btnRecuActualizar.Visible = true;
                 btnActLimpiar.Visible = false;
                 btnLimpiarRecu.Visible = true;
-                string contra = utilidades.DesEncriptar(dbConn.obtenerVariableString("SELECT contra FROM informacionCorreoRecuperacion"));
-                dbConn.llenarTextBox(txtCorreoRecuperacion, "SELECT correo FROM informacionCorreoRecuperacion");
+                string contra = utilidades.DesEncriptar(dbConn.obtenerVariableString("SELECT TOP 1 contra FROM informacionCorreoRecuperacion"));
+                dbConn.llenarTextBox(txtCorreoRecuperacion, "SELECT TOP 1 correo FROM informacionCorreoRecuperacion");
                 txtContraseRecuperacion.Text = contra;
+                dbConn.llenarTextBox(txtHost, "SELECT TOP 1 host FROM informacionCorreoRecuperacion");
+                txtPuerto.Text = dbConn.obtenerVariableEntera("SELECT TOP 1 port FROM informacionCorreoRecuperacion").ToString();
             }
         }
 
         private void btnRecuActualizar_Click(object sender, EventArgs e)
         {
-            if (txtCorreoRecuperacion.Text != string.Empty && txtContraseRecuperacion.Text != string.Empty)
+            if (txtCorreoRecuperacion.Text != string.Empty && txtContraseRecuperacion.Text != string.Empty & txtHost.Text != string.Empty && txtPuerto.Text != string.Empty && utilidades.isNumeric(txtPuerto.Text))
             {
                 if (utilidades.verificarCorreo(txtCorreoRecuperacion.Text))
                 {
@@ -574,12 +577,13 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                     //DialogResult result =  MessageBox.Show("¿Ha revisado sus datos y desea continuar?", "Continuar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (IMessageBoxYesCancel.isCodigoForm == true)
                     {
-                        /*if (utilidades.enviarCorreo("", "", txtCorreoRecuperacion.Text, "", txtCorreoRecuperacion.Text, txtContraseRecuperacion.Text) == true)
+                        if (utilidades.enviarCorreo("<h1>VERIFICACI&Oacute;N DE CORREO ELECTR&Oacute;NICO</h1>", txtCorreoRecuperacion.Text, txtCorreoRecuperacion.Text, txtContraseRecuperacion.Text, txtHost.Text, Convert.ToInt32(txtPuerto.Text)) == true)
                         {
                             if (dbConn.PAOperacionEmpleado(identidadAdmin, txtActNombre1.Text, txtActNombre2.Text, txtActApellido1.Text, txtActApellido2.Text, Convert.ToInt32(txtActTelef.Text), txtActFechaNac.Text,
                             txtActMail.Text, 1, utilidades.EncriptarTexto(txtActConfContra.Text), 1, -1, 2))
                             {
-                                dbConn.ejecutarComandoSQL("UPDATE informacionCorreoRecuperacion SET correo = '" + txtCorreoRecuperacion.Text + "', contra = '" + utilidades.EncriptarTexto(txtContraseRecuperacion.Text) + "' ");
+                                dbConn.ejecutarComandoSQL("UPDATE informacionCorreoRecuperacion SET correo = '" + txtCorreoRecuperacion.Text + "', contra = '" + utilidades.EncriptarTexto(txtContraseRecuperacion.Text) + "' " +
+                                    ", host = '"+txtHost.Text+"', port = '"+Convert.ToInt32(txtPuerto.Text)+"' ");
                                 messageOk.lblCheck.Text = "ACTUALIZADO CORRECTAMENTE";
                                 messageOk.ShowDialog();
                                 pnlRecuperacion.Visible = false;
@@ -596,7 +600,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             boxError.lblError.Location = new Point(105, 75);
                             boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
                             boxError.ShowDialog();
-                        }*/
+                        }
 
                     }
                 }
@@ -627,12 +631,12 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             chkActVerContra.Checked = false;
-            cmbCargosSec.SelectedItem = "<SELECCIONE>";
-            string txtIdentid = txtIdentidad.Text;
+            string txtIdentid = "0";
+            txtIdentid = txtIdentidad.Text;
             string txtNum = txtTel.Text;
             if (txtIdentid.Trim() != string.Empty && txtNombre1.Text != string.Empty && txtApellido1.Text != string.Empty && txtNum != string.Empty &&
                 txtCorreo.Text != string.Empty && txtContra.Text != string.Empty && txtConfirmContra.Text != string.Empty && txtFechaNa.Text != string.Empty &&
-                txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8 && cmbCargosSec.Text != string.Empty)
+                txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8 && cmbCargosSec.Text != string.Empty && cmbCargosSec.Text != "<SELECCIONE>")
             {
                 if (utilidades.verificarCorreo(txtCorreo.Text))
                 {

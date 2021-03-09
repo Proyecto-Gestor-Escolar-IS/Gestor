@@ -117,11 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblInstruccion.Text" xml:space="preserve">
-    <value>Ingrese las credenciales de acceso para configurar 
-el correo electrónico de recuperación. 
-(Desde este correo se enviaran los correos de recuperación).
-Ingrese un correo de Google(correo@gmail.com) con 
-verificación de dos pasos desactivada.</value>
-  </data>
 </root>

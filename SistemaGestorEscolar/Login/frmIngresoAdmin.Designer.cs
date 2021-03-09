@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngresoAdmin));
             this.label1 = new System.Windows.Forms.Label();
             this.lblContraRecuperacion = new System.Windows.Forms.Label();
             this.txtContraseRecuperacion = new System.Windows.Forms.TextBox();
@@ -38,6 +37,10 @@
             this.lblCorreoRecuperacion = new System.Windows.Forms.Label();
             this.lblInstruccion = new System.Windows.Forms.Label();
             this.pnlRecuperacion = new System.Windows.Forms.Panel();
+            this.txtPuerto = new System.Windows.Forms.MaskedTextBox();
+            this.t = new System.Windows.Forms.Label();
+            this.txtHost = new System.Windows.Forms.TextBox();
+            this.Host = new System.Windows.Forms.Label();
             this.btnFinalizar = new AltoControls.AltoButton();
             this.btnAtras = new AltoControls.AltoButton();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
@@ -86,12 +89,12 @@
             // 
             this.lblContraRecuperacion.AutoSize = true;
             this.lblContraRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraRecuperacion.Location = new System.Drawing.Point(30, 226);
+            this.lblContraRecuperacion.Location = new System.Drawing.Point(69, 224);
             this.lblContraRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContraRecuperacion.Name = "lblContraRecuperacion";
-            this.lblContraRecuperacion.Size = new System.Drawing.Size(117, 24);
+            this.lblContraRecuperacion.Size = new System.Drawing.Size(62, 24);
             this.lblContraRecuperacion.TabIndex = 40;
-            this.lblContraRecuperacion.Text = "Contraseña";
+            this.lblContraRecuperacion.Text = "Clave";
             // 
             // txtContraseRecuperacion
             // 
@@ -100,7 +103,7 @@
             this.txtContraseRecuperacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseRecuperacion.Name = "txtContraseRecuperacion";
             this.txtContraseRecuperacion.PasswordChar = '●';
-            this.txtContraseRecuperacion.Size = new System.Drawing.Size(182, 24);
+            this.txtContraseRecuperacion.Size = new System.Drawing.Size(217, 24);
             this.txtContraseRecuperacion.TabIndex = 1;
             this.txtContraseRecuperacion.WordWrap = false;
             // 
@@ -108,11 +111,11 @@
             // 
             this.chkVerContraRecuperacion.AutoSize = true;
             this.chkVerContraRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkVerContraRecuperacion.Location = new System.Drawing.Point(341, 226);
+            this.chkVerContraRecuperacion.Location = new System.Drawing.Point(376, 229);
             this.chkVerContraRecuperacion.Name = "chkVerContraRecuperacion";
-            this.chkVerContraRecuperacion.Size = new System.Drawing.Size(126, 20);
+            this.chkVerContraRecuperacion.Size = new System.Drawing.Size(85, 20);
             this.chkVerContraRecuperacion.TabIndex = 44;
-            this.chkVerContraRecuperacion.Text = "Ver Contraseñas";
+            this.chkVerContraRecuperacion.Text = "Ver Clave";
             this.chkVerContraRecuperacion.UseVisualStyleBackColor = true;
             this.chkVerContraRecuperacion.CheckedChanged += new System.EventHandler(this.chkVerContraRecuperacion_CheckedChanged);
             // 
@@ -129,26 +132,31 @@
             // 
             this.lblCorreoRecuperacion.AutoSize = true;
             this.lblCorreoRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreoRecuperacion.Location = new System.Drawing.Point(30, 172);
+            this.lblCorreoRecuperacion.Location = new System.Drawing.Point(55, 170);
             this.lblCorreoRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreoRecuperacion.Name = "lblCorreoRecuperacion";
-            this.lblCorreoRecuperacion.Size = new System.Drawing.Size(76, 24);
+            this.lblCorreoRecuperacion.Size = new System.Drawing.Size(78, 24);
             this.lblCorreoRecuperacion.TabIndex = 45;
-            this.lblCorreoRecuperacion.Text = "Correo";
+            this.lblCorreoRecuperacion.Text = "Usuario";
             // 
             // lblInstruccion
             // 
             this.lblInstruccion.AutoSize = true;
             this.lblInstruccion.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstruccion.Location = new System.Drawing.Point(17, 14);
+            this.lblInstruccion.Location = new System.Drawing.Point(17, 31);
             this.lblInstruccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInstruccion.Name = "lblInstruccion";
-            this.lblInstruccion.Size = new System.Drawing.Size(489, 105);
+            this.lblInstruccion.Size = new System.Drawing.Size(489, 63);
             this.lblInstruccion.TabIndex = 47;
-            this.lblInstruccion.Text = resources.GetString("lblInstruccion.Text");
+            this.lblInstruccion.Text = "Ingrese las credenciales de acceso para configurar \r\nel correo electrónico de rec" +
+    "uperación. \r\n(Desde este correo se enviaran los correos de recuperación).";
             // 
             // pnlRecuperacion
             // 
+            this.pnlRecuperacion.Controls.Add(this.txtPuerto);
+            this.pnlRecuperacion.Controls.Add(this.t);
+            this.pnlRecuperacion.Controls.Add(this.txtHost);
+            this.pnlRecuperacion.Controls.Add(this.Host);
             this.pnlRecuperacion.Controls.Add(this.btnFinalizar);
             this.pnlRecuperacion.Controls.Add(this.btnAtras);
             this.pnlRecuperacion.Controls.Add(this.txtCorreoRecuperacion);
@@ -162,6 +170,49 @@
             this.pnlRecuperacion.Size = new System.Drawing.Size(522, 563);
             this.pnlRecuperacion.TabIndex = 52;
             this.pnlRecuperacion.Visible = false;
+            // 
+            // txtPuerto
+            // 
+            this.txtPuerto.Culture = new System.Globalization.CultureInfo("es-HN");
+            this.txtPuerto.Font = new System.Drawing.Font("Balsamiq Sans", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.txtPuerto.Location = new System.Drawing.Point(156, 327);
+            this.txtPuerto.Mask = "99999";
+            this.txtPuerto.Name = "txtPuerto";
+            this.txtPuerto.Size = new System.Drawing.Size(99, 24);
+            this.txtPuerto.TabIndex = 59;
+            this.txtPuerto.ValidatingType = typeof(int);
+            // 
+            // t
+            // 
+            this.t.AutoSize = true;
+            this.t.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.t.Location = new System.Drawing.Point(59, 327);
+            this.t.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(72, 24);
+            this.t.TabIndex = 58;
+            this.t.Text = "Puerto";
+            // 
+            // txtHost
+            // 
+            this.txtHost.Font = new System.Drawing.Font("Balsamiq Sans", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHost.Location = new System.Drawing.Point(154, 279);
+            this.txtHost.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHost.Name = "txtHost";
+            this.txtHost.Size = new System.Drawing.Size(307, 24);
+            this.txtHost.TabIndex = 57;
+            this.txtHost.WordWrap = false;
+            // 
+            // Host
+            // 
+            this.Host.AutoSize = true;
+            this.Host.Font = new System.Drawing.Font("Balsamiq Sans", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Host.Location = new System.Drawing.Point(79, 279);
+            this.Host.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Host.Name = "Host";
+            this.Host.Size = new System.Drawing.Size(52, 24);
+            this.Host.TabIndex = 56;
+            this.Host.Text = "Host";
             // 
             // btnFinalizar
             // 
@@ -553,5 +604,9 @@
         private AltoControls.AltoButton btnSiguiente;
         private AltoControls.AltoButton btnFinalizar;
         private AltoControls.AltoButton btnAtras;
+        private System.Windows.Forms.MaskedTextBox txtPuerto;
+        private System.Windows.Forms.Label t;
+        private System.Windows.Forms.TextBox txtHost;
+        private System.Windows.Forms.Label Host;
     }
 }

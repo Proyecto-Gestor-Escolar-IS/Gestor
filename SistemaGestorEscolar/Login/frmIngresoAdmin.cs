@@ -119,7 +119,7 @@ namespace SistemaGestorEscolar.Login
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if (txtCorreoRecuperacion.Text != string.Empty && txtContraseRecuperacion.Text != string.Empty)
+            if (txtCorreoRecuperacion.Text != string.Empty && txtContraseRecuperacion.Text != string.Empty && txtHost.Text != string.Empty && txtPuerto.Text != string.Empty && utilidad.isNumeric(txtPuerto.Text))
             {
                 if (utilidad.verificarCorreo(txtCorreoRecuperacion.Text))
                 {
@@ -127,28 +127,40 @@ namespace SistemaGestorEscolar.Login
                     messageYesNo.lblError.TextAlign = ContentAlignment.MiddleCenter;
                     messageYesNo.ShowDialog();
 
-                    //DialogResult result =  MessageBox.Show("¿Ha revisado sus datos y desea continuar?", "Continuar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if ( IMessageBoxYesCancel.isCodigoForm == true )
                     {
              
-                        //if(utilidad.enviarCorreo("","",txtCorreoRecuperacion.Text,"",txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text) == true)
-                        //{
-                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), "2001/12/22",
+                        if(utilidad.enviarCorreo(" < h1 > VERIFICACI & Oacute; N DE CORREO ELECTR&Oacute; NICO </ h1 > ",txtCorreoRecuperacion.Text,txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text, txtHost.Text, Convert.ToInt32(txtPuerto.Text)) == true)
+                        {
+                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
                             txtCorreo.Text, 1, utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
                             {
-                                messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
-                                messageOk.ShowDialog();
-                                dbConn.ejecutarComandoSQL("INSERT INTO informacionCorreoRecuperacion VALUES('"+txtCorreoRecuperacion.Text+"', '"+utilidad.EncriptarTexto(txtContraseRecuperacion.Text)+"')");
-                                this.Close();
+                                try
+                                {
+                                    dbConn.ejecutarComandoSQL("INSERT INTO informacionCorreoRecuperacion VALUES('" + txtCorreoRecuperacion.Text + "', '" + utilidad.EncriptarTexto(txtContraseRecuperacion.Text) + "' " +
+                                        ", '"+txtHost.Text+"', '"+Convert.ToInt32(txtPuerto.Text)+"')");
+                                    messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
+                                    messageOk.ShowDialog();
+                                    this.Close();
+                                }
+                                catch
+                                {
+                                    message.lblError.Text = "ERROR";
+                                    message.lblError.Location = new Point(140, 85);
+                                    message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                                    message.ShowDialog();
+                                }
+                                
+                                
                             }
-                        //}
-                        //else
-                        //{
-                        //    message.lblError.Text = "CREDENCIALES DE CORREO \r\nELECTRONICO INCORRECTAS";
-                        //    message.lblError.Location = new Point(105, 75);
-                        //    message.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                        //    message.ShowDialog();
-                        //}
+                        }
+                        else
+                        {
+                            message.lblError.Text = "CREDENCIALES DE CORREO \r\nELECTRONICO INCORRECTAS";
+                            message.lblError.Location = new Point(105, 75);
+                            message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            message.ShowDialog();
+                        }
                             
                     }
                 }
