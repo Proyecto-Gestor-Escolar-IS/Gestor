@@ -7,6 +7,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Globalization;
+using MailKit.Net.Smtp;
+using MailKit;
+using MimeKit;
+using Google.Apis.Auth;
+using Google.Apis.Auth.OAuth2;
+using MailKit.Security;
+using Google.Apis.Auth.OAuth2.Flows;
+using Google.Apis.Util.Store;
+using System.Threading;
 
 namespace SistemaGestorEscolar
 {
@@ -116,15 +125,104 @@ namespace SistemaGestorEscolar
             }
         }
 
+        /*public bool enviarCorreo(string mensaje, string asunto, string destinatario, string correo, string contra)
+        {
+            try
+            {
+                var message = new MimeMessage();
+                message.From.Add(new MailboxAddress("Santa Maria Password Recovery Service", correo));
+                message.To.Add(new MailboxAddress(destinatario, destinatario));
+                message.Subject = "Santa Maria de Nazareth Admin No Reply";
+
+                message.Body = new TextPart("html")
+                {
+                    Text = mensaje
+                };
+
+            
+                using (var client = new MailKit.Net.Smtp.SmtpClient())
+                {
+                    client.Connect("smtp-relay.sendinblue.com", 587, true);
+                    client.Authenticate("santamaria_escp@keemail.me", "jHXzTAx4vZmhD9Bw");
+                    MessageBox.Show("hola");
+                    client.Send(message);
+                    client.Disconnect(true);
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+
+        }*/
+
+        /*public async System.Threading.Tasks.Task<bool> enviarCorreoAsync(string mensaje, string asunto, string destinatario, string correo, string contra)
+        {
+            try
+            {
+
+
+                var clientSecrets = new ClientSecrets
+                {
+                    ClientId = "1015480394760-jemn35dudij769tg5aed8bpood04k8lt.apps.googleusercontent.com",
+                    ClientSecret = "yAEwq57dfKkvg-FbdRZ6Vebo"
+                };
+
+                var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { 
+                    DataStore = new FileDataStore("CredentialCacheFolder", false),
+                    Scopes = new[] { "https://mail.google.com/" },
+                    ClientSecrets = clientSecrets
+                });
+
+                var codeReceiver = new LocalServerCodeReceiver();
+                var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver);
+
+                var credential = await authCode.AuthorizeAsync(correo, CancellationToken.None);
+
+                if (credential.Token.IsExpired(SystemClock.Default))
+                    await credential.RefreshTokenAsync(CancellationToken.None);
+
+                var oauth2 = new SaslMechanismOAuth2(credential.UserId, credential.Token.AccessToken);
+
+                var message = new MimeMessage();
+                message.From.Add(new MailboxAddress("Santa Maria Password Recovery Service", correo));
+                message.To.Add(new MailboxAddress(destinatario, destinatario));
+                message.Subject = "Santa Maria de Nazareth Admin No Reply";
+
+                message.Body = new TextPart("html")
+                {
+                    Text = mensaje
+                };
+
+            
+                using (var client = new MailKit.Net.Smtp.SmtpClient())
+                {
+                    await client.ConnectAsync("smtp.gmail.com", 993, SecureSocketOptions.SslOnConnect);
+                    await client.AuthenticateAsync(oauth2);
+                    await client.SendAsync(message);
+                    await client.DisconnectAsync(true);
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            
+
+        }*/
+        
         public bool enviarCorreo(string mensaje, string asunto, string destinatario, string ruta, string correo, string contra)
         {
             System.Net.Mail.MailMessage _Message = new System.Net.Mail.MailMessage();
             System.Net.Mail.SmtpClient _SMTP = new System.Net.Mail.SmtpClient();
 
             _SMTP.UseDefaultCredentials = false;
-            _SMTP.Credentials = new System.Net.NetworkCredential(correo, contra);
+            _SMTP.Credentials = new System.Net.NetworkCredential("santamaria_escp@keemail.me", "jHXzTAx4vZmhD9Bw");
             //_SMTP.Credentials = new System.Net.NetworkCredential("sigua.netco@gmail.com", "Siguanet2020");
-            _SMTP.Host = "smtp.gmail.com";
+            _SMTP.Host = "smtp-relay.sendinblue.com";
             _SMTP.Port = 587;
             _SMTP.EnableSsl = true;
 

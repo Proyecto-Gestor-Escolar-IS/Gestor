@@ -574,7 +574,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                     //DialogResult result =  MessageBox.Show("¿Ha revisado sus datos y desea continuar?", "Continuar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (IMessageBoxYesCancel.isCodigoForm == true)
                     {
-                        if (utilidades.enviarCorreo("", "", txtCorreoRecuperacion.Text, "", txtCorreoRecuperacion.Text, txtContraseRecuperacion.Text) == true)
+                        /*if (utilidades.enviarCorreo("", "", txtCorreoRecuperacion.Text, "", txtCorreoRecuperacion.Text, txtContraseRecuperacion.Text) == true)
                         {
                             if (dbConn.PAOperacionEmpleado(identidadAdmin, txtActNombre1.Text, txtActNombre2.Text, txtActApellido1.Text, txtActApellido2.Text, Convert.ToInt32(txtActTelef.Text), txtActFechaNac.Text,
                             txtActMail.Text, 1, utilidades.EncriptarTexto(txtActConfContra.Text), 1, -1, 2))
@@ -596,7 +596,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             boxError.lblError.Location = new Point(105, 75);
                             boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
                             boxError.ShowDialog();
-                        }
+                        }*/
 
                     }
                 }

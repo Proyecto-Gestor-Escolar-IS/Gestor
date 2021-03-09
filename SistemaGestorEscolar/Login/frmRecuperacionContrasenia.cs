@@ -49,7 +49,7 @@ namespace SistemaGestorEscolar.Login
                     {
                         MessageBox.Show("ERROR AL OBTENER CREDENCIALES DE RECUPERACION");
                     }
-                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, asunto: "Recuperación de Contraseña", destinatario: correo, ruta: "", correoRecu, contraRecu))
+                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, asunto: "Recuperación de Contraseña", destinatario: correo,"", correoRecu, contraRecu))
                     {
                         MessageBox.Show("Revise la bandeja de entrada, spam de su correo: " + corr + "********", "Recuperacion de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
