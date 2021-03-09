@@ -596,7 +596,6 @@ namespace SistemaGestorEscolar
         {
             try
             {
-
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "RegistrarEncargado";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -608,11 +607,10 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@primerApellido", primerApellido);
                 comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
                 comando.Parameters.AddWithValue("@correoElectronico", correoElectronico);
-                comando.Parameters.AddWithValue("@numeroTelefono", numeroTelefono);
-                comando.Parameters.AddWithValue("@numeroTelefonoAlt", numeroTelefonoAlt);
+                comando.Parameters.AddWithValue("@numeroTelefono", int.Parse(numeroTelefono));
+                comando.Parameters.AddWithValue("@numeroTelefonoAlt", int.Parse(numeroTelefonoAlt));
                 comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
                 comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
-
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)

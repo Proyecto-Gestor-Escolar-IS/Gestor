@@ -133,7 +133,7 @@ namespace SistemaGestorEscolar.Login
              
                         //if(utilidad.enviarCorreo("","",txtCorreoRecuperacion.Text,"",txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text) == true)
                         //{
-                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
+                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), "2001/12/22",
                             txtCorreo.Text, 1, utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
                             {
                                 messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";

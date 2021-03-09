@@ -31,6 +31,7 @@ namespace SistemaGestorEscolar.Login
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             int primerInicio = dbConn.obtenerVariableEntera("SELECT COUNT(*) FROM datosEmpleados");
+
             if (primerInicio == 0 && txtdentidad.Text == String.Empty && txtContrase.Text == String.Empty)
             {
                 message2.lblError.Text = "ESTA ES SU PRIMERA VEZ INICIANDO \r\nEL SISTEMA, POR FAVOR CREE UN \r\nSUPER USUARIO PARA CONTINUAR.";

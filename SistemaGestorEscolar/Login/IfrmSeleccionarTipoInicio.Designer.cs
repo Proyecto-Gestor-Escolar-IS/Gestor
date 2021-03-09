@@ -36,14 +36,14 @@
             this.btnMenuAtras = new System.Windows.Forms.Button();
             this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblSaludo = new System.Windows.Forms.Label();
-            this.dgvTiposCargos = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnDocenteMasAdmin = new AltoControls.AltoButton();
             this.btnDocenteSolo = new AltoControls.AltoButton();
             this.btnSuperUsuario = new AltoControls.AltoButton();
             this.btnMedico = new AltoControls.AltoButton();
+            this.lblSaludo = new System.Windows.Forms.Label();
             this.btnAdmin = new AltoControls.AltoButton();
+            this.dgvTiposCargos = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -157,42 +157,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1635, 1035);
             this.panel1.TabIndex = 17;
-            // 
-            // lblSaludo
-            // 
-            this.lblSaludo.AutoSize = true;
-            this.lblSaludo.BackColor = System.Drawing.Color.Transparent;
-            this.lblSaludo.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaludo.Location = new System.Drawing.Point(17, 14);
-            this.lblSaludo.Name = "lblSaludo";
-            this.lblSaludo.Size = new System.Drawing.Size(855, 37);
-            this.lblSaludo.TabIndex = 99;
-            this.lblSaludo.Text = "BUEN DÍA , ESPERAMOS QUE TENGAS UN EXCELENTE DÍA.";
-            this.lblSaludo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgvTiposCargos
-            // 
-            this.dgvTiposCargos.AllowUserToAddRows = false;
-            this.dgvTiposCargos.AllowUserToDeleteRows = false;
-            this.dgvTiposCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTiposCargos.Location = new System.Drawing.Point(6, 885);
-            this.dgvTiposCargos.Name = "dgvTiposCargos";
-            this.dgvTiposCargos.ReadOnly = true;
-            this.dgvTiposCargos.Size = new System.Drawing.Size(240, 150);
-            this.dgvTiposCargos.TabIndex = 18;
-            this.dgvTiposCargos.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(426, 220);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(909, 110);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "SELECCIONE CÓMO QUIERE INGRESAR\r\n A LA PLATAFORMA DE ADMINISTRACIÓN";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnDocenteMasAdmin
             // 
@@ -282,6 +247,18 @@
             this.btnMedico.Visible = false;
             this.btnMedico.Click += new System.EventHandler(this.btnMedico_Click);
             // 
+            // lblSaludo
+            // 
+            this.lblSaludo.AutoSize = true;
+            this.lblSaludo.BackColor = System.Drawing.Color.Transparent;
+            this.lblSaludo.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaludo.Location = new System.Drawing.Point(17, 14);
+            this.lblSaludo.Name = "lblSaludo";
+            this.lblSaludo.Size = new System.Drawing.Size(885, 33);
+            this.lblSaludo.TabIndex = 99;
+            this.lblSaludo.Text = "BUEN DÍA , ESPERAMOS QUE TENGAS UN EXCELENTE DÍA.";
+            this.lblSaludo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnAdmin
             // 
             this.btnAdmin.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
@@ -303,6 +280,30 @@
             this.btnAdmin.Transparency = false;
             this.btnAdmin.Visible = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // dgvTiposCargos
+            // 
+            this.dgvTiposCargos.AllowUserToAddRows = false;
+            this.dgvTiposCargos.AllowUserToDeleteRows = false;
+            this.dgvTiposCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTiposCargos.Location = new System.Drawing.Point(6, 885);
+            this.dgvTiposCargos.Name = "dgvTiposCargos";
+            this.dgvTiposCargos.ReadOnly = true;
+            this.dgvTiposCargos.Size = new System.Drawing.Size(240, 150);
+            this.dgvTiposCargos.TabIndex = 18;
+            this.dgvTiposCargos.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(426, 220);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(926, 96);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "SELECCIONE CÓMO QUIERE INGRESAR\r\n A LA PLATAFORMA DE ADMINISTRACIÓN";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // IfrmSeleccionarTipoInicio
             // 

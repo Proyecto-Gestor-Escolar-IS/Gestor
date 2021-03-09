@@ -59,16 +59,14 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void recuperarMatricula()
         {
-            ultimaMatricula = dbConn.obtenerVariableEntera("SELECT max(id_RegistroMatricula) FROM matricula");
-            if (ultimaMatricula > 0)
+            if (Convert.IsDBNull(dbConn.obtenerVariableString("SELECT max(id_RegistroMatricula) FROM matricula")))
             {
-                ultimaMatricula += 1;
+                ultimaMatricula = 1;
                 txtNoMatricula.Text = "" + ultimaMatricula;
-
             }
             else
             {
-                ultimaMatricula = 1;
+                ultimaMatricula += 1;
                 txtNoMatricula.Text = "" + ultimaMatricula;
             }
         }
@@ -92,6 +90,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             label1.Visible = false;
             btnReingreso.Visible = false;
             btnActualizarMatricula.Visible = false;
+            dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
+
+
+
         }
 
         private void txtNmbreEstudiante_TextChanged(object sender, EventArgs e)
@@ -568,6 +570,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             btnReingreso.Visible = false;
 
             btnActualizarMatricula.Visible = false;
+
+            dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
+
         }
 
         private void altoButton1_Click(object sender, EventArgs e)
@@ -861,7 +866,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             {
                 if (dbConn.PARegistrarEstudiante(mktIdentidadEstud.Text, txtprimerNombreEstud.Text,
                     txtsegundoNombreEstud.Text, txtprimerApellidoEstud.Text, txtsegundoApellidoEstud.Text,
-                    txtfechaNacimientoEstud.Text , genero))
+                    "2001/12/22", genero))
                 {
 
                     message.lblCheck.Text = "Estudiante Registrado";
@@ -1096,7 +1101,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 {
                         if (txtPrimerNombreEncarg.Text == "" && txtPrimerApellidoEncarg.Text == "" &&
                          txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" &&
-                         txtTelefonoAlternativo.Text == "" && txtDireccion.Text == "" && mskFechaNacimientoEncarg.Text == "")
+                         txtTelefonoAlternativo.Text == "" && txtDireccion.Text == "" && "2001/12/22" == "")
                         {
                             messageError.lblError.Text = "Debe llenar los campos necesarios";
                             messageError.ShowDialog();
@@ -1133,7 +1138,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 if (dbConn.PARegistroEncargado(identidadEstudiante ,mktIdentidadEncargado.Text,
                     txtPrimerNombreEncarg.Text, txtSegundoApellidoEncarg.Text, txtPrimerApellidoEncarg.Text,
                     txtSegundoApellidoEncarg.Text, txtcorreoElectronico.Text, txtprimerTelefono.Text,
-                    txtTelefonoAlternativo.Text, txtDireccion.Text, mskFechaNacimientoEncarg.Text))
+                    txtTelefonoAlternativo.Text, txtDireccion.Text, "2001/12/22"))
                 {
               
                     message.lblCheck.Text = "Encargado Registrado";
@@ -1176,6 +1181,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                   messageError.ShowDialog();
                 
             }
+        }
+
+        private void grpActualizarEstado_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 
