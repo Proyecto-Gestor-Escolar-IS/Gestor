@@ -26,35 +26,53 @@ namespace SistemaGestorEscolar.Login
         IMessageBoxCheck messageOk = new IMessageBoxCheck();
         IMessageBoxYesCancel messageYesNo = new IMessageBoxYesCancel();
         IMessageBoxWarning messageWarning = new IMessageBoxWarning();
+        string txtIdentid = "0000000000000";
 
-        private void btnSiguiente_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click_1(object sender, EventArgs e)
         {
-            string txtIdentid = txtIdentidad.Text;
             string txtNum = txtTel.Text;
             if (txtIdentid.Trim() != string.Empty && txtNombre1.Text != string.Empty && txtApellido1.Text != string.Empty && txtNum != string.Empty &&
                 txtCorreo.Text != string.Empty && txtContra.Text != string.Empty && txtConfirmContra.Text != string.Empty && txtFechaNa.Text != string.Empty && txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8)
             {
-                if (txtConfirmContra.TextLength >= 6)
+                if (utilidad.verificarCorreo(txtCorreo.Text))
                 {
-                    if (utilidad.verificarCorreo(txtCorreo.Text))
+                    if (txtConfirmContra.TextLength >= 6 && txtContra.TextLength >= 6)
                     {
-                        pnlPrincipal.Visible = false;
-                        pnlRecuperacion.Visible = true;
+                        if (txtContra.Text == txtConfirmContra.Text)
+                        {
+                            if (utilidad.isDate(txtFechaNa.Text))
+                            {
+                                pnlPrincipal.Visible = false;
+                                pnlRecuperacion.Visible = true;
+                            }
+                            else
+                            {
+                                message.lblError.Text = "INGRESE UNA FECHA VALIDA";
+                                message.lblError.Location = new Point(120, 82);
+                                message.ShowDialog();
+                            }
+
+                        }
+                        else
+                        {
+                            message.lblError.Text = "CONTRASEÑAS NO COINCIDEN";
+                            message.lblError.Location = new Point(120, 82);
+                            message.ShowDialog();
+                        }
                     }
                     else
                     {
-                        message.lblError.Text = "VERIFIQUE CORREO \n\rELECTRÓNICO";
-                        message.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                        message.lblError.Location = new Point(130, 75);
-                        message.ShowDialog();
+                        messageWarning.ShowDialog();
+                        txtContra.Focus();
                     }
                 }
                 else
                 {
-                    messageWarning.ShowDialog();
-                    txtContra.Focus();
+                    message.lblError.Text = "VERIFIQUE CORREO \n\rELECTRÓNICO";
+                    message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                    message.lblError.Location = new Point(130, 75);
+                    message.ShowDialog();
                 }
-                    
             }
             else
             {
@@ -62,32 +80,27 @@ namespace SistemaGestorEscolar.Login
                 message.lblError.Location = new Point(130, 82);
                 message.ShowDialog();
             }
-
-            
-
-        }
-
-        private void btnAtras_Click_1(object sender, EventArgs e)
-        {
-            pnlPrincipal.Visible = true;
-            pnlRecuperacion.Visible = false;
         }
 
         private void txtConfirmContra_TextChanged(object sender, EventArgs e)
         {
             if (txtContra.Text == txtConfirmContra.Text)
             {
+                btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
                 btnSiguiente.Enabled = true;
             }
             else
             {
+                btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
                 btnSiguiente.Enabled = false;
             }
         }
 
         private void frmIngresoAdmin_Load(object sender, EventArgs e)
         {
+            btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             btnSiguiente.Enabled = false;
+            txtIdentidad.Text = txtIdentid;
         }
 
         private void chkVerContras_CheckedChanged(object sender, EventArgs e)
@@ -106,7 +119,7 @@ namespace SistemaGestorEscolar.Login
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if (txtCorreoRecuperacion.Text != string.Empty && txtContraseRecuperacion.Text != string.Empty)
+            if (txtCorreoRecuperacion.Text != string.Empty && txtContraseRecuperacion.Text != string.Empty && txtHost.Text != string.Empty && txtPuerto.Text != string.Empty && utilidad.isNumeric(txtPuerto.Text))
             {
                 if (utilidad.verificarCorreo(txtCorreoRecuperacion.Text))
                 {
@@ -114,20 +127,31 @@ namespace SistemaGestorEscolar.Login
                     messageYesNo.lblError.TextAlign = ContentAlignment.MiddleCenter;
                     messageYesNo.ShowDialog();
 
-                    //DialogResult result =  MessageBox.Show("¿Ha revisado sus datos y desea continuar?", "Continuar Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if ( IMessageBoxYesCancel.isCodigoForm == true )
                     {
-                        if(utilidad.enviarCorreo("","",txtCorreoRecuperacion.Text,"",txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text) == true)
+             
+                        if(utilidad.enviarCorreo(" < h1 > VERIFICACI & Oacute; N DE CORREO ELECTR&Oacute; NICO </ h1 > ",txtCorreoRecuperacion.Text,txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text, txtHost.Text, Convert.ToInt32(txtPuerto.Text)) == true)
                         {
-                            if (dbConn.PAOperacionEmpleado(txtIdentidad.Text, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
+                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
                             txtCorreo.Text, 1, utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
                             {
-                                messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
-                                messageOk.ShowDialog();
-                                Properties.Settings.Default.correoRecu = txtCorreoRecuperacion.Text;
-                                Properties.Settings.Default.contraRecu = txtContraseRecuperacion.Text;
-                                Properties.Settings.Default.Save();
-                                this.Close();
+                                try
+                                {
+                                    dbConn.ejecutarComandoSQL("INSERT INTO informacionCorreoRecuperacion VALUES('" + txtCorreoRecuperacion.Text + "', '" + utilidad.EncriptarTexto(txtContraseRecuperacion.Text) + "' " +
+                                        ", '"+txtHost.Text+"', '"+Convert.ToInt32(txtPuerto.Text)+"')");
+                                    messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
+                                    messageOk.ShowDialog();
+                                    this.Close();
+                                }
+                                catch
+                                {
+                                    message.lblError.Text = "ERROR";
+                                    message.lblError.Location = new Point(140, 85);
+                                    message.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                                    message.ShowDialog();
+                                }
+                                
+                                
                             }
                         }
                         else
@@ -179,6 +203,12 @@ namespace SistemaGestorEscolar.Login
             {
                 btnSiguiente.Enabled = false;
             }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            pnlPrincipal.Visible = true;
+            pnlRecuperacion.Visible = false;
         }
     }
 }

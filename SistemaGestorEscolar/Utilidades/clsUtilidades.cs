@@ -1,11 +1,21 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Drawing;
-using System.IO;
+using System.Globalization;
+using MailKit.Net.Smtp;
+using MailKit;
+using MimeKit;
+using Google.Apis.Auth;
+using Google.Apis.Auth.OAuth2;
+using MailKit.Security;
+using Google.Apis.Auth.OAuth2.Flows;
+using Google.Apis.Util.Store;
+using System.Threading;
 
 namespace SistemaGestorEscolar
 {
@@ -36,7 +46,6 @@ namespace SistemaGestorEscolar
             {
                 return null;
             }
-            
         }
 
         //Se le envia una cadena a desencriptar [ENVIAR STRING]
@@ -65,7 +74,6 @@ namespace SistemaGestorEscolar
             {
                 return null;
             }
-            
         }
 
         //Se le envia un STRING y verifica que el correo ingresado cumpla el formato especifico
@@ -103,22 +111,41 @@ namespace SistemaGestorEscolar
             }
         }
 
-        public bool enviarCorreo(string mensaje, string asunto, string destinatario, string ruta, string correo, string contra)
+        public bool isDate(string fecha)
+        {
+            try
+            {
+                DateTime dt;
+                if(DateTime.TryParseExact(fecha, "dd/MM/yyyy", CultureInfo.GetCultureInfo("es-HN"), DateTimeStyles.None, out dt))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        
+        public bool enviarCorreo(string mensaje, string destinatario, string correo, string contra, string host, int port)
         {
             System.Net.Mail.MailMessage _Message = new System.Net.Mail.MailMessage();
             System.Net.Mail.SmtpClient _SMTP = new System.Net.Mail.SmtpClient();
 
             _SMTP.UseDefaultCredentials = false;
             _SMTP.Credentials = new System.Net.NetworkCredential(correo, contra);
-            //_SMTP.Credentials = new System.Net.NetworkCredential("sigua.netco@gmail.com", "Siguanet2020");
-            _SMTP.Host = "smtp.gmail.com";
-            _SMTP.Port = 587;
+            _SMTP.Host = host;
+            _SMTP.Port = port;
             _SMTP.EnableSsl = true;
 
-            //
             _Message.To.Add(destinatario.ToString());
-            _Message.From = new System.Net.Mail.MailAddress(correo, "Santa Maria de Nazareth Admin No Reply", System.Text.Encoding.UTF8);
-            _Message.Subject = asunto.ToString();
+            _Message.From = new System.Net.Mail.MailAddress(correo, "Santa Maria de Nazareth Passwords Services", System.Text.Encoding.UTF8);
+            _Message.Subject = "Recuperación de Acceso Sistema Gestor";
             _Message.SubjectEncoding = System.Text.Encoding.UTF8;
             _Message.Body = mensaje;
             _Message.BodyEncoding = System.Text.Encoding.UTF8;

@@ -124,7 +124,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             if( fecha != "" )
             {
                 DateTime f = dbConn.obtenerVariableDate("SELECT fechaPago FROM detalleMensualidades WHERE" + " id_Estudiante = '" + txtNoIdentidadEstudiante.Text + "' AND id_Mensualidad = '" + idMensualidad + "' ");
-                frmImagen.label2.Text = "Fecha de Ingreso: " + f.ToShortDateString();
+                frmImagen.label2.Text = "Fecha de Ingreso: " + f.ToString("dd/MM/yyyy");
             }
             else
             {

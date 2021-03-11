@@ -26,47 +26,9 @@ namespace SistemaGestorEscolar
             string busqueda;
             busqueda = txtBusqueda.Text;
 
-            if (Regex.IsMatch(busqueda, "^[a-zA-Z]"))
-            {
-                //Busqueda por nombre
-                busqueda = busqueda.Substring(0, 1).ToUpper() + busqueda.Substring(1).ToLower();
-                dbConn.llenarDGV(dgvListadoMedicos, "select concat(de.[primerNombre],' ', de.[segundoNombre], ' ', de.[primerApellido], ' ', de.[segundoApellido]) as 'Nombre del medico'," +
-                    "de.[identidadPersona] as 'Identidad', de.[numeroTelefono] as 'Numero teléfonico', de.[correoElectronico] as 'Correo'," +
-                    "de.[fechaNacimiento] as 'Fecha Nacimiento', de.[estadoEmpleado] as 'Estado' from[dbo].[datosEmpleados] de" +
-                    " inner join[dbo].[detalleCargos] det on de.[identidadPersona] = det.[identidadEmpleado] and det.[idCargoAsociado] = 4 and [primerNombre] = '" + busqueda + "'");
+            dbConn.llenarDGV(dgvListadoMedicos, "select concat(de.[primerNombre],' ', de.[segundoNombre], ' ', de.[primerApellido], ' ', de.[segundoApellido]) as 'Nombre del medico', de.[identidadPersona] as 'Identidad', de.[numeroTelefono] as 'Numero teléfonico', de.[correoElectronico] as 'Correo', de.[fechaNacimiento] as 'Fecha Nacimiento', de.[estadoEmpleado] as 'Estado' from[dbo].[datosEmpleados]de inner join[dbo].[detalleCargos] det on de.[identidadPersona] = det.[identidadEmpleado] where det.[idCargoAsociado] = 1 and (de.[identidadPersona] like '" + busqueda + "%' or de.[primerNombre] like '" + busqueda + "%')");
 
-                txtBusqueda.Clear();
-            }
-
-            else if ((Regex.IsMatch(busqueda, @"^\d+$")))
-            {
-                //Busqueda por identidad
-                if (Regex.IsMatch(busqueda, "[0-9]{13,13}"))
-                {
-                    dbConn.llenarDGV(dgvListadoMedicos, "select concat(de.[primerNombre],' ', de.[segundoNombre], ' ', de.[primerApellido], ' ', de.[segundoApellido]) as 'Nombre del medico'," +
-                    "de.[identidadPersona] as 'Identidad', de.[numeroTelefono] as 'Numero teléfonico', de.[correoElectronico] as 'Correo'," +
-                    "de.[fechaNacimiento] as 'Fecha Nacimiento', de.[estadoEmpleado] as 'Estado' from[dbo].[datosEmpleados] de" +
-                    " inner join[dbo].[detalleCargos] det on de.[identidadPersona] = det.[identidadEmpleado] and det.[idCargoAsociado] = 4 and [identidadPersona] =" + busqueda);
-                    txtBusqueda.Clear();
-                }
-                else
-                {
-                    string mensaje = "Ingrese correctamente los datos";
-                    string titulo = "Error";
-                    MessageBoxButtons botones = MessageBoxButtons.OK;
-                    MessageBox.Show(mensaje, titulo, botones, MessageBoxIcon.Error);
-                    txtBusqueda.Clear();
-                }
-            }
-
-            else
-            {
-                string mensaje = "Ingrese correctamente los datos";
-                string titulo = "Error";
-                MessageBoxButtons botones = MessageBoxButtons.OK;
-                MessageBox.Show(mensaje, titulo, botones, MessageBoxIcon.Error);
-                txtBusqueda.Clear();
-            }
+            txtBusqueda.Clear();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -83,6 +45,14 @@ namespace SistemaGestorEscolar
                 "de.[identidadPersona] as 'Identidad', de.[numeroTelefono] as 'Numero teléfonico', de.[correoElectronico] as 'Correo'," +
                     "de.[fechaNacimiento] as 'Fecha Nacimiento', de.[estadoEmpleado] as 'Estado' from[dbo].[datosEmpleados] de" +
                     " inner join[dbo].[detalleCargos] det on de.[identidadPersona] = det.[identidadEmpleado] and det.[idCargoAsociado] = 4");
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            string busqueda;
+            busqueda = txtBusqueda.Text;
+
+            dbConn.llenarDGV(dgvListadoMedicos, "select concat(de.[primerNombre],' ', de.[segundoNombre], ' ', de.[primerApellido], ' ', de.[segundoApellido]) as 'Nombre del medico', de.[identidadPersona] as 'Identidad', de.[numeroTelefono] as 'Numero teléfonico', de.[correoElectronico] as 'Correo', de.[fechaNacimiento] as 'Fecha Nacimiento', de.[estadoEmpleado] as 'Estado' from[dbo].[datosEmpleados]de inner join[dbo].[detalleCargos] det on de.[identidadPersona] = det.[identidadEmpleado] where det.[idCargoAsociado] = 1 and (de.[identidadPersona] like '" + busqueda + "%' or de.[primerNombre] like '" + busqueda + "%')");
         }
     }
 }

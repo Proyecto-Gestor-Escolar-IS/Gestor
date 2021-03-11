@@ -15,17 +15,22 @@ namespace SistemaGestorEscolar.Modulos_de_Arranque
             try
             {
                 DateTime ultimaFacturacion;
-                ultimaFacturacion = dbConn.obtenerVariableDate("SELECT MAX(fechaFacturacion) FROM detalleMensualidades");
 
-                if (ultimaFacturacion.Month > DateTime.Now.Month && (ultimaFacturacion.Year == DateTime.Now.Year || ultimaFacturacion.Year < DateTime.Now.Year))
+                if (dbConn.obtenerVariableString("SELECT CONVERT(VARCHAR(25), MAX(fechaFacturacion)) FROM detalleMensualidades") != "")
                 {
-                    if (dbConn.PAGeneracionPagos(DateTime.Now))
+                    MessageBox.Show("PASO 1 - GENERACION DE FACTURAS REALIZADA");
+                    ultimaFacturacion = dbConn.obtenerVariableDate("SELECT MAX(fechaFacturacion) FROM detalleMensualidades");
+
+                    if (ultimaFacturacion.Month > DateTime.Now.Month && (ultimaFacturacion.Year == DateTime.Now.Year || ultimaFacturacion.Year < DateTime.Now.Year))
                     {
-                        Console.WriteLine("Pagos Mensuales Generados");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error al Facturar");
+                        if (dbConn.PAGeneracionPagos(DateTime.Now))
+                        {
+                            Console.WriteLine("Pagos Mensuales Generados");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error al Facturar");
+                        }
                     }
                 }
             }

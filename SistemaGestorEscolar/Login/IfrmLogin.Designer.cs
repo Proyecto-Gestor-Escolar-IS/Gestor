@@ -39,12 +39,12 @@
             this.chbMostrarContra = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtdentidad = new System.Windows.Forms.TextBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtContrase = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnIngresar = new AltoControls.AltoButton();
             this.lblOlvideContra = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -183,19 +183,6 @@
             this.txtdentidad.Size = new System.Drawing.Size(310, 31);
             this.txtdentidad.TabIndex = 11;
             // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(933, 740);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(310, 61);
-            this.btnIngresar.TabIndex = 13;
-            this.btnIngresar.Text = "INGRESAR";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click_1);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -244,9 +231,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panel1.Controls.Add(this.btnIngresar);
             this.panel1.Controls.Add(this.lblOlvideContra);
             this.panel1.Controls.Add(this.txtdentidad);
-            this.panel1.Controls.Add(this.btnIngresar);
             this.panel1.Controls.Add(this.txtContrase);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -260,6 +247,27 @@
             this.panel1.Size = new System.Drawing.Size(1920, 1080);
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnIngresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnIngresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnIngresar.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold);
+            this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnIngresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnIngresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnIngresar.Location = new System.Drawing.Point(933, 742);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Radius = 20;
+            this.btnIngresar.Size = new System.Drawing.Size(310, 61);
+            this.btnIngresar.Stroke = true;
+            this.btnIngresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnIngresar.TabIndex = 19;
+            this.btnIngresar.Text = "INGRESAR";
+            this.btnIngresar.Transparency = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // lblOlvideContra
             // 
@@ -389,7 +397,6 @@
         private System.Windows.Forms.CheckBox chbMostrarContra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtdentidad;
-        private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtContrase;
         private System.Windows.Forms.Label label3;
@@ -403,5 +410,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel lblOlvideContra;
+        private AltoControls.AltoButton btnIngresar;
     }
 }

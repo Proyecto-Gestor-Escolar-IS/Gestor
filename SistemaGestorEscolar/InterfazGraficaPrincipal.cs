@@ -33,6 +33,14 @@ namespace SistemaGestorEscolar
                 panelMostrador.Visible = false;
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
+
+
+                if (clsVariablesGlobales.CodigoAcceso == 0) {
+                    btnEstudiante.Enabled = false;
+                    btnIngresarNotas.Enabled = false;
+                }
+
+
             }
             catch (Exception ex)
             {

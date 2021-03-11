@@ -30,7 +30,7 @@ namespace SistemaGestorEscolar.Login
         {
             if (mtxtIdentidad.Text != string.Empty)
             {
-                if (dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "'") != null)
+                if (dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "' AND estadoEmpleado <> 2") != null)
                 {
                     string correo = dbConn.obtenerVariableString("SELECT correoElectronico FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "'");
                     string nombre = dbConn.obtenerVariableString("SELECT CONCAT(primerNombre, ' ', segundoNombre) FROM datosEmpleados WHERE identidadPersona = '" + mtxtIdentidad.Text + "'");
@@ -38,8 +38,22 @@ namespace SistemaGestorEscolar.Login
                     string corr = correo.Substring(0, 5);
                     rtxtHtml.Text = rtxtHtml.Text.Replace("@contra", " " + contra);
                     rtxtHtml.Text = rtxtHtml.Text.Replace("@nombre", " " + nombre);
-                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, asunto: "Recuperación de Contraseña", destinatario: correo, ruta: "", 
-                        Properties.Settings.Default.correoRecu, Properties.Settings.Default.contraRecu))
+                    string correoRecu = "";
+                    string contraRecu = "";
+                    string host = "";
+                    int port = 0;
+                    try
+                    {
+                        correoRecu = dbConn.obtenerVariableString("SELECT TOP 1 correo FROM informacionCorreoRecuperacion");
+                        contraRecu = utilidad.DesEncriptar(dbConn.obtenerVariableString("SELECT TOP 1 contra FROM informacionCorreoRecuperacion"));
+                        host = dbConn.obtenerVariableString("SELECT TOP 1 host FROM informacionCorreoRecuperacion");
+                        port = dbConn.obtenerVariableEntera("SELECT TOP 1 puerto FROM informacionCorreoRecuperacion");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("ERROR AL OBTENER CREDENCIALES DE RECUPERACION");
+                    }
+                    if (utilidad.enviarCorreo(mensaje: rtxtHtml.Text, destinatario: correo, correoRecu, contraRecu, host, port))
                     {
                         MessageBox.Show("Revise la bandeja de entrada, spam de su correo: " + corr + "********", "Recuperacion de Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
