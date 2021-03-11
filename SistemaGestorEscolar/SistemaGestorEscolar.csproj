@@ -141,6 +141,12 @@
     <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.Designer.cs">
       <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo Historial Cursos\IHistorialCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo Historial Cursos\IHistorialCursos.Designer.cs">
+      <DependentUpon>IHistorialCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulo Historial Medico\Historial medico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,6 +376,9 @@
     <Compile Include="Utilidades\clsVariablesGlobales.cs" />
     <EmbeddedResource Include="IRegistroPago.resx">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo Historial Cursos\IHistorialCursos.resx">
+      <DependentUpon>IHistorialCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos de Empleados\IFrmGestionEmpleados.resx">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
