@@ -31,13 +31,14 @@ namespace SistemaGestorEscolar
             {
                 actualizarModulos.verificarFecha();
                 panelMostrador.Visible = false;
+                panSubMenuPersonal.Visible = false;
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
 
 
                 if (clsVariablesGlobales.CodigoAcceso == 0) {
-                    btnEstudiante.Enabled = false;
-                    btnIngresarNotas.Enabled = false;
+                    btnEstudiante.Enabled = true;
+                    btnIngresarNotas.Enabled = true;
                 }
 
 
@@ -651,6 +652,41 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+        }
+
+        private void btnRegistrarVisitaMedica_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistrarVisitaMedica_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuEstudiante.Visible = false;
+            panSubMenuEstudiante.Dock = DockStyle.None;
+            AbrirFormulario<IRegistroVisitaMedica>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
+
+        private void btnEstudiante_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEstudiante_MouseDown(object sender, MouseEventArgs e)
+        {
+            panSubMenuEstudiante.Visible = true;
+            panSubMenuEstudiante.Dock = DockStyle.Fill;
+            ocultarBotones();
         }
     }
 }
