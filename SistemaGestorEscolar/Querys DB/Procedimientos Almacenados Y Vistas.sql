@@ -285,7 +285,7 @@ GO
 
 
 --Procedimiento almacenado para registrar un encargado 
-create procedure RegistrarEncargado
+Alter procedure RegistrarEncargado
 (
 @NumidentidadEstudiante varchar(13), @Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
 @segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),
@@ -293,11 +293,19 @@ create procedure RegistrarEncargado
 )
 AS
 BEGIN
-if not exists(select identidadEncargado from datosEncargado where identidadEncargado = @Numidentidad)
+if exists(select estado from datosEncargado where identidadEncargado = @Numidentidad and estado = 2)
 begin
-INSERT INTO datosEncargado VALUES(@Numidentidad, @primerNombre, @segundoNombre, @primerApellido, @segundoApellido, @numeroTelefono, @numeroTelefonoAlt,
-@correoElectronico, @direccionTrabajo, @fechaNacimiento, 1);
+	update datosEncargado 
+	set primerNombre = @PrimerNombre, segundoNombre = @segundoNombre, primerApellido = @PrimerApellido, segundoApellido = @SegundoApellido,
+	correoElectronico = @correoElectronico, numeroTelefono = @numeroTelefono, numeroTelefonoAlt = @numeroTelefonoAlt, direccionTrabajo = @direccionTrabajo, estado = 1
+	where identidadEncargado = @Numidentidad
 end
+else if not exists(select identidadEncargado from datosEncargado where identidadEncargado = @Numidentidad)
+begin
+	INSERT INTO datosEncargado VALUES(@Numidentidad, @primerNombre, @segundoNombre, @primerApellido, @segundoApellido, @numeroTelefono, @numeroTelefonoAlt,
+	@correoElectronico, @direccionTrabajo, @fechaNacimiento, 1);
+end
+
 
 INSERT INTO detalleEncargado VALUES(@Numidentidad, @NumidentidadEstudiante);
 
@@ -380,4 +388,5 @@ BEGIN
 	set primerNombre = @PrimerNombre, segundoNombre = @segundoNombre, primerApellido = @PrimerApellido, segundoApellido = @SegundoApellido
 	where identidadEstudiante = @identidadEstudiante
 END
+GO
 
