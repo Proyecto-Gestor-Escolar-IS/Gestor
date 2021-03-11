@@ -560,7 +560,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 dbConn.llenarTextBox(txtCorreoRecuperacion, "SELECT TOP 1 correo FROM informacionCorreoRecuperacion");
                 txtContraseRecuperacion.Text = contra;
                 dbConn.llenarTextBox(txtHost, "SELECT TOP 1 host FROM informacionCorreoRecuperacion");
-                txtPuerto.Text = dbConn.obtenerVariableEntera("SELECT TOP 1 port FROM informacionCorreoRecuperacion").ToString();
+                txtPuerto.Text = dbConn.obtenerVariableEntera("SELECT TOP 1 puerto FROM informacionCorreoRecuperacion").ToString();
             }
         }
 
@@ -583,7 +583,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             txtActMail.Text, 1, utilidades.EncriptarTexto(txtActConfContra.Text), 1, -1, 2))
                             {
                                 dbConn.ejecutarComandoSQL("UPDATE informacionCorreoRecuperacion SET correo = '" + txtCorreoRecuperacion.Text + "', contra = '" + utilidades.EncriptarTexto(txtContraseRecuperacion.Text) + "' " +
-                                    ", host = '"+txtHost.Text+"', port = '"+Convert.ToInt32(txtPuerto.Text)+"' ");
+                                    ", host = '"+txtHost.Text+"', puerto = '"+Convert.ToInt32(txtPuerto.Text)+"' ");
                                 messageOk.lblCheck.Text = "ACTUALIZADO CORRECTAMENTE";
                                 messageOk.ShowDialog();
                                 pnlRecuperacion.Visible = false;
