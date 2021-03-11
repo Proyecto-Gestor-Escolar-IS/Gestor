@@ -402,7 +402,7 @@ namespace SistemaGestorEscolar
             this.btnIngresarNotas.BorderWidth = 4F;
             this.btnIngresarNotas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
             this.btnIngresarNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnIngresarNotas.Location = new System.Drawing.Point(1183, 478);
+            this.btnIngresarNotas.Location = new System.Drawing.Point(1183, 462);
             this.btnIngresarNotas.Name = "btnIngresarNotas";
             this.btnIngresarNotas.Size = new System.Drawing.Size(353, 155);
             this.btnIngresarNotas.TabIndex = 45;
