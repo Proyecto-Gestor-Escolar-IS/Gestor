@@ -84,10 +84,10 @@ namespace SistemaGestorEscolar
             // txtNombreEstudiante
             // 
             this.txtNombreEstudiante.Enabled = false;
-            this.txtNombreEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreEstudiante.Location = new System.Drawing.Point(475, 217);
             this.txtNombreEstudiante.Name = "txtNombreEstudiante";
-            this.txtNombreEstudiante.Size = new System.Drawing.Size(380, 28);
+            this.txtNombreEstudiante.Size = new System.Drawing.Size(380, 31);
             this.txtNombreEstudiante.TabIndex = 17;
             this.txtNombreEstudiante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNombreEstudiante.TextChanged += new System.EventHandler(this.txtNombreEstudiantetxtNombreEstudiante_TextChanged);
@@ -146,10 +146,10 @@ namespace SistemaGestorEscolar
             // txtNoExpediente
             // 
             this.txtNoExpediente.Enabled = false;
-            this.txtNoExpediente.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoExpediente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoExpediente.Location = new System.Drawing.Point(1267, 156);
             this.txtNoExpediente.Name = "txtNoExpediente";
-            this.txtNoExpediente.Size = new System.Drawing.Size(191, 28);
+            this.txtNoExpediente.Size = new System.Drawing.Size(209, 31);
             this.txtNoExpediente.TabIndex = 23;
             this.txtNoExpediente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNoExpediente.TextChanged += new System.EventHandler(this.txtNoExpediente_TextChanged);
@@ -157,10 +157,10 @@ namespace SistemaGestorEscolar
             // txtFechaRegistro
             // 
             this.txtFechaRegistro.Enabled = false;
-            this.txtFechaRegistro.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaRegistro.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaRegistro.Location = new System.Drawing.Point(1267, 217);
             this.txtFechaRegistro.Name = "txtFechaRegistro";
-            this.txtFechaRegistro.Size = new System.Drawing.Size(191, 28);
+            this.txtFechaRegistro.Size = new System.Drawing.Size(209, 31);
             this.txtFechaRegistro.TabIndex = 24;
             this.txtFechaRegistro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -168,10 +168,10 @@ namespace SistemaGestorEscolar
             // 
             this.txtSintomas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.txtSintomas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSintomas.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSintomas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSintomas.Location = new System.Drawing.Point(475, 341);
             this.txtSintomas.Name = "txtSintomas";
-            this.txtSintomas.Size = new System.Drawing.Size(913, 21);
+            this.txtSintomas.Size = new System.Drawing.Size(913, 24);
             this.txtSintomas.TabIndex = 25;
             this.txtSintomas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSintomas.TextChanged += new System.EventHandler(this.txtSintomas_TextChanged);
@@ -180,10 +180,10 @@ namespace SistemaGestorEscolar
             // 
             this.txtPosibleEnfermedad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.txtPosibleEnfermedad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPosibleEnfermedad.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosibleEnfermedad.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPosibleEnfermedad.Location = new System.Drawing.Point(475, 403);
             this.txtPosibleEnfermedad.Name = "txtPosibleEnfermedad";
-            this.txtPosibleEnfermedad.Size = new System.Drawing.Size(605, 21);
+            this.txtPosibleEnfermedad.Size = new System.Drawing.Size(605, 24);
             this.txtPosibleEnfermedad.TabIndex = 26;
             this.txtPosibleEnfermedad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -191,10 +191,10 @@ namespace SistemaGestorEscolar
             // 
             this.txtMedicamentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.txtMedicamentos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMedicamentos.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedicamentos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMedicamentos.Location = new System.Drawing.Point(475, 469);
             this.txtMedicamentos.Name = "txtMedicamentos";
-            this.txtMedicamentos.Size = new System.Drawing.Size(605, 21);
+            this.txtMedicamentos.Size = new System.Drawing.Size(605, 24);
             this.txtMedicamentos.TabIndex = 27;
             this.txtMedicamentos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMedicamentos.TextChanged += new System.EventHandler(this.txtMedicamentos_TextChanged);
@@ -216,6 +216,7 @@ namespace SistemaGestorEscolar
             // 
             // dgvHistorialMedico
             // 
+            this.dgvHistorialMedico.AllowUserToAddRows = false;
             this.dgvHistorialMedico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistorialMedico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.dgvHistorialMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -289,10 +290,10 @@ namespace SistemaGestorEscolar
             // 
             // txtNumeroIdentidad
             // 
-            this.txtNumeroIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroIdentidad.Location = new System.Drawing.Point(475, 159);
             this.txtNumeroIdentidad.Name = "txtNumeroIdentidad";
-            this.txtNumeroIdentidad.Size = new System.Drawing.Size(288, 28);
+            this.txtNumeroIdentidad.Size = new System.Drawing.Size(309, 31);
             this.txtNumeroIdentidad.TabIndex = 35;
             this.txtNumeroIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNumeroIdentidad.TextChanged += new System.EventHandler(this.txtNumeroIdentidad_TextChanged_1);
@@ -311,11 +312,11 @@ namespace SistemaGestorEscolar
             // cmbMedicos
             // 
             this.cmbMedicos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMedicos.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMedicos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMedicos.FormattingEnabled = true;
-            this.cmbMedicos.Location = new System.Drawing.Point(475, 278);
+            this.cmbMedicos.Location = new System.Drawing.Point(475, 279);
             this.cmbMedicos.Name = "cmbMedicos";
-            this.cmbMedicos.Size = new System.Drawing.Size(288, 29);
+            this.cmbMedicos.Size = new System.Drawing.Size(309, 32);
             this.cmbMedicos.TabIndex = 37;
             this.cmbMedicos.SelectedIndexChanged += new System.EventHandler(this.cmbMedicos_SelectedIndexChanged);
             // 

@@ -19,6 +19,7 @@ namespace SistemaGestorEscolar
 
         IMessageBoxCheck messageOk = new IMessageBoxCheck();
         IMessageBoxError message = new IMessageBoxError();
+        IMessageBoxWarning messageWarning = new IMessageBoxWarning();
         databaseConnection dbConn = new databaseConnection();
         private string identidadMedico;
 
@@ -37,9 +38,9 @@ namespace SistemaGestorEscolar
         {
             limpiarPantalla();
             txtFechaRegistro.Text = DateTime.Now.ToString();
-            cmbMedicos.Items.Clear();
             txtNumeroIdentidad.Clear();
-           
+            cmbMedicos.SelectedIndex = 0;
+
         }
 
         private void IRegistroVisitaMedica_Load(object sender, EventArgs e)
@@ -153,6 +154,7 @@ namespace SistemaGestorEscolar
 
                     {
                         messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
+                        messageOk.lblCheck.Location = new Point(120, 75);
                         messageOk.ShowDialog();
                         dbConn.llenarDGV(dgvHistorialMedico, "SELECT id_detalleExpediente AS 'No.DetalleExpediente', id_expediente AS 'No.Expediente', CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', fecha AS 'Fecha', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
 
@@ -165,8 +167,10 @@ namespace SistemaGestorEscolar
                 }
                 else
                 {
-                    message.lblError.Text = "OH NO ";
-                    message.ShowDialog();
+
+                    messageWarning.lblError.Text = "VERIFIQUE QUE TODOS \r\nLOS CAMPOS ESTEN LLENOS";
+                    messageWarning.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                    messageWarning.ShowDialog();
 
                 }
                     
