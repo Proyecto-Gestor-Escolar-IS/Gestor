@@ -217,7 +217,10 @@ namespace SistemaGestorEscolar
             // dgvHistorialMedico
             // 
             this.dgvHistorialMedico.AllowUserToAddRows = false;
-            this.dgvHistorialMedico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistorialMedico.AllowUserToDeleteRows = false;
+            this.dgvHistorialMedico.AllowUserToOrderColumns = true;
+            this.dgvHistorialMedico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHistorialMedico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dgvHistorialMedico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.dgvHistorialMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -237,10 +240,10 @@ namespace SistemaGestorEscolar
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHistorialMedico.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvHistorialMedico.Location = new System.Drawing.Point(216, 665);
+            this.dgvHistorialMedico.Location = new System.Drawing.Point(76, 665);
             this.dgvHistorialMedico.Name = "dgvHistorialMedico";
             this.dgvHistorialMedico.ReadOnly = true;
-            this.dgvHistorialMedico.Size = new System.Drawing.Size(1197, 336);
+            this.dgvHistorialMedico.Size = new System.Drawing.Size(1481, 336);
             this.dgvHistorialMedico.TabIndex = 29;
             // 
             // label8

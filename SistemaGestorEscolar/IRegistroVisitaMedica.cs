@@ -108,7 +108,7 @@ namespace SistemaGestorEscolar
                             {
                                 dbConn.llenarTextBox(txtNombreEstudiante, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = " + txtNumeroIdentidad.Text);
                                 dbConn.llenarTextBox(txtNoExpediente, "SELECT id_expediente FROM expedienteMedico WHERE id_Estudiante = " + txtNumeroIdentidad.Text);
-                                dbConn.llenarDGV(dgvHistorialMedico, "SELECT id_detalleExpediente AS 'No.DetalleExpediente', id_expediente AS 'No.Expediente', CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', fecha AS 'Fecha', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
+                                dbConn.llenarDGV(dgvHistorialMedico, "SELECT fecha AS 'Fecha',  CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
                             }
                             else
                             {
