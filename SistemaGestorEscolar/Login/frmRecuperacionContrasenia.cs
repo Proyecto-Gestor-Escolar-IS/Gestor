@@ -47,7 +47,7 @@ namespace SistemaGestorEscolar.Login
                         correoRecu = dbConn.obtenerVariableString("SELECT TOP 1 correo FROM informacionCorreoRecuperacion");
                         contraRecu = utilidad.DesEncriptar(dbConn.obtenerVariableString("SELECT TOP 1 contra FROM informacionCorreoRecuperacion"));
                         host = dbConn.obtenerVariableString("SELECT TOP 1 host FROM informacionCorreoRecuperacion");
-                        port = dbConn.obtenerVariableEntera("SELECT TOP 1 port FROM informacionCorreoRecuperacion");
+                        port = dbConn.obtenerVariableEntera("SELECT TOP 1 puerto FROM informacionCorreoRecuperacion");
                     }
                     catch
                     {

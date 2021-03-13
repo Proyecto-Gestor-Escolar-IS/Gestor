@@ -149,12 +149,12 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void limpiarPantalla()
         {
-            txtIdentidad.Clear();
-            txtprimerNombre.Clear();
-            txtsegundoNombre.Clear();
-            txtprimerApellido.Clear();
-            txtsegundoApellido.Clear();
-            txtfechaNacimiento.Clear();
+            txtIdentidadEstud.Clear();
+            txtprimerNombreEstud.Clear();
+            txtsegundoNombreEstud.Clear();
+            txtprimerApellidoEstud.Clear();
+            txtsegundoApellidoEstud.Clear();
+            txtfechaNacimientoEstud.Clear();
             cmbgeneroEstudiante.SelectedItem = -1;
 
 
@@ -207,7 +207,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             try
             {
-                if (dbConn.PAActualizarEstudiante(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text))
+                if (dbConn.PAActualizarEstudiante(txtIdentidadEstud.Text, txtprimerNombreEstud.Text, txtsegundoNombreEstud.Text, txtprimerApellidoEstud.Text, txtsegundoApellidoEstud.Text))
                 {
                     MessageBox.Show("Estudiante Actualizado Exitosamente", "Actualización Realizada", MessageBoxButtons.OK);
                     limpiarPantalla();
@@ -231,15 +231,15 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
            string fechaNacimiento;
 
 
-            if (dbConn.ComprobarExistencia("select estado from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "'"))
+            if (dbConn.ComprobarExistencia("select estado from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'"))
             {
-                txtprimerNombre.Text = dbConn.obtenerVariableString("select primerNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "' and estado = 1");
-                txtsegundoNombre.Text = dbConn.obtenerVariableString("select segundoNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "' and estado = 1");
-                txtprimerApellido.Text = dbConn.obtenerVariableString("select primerApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "' and estado = 1");
-                txtsegundoApellido.Text = dbConn.obtenerVariableString("select segundoApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "' and estado = 1");
-                fechaNacimiento = dbConn.obtenerVariableString("select fechaNacimiento from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "' and estado = 1");
-               cmbgeneroEstudiante.SelectedItem = dbConn.obtenerVariableString("select genero from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "' and estado = 1");
-                txtfechaNacimiento.Text = fechaNacimiento;
+                txtprimerNombreEstud.Text = dbConn.obtenerVariableString("select primerNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "' and estado = 1");
+                txtsegundoNombreEstud.Text = dbConn.obtenerVariableString("select segundoNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "' and estado = 1");
+                txtprimerApellidoEstud.Text = dbConn.obtenerVariableString("select primerApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "' and estado = 1");
+                txtsegundoApellidoEstud.Text = dbConn.obtenerVariableString("select segundoApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "' and estado = 1");
+                fechaNacimiento = dbConn.obtenerVariableString("select fechaNacimiento from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "' and estado = 1");
+               cmbgeneroEstudiante.SelectedItem = dbConn.obtenerVariableString("select genero from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "' and estado = 1");
+                txtfechaNacimientoEstud.Text = fechaNacimiento;
                 //MessageBox.Show( estado, "Error Inesperado", MessageBoxButtons.OK);
 
                 MessageBox.Show("Estudiante Encontrado Exitosamente", "Buscar Realizado", MessageBoxButtons.OK);
@@ -252,9 +252,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         public void EliminarEstudiante()
         {
-            if (dbConn.ComprobarExistencia("select estado from datosEstudiante where identidadEstudiante = '" + txtIdentidad.Text + "'"))
+            if (dbConn.ComprobarExistencia("select estado from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'"))
             {
-                dbConn.ejecutarComandoSQL("update datosEstudiante set estado = 0 where identidadEstudiante = '" + txtIdentidad.Text + "'");
+                dbConn.ejecutarComandoSQL("update datosEstudiante set estado = 0 where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
 
                 MessageBox.Show("Estudiante Eliminado Exitosamente", "Eliminar Realizado", MessageBoxButtons.OK);
             }
@@ -270,33 +270,33 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             long number = 0;
             try
             {
-                if (txtIdentidad.Text != String.Empty)
+                if (txtIdentidadEstud.Text != String.Empty)
                 {
-                    txtIdentidad.ForeColor = Color.Black;
+                    txtIdentidadEstud.ForeColor = Color.Black;
                     errorIdentidad.Clear();
-                    if (long.TryParse(txtIdentidad.Text, out number))
+                    if (long.TryParse(txtIdentidadEstud.Text, out number))
                     {
-                        txtIdentidad.ForeColor = Color.Black;
+                        txtIdentidadEstud.ForeColor = Color.Black;
                         errorIdentidad.Clear();
 
-                        if (txtIdentidad.TextLength == 13)
+                        if (txtIdentidadEstud.TextLength == 13)
                         {
-                            txtIdentidad.ForeColor = Color.Green;
+                            txtIdentidadEstud.ForeColor = Color.Green;
                             errorIdentidad.Clear();
 
 
                         }
-                        else if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
+                        else if (txtIdentidadEstud.TextLength > 13 || txtIdentidadEstud.TextLength < 13)
                         {
-                            txtIdentidad.ForeColor = Color.Red;
-                            errorIdentidad.SetError(this.txtIdentidad, "El numero de Identidad no es Correcto!");
+                            txtIdentidadEstud.ForeColor = Color.Red;
+                            errorIdentidad.SetError(this.txtIdentidadEstud, "El numero de Identidad no es Correcto!");
 
                         }
                     }
                     else
                     {
-                        txtIdentidad.ForeColor = Color.Red;
-                        errorIdentidad.SetError(this.txtIdentidad, "Solo se Permiten Numeros!");
+                        txtIdentidadEstud.ForeColor = Color.Red;
+                        errorIdentidad.SetError(this.txtIdentidadEstud, "Solo se Permiten Numeros!");
                     }
                 }
                 else

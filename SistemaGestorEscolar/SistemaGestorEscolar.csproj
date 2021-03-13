@@ -208,11 +208,23 @@
     <Compile Include="Modulos Estudiante\IMatriculaIndividual.Designer.cs">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos Estudiante\IVistaFichaEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\IVistaFichaEstudiante.designer.cs">
+      <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.Designer.cs">
       <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Alumnos_CursoSeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\Alumnos_CursoSeccion.Designer.cs">
+      <DependentUpon>Alumnos_CursoSeccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.cs">
       <SubType>Form</SubType>
@@ -368,6 +380,9 @@
     <EmbeddedResource Include="Modulos Estudiante\IMatriculaIndividual.resx">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\IVistaFichaEstudiante.resx">
+      <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.resx">
       <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,6 +480,9 @@
     <EmbeddedResource Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.resx">
       <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registro y Vista de Notas\Alumnos_CursoSeccion.resx">
+      <DependentUpon>Alumnos_CursoSeccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmCuadro de Notas.resx">
       <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,6 +543,8 @@
     <None Include="Resources\button2.png" />
     <None Include="Resources\buttonHoover.png" />
     <None Include="Resources\buscarIcono.png" />
+    <Content Include="Querys DB\ModeloBaseDeDatos.sql" />
+    <Content Include="Querys DB\Procedimientos Almacenados Y Vistas.sql" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>
