@@ -75,12 +75,14 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 if (dbConn.PAActualizarEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtCorreoElectronico.Text, txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text))
                 {
-                    MessageBox.Show("Encargado Actualizado Exitosamente", "Actualización Realizada", MessageBoxButtons.OK);
+                    message.lblCheck.Text = "ENCARGADO ACTUALIZADO";
+                    message.ShowDialog();
                     limpiarPantalla();
                 }
                 else
                 {
-                    MessageBox.Show("Error al Actualizar el Encargado", "Error Inesperado", MessageBoxButtons.OK);
+                    messageError.lblError.Text = "ERROR AL ACTUALIZAR";
+                    messageError.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -92,56 +94,19 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         }
 
 
-        public void BuscarEncargado()
-        {
-            CultureInfo Culture = new CultureInfo("es-ES");
-            string fechaNacimiento;
-
-
-
-
-
-
-
-
-
-
-
-
-            if (dbConn.ComprobarExistencia("select estado from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'"))
-            {
-                txtprimerNombre.Text = dbConn.obtenerVariableString("select primerNombre from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                txtsegundoNombre.Text = dbConn.obtenerVariableString("select segundoNombre from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                txtprimerApellido.Text = dbConn.obtenerVariableString("select primerApellido from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                txtsegundoApellido.Text = dbConn.obtenerVariableString("select segundoApellido from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                txtCorreoElectronico.Text = dbConn.obtenerVariableString("select correoElectronico from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                txtprimerTelefono.Text = dbConn.obtenerVariableString("select numeroTelefono from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                txtsegundoTelefono.Text = dbConn.obtenerVariableString("select numeroTelefonoAlt from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                txtDireccion.Text = dbConn.obtenerVariableString("select direccionTrabajo from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-                fechaNacimiento = dbConn.obtenerVariableString("select fechaNacimiento from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "' and estado = 1");
-
-                txtfechaNacimiento.Text = fechaNacimiento;
-                //MessageBox.Show( estado, "Error Inesperado", MessageBoxButtons.OK);
-
-                MessageBox.Show("Encargado Encontrado Exitosamente", "Buscar Realizado", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("Encargado no encontrado", "Error Inesperado", MessageBoxButtons.OK);
-            }
-        }
-
         public void EliminarEncargado()
         {
             if (dbConn.ComprobarExistencia("select estado from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'"))
             {
                 dbConn.ejecutarComandoSQL("update datosEncargado set estado = 0 where identidadEncargado = '" + txtIdentidad.Text + "'");
 
-                MessageBox.Show("Encargado Eliminado Exitosamente", "Eliminar Realizado", MessageBoxButtons.OK);
+                message.lblCheck.Text = "ENCARGADO ELIMINADO";
+                messageError.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Encargado no encontrado", "Error Inesperado", MessageBoxButtons.OK);
+                 messageError.lblError.Text = "ENCARGADO NO ENCONTRADO";
+                 messageError.ShowDialog();
             }
         }
 
@@ -149,7 +114,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el primer nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog();
                 e.Handled = true;
                 return;
             }
@@ -164,7 +130,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el segundo nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog();
                 e.Handled = true;
                 return;
             }
@@ -174,7 +141,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el primer apellido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog();
                 e.Handled = true;
                 return;
             }
@@ -184,7 +152,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el segundo apellido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog();
                 e.Handled = true;
                 return;
             }
@@ -194,7 +163,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el numero de teléfono", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog();
                 e.Handled = true;
                 return;
             }
@@ -204,7 +174,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el numero de teléfono", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog();
                 e.Handled = true;
                 return;
             }
@@ -273,7 +244,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
                 {
-                    MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
+                    messageError.lblError.Text = "INGRESE CORRECTAMENTE LA IDENTIDAD";
+                    messageError.ShowDialog();
                     limpiarPantalla();
                 }
                 else
@@ -282,7 +254,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                     if (txtprimerNombre.Text == "" || txtsegundoNombre.Text == "" || txtprimerApellido.Text == "" || txtsegundoApellido.Text == "" ||
                                        txtCorreoElectronico.Text == "" || txtprimerTelefono.Text == "" || txtsegundoTelefono.Text == "" || txtDireccion.Text == "")
                     {
-                        MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
+                   
+                        messageError.lblError.Text = "LLENE LOS CAMPOS SOLICITADOS";
+                        messageError.ShowDialog();
                     }
                     else
                     {
@@ -303,7 +277,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
                 {
-                    MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
+                    messageError.lblError.Text = "INGRESE CORRECTAMENTE LA IDENTIDAD";
+                    messageError.ShowDialog();
                     limpiarPantalla();
                 }
                 else
@@ -433,7 +408,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
                 {
-                    MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
+                    messageError.lblError.Text = "INGRESE CORRECTAMENTE LA IDENTIDAD";
+                    messageError.ShowDialog();
                     limpiarPantalla();
                 }
                 else
@@ -441,8 +417,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                     if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
                           txtfechaNacimiento.Text == "")
                         {
-                            MessageBox.Show("Debe llenar todos los campos necesarios", "Error Inesperado", MessageBoxButtons.OK);
-                        }
+                        messageError.lblError.Text = "INGRESE TODOS LOS DATOS NECESARIOS";
+                        messageError.ShowDialog();
+                    }
                         else
                         {
                         ActualizarEstudiante();
@@ -463,12 +440,14 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 if (dbConn.PAActualizarEstudiante(txtIdentidadEstud.Text, txtprimerNombreEstud.Text, txtsegundoNombreEstud.Text, txtprimerApellidoEstud.Text, txtsegundoApellidoEstud.Text))
                 {
-                    MessageBox.Show("Estudiante Actualizado Exitosamente", "Actualización Realizada", MessageBoxButtons.OK);
+                    message.lblCheck.Text = "ESTUDIANTE ACTUALIZADO";
+                    message.ShowDialog();
                     limpiarPantalla();
                 }
                 else
                 {
-                    MessageBox.Show("Error al Actualizar el Estudiante", "Error Inesperado", MessageBoxButtons.OK);
+                    messageError.lblError.Text = "ERROR AL ACTUALIZAR";
+                    messageError.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -483,7 +462,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
                 {
-                    MessageBox.Show("Ingrese un numero de Identidad Correcta", "Error Inesperado", MessageBoxButtons.OK);
+
+                    messageError.lblError.Text = "INGRESE CORRECTAMENTE LA IDENTIDAD";
+                    messageError.ShowDialog(); 
                     limpiarPantalla();
                 }
                 else
@@ -503,11 +484,13 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 dbConn.ejecutarComandoSQL("update datosEstudiante set estado = 0 where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
 
-                MessageBox.Show("Estudiante Eliminado Exitosamente", "Eliminar Realizado", MessageBoxButtons.OK);
+                message.lblCheck.Text = "ESTUDIANTE ELIMINADO";
+                message.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Estudiante no encontrado", "Error Inesperado", MessageBoxButtons.OK);
+                messageError.lblError.Text = "ESTUDIANTE NO ENCONTRADO";
+                messageError.ShowDialog();
             }
         }
 
@@ -515,7 +498,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el numero de Identidad", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog();
                 e.Handled = true;
                 return;
             }
@@ -525,7 +509,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el primer nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog(); 
                 e.Handled = true;
                 return;
             }
@@ -535,7 +520,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el segundo nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog(); 
                 e.Handled = true;
                 return;
             }
@@ -545,7 +531,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el primer apellido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog(); 
                 e.Handled = true;
                 return;
             }
@@ -555,7 +542,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-                MessageBox.Show("Ingrese correctamente el segundo apellido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+                messageError.ShowDialog(); 
                 e.Handled = true;
                 return;
             }
