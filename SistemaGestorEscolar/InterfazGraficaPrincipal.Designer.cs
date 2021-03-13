@@ -409,6 +409,7 @@ namespace SistemaGestorEscolar
             this.btnIngresarNotas.TabIndex = 45;
             this.btnIngresarNotas.Text = "INGRESAR NOTAS";
             this.btnIngresarNotas.UseVisualStyleBackColor = false;
+            this.btnIngresarNotas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarNotas_MouseDown);
             // 
             // btnPagos
             // 
@@ -449,6 +450,7 @@ namespace SistemaGestorEscolar
             this.btnCursos.TabIndex = 42;
             this.btnCursos.Text = "CURSOS";
             this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCursos_MouseDown);
             // 
             // btnVistaMatriculas
             // 
@@ -513,6 +515,7 @@ namespace SistemaGestorEscolar
             this.btnFichaEstudiante.TabIndex = 30;
             this.btnFichaEstudiante.Text = "FICHA DE ESTUDIANTE";
             this.btnFichaEstudiante.UseVisualStyleBackColor = false;
+            this.btnFichaEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFichaEstudiante_MouseDown);
             // 
             // btnRegistrarVisitaMedica
             // 
