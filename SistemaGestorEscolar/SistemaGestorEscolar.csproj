@@ -208,6 +208,12 @@
     <Compile Include="Modulos Estudiante\IMatriculaIndividual.Designer.cs">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos Estudiante\IVistaFichaEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\IVistaFichaEstudiante.designer.cs">
+      <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\IMatriculaIndividual.resx">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\IVistaFichaEstudiante.resx">
+      <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.resx">
       <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
