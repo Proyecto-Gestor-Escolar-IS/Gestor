@@ -72,6 +72,23 @@
     <Reference Include="MailKit, Version=2.10.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.2.10.1\lib\net47\MailKit.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\ENTERPRISE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\SSAS\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="MimeKit, Version=2.10.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
       <HintPath>..\packages\MimeKit.2.10.1\lib\net47\MimeKit.dll</HintPath>
     </Reference>
@@ -85,6 +102,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -245,9 +263,21 @@
     <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporte Estudiante\DataSetEstudiantes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte Estudiante\RepoteEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte Estudiante\RepoteEstudiantes.Designer.cs">
+      <DependentUpon>RepoteEstudiantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.cs">
@@ -492,6 +522,10 @@
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte Estudiante\ReportEstudiante.rdlc" />
+    <EmbeddedResource Include="Reporte Estudiante\RepoteEstudiantes.resx">
+      <DependentUpon>RepoteEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -507,6 +541,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reporte Estudiante\DataSetEstudiantes.xsc">
+      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
+    </None>
+    <None Include="Reporte Estudiante\DataSetEstudiantes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEstudiantes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reporte Estudiante\DataSetEstudiantes.xss">
+      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
+    </None>
     <None Include="Resources\logohd.png" />
   </ItemGroup>
   <ItemGroup>
@@ -522,6 +567,19 @@
     <None Include="Resources\Logo Nazaret.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Usuario.png" />
     <None Include="Resources\iconBackResized2.png" />
     <None Include="Resources\iconCursosResized2.png" />
