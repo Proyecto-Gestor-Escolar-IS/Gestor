@@ -46,8 +46,8 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         }
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El curso es: " + cursoElegido);
-            MessageBox.Show("La Seccion es: " + seccionElegida);
+            //MessageBox.Show("El curso es: " + cursoElegido);
+            //MessageBox.Show("La Seccion es: " + seccionElegida);
 
             Registro_y_Vista_de_Notas.Herencia_de_Variables.CursoG = cmbCursos.Text;
             Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG = cmbSeccion.Text;

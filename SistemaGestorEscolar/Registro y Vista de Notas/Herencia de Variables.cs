@@ -10,5 +10,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
     {
         public static string CursoG;
         public static string SeccionG;
+        public static string identidadG;
     }
 }
