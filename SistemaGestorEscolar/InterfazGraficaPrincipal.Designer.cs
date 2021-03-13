@@ -328,7 +328,6 @@ namespace SistemaGestorEscolar
             // btnIngresarNuevoUsuario
             // 
             this.btnIngresarNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnIngresarNuevoUsuario.Enabled = false;
             this.btnIngresarNuevoUsuario.FlatAppearance.BorderSize = 0;
             this.btnIngresarNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarNuevoUsuario.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,6 +338,7 @@ namespace SistemaGestorEscolar
             this.btnIngresarNuevoUsuario.TabIndex = 30;
             this.btnIngresarNuevoUsuario.Text = "INGRESAR NUEVO USUARIO";
             this.btnIngresarNuevoUsuario.UseVisualStyleBackColor = false;
+            this.btnIngresarNuevoUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarNuevoUsuario_MouseDown);
             // 
             // label3
             // 
@@ -368,6 +368,7 @@ namespace SistemaGestorEscolar
             this.btnPersonal.TabIndex = 43;
             this.btnPersonal.Text = "PERSONAL";
             this.btnPersonal.UseVisualStyleBackColor = false;
+            this.btnPersonal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPersonal_MouseDown);
             // 
             // btnEstudiante
             // 
