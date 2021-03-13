@@ -263,6 +263,17 @@
     <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporte De Notas\DataSetNotas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNotas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte De Notas\FormReportNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte De Notas\FormReportNotas.Designer.cs">
+      <DependentUpon>FormReportNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporte Estudiante\DataSetEstudiantes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,6 +289,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StaMariaNazarethDatabaseServiceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaMariaNazarethDatabaseServiceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.cs">
@@ -522,6 +538,10 @@
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte De Notas\FormReportNotas.resx">
+      <DependentUpon>FormReportNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte De Notas\ReportNota.rdlc" />
     <EmbeddedResource Include="Reporte Estudiante\ReportEstudiante.rdlc" />
     <EmbeddedResource Include="Reporte Estudiante\RepoteEstudiantes.resx">
       <DependentUpon>RepoteEstudiantes.cs</DependentUpon>
@@ -536,11 +556,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StaMariaNazarethDatabaseServiceDataSet.xsc">
+      <DependentUpon>StaMariaNazarethDatabaseServiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StaMariaNazarethDatabaseServiceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StaMariaNazarethDatabaseServiceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StaMariaNazarethDatabaseServiceDataSet.xss">
+      <DependentUpon>StaMariaNazarethDatabaseServiceDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reporte De Notas\DataSetNotas.xsc">
+      <DependentUpon>DataSetNotas.xsd</DependentUpon>
+    </None>
+    <None Include="Reporte De Notas\DataSetNotas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNotas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reporte De Notas\DataSetNotas.xss">
+      <DependentUpon>DataSetNotas.xsd</DependentUpon>
+    </None>
     <None Include="Reporte Estudiante\DataSetEstudiantes.xsc">
       <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
     </None>
