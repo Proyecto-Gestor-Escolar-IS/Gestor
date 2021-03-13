@@ -328,7 +328,6 @@ namespace SistemaGestorEscolar
             // btnIngresarNuevoUsuario
             // 
             this.btnIngresarNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnIngresarNuevoUsuario.Enabled = false;
             this.btnIngresarNuevoUsuario.FlatAppearance.BorderSize = 0;
             this.btnIngresarNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresarNuevoUsuario.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -339,6 +338,7 @@ namespace SistemaGestorEscolar
             this.btnIngresarNuevoUsuario.TabIndex = 30;
             this.btnIngresarNuevoUsuario.Text = "INGRESAR NUEVO USUARIO";
             this.btnIngresarNuevoUsuario.UseVisualStyleBackColor = false;
+            this.btnIngresarNuevoUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarNuevoUsuario_MouseDown);
             // 
             // label3
             // 
@@ -368,6 +368,7 @@ namespace SistemaGestorEscolar
             this.btnPersonal.TabIndex = 43;
             this.btnPersonal.Text = "PERSONAL";
             this.btnPersonal.UseVisualStyleBackColor = false;
+            this.btnPersonal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPersonal_MouseDown);
             // 
             // btnEstudiante
             // 
@@ -408,6 +409,7 @@ namespace SistemaGestorEscolar
             this.btnIngresarNotas.TabIndex = 45;
             this.btnIngresarNotas.Text = "INGRESAR NOTAS";
             this.btnIngresarNotas.UseVisualStyleBackColor = false;
+            this.btnIngresarNotas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarNotas_MouseDown);
             // 
             // btnPagos
             // 
@@ -448,6 +450,7 @@ namespace SistemaGestorEscolar
             this.btnCursos.TabIndex = 42;
             this.btnCursos.Text = "CURSOS";
             this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCursos_MouseDown);
             // 
             // btnVistaMatriculas
             // 
@@ -512,6 +515,7 @@ namespace SistemaGestorEscolar
             this.btnFichaEstudiante.TabIndex = 30;
             this.btnFichaEstudiante.Text = "FICHA DE ESTUDIANTE";
             this.btnFichaEstudiante.UseVisualStyleBackColor = false;
+            this.btnFichaEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFichaEstudiante_MouseDown);
             // 
             // btnRegistrarVisitaMedica
             // 
@@ -612,7 +616,7 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle.AutoSize = true;
             this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
-            this.lblMenuTitle.Location = new System.Drawing.Point(677, 101);
+            this.lblMenuTitle.Location = new System.Drawing.Point(675, 100);
             this.lblMenuTitle.Name = "lblMenuTitle";
             this.lblMenuTitle.Size = new System.Drawing.Size(292, 41);
             this.lblMenuTitle.TabIndex = 32;

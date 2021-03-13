@@ -84,6 +84,8 @@ namespace SistemaGestorEscolar
         {
             panelMostrador.Visible = false;
             panSubMenuPagos.Visible = false;
+            panSubMenuEstudiante.Visible = false;
+            panSubMenuPersonal.Visible = false;
             panelMostrador.Controls.Clear();
             formulario.Close();
             mostrarBotones();
@@ -687,6 +689,59 @@ namespace SistemaGestorEscolar
             panSubMenuEstudiante.Visible = true;
             panSubMenuEstudiante.Dock = DockStyle.Fill;
             ocultarBotones();
+        }
+
+        private void btnPersonal_MouseDown(object sender, MouseEventArgs e)
+        {
+            panSubMenuPersonal.Visible = true;
+            panSubMenuPersonal.Dock = DockStyle.Fill;
+            ocultarBotones();
+        }
+
+        private void btnIngresarNuevoUsuario_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPersonal.Visible = false;
+            panSubMenuPersonal.Dock = DockStyle.None;
+            AbrirFormulario<Modulos_de_Empleados.IFrmGestionEmpleados>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
+
+        private void btnIngresarNotas_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+                    
+        private void btnCursos_MouseDown(object sender, MouseEventArgs e)
+        {
+          
+        }
+
+        private void btnFichaEstudiante_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuEstudiante.Visible = false;
+            panSubMenuEstudiante.Dock = DockStyle.None;
+            AbrirFormulario<Modulos_Estudiante.IVistaFichaEstudiante>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
         }
     }
 }
