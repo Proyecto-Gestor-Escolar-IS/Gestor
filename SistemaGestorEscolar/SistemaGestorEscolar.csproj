@@ -141,11 +141,11 @@
     <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.Designer.cs">
       <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulo Historial Cursos\IHistorialCursos.cs">
+    <Compile Include="Modulo de Cursos\IGestionCursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulo Historial Cursos\IHistorialCursos.Designer.cs">
-      <DependentUpon>IHistorialCursos.cs</DependentUpon>
+    <Compile Include="Modulo de Cursos\IGestionCursos.Designer.cs">
+      <DependentUpon>IGestionCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulo Historial Medico\Historial medico.cs">
       <SubType>Form</SubType>
@@ -365,32 +365,14 @@
     <Compile Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.Designer.cs">
       <DependentUpon>IMatriculaPrematriculaEstudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos Listados\IListadoDocentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Listados\IListadoDocentes.Designer.cs">
-      <DependentUpon>IListadoDocentes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Listados\IListadoMedicos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Listados\IListadoMedicos.Designer.cs">
-      <DependentUpon>IListadoMedicos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Listados\IListadoPesonalAdministrativo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Listados\IListadoPesonalAdministrativo.Designer.cs">
-      <DependentUpon>IListadoPesonalAdministrativo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\clsVariablesGlobales.cs" />
     <EmbeddedResource Include="IRegistroPago.resx">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo Historial Cursos\IHistorialCursos.resx">
-      <DependentUpon>IHistorialCursos.cs</DependentUpon>
+    <EmbeddedResource Include="Modulo de Cursos\IGestionCursos.resx">
+      <DependentUpon>IGestionCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos de Empleados\IFrmGestionEmpleados.resx">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
@@ -484,15 +466,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.resx">
       <DependentUpon>IMatriculaPrematriculaEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Listados\IListadoDocentes.resx">
-      <DependentUpon>IListadoDocentes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Listados\IListadoMedicos.resx">
-      <DependentUpon>IListadoMedicos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Listados\IListadoPesonalAdministrativo.resx">
-      <DependentUpon>IListadoPesonalAdministrativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

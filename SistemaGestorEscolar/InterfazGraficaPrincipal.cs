@@ -718,21 +718,9 @@ namespace SistemaGestorEscolar
 
         private void btnIngresarNotas_MouseDown(object sender, MouseEventArgs e)
         {
-            
-        }
-                    
-        private void btnCursos_MouseDown(object sender, MouseEventArgs e)
-        {
-          
-        }
-
-        private void btnFichaEstudiante_MouseDown(object sender, MouseEventArgs e)
-        {
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            panSubMenuEstudiante.Visible = false;
-            panSubMenuEstudiante.Dock = DockStyle.None;
-            AbrirFormulario<Modulos_Estudiante.IVistaFichaEstudiante>();
+            AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
 
             if (codigoColor == 1)
             {
@@ -742,6 +730,28 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+        }
+                    
+        private void btnCursos_MouseDown(object sender, MouseEventArgs e)
+        {
+            ocultarBotones();
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>(); 
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
+
+        private void btnFichaEstudiante_MouseDown(object sender, MouseEventArgs e)
+        {
+          
         }
     }
 }

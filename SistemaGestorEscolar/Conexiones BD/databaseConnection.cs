@@ -927,6 +927,42 @@ namespace SistemaGestorEscolar
 
         }
 
+        public bool PARegistroActualizacionCursos(int idCurso, String nombreCurso, double precioCurso, int codigoOP)
+        {
+            try
+            {
+
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PARegistrarYActualizarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@id_Curso", idCurso);
+                comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
+                comando.Parameters.AddWithValue("@precioCompleto", precioCurso);
+                comando.Parameters.AddWithValue("@codigoOperacion", codigoOP);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Gestión cursos", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
 
     }
 
