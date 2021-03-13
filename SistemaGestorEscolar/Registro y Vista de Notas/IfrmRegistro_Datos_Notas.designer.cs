@@ -58,8 +58,10 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.label11 = new System.Windows.Forms.Label();
             this.errorPrvIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pbRegresar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorPrvIdentidad)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +82,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentidad.MaxLength = 13;
             this.txtIdentidad.Name = "txtIdentidad";
+            this.txtIdentidad.ReadOnly = true;
             this.txtIdentidad.Size = new System.Drawing.Size(232, 35);
             this.txtIdentidad.TabIndex = 1;
             this.txtIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -210,6 +213,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtNota1.Size = new System.Drawing.Size(104, 35);
             this.txtNota1.TabIndex = 10;
             this.txtNota1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNota1.TextChanged += new System.EventHandler(this.txtNota1_TextChanged);
             this.txtNota1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota1_KeyPress);
             // 
             // label6
@@ -234,6 +238,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtNota3.Size = new System.Drawing.Size(104, 35);
             this.txtNota3.TabIndex = 12;
             this.txtNota3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNota3.TextChanged += new System.EventHandler(this.txtNota3_TextChanged);
             this.txtNota3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota3_KeyPress);
             // 
             // label7
@@ -254,9 +259,11 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtNotaProm.Margin = new System.Windows.Forms.Padding(2);
             this.txtNotaProm.MaxLength = 3;
             this.txtNotaProm.Name = "txtNotaProm";
+            this.txtNotaProm.ReadOnly = true;
             this.txtNotaProm.Size = new System.Drawing.Size(104, 35);
             this.txtNotaProm.TabIndex = 16;
             this.txtNotaProm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNotaProm.TextChanged += new System.EventHandler(this.txtNotaProm_TextChanged);
             this.txtNotaProm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNotaProm_KeyPress);
             // 
             // label8
@@ -280,6 +287,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtNota2.Size = new System.Drawing.Size(104, 35);
             this.txtNota2.TabIndex = 14;
             this.txtNota2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNota2.TextChanged += new System.EventHandler(this.txtNota2_TextChanged);
             this.txtNota2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota2_KeyPress);
             // 
             // txtNota4
@@ -292,6 +300,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtNota4.Size = new System.Drawing.Size(104, 35);
             this.txtNota4.TabIndex = 19;
             this.txtNota4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNota4.TextChanged += new System.EventHandler(this.txtNota4_TextChanged);
             this.txtNota4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota4_KeyPress);
             // 
             // label9
@@ -356,6 +365,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnCambiarEstado.TabIndex = 23;
             this.btnCambiarEstado.Text = "Eliminar";
             this.btnCambiarEstado.UseVisualStyleBackColor = false;
+            this.btnCambiarEstado.Click += new System.EventHandler(this.btnCambiarEstado_Click);
             // 
             // txtIdClase
             // 
@@ -409,12 +419,25 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ingrese las Notas:";
             // 
+            // pbRegresar
+            // 
+            this.pbRegresar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
+            this.pbRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbRegresar.Location = new System.Drawing.Point(38, 34);
+            this.pbRegresar.Name = "pbRegresar";
+            this.pbRegresar.Size = new System.Drawing.Size(36, 27);
+            this.pbRegresar.TabIndex = 28;
+            this.pbRegresar.TabStop = false;
+            this.pbRegresar.Click += new System.EventHandler(this.pbRegresar_Click);
+            // 
             // Registro_Datos_Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1167, 718);
+            this.Controls.Add(this.pbRegresar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label10);
@@ -436,6 +459,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             ((System.ComponentModel.ISupportInitialize)(this.errorPrvIdentidad)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,5 +495,6 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ErrorProvider errorPrvIdentidad;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pbRegresar;
     }
 }

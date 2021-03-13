@@ -53,7 +53,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG = cmbSeccion.Text;
 
             this.Hide();
-            Registro_Datos_Notas form = new Registro_Datos_Notas();
+            Registro_y_Vista_de_Notas.Alumnos_CursoSeccion form = new  Registro_y_Vista_de_Notas.Alumnos_CursoSeccion();
             form.Show(this);
 
         }

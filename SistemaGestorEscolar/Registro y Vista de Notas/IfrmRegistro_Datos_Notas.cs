@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestorEscolar.Registro_y_Vista_de_Notas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         public string id_detalleMatriculaTemp;
         public string identidad;
         public int Id_Clase;
+        public int notaProm;
         public string curso;
         public string seccion;
         public string nombreAlumno;
@@ -115,6 +117,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         {
             txtCurso.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.CursoG;
             txtSeccion.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG;
+            txtIdentidad.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.identidadG;
         }
 
 
@@ -225,6 +228,57 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnCambiarEstado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNotaProm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNota1_TextChanged(object sender, EventArgs e)
+        {
+           //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+
+           // txtNotaProm.Text = notaProm.ToString();
+        }
+
+        private void txtNota2_TextChanged(object sender, EventArgs e)
+        {
+
+            //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+
+            //txtNotaProm.Text = notaProm.ToString();
+
+        }
+
+        private void txtNota3_TextChanged(object sender, EventArgs e)
+        {
+
+            //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+
+            //txtNotaProm.Text = notaProm.ToString();
+
+        }
+
+        private void txtNota4_TextChanged(object sender, EventArgs e)
+        {
+
+            //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+
+            //txtNotaProm.Text = notaProm.ToString();
+
+        }
+
+        private void pbRegresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Alumnos_CursoSeccion form = new Alumnos_CursoSeccion();
+            form.Show(this);
         }
 
         private void txtNota4_KeyPress(object sender, KeyPressEventArgs e)
