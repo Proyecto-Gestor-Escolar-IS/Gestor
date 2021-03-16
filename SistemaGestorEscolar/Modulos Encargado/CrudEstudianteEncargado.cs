@@ -13,9 +13,9 @@ using SistemaGestorEscolar.MessageBox_Personalizados;
 
 namespace SistemaGestorEscolar.Modulos_Encargado
 {
-    public partial class IAñadirEncargado : Form
+    public partial class CrudEstudianteEncargado : Form
     {
-        public IAñadirEncargado()
+        public CrudEstudianteEncargado()
         {
             InitializeComponent();
         }
@@ -98,10 +98,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (dbConn.ComprobarExistencia("select estado from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'"))
             {
-                dbConn.ejecutarComandoSQL("update datosEncargado set estado = 0 where identidadEncargado = '" + txtIdentidad.Text + "'");
+                dbConn.ejecutarComandoSQL("update datosEncargado set estado = 2 where identidadEncargado = '" + txtIdentidad.Text + "'");
 
                 message.lblCheck.Text = "ENCARGADO ELIMINADO";
-                messageError.ShowDialog();
+                message.ShowDialog();
             }
             else
             {
@@ -331,8 +331,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtLikeIdentidad_TextChanged(object sender, EventArgs e)
         {
-            dbConn.llenarDGV(dgvBusquedaEncargado, "SELECT id_encargadoAlumno as 'ID', identidadEncargado as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ' ,"+
-                " segundoApellido)as 'Nombre', numeroTelefono as 'Teléfono 1', numeroTelefonoAlt as 'Teléfono 2', correoElectronico as 'Correo Electronico', direccionTrabajo as 'Dirección', fechaNacimiento as 'Fecha de Nacimiento' FROM datosEncargado WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtLikeIdentidad.Text + "%' or identidadEncargado LIKE '" + txtLikeIdentidad.Text + "%' and estado = 1");
+            dbConn.llenarDGV(dgvBusquedaEncargado, "SELECT id_encargadoAlumno as 'ID', identidadEncargado as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ' , segundoApellido)as 'Nombre', numeroTelefono as 'Teléfono 1', numeroTelefonoAlt as 'Teléfono 2', correoElectronico as 'Correo Electronico', direccionTrabajo as 'Dirección', fechaNacimiento as 'Fecha de Nacimiento' FROM datosEncargado WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtLikeIdentidad.Text + "%' and estado = 1 or identidadEncargado LIKE '" + txtLikeIdentidad.Text + "%' and estado = 1");
 
         }
 
@@ -357,7 +356,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtLikeidentidadEstud_TextChanged(object sender, EventArgs e)
         {
-            dbConn.llenarDGV(dgvListadoEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ' , segundoApellido) LIKE '" + txtLikeidentidadEstud.Text + "%' or identidadEstudiante LIKE '" + txtLikeidentidadEstud.Text + "%' and estado = 1");
+            dbConn.llenarDGV(dgvListadoEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ' , segundoApellido) LIKE '" + txtLikeidentidadEstud.Text + "%' and estado = 1 or identidadEstudiante LIKE '" + txtLikeidentidadEstud.Text + "%' and estado = 1");
         }
 
         private void btnRegresarEstud_Click(object sender, EventArgs e)
@@ -381,7 +380,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         }
         private void dgvListadoEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            identidadEstudiante = dgvBusquedaEncargado.Rows[e.RowIndex].Cells[1].Value.ToString();
+            identidadEstudiante = dgvListadoEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         private void btnSiguienteEstud_Click(object sender, EventArgs e)
@@ -406,7 +405,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             try
             {
-                if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
+                if (txtIdentidadEstud.TextLength > 13 || txtIdentidadEstud.TextLength < 13)
                 {
                     messageError.lblError.Text = "INGRESE CORRECTAMENTE LA IDENTIDAD";
                     messageError.ShowDialog();
@@ -414,8 +413,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 }
                 else
                 {
-                    if (txtprimerNombre.Text == "" && txtsegundoNombre.Text == "" && txtprimerApellido.Text == "" && txtsegundoApellido.Text == "" &&
-                          txtfechaNacimiento.Text == "")
+                    if (txtprimerNombreEstud.Text == "" && txtsegundoNombreEstud.Text == "" && txtprimerApellidoEstud.Text == "" && txtsegundoApellidoEstud.Text == "")
                         {
                         messageError.lblError.Text = "INGRESE TODOS LOS DATOS NECESARIOS";
                         messageError.ShowDialog();
@@ -460,7 +458,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             try
             {
-                if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
+                if (txtIdentidadEstud.TextLength > 13 || txtIdentidadEstud.TextLength < 13)
                 {
 
                     messageError.lblError.Text = "INGRESE CORRECTAMENTE LA IDENTIDAD";
@@ -482,7 +480,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             if (dbConn.ComprobarExistencia("select estado from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'"))
             {
-                dbConn.ejecutarComandoSQL("update datosEstudiante set estado = 0 where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+                dbConn.ejecutarComandoSQL("update datosEstudiante set estado = 2 where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
 
                 message.lblCheck.Text = "ESTUDIANTE ELIMINADO";
                 message.ShowDialog();
@@ -546,6 +544,30 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 messageError.ShowDialog(); 
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void txtIdentidadEstud_TextChanged(object sender, EventArgs e)
+        {
+            string genero;
+            txtFechaNacimientocEstud.Text = dbConn.obtenerVariableDate("select fechaNacimiento from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'").ToString("dd/MM/yyyy");
+            dbConn.llenarTextBox(txtprimerNombreEstud, "select primerNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+            dbConn.llenarTextBox(txtsegundoNombreEstud, "select segundoNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+            dbConn.llenarTextBox(txtprimerApellidoEstud, "select primerApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+            dbConn.llenarTextBox(txtsegundoApellidoEstud, "select segundoApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+            genero = dbConn.obtenerVariableString("select genero from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+
+            if (genero == "M")
+            {
+                cmbgeneroEstudiante.SelectedItem = "M";
+            }
+            else if(genero == "F")
+            {
+                cmbgeneroEstudiante.SelectedItem = "F";
+            }
+            else
+            {
+                cmbgeneroEstudiante.SelectedIndex = -1;
             }
         }
     }

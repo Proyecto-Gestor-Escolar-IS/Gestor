@@ -752,7 +752,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             try
             {
-                if (mktIdentidadEncargado.TextLength > 13 || mktIdentidadEncargado.TextLength < 13)
+                if (mktIdentidadEstud.TextLength > 13 || mktIdentidadEstud.TextLength < 13)
                 {
                     messageError.lblError.Text = "Error en la identidad";
                     messageError.ShowDialog();
@@ -1129,7 +1129,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                         {
                         if (utilidad.verificarCorreo(txtcorreoElectronico.Text))
                         {
-                            if (utilidad.isDate(txtfechaNacimientoEstud.Text))
+                            if (utilidad.isDate(mskFechaNacimientoEncarg.Text))
                             {
                                 RegistrarEncargado();
                                 limpiarEncargado();

@@ -51,8 +51,8 @@
     <StartupObject>SistemaGestorEscolar.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.8.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
-      <HintPath>..\packages\Portable.BouncyCastle.1.8.8\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Google.Apis, Version=1.50.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.50.0\lib\net45\Google.Apis.dll</HintPath>
@@ -69,10 +69,12 @@
     <Reference Include="Google.Apis.PlatformServices, Version=1.50.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.50.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
     </Reference>
-    <Reference Include="MailKit, Version=2.10.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
-      <HintPath>..\packages\MailKit.2.10.1\lib\net47\MailKit.dll</HintPath>
+    <Reference Include="MailKit, Version=2.11.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.11.0\lib\net47\MailKit.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
@@ -83,14 +85,13 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\ENTERPRISE\COMMON7\IDE\COMMONEXTENSIONS\MICROSOFT\SSAS\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="MimeKit, Version=2.10.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
-      <HintPath>..\packages\MimeKit.2.10.1\lib\net47\MimeKit.dll</HintPath>
+    <Reference Include="MimeKit, Version=2.11.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.11.0\lib\net47\MimeKit.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -263,17 +264,6 @@
     <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte De Notas\DataSetNotas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNotas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte De Notas\FormReportNotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reporte De Notas\FormReportNotas.Designer.cs">
-      <DependentUpon>FormReportNotas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reporte Estudiante\DataSetEstudiantes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -399,11 +389,11 @@
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos de Arranque\verficacionArranque.cs" />
-    <Compile Include="Modulos Encargado\IAñadirEncargado.cs">
+    <Compile Include="Modulos Encargado\CrudEstudianteEncargado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos Encargado\IAñadirEncargado.Designer.cs">
-      <DependentUpon>IAñadirEncargado.cs</DependentUpon>
+    <Compile Include="Modulos Encargado\CrudEstudianteEncargado.Designer.cs">
+      <DependentUpon>CrudEstudianteEncargado.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.cs">
       <SubType>Form</SubType>
@@ -492,8 +482,8 @@
     <EmbeddedResource Include="Modulo Historial Medico\Historial medico.resx">
       <DependentUpon>Historial medico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Encargado\IAñadirEncargado.resx">
-      <DependentUpon>IAñadirEncargado.cs</DependentUpon>
+    <EmbeddedResource Include="Modulos Encargado\CrudEstudianteEncargado.resx">
+      <DependentUpon>CrudEstudianteEncargado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\Ficha de Estudiante.resx">
       <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
@@ -538,10 +528,6 @@
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte De Notas\FormReportNotas.resx">
-      <DependentUpon>FormReportNotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte De Notas\ReportNota.rdlc" />
     <EmbeddedResource Include="Reporte Estudiante\ReportEstudiante.rdlc" />
     <EmbeddedResource Include="Reporte Estudiante\RepoteEstudiantes.resx">
       <DependentUpon>RepoteEstudiantes.cs</DependentUpon>
@@ -572,17 +558,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Reporte De Notas\DataSetNotas.xsc">
-      <DependentUpon>DataSetNotas.xsd</DependentUpon>
-    </None>
-    <None Include="Reporte De Notas\DataSetNotas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNotas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reporte De Notas\DataSetNotas.xss">
-      <DependentUpon>DataSetNotas.xsd</DependentUpon>
-    </None>
     <None Include="Reporte Estudiante\DataSetEstudiantes.xsc">
       <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
     </None>

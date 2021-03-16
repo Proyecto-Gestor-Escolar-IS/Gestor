@@ -766,11 +766,14 @@ namespace SistemaGestorEscolar
             var t = Convert.ToInt32(comando.ExecuteScalar());
             databaseIntermediary.Close();
 
-            if (t != 0)
+            if (t == 1)
             {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
 
