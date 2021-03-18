@@ -23,7 +23,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         {
 
             dbConn.llenarDGV(dgvNotaAlumnos, "SELECT CONCAT(dbo.datosEstudiante.primerNombre,' ',dbo.datosEstudiante.segundoNombre,' ',dbo.datosEstudiante.primerApellido,' ',dbo.datosEstudiante.segundoApellido) as 'Nombre del Estudiante'," +
-                " dbo.datosEstudiante.identidadEstudiante as 'Identidad del Estudiante', dbo.cursos.nombreCurso as 'Curso', dbo.seccion.nombreSeccion as 'Sección', " +
+                " dbo.datosEstudiante.identidadEstudiante as 'Identidad', dbo.cursos.nombreCurso as 'Curso', dbo.seccion.nombreSeccion as 'Sección', " +
                 "dbo.detalleNotas.nota1erParcial as 'Nota Primer Parcial', dbo.detalleNotas.nota2doParcial as 'Segundo Parcial', dbo.detalleNotas.nota3erParcial as 'Tercer Parcial', " +
                 "dbo.detalleNotas.nota4toParcial as 'Cuarto Parcial', dbo.detalleNotas.notaFinal as 'Nota Final', dbo.datosEstudiante.estado as 'Estado'" +
                 " FROM     dbo.seccion INNER JOIN dbo.cursos ON dbo.seccion.id_Curso = dbo.cursos.id_Curso INNER JOIN dbo.detalleMatricula ON dbo.seccion.id_Seccion = dbo.detalleMatricula.id_Seccion " +

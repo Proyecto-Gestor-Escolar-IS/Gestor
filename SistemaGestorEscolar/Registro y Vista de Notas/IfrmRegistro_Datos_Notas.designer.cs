@@ -57,24 +57,27 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtIdClase = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.errorPrvIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorPrvIdentidad)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(347, 66);
+            this.label1.Location = new System.Drawing.Point(651, 67);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(473, 41);
+            this.label1.Size = new System.Drawing.Size(294, 41);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ingrese los datos del Alumno:";
+            this.label1.Text = "Ingreso de Notas ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtIdentidad
             // 
             this.txtIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidad.Location = new System.Drawing.Point(215, 167);
+            this.txtIdentidad.Location = new System.Drawing.Point(444, 231);
             this.txtIdentidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentidad.MaxLength = 13;
             this.txtIdentidad.Name = "txtIdentidad";
@@ -90,7 +93,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnAgregarNota.FlatAppearance.BorderSize = 0;
             this.btnAgregarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarNota.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarNota.Location = new System.Drawing.Point(949, 359);
+            this.btnAgregarNota.Location = new System.Drawing.Point(847, 53);
             this.btnAgregarNota.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarNota.Name = "btnAgregarNota";
             this.btnAgregarNota.Size = new System.Drawing.Size(171, 41);
@@ -105,7 +108,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnModificarNota.FlatAppearance.BorderSize = 0;
             this.btnModificarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarNota.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarNota.Location = new System.Drawing.Point(949, 435);
+            this.btnModificarNota.Location = new System.Drawing.Point(847, 129);
             this.btnModificarNota.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarNota.Name = "btnModificarNota";
             this.btnModificarNota.Size = new System.Drawing.Size(171, 41);
@@ -120,7 +123,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnMostarCuadroN.FlatAppearance.BorderSize = 0;
             this.btnMostarCuadroN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostarCuadroN.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnMostarCuadroN.Location = new System.Drawing.Point(602, 639);
+            this.btnMostarCuadroN.Location = new System.Drawing.Point(805, 755);
             this.btnMostarCuadroN.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostarCuadroN.Name = "btnMostarCuadroN";
             this.btnMostarCuadroN.Size = new System.Drawing.Size(248, 41);
@@ -133,7 +136,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(80, 170);
+            this.label3.Location = new System.Drawing.Point(309, 234);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 31);
@@ -144,7 +147,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(785, 173);
+            this.label2.Location = new System.Drawing.Point(1014, 237);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 31);
@@ -155,7 +158,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtSeccion
             // 
             this.txtSeccion.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeccion.Location = new System.Drawing.Point(908, 170);
+            this.txtSeccion.Location = new System.Drawing.Point(1137, 234);
             this.txtSeccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtSeccion.Name = "txtSeccion";
             this.txtSeccion.ReadOnly = true;
@@ -168,7 +171,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(129, 244);
+            this.label4.Location = new System.Drawing.Point(309, 338);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(272, 31);
@@ -178,7 +181,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtNombreAlumno
             // 
             this.txtNombreAlumno.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreAlumno.Location = new System.Drawing.Point(400, 242);
+            this.txtNombreAlumno.Location = new System.Drawing.Point(585, 334);
             this.txtNombreAlumno.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreAlumno.Name = "txtNombreAlumno";
             this.txtNombreAlumno.ReadOnly = true;
@@ -191,7 +194,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(515, 362);
+            this.label5.Location = new System.Drawing.Point(413, 56);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(243, 31);
@@ -201,7 +204,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtNota1
             // 
             this.txtNota1.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota1.Location = new System.Drawing.Point(762, 359);
+            this.txtNota1.Location = new System.Drawing.Point(660, 53);
             this.txtNota1.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota1.MaxLength = 3;
             this.txtNota1.Name = "txtNota1";
@@ -214,7 +217,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(122, 445);
+            this.label6.Location = new System.Drawing.Point(20, 139);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(204, 31);
@@ -225,7 +228,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtNota3
             // 
             this.txtNota3.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota3.Location = new System.Drawing.Point(762, 445);
+            this.txtNota3.Location = new System.Drawing.Point(660, 139);
             this.txtNota3.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota3.MaxLength = 3;
             this.txtNota3.Name = "txtNota3";
@@ -238,7 +241,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(542, 538);
+            this.label7.Location = new System.Drawing.Point(440, 232);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(189, 31);
@@ -248,7 +251,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtNotaProm
             // 
             this.txtNotaProm.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotaProm.Location = new System.Drawing.Point(762, 537);
+            this.txtNotaProm.Location = new System.Drawing.Point(660, 231);
             this.txtNotaProm.Margin = new System.Windows.Forms.Padding(2);
             this.txtNotaProm.MaxLength = 3;
             this.txtNotaProm.Name = "txtNotaProm";
@@ -261,7 +264,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(542, 446);
+            this.label8.Location = new System.Drawing.Point(440, 140);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 31);
@@ -271,7 +274,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtNota2
             // 
             this.txtNota2.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota2.Location = new System.Drawing.Point(354, 445);
+            this.txtNota2.Location = new System.Drawing.Point(252, 139);
             this.txtNota2.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota2.MaxLength = 3;
             this.txtNota2.Name = "txtNota2";
@@ -283,7 +286,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtNota4
             // 
             this.txtNota4.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota4.Location = new System.Drawing.Point(354, 536);
+            this.txtNota4.Location = new System.Drawing.Point(252, 230);
             this.txtNota4.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota4.MaxLength = 3;
             this.txtNota4.Name = "txtNota4";
@@ -296,7 +299,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(129, 537);
+            this.label9.Location = new System.Drawing.Point(27, 231);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(185, 31);
@@ -307,7 +310,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(517, 174);
+            this.label10.Location = new System.Drawing.Point(746, 238);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 31);
@@ -318,7 +321,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtCurso
             // 
             this.txtCurso.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurso.Location = new System.Drawing.Point(619, 171);
+            this.txtCurso.Location = new System.Drawing.Point(848, 235);
             this.txtCurso.Margin = new System.Windows.Forms.Padding(2);
             this.txtCurso.Name = "txtCurso";
             this.txtCurso.ReadOnly = true;
@@ -332,7 +335,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(354, 639);
+            this.btnLimpiar.Location = new System.Drawing.Point(541, 755);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(171, 41);
@@ -347,7 +350,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnCambiarEstado.FlatAppearance.BorderSize = 0;
             this.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarEstado.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarEstado.Location = new System.Drawing.Point(949, 503);
+            this.btnCambiarEstado.Location = new System.Drawing.Point(847, 197);
             this.btnCambiarEstado.Margin = new System.Windows.Forms.Padding(2);
             this.btnCambiarEstado.Name = "btnCambiarEstado";
             this.btnCambiarEstado.Size = new System.Drawing.Size(171, 41);
@@ -358,7 +361,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // txtIdClase
             // 
             this.txtIdClase.Font = new System.Drawing.Font("Balsamiq Sans", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdClase.Location = new System.Drawing.Point(354, 359);
+            this.txtIdClase.Location = new System.Drawing.Point(252, 53);
             this.txtIdClase.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdClase.MaxLength = 3;
             this.txtIdClase.Name = "txtIdClase";
@@ -371,7 +374,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(161, 360);
+            this.label11.Location = new System.Drawing.Point(59, 54);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(118, 31);
@@ -382,36 +385,47 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.errorPrvIdentidad.ContainerControl = this;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtNota1);
+            this.groupBox2.Controls.Add(this.btnAgregarNota);
+            this.groupBox2.Controls.Add(this.txtIdClase);
+            this.groupBox2.Controls.Add(this.btnModificarNota);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.btnCambiarEstado);
+            this.groupBox2.Controls.Add(this.txtNota3);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtNota2);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtNota4);
+            this.groupBox2.Controls.Add(this.txtNotaProm);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(289, 402);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1045, 309);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ingrese las Notas:";
+            // 
             // Registro_Datos_Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1167, 718);
-            this.Controls.Add(this.txtIdClase);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.btnCambiarEstado);
+            this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtCurso);
-            this.Controls.Add(this.txtNota4);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtNotaProm);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtNota2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtNota3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtNota1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNombreAlumno);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSeccion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnMostarCuadroN);
-            this.Controls.Add(this.btnModificarNota);
-            this.Controls.Add(this.btnAgregarNota);
             this.Controls.Add(this.txtIdentidad);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -421,6 +435,8 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.Text = "Registro_Datos_Notas";
             this.Load += new System.EventHandler(this.Registro_Datos_Notas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorPrvIdentidad)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,5 +471,6 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         private System.Windows.Forms.TextBox txtIdClase;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ErrorProvider errorPrvIdentidad;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

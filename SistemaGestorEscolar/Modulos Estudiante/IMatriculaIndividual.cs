@@ -752,7 +752,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             try
             {
-                if (mktIdentidadEncargado.TextLength > 13 || mktIdentidadEncargado.TextLength < 13)
+                if (mktIdentidadEstud.TextLength > 13 || mktIdentidadEstud.TextLength < 13)
                 {
                     messageError.lblError.Text = "Error en la identidad";
                     messageError.ShowDialog();
@@ -773,16 +773,25 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     {
                         if (cmbGeneroEstud.SelectedIndex.Equals(-1))
                         {
-                            messageError.lblError.Text = "Debe seleccionar el género";
+                            messageError.lblError.Text = "DEBE SELECCIONAR EL GÉNERO";
                             messageError.ShowDialog();
                         }
                         else
                         {
-                            messageQuestion.lblError.Text = "¿Esta seguro de los datos ingresados?";
-                            messageQuestion.ShowDialog();
-                            if (IMessageBoxYesCancel.isCodigoForm)
+                            if (utilidad.isDate(txtfechaNacimientoEstud.Text))
                             {
-                                RegistrarEstudiante();
+                                messageQuestion.lblError.Text = "¿Esta seguro de los datos ingresados?";
+                                messageQuestion.ShowDialog();
+                                if (IMessageBoxYesCancel.isCodigoForm)
+                                {
+                                    RegistrarEstudiante();
+                                }
+                            }
+                            else
+                            {
+                                messageError.lblError.Text = "INGRESE UNA FECHA VALIDA";
+                                messageError.lblError.Location = new Point(120, 82);
+                                messageError.ShowDialog();
                             }
 
                         }
@@ -864,23 +873,32 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             try
             {
-                if (dbConn.PARegistrarEstudiante(mktIdentidadEstud.Text, txtprimerNombreEstud.Text,
-                    txtsegundoNombreEstud.Text, txtprimerApellidoEstud.Text, txtsegundoApellidoEstud.Text,
-                    "2001/12/22", genero))
+                if(dbConn.obtenerVariableEntera("select estado from datosEstudiante where identidadEstudiante = '"+mktIdentidadEstud.Text +"'") != 1)
                 {
+                    if (dbConn.PARegistrarEstudiante(mktIdentidadEstud.Text, txtprimerNombreEstud.Text,
+                        txtsegundoNombreEstud.Text, txtprimerApellidoEstud.Text, txtsegundoApellidoEstud.Text,
+                        txtfechaNacimientoEstud.Text, genero))
+                    {
 
-                    message.lblCheck.Text = "Estudiante Registrado";
-                    message.ShowDialog();
+                        message.lblCheck.Text = "Estudiante Registrado";
+                        message.ShowDialog();
 
-                    LimpiarEstudiante();
-                    grpRegistroEstudiante.Visible = false;
-                    grpRegistroEncargados.Visible = true;
+                        LimpiarEstudiante();
+                        grpRegistroEstudiante.Visible = false;
+                        grpRegistroEncargados.Visible = true;
+                    }
+                    else
+                    {
+                        messageError.lblError.Text = "Error al Registrar";
+                        messageError.ShowDialog();
+
+                    }
                 }
                 else
                 {
-                    messageError.lblError.Text = "Error al Registrar";
+                    messageError.lblError.Text = "EL ESTUDIANTE YA EXISTE";
+                    messageError.lblError.Location = new Point(120, 82);
                     messageError.ShowDialog();
-
                 }
             }
             catch (Exception ex)
@@ -1104,19 +1122,30 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                          txtTelefonoAlternativo.Text == "" && txtDireccion.Text == "" && "2001/12/22" == "")
                         {
                             messageError.lblError.Text = "Debe llenar los campos necesarios";
+                            messageError.lblError.Location = new Point(120, 82);
                             messageError.ShowDialog();
                         }
                         else
                         {
                         if (utilidad.verificarCorreo(txtcorreoElectronico.Text))
                         {
-                            RegistrarEncargado();
-                            limpiarEncargado();
+                            if (utilidad.isDate(mskFechaNacimientoEncarg.Text))
+                            {
+                                RegistrarEncargado();
+                                limpiarEncargado();
+                            }
+                            else
+                            {
+                                messageError.lblError.Text = "INGRESE UNA FECHA VALIDA";
+                                messageError.lblError.Location = new Point(120, 82);
+                                messageError.ShowDialog();
+                            }
 
                         }
                         else
                         {
-                            messageError.lblError.Text = "Ingrese un correo válido";
+                            messageError.lblError.Text = "INGRESE UN CORREO VÁLIDO";
+                            messageError.lblError.Location = new Point(120, 82);
                             messageError.ShowDialog();
 
                         }
@@ -1138,7 +1167,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 if (dbConn.PARegistroEncargado(identidadEstudiante ,mktIdentidadEncargado.Text,
                     txtPrimerNombreEncarg.Text, txtSegundoApellidoEncarg.Text, txtPrimerApellidoEncarg.Text,
                     txtSegundoApellidoEncarg.Text, txtcorreoElectronico.Text, txtprimerTelefono.Text,
-                    txtTelefonoAlternativo.Text, txtDireccion.Text, "2001/12/22"))
+                    txtTelefonoAlternativo.Text, txtDireccion.Text, mskFechaNacimientoEncarg.Text))
                 {
               
                     message.lblCheck.Text = "Encargado Registrado";

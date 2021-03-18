@@ -766,11 +766,14 @@ namespace SistemaGestorEscolar
             var t = Convert.ToInt32(comando.ExecuteScalar());
             databaseIntermediary.Close();
 
-            if (t != 0)
+            if (t == 1)
             {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -927,7 +930,73 @@ namespace SistemaGestorEscolar
 
         }
 
+        public bool PAActualizarCursos(int idCurso, String nombreCurso, double precioCurso)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAActualizarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
 
+                comando.Parameters.AddWithValue("@id_Curso", idCurso);
+                comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
+                comando.Parameters.AddWithValue("@precioCompleto", precioCurso);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Gestión cursos", "Error de Actualización", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool PARegistroCursos(String nombreCurso, double precioCurso, int estadoCurso)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PARegistrarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
+                comando.Parameters.AddWithValue("@precioCompleto", precioCurso);
+                comando.Parameters.AddWithValue("@estadoCurso", estadoCurso);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Gestión cursos", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
     }
 
 }
