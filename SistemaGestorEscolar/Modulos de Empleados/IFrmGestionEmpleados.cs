@@ -752,6 +752,5 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             btnLimpiarRecu.Visible = false;
             btnActLimpiar.Visible = true;
         }
-
     }
 }

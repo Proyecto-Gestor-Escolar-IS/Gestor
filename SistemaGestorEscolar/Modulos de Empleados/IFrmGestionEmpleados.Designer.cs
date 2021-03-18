@@ -29,8 +29,8 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.grpRegistroEmpleado = new System.Windows.Forms.GroupBox();
             this.btnRegistrar = new AltoControls.AltoButton();
@@ -136,7 +136,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(567, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 41);
+            this.label1.Size = new System.Drawing.Size(415, 36);
             this.label1.TabIndex = 25;
             this.label1.Text = "GESTION DE EMPLEADOS";
             // 
@@ -246,7 +246,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label2.Location = new System.Drawing.Point(848, 547);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 27);
+            this.label2.Size = new System.Drawing.Size(144, 24);
             this.label2.TabIndex = 74;
             this.label2.Text = "dd/mm/aaaa";
             // 
@@ -294,7 +294,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.chkVerContras.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerContras.Location = new System.Drawing.Point(899, 444);
             this.chkVerContras.Name = "chkVerContras";
-            this.chkVerContras.Size = new System.Drawing.Size(201, 31);
+            this.chkVerContras.Size = new System.Drawing.Size(208, 28);
             this.chkVerContras.TabIndex = 73;
             this.chkVerContras.Text = "Ver Contraseñas";
             this.chkVerContras.UseVisualStyleBackColor = true;
@@ -307,7 +307,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblContra.Location = new System.Drawing.Point(553, 445);
             this.lblContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(129, 27);
+            this.lblContra.Size = new System.Drawing.Size(132, 24);
             this.lblContra.TabIndex = 72;
             this.lblContra.Text = "Contraseña";
             // 
@@ -328,7 +328,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblConfiContra.Location = new System.Drawing.Point(445, 492);
             this.lblConfiContra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConfiContra.Name = "lblConfiContra";
-            this.lblConfiContra.Size = new System.Drawing.Size(237, 27);
+            this.lblConfiContra.Size = new System.Drawing.Size(244, 24);
             this.lblConfiContra.TabIndex = 71;
             this.lblConfiContra.Text = "Confirmar Contraseña";
             // 
@@ -385,7 +385,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.cmbCargosSec.Location = new System.Drawing.Point(698, 596);
             this.cmbCargosSec.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCargosSec.Name = "cmbCargosSec";
-            this.cmbCargosSec.Size = new System.Drawing.Size(321, 35);
+            this.cmbCargosSec.Size = new System.Drawing.Size(321, 32);
             this.cmbCargosSec.TabIndex = 70;
             // 
             // lblCargo
@@ -396,7 +396,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblCargo.Location = new System.Drawing.Point(610, 599);
             this.lblCargo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(72, 27);
+            this.lblCargo.Size = new System.Drawing.Size(75, 24);
             this.lblCargo.TabIndex = 69;
             this.lblCargo.Text = "Cargo";
             // 
@@ -407,7 +407,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblFechaNa.Location = new System.Drawing.Point(459, 547);
             this.lblFechaNa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaNa.Name = "lblFechaNa";
-            this.lblFechaNa.Size = new System.Drawing.Size(223, 27);
+            this.lblFechaNa.Size = new System.Drawing.Size(225, 24);
             this.lblFechaNa.TabIndex = 68;
             this.lblFechaNa.Text = "Fecha de Nacimiento";
             // 
@@ -418,7 +418,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblCoreeo.Location = new System.Drawing.Point(480, 396);
             this.lblCoreeo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCoreeo.Name = "lblCoreeo";
-            this.lblCoreeo.Size = new System.Drawing.Size(202, 27);
+            this.lblCoreeo.Size = new System.Drawing.Size(206, 24);
             this.lblCoreeo.TabIndex = 67;
             this.lblCoreeo.Text = "Correo Electronico";
             // 
@@ -429,7 +429,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblTele.Location = new System.Drawing.Point(579, 346);
             this.lblTele.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTele.Name = "lblTele";
-            this.lblTele.Size = new System.Drawing.Size(103, 27);
+            this.lblTele.Size = new System.Drawing.Size(102, 24);
             this.lblTele.TabIndex = 66;
             this.lblTele.Text = "Teléfono";
             // 
@@ -440,7 +440,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblApellidos.Location = new System.Drawing.Point(580, 292);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(102, 27);
+            this.lblApellidos.Size = new System.Drawing.Size(103, 24);
             this.lblApellidos.TabIndex = 65;
             this.lblApellidos.Text = "Apellidos";
             // 
@@ -451,7 +451,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblNombres.Location = new System.Drawing.Point(579, 240);
             this.lblNombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(103, 27);
+            this.lblNombres.Size = new System.Drawing.Size(103, 24);
             this.lblNombres.TabIndex = 64;
             this.lblNombres.Text = "Nombres";
             // 
@@ -462,7 +462,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label4.Location = new System.Drawing.Point(461, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 27);
+            this.label4.Size = new System.Drawing.Size(229, 24);
             this.label4.TabIndex = 63;
             this.label4.Text = "Numero de Identidad";
             // 
@@ -606,7 +606,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblTitulo.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(683, 23);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(249, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(255, 27);
             this.lblTitulo.TabIndex = 88;
             this.lblTitulo.Text = "ADMINISTRADORES";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -723,25 +723,25 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(4);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Balsamiq Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(4);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvEmpleados.Location = new System.Drawing.Point(26, 133);
             this.dgvEmpleados.MultiSelect = false;
@@ -820,7 +820,6 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             // 
             // txtPuerto
             // 
-            this.txtPuerto.Culture = new System.Globalization.CultureInfo("es-HN");
             this.txtPuerto.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtPuerto.Location = new System.Drawing.Point(173, 416);
             this.txtPuerto.Mask = "99999";
@@ -836,7 +835,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.t.Location = new System.Drawing.Point(84, 419);
             this.t.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(81, 27);
+            this.t.Size = new System.Drawing.Size(80, 24);
             this.t.TabIndex = 62;
             this.t.Text = "Puerto";
             // 
@@ -857,7 +856,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.Host.Location = new System.Drawing.Point(106, 371);
             this.Host.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Host.Name = "Host";
-            this.Host.Size = new System.Drawing.Size(59, 27);
+            this.Host.Size = new System.Drawing.Size(58, 24);
             this.Host.TabIndex = 60;
             this.Host.Text = "Host";
             // 
@@ -877,7 +876,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblInstruccion.Location = new System.Drawing.Point(28, 82);
             this.lblInstruccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInstruccion.Name = "lblInstruccion";
-            this.lblInstruccion.Size = new System.Drawing.Size(633, 81);
+            this.lblInstruccion.Size = new System.Drawing.Size(661, 72);
             this.lblInstruccion.TabIndex = 47;
             this.lblInstruccion.Text = "Ingrese las credenciales de acceso para configurar \r\nel correo electrónico de rec" +
     "uperación. \r\n(Desde este correo se enviaran los correos de recuperación).\r\n";
@@ -888,7 +887,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.chkVerContraRecuperacion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerContraRecuperacion.Location = new System.Drawing.Point(432, 321);
             this.chkVerContraRecuperacion.Name = "chkVerContraRecuperacion";
-            this.chkVerContraRecuperacion.Size = new System.Drawing.Size(130, 31);
+            this.chkVerContraRecuperacion.Size = new System.Drawing.Size(134, 28);
             this.chkVerContraRecuperacion.TabIndex = 44;
             this.chkVerContraRecuperacion.Text = "Ver Clave";
             this.chkVerContraRecuperacion.UseVisualStyleBackColor = true;
@@ -901,7 +900,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblContraRecuperacion.Location = new System.Drawing.Point(100, 321);
             this.lblContraRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContraRecuperacion.Name = "lblContraRecuperacion";
-            this.lblContraRecuperacion.Size = new System.Drawing.Size(69, 27);
+            this.lblContraRecuperacion.Size = new System.Drawing.Size(70, 24);
             this.lblContraRecuperacion.TabIndex = 40;
             this.lblContraRecuperacion.Text = "Clave";
             // 
@@ -912,7 +911,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblCorreoRecuperacion.Location = new System.Drawing.Point(87, 273);
             this.lblCorreoRecuperacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCorreoRecuperacion.Name = "lblCorreoRecuperacion";
-            this.lblCorreoRecuperacion.Size = new System.Drawing.Size(88, 27);
+            this.lblCorreoRecuperacion.Size = new System.Drawing.Size(89, 24);
             this.lblCorreoRecuperacion.TabIndex = 45;
             this.lblCorreoRecuperacion.Text = "Usuario";
             // 
@@ -1044,7 +1043,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblActCargoActual.Location = new System.Drawing.Point(702, 555);
             this.lblActCargoActual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActCargoActual.Name = "lblActCargoActual";
-            this.lblActCargoActual.Size = new System.Drawing.Size(120, 27);
+            this.lblActCargoActual.Size = new System.Drawing.Size(118, 24);
             this.lblActCargoActual.TabIndex = 93;
             this.lblActCargoActual.Text = "------------";
             // 
@@ -1056,7 +1055,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label15.Location = new System.Drawing.Point(546, 555);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(143, 27);
+            this.label15.Size = new System.Drawing.Size(148, 24);
             this.label15.TabIndex = 92;
             this.label15.Text = "Cargo Actual";
             // 
@@ -1078,7 +1077,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblActEstado.Location = new System.Drawing.Point(702, 649);
             this.lblActEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActEstado.Name = "lblActEstado";
-            this.lblActEstado.Size = new System.Drawing.Size(120, 27);
+            this.lblActEstado.Size = new System.Drawing.Size(118, 24);
             this.lblActEstado.TabIndex = 90;
             this.lblActEstado.Text = "------------";
             // 
@@ -1090,7 +1089,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.lblActEs.Location = new System.Drawing.Point(608, 649);
             this.lblActEs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActEs.Name = "lblActEs";
-            this.lblActEs.Size = new System.Drawing.Size(81, 27);
+            this.lblActEs.Size = new System.Drawing.Size(83, 24);
             this.lblActEs.TabIndex = 89;
             this.lblActEs.Text = "Estado";
             // 
@@ -1101,7 +1100,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label6.Location = new System.Drawing.Point(452, 459);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(237, 27);
+            this.label6.Size = new System.Drawing.Size(244, 24);
             this.label6.TabIndex = 88;
             this.label6.Text = "Confirmar Contraseña";
             // 
@@ -1217,7 +1216,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label3.Location = new System.Drawing.Point(853, 508);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 27);
+            this.label3.Size = new System.Drawing.Size(144, 24);
             this.label3.TabIndex = 74;
             this.label3.Text = "dd/mm/aaaa";
             // 
@@ -1266,7 +1265,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.chkActVerContra.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkActVerContra.Location = new System.Drawing.Point(906, 411);
             this.chkActVerContra.Name = "chkActVerContra";
-            this.chkActVerContra.Size = new System.Drawing.Size(201, 31);
+            this.chkActVerContra.Size = new System.Drawing.Size(208, 28);
             this.chkActVerContra.TabIndex = 73;
             this.chkActVerContra.Text = "Ver Contraseñas";
             this.chkActVerContra.UseVisualStyleBackColor = true;
@@ -1279,7 +1278,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label5.Location = new System.Drawing.Point(560, 412);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 27);
+            this.label5.Size = new System.Drawing.Size(132, 24);
             this.label5.TabIndex = 72;
             this.label5.Text = "Contraseña";
             // 
@@ -1336,7 +1335,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.cmbActCargo.Location = new System.Drawing.Point(705, 595);
             this.cmbActCargo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbActCargo.Name = "cmbActCargo";
-            this.cmbActCargo.Size = new System.Drawing.Size(323, 32);
+            this.cmbActCargo.Size = new System.Drawing.Size(323, 29);
             this.cmbActCargo.TabIndex = 70;
             this.cmbActCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbActCargo_KeyPress);
             // 
@@ -1349,7 +1348,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label7.Location = new System.Drawing.Point(483, 596);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(199, 27);
+            this.label7.Size = new System.Drawing.Size(209, 24);
             this.label7.TabIndex = 69;
             this.label7.Text = "Cargo a Actualizar";
             // 
@@ -1360,7 +1359,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label8.Location = new System.Drawing.Point(468, 513);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(223, 27);
+            this.label8.Size = new System.Drawing.Size(225, 24);
             this.label8.TabIndex = 68;
             this.label8.Text = "Fecha de Nacimiento";
             // 
@@ -1371,7 +1370,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label9.Location = new System.Drawing.Point(487, 361);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(202, 27);
+            this.label9.Size = new System.Drawing.Size(206, 24);
             this.label9.TabIndex = 67;
             this.label9.Text = "Correo Electronico";
             // 
@@ -1382,7 +1381,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label10.Location = new System.Drawing.Point(579, 315);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 27);
+            this.label10.Size = new System.Drawing.Size(102, 24);
             this.label10.TabIndex = 66;
             this.label10.Text = "Teléfono";
             // 
@@ -1393,7 +1392,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label11.Location = new System.Drawing.Point(579, 264);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 27);
+            this.label11.Size = new System.Drawing.Size(103, 24);
             this.label11.TabIndex = 65;
             this.label11.Text = "Apellidos";
             // 
@@ -1404,7 +1403,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label12.Location = new System.Drawing.Point(579, 205);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 27);
+            this.label12.Size = new System.Drawing.Size(103, 24);
             this.label12.TabIndex = 64;
             this.label12.Text = "Nombres";
             // 
@@ -1415,7 +1414,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             this.label13.Location = new System.Drawing.Point(466, 108);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(223, 27);
+            this.label13.Size = new System.Drawing.Size(229, 24);
             this.label13.TabIndex = 63;
             this.label13.Text = "Numero de Identidad";
             // 
