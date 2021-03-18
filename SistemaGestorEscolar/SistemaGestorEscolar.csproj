@@ -264,21 +264,9 @@
     <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte Estudiante\DataSetEstudiantes.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte Estudiante\RepoteEstudiantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reporte Estudiante\RepoteEstudiantes.Designer.cs">
-      <DependentUpon>RepoteEstudiantes.cs</DependentUpon>
-    </Compile>
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StaMariaNazarethDatabaseServiceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -528,10 +516,6 @@
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
       <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte Estudiante\ReportEstudiante.rdlc" />
-    <EmbeddedResource Include="Reporte Estudiante\RepoteEstudiantes.resx">
-      <DependentUpon>RepoteEstudiantes.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -558,17 +542,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Reporte Estudiante\DataSetEstudiantes.xsc">
-      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
-    </None>
-    <None Include="Reporte Estudiante\DataSetEstudiantes.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEstudiantes.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reporte Estudiante\DataSetEstudiantes.xss">
-      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
-    </None>
     <None Include="Resources\logohd.png" />
   </ItemGroup>
   <ItemGroup>
@@ -584,19 +557,6 @@
     <None Include="Resources\Logo Nazaret.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\Usuario.png" />
     <None Include="Resources\iconBackResized2.png" />
     <None Include="Resources\iconCursosResized2.png" />
