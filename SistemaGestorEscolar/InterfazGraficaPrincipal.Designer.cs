@@ -61,12 +61,19 @@ namespace SistemaGestorEscolar
             this.label2 = new System.Windows.Forms.Label();
             this.panelMostrador = new System.Windows.Forms.Panel();
             this.panSubMenuPagos = new System.Windows.Forms.Panel();
-            this.btnHistorialPagos = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.btnRegistrarPago = new SistemaGestorEscolar.Controls.RoundedButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.btnPersonal = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnIngresarNotas = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnPagos = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnCursos = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnHistorialPagos = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnRegistrarPago = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -562,45 +569,45 @@ namespace SistemaGestorEscolar
             this.panSubMenuPagos.Size = new System.Drawing.Size(284, 50);
             this.panSubMenuPagos.TabIndex = 0;
             // 
-            // btnHistorialPagos
+            this.btnHistorialMedico.UseVisualStyleBackColor = false;
             // 
-            this.btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnHistorialPagos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.btnHistorialPagos.BorderDownColor = System.Drawing.Color.Empty;
-            this.btnHistorialPagos.BorderDownWidth = 0F;
-            this.btnHistorialPagos.BorderOverColor = System.Drawing.Color.Empty;
-            this.btnHistorialPagos.BorderOverWidth = 0F;
-            this.btnHistorialPagos.BorderRadius = 25;
-            this.btnHistorialPagos.BorderWidth = 4F;
-            this.btnHistorialPagos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
-            this.btnHistorialPagos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHistorialPagos.Location = new System.Drawing.Point(952, 401);
-            this.btnHistorialPagos.Name = "btnHistorialPagos";
-            this.btnHistorialPagos.Size = new System.Drawing.Size(353, 155);
-            this.btnHistorialPagos.TabIndex = 48;
-            this.btnHistorialPagos.Text = "HISTORIAL PAGOS";
-            this.btnHistorialPagos.UseVisualStyleBackColor = false;
+            // label2
             // 
-            // btnRegistrarPago
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(697, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(240, 36);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "ESTUDIANTES";
             // 
-            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarPago.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.btnRegistrarPago.BorderDownColor = System.Drawing.Color.Empty;
-            this.btnRegistrarPago.BorderDownWidth = 0F;
-            this.btnRegistrarPago.BorderOverColor = System.Drawing.Color.Empty;
-            this.btnRegistrarPago.BorderOverWidth = 0F;
-            this.btnRegistrarPago.BorderRadius = 25;
-            this.btnRegistrarPago.BorderWidth = 4F;
-            this.btnRegistrarPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
-            this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrarPago.Location = new System.Drawing.Point(337, 401);
-            this.btnRegistrarPago.Name = "btnRegistrarPago";
-            this.btnRegistrarPago.Size = new System.Drawing.Size(353, 155);
-            this.btnRegistrarPago.TabIndex = 47;
-            this.btnRegistrarPago.Text = "REGISTRAR PAGO";
-            this.btnRegistrarPago.UseVisualStyleBackColor = false;
-            this.btnRegistrarPago.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistrarPago_MouseDown);
+            // panelMostrador
             // 
+            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panelMostrador.Location = new System.Drawing.Point(45, 746);
+            this.panelMostrador.Name = "panelMostrador";
+            this.panelMostrador.Size = new System.Drawing.Size(484, 187);
+            this.panelMostrador.TabIndex = 39;
+            this.panelMostrador.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrador_Paint);
+            // 
+            // panSubMenuPagos
+            // 
+            this.panSubMenuPagos.Controls.Add(this.btnHistorialPagos);
+            this.panSubMenuPagos.Controls.Add(this.btnRegistrarPago);
+            this.panSubMenuPagos.Controls.Add(this.label1);
+            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 883);
+            this.panSubMenuPagos.Name = "panSubMenuPagos";
+            this.panSubMenuPagos.Size = new System.Drawing.Size(284, 50);
+            this.panSubMenuPagos.TabIndex = 0;
+            // 
+            this.btnHistorialMedico.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(697, 170);
+            this.label2.Name = "label2";
             // label1
             // 
             this.label1.AutoSize = true;
@@ -619,6 +626,68 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle.Location = new System.Drawing.Point(675, 100);
             this.lblMenuTitle.Name = "lblMenuTitle";
             this.lblMenuTitle.Size = new System.Drawing.Size(292, 41);
+            this.lblMenuTitle.TabIndex = 32;
+            this.lblMenuTitle.Text = "MENU PRINCIPAL";
+            // 
+            // tmrOcultarMenu
+            // 
+            this.tmrOcultarMenu.Interval = 2;
+            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
+            // 
+            // tmrMostrarMenu
+            // 
+            this.tmrMostrarMenu.Interval = 2;
+            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(742, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 36);
+            this.label1.TabIndex = 23;
+            this.label1.Text = " PAGOS";
+            // 
+            // lblMenuTitle
+            // 
+            this.lblMenuTitle.AutoSize = true;
+            this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
+            this.lblMenuTitle.Location = new System.Drawing.Point(677, 101);
+            this.lblMenuTitle.Name = "lblMenuTitle";
+            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
+            this.lblMenuTitle.TabIndex = 32;
+            this.lblMenuTitle.Text = "MENU PRINCIPAL";
+            // 
+            // tmrOcultarMenu
+            // 
+            this.tmrOcultarMenu.Interval = 2;
+            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
+            // 
+            // tmrMostrarMenu
+            // 
+            this.tmrMostrarMenu.Interval = 2;
+            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(742, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 36);
+            this.label1.TabIndex = 23;
+            this.label1.Text = " PAGOS";
+            // 
+            // lblMenuTitle
+            // 
+            this.lblMenuTitle.AutoSize = true;
+            this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
+            this.lblMenuTitle.Location = new System.Drawing.Point(677, 101);
+            this.lblMenuTitle.Name = "lblMenuTitle";
+            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
             this.lblMenuTitle.TabIndex = 32;
             this.lblMenuTitle.Text = "MENU PRINCIPAL";
             // 

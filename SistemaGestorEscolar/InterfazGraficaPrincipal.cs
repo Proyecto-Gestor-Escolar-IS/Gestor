@@ -363,11 +363,16 @@ namespace SistemaGestorEscolar
             if (codigoColor == 1)
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+               
             }
             else if (codigoColor == 2)
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+
+
+
+
         }
 
         private void btnEstudiante_Click(object sender, EventArgs e)
@@ -630,6 +635,8 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+
+
         }
 
         private void btnMatricularEstudiante_Click_1(object sender, EventArgs e)
@@ -653,6 +660,14 @@ namespace SistemaGestorEscolar
             else if (codigoColor == 2)
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+
+            foreach (Control x in formulario.Controls)
+            {
+                if (x is Label)
+                {
+                    ((Label)x).ForeColor = Color.Pink;
+                }
             }
         }
 
