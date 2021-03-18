@@ -20,7 +20,7 @@ namespace SistemaGestorEscolar
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-2KKKGON\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-LEHSHML;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -927,19 +927,51 @@ namespace SistemaGestorEscolar
 
         }
 
-        public bool PARegistroActualizacionCursos(int idCurso, String nombreCurso, double precioCurso, int codigoOP)
+        public bool PAActualizarCursos(int idCurso, String nombreCurso, double precioCurso)
         {
             try
             {
-
                 SqlCommand comando = databaseIntermediary.CreateCommand();
-                comando.CommandText = "PARegistrarYActualizarCurso";
+                comando.CommandText = "PAActualizarCurso";
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@id_Curso", idCurso);
                 comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
                 comando.Parameters.AddWithValue("@precioCompleto", precioCurso);
-                comando.Parameters.AddWithValue("@codigoOperacion", codigoOP);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Gestión cursos", "Error de Actualización", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool PARegistroCursos(String nombreCurso, double precioCurso, int estadoCurso)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PARegistrarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
+                comando.Parameters.AddWithValue("@precioCompleto", precioCurso);
+                comando.Parameters.AddWithValue("@estadoCurso", estadoCurso);
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -962,8 +994,6 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
-
-
     }
 
 }

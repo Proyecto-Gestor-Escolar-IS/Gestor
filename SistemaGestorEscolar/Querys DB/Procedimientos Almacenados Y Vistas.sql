@@ -390,3 +390,38 @@ BEGIN
 END
 GO
 
+--SamuelOviedo--
+-----------------------------------------------------------------------Procedimientos Cursos----------------------------------------------------------------
+
+---------------Actualizar curso-----------------
+CREATE PROCEDURE [dbo].[PAActualizarCurso] (@id_Curso int, @nombreCurso varchar(30), @precioCompleto money)
+
+AS
+BEGIN
+
+	BEGIN
+
+	UPDATE [dbo].[cursos] SET [nombreCurso] = @nombreCurso WHERE [id_Curso] = @id_Curso
+    UPDATE [dbo].[cursos] SET [precioCompleto] = @precioCompleto WHERE [id_Curso] = @id_Curso
+
+	END
+
+END
+
+---------------Registrar curso-----------------
+CREATE PROCEDURE [dbo].[PARegistrarCurso] (@nombreCurso varchar(30), @precioCompleto money, @estadoCurso int)
+
+AS
+BEGIN
+
+	BEGIN
+		IF (EXISTS(SELECT [nombreCurso] from [dbo].[cursos] WHERE [nombreCurso] = @nombreCurso))
+
+			UPDATE [dbo].[cursos] SET [estadoCurso] = @estadoCurso
+
+		ELSE
+
+			INSERT INTO [dbo].[cursos] VALUES (@nombreCurso, @precioCompleto, @estadoCurso)
+	END
+
+END
