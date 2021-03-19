@@ -349,7 +349,7 @@ namespace SistemaGestorEscolar
 
         private void btnMenuMatriculaEstudiante_Click(object sender, EventArgs e)
         {
-            
+            AbrirFormulario <Modulos_Estudiante.IMatriculaIndividual>();
         }
 
         private void panSuperior_Paint(object sender, PaintEventArgs e)
@@ -388,7 +388,7 @@ namespace SistemaGestorEscolar
 
         private void btnMenuRegistroPago_Click(object sender, EventArgs e)
         {
-            panSubMenuPagos.Visible = true;
+            AbrirFormulario<IRegistroPago>(); ;
         }
 
         private void btnMenuIngresoNotas_Click(object sender, EventArgs e)
@@ -398,12 +398,12 @@ namespace SistemaGestorEscolar
 
         private void btnMenuCursosDisponibles_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario<Modulo_de_Cursos.IGestionCursos>();
         }
 
         private void btnMenuVistaMatricula_Click(object sender, EventArgs e)
         {
-
+            //AbrirFormulario<Modulo_de_Pagos.IHistorialPagos>();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
