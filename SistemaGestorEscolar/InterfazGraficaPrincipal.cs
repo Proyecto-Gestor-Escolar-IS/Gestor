@@ -19,6 +19,9 @@ namespace SistemaGestorEscolar
             InitializeComponent();
         }
 
+
+        MessageBox_Personalizados.IMessageBoxSiNo siNo = new MessageBox_Personalizados.IMessageBoxSiNo();
+
         Modulos_de_Arranque.verficacionArranque actualizarModulos = new Modulos_de_Arranque.verficacionArranque();
         public static Form formulario = new Form();
         int posicionX;
@@ -254,17 +257,8 @@ namespace SistemaGestorEscolar
         }
 
         private void btnCerrarPrograma_Click(object sender, EventArgs e)
-        {
-            string message = "Esta seguro que desea salir?";
-            string caption = "Cerrar Aplicación";
-            DialogResult result;
-
-            result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == System.Windows.Forms.DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+        {           
+            siNo.ShowDialog();
         }
 
         private void btnMenuMatriculaEstudiante_Click(object sender, EventArgs e)
@@ -720,6 +714,7 @@ namespace SistemaGestorEscolar
         {
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
+            ocultarBotones();
             AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
 
             if (codigoColor == 1)
@@ -737,7 +732,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>(); 
+            AbrirFormulario<Modulo_de_Cursos.IGestionCursos>(); 
 
             if (codigoColor == 1)
             {
@@ -752,6 +747,11 @@ namespace SistemaGestorEscolar
         private void btnFichaEstudiante_MouseDown(object sender, MouseEventArgs e)
         {
           
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

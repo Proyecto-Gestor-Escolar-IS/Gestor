@@ -450,6 +450,7 @@ namespace SistemaGestorEscolar
             this.btnCursos.TabIndex = 42;
             this.btnCursos.Text = "CURSOS";
             this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             this.btnCursos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCursos_MouseDown);
             // 
             // btnVistaMatriculas
