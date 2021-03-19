@@ -34,13 +34,73 @@ namespace SistemaGestorEscolar
                 panSubMenuPersonal.Visible = false;
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
-
+                //clsVariablesGlobales.CodigoAcceso = 1;
 
                 if (clsVariablesGlobales.CodigoAcceso == 0) {
+                    btnEstudiante.Enabled = false;
+                    btnIngresarNotas.Enabled = false;
+                    btnPersonal.Enabled = true;
+                    btnVistaMatriculas.Enabled = false;
+                    btnCursos.Enabled = false;
+                    btnPagos.Enabled = false;
+                    btnMatricularEstudiante.Enabled = false;
+
+                    btnEstudiante.BackColor = Color.Gray;
+                    btnIngresarNotas.BackColor = Color.Gray;
+                    btnVistaMatriculas.BackColor = Color.Gray;
+                    btnCursos.BackColor = Color.Gray;
+                    btnPagos.BackColor = Color.Gray;
+                    btnMatricularEstudiante.BackColor = Color.Gray;
+
+                }
+                else if (clsVariablesGlobales.CodigoAcceso == 1)
+                {
+                    btnEstudiante.Enabled = true;
+                    btnIngresarNotas.Enabled = false;
+                    btnPersonal.Enabled = false;
+                    btnVistaMatriculas.Enabled = true;
+                    btnCursos.Enabled = true;
+                    btnPagos.Enabled = true;
+                    btnMatricularEstudiante.Enabled = true;
+
+                    btnPersonal.BackColor = Color.Gray;
+                    btnIngresarNotas.BackColor = Color.Gray;
+
+                }
+                else if (clsVariablesGlobales.CodigoAcceso == 2)
+                {
                     btnEstudiante.Enabled = true;
                     btnIngresarNotas.Enabled = true;
-                }
+                    btnPersonal.Enabled = false;
+                    btnVistaMatriculas.Enabled = true;
+                    btnCursos.Enabled = false;
+                    btnPagos.Enabled = false;
+                    btnMatricularEstudiante.Enabled = false;
 
+                    btnPersonal.BackColor = Color.Gray;
+                    btnPagos.BackColor = Color.Gray;
+                    btnCursos.BackColor = Color.Gray;
+                    btnMatricularEstudiante.BackColor = Color.Gray;
+
+
+                }
+                else if (clsVariablesGlobales.CodigoAcceso == 3)
+                {
+                    btnEstudiante.Enabled = true;
+                    btnIngresarNotas.Enabled = false;
+                    btnPersonal.Enabled = false;
+                    btnVistaMatriculas.Enabled = true;
+                    btnCursos.Enabled = false;
+                    btnPagos.Enabled = false;
+                    btnMatricularEstudiante.Enabled = false;
+
+                    btnPersonal.BackColor = Color.Gray;
+                    btnIngresarNotas.BackColor = Color.Gray;
+                    btnPagos.BackColor = Color.Gray;
+                    btnCursos.BackColor = Color.Gray;
+                    btnMatricularEstudiante.BackColor = Color.Gray;
+
+                }
 
             }
             catch (Exception ex)
