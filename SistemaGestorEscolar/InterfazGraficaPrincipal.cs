@@ -34,7 +34,7 @@ namespace SistemaGestorEscolar
                 panSubMenuPersonal.Visible = false;
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
-                //clsVariablesGlobales.CodigoAcceso = 1;
+                clsVariablesGlobales.CodigoAcceso = 3;
 
                 if (clsVariablesGlobales.CodigoAcceso == 0) {
                     btnEstudiante.Enabled = false;
@@ -45,12 +45,19 @@ namespace SistemaGestorEscolar
                     btnPagos.Enabled = false;
                     btnMatricularEstudiante.Enabled = false;
 
-                    btnEstudiante.BackColor = Color.Gray;
-                    btnIngresarNotas.BackColor = Color.Gray;
-                    btnVistaMatriculas.BackColor = Color.Gray;
-                    btnCursos.BackColor = Color.Gray;
-                    btnPagos.BackColor = Color.Gray;
-                    btnMatricularEstudiante.BackColor = Color.Gray;
+                    btnEstudiante.BackColor = Color.DarkGray;
+                    btnIngresarNotas.BackColor = Color.DarkGray;
+                    btnVistaMatriculas.BackColor = Color.DarkGray;
+                    btnCursos.BackColor = Color.DarkGray;
+                    btnPagos.BackColor = Color.DarkGray;
+                    btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                    btnEstudiante.BorderColor = Color.Silver;
+                    btnIngresarNotas.BorderColor = Color.Silver;
+                    btnVistaMatriculas.BorderColor = Color.Silver;
+                    btnCursos.BorderColor = Color.Silver;
+                    btnPagos.BorderColor = Color.Silver;
+                    btnMatricularEstudiante.BorderColor = Color.Silver;
 
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 1)
@@ -63,8 +70,11 @@ namespace SistemaGestorEscolar
                     btnPagos.Enabled = true;
                     btnMatricularEstudiante.Enabled = true;
 
-                    btnPersonal.BackColor = Color.Gray;
-                    btnIngresarNotas.BackColor = Color.Gray;
+                    btnPersonal.BackColor = Color.DarkGray;
+                    btnIngresarNotas.BackColor = Color.DarkGray;
+
+                    btnPersonal.BorderColor = Color.Silver;
+                    btnIngresarNotas.BorderColor = Color.Silver;
 
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 2)
@@ -77,11 +87,15 @@ namespace SistemaGestorEscolar
                     btnPagos.Enabled = false;
                     btnMatricularEstudiante.Enabled = false;
 
-                    btnPersonal.BackColor = Color.Gray;
-                    btnPagos.BackColor = Color.Gray;
-                    btnCursos.BackColor = Color.Gray;
-                    btnMatricularEstudiante.BackColor = Color.Gray;
+                    btnPersonal.BackColor = Color.DarkGray;
+                    btnPagos.BackColor = Color.DarkGray;
+                    btnCursos.BackColor = Color.DarkGray;
+                    btnMatricularEstudiante.BackColor = Color.DarkGray;
 
+                    btnPersonal.BorderColor = Color.Silver;
+                    btnPagos.BorderColor = Color.Silver;
+                    btnCursos.BorderColor = Color.Silver;
+                    btnMatricularEstudiante.BorderColor = Color.Silver;
 
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 3)
@@ -94,11 +108,17 @@ namespace SistemaGestorEscolar
                     btnPagos.Enabled = false;
                     btnMatricularEstudiante.Enabled = false;
 
-                    btnPersonal.BackColor = Color.Gray;
-                    btnIngresarNotas.BackColor = Color.Gray;
-                    btnPagos.BackColor = Color.Gray;
-                    btnCursos.BackColor = Color.Gray;
-                    btnMatricularEstudiante.BackColor = Color.Gray;
+                    btnPersonal.BackColor = Color.DarkGray;
+                    btnIngresarNotas.BackColor = Color.DarkGray;
+                    btnPagos.BackColor = Color.DarkGray;
+                    btnCursos.BackColor = Color.DarkGray;
+                    btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                    btnPersonal.BorderColor = Color.Silver;
+                    btnIngresarNotas.BorderColor = Color.Silver;
+                    btnPagos.BorderColor = Color.Silver;
+                    btnCursos.BorderColor = Color.Silver;
+                    btnMatricularEstudiante.BorderColor = Color.Silver;
 
                 }
 
