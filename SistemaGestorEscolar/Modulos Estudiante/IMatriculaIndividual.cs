@@ -90,7 +90,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             label1.Visible = false;
             btnReingreso.Visible = false;
             btnActualizarMatricula.Visible = false;
-            dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
+            dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero'  FROM datosEstudiante");
 
 
 
@@ -123,7 +123,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                     mesesDePago = 10;
                                 }
 
-                                if (dbConn.PARegistrarMatricula("1010202000034", txtNombreEncargado.Text, txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, cmbSeccion.SelectedIndex, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtNombreEncargado.Text, txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, cmbSeccion.SelectedIndex, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudiante.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -388,30 +388,28 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             try
             {
-                if (txtBusquedaNombre.Text != String.Empty)
-                {
-                    txtBusquedaNombre.ForeColor = Color.Black;
-                    errorIdentidad.Clear();
-                    if (Regex.IsMatch(txtBusquedaNombre.Text, @"^[a-z A-Z]+$"))
-                    {
+                long number = 0;
 
+                if (txtBusquedaNombre.Text != string.Empty)
+                {
+
+                    if ((long.TryParse(txtBusquedaNombre.Text, out number) && Regex.IsMatch(txtBusquedaNombre.Text, @"^[a-z A-Z]+$") == false) || (Regex.IsMatch(txtBusquedaNombre.Text, @"^[a-z A-Z]+$") && long.TryParse(txtBusquedaNombre.Text, out number) == false))
+                    {
                         txtBusquedaNombre.ForeColor = Color.Green;
                         errorIdentidad.Clear();
-
-                        dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaNombre.Text + "%'");
+                        dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaNombre.Text + "%' OR identidadEstudiante LIKE '" + txtBusquedaNombre.Text + "%'");
                     }
                     else
                     {
                         txtBusquedaNombre.ForeColor = Color.Red;
-                        errorIdentidad.SetError(this.txtBusquedaNombre, "No se Permiten Numeros!");
-                        dgvEstudiantes.DataSource = null;
-                        limpiarPantalla();
-
+                        errorIdentidad.SetError(this.txtBusquedaNombre, "Ingrese valores correctos!");
+                        dgvBusquedaEstado.DataSource = null;
                     }
                 }
                 else
                 {
-                    errorIdentidad.Clear();
+                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre'  FROM datosEstudiante");
+
                 }
             }
             catch (Exception ex)
@@ -500,7 +498,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                 {
                                     mesesDePago = 10;
                                 }
-                                if (dbConn.PARegistrarMatricula("1010202000034", txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, cmbSeccionR.SelectedIndex, float.Parse(txtTotalR.Text), 1, mesesDePago, 1, 2))
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, cmbSeccionR.SelectedIndex, float.Parse(txtTotalR.Text), 1, mesesDePago, 1, 2))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -571,7 +569,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             btnActualizarMatricula.Visible = false;
 
-            dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
+            dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante");
 
         }
 
@@ -595,73 +593,40 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             identidadActualizacion = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
-        private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
+
+
+private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
         {
+
             long number = 0;
-            try
+
+            if (txtBusquedaIdentidadEstado.Text != string.Empty)
             {
-                if (txtBusquedaIdentidadEstado.Text != String.Empty)
+
+                if ((long.TryParse(txtBusquedaIdentidadEstado.Text, out number) && Regex.IsMatch(txtBusquedaIdentidadEstado.Text, @"^[a-z A-Z]+$") == false) || (Regex.IsMatch(txtBusquedaIdentidadEstado.Text, @"^[a-z A-Z]+$") && long.TryParse(txtBusquedaIdentidadEstado.Text, out number) == false))
                 {
-                    txtBusquedaIdentidadEstado.ForeColor = Color.Black;
+                    txtBusquedaIdentidadEstado.ForeColor = Color.Green;
                     errorIdentidad.Clear();
-                    if (long.TryParse(txtBusquedaIdentidadEstado.Text, out number))
-                    {
-                        txtBusquedaIdentidadEstado.ForeColor = Color.Green;
-                        errorIdentidad.Clear();
-
-                        dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado' FROM datosEstudiante WHERE identidadEstudiante LIKE '" + txtBusquedaIdentidadEstado.Text + "%'");
-
-                    }
-                    else
-                    {
-                        txtBusquedaIdentidadEstado.ForeColor = Color.Red;
-                        errorIdentidad.SetError(this.txtBusquedaIdentidadEstado, "Solo se Permiten Numeros!");
-                        dgvBusquedaEstado.DataSource = "";
-                    }
+                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante WHERE identidadEstudiante LIKE '" + txtBusquedaIdentidadEstado.Text + "%' OR CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaIdentidadEstado.Text+  "%'");
                 }
                 else
                 {
-                    errorIdentidad.Clear();
+                    txtBusquedaIdentidadEstado.ForeColor = Color.Red;
+                    errorIdentidad.SetError(this.txtBusquedaIdentidadEstado, "Ingrese valores correctos!");
+                    dgvBusquedaEstado.DataSource = null;
                 }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
+                dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante");
+
             }
         }
 
+
         private void txtBusquedaNombreEstado_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtBusquedaNombreEstado.Text != String.Empty)
-                {
-                    txtBusquedaNombreEstado.ForeColor = Color.Black;
-                    errorIdentidad.Clear();
-                    if (Regex.IsMatch(txtBusquedaNombreEstado.Text, @"^[a-z A-Z]+$"))
-                    {
-
-                        txtBusquedaNombreEstado.ForeColor = Color.Green;
-                        errorIdentidad.Clear();
-
-                        dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaNombreEstado.Text + "%'");
-                    }
-                    else
-                    {
-                        txtBusquedaNombreEstado.ForeColor = Color.Red;
-                        errorIdentidad.SetError(this.txtBusquedaNombreEstado, "No se Permiten Numeros!");
-                        dgvBusquedaEstado.DataSource = null;
-                    }
-                }
-                else
-                {
-                    errorIdentidad.Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+           
         }
 
         private void txtIdentidadEstado_TextChanged(object sender, EventArgs e)

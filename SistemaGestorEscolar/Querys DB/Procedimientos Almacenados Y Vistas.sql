@@ -425,3 +425,23 @@ BEGIN
 	END
 
 END
+GO
+
+/*YESSY TINOCO*/
+
+--------------------------------------------------------- Apertura de Expediente Médico ---------------------------------------------------------------------
+
+CREATE PROCEDURE abrirExpediente(@id_Estudiante varchar(13), @antecedentesMedicos text)
+AS BEGIN
+		INSERT INTO expedienteMedico( id_Estudiante, fechaCreacion, antecedentesMedicos) 
+		VALUES( @id_Estudiante, GETDATE(), @antecedentesMedicos)
+END
+GO
+--------------------------------------------------------- Registro de Visita Médica ---------------------------------------------------------------------
+
+CREATE PROCEDURE registroVisitaMedica(@id_expediente int, @id_DoctorEncargado varchar(13), @sintomas text, @posibleEnfermedad text, @medicamentos text)
+AS BEGIN
+			INSERT INTO detalleExpedienteMedico(id_expediente, id_DoctorEncargado, fecha, sintomas, posibleEnfermadad, medicamentos) 
+			VALUES( @id_expediente, @id_DoctorEncargado, GETDATE(), @sintomas, @posibleEnfermedad, @medicamentos)
+END
+GO

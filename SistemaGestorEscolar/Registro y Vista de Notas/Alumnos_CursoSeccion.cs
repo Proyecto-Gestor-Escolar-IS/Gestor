@@ -24,5 +24,10 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
 
         }
+
+        private void Alumnos_CursoSeccion_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

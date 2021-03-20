@@ -66,6 +66,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.Name = "Alumnos_CursoSeccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumnos_CursoSeccion";
+            this.Load += new System.EventHandler(this.Alumnos_CursoSeccion_Load);
             this.gbAlumnos_CursoSeccion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos_CS)).EndInit();
             this.ResumeLayout(false);

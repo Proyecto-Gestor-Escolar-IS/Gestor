@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows;
 using SistemaGestorEscolar.MessageBox_Personalizados;
+using System.Globalization;
 
 namespace SistemaGestorEscolar.Login
 {
@@ -119,6 +120,7 @@ namespace SistemaGestorEscolar.Login
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            DateTime dateTime;
             if (txtCorreoRecuperacion.Text != string.Empty && txtContraseRecuperacion.Text != string.Empty && txtHost.Text != string.Empty && txtPuerto.Text != string.Empty && utilidad.isNumeric(txtPuerto.Text))
             {
                 if (utilidad.verificarCorreo(txtCorreoRecuperacion.Text))
@@ -132,7 +134,7 @@ namespace SistemaGestorEscolar.Login
              
                         if(utilidad.enviarCorreo(" < h1 > VERIFICACI & Oacute; N DE CORREO ELECTR&Oacute; NICO </ h1 > ",txtCorreoRecuperacion.Text,txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text, txtHost.Text, Convert.ToInt32(txtPuerto.Text)) == true)
                         {
-                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
+                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), "22/12/2021",
                             txtCorreo.Text, 1, utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
                             {
                                 try

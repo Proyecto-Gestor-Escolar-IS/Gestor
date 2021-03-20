@@ -34,7 +34,6 @@ namespace SistemaGestorEscolar
                 panSubMenuPersonal.Visible = false;
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
-                clsVariablesGlobales.CodigoAcceso = 3;
 
                 if (clsVariablesGlobales.CodigoAcceso == 0) {
                     btnEstudiante.Enabled = false;
@@ -160,6 +159,8 @@ namespace SistemaGestorEscolar
            
         }
 
+       
+
         private void btnMenuAtras_Click(object sender, EventArgs e)
         {
             panelMostrador.Visible = false;
@@ -169,6 +170,93 @@ namespace SistemaGestorEscolar
             panelMostrador.Controls.Clear();
             formulario.Close();
             mostrarBotones();
+
+            if (clsVariablesGlobales.CodigoAcceso == 0)
+            {
+                btnEstudiante.Enabled = false;
+                btnIngresarNotas.Enabled = false;
+                btnPersonal.Enabled = true;
+                btnVistaMatriculas.Enabled = false;
+                btnCursos.Enabled = false;
+                btnPagos.Enabled = false;
+                btnMatricularEstudiante.Enabled = false;
+
+                btnEstudiante.BackColor = Color.DarkGray;
+                btnIngresarNotas.BackColor = Color.DarkGray;
+                btnVistaMatriculas.BackColor = Color.DarkGray;
+                btnCursos.BackColor = Color.DarkGray;
+                btnPagos.BackColor = Color.DarkGray;
+                btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                btnEstudiante.BorderColor = Color.Silver;
+                btnIngresarNotas.BorderColor = Color.Silver;
+                btnVistaMatriculas.BorderColor = Color.Silver;
+                btnCursos.BorderColor = Color.Silver;
+                btnPagos.BorderColor = Color.Silver;
+                btnMatricularEstudiante.BorderColor = Color.Silver;
+
+            }
+            else if (clsVariablesGlobales.CodigoAcceso == 1)
+            {
+                btnEstudiante.Enabled = true;
+                btnIngresarNotas.Enabled = false;
+                btnPersonal.Enabled = false;
+                btnVistaMatriculas.Enabled = true;
+                btnCursos.Enabled = true;
+                btnPagos.Enabled = true;
+                btnMatricularEstudiante.Enabled = true;
+
+                btnPersonal.BackColor = Color.DarkGray;
+                btnIngresarNotas.BackColor = Color.DarkGray;
+
+                btnPersonal.BorderColor = Color.Silver;
+                btnIngresarNotas.BorderColor = Color.Silver;
+
+            }
+            else if (clsVariablesGlobales.CodigoAcceso == 2)
+            {
+                btnEstudiante.Enabled = true;
+                btnIngresarNotas.Enabled = true;
+                btnPersonal.Enabled = false;
+                btnVistaMatriculas.Enabled = true;
+                btnCursos.Enabled = false;
+                btnPagos.Enabled = false;
+                btnMatricularEstudiante.Enabled = false;
+
+                btnPersonal.BackColor = Color.DarkGray;
+                btnPagos.BackColor = Color.DarkGray;
+                btnCursos.BackColor = Color.DarkGray;
+                btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                btnPersonal.BorderColor = Color.Silver;
+                btnPagos.BorderColor = Color.Silver;
+                btnCursos.BorderColor = Color.Silver;
+                btnMatricularEstudiante.BorderColor = Color.Silver;
+
+            }
+            else if (clsVariablesGlobales.CodigoAcceso == 3)
+            {
+                btnEstudiante.Enabled = true;
+                btnIngresarNotas.Enabled = false;
+                btnPersonal.Enabled = false;
+                btnVistaMatriculas.Enabled = true;
+                btnCursos.Enabled = false;
+                btnPagos.Enabled = false;
+                btnMatricularEstudiante.Enabled = false;
+
+                btnPersonal.BackColor = Color.DarkGray;
+                btnIngresarNotas.BackColor = Color.DarkGray;
+                btnPagos.BackColor = Color.DarkGray;
+                btnCursos.BackColor = Color.DarkGray;
+                btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                btnPersonal.BorderColor = Color.Silver;
+                btnIngresarNotas.BorderColor = Color.Silver;
+                btnPagos.BorderColor = Color.Silver;
+                btnCursos.BorderColor = Color.Silver;
+                btnMatricularEstudiante.BorderColor = Color.Silver;
+
+            }
         }
 
         private void panLateral_Paint(object sender, PaintEventArgs e)
@@ -832,6 +920,54 @@ namespace SistemaGestorEscolar
         private void btnFichaEstudiante_MouseDown(object sender, MouseEventArgs e)
         {
           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuEstudiante.Visible = false;
+            panSubMenuEstudiante.Dock = DockStyle.None;
+            AbrirFormulario<IAperturaExpedienteMedico>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
+
+        private void btnVistaMatriculas_Click_1(object sender, EventArgs e)
+        {
+ 
+
+        }
+
+        private void btnVistaMatriculas_MouseDown(object sender, MouseEventArgs e)
+        {
+            ocultarBotones();
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuEstudiante.Visible = false;
+            panSubMenuEstudiante.Dock = DockStyle.None;
+            AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Seleccion_de_Curso>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
         }
     }
 }

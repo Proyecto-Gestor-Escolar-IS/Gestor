@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Drawing;
 using System.IO;
+using System.Globalization;
 
 namespace SistemaGestorEscolar
 {
@@ -261,6 +262,8 @@ namespace SistemaGestorEscolar
             try
             {
 
+                DateTime dt = DateTime.ParseExact(fechaN, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "PAOperacionEmpleados";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -272,7 +275,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@prApellido", apellido1);
                 comando.Parameters.AddWithValue("@sgApellido", apellido2);
                 comando.Parameters.AddWithValue("@numTelefono", tel);
-                comando.Parameters.AddWithValue("@fNacimiento", fechaN);
+                comando.Parameters.AddWithValue("@fNacimiento", dt);
                 comando.Parameters.AddWithValue("@mail", mail);
                 comando.Parameters.AddWithValue("@estEmpleado", estado);
                 comando.Parameters.AddWithValue("@contra", contra);
@@ -597,6 +600,8 @@ namespace SistemaGestorEscolar
             try
             {
                 SqlCommand comando = databaseIntermediary.CreateCommand();
+
+                DateTime dt = DateTime.ParseExact(fechaNacimiento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 comando.CommandText = "RegistrarEncargado";
                 comando.CommandType = CommandType.StoredProcedure;
 
@@ -610,7 +615,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@numeroTelefono", int.Parse(numeroTelefono));
                 comando.Parameters.AddWithValue("@numeroTelefonoAlt", int.Parse(numeroTelefonoAlt));
                 comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                comando.Parameters.AddWithValue("@fechaNacimiento", dt);
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -894,6 +899,7 @@ namespace SistemaGestorEscolar
         {
             try
             {
+                DateTime dt = DateTime.ParseExact(fechaNacimiento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "RegistrarEstudiante";
@@ -904,7 +910,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
                 comando.Parameters.AddWithValue("@primerApellido", primerApellido);
                 comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                comando.Parameters.AddWithValue("@fechaNacimiento", dt);
                 comando.Parameters.AddWithValue("@genero", genero);
                 
                 databaseIntermediary.Open();
