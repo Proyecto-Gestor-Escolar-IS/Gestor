@@ -1134,5 +1134,10 @@ namespace SistemaGestorEscolar
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
         }
+
+        private void btnVistaMatriculas_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
