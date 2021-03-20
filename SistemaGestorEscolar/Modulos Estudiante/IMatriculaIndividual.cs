@@ -1388,8 +1388,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             txtSegundoApellidoEstudMod.Clear();
             txtFechaNacimientoEstudMod.Clear();
             cmbgeneroEstudMod.SelectedIndex = -1;
-
-
         }
 
 
