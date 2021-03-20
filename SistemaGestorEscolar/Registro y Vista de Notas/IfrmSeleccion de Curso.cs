@@ -58,8 +58,5 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
 
         }
 
-
-
-
     }
 }

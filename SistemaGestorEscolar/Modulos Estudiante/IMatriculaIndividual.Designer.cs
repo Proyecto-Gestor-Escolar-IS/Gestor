@@ -82,6 +82,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtNombreEncargadoR = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtIdentidadEncargadoR = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.grpListaEstudiantes = new System.Windows.Forms.GroupBox();
+            this.txtLikeIdentidadReingreso = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpActualizarEstado = new System.Windows.Forms.GroupBox();
@@ -102,6 +107,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtMatriculaEstado = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.grpListadoEstado = new System.Windows.Forms.GroupBox();
+            this.txtIdentidadActMat = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvBusquedaEstado = new System.Windows.Forms.DataGridView();
             this.grpRegistroEstudiante = new System.Windows.Forms.GroupBox();
             this.txtfechaNacimientoEstud = new System.Windows.Forms.MaskedTextBox();
             this.cmbGeneroEstud = new System.Windows.Forms.ComboBox();
@@ -157,13 +166,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpMatriculaPrimerIngreso.SuspendLayout();
             this.grpReingreso.SuspendLayout();
             this.grpListaEstudiantes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.grpActualizarEstado.SuspendLayout();
             this.grpListadoEstado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaEstado)).BeginInit();
             this.grpRegistroEstudiante.SuspendLayout();
             this.grpRegistroEncargados.SuspendLayout();
+            this.gbEstudiantes.SuspendLayout();
+            this.gbEncargados.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpMatriculaPrimerIngreso
@@ -434,7 +447,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpReingreso
             // 
-            this.grpReingreso.Controls.Add(this.grpListaEstudiantes);
+            this.grpReingreso.Controls.Add(this.btnActualizarEliminarEncargado);
+            this.grpReingreso.Controls.Add(this.btnModificarEstud);
+            this.grpReingreso.Controls.Add(this.cmbEncargadosReingreso);
             this.grpReingreso.Controls.Add(this.txtIdentidadEstudianteR);
             this.grpReingreso.Controls.Add(this.label35);
             this.grpReingreso.Controls.Add(this.txtDescuentoR);
@@ -456,9 +471,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpReingreso.Controls.Add(this.txtRegistarR);
             this.grpReingreso.Controls.Add(this.txtLimpiarR);
             this.grpReingreso.Controls.Add(this.txtRegresarR);
-            this.grpReingreso.Controls.Add(this.txtNombreEncargadoR);
-            this.grpReingreso.Controls.Add(this.label45);
             this.grpReingreso.Controls.Add(this.txtIdentidadEncargadoR);
+            this.grpReingreso.Controls.Add(this.label45);
             this.grpReingreso.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpReingreso.Location = new System.Drawing.Point(25, 18);
             this.grpReingreso.Name = "grpReingreso";
@@ -469,7 +483,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpReingreso.Visible = false;
             this.grpReingreso.Enter += new System.EventHandler(this.grpReingreso_Enter);
             // 
-            // grpListaEstudiantes
+            // cmbEncargadosReingreso
             // 
             this.grpListaEstudiantes.Controls.Add(this.label47);
             this.grpListaEstudiantes.Controls.Add(this.txtBusquedaNombre);
@@ -545,11 +559,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // txtIdentidadEstudianteR
             // 
             this.txtIdentidadEstudianteR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEstudianteR.Location = new System.Drawing.Point(626, 160);
+            this.txtIdentidadEstudianteR.Location = new System.Drawing.Point(864, 164);
             this.txtIdentidadEstudianteR.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentidadEstudianteR.Name = "txtIdentidadEstudianteR";
             this.txtIdentidadEstudianteR.ReadOnly = true;
-            this.txtIdentidadEstudianteR.Size = new System.Drawing.Size(236, 34);
+            this.txtIdentidadEstudianteR.Size = new System.Drawing.Size(401, 34);
             this.txtIdentidadEstudianteR.TabIndex = 108;
             this.txtIdentidadEstudianteR.TextChanged += new System.EventHandler(this.txtIdentidadEstudianteR_TextChanged_1);
             // 
@@ -694,7 +708,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // txtNombreEstudianteR
             // 
             this.txtNombreEstudianteR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstudianteR.Location = new System.Drawing.Point(883, 161);
+            this.txtNombreEstudianteR.Location = new System.Drawing.Point(443, 164);
             this.txtNombreEstudianteR.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreEstudianteR.Name = "txtNombreEstudianteR";
             this.txtNombreEstudianteR.ReadOnly = true;
@@ -705,12 +719,12 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(228, 226);
+            this.label43.Location = new System.Drawing.Point(45, 226);
             this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(387, 24);
             this.label43.TabIndex = 87;
-            this.label43.Text = "Numero de Identidad del Encargado";
+            this.label43.Text = "Nombre e Identidad  del Encargado";
             // 
             // txtNoMatriculaR
             // 
@@ -735,16 +749,15 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // txtNombreEncargadoR
             // 
-            this.txtNombreEncargadoR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEncargadoR.Location = new System.Drawing.Point(883, 223);
-            this.txtNombreEncargadoR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombreEncargadoR.Name = "txtNombreEncargadoR";
-            this.txtNombreEncargadoR.ReadOnly = true;
-            this.txtNombreEncargadoR.Size = new System.Drawing.Size(400, 34);
-            this.txtNombreEncargadoR.TabIndex = 54;
-            this.txtNombreEncargadoR.TextChanged += new System.EventHandler(this.txtNombreEncargadoR_TextChanged);
+            this.txtLikeIdentidadReingreso.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLikeIdentidadReingreso.Location = new System.Drawing.Point(1211, 50);
+            this.txtLikeIdentidadReingreso.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLikeIdentidadReingreso.Name = "txtLikeIdentidadReingreso";
+            this.txtLikeIdentidadReingreso.Size = new System.Drawing.Size(269, 34);
+            this.txtLikeIdentidadReingreso.TabIndex = 98;
+            this.txtLikeIdentidadReingreso.TextChanged += new System.EventHandler(this.txtLikeIdentidadReingreso_TextChanged);
             // 
-            // label45
+            // pictureBox2
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -755,15 +768,42 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label45.TabIndex = 63;
             this.label45.Text = "Numero de Identidad del Estudiante";
             // 
-            // txtIdentidadEncargadoR
+            // dgvEstudiantes
             // 
-            this.txtIdentidadEncargadoR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEncargadoR.Location = new System.Drawing.Point(626, 223);
-            this.txtIdentidadEncargadoR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdentidadEncargadoR.Name = "txtIdentidadEncargadoR";
-            this.txtIdentidadEncargadoR.ReadOnly = true;
-            this.txtIdentidadEncargadoR.Size = new System.Drawing.Size(236, 34);
-            this.txtIdentidadEncargadoR.TabIndex = 107;
+            this.dgvEstudiantes.AllowUserToAddRows = false;
+            this.dgvEstudiantes.AllowUserToDeleteRows = false;
+            this.dgvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEstudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEstudiantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstudiantes.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEstudiantes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEstudiantes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.dgvEstudiantes.Location = new System.Drawing.Point(44, 113);
+            this.dgvEstudiantes.MultiSelect = false;
+            this.dgvEstudiantes.Name = "dgvEstudiantes";
+            this.dgvEstudiantes.ReadOnly = true;
+            this.dgvEstudiantes.RowHeadersWidth = 20;
+            this.dgvEstudiantes.Size = new System.Drawing.Size(1513, 735);
+            this.dgvEstudiantes.TabIndex = 86;
+            this.dgvEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
             // 
             // label1
             // 
@@ -781,7 +821,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpActualizarEstado
             // 
-            this.grpActualizarEstado.Controls.Add(this.grpListadoEstado);
             this.grpActualizarEstado.Controls.Add(this.txtSeccionEstado);
             this.grpActualizarEstado.Controls.Add(this.label16);
             this.grpActualizarEstado.Controls.Add(this.label15);
@@ -798,7 +837,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpActualizarEstado.Controls.Add(this.btnRegresarEstado);
             this.grpActualizarEstado.Controls.Add(this.label25);
             this.grpActualizarEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpActualizarEstado.Location = new System.Drawing.Point(25, 18);
+            this.grpActualizarEstado.Location = new System.Drawing.Point(18, 12);
             this.grpActualizarEstado.Name = "grpActualizarEstado";
             this.grpActualizarEstado.Size = new System.Drawing.Size(1579, 991);
             this.grpActualizarEstado.TabIndex = 109;
@@ -1021,6 +1060,79 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label25.Size = new System.Drawing.Size(386, 24);
             this.label25.TabIndex = 63;
             this.label25.Text = "Numero de Identidad del Estudiante";
+            // 
+            // grpListadoEstado
+            // 
+            this.grpListadoEstado.Controls.Add(this.txtIdentidadActMat);
+            this.grpListadoEstado.Controls.Add(this.pictureBox1);
+            this.grpListadoEstado.Controls.Add(this.dgvBusquedaEstado);
+            this.grpListadoEstado.Controls.Add(this.btnSiguienteEstado);
+            this.grpListadoEstado.Controls.Add(this.altoButton2);
+            this.grpListadoEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpListadoEstado.Location = new System.Drawing.Point(25, 10);
+            this.grpListadoEstado.Name = "grpListadoEstado";
+            this.grpListadoEstado.Size = new System.Drawing.Size(1598, 999);
+            this.grpListadoEstado.TabIndex = 107;
+            this.grpListadoEstado.TabStop = false;
+            this.grpListadoEstado.Text = "LISTADO DE ESTUDIANTES";
+            this.grpListadoEstado.Visible = false;
+            // 
+            // txtIdentidadActMat
+            // 
+            this.txtIdentidadActMat.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentidadActMat.Location = new System.Drawing.Point(1162, 59);
+            this.txtIdentidadActMat.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdentidadActMat.Name = "txtIdentidadActMat";
+            this.txtIdentidadActMat.Size = new System.Drawing.Size(269, 34);
+            this.txtIdentidadActMat.TabIndex = 96;
+            this.txtIdentidadActMat.TextChanged += new System.EventHandler(this.txtIdentidadActMat_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
+            this.pictureBox1.Location = new System.Drawing.Point(1112, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 95;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dgvBusquedaEstado
+            // 
+            this.dgvBusquedaEstado.AllowUserToAddRows = false;
+            this.dgvBusquedaEstado.AllowUserToDeleteRows = false;
+            this.dgvBusquedaEstado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBusquedaEstado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvBusquedaEstado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusquedaEstado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBusquedaEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBusquedaEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusquedaEstado.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvBusquedaEstado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.dgvBusquedaEstado.Location = new System.Drawing.Point(44, 113);
+            this.dgvBusquedaEstado.MultiSelect = false;
+            this.dgvBusquedaEstado.Name = "dgvBusquedaEstado";
+            this.dgvBusquedaEstado.ReadOnly = true;
+            this.dgvBusquedaEstado.RowHeadersWidth = 20;
+            this.dgvBusquedaEstado.Size = new System.Drawing.Size(1506, 733);
+            this.dgvBusquedaEstado.TabIndex = 86;
+            this.dgvBusquedaEstado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEstado_CellContentClick);
             // 
             // grpRegistroEstudiante
             // 
@@ -1820,15 +1932,19 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.gbEncargados);
+            this.Controls.Add(this.grpReingreso);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grpMatriculaPrimerIngreso);
             this.Controls.Add(this.grpRegistroEncargados);
             this.Controls.Add(this.grpRegistroEstudiante);
+            this.Controls.Add(this.grpListadoEstado);
             this.Controls.Add(this.grpActualizarEstado);
+            this.Controls.Add(this.grpListaEstudiantes);
             this.Controls.Add(this.btnActualizarMatricula);
-            this.Controls.Add(this.grpReingreso);
             this.Controls.Add(this.btnReingreso);
             this.Controls.Add(this.btnPrimerIngreso);
-            this.Controls.Add(this.grpMatriculaPrimerIngreso);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gbEstudiantes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IMatriculaIndividual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1840,17 +1956,23 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpReingreso.PerformLayout();
             this.grpListaEstudiantes.ResumeLayout(false);
             this.grpListaEstudiantes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).EndInit();
             this.grpActualizarEstado.ResumeLayout(false);
             this.grpActualizarEstado.PerformLayout();
             this.grpListadoEstado.ResumeLayout(false);
             this.grpListadoEstado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaEstado)).EndInit();
             this.grpRegistroEstudiante.ResumeLayout(false);
             this.grpRegistroEstudiante.PerformLayout();
             this.grpRegistroEncargados.ResumeLayout(false);
             this.grpRegistroEncargados.PerformLayout();
+            this.gbEstudiantes.ResumeLayout(false);
+            this.gbEstudiantes.PerformLayout();
+            this.gbEncargados.ResumeLayout(false);
+            this.gbEncargados.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1911,11 +2033,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private AltoControls.AltoButton txtRegistarR;
         private AltoControls.AltoButton txtLimpiarR;
         private AltoControls.AltoButton txtRegresarR;
-        private System.Windows.Forms.TextBox txtNombreEncargadoR;
+        private System.Windows.Forms.TextBox txtIdentidadEncargadoR;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtNombreEncargado;
         private System.Windows.Forms.ComboBox cmbIdentidadEncargado;
-        private System.Windows.Forms.TextBox txtIdentidadEncargadoR;
         private System.Windows.Forms.TextBox txtIdentidadEstudianteR;
         private System.Windows.Forms.ErrorProvider errorIdentidad;
         private System.Windows.Forms.GroupBox grpActualizarEstado;
@@ -1978,5 +2099,51 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private AltoControls.AltoButton btnAgregarEncarg;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lbldireccion;
+        private System.Windows.Forms.TextBox txtIdentidadActMat;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtLikeIdentidadReingreso;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox cmbEncargadosReingreso;
+        private AltoControls.AltoButton btnActualizarEliminarEncargado;
+        private AltoControls.AltoButton btnModificarEstud;
+        private System.Windows.Forms.GroupBox gbEstudiantes;
+        private System.Windows.Forms.ComboBox cmbgeneroEstudMod;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtPrimerApellidoEstudMod;
+        private System.Windows.Forms.TextBox txtSegundoApellidoEstudMod;
+        private System.Windows.Forms.TextBox txtPrimerNombreEstudMod;
+        private System.Windows.Forms.TextBox txtSegundoNombreEstudMod;
+        private System.Windows.Forms.TextBox txtIdentidadEstudMod;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label29;
+        private AltoControls.AltoButton btnActualizarEstudiante;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.MaskedTextBox txtFechaNacimientoEstudMod;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.GroupBox gbEncargados;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox txtCorreoElectronicoEncargadoMod;
+        private AltoControls.AltoButton btnEliminarEncargado;
+        private AltoControls.AltoButton btnRegresarEncargado;
+        private AltoControls.AltoButton btnActualizarEncargado;
+        private System.Windows.Forms.Label lblregistroEncargado;
+        private System.Windows.Forms.MaskedTextBox txtfechaNacimientoEncargadoMod;
+        private System.Windows.Forms.TextBox txtsegundoNombreEncargadoMod;
+        private System.Windows.Forms.TextBox txtTelefonoEncargadoMod;
+        private System.Windows.Forms.Label lblnumeroIdentidad;
+        private System.Windows.Forms.TextBox txtsegundoTelefonoEncargadoMod;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox txtDireccionEncargadoMod;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label lblfechaNacimiento;
+        private System.Windows.Forms.TextBox txtprimerApellidoEncargadoMod;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox txtprimerNombreEncargadoMod;
+        private System.Windows.Forms.Label lblcorreoElectronico;
+        private System.Windows.Forms.TextBox txtsegundoApellidoEncargadoMod;
+        private System.Windows.Forms.TextBox txtIdentidadEncargadoMod;
     }
 }

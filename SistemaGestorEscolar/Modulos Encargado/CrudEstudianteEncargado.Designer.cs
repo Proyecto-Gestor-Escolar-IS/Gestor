@@ -683,7 +683,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEstudiantes.Location = new System.Drawing.Point(18, 6);
             this.gbEstudiantes.Name = "gbEstudiantes";
-            this.gbEstudiantes.Size = new System.Drawing.Size(1611, 1008);
+            this.gbEstudiantes.Size = new System.Drawing.Size(1599, 1008);
             this.gbEstudiantes.TabIndex = 91;
             this.gbEstudiantes.TabStop = false;
             this.gbEstudiantes.Text = "DATOS ESTUDIANTE";
@@ -959,13 +959,13 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.gbEncargados);
+            this.Controls.Add(this.gbListadoEstudiantes);
+            this.Controls.Add(this.gbListadoEncargado);
             this.Controls.Add(this.btnEncargados);
             this.Controls.Add(this.lblGestionEncargadosEstudiantes);
             this.Controls.Add(this.btnEstudiantes);
-            this.Controls.Add(this.gbListadoEncargado);
             this.Controls.Add(this.gbEstudiantes);
-            this.Controls.Add(this.gbEncargados);
-            this.Controls.Add(this.gbListadoEstudiantes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CrudEstudianteEncargado";

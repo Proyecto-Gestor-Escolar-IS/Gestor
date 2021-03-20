@@ -32,5 +32,10 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
                 "and dbo.detalleNotas.estado = dbo.datosEstudiante.estado");
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

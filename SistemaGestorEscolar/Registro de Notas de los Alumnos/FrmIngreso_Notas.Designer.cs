@@ -29,8 +29,6 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lblMatriculaEstudiante = new System.Windows.Forms.Label();
             this.lblnumIdentidadEncargado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,136 +49,118 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             this.btnMostrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1556, 45);
-            this.panel1.TabIndex = 9;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 839);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1556, 45);
-            this.panel2.TabIndex = 10;
-            // 
             // lblMatriculaEstudiante
             // 
             this.lblMatriculaEstudiante.AutoSize = true;
-            this.lblMatriculaEstudiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatriculaEstudiante.Location = new System.Drawing.Point(434, 107);
+            this.lblMatriculaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatriculaEstudiante.Location = new System.Drawing.Point(597, 55);
             this.lblMatriculaEstudiante.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMatriculaEstudiante.Name = "lblMatriculaEstudiante";
-            this.lblMatriculaEstudiante.Size = new System.Drawing.Size(406, 42);
+            this.lblMatriculaEstudiante.Size = new System.Drawing.Size(336, 41);
             this.lblMatriculaEstudiante.TabIndex = 46;
             this.lblMatriculaEstudiante.Text = "INGRESO DE NOTAS";
             // 
             // lblnumIdentidadEncargado
             // 
             this.lblnumIdentidadEncargado.AutoSize = true;
-            this.lblnumIdentidadEncargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnumIdentidadEncargado.Location = new System.Drawing.Point(51, 302);
+            this.lblnumIdentidadEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnumIdentidadEncargado.Location = new System.Drawing.Point(439, 166);
             this.lblnumIdentidadEncargado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnumIdentidadEncargado.Name = "lblnumIdentidadEncargado";
-            this.lblnumIdentidadEncargado.Size = new System.Drawing.Size(181, 33);
+            this.lblnumIdentidadEncargado.Size = new System.Drawing.Size(165, 31);
             this.lblnumIdentidadEncargado.TabIndex = 47;
-            this.lblnumIdentidadEncargado.Text = "&N- Identidad:";
+            this.lblnumIdentidadEncargado.Text = "No. Identidad\r\n";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 393);
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(439, 303);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 33);
+            this.label1.Size = new System.Drawing.Size(275, 31);
             this.label1.TabIndex = 48;
-            this.label1.Text = "&Nombre del Alumno(a):";
+            this.label1.Text = "Nombre del Estudiante\r\n";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(920, 488);
+            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(842, 417);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 33);
+            this.label2.Size = new System.Drawing.Size(242, 31);
             this.label2.TabIndex = 49;
-            this.label2.Text = "&Tercer Parcial:";
+            this.label2.Text = "Nota Tercer Parcial";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(304, 488);
+            this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(278, 416);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 33);
+            this.label3.Size = new System.Drawing.Size(237, 31);
             this.label3.TabIndex = 50;
-            this.label3.Text = "&Nota Primer Parcial:";
+            this.label3.Text = "Nota Primer Parcial\r\n";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 571);
+            this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(278, 499);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(236, 33);
+            this.label4.Size = new System.Drawing.Size(259, 31);
             this.label4.TabIndex = 51;
-            this.label4.Text = "&Segundo Parcial:";
+            this.label4.Text = "Nota Segundo Parcial";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(920, 571);
+            this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(842, 499);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(216, 33);
+            this.label5.Size = new System.Drawing.Size(247, 31);
             this.label5.TabIndex = 52;
-            this.label5.Text = "&Cuarto Parcial :";
+            this.label5.Text = "Nota Cuarto Parcial ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1080, 280);
+            this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(439, 232);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 33);
+            this.label6.Size = new System.Drawing.Size(105, 31);
             this.label6.TabIndex = 53;
-            this.label6.Text = "&Sección:";
+            this.label6.Text = "Sección";
             // 
             // txtIdentidadAlum
             // 
-            this.txtIdentidadAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadAlum.Location = new System.Drawing.Point(272, 303);
+            this.txtIdentidadAlum.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentidadAlum.Location = new System.Drawing.Point(744, 163);
             this.txtIdentidadAlum.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdentidadAlum.Multiline = true;
             this.txtIdentidadAlum.Name = "txtIdentidadAlum";
-            this.txtIdentidadAlum.Size = new System.Drawing.Size(283, 32);
+            this.txtIdentidadAlum.Size = new System.Drawing.Size(252, 32);
             this.txtIdentidadAlum.TabIndex = 54;
             // 
             // txtNombreAlum
             // 
-            this.txtNombreAlum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreAlum.Location = new System.Drawing.Point(384, 395);
+            this.txtNombreAlum.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreAlum.Location = new System.Drawing.Point(744, 300);
             this.txtNombreAlum.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreAlum.Multiline = true;
             this.txtNombreAlum.Name = "txtNombreAlum";
-            this.txtNombreAlum.Size = new System.Drawing.Size(493, 32);
+            this.txtNombreAlum.Size = new System.Drawing.Size(462, 32);
             this.txtNombreAlum.TabIndex = 55;
             // 
             // txtNota1
             // 
-            this.txtNota1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota1.Location = new System.Drawing.Point(594, 488);
+            this.txtNota1.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNota1.Location = new System.Drawing.Point(568, 416);
             this.txtNota1.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota1.Multiline = true;
             this.txtNota1.Name = "txtNota1";
@@ -189,8 +169,8 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             // 
             // txtNota2
             // 
-            this.txtNota2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota2.Location = new System.Drawing.Point(594, 571);
+            this.txtNota2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNota2.Location = new System.Drawing.Point(568, 499);
             this.txtNota2.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota2.Multiline = true;
             this.txtNota2.Name = "txtNota2";
@@ -199,8 +179,8 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             // 
             // txtNota3
             // 
-            this.txtNota3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota3.Location = new System.Drawing.Point(1146, 488);
+            this.txtNota3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNota3.Location = new System.Drawing.Point(1120, 417);
             this.txtNota3.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota3.Multiline = true;
             this.txtNota3.Name = "txtNota3";
@@ -209,8 +189,8 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             // 
             // txtNota4
             // 
-            this.txtNota4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNota4.Location = new System.Drawing.Point(1146, 572);
+            this.txtNota4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNota4.Location = new System.Drawing.Point(1120, 498);
             this.txtNota4.Margin = new System.Windows.Forms.Padding(2);
             this.txtNota4.Multiline = true;
             this.txtNota4.Name = "txtNota4";
@@ -219,12 +199,12 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             // 
             // txtSeccion
             // 
-            this.txtSeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeccion.Location = new System.Drawing.Point(1211, 280);
+            this.txtSeccion.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeccion.Location = new System.Drawing.Point(744, 229);
             this.txtSeccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtSeccion.Multiline = true;
             this.txtSeccion.Name = "txtSeccion";
-            this.txtSeccion.Size = new System.Drawing.Size(135, 33);
+            this.txtSeccion.Size = new System.Drawing.Size(104, 33);
             this.txtSeccion.TabIndex = 60;
             // 
             // btnAgregar
@@ -232,7 +212,7 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(209, 715);
+            this.btnAgregar.Location = new System.Drawing.Point(284, 715);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(207, 54);
@@ -245,7 +225,7 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(564, 715);
+            this.btnModificar.Location = new System.Drawing.Point(679, 715);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(207, 54);
@@ -258,7 +238,7 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             this.btnMostrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
             this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrar.Location = new System.Drawing.Point(919, 715);
+            this.btnMostrar.Location = new System.Drawing.Point(1072, 715);
             this.btnMostrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(207, 54);
@@ -290,8 +270,6 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblnumIdentidadEncargado);
             this.Controls.Add(this.lblMatriculaEstudiante);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmIngreso_Notas";
             this.Text = "FrmIngreso_Notas";
@@ -301,9 +279,6 @@ namespace SistemaGestorEscolar.Registro_de_Notas_de_los_Alumnos
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblMatriculaEstudiante;
         private System.Windows.Forms.Label lblnumIdentidadEncargado;
         private System.Windows.Forms.Label label1;

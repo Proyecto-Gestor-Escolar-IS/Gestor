@@ -31,6 +31,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IGestionCursos));
             this.grbPrincipal = new System.Windows.Forms.GroupBox();
+            this.btnEliminarCurso = new System.Windows.Forms.Button();
             this.txtNombreCurso = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnActualizar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.btnEliminarCurso = new System.Windows.Forms.Button();
             this.grbPrincipal.SuspendLayout();
             this.grbDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
@@ -63,6 +63,16 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grbPrincipal.Size = new System.Drawing.Size(846, 840);
             this.grbPrincipal.TabIndex = 0;
             this.grbPrincipal.TabStop = false;
+            // 
+            // btnEliminarCurso
+            // 
+            this.btnEliminarCurso.Location = new System.Drawing.Point(567, 573);
+            this.btnEliminarCurso.Name = "btnEliminarCurso";
+            this.btnEliminarCurso.Size = new System.Drawing.Size(241, 55);
+            this.btnEliminarCurso.TabIndex = 7;
+            this.btnEliminarCurso.Text = "Eliminar curso";
+            this.btnEliminarCurso.UseVisualStyleBackColor = true;
+            this.btnEliminarCurso.Click += new System.EventHandler(this.btnEliminarCurso_Click);
             // 
             // txtNombreCurso
             // 
@@ -119,12 +129,12 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(645, 38);
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(645, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 47);
+            this.label1.Size = new System.Drawing.Size(360, 41);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Gestión de cursos";
+            this.label1.Text = "GESTION DE CURSOS";
             // 
             // grbDgv
             // 
@@ -171,16 +181,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvCursos.Size = new System.Drawing.Size(629, 628);
             this.dgvCursos.TabIndex = 0;
             this.dgvCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellClick);
-            // 
-            // btnEliminarCurso
-            // 
-            this.btnEliminarCurso.Location = new System.Drawing.Point(567, 573);
-            this.btnEliminarCurso.Name = "btnEliminarCurso";
-            this.btnEliminarCurso.Size = new System.Drawing.Size(241, 55);
-            this.btnEliminarCurso.TabIndex = 7;
-            this.btnEliminarCurso.Text = "Eliminar curso";
-            this.btnEliminarCurso.UseVisualStyleBackColor = true;
-            this.btnEliminarCurso.Click += new System.EventHandler(this.btnEliminarCurso_Click);
             // 
             // IGestionCursos
             // 
