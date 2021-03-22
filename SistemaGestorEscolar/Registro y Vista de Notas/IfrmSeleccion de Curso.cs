@@ -90,10 +90,11 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             Registro_y_Vista_de_Notas.Alumnos_CursoSeccion form = new  Registro_y_Vista_de_Notas.Alumnos_CursoSeccion();
             form.Show(this);
 
+         
+
+        form.Show(this);
+
         }
-
-
-
 
     }
 }

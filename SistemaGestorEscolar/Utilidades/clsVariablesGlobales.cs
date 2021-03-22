@@ -24,7 +24,8 @@ namespace SistemaGestorEscolar
     static class clsVariablesGlobales
     {
         //Variable global numeroIdentidad, toma valor en el login y es una variable global que identifica quien entro al programa
-        private static string numIdentidad;
+        public static string numIdentidad;
+        
         //Metodo para acceder a la variable
         public static string NumIdentidad { get => numIdentidad; set => numIdentidad = value; }
         
@@ -33,6 +34,7 @@ namespace SistemaGestorEscolar
         private static int codigoAcceso;
         //Metodo para acceder a la variable
         public static int CodigoAcceso { get => codigoAcceso; set => codigoAcceso = value; }
+
 
 
     }

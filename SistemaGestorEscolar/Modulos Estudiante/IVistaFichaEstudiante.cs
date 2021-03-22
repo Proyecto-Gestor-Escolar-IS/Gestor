@@ -64,7 +64,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             panelVistaEncargardos.Visible = false;
             panelHistorialMedico.Visible = false;
             panelDatosGenerales.Visible = false;
-            dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre',  estado as 'Estado'  FROM datosEstudiante");
+            dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre' FROM datosEstudiante");
     
         }
 

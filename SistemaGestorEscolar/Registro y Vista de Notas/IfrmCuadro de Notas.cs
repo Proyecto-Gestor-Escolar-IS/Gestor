@@ -92,5 +92,10 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             form.Show(this);
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

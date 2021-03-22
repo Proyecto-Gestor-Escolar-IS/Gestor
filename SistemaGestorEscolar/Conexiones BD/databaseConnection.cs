@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Drawing;
 using System.IO;
+using System.Globalization;
 
 namespace SistemaGestorEscolar
 {
@@ -20,7 +21,7 @@ namespace SistemaGestorEscolar
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-7MB4NES;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -261,6 +262,8 @@ namespace SistemaGestorEscolar
             try
             {
 
+                DateTime dt = DateTime.ParseExact(fechaN, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "PAOperacionEmpleados";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -272,7 +275,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@prApellido", apellido1);
                 comando.Parameters.AddWithValue("@sgApellido", apellido2);
                 comando.Parameters.AddWithValue("@numTelefono", tel);
-                comando.Parameters.AddWithValue("@fNacimiento", fechaN);
+                comando.Parameters.AddWithValue("@fNacimiento", dt);
                 comando.Parameters.AddWithValue("@mail", mail);
                 comando.Parameters.AddWithValue("@estEmpleado", estado);
                 comando.Parameters.AddWithValue("@contra", contra);
@@ -597,6 +600,8 @@ namespace SistemaGestorEscolar
             try
             {
                 SqlCommand comando = databaseIntermediary.CreateCommand();
+
+                DateTime dt = DateTime.ParseExact(fechaNacimiento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 comando.CommandText = "RegistrarEncargado";
                 comando.CommandType = CommandType.StoredProcedure;
 
@@ -610,7 +615,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@numeroTelefono", int.Parse(numeroTelefono));
                 comando.Parameters.AddWithValue("@numeroTelefonoAlt", int.Parse(numeroTelefonoAlt));
                 comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                comando.Parameters.AddWithValue("@fechaNacimiento", dt);
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -766,11 +771,14 @@ namespace SistemaGestorEscolar
             var t = Convert.ToInt32(comando.ExecuteScalar());
             databaseIntermediary.Close();
 
-            if (t != 0)
+            if (t == 1)
             {
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -891,6 +899,7 @@ namespace SistemaGestorEscolar
         {
             try
             {
+                DateTime dt = DateTime.ParseExact(fechaNacimiento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "RegistrarEstudiante";
@@ -901,7 +910,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
                 comando.Parameters.AddWithValue("@primerApellido", primerApellido);
                 comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                comando.Parameters.AddWithValue("@fechaNacimiento", dt);
                 comando.Parameters.AddWithValue("@genero", genero);
                 
                 databaseIntermediary.Open();
@@ -927,7 +936,73 @@ namespace SistemaGestorEscolar
 
         }
 
+        public bool PAActualizarCursos(int idCurso, String nombreCurso, double precioCurso)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PAActualizarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
 
+                comando.Parameters.AddWithValue("@id_Curso", idCurso);
+                comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
+                comando.Parameters.AddWithValue("@precioCompleto", precioCurso);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Gestión cursos", "Error de Actualización", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool PARegistroCursos(String nombreCurso, double precioCurso, int estadoCurso)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PARegistrarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
+                comando.Parameters.AddWithValue("@precioCompleto", precioCurso);
+                comando.Parameters.AddWithValue("@estadoCurso", estadoCurso);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Gestión cursos", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
     }
 
 }

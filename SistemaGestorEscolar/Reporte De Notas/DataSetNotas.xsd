@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetNotas" targetNamespace="http://tempuri.org/DataSetNotas.xsd" xmlns:mstns="http://tempuri.org/DataSetNotas.xsd" xmlns="http://tempuri.org/DataSetNotas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="StaMariaNazarethDatabaseServiceConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="StaMariaNazarethDatabaseServiceConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SistemaGestorEscolar.Properties.Settings.GlobalReference.Default.StaMariaNazarethDatabaseServiceConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="datosEstudianteTableAdapter" GeneratorDataComponentClassName="datosEstudianteTableAdapter" Name="datosEstudiante" UserDataComponentName="datosEstudianteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StaMariaNazarethDatabaseServiceConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="NotasEstudiantes" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="NotasEstudiantes" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="NotasEstudiantes">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT M.id_RegistroMatricula AS MATRICULA, ES.primerNombre + ' ' + ES.segundoNombre + ' ' + ES.primerApellido + ' ' + ES.segundoApellido AS 'Nombre Estudiante', DN.nota1erParcial AS PARCIAL1, DN.nota2doParcial AS PARCIAL2, 
+                  DN.nota3erParcial AS PARCIAL3, DN.nota4toParcial AS PARCIAL4, DN.notaFinal
+FROM     detalleNotas AS DN INNER JOIN
+                  detalleMatricula AS DM ON DN.id_DetalleMatricula = DM.id_DetalleMatricula INNER JOIN
+                  matricula AS M ON DM.id_RegistroMatricula = M.id_RegistroMatricula INNER JOIN
+                  datosEstudiante AS ES ON M.id_Estudiante = ES.identidadEstudiante</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MATRICULA" DataSetColumn="MATRICULA" />
+              <Mapping SourceColumn="Nombre Estudiante" DataSetColumn="Nombre Estudiante" />
+              <Mapping SourceColumn="PARCIAL1" DataSetColumn="PARCIAL1" />
+              <Mapping SourceColumn="PARCIAL2" DataSetColumn="PARCIAL2" />
+              <Mapping SourceColumn="PARCIAL3" DataSetColumn="PARCIAL3" />
+              <Mapping SourceColumn="PARCIAL4" DataSetColumn="PARCIAL4" />
+              <Mapping SourceColumn="notaFinal" DataSetColumn="notaFinal" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="detalleMatriculaTableAdapter" GeneratorDataComponentClassName="detalleMatriculaTableAdapter" Name="detalleMatricula" UserDataComponentName="detalleMatriculaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StaMariaNazarethDatabaseServiceConnectionString (Settings)" DbObjectName="StaMariaNazarethDatabaseService.dbo.detalleMatricula" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[detalleMatricula] WHERE (([id_DetalleMatricula] = @Original_id_DetalleMatricula) AND ([id_RegistroMatricula] = @Original_id_RegistroMatricula) AND ([fechaRegistroCurso] = @Original_fechaRegistroCurso) AND ([id_Curso] = @Original_id_Curso) AND ([id_Seccion] = @Original_id_Seccion) AND ((@IsNull_totalMatricula = 1 AND [totalMatricula] IS NULL) OR ([totalMatricula] = @Original_totalMatricula)) AND ((@IsNull_tipoMatricula = 1 AND [tipoMatricula] IS NULL) OR ([tipoMatricula] = @Original_tipoMatricula)) AND ([mesesParaPagar] = @Original_mesesParaPagar) AND ([estado] = @Original_estado))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_DetalleMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_RegistroMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_RegistroMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fechaRegistroCurso" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaRegistroCurso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_Curso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Curso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_Seccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Seccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_totalMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="totalMatricula" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_totalMatricula" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="totalMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tipoMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoMatricula" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tipoMatricula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_mesesParaPagar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mesesParaPagar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[detalleMatricula] ([id_RegistroMatricula], [fechaRegistroCurso], [id_Curso], [id_Seccion], [totalMatricula], [tipoMatricula], [mesesParaPagar], [estado]) VALUES (@id_RegistroMatricula, @fechaRegistroCurso, @id_Curso, @id_Seccion, @totalMatricula, @tipoMatricula, @mesesParaPagar, @estado);
+SELECT id_DetalleMatricula, id_RegistroMatricula, fechaRegistroCurso, id_Curso, id_Seccion, totalMatricula, tipoMatricula, mesesParaPagar, estado FROM detalleMatricula WHERE (id_DetalleMatricula = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_RegistroMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_RegistroMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fechaRegistroCurso" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaRegistroCurso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_Curso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Curso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_Seccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Seccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@totalMatricula" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="totalMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tipoMatricula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@mesesParaPagar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mesesParaPagar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_DetalleMatricula, id_RegistroMatricula, fechaRegistroCurso, id_Curso, id_Seccion, totalMatricula, tipoMatricula, mesesParaPagar, estado FROM dbo.detalleMatricula</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[detalleMatricula] SET [id_RegistroMatricula] = @id_RegistroMatricula, [fechaRegistroCurso] = @fechaRegistroCurso, [id_Curso] = @id_Curso, [id_Seccion] = @id_Seccion, [totalMatricula] = @totalMatricula, [tipoMatricula] = @tipoMatricula, [mesesParaPagar] = @mesesParaPagar, [estado] = @estado WHERE (([id_DetalleMatricula] = @Original_id_DetalleMatricula) AND ([id_RegistroMatricula] = @Original_id_RegistroMatricula) AND ([fechaRegistroCurso] = @Original_fechaRegistroCurso) AND ([id_Curso] = @Original_id_Curso) AND ([id_Seccion] = @Original_id_Seccion) AND ((@IsNull_totalMatricula = 1 AND [totalMatricula] IS NULL) OR ([totalMatricula] = @Original_totalMatricula)) AND ((@IsNull_tipoMatricula = 1 AND [tipoMatricula] IS NULL) OR ([tipoMatricula] = @Original_tipoMatricula)) AND ([mesesParaPagar] = @Original_mesesParaPagar) AND ([estado] = @Original_estado));
+SELECT id_DetalleMatricula, id_RegistroMatricula, fechaRegistroCurso, id_Curso, id_Seccion, totalMatricula, tipoMatricula, mesesParaPagar, estado FROM detalleMatricula WHERE (id_DetalleMatricula = @id_DetalleMatricula)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_RegistroMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_RegistroMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fechaRegistroCurso" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaRegistroCurso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_Curso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Curso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_Seccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Seccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@totalMatricula" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="totalMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tipoMatricula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@mesesParaPagar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mesesParaPagar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_DetalleMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_RegistroMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_RegistroMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fechaRegistroCurso" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaRegistroCurso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_Curso" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Curso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_Seccion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Seccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_totalMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="totalMatricula" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_totalMatricula" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="totalMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tipoMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoMatricula" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tipoMatricula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tipoMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_mesesParaPagar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mesesParaPagar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_DetalleMatricula" ColumnName="id_DetalleMatricula" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_DetalleMatricula" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_DetalleMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_DetalleMatricula" DataSetColumn="id_DetalleMatricula" />
+              <Mapping SourceColumn="id_RegistroMatricula" DataSetColumn="id_RegistroMatricula" />
+              <Mapping SourceColumn="fechaRegistroCurso" DataSetColumn="fechaRegistroCurso" />
+              <Mapping SourceColumn="id_Curso" DataSetColumn="id_Curso" />
+              <Mapping SourceColumn="id_Seccion" DataSetColumn="id_Seccion" />
+              <Mapping SourceColumn="totalMatricula" DataSetColumn="totalMatricula" />
+              <Mapping SourceColumn="tipoMatricula" DataSetColumn="tipoMatricula" />
+              <Mapping SourceColumn="mesesParaPagar" DataSetColumn="mesesParaPagar" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="detalleNotasTableAdapter" GeneratorDataComponentClassName="detalleNotasTableAdapter" Name="detalleNotas" UserDataComponentName="detalleNotasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StaMariaNazarethDatabaseServiceConnectionString (Settings)" DbObjectName="StaMariaNazarethDatabaseService.dbo.detalleNotas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[detalleNotas] WHERE (([id_DetalleNotas] = @Original_id_DetalleNotas) AND ([id_DetalleMatricula] = @Original_id_DetalleMatricula) AND ([id_Clase] = @Original_id_Clase) AND ([nota1erParcial] = @Original_nota1erParcial) AND ([nota2doParcial] = @Original_nota2doParcial) AND ([nota3erParcial] = @Original_nota3erParcial) AND ([nota4toParcial] = @Original_nota4toParcial) AND ([notaFinal] = @Original_notaFinal) AND ([estado] = @Original_estado))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_DetalleNotas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleNotas" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_DetalleMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_Clase" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Clase" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota1erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota1erParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota2doParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota2doParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota3erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota3erParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota4toParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota4toParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_notaFinal" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="notaFinal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[detalleNotas] ([id_DetalleMatricula], [id_Clase], [nota1erParcial], [nota2doParcial], [nota3erParcial], [nota4toParcial], [notaFinal], [estado]) VALUES (@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, @estado);
+SELECT id_DetalleNotas, id_DetalleMatricula, id_Clase, nota1erParcial, nota2doParcial, nota3erParcial, nota4toParcial, notaFinal, estado FROM detalleNotas WHERE (id_DetalleNotas = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_DetalleMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_Clase" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Clase" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota1erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota1erParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota2doParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota2doParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota3erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota3erParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota4toParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota4toParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@notaFinal" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="notaFinal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_DetalleNotas, id_DetalleMatricula, id_Clase, nota1erParcial, nota2doParcial, nota3erParcial, nota4toParcial, notaFinal, estado FROM dbo.detalleNotas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[detalleNotas] SET [id_DetalleMatricula] = @id_DetalleMatricula, [id_Clase] = @id_Clase, [nota1erParcial] = @nota1erParcial, [nota2doParcial] = @nota2doParcial, [nota3erParcial] = @nota3erParcial, [nota4toParcial] = @nota4toParcial, [notaFinal] = @notaFinal, [estado] = @estado WHERE (([id_DetalleNotas] = @Original_id_DetalleNotas) AND ([id_DetalleMatricula] = @Original_id_DetalleMatricula) AND ([id_Clase] = @Original_id_Clase) AND ([nota1erParcial] = @Original_nota1erParcial) AND ([nota2doParcial] = @Original_nota2doParcial) AND ([nota3erParcial] = @Original_nota3erParcial) AND ([nota4toParcial] = @Original_nota4toParcial) AND ([notaFinal] = @Original_notaFinal) AND ([estado] = @Original_estado));
+SELECT id_DetalleNotas, id_DetalleMatricula, id_Clase, nota1erParcial, nota2doParcial, nota3erParcial, nota4toParcial, notaFinal, estado FROM detalleNotas WHERE (id_DetalleNotas = @id_DetalleNotas)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_DetalleMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_Clase" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Clase" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota1erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota1erParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota2doParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota2doParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota3erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota3erParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@nota4toParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota4toParcial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@notaFinal" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="notaFinal" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_DetalleNotas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleNotas" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_DetalleMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_DetalleMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_Clase" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_Clase" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota1erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota1erParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota2doParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota2doParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota3erParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota3erParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_nota4toParcial" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="nota4toParcial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_notaFinal" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="notaFinal" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_DetalleNotas" ColumnName="id_DetalleNotas" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_DetalleNotas" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_DetalleNotas" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_DetalleNotas" DataSetColumn="id_DetalleNotas" />
+              <Mapping SourceColumn="id_DetalleMatricula" DataSetColumn="id_DetalleMatricula" />
+              <Mapping SourceColumn="id_Clase" DataSetColumn="id_Clase" />
+              <Mapping SourceColumn="nota1erParcial" DataSetColumn="nota1erParcial" />
+              <Mapping SourceColumn="nota2doParcial" DataSetColumn="nota2doParcial" />
+              <Mapping SourceColumn="nota3erParcial" DataSetColumn="nota3erParcial" />
+              <Mapping SourceColumn="nota4toParcial" DataSetColumn="nota4toParcial" />
+              <Mapping SourceColumn="notaFinal" DataSetColumn="notaFinal" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="matriculaTableAdapter" GeneratorDataComponentClassName="matriculaTableAdapter" Name="matricula" UserDataComponentName="matriculaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StaMariaNazarethDatabaseServiceConnectionString (Settings)" DbObjectName="StaMariaNazarethDatabaseService.dbo.matricula" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[matricula] WHERE (([id_RegistroMatricula] = @Original_id_RegistroMatricula) AND ([fechaMatricula] = @Original_fechaMatricula) AND ([id_EncargadoAdministracion] = @Original_id_EncargadoAdministracion) AND ([id_EncargadoAlumno] = @Original_id_EncargadoAlumno) AND ([id_Estudiante] = @Original_id_Estudiante))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_RegistroMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_RegistroMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fechaMatricula" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_id_EncargadoAdministracion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAdministracion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_id_EncargadoAlumno" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAlumno" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_id_Estudiante" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_Estudiante" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[matricula] ([fechaMatricula], [id_EncargadoAdministracion], [id_EncargadoAlumno], [id_Estudiante]) VALUES (@fechaMatricula, @id_EncargadoAdministracion, @id_EncargadoAlumno, @id_Estudiante);
+SELECT id_RegistroMatricula, fechaMatricula, id_EncargadoAdministracion, id_EncargadoAlumno, id_Estudiante FROM matricula WHERE (id_RegistroMatricula = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fechaMatricula" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@id_EncargadoAdministracion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAdministracion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@id_EncargadoAlumno" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAlumno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@id_Estudiante" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_Estudiante" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_RegistroMatricula, fechaMatricula, id_EncargadoAdministracion, id_EncargadoAlumno, id_Estudiante FROM dbo.matricula</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[matricula] SET [fechaMatricula] = @fechaMatricula, [id_EncargadoAdministracion] = @id_EncargadoAdministracion, [id_EncargadoAlumno] = @id_EncargadoAlumno, [id_Estudiante] = @id_Estudiante WHERE (([id_RegistroMatricula] = @Original_id_RegistroMatricula) AND ([fechaMatricula] = @Original_fechaMatricula) AND ([id_EncargadoAdministracion] = @Original_id_EncargadoAdministracion) AND ([id_EncargadoAlumno] = @Original_id_EncargadoAlumno) AND ([id_Estudiante] = @Original_id_Estudiante));
+SELECT id_RegistroMatricula, fechaMatricula, id_EncargadoAdministracion, id_EncargadoAlumno, id_Estudiante FROM matricula WHERE (id_RegistroMatricula = @id_RegistroMatricula)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fechaMatricula" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@id_EncargadoAdministracion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAdministracion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@id_EncargadoAlumno" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAlumno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@id_Estudiante" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_Estudiante" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_RegistroMatricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_RegistroMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fechaMatricula" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaMatricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_id_EncargadoAdministracion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAdministracion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_id_EncargadoAlumno" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_EncargadoAlumno" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_id_Estudiante" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="id_Estudiante" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_RegistroMatricula" ColumnName="id_RegistroMatricula" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_RegistroMatricula" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_RegistroMatricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_RegistroMatricula" DataSetColumn="id_RegistroMatricula" />
+              <Mapping SourceColumn="fechaMatricula" DataSetColumn="fechaMatricula" />
+              <Mapping SourceColumn="id_EncargadoAdministracion" DataSetColumn="id_EncargadoAdministracion" />
+              <Mapping SourceColumn="id_EncargadoAlumno" DataSetColumn="id_EncargadoAlumno" />
+              <Mapping SourceColumn="id_Estudiante" DataSetColumn="id_Estudiante" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetNotas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetNotas" msprop:Generator_UserDSName="DataSetNotas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="datosEstudiante" msprop:Generator_TableClassName="datosEstudianteDataTable" msprop:Generator_TableVarName="tabledatosEstudiante" msprop:Generator_TablePropName="datosEstudiante" msprop:Generator_RowDeletingName="datosEstudianteRowDeleting" msprop:Generator_RowChangingName="datosEstudianteRowChanging" msprop:Generator_RowEvHandlerName="datosEstudianteRowChangeEventHandler" msprop:Generator_RowDeletedName="datosEstudianteRowDeleted" msprop:Generator_UserTableName="datosEstudiante" msprop:Generator_RowChangedName="datosEstudianteRowChanged" msprop:Generator_RowEvArgName="datosEstudianteRowChangeEvent" msprop:Generator_RowClassName="datosEstudianteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MATRICULA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMATRICULA" msprop:Generator_ColumnPropNameInRow="MATRICULA" msprop:Generator_ColumnPropNameInTable="MATRICULAColumn" msprop:Generator_UserColumnName="MATRICULA" type="xs:int" />
+              <xs:element name="Nombre_x0020_Estudiante" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNombre_Estudiante" msprop:Generator_ColumnPropNameInRow="Nombre_Estudiante" msprop:Generator_ColumnPropNameInTable="Nombre_EstudianteColumn" msprop:Generator_UserColumnName="Nombre Estudiante" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="83" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PARCIAL1" msprop:Generator_ColumnVarNameInTable="columnPARCIAL1" msprop:Generator_ColumnPropNameInRow="PARCIAL1" msprop:Generator_ColumnPropNameInTable="PARCIAL1Column" msprop:Generator_UserColumnName="PARCIAL1" type="xs:double" />
+              <xs:element name="PARCIAL2" msprop:Generator_ColumnVarNameInTable="columnPARCIAL2" msprop:Generator_ColumnPropNameInRow="PARCIAL2" msprop:Generator_ColumnPropNameInTable="PARCIAL2Column" msprop:Generator_UserColumnName="PARCIAL2" type="xs:double" />
+              <xs:element name="PARCIAL3" msprop:Generator_ColumnVarNameInTable="columnPARCIAL3" msprop:Generator_ColumnPropNameInRow="PARCIAL3" msprop:Generator_ColumnPropNameInTable="PARCIAL3Column" msprop:Generator_UserColumnName="PARCIAL3" type="xs:double" />
+              <xs:element name="PARCIAL4" msprop:Generator_ColumnVarNameInTable="columnPARCIAL4" msprop:Generator_ColumnPropNameInRow="PARCIAL4" msprop:Generator_ColumnPropNameInTable="PARCIAL4Column" msprop:Generator_UserColumnName="PARCIAL4" type="xs:double" />
+              <xs:element name="notaFinal" msprop:Generator_ColumnVarNameInTable="columnnotaFinal" msprop:Generator_ColumnPropNameInRow="notaFinal" msprop:Generator_ColumnPropNameInTable="notaFinalColumn" msprop:Generator_UserColumnName="notaFinal" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detalleMatricula" msprop:Generator_TableClassName="detalleMatriculaDataTable" msprop:Generator_TableVarName="tabledetalleMatricula" msprop:Generator_TablePropName="detalleMatricula" msprop:Generator_RowDeletingName="detalleMatriculaRowDeleting" msprop:Generator_RowChangingName="detalleMatriculaRowChanging" msprop:Generator_RowEvHandlerName="detalleMatriculaRowChangeEventHandler" msprop:Generator_RowDeletedName="detalleMatriculaRowDeleted" msprop:Generator_UserTableName="detalleMatricula" msprop:Generator_RowChangedName="detalleMatriculaRowChanged" msprop:Generator_RowEvArgName="detalleMatriculaRowChangeEvent" msprop:Generator_RowClassName="detalleMatriculaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_DetalleMatricula" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_DetalleMatricula" msprop:Generator_ColumnPropNameInRow="id_DetalleMatricula" msprop:Generator_ColumnPropNameInTable="id_DetalleMatriculaColumn" msprop:Generator_UserColumnName="id_DetalleMatricula" type="xs:int" />
+              <xs:element name="id_RegistroMatricula" msprop:Generator_ColumnVarNameInTable="columnid_RegistroMatricula" msprop:Generator_ColumnPropNameInRow="id_RegistroMatricula" msprop:Generator_ColumnPropNameInTable="id_RegistroMatriculaColumn" msprop:Generator_UserColumnName="id_RegistroMatricula" type="xs:int" />
+              <xs:element name="fechaRegistroCurso" msprop:Generator_ColumnVarNameInTable="columnfechaRegistroCurso" msprop:Generator_ColumnPropNameInRow="fechaRegistroCurso" msprop:Generator_ColumnPropNameInTable="fechaRegistroCursoColumn" msprop:Generator_UserColumnName="fechaRegistroCurso" type="xs:dateTime" />
+              <xs:element name="id_Curso" msprop:Generator_ColumnVarNameInTable="columnid_Curso" msprop:Generator_ColumnPropNameInRow="id_Curso" msprop:Generator_ColumnPropNameInTable="id_CursoColumn" msprop:Generator_UserColumnName="id_Curso" type="xs:int" />
+              <xs:element name="id_Seccion" msprop:Generator_ColumnVarNameInTable="columnid_Seccion" msprop:Generator_ColumnPropNameInRow="id_Seccion" msprop:Generator_ColumnPropNameInTable="id_SeccionColumn" msprop:Generator_UserColumnName="id_Seccion" type="xs:int" />
+              <xs:element name="totalMatricula" msprop:Generator_ColumnVarNameInTable="columntotalMatricula" msprop:Generator_ColumnPropNameInRow="totalMatricula" msprop:Generator_ColumnPropNameInTable="totalMatriculaColumn" msprop:Generator_UserColumnName="totalMatricula" type="xs:decimal" minOccurs="0" />
+              <xs:element name="tipoMatricula" msprop:Generator_ColumnVarNameInTable="columntipoMatricula" msprop:Generator_ColumnPropNameInRow="tipoMatricula" msprop:Generator_ColumnPropNameInTable="tipoMatriculaColumn" msprop:Generator_UserColumnName="tipoMatricula" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mesesParaPagar" msprop:Generator_ColumnVarNameInTable="columnmesesParaPagar" msprop:Generator_ColumnPropNameInRow="mesesParaPagar" msprop:Generator_ColumnPropNameInTable="mesesParaPagarColumn" msprop:Generator_UserColumnName="mesesParaPagar" type="xs:int" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detalleNotas" msprop:Generator_TableClassName="detalleNotasDataTable" msprop:Generator_TableVarName="tabledetalleNotas" msprop:Generator_TablePropName="detalleNotas" msprop:Generator_RowDeletingName="detalleNotasRowDeleting" msprop:Generator_RowChangingName="detalleNotasRowChanging" msprop:Generator_RowEvHandlerName="detalleNotasRowChangeEventHandler" msprop:Generator_RowDeletedName="detalleNotasRowDeleted" msprop:Generator_UserTableName="detalleNotas" msprop:Generator_RowChangedName="detalleNotasRowChanged" msprop:Generator_RowEvArgName="detalleNotasRowChangeEvent" msprop:Generator_RowClassName="detalleNotasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_DetalleNotas" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_DetalleNotas" msprop:Generator_ColumnPropNameInRow="id_DetalleNotas" msprop:Generator_ColumnPropNameInTable="id_DetalleNotasColumn" msprop:Generator_UserColumnName="id_DetalleNotas" type="xs:int" />
+              <xs:element name="id_DetalleMatricula" msprop:Generator_ColumnVarNameInTable="columnid_DetalleMatricula" msprop:Generator_ColumnPropNameInRow="id_DetalleMatricula" msprop:Generator_ColumnPropNameInTable="id_DetalleMatriculaColumn" msprop:Generator_UserColumnName="id_DetalleMatricula" type="xs:int" />
+              <xs:element name="id_Clase" msprop:Generator_ColumnVarNameInTable="columnid_Clase" msprop:Generator_ColumnPropNameInRow="id_Clase" msprop:Generator_ColumnPropNameInTable="id_ClaseColumn" msprop:Generator_UserColumnName="id_Clase" type="xs:int" />
+              <xs:element name="nota1erParcial" msprop:Generator_ColumnVarNameInTable="columnnota1erParcial" msprop:Generator_ColumnPropNameInRow="nota1erParcial" msprop:Generator_ColumnPropNameInTable="nota1erParcialColumn" msprop:Generator_UserColumnName="nota1erParcial" type="xs:double" />
+              <xs:element name="nota2doParcial" msprop:Generator_ColumnVarNameInTable="columnnota2doParcial" msprop:Generator_ColumnPropNameInRow="nota2doParcial" msprop:Generator_ColumnPropNameInTable="nota2doParcialColumn" msprop:Generator_UserColumnName="nota2doParcial" type="xs:double" />
+              <xs:element name="nota3erParcial" msprop:Generator_ColumnVarNameInTable="columnnota3erParcial" msprop:Generator_ColumnPropNameInRow="nota3erParcial" msprop:Generator_ColumnPropNameInTable="nota3erParcialColumn" msprop:Generator_UserColumnName="nota3erParcial" type="xs:double" />
+              <xs:element name="nota4toParcial" msprop:Generator_ColumnVarNameInTable="columnnota4toParcial" msprop:Generator_ColumnPropNameInRow="nota4toParcial" msprop:Generator_ColumnPropNameInTable="nota4toParcialColumn" msprop:Generator_UserColumnName="nota4toParcial" type="xs:double" />
+              <xs:element name="notaFinal" msprop:Generator_ColumnVarNameInTable="columnnotaFinal" msprop:Generator_ColumnPropNameInRow="notaFinal" msprop:Generator_ColumnPropNameInTable="notaFinalColumn" msprop:Generator_UserColumnName="notaFinal" type="xs:double" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="matricula" msprop:Generator_TableClassName="matriculaDataTable" msprop:Generator_TableVarName="tablematricula" msprop:Generator_TablePropName="matricula" msprop:Generator_RowDeletingName="matriculaRowDeleting" msprop:Generator_RowChangingName="matriculaRowChanging" msprop:Generator_RowEvHandlerName="matriculaRowChangeEventHandler" msprop:Generator_RowDeletedName="matriculaRowDeleted" msprop:Generator_UserTableName="matricula" msprop:Generator_RowChangedName="matriculaRowChanged" msprop:Generator_RowEvArgName="matriculaRowChangeEvent" msprop:Generator_RowClassName="matriculaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_RegistroMatricula" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_RegistroMatricula" msprop:Generator_ColumnPropNameInRow="id_RegistroMatricula" msprop:Generator_ColumnPropNameInTable="id_RegistroMatriculaColumn" msprop:Generator_UserColumnName="id_RegistroMatricula" type="xs:int" />
+              <xs:element name="fechaMatricula" msprop:Generator_ColumnVarNameInTable="columnfechaMatricula" msprop:Generator_ColumnPropNameInRow="fechaMatricula" msprop:Generator_ColumnPropNameInTable="fechaMatriculaColumn" msprop:Generator_UserColumnName="fechaMatricula" type="xs:dateTime" />
+              <xs:element name="id_EncargadoAdministracion" msprop:Generator_ColumnVarNameInTable="columnid_EncargadoAdministracion" msprop:Generator_ColumnPropNameInRow="id_EncargadoAdministracion" msprop:Generator_ColumnPropNameInTable="id_EncargadoAdministracionColumn" msprop:Generator_UserColumnName="id_EncargadoAdministracion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_EncargadoAlumno" msprop:Generator_ColumnVarNameInTable="columnid_EncargadoAlumno" msprop:Generator_ColumnPropNameInRow="id_EncargadoAlumno" msprop:Generator_ColumnPropNameInTable="id_EncargadoAlumnoColumn" msprop:Generator_UserColumnName="id_EncargadoAlumno">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_Estudiante" msprop:Generator_ColumnVarNameInTable="columnid_Estudiante" msprop:Generator_ColumnPropNameInRow="id_Estudiante" msprop:Generator_ColumnPropNameInTable="id_EstudianteColumn" msprop:Generator_UserColumnName="id_Estudiante">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:datosEstudiante" />
+      <xs:field xpath="mstns:MATRICULA" />
+    </xs:unique>
+    <xs:unique name="detalleMatricula_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:detalleMatricula" />
+      <xs:field xpath="mstns:id_DetalleMatricula" />
+    </xs:unique>
+    <xs:unique name="detalleNotas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:detalleNotas" />
+      <xs:field xpath="mstns:id_DetalleNotas" />
+    </xs:unique>
+    <xs:unique name="matricula_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:matricula" />
+      <xs:field xpath="mstns:id_RegistroMatricula" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK__detalleNo__estad__48CFD27E" msdata:parent="detalleMatricula" msdata:child="detalleNotas" msdata:parentkey="id_DetalleMatricula" msdata:childkey="id_DetalleMatricula" msprop:Generator_UserChildTable="detalleNotas" msprop:Generator_ChildPropName="GetdetalleNotasRows" msprop:Generator_UserRelationName="FK__detalleNo__estad__48CFD27E" msprop:Generator_ParentPropName="detalleMatriculaRow" msprop:Generator_RelationVarName="relationFK__detalleNo__estad__48CFD27E" msprop:Generator_UserParentTable="detalleMatricula" />
+      <msdata:Relationship name="FK__detalleMa__id_Re__440B1D61" msdata:parent="matricula" msdata:child="detalleMatricula" msdata:parentkey="id_RegistroMatricula" msdata:childkey="id_RegistroMatricula" msprop:Generator_UserChildTable="detalleMatricula" msprop:Generator_ChildPropName="GetdetalleMatriculaRows" msprop:Generator_UserRelationName="FK__detalleMa__id_Re__440B1D61" msprop:Generator_RelationVarName="relationFK__detalleMa__id_Re__440B1D61" msprop:Generator_UserParentTable="matricula" msprop:Generator_ParentPropName="matriculaRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

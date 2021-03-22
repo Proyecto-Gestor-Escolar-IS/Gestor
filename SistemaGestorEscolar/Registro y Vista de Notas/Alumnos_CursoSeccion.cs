@@ -1,5 +1,4 @@
-﻿using SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 {
@@ -65,6 +64,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.Hide();
             Seleccion_de_Curso form = new Seleccion_de_Curso();
             form.Show(this);
+
+        }
+
+        private void Alumnos_CursoSeccion_Load(object sender, System.EventArgs e)
+        {
 
         }
     }

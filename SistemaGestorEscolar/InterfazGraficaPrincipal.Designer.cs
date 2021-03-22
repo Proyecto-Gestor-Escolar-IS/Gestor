@@ -56,6 +56,7 @@ namespace SistemaGestorEscolar
             this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSubMenuEstudiante = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnFichaEstudiante = new System.Windows.Forms.Button();
             this.btnRegistrarVisitaMedica = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -346,7 +347,7 @@ namespace SistemaGestorEscolar
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(595, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(453, 41);
+            this.label3.Size = new System.Drawing.Size(450, 36);
             this.label3.TabIndex = 26;
             this.label3.Text = "PERSONAL INSTITUCIONAL";
             // 
@@ -450,6 +451,7 @@ namespace SistemaGestorEscolar
             this.btnCursos.TabIndex = 42;
             this.btnCursos.Text = "CURSOS";
             this.btnCursos.UseVisualStyleBackColor = false;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
             this.btnCursos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCursos_MouseDown);
             // 
             // btnVistaMatriculas
@@ -470,6 +472,8 @@ namespace SistemaGestorEscolar
             this.btnVistaMatriculas.TabIndex = 41;
             this.btnVistaMatriculas.Text = "VISTA DE MATRICULAS";
             this.btnVistaMatriculas.UseVisualStyleBackColor = false;
+            this.btnVistaMatriculas.Click += new System.EventHandler(this.btnVistaMatriculas_Click_2);
+            this.btnVistaMatriculas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnVistaMatriculas_MouseDown_1);
             // 
             // btnMatricularEstudiante
             // 
@@ -494,13 +498,30 @@ namespace SistemaGestorEscolar
             // 
             // panSubMenuEstudiante
             // 
+            this.panSubMenuEstudiante.Controls.Add(this.button1);
             this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
             this.panSubMenuEstudiante.Controls.Add(this.btnRegistrarVisitaMedica);
             this.panSubMenuEstudiante.Controls.Add(this.label2);
-            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 684);
+            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 666);
             this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
-            this.panSubMenuEstudiante.Size = new System.Drawing.Size(284, 55);
+            this.panSubMenuEstudiante.Size = new System.Drawing.Size(174, 89);
             this.panSubMenuEstudiante.TabIndex = 26;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(322, 340);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(407, 200);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "APERTURA EXPEDIENTE MEDICO";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
             // 
             // btnFichaEstudiante
             // 
@@ -524,7 +545,7 @@ namespace SistemaGestorEscolar
             this.btnRegistrarVisitaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarVisitaMedica.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarVisitaMedica.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(615, 357);
+            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(932, 350);
             this.btnRegistrarVisitaMedica.Name = "btnRegistrarVisitaMedica";
             this.btnRegistrarVisitaMedica.Size = new System.Drawing.Size(407, 200);
             this.btnRegistrarVisitaMedica.TabIndex = 28;
@@ -539,7 +560,7 @@ namespace SistemaGestorEscolar
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(697, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 41);
+            this.label2.Size = new System.Drawing.Size(240, 36);
             this.label2.TabIndex = 26;
             this.label2.Text = "ESTUDIANTES";
             // 
@@ -607,7 +628,7 @@ namespace SistemaGestorEscolar
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(742, 273);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 41);
+            this.label1.Size = new System.Drawing.Size(136, 36);
             this.label1.TabIndex = 23;
             this.label1.Text = " PAGOS";
             // 
@@ -618,7 +639,7 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
             this.lblMenuTitle.Location = new System.Drawing.Point(675, 100);
             this.lblMenuTitle.Name = "lblMenuTitle";
-            this.lblMenuTitle.Size = new System.Drawing.Size(292, 41);
+            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
             this.lblMenuTitle.TabIndex = 32;
             this.lblMenuTitle.Text = "MENU PRINCIPAL";
             // 
@@ -700,6 +721,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Panel panSubMenuPersonal;
         private System.Windows.Forms.Button btnIngresarNuevoUsuario;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
         //private BrbVideoManager.Controls.RoundedButton btnMatriEstudiante;
         //private BrbVideoManager.Controls.RoundedButton btnVistaMatriculas;
     }

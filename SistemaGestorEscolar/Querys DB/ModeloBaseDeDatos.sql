@@ -44,7 +44,8 @@ contraseniaEmpleado varchar(80) not null,
 CREATE TABLE cursos(
 id_Curso int identity primary key not null,
 nombreCurso varchar(30) not null,
-precioCompleto money not null
+precioCompleto money not null,
+estadoCurso int not null 
 )
 
 --Tabla que contiene la informacion relacionada a las secciones

@@ -93,7 +93,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.txtBuscarAlumno.Name = "txtBuscarAlumno";
             this.txtBuscarAlumno.Size = new System.Drawing.Size(156, 28);
             this.txtBuscarAlumno.TabIndex = 2;
-            this.txtBuscarAlumno.Text = "Buscar un Alumno";
+            this.txtBuscarAlumno.Text = "Buscar un Estudiante\r\n";
             this.txtBuscarAlumno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSearch
@@ -160,7 +160,6 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtBuscarAlumno);
-            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);

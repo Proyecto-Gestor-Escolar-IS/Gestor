@@ -103,6 +103,7 @@ namespace SistemaGestorEscolar.Login
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
+            
             clsVariablesGlobales.CodigoAcceso = 1;
 
             interfazPrincipal.Show();

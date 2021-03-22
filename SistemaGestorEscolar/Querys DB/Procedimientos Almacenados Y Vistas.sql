@@ -285,7 +285,7 @@ GO
 
 
 --Procedimiento almacenado para registrar un encargado 
-Alter procedure RegistrarEncargado
+Create procedure RegistrarEncargado
 (
 @NumidentidadEstudiante varchar(13), @Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
 @segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),
@@ -390,3 +390,58 @@ BEGIN
 END
 GO
 
+--SamuelOviedo--
+-----------------------------------------------------------------------Procedimientos Cursos----------------------------------------------------------------
+
+---------------Actualizar curso-----------------
+CREATE PROCEDURE [dbo].[PAActualizarCurso] (@id_Curso int, @nombreCurso varchar(30), @precioCompleto money)
+
+AS
+BEGIN
+
+	BEGIN
+
+	UPDATE [dbo].[cursos] SET [nombreCurso] = @nombreCurso WHERE [id_Curso] = @id_Curso
+    UPDATE [dbo].[cursos] SET [precioCompleto] = @precioCompleto WHERE [id_Curso] = @id_Curso
+
+	END
+
+END
+
+---------------Registrar curso-----------------
+CREATE PROCEDURE [dbo].[PARegistrarCurso] (@nombreCurso varchar(30), @precioCompleto money, @estadoCurso int)
+
+AS
+BEGIN
+
+	BEGIN
+		IF (EXISTS(SELECT [nombreCurso] from [dbo].[cursos] WHERE [nombreCurso] = @nombreCurso))
+
+			UPDATE [dbo].[cursos] SET [estadoCurso] = @estadoCurso
+
+		ELSE
+
+			INSERT INTO [dbo].[cursos] VALUES (@nombreCurso, @precioCompleto, @estadoCurso)
+	END
+
+END
+GO
+
+/*YESSY TINOCO*/
+
+--------------------------------------------------------- Apertura de Expediente Médico ---------------------------------------------------------------------
+
+CREATE PROCEDURE abrirExpediente(@id_Estudiante varchar(13), @antecedentesMedicos text)
+AS BEGIN
+		INSERT INTO expedienteMedico( id_Estudiante, fechaCreacion, antecedentesMedicos) 
+		VALUES( @id_Estudiante, GETDATE(), @antecedentesMedicos)
+END
+GO
+--------------------------------------------------------- Registro de Visita Médica ---------------------------------------------------------------------
+
+CREATE PROCEDURE registroVisitaMedica(@id_expediente int, @id_DoctorEncargado varchar(13), @sintomas text, @posibleEnfermedad text, @medicamentos text)
+AS BEGIN
+			INSERT INTO detalleExpedienteMedico(id_expediente, id_DoctorEncargado, fecha, sintomas, posibleEnfermadad, medicamentos) 
+			VALUES( @id_expediente, @id_DoctorEncargado, GETDATE(), @sintomas, @posibleEnfermedad, @medicamentos)
+END
+GO
