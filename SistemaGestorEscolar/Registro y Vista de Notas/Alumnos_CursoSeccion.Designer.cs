@@ -29,6 +29,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbAlumnos_CursoSeccion = new System.Windows.Forms.GroupBox();
             this.dgvAlumnos_CS = new System.Windows.Forms.DataGridView();
             this.btnSiguiente = new System.Windows.Forms.Button();
@@ -52,9 +54,26 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // dgvAlumnos_CS
             // 
             this.dgvAlumnos_CS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlumnos_CS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAlumnos_CS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlumnos_CS.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAlumnos_CS.Location = new System.Drawing.Point(6, 30);
             this.dgvAlumnos_CS.Name = "dgvAlumnos_CS";
+            this.dgvAlumnos_CS.ReadOnly = true;
             this.dgvAlumnos_CS.Size = new System.Drawing.Size(880, 449);
             this.dgvAlumnos_CS.TabIndex = 0;
             this.dgvAlumnos_CS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CS_CellClick);
@@ -62,7 +81,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnSiguiente.FlatAppearance.BorderSize = 0;
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

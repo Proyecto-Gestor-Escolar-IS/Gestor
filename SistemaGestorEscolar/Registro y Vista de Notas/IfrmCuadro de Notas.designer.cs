@@ -29,11 +29,14 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvNotaAlumnos = new System.Windows.Forms.DataGridView();
             this.txtBuscarAlumno = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSiguiente = new System.Windows.Forms.Button();
             this.pbRegresar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotaAlumnos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -54,21 +57,39 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // dgvNotaAlumnos
             // 
             this.dgvNotaAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotaAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNotaAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNotaAlumnos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNotaAlumnos.Location = new System.Drawing.Point(4, 16);
-            this.dgvNotaAlumnos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvNotaAlumnos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvNotaAlumnos.Name = "dgvNotaAlumnos";
+            this.dgvNotaAlumnos.ReadOnly = true;
             this.dgvNotaAlumnos.RowHeadersWidth = 51;
             this.dgvNotaAlumnos.RowTemplate.Height = 24;
-            this.dgvNotaAlumnos.Size = new System.Drawing.Size(1159, 613);
+            this.dgvNotaAlumnos.Size = new System.Drawing.Size(1159, 559);
             this.dgvNotaAlumnos.TabIndex = 1;
+            this.dgvNotaAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotaAlumnos_CellClick);
             // 
             // txtBuscarAlumno
             // 
             this.txtBuscarAlumno.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarAlumno.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtBuscarAlumno.Location = new System.Drawing.Point(926, 43);
-            this.txtBuscarAlumno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarAlumno.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarAlumno.Name = "txtBuscarAlumno";
             this.txtBuscarAlumno.Size = new System.Drawing.Size(156, 28);
             this.txtBuscarAlumno.TabIndex = 2;
@@ -84,7 +105,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Location = new System.Drawing.Point(904, 44);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 26);
             this.btnSearch.TabIndex = 3;
@@ -92,15 +113,30 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSiguiente);
             this.groupBox1.Controls.Add(this.dgvNotaAlumnos);
             this.groupBox1.Font = new System.Drawing.Font("Balsamiq Sans", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(-1, 80);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1168, 644);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Balsamiq Sans", 13.2F);
+            this.btnSiguiente.Location = new System.Drawing.Point(527, 590);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(158, 36);
+            this.btnSiguiente.TabIndex = 2;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // pbRegresar
             // 
@@ -127,7 +163,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Cuadro_de_Notas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Cuadro_de_Notas_Load);
@@ -142,10 +178,11 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvNotaAlumnos;
         private System.Windows.Forms.TextBox txtBuscarAlumno;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pbRegresar;
+        private System.Windows.Forms.Button btnSiguiente;
+        public System.Windows.Forms.DataGridView dgvNotaAlumnos;
     }
 }

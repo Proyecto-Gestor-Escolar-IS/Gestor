@@ -65,15 +65,12 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.cmbCursos.Font = new System.Drawing.Font("Balsamiq Sans", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCursos.FormattingEnabled = true;
             this.cmbCursos.Items.AddRange(new object[] {
-            "Babies",
-            "Infants",
-            "Toodlers",
             "Nursery",
-            "Pre Kinder",
+            "Pre-Kinder",
             "Kinder",
             "Primer Grado"});
             this.cmbCursos.Location = new System.Drawing.Point(479, 424);
-            this.cmbCursos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCursos.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCursos.Name = "cmbCursos";
             this.cmbCursos.Size = new System.Drawing.Size(230, 46);
             this.cmbCursos.TabIndex = 2;
@@ -87,7 +84,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuar.Font = new System.Drawing.Font("Balsamiq Sans", 21.2F, System.Drawing.FontStyle.Bold);
             this.btnContinuar.Location = new System.Drawing.Point(486, 619);
-            this.btnContinuar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContinuar.Margin = new System.Windows.Forms.Padding(2);
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Size = new System.Drawing.Size(223, 57);
             this.btnContinuar.TabIndex = 3;
@@ -99,20 +96,8 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.cmbSeccion.Font = new System.Drawing.Font("Balsamiq Sans", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSeccion.FormattingEnabled = true;
-            this.cmbSeccion.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K"});
             this.cmbSeccion.Location = new System.Drawing.Point(479, 517);
-            this.cmbSeccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSeccion.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSeccion.Name = "cmbSeccion";
             this.cmbSeccion.Size = new System.Drawing.Size(230, 46);
             this.cmbSeccion.TabIndex = 4;
@@ -131,7 +116,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Seleccion_de_Curso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Seleccion_de_Curso_Load);

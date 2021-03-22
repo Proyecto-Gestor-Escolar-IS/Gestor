@@ -38,6 +38,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void Alumnos_CursoSeccion_Load(object sender, System.EventArgs e)
         {
 
+
             dbConn.llenarDGV(dgvAlumnos_CS, "SELECT dbo.datosEstudiante.identidadEstudiante as 'Identidad del Estudiante', " +
                 "CONCAT(dbo.datosEstudiante.primerNombre,' ', dbo.datosEstudiante.segundoNombre,' ', dbo.datosEstudiante.primerApellido,' ', dbo.datosEstudiante.segundoApellido) as 'Nobre del Estudiante'" +
                 ", dbo.cursos.nombreCurso as Curso, dbo.seccion.nombreSeccion as Sección FROM     dbo.datosEstudiante INNER JOIN" +

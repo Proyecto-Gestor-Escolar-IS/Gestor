@@ -23,7 +23,8 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         public string id_detalleMatriculaTemp;
         public string identidad;
         public int Id_Clase;
-        public int notaProm;
+        public string nombreClase;
+        int notaProm;
         public string curso;
         public string seccion;
         public string nombreAlumno;
@@ -115,9 +116,22 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
 
         private void Registro_Datos_Notas_Load(object sender, EventArgs e)
         {
+
             txtCurso.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.CursoG;
             txtSeccion.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG;
             txtIdentidad.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.identidadG;
+            txtNota1.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.nota1G2.ToString();
+            txtNota2.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.nota2G2.ToString();
+            txtNota3.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.nota3G2.ToString();
+            txtNota4.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.nota4G2.ToString();
+            //cmbClase.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.clase.ToString();
+            txtIdentidad.ForeColor = Color.Green;
+            errorPrvIdentidad.Clear();
+
+            dbConn.llenarComboBox(cmbClase, "SELECT dbo.clasesCurso.nombreClase FROM     dbo.clasesCurso INNER JOIN dbo.cursos ON " +
+                "dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso INNER JOIN dbo.seccion ON dbo.cursos.id_Curso = dbo.seccion.id_Curso Where " +
+                "dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
+
         }
 
 
@@ -242,35 +256,63 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
 
         private void txtNota1_TextChanged(object sender, EventArgs e)
         {
-           //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+            if (txtNota1.Text == "")
+            {
 
-           // txtNotaProm.Text = notaProm.ToString();
-        }
+            }
+            else
+            {
+                notaProm = (Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text)) / 4;
+
+                txtNotaProm.Text = notaProm.ToString();
+            }
+            }
 
         private void txtNota2_TextChanged(object sender, EventArgs e)
         {
 
-            //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+            if (txtNota2.Text == "")
+            {
 
-            //txtNotaProm.Text = notaProm.ToString();
+            }
+            else
+            {
+                notaProm = (Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text)) / 4;
+
+                txtNotaProm.Text = notaProm.ToString();
+            }
 
         }
 
         private void txtNota3_TextChanged(object sender, EventArgs e)
         {
 
-            //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+            if (txtNota3.Text == "")
+            {
 
-            //txtNotaProm.Text = notaProm.ToString();
+            }
+            else
+            {
+                notaProm = (Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text)) / 4;
+
+                txtNotaProm.Text = notaProm.ToString();
+            }
 
         }
 
         private void txtNota4_TextChanged(object sender, EventArgs e)
         {
 
-            //notaProm = Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text) / 4;
+            if (txtNota4.Text == "")
+            {
 
-            //txtNotaProm.Text = notaProm.ToString();
+            }
+            else
+            {
+                notaProm = (Convert.ToInt32(txtNota1.Text) + Convert.ToInt32(txtNota2.Text) + Convert.ToInt32(txtNota3.Text) + Convert.ToInt32(txtNota4.Text)) / 4;
+
+                txtNotaProm.Text = notaProm.ToString();
+            }
 
         }
 
@@ -331,7 +373,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             txtNota3.ResetText();
             txtNota4.ResetText();
             txtNotaProm.ResetText();
-            txtIdClase.ResetText();
+            cmbClase.ResetText();
 
         }
 
@@ -339,7 +381,6 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         {
             
             identidad = txtIdentidad.Text;
-            Id_Clase = Int16.Parse(txtIdClase.Text);
             curso = txtCurso.Text;
             seccion = txtSeccion.Text;
             nombreAlumno = txtNombreAlumno.Text;
@@ -353,18 +394,22 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
                 " dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join " +
                 "dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' and" +
                 " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "'");
+
+            Id_Clase = dbConn.obtenerVariableEntera("SELECT dbo.clasesCurso.id_Clase FROM     dbo.cursos INNER JOIN dbo.seccion ON" +
+                " dbo.cursos.id_Curso = dbo.seccion.id_Curso INNER JOIN dbo.clasesCurso ON dbo.cursos.id_Curso = dbo.clasesCurso.id_Curso Where " +
+                "dbo.clasesCurso.nombreClase = '" + cmbClase.SelectedItem.ToString() + "'");
                   
 
                if (dbConn.PAAgregarNota(id_detalleMatricula, Id_Clase, nota1, nota2, nota3, nota4, notaFinal))
                 {
                 //MessageBox.Show("Las Notas del Alumno se ingresaron correctamente", "Nota Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                messageOk.lblCheck.Text = "Las Notas se ingresaron correctamente!";
+                messageOk.lblCheck.Text = "Se ingresaron correctamente";
                 messageOk.ShowDialog();
                 }
                else
                 {
                 //MessageBox.Show("Se produjo un error al ingresar los datos!", "Nota Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                message.lblError.Text = "Error al ingresar las Notas!";
+                message.lblError.Text = "Error al ingresar las Notas";
                 message.ShowDialog();
                 }
         
@@ -373,7 +418,6 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
         private void btnModificarNota_Click(object sender, EventArgs e)
         {
             identidad = txtIdentidad.Text;
-            Id_Clase = Int16.Parse(txtIdClase.Text);
             curso = txtCurso.Text;
             seccion = txtSeccion.Text;
             nombreAlumno = txtNombreAlumno.Text;
@@ -386,14 +430,20 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             id_detalleMatricula = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
                 "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' and dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
 
+
+            Id_Clase = dbConn.obtenerVariableEntera("SELECT dbo.clasesCurso.id_Clase FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
+                "dbo.cursos.id_Curso = dbo.seccion.id_Curso INNER JOIN dbo.clasesCurso ON dbo.cursos.id_Curso = dbo.clasesCurso.id_Curso Where" +
+                " dbo.clasesCurso.nombreClase = '" + cmbClase.SelectedItem.ToString() + "' ");
+
+
             if (dbConn.PAModificarNota(id_detalleMatricula, Id_Clase, nota1, nota2, nota3, nota4, notaFinal))
             {
-                messageOk.lblCheck.Text = "Las Notas se Modificó correctamente!";
+                messageOk.lblCheck.Text = "Se Modificaron correctamente";
                 messageOk.ShowDialog();
             }
             else
             {
-                message.lblError.Text = "Error al Modificar las Notas!";
+                message.lblError.Text = "Error al Modificar las Notas";
                 message.ShowDialog();
             }
 
