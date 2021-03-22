@@ -232,6 +232,19 @@ namespace SistemaGestorEscolar
                 btnPagos.Enabled = false;
                 btnMatricularEstudiante.Enabled = false;
 
+                btnMenuIngresoNotas.Enabled = false;
+                btnMenuPersonal.Enabled = true;
+                btnMenuVistaMatricula.Enabled = false;
+                btnMenuCursosDisponibles.Enabled = false;
+                btnMenuRegistroPago.Enabled = false;
+                btnMenuMatriculaEstudiante.Enabled = false;
+
+                btnMenuIngresoNotas.BackColor = Color.DarkGray;
+                btnMenuVistaMatricula.BackColor = Color.DarkGray;
+                btnMenuCursosDisponibles.BackColor = Color.DarkGray;
+                btnMenuRegistroPago.BackColor = Color.DarkGray;
+                btnMenuMatriculaEstudiante.BackColor = Color.DarkGray;
+
                 btnEstudiante.BackColor = Color.DarkGray;
                 btnIngresarNotas.BackColor = Color.DarkGray;
                 btnVistaMatriculas.BackColor = Color.DarkGray;
@@ -257,6 +270,16 @@ namespace SistemaGestorEscolar
                 btnPagos.Enabled = true;
                 btnMatricularEstudiante.Enabled = true;
 
+                btnMenuIngresoNotas.Enabled = false;
+                btnMenuPersonal.Enabled = false;
+                btnMenuVistaMatricula.Enabled = true;
+                btnMenuCursosDisponibles.Enabled = true;
+                btnMenuRegistroPago.Enabled = true;
+                btnMenuMatriculaEstudiante.Enabled = true;
+
+                btnMenuPersonal.BackColor = Color.DarkGray;
+                btnMenuIngresoNotas.BackColor = Color.DarkGray;
+
                 btnPersonal.BackColor = Color.DarkGray;
                 btnIngresarNotas.BackColor = Color.DarkGray;
 
@@ -273,6 +296,18 @@ namespace SistemaGestorEscolar
                 btnCursos.Enabled = false;
                 btnPagos.Enabled = false;
                 btnMatricularEstudiante.Enabled = false;
+
+                btnMenuIngresoNotas.Enabled = true;
+                btnMenuPersonal.Enabled = false;
+                btnMenuVistaMatricula.Enabled = true;
+                btnMenuCursosDisponibles.Enabled = false;
+                btnMenuRegistroPago.Enabled = false;
+                btnMenuMatriculaEstudiante.Enabled = false;
+
+                btnMenuPersonal.BackColor = Color.DarkGray;
+                btnMenuRegistroPago.BackColor = Color.DarkGray;
+                btnMenuCursosDisponibles.BackColor = Color.DarkGray;
+                btnMenuMatriculaEstudiante.BackColor = Color.DarkGray;
 
                 btnPersonal.BackColor = Color.DarkGray;
                 btnPagos.BackColor = Color.DarkGray;
@@ -294,6 +329,19 @@ namespace SistemaGestorEscolar
                 btnCursos.Enabled = false;
                 btnPagos.Enabled = false;
                 btnMatricularEstudiante.Enabled = false;
+
+                btnMenuIngresoNotas.Enabled = false;
+                btnMenuPersonal.Enabled = false;
+                btnMenuVistaMatricula.Enabled = true;
+                btnMenuCursosDisponibles.Enabled = false;
+                btnMenuRegistroPago.Enabled = false;
+                btnMenuMatriculaEstudiante.Enabled = false;
+
+                btnMenuPersonal.BackColor = Color.DarkGray;
+                btnMenuIngresoNotas.BackColor = Color.DarkGray;
+                btnMenuRegistroPago.BackColor = Color.DarkGray;
+                btnMenuCursosDisponibles.BackColor = Color.DarkGray;
+                btnMenuMatriculaEstudiante.BackColor = Color.DarkGray;
 
                 btnPersonal.BackColor = Color.DarkGray;
                 btnIngresarNotas.BackColor = Color.DarkGray;
@@ -804,6 +852,141 @@ namespace SistemaGestorEscolar
                 btnRegistrarPago.ForeColor = Color.Black;
                 btnHistorialPagos.ForeColor = Color.Black;
 
+                if (clsVariablesGlobales.CodigoAcceso == 0)
+                {
+                    btnEstudiante.Enabled = false;
+                    btnIngresarNotas.Enabled = false;
+                    btnPersonal.Enabled = true;
+                    btnVistaMatriculas.Enabled = false;
+                    btnCursos.Enabled = false;
+                    btnPagos.Enabled = false;
+                    btnMatricularEstudiante.Enabled = false;
+
+                    btnMenuIngresoNotas.Enabled = false;
+                    btnMenuPersonal.Enabled = true;
+                    btnMenuVistaMatricula.Enabled = false;
+                    btnMenuCursosDisponibles.Enabled = false;
+                    btnMenuRegistroPago.Enabled = false;
+                    btnMenuMatriculaEstudiante.Enabled = false;
+
+                    btnMenuIngresoNotas.BackColor = Color.DarkGray;
+                    btnMenuVistaMatricula.BackColor = Color.DarkGray;
+                    btnMenuCursosDisponibles.BackColor = Color.DarkGray;
+                    btnMenuRegistroPago.BackColor = Color.DarkGray;
+                    btnMenuMatriculaEstudiante.BackColor = Color.DarkGray;
+
+                    btnEstudiante.BackColor = Color.DarkGray;
+                    btnIngresarNotas.BackColor = Color.DarkGray;
+                    btnVistaMatriculas.BackColor = Color.DarkGray;
+                    btnCursos.BackColor = Color.DarkGray;
+                    btnPagos.BackColor = Color.DarkGray;
+                    btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                    btnEstudiante.BorderColor = Color.Silver;
+                    btnIngresarNotas.BorderColor = Color.Silver;
+                    btnVistaMatriculas.BorderColor = Color.Silver;
+                    btnCursos.BorderColor = Color.Silver;
+                    btnPagos.BorderColor = Color.Silver;
+                    btnMatricularEstudiante.BorderColor = Color.Silver;
+
+                }
+                else if (clsVariablesGlobales.CodigoAcceso == 1)
+                {
+                    btnEstudiante.Enabled = true;
+                    btnIngresarNotas.Enabled = false;
+                    btnPersonal.Enabled = false;
+                    btnVistaMatriculas.Enabled = true;
+                    btnCursos.Enabled = true;
+                    btnPagos.Enabled = true;
+                    btnMatricularEstudiante.Enabled = true;
+
+                    btnMenuIngresoNotas.Enabled = false;
+                    btnMenuPersonal.Enabled = false;
+                    btnMenuVistaMatricula.Enabled = true;
+                    btnMenuCursosDisponibles.Enabled = true;
+                    btnMenuRegistroPago.Enabled = true;
+                    btnMenuMatriculaEstudiante.Enabled = true;
+
+                    btnMenuPersonal.BackColor = Color.DarkGray;
+                    btnMenuIngresoNotas.BackColor = Color.DarkGray;
+
+                    btnPersonal.BackColor = Color.DarkGray;
+                    btnIngresarNotas.BackColor = Color.DarkGray;
+
+                    btnPersonal.BorderColor = Color.Silver;
+                    btnIngresarNotas.BorderColor = Color.Silver;
+
+                }
+                else if (clsVariablesGlobales.CodigoAcceso == 2)
+                {
+                    btnEstudiante.Enabled = true;
+                    btnIngresarNotas.Enabled = true;
+                    btnPersonal.Enabled = false;
+                    btnVistaMatriculas.Enabled = true;
+                    btnCursos.Enabled = false;
+                    btnPagos.Enabled = false;
+                    btnMatricularEstudiante.Enabled = false;
+
+                    btnMenuIngresoNotas.Enabled = true;
+                    btnMenuPersonal.Enabled = false;
+                    btnMenuVistaMatricula.Enabled = true;
+                    btnMenuCursosDisponibles.Enabled = false;
+                    btnMenuRegistroPago.Enabled = false;
+                    btnMenuMatriculaEstudiante.Enabled = false;
+
+                    btnMenuPersonal.BackColor = Color.DarkGray;
+                    btnMenuRegistroPago.BackColor = Color.DarkGray;
+                    btnMenuCursosDisponibles.BackColor = Color.DarkGray;
+                    btnMenuMatriculaEstudiante.BackColor = Color.DarkGray;
+
+                    btnPersonal.BackColor = Color.DarkGray;
+                    btnPagos.BackColor = Color.DarkGray;
+                    btnCursos.BackColor = Color.DarkGray;
+                    btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                    btnPersonal.BorderColor = Color.Silver;
+                    btnPagos.BorderColor = Color.Silver;
+                    btnCursos.BorderColor = Color.Silver;
+                    btnMatricularEstudiante.BorderColor = Color.Silver;
+
+                }
+                else if (clsVariablesGlobales.CodigoAcceso == 3)
+                {
+                    btnEstudiante.Enabled = true;
+                    btnIngresarNotas.Enabled = false;
+                    btnPersonal.Enabled = false;
+                    btnVistaMatriculas.Enabled = true;
+                    btnCursos.Enabled = false;
+                    btnPagos.Enabled = false;
+                    btnMatricularEstudiante.Enabled = false;
+
+                    btnMenuIngresoNotas.Enabled = false;
+                    btnMenuPersonal.Enabled = false;
+                    btnMenuVistaMatricula.Enabled = true;
+                    btnMenuCursosDisponibles.Enabled = false;
+                    btnMenuRegistroPago.Enabled = false;
+                    btnMenuMatriculaEstudiante.Enabled = false;
+
+                    btnMenuPersonal.BackColor = Color.DarkGray;
+                    btnMenuIngresoNotas.BackColor = Color.DarkGray;
+                    btnMenuRegistroPago.BackColor = Color.DarkGray;
+                    btnMenuCursosDisponibles.BackColor = Color.DarkGray;
+                    btnMenuMatriculaEstudiante.BackColor = Color.DarkGray;
+
+                    btnPersonal.BackColor = Color.DarkGray;
+                    btnIngresarNotas.BackColor = Color.DarkGray;
+                    btnPagos.BackColor = Color.DarkGray;
+                    btnCursos.BackColor = Color.DarkGray;
+                    btnMatricularEstudiante.BackColor = Color.DarkGray;
+
+                    btnPersonal.BorderColor = Color.Silver;
+                    btnIngresarNotas.BorderColor = Color.Silver;
+                    btnPagos.BorderColor = Color.Silver;
+                    btnCursos.BorderColor = Color.Silver;
+                    btnMatricularEstudiante.BorderColor = Color.Silver;
+
+                }
+
                 codigoColor = 1;
             }
         }
@@ -1110,20 +1293,42 @@ namespace SistemaGestorEscolar
             }
         }
 
-        private void btnVistaMatriculas_Click_1(object sender, EventArgs e)
-        {
+        //private void btnVistaMatriculas_Click_1(object sender, EventArgs e)
+        //{
  
+
+        //}
+
+        //private void btnVistaMatriculas_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ocultarBotones();
+        //    panelMostrador.Visible = true;
+        //    panelMostrador.Dock = DockStyle.Fill;
+        //    panSubMenuEstudiante.Visible = false;
+        //    panSubMenuEstudiante.Dock = DockStyle.None;
+        //    AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Seleccion_de_Curso>();
+
+        //    if (codigoColor == 1)
+        //    {
+        //        formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+        //    }
+        //    else if (codigoColor == 2)
+        //    {
+        //        formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+        //    }
+        //}
+
+        private void btnVistaMatriculas_Click_2(object sender, EventArgs e)
+        {
 
         }
 
-        private void btnVistaMatriculas_MouseDown(object sender, MouseEventArgs e)
+        private void btnVistaMatriculas_MouseDown_1(object sender, MouseEventArgs e)
         {
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            panSubMenuEstudiante.Visible = false;
-            panSubMenuEstudiante.Dock = DockStyle.None;
-            AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Seleccion_de_Curso>();
+            AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
 
             if (codigoColor == 1)
             {
@@ -1133,11 +1338,6 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
-        }
-
-        private void btnVistaMatriculas_Click_2(object sender, EventArgs e)
-        {
-
         }
     }
 }

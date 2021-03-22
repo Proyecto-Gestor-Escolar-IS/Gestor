@@ -473,6 +473,7 @@ namespace SistemaGestorEscolar
             this.btnVistaMatriculas.Text = "VISTA DE MATRICULAS";
             this.btnVistaMatriculas.UseVisualStyleBackColor = false;
             this.btnVistaMatriculas.Click += new System.EventHandler(this.btnVistaMatriculas_Click_2);
+            this.btnVistaMatriculas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnVistaMatriculas_MouseDown_1);
             // 
             // btnMatricularEstudiante
             // 

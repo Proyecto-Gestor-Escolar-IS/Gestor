@@ -54,7 +54,10 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
 
             this.Hide();
             Registro_Datos_Notas form = new Registro_Datos_Notas();
-            form.Show(this);
+
+         
+
+        form.Show(this);
 
         }
 

@@ -236,7 +236,7 @@
     <Compile Include="Modulos Estudiante\IMatriculaIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos Estudiante\IMatriculaIndividual.Designer.cs">
+    <Compile Include="Modulos Estudiante\IMatriculaIndividual.designer.cs">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos Estudiante\IVistaFichaEstudiante.cs">
