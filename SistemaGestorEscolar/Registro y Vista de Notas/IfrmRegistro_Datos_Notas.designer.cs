@@ -57,8 +57,8 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.label11 = new System.Windows.Forms.Label();
             this.errorPrvIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pbRegresar = new System.Windows.Forms.PictureBox();
             this.cmbClase = new System.Windows.Forms.ComboBox();
+            this.pbRegresar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorPrvIdentidad)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar)).BeginInit();
@@ -139,7 +139,7 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(76, 160);
+            this.label3.Location = new System.Drawing.Point(41, 160);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 31);
@@ -413,6 +413,14 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ingreso de Notas";
             // 
+            // cmbClase
+            // 
+            this.cmbClase.FormattingEnabled = true;
+            this.cmbClase.Location = new System.Drawing.Point(168, 58);
+            this.cmbClase.Name = "cmbClase";
+            this.cmbClase.Size = new System.Drawing.Size(188, 32);
+            this.cmbClase.TabIndex = 25;
+            // 
             // pbRegresar
             // 
             this.pbRegresar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
@@ -424,14 +432,6 @@ namespace SistemaGestorEscolar.Modulos_de_Registro_y_Vista_de_Notas
             this.pbRegresar.TabIndex = 28;
             this.pbRegresar.TabStop = false;
             this.pbRegresar.Click += new System.EventHandler(this.pbRegresar_Click);
-            // 
-            // cmbClase
-            // 
-            this.cmbClase.FormattingEnabled = true;
-            this.cmbClase.Location = new System.Drawing.Point(168, 58);
-            this.cmbClase.Name = "cmbClase";
-            this.cmbClase.Size = new System.Drawing.Size(188, 32);
-            this.cmbClase.TabIndex = 25;
             // 
             // Registro_Datos_Notas
             // 

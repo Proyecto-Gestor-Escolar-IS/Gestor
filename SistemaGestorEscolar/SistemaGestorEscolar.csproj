@@ -264,6 +264,12 @@
       <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro y Vista de Notas\Herencia de Variables.cs" />
+    <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.Designer.cs">
+      <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmCuadro de Notas.resx">
       <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.resx">
+      <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.resx">
       <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
