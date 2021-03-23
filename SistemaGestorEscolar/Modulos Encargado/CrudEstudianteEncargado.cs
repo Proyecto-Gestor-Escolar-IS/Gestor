@@ -260,7 +260,20 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                     }
                     else
                     {
-                        ActualizarEncargado();
+
+                        if (utilidad.verificarCorreo(txtCorreoElectronico.Text))
+                        {
+
+                            ActualizarEncargado();
+
+                        }
+                        else
+                        {
+                            messageError.lblError.Text = "INGRESE UN CORREO VÁLIDO";
+                            messageError.lblError.Location = new Point(120, 82);
+                            messageError.ShowDialog();
+
+                        }
                     }
                 }         
                
