@@ -22,6 +22,8 @@ namespace SistemaGestorEscolar
 
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
+
+            clsVariablesGlobales.CodigoAcceso = 2;
             try
             {
                 actualizarModulos.verificarFecha();
@@ -571,7 +573,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Registro_Datos_Notas>();
+            AbrirFormulario<Registro_y_Vista_de_Notas.IfrmIngreso_de_Notas>();
 
             if (codigoColor == 1)
             {
@@ -1128,7 +1130,7 @@ namespace SistemaGestorEscolar
             panelMostrador.Dock = DockStyle.Fill;
             panSubMenuEstudiante.Visible = false;
             panSubMenuEstudiante.Dock = DockStyle.None;
-            AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Seleccion_de_Curso>();
+            AbrirFormulario<Registro_y_Vista_de_Notas.IfrmIngreso_de_Notas>();
 
             if (codigoColor == 1)
             {
