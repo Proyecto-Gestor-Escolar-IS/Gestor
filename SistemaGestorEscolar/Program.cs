@@ -19,7 +19,7 @@ namespace SistemaGestorEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IFrmGestionEmpleados());
+            Application.Run(new Modulo_de_Cursos.IGestionCursos());
         }
     }
 }

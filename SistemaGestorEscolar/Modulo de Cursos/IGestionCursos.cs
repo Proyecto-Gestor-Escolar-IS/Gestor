@@ -28,10 +28,15 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            dbConn.llenarDGV(dgvCursos, "select [id_Curso] as 'Id Curso', [nombreCurso] as 'Nombre Curso', [precioCompleto] as 'Precio', es.[descripcionEstado] as 'Estado' from [dbo].[cursos]c join[dbo].[estados]es on c.[estadoCurso] = es.[id_Estado]");
+            actualizarDGV();
         }
 
         private void IGestionCursos_Load(object sender, EventArgs e)
+        {
+            actualizarDGV();
+        }
+
+        private void actualizarDGV()
         {
             dbConn.llenarDGV(dgvCursos, "select [id_Curso] as 'Id Curso', [nombreCurso] as 'Nombre Curso', [precioCompleto] as 'Precio', es.[descripcionEstado] as 'Estado' from [dbo].[cursos]c join[dbo].[estados]es on c.[estadoCurso] = es.[id_Estado]");
         }
@@ -65,6 +70,8 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 txtNombreCurso.Clear();
                 txtPrecio.Clear();
 
+                actualizarDGV();
+
             }
             else
             {
@@ -97,6 +104,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                 txtNombreCurso.Clear();
                 txtPrecio.Clear();
+
+                actualizarDGV();
+
             }
             else
             {
@@ -125,6 +135,8 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                 txtNombreCurso.Clear();
                 txtPrecio.Clear();
+
+                actualizarDGV();
 
             }
             else
