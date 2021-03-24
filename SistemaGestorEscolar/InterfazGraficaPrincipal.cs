@@ -1,32 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace SistemaGestorEscolar
 {
     public partial class InterfazGraficaPrincipal : Form
     {
-
         public InterfazGraficaPrincipal()
         {
             InitializeComponent();
         }
 
+        private MessageBox_Personalizados.IMessageBoxSiNo siNo = new MessageBox_Personalizados.IMessageBoxSiNo();
 
-        MessageBox_Personalizados.IMessageBoxSiNo siNo = new MessageBox_Personalizados.IMessageBoxSiNo();
-
-        Modulos_de_Arranque.verficacionArranque actualizarModulos = new Modulos_de_Arranque.verficacionArranque();
+        private Modulos_de_Arranque.verficacionArranque actualizarModulos = new Modulos_de_Arranque.verficacionArranque();
         public static Form formulario = new Form();
-        int posicionX;
-        bool windowMove = false;
-        int codigoColor = 1;
+        private int posicionX;
+        private bool windowMove = false;
+        private int codigoColor = 1;
 
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
@@ -38,7 +30,8 @@ namespace SistemaGestorEscolar
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
 
-                if (clsVariablesGlobales.CodigoAcceso == 0) {
+                if (clsVariablesGlobales.CodigoAcceso == 0)
+                {
                     btnEstudiante.Enabled = false;
                     btnIngresarNotas.Enabled = false;
                     btnPersonal.Enabled = true;
@@ -73,7 +66,6 @@ namespace SistemaGestorEscolar
                     btnCursos.BorderColor = Color.Silver;
                     btnPagos.BorderColor = Color.Silver;
                     btnMatricularEstudiante.BorderColor = Color.Silver;
-
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 1)
                 {
@@ -100,7 +92,6 @@ namespace SistemaGestorEscolar
 
                     btnPersonal.BorderColor = Color.Silver;
                     btnIngresarNotas.BorderColor = Color.Silver;
-
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 2)
                 {
@@ -133,7 +124,6 @@ namespace SistemaGestorEscolar
                     btnPagos.BorderColor = Color.Silver;
                     btnCursos.BorderColor = Color.Silver;
                     btnMatricularEstudiante.BorderColor = Color.Silver;
-
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 3)
                 {
@@ -169,16 +159,13 @@ namespace SistemaGestorEscolar
                     btnPagos.BorderColor = Color.Silver;
                     btnCursos.BorderColor = Color.Silver;
                     btnMatricularEstudiante.BorderColor = Color.Silver;
-
                 }
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-
 
         public void AbrirFormulario<T>() where T : Form, new()
         {
@@ -201,16 +188,11 @@ namespace SistemaGestorEscolar
             panelMostrador.Controls.Add(formulario);
             panelMostrador.Tag = formulario;
             formulario.Show();
-            
         }
-
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-           
         }
-
-       
 
         private void btnMenuAtras_Click(object sender, EventArgs e)
         {
@@ -258,7 +240,6 @@ namespace SistemaGestorEscolar
                 btnCursos.BorderColor = Color.Silver;
                 btnPagos.BorderColor = Color.Silver;
                 btnMatricularEstudiante.BorderColor = Color.Silver;
-
             }
             else if (clsVariablesGlobales.CodigoAcceso == 1)
             {
@@ -285,7 +266,6 @@ namespace SistemaGestorEscolar
 
                 btnPersonal.BorderColor = Color.Silver;
                 btnIngresarNotas.BorderColor = Color.Silver;
-
             }
             else if (clsVariablesGlobales.CodigoAcceso == 2)
             {
@@ -318,7 +298,6 @@ namespace SistemaGestorEscolar
                 btnPagos.BorderColor = Color.Silver;
                 btnCursos.BorderColor = Color.Silver;
                 btnMatricularEstudiante.BorderColor = Color.Silver;
-
             }
             else if (clsVariablesGlobales.CodigoAcceso == 3)
             {
@@ -354,20 +333,17 @@ namespace SistemaGestorEscolar
                 btnPagos.BorderColor = Color.Silver;
                 btnCursos.BorderColor = Color.Silver;
                 btnMatricularEstudiante.BorderColor = Color.Silver;
-
             }
         }
 
         private void panLateral_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void tmrOcultarMenu_Tick(object sender, EventArgs e)
         {
             try
             {
-                
                 if (panLateral.Width <= 160)
                 {
                     this.tmrOcultarMenu.Enabled = false;
@@ -401,7 +377,6 @@ namespace SistemaGestorEscolar
                     btnMenuPersonal.BackgroundImageLayout = ImageLayout.Center;
                     btnMenuPersonal.BackgroundImage = Properties.Resources.iconPersonalResized;
 
-
                     //formulario.Location = new Point(90, 0);
                 }
                 else
@@ -410,7 +385,6 @@ namespace SistemaGestorEscolar
                     formulario.Location = new Point(posicionX, 0);
                     this.panLateral.Width = panLateral.Width - 70;
 
-          
                     btnPersonal.Location = new Point(205, 483);
                     btnMatricularEstudiante.Location = new Point(205, 209);
 
@@ -428,8 +402,6 @@ namespace SistemaGestorEscolar
             {
                 Console.WriteLine(ex.Message);
             }
-
-
         }
 
         private void tmrMostrarMenu_Tick(object sender, EventArgs e)
@@ -442,9 +414,7 @@ namespace SistemaGestorEscolar
             else
             {
                 this.panLateral.Width = panLateral.Width + 70;
-
             }
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -453,9 +423,8 @@ namespace SistemaGestorEscolar
             {
                 if (panLateral.Width == 285)
                 {
-                    
                     tmrOcultarMenu.Enabled = true;
-                    
+
                     btnMenuAtras.Text = "";
                     btnMenuMatriculaEstudiante.Text = "";
                     btnMenuVistaMatricula.Text = "";
@@ -463,13 +432,11 @@ namespace SistemaGestorEscolar
                     btnMenuIngresoNotas.Text = "";
                     btnMenuRegistroPago.Text = "";
                     btnMenuPersonal.Text = "";
-
-
                 }
                 else if (panLateral.Width == 145)
                 {
                     tmrMostrarMenu.Enabled = true;
-                    
+
                     btnMenuAtras.Width = 285;
                     btnMenuMatriculaEstudiante.Width = 285;
                     btnMenuVistaMatricula.Width = 285;
@@ -477,7 +444,6 @@ namespace SistemaGestorEscolar
                     btnMenuIngresoNotas.Width = 285;
                     btnMenuRegistroPago.Width = 285;
                     btnMenuPersonal.Width = 285;
-
 
                     btnMenuAtras.Text = "ATRAS";
                     btnMenuMatriculaEstudiante.Text = "MATRICULAR ESTUDIANTE";
@@ -497,7 +463,6 @@ namespace SistemaGestorEscolar
 
                     formulario.Location = new Point(0, 0);
 
-                    
                     btnPersonal.Location = new Point(103, 483);
 
                     btnMatricularEstudiante.Location = new Point(103, 209);
@@ -516,12 +481,10 @@ namespace SistemaGestorEscolar
             {
                 Console.WriteLine(ex.Message);
             }
-
-
         }
 
         private void btnCerrarPrograma_Click(object sender, EventArgs e)
-        {           
+        {
             siNo.ShowDialog();
         }
 
@@ -532,8 +495,8 @@ namespace SistemaGestorEscolar
             panelMostrador.Dock = DockStyle.Fill;
             panSubMenuPagos.Visible = false;
             panSubMenuPagos.Dock = DockStyle.None;
-           
-            AbrirFormulario <Modulos_Estudiante.IMatriculaIndividual>();
+
+            AbrirFormulario<Modulos_Estudiante.IMatriculaIndividual>();
 
             if (codigoColor == 1)
             {
@@ -547,7 +510,6 @@ namespace SistemaGestorEscolar
 
         private void panSuperior_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void panSuperior_MouseDown(object sender, MouseEventArgs e)
@@ -557,10 +519,9 @@ namespace SistemaGestorEscolar
 
         private void panSuperior_MouseMove(object sender, MouseEventArgs e)
         {
-            if(windowMove == true)
+            if (windowMove == true)
             {
                 this.Location = Cursor.Position;
-
             }
         }
 
@@ -571,7 +532,6 @@ namespace SistemaGestorEscolar
 
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void btnMenuPersonal_Click(object sender, EventArgs e)
@@ -621,7 +581,6 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
-
         }
 
         private void btnMenuCursosDisponibles_Click(object sender, EventArgs e)
@@ -639,7 +598,6 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
-           
         }
 
         private void btnMenuVistaMatricula_Click(object sender, EventArgs e)
@@ -661,29 +619,22 @@ namespace SistemaGestorEscolar
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
-     
-    
         }
 
         private void panelMostrador_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void btnMatricularEstudiante_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnRegistrarPago_Click(object sender, EventArgs e)
         {
-
-
         }
 
         private void btnHistorialPagos_Click(object sender, EventArgs e)
@@ -711,6 +662,7 @@ namespace SistemaGestorEscolar
 
         private void btnCambioTema_Click(object sender, EventArgs e)
         {
+            
             if (codigoColor == 1)
             {
                 panLateral.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
@@ -721,7 +673,7 @@ namespace SistemaGestorEscolar
 
                 btnMenuAtras.BackColor = System.Drawing.Color.FromArgb(249, 212, 69);
                 btnMenuAtras.ForeColor = Color.Black;
-                
+
                 btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
                 btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
                 btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
@@ -781,7 +733,7 @@ namespace SistemaGestorEscolar
                 btnHistorialPagos.ForeColor = Color.Black;
 
                 codigoColor = 2;
-
+                clsVariablesGlobales.isTemaOscuro = true;
             }
             else if (codigoColor == 2)
             {
@@ -888,7 +840,6 @@ namespace SistemaGestorEscolar
                     btnCursos.BorderColor = Color.Silver;
                     btnPagos.BorderColor = Color.Silver;
                     btnMatricularEstudiante.BorderColor = Color.Silver;
-
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 1)
                 {
@@ -915,7 +866,6 @@ namespace SistemaGestorEscolar
 
                     btnPersonal.BorderColor = Color.Silver;
                     btnIngresarNotas.BorderColor = Color.Silver;
-
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 2)
                 {
@@ -948,7 +898,6 @@ namespace SistemaGestorEscolar
                     btnPagos.BorderColor = Color.Silver;
                     btnCursos.BorderColor = Color.Silver;
                     btnMatricularEstudiante.BorderColor = Color.Silver;
-
                 }
                 else if (clsVariablesGlobales.CodigoAcceso == 3)
                 {
@@ -984,17 +933,15 @@ namespace SistemaGestorEscolar
                     btnPagos.BorderColor = Color.Silver;
                     btnCursos.BorderColor = Color.Silver;
                     btnMatricularEstudiante.BorderColor = Color.Silver;
-
                 }
 
                 codigoColor = 1;
+                clsVariablesGlobales.isTemaOscuro = false;
             }
         }
 
         private void btnMatriEstudiante_Click(object sender, EventArgs e)
         {
-            
-
         }
 
         private void roundedButton1_Click(object sender, EventArgs e)
@@ -1004,39 +951,30 @@ namespace SistemaGestorEscolar
 
         private void btnVistaMatriculas_Click(object sender, EventArgs e)
         {
-            
         }
 
         private void btnVistaMatriculas_MouseHover(object sender, EventArgs e)
         {
-           
         }
 
         private void btnVistaMatriculas_MouseLeave(object sender, EventArgs e)
         {
-        
-            
         }
 
         private void btnMatriEstudiante_Click_1(object sender, EventArgs e)
         {
-           
-
         }
 
         private void btnMatriEstudiante_MouseHover(object sender, EventArgs e)
         {
-
         }
 
         private void btnMatriEstudiante_MouseLeave(object sender, EventArgs e)
         {
-
         }
 
         private void roundedButton1_Click_1(object sender, EventArgs e)
         {
-            
         }
 
         private void roundedButton1_MouseDown(object sender, MouseEventArgs e)
@@ -1046,12 +984,10 @@ namespace SistemaGestorEscolar
 
         private void btnMatriEstudiante_MouseEnter(object sender, EventArgs e)
         {
-
         }
 
         private void btnPagos_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void btnPagos_MouseDown(object sender, MouseEventArgs e)
@@ -1071,6 +1007,7 @@ namespace SistemaGestorEscolar
             btnIngresarNotas.Visible = false;
             btnEstudiante.Visible = false;
         }
+
         private void mostrarBotones()
         {
             btnMatricularEstudiante.Visible = true;
@@ -1102,7 +1039,6 @@ namespace SistemaGestorEscolar
 
         private void btnMatricularEstudiante_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void btnMatricularEstudiante_MouseDown(object sender, MouseEventArgs e)
@@ -1126,7 +1062,6 @@ namespace SistemaGestorEscolar
 
         private void btnRegistrarVisitaMedica_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnRegistrarVisitaMedica_MouseDown(object sender, MouseEventArgs e)
@@ -1149,7 +1084,6 @@ namespace SistemaGestorEscolar
 
         private void btnEstudiante_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void btnEstudiante_MouseDown(object sender, MouseEventArgs e)
@@ -1195,7 +1129,6 @@ namespace SistemaGestorEscolar
             panSubMenuEstudiante.Visible = false;
             panSubMenuEstudiante.Dock = DockStyle.None;
             AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Seleccion_de_Curso>();
-            
 
             if (codigoColor == 1)
             {
@@ -1206,13 +1139,13 @@ namespace SistemaGestorEscolar
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
         }
-                    
+
         private void btnCursos_MouseDown(object sender, MouseEventArgs e)
         {
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulo_de_Cursos.IGestionCursos>(); 
+            AbrirFormulario<Modulo_de_Cursos.IGestionCursos>();
 
             if (codigoColor == 1)
             {
@@ -1244,12 +1177,10 @@ namespace SistemaGestorEscolar
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnVistaMatriculas_MouseDown(object sender, MouseEventArgs e)
         {
-       
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
@@ -1267,12 +1198,10 @@ namespace SistemaGestorEscolar
 
         private void btnVistaMatriculas_Click_1(object sender, EventArgs e)
         {
-          
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
@@ -1295,8 +1224,6 @@ namespace SistemaGestorEscolar
 
         //private void btnVistaMatriculas_Click_1(object sender, EventArgs e)
         //{
- 
-
         //}
 
         //private void btnVistaMatriculas_MouseDown(object sender, MouseEventArgs e)
@@ -1320,7 +1247,6 @@ namespace SistemaGestorEscolar
 
         private void btnVistaMatriculas_Click_2(object sender, EventArgs e)
         {
-
         }
 
         private void btnVistaMatriculas_MouseDown_1(object sender, MouseEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,12 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         private void IFrmGestionEmpleados_Load(object sender, EventArgs e)
         {
             dbConn.establecerConexion();
+            clsVariablesGlobales.isTemaOscuro = false;
+            ClsCambioTema ct = new ClsCambioTema();
+            ct.cambiarTemaBoton(pnlSelector);
+            ct.cambiarTemaBoton(pnldgv);
+            ct.cambiarTemaBoton(grpActualizar);
+            ct.cambiarTemaBoton(grpRegistroEmpleado);
         }
 
 
