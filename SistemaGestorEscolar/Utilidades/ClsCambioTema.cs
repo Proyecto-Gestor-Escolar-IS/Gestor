@@ -1,4 +1,5 @@
 ﻿using AltoControls;
+using SistemaGestorEscolar.Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,62 +10,118 @@ using System.Windows.Forms;
 
 namespace SistemaGestorEscolar.Utilidades
 {
-    class ClsCambioTema : AltoButton
+    class ClsCambioTema
     {
 
-        public void cambiarTemaBoton(Control cont)
+        public static void cambiarTemaBoton(Control cont)
         {
-            List<Object> listaBtn = new List<Object>();
-
-            foreach(Control control1 in cont.Controls){
-                if (control1.GetType() == typeof(AltoButton))
+            try
+            {
+                List<Object> listaAlto = new List<Object>();
+                List<Object> listaRounded = new List<Object>();
+                List<Object> listaNormal = new List<Object>();
+               
+                foreach (Control control1 in cont.Controls)
                 {
-                    listaBtn.Add(control1);
+                    if (control1.GetType() == typeof(AltoButton))
+                    {
+                        listaAlto.Add(control1);
+                    }
+                    if (control1.GetType() == typeof(RoundedButton))
+                    {
+                        listaRounded.Add(control1);
+                    }
+                    if(control1.GetType() == typeof(Button))
+                    {
+                        listaNormal.Add(control1);
+                    }
                 }
-            }
 
-            foreach (AltoButton btn in listaBtn)
-            {
-                btn.Inactive1 = System.Drawing.Color.FromArgb(159, 197, 248);
-                btn.Inactive2 = System.Drawing.Color.FromArgb(159, 197, 248);
-                btn.ForeColor = Color.Black;
-                btn.StrokeColor = System.Drawing.Color.FromArgb(41, 40, 55);
-                cont.Invalidate();
-            }
-            /*if (clsVariablesGlobales.isTemaOscuro == false)
-            {
-                foreach (AltoButton btn in cont.Controls)
+                if (listaAlto.Count != 0)
                 {
-                    btn.Inactive1 = System.Drawing.Color.FromArgb(159, 197, 248);
-                    btn.Inactive2 = System.Drawing.Color.FromArgb(159, 197, 248);
-                    btn.ForeColor = Color.Black;
-                    btn.StrokeColor = System.Drawing.Color.FromArgb(41, 40, 55);
-                    cont.Invalidate();
+                    if(!Properties.Settings.Default.isModoOscuro)
+                    {
+                        foreach (AltoButton btn in listaAlto)
+                        {
+                            btn.Inactive1 = Color.FromArgb(159, 197, 248);
+                            btn.Inactive2 = Color.FromArgb(159, 197, 248);
+                            btn.Active1 = Color.FromArgb(143, 177, 223);
+                            btn.Active2 = Color.FromArgb(143, 177, 223);
+                            btn.ForeColor = Color.Black;
+                            btn.StrokeColor = Color.FromArgb(0, 97, 169);
+                            cont.Invalidate();
+                        }
+                    }
+                    else
+                    {
+                        foreach (AltoButton btn in listaAlto)
+                        {
+                            btn.Inactive1 = Color.FromArgb(254, 236, 172);
+                            btn.Inactive2 = Color.FromArgb(254, 236, 172);
+                            btn.Active1 = Color.FromArgb(228, 212, 154);
+                            btn.Active2 = Color.FromArgb(228, 212, 154);
+                            btn.ForeColor = Color.Black;
+                            btn.StrokeColor = Color.FromArgb(41, 40, 55);
+                            cont.Invalidate();
+                        }
+                    }
+                    
+                }else if(listaRounded.Count != 0)
+                {
+                    if (!Properties.Settings.Default.isModoOscuro)
+                    {
+                        foreach (RoundedButton btn in listaRounded)
+                        {
+                            btn.BackColor = Color.FromArgb(159, 197, 248);
+                            btn.BorderColor = Color.FromArgb(0, 97, 169);
+                            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(143, 177, 223);
+                            btn.ForeColor = Color.Black;
+                            cont.Invalidate();
+                        }
+                    }
+                    else
+                    {
+                        foreach (RoundedButton btn in listaRounded)
+                        {
+                            btn.BackColor = Color.FromArgb(254, 236, 172);
+                            btn.BorderColor = Color.FromArgb(41, 40, 55);
+                            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 212, 154);
+                            btn.ForeColor = Color.Black;
+                            cont.Invalidate();
+                        }
+                    }
                 }
+                else
+                {
+                    if (!Properties.Settings.Default.isModoOscuro)
+                    {
+                        foreach (Button btn in listaNormal)
+                        {
+                            btn.BackColor = Color.FromArgb(159, 197, 248);
+                            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(143, 177, 223);
+                            btn.ForeColor = Color.Black;
+                            cont.Invalidate();
+                        }
+                    }
+                    else
+                    {
+                        foreach (Button btn in listaNormal)
+                        {
+                            btn.BackColor = Color.FromArgb(254, 236, 172);
+                            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 212, 154);
+                            btn.ForeColor = Color.Black;
+                            cont.Invalidate();
+                        }
+                    }
+                }
+                
             }
-
-            /*Control cont = new Control();
-            if (clsVariablesGlobales.isTemaOscuro == false)
+            catch
             {
-                btn.Inactive1 = System.Drawing.Color.FromArgb(159, 197, 248);
-                btn.Inactive2 = System.Drawing.Color.FromArgb(159, 197, 248);
-                btn.ForeColor = Color.Black;
-                btn.StrokeColor = System.Drawing.Color.FromArgb(41, 40, 55);
 
             }
-            cont.Invalidate();*/
+            
         }
 
-        private void GetAllControls(Control c, List<Control> list)
-        {
-            foreach (Control control in c.Controls)
-            {
-                list.Add(control);
-
-                if (control.GetType() == typeof(AltoButton))
-                    GetAllControls(control, list);
-            }
-
-        }
     }
 }

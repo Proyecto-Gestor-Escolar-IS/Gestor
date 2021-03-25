@@ -35,10 +35,5 @@ namespace SistemaGestorEscolar
         //Metodo para acceder a la variable
         public static int CodigoAcceso { get => codigoAcceso; set => codigoAcceso = value; }
 
-        //Variable global que almacena el valor de cambio de tema actual del sistema
-        public static bool isTemaOscuro = false;
-
-
-
     }
 }

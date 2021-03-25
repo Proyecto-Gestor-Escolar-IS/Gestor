@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestorEscolar.Utilidades;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace SistemaGestorEscolar
 
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Reset();
             try
             {
                 actualizarModulos.verificarFecha();
@@ -665,16 +667,23 @@ namespace SistemaGestorEscolar
             
             if (codigoColor == 1)
             {
+                
                 panLateral.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
                 panSuperior.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
                 panelPrincipal.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 panSubMenuPagos.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
 
+                Properties.Settings.Default.isModoOscuro = true;
+                Properties.Settings.Default.Save();
+
+                ClsCambioTema.cambiarTemaBoton(panelPrincipal);
+                ClsCambioTema.cambiarTemaBoton(panLateral);
+
                 btnMenuAtras.BackColor = System.Drawing.Color.FromArgb(249, 212, 69);
                 btnMenuAtras.ForeColor = Color.Black;
 
-                btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
+                /*btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
                 btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
                 btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
                 btnMenuIngresoNotas.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
@@ -731,9 +740,9 @@ namespace SistemaGestorEscolar
                 btnEstudiante.ForeColor = Color.Black;
                 btnRegistrarPago.ForeColor = Color.Black;
                 btnHistorialPagos.ForeColor = Color.Black;
-
+                */
                 codigoColor = 2;
-                clsVariablesGlobales.isTemaOscuro = true;
+                
             }
             else if (codigoColor == 2)
             {
@@ -743,10 +752,17 @@ namespace SistemaGestorEscolar
                 panSubMenuPagos.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
 
+                Properties.Settings.Default.isModoOscuro = false;
+                Properties.Settings.Default.Save();
+
+                ClsCambioTema.cambiarTemaBoton(panelPrincipal);
+                ClsCambioTema.cambiarTemaBoton(panLateral);
+
                 btnMenuAtras.BackColor = Color.Red;
                 btnMenuAtras.ForeColor = Color.Black;
 
-                btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
+
+                /*btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
                 btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
                 btnMenuCursosDisponibles.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
                 btnMenuIngresoNotas.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
@@ -802,7 +818,7 @@ namespace SistemaGestorEscolar
                 btnIngresarNotas.ForeColor = Color.Black;
                 btnEstudiante.ForeColor = Color.Black;
                 btnRegistrarPago.ForeColor = Color.Black;
-                btnHistorialPagos.ForeColor = Color.Black;
+                btnHistorialPagos.ForeColor = Color.Black;*/
 
                 if (clsVariablesGlobales.CodigoAcceso == 0)
                 {
@@ -936,7 +952,8 @@ namespace SistemaGestorEscolar
                 }
 
                 codigoColor = 1;
-                clsVariablesGlobales.isTemaOscuro = false;
+                
+
             }
         }
 

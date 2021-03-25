@@ -34,12 +34,10 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         private void IFrmGestionEmpleados_Load(object sender, EventArgs e)
         {
             dbConn.establecerConexion();
-            clsVariablesGlobales.isTemaOscuro = false;
-            ClsCambioTema ct = new ClsCambioTema();
-            ct.cambiarTemaBoton(pnlSelector);
-            ct.cambiarTemaBoton(pnldgv);
-            ct.cambiarTemaBoton(grpActualizar);
-            ct.cambiarTemaBoton(grpRegistroEmpleado);
+            ClsCambioTema.cambiarTemaBoton(pnlSelector);
+            ClsCambioTema.cambiarTemaBoton(pnldgv);
+            ClsCambioTema.cambiarTemaBoton(grpActualizar);
+            ClsCambioTema.cambiarTemaBoton(grpRegistroEmpleado);
         }
 
 
