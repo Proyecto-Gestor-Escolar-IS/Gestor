@@ -30,12 +30,12 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpxSeleccionCurso = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnContinuar = new System.Windows.Forms.Button();
@@ -126,7 +126,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(538, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(613, 45);
+            this.label2.Size = new System.Drawing.Size(622, 40);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ingreso de Notas para los Alumnos";
             // 
@@ -150,7 +150,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.cmbSeccion.FormattingEnabled = true;
             this.cmbSeccion.Location = new System.Drawing.Point(772, 496);
             this.cmbSeccion.Name = "cmbSeccion";
-            this.cmbSeccion.Size = new System.Drawing.Size(178, 35);
+            this.cmbSeccion.Size = new System.Drawing.Size(178, 32);
             this.cmbSeccion.TabIndex = 2;
             this.cmbSeccion.Text = "SECCIÓN";
             this.cmbSeccion.SelectedIndexChanged += new System.EventHandler(this.cmbSeccion_SelectedIndexChanged);
@@ -166,7 +166,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             "Primer Grado"});
             this.cmbCursos.Location = new System.Drawing.Point(772, 431);
             this.cmbCursos.Name = "cmbCursos";
-            this.cmbCursos.Size = new System.Drawing.Size(178, 35);
+            this.cmbCursos.Size = new System.Drawing.Size(178, 32);
             this.cmbCursos.TabIndex = 1;
             this.cmbCursos.Text = "CURSO";
             this.cmbCursos.SelectedIndexChanged += new System.EventHandler(this.cmbCursos_SelectedIndexChanged);
@@ -177,7 +177,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(611, 310);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(470, 35);
+            this.label1.Size = new System.Drawing.Size(480, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione un Curso y una Sección";
             // 
@@ -224,34 +224,34 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // dgvSeleccionAlumno
             // 
             this.dgvSeleccionAlumno.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSeleccionAlumno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSeleccionAlumno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSeleccionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSeleccionAlumno.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSeleccionAlumno.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSeleccionAlumno.Location = new System.Drawing.Point(402, 324);
             this.dgvSeleccionAlumno.Name = "dgvSeleccionAlumno";
             this.dgvSeleccionAlumno.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSeleccionAlumno.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSeleccionAlumno.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSeleccionAlumno.Size = new System.Drawing.Size(968, 350);
             this.dgvSeleccionAlumno.TabIndex = 2;
             this.dgvSeleccionAlumno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSeleccionAlumno_CellClick);
@@ -263,7 +263,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(515, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(717, 42);
+            this.label4.Size = new System.Drawing.Size(733, 37);
             this.label4.TabIndex = 1;
             this.label4.Text = "Alumnos del Curso y Sección seleccionados:";
             // 
@@ -273,7 +273,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(397, 294);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 27);
+            this.label3.Size = new System.Drawing.Size(239, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Seleccione un Alumno:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -321,7 +321,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             "Inactivo"});
             this.cmbEstado.Location = new System.Drawing.Point(767, 674);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(171, 34);
+            this.cmbEstado.Size = new System.Drawing.Size(171, 31);
             this.cmbEstado.TabIndex = 23;
             this.cmbEstado.Text = "<Seleccione>";
             this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -331,7 +331,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(677, 677);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 26);
+            this.label17.Size = new System.Drawing.Size(85, 23);
             this.label17.TabIndex = 22;
             this.label17.Text = "Estado:";
             // 
@@ -341,7 +341,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.chkVerClases.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerClases.Location = new System.Drawing.Point(506, 406);
             this.chkVerClases.Name = "chkVerClases";
-            this.chkVerClases.Size = new System.Drawing.Size(115, 25);
+            this.chkVerClases.Size = new System.Drawing.Size(122, 23);
             this.chkVerClases.TabIndex = 21;
             this.chkVerClases.Text = "Ver Clases";
             this.chkVerClases.UseVisualStyleBackColor = true;
@@ -364,7 +364,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.chkLimpDatos.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkLimpDatos.Location = new System.Drawing.Point(619, 802);
             this.chkLimpDatos.Name = "chkLimpDatos";
-            this.chkLimpDatos.Size = new System.Drawing.Size(163, 25);
+            this.chkLimpDatos.Size = new System.Drawing.Size(174, 23);
             this.chkLimpDatos.TabIndex = 19;
             this.chkLimpDatos.Text = "Datos del Alumno";
             this.chkLimpDatos.UseVisualStyleBackColor = true;
@@ -427,7 +427,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.cmbClasesCS.FormattingEnabled = true;
             this.cmbClasesCS.Location = new System.Drawing.Point(506, 437);
             this.cmbClasesCS.Name = "cmbClasesCS";
-            this.cmbClasesCS.Size = new System.Drawing.Size(191, 34);
+            this.cmbClasesCS.Size = new System.Drawing.Size(191, 31);
             this.cmbClasesCS.TabIndex = 13;
             this.cmbClasesCS.Text = "<Seleccione>";
             // 
@@ -504,7 +504,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(830, 607);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(158, 26);
+            this.label15.Size = new System.Drawing.Size(161, 23);
             this.label15.TabIndex = 7;
             this.label15.Text = "Nota Promedio:";
             // 
@@ -513,7 +513,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(418, 607);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(157, 26);
+            this.label14.Size = new System.Drawing.Size(160, 23);
             this.label14.TabIndex = 6;
             this.label14.Text = "Cuarto Parcial:";
             // 
@@ -522,7 +522,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(830, 523);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(149, 26);
+            this.label13.Size = new System.Drawing.Size(150, 23);
             this.label13.TabIndex = 5;
             this.label13.Text = "Terce Parcial:";
             // 
@@ -531,7 +531,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(418, 523);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(173, 26);
+            this.label12.Size = new System.Drawing.Size(179, 23);
             this.label12.TabIndex = 4;
             this.label12.Text = "Segundo Parcial:";
             // 
@@ -540,7 +540,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(830, 440);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(207, 26);
+            this.label11.Size = new System.Drawing.Size(210, 23);
             this.label11.TabIndex = 3;
             this.label11.Text = "Nota Primer Parcial:";
             // 
@@ -549,7 +549,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(418, 440);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 26);
+            this.label10.Size = new System.Drawing.Size(72, 23);
             this.label10.TabIndex = 2;
             this.label10.Text = "Clase:";
             // 
@@ -634,7 +634,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(877, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 26);
+            this.label9.Size = new System.Drawing.Size(94, 23);
             this.label9.TabIndex = 3;
             this.label9.Text = "Secciòn:";
             // 
@@ -643,7 +643,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(608, 72);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 26);
+            this.label8.Size = new System.Drawing.Size(76, 23);
             this.label8.TabIndex = 2;
             this.label8.Text = "Curso:";
             // 
@@ -652,7 +652,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(101, 160);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(228, 26);
+            this.label7.Size = new System.Drawing.Size(235, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Nombre del Alumno(a):";
             // 
@@ -661,7 +661,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(101, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 26);
+            this.label6.Size = new System.Drawing.Size(146, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "No. Identidad:";
             // 
@@ -671,7 +671,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(617, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(477, 41);
+            this.label5.Size = new System.Drawing.Size(486, 36);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ingrese las Notas del Alumno:";
             // 
@@ -744,41 +744,41 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label16.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(637, 81);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(356, 41);
+            this.label16.Size = new System.Drawing.Size(361, 36);
             this.label16.TabIndex = 1;
             this.label16.Text = "Notas de los Alumnos:";
             // 
             // dgvCuadroNotas
             // 
             this.dgvCuadroNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCuadroNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCuadroNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCuadroNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCuadroNotas.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCuadroNotas.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCuadroNotas.Location = new System.Drawing.Point(165, 175);
             this.dgvCuadroNotas.Name = "dgvCuadroNotas";
             this.dgvCuadroNotas.ReadOnly = true;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCuadroNotas.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCuadroNotas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCuadroNotas.Size = new System.Drawing.Size(1266, 471);
             this.dgvCuadroNotas.TabIndex = 0;
             this.dgvCuadroNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuadroNotas_CellClick);

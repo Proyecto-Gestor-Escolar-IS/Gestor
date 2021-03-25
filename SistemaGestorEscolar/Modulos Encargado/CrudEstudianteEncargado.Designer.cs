@@ -158,7 +158,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label1.Location = new System.Drawing.Point(44, 629);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 35);
+            this.label1.Size = new System.Drawing.Size(242, 31);
             this.label1.TabIndex = 88;
             this.label1.Text = "Correo Electronico";
             // 
@@ -243,7 +243,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblregistroEncargado.Location = new System.Drawing.Point(638, 55);
             this.lblregistroEncargado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblregistroEncargado.Name = "lblregistroEncargado";
-            this.lblregistroEncargado.Size = new System.Drawing.Size(283, 41);
+            this.lblregistroEncargado.Size = new System.Drawing.Size(273, 36);
             this.lblregistroEncargado.TabIndex = 1;
             this.lblregistroEncargado.Text = "Datos Encargado";
             // 
@@ -289,7 +289,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblnumeroIdentidad.Location = new System.Drawing.Point(44, 233);
             this.lblnumeroIdentidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnumeroIdentidad.Name = "lblnumeroIdentidad";
-            this.lblnumeroIdentidad.Size = new System.Drawing.Size(248, 35);
+            this.lblnumeroIdentidad.Size = new System.Drawing.Size(230, 31);
             this.lblnumeroIdentidad.TabIndex = 3;
             this.lblnumeroIdentidad.Text = "Numero Identidad";
             // 
@@ -313,7 +313,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblnombres.Location = new System.Drawing.Point(44, 360);
             this.lblnombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblnombres.Name = "lblnombres";
-            this.lblnombres.Size = new System.Drawing.Size(134, 35);
+            this.lblnombres.Size = new System.Drawing.Size(123, 31);
             this.lblnombres.TabIndex = 4;
             this.lblnombres.Text = "Nombres";
             // 
@@ -336,7 +336,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblApellidos.Location = new System.Drawing.Point(44, 499);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(131, 35);
+            this.lblApellidos.Size = new System.Drawing.Size(123, 31);
             this.lblApellidos.TabIndex = 5;
             this.lblApellidos.Text = "Apellidos";
             // 
@@ -347,7 +347,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lbldireccion.Location = new System.Drawing.Point(871, 499);
             this.lbldireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbldireccion.Name = "lbldireccion";
-            this.lbldireccion.Size = new System.Drawing.Size(138, 35);
+            this.lbldireccion.Size = new System.Drawing.Size(127, 31);
             this.lbldireccion.TabIndex = 9;
             this.lbldireccion.Text = "Dirección";
             this.lbldireccion.Click += new System.EventHandler(this.lbldireccion_Click);
@@ -359,7 +359,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblfechaNacimiento.Location = new System.Drawing.Point(871, 235);
             this.lblfechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechaNacimiento.Name = "lblfechaNacimiento";
-            this.lblfechaNacimiento.Size = new System.Drawing.Size(248, 35);
+            this.lblfechaNacimiento.Size = new System.Drawing.Size(225, 31);
             this.lblfechaNacimiento.TabIndex = 8;
             this.lblfechaNacimiento.Text = "Fecha Nacimiento";
             this.lblfechaNacimiento.Click += new System.EventHandler(this.lblfechaNacimiento_Click);
@@ -382,7 +382,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lbltelefonos.Location = new System.Drawing.Point(871, 355);
             this.lbltelefonos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltelefonos.Name = "lbltelefonos";
-            this.lbltelefonos.Size = new System.Drawing.Size(145, 35);
+            this.lbltelefonos.Size = new System.Drawing.Size(138, 31);
             this.lbltelefonos.TabIndex = 7;
             this.lbltelefonos.Text = "Teléfonos";
             this.lbltelefonos.Click += new System.EventHandler(this.lbltelefonos_Click);
@@ -405,7 +405,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblcorreoElectronico.Location = new System.Drawing.Point(292, -105);
             this.lblcorreoElectronico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblcorreoElectronico.Name = "lblcorreoElectronico";
-            this.lblcorreoElectronico.Size = new System.Drawing.Size(261, 35);
+            this.lblcorreoElectronico.Size = new System.Drawing.Size(244, 31);
             this.lblcorreoElectronico.TabIndex = 6;
             this.lblcorreoElectronico.Text = "Correo Electrónico";
             this.lblcorreoElectronico.Click += new System.EventHandler(this.label3_Click);
@@ -427,7 +427,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblGestionEncargadosEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionEncargadosEstudiantes.Location = new System.Drawing.Point(475, 248);
             this.lblGestionEncargadosEstudiantes.Name = "lblGestionEncargadosEstudiantes";
-            this.lblGestionEncargadosEstudiantes.Size = new System.Drawing.Size(714, 41);
+            this.lblGestionEncargadosEstudiantes.Size = new System.Drawing.Size(711, 36);
             this.lblGestionEncargadosEstudiantes.TabIndex = 86;
             this.lblGestionEncargadosEstudiantes.Text = "GESTION DE ENCARGADOS Y ESTUDIANTES";
             // 
@@ -700,7 +700,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.cmbgeneroEstudiante.Location = new System.Drawing.Point(719, 660);
             this.cmbgeneroEstudiante.Margin = new System.Windows.Forms.Padding(2);
             this.cmbgeneroEstudiante.Name = "cmbgeneroEstudiante";
-            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(219, 39);
+            this.cmbgeneroEstudiante.Size = new System.Drawing.Size(219, 35);
             this.cmbgeneroEstudiante.TabIndex = 98;
             // 
             // lblgenero
@@ -710,7 +710,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.lblgenero.Location = new System.Drawing.Point(438, 647);
             this.lblgenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblgenero.Name = "lblgenero";
-            this.lblgenero.Size = new System.Drawing.Size(120, 37);
+            this.lblgenero.Size = new System.Drawing.Size(114, 33);
             this.lblgenero.TabIndex = 97;
             this.lblgenero.Text = "Género";
             // 
@@ -779,7 +779,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label4.Location = new System.Drawing.Point(439, 433);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 35);
+            this.label4.Size = new System.Drawing.Size(123, 31);
             this.label4.TabIndex = 90;
             this.label4.Text = "Apellidos";
             // 
@@ -790,7 +790,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label5.Location = new System.Drawing.Point(439, 315);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 35);
+            this.label5.Size = new System.Drawing.Size(123, 31);
             this.label5.TabIndex = 89;
             this.label5.Text = "Nombres";
             // 
@@ -801,7 +801,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label6.Location = new System.Drawing.Point(439, 194);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 35);
+            this.label6.Size = new System.Drawing.Size(230, 31);
             this.label6.TabIndex = 88;
             this.label6.Text = "Numero Identidad";
             // 
@@ -875,7 +875,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label3.Location = new System.Drawing.Point(653, 55);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(285, 41);
+            this.label3.Size = new System.Drawing.Size(268, 36);
             this.label3.TabIndex = 1;
             this.label3.Text = "Datos Estudiante";
             // 
@@ -896,7 +896,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label8.Location = new System.Drawing.Point(439, 538);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(248, 35);
+            this.label8.Size = new System.Drawing.Size(225, 31);
             this.label8.TabIndex = 8;
             this.label8.Text = "Fecha Nacimiento";
             // 
@@ -907,7 +907,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label10.Location = new System.Drawing.Point(292, -105);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(261, 35);
+            this.label10.Size = new System.Drawing.Size(244, 31);
             this.label10.TabIndex = 6;
             this.label10.Text = "Correo Electrónico";
             // 

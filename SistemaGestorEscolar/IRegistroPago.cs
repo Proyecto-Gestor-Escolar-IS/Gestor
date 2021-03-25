@@ -402,5 +402,10 @@ namespace SistemaGestorEscolar
             frmImagen.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             frmImagen.Show();
         }
+
+        private void altoButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -611,7 +611,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Registro_Datos_Notas>();
+            //AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Registro_Datos_Notas>();
 
             if (codigoColor == 1)
             {
@@ -647,7 +647,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
+            //AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
 
             if (codigoColor == 1)
             {
@@ -661,7 +661,7 @@ namespace SistemaGestorEscolar
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnPagos_Click(object sender, EventArgs e)
@@ -1194,7 +1194,7 @@ namespace SistemaGestorEscolar
             panelMostrador.Dock = DockStyle.Fill;
             panSubMenuEstudiante.Visible = false;
             panSubMenuEstudiante.Dock = DockStyle.None;
-            AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Seleccion_de_Curso>();
+            //AbrirFormulario<Modulos_de_Registro_y_Vista_de_Notas.Seleccion_de_Curso>();
             
 
             if (codigoColor == 1)
@@ -1253,7 +1253,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
+            //AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
 
             if (codigoColor == 1)
             {
@@ -1328,7 +1328,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
+            //AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
 
             if (codigoColor == 1)
             {

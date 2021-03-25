@@ -178,47 +178,11 @@
     <Compile Include="Modulo de Cursos\IGestionCursos.Designer.cs">
       <DependentUpon>IGestionCursos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulo Historial Medico\Historial medico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulo Historial Medico\Historial medico.Designer.cs">
-      <DependentUpon>Historial medico.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulos de Empleados\IFrmGestionEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos de Empleados\IFrmGestionEmpleados.Designer.cs">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha de Estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha de Estudiante.Designer.cs">
-      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.Designer.cs">
-      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.Designer.cs">
-      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.Designer.cs">
-      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\ICrudEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\ICrudEstudiante.Designer.cs">
-      <DependentUpon>ICrudEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\IMessaggeBoxLoginIncorrecto.cs" />
     <Compile Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.cs">
@@ -245,42 +209,12 @@
     <Compile Include="Modulos Estudiante\IVistaFichaEstudiante.designer.cs">
       <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.Designer.cs">
-      <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\Alumnos_CursoSeccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\Alumnos_CursoSeccion.Designer.cs">
-      <DependentUpon>Alumnos_CursoSeccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.designer.cs">
-      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registro y Vista de Notas\Herencia de Variables.cs" />
     <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.Designer.cs">
       <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.designer.cs">
-      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
-      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </Compile>
     <Compile Include="Report Estudiantes\DataSetEstudiantes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -314,12 +248,6 @@
     </Compile>
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
-    <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.Designer.cs">
-      <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="IAperturaExpedienteMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,24 +284,6 @@
     <Compile Include="IRegistroVisitaMedica.Designer.cs">
       <DependentUpon>IRegistroVisitaMedica.cs</DependentUpon>
     </Compile>
-    <Compile Include="ISubMenuEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuEstudiante.Designer.cs">
-      <DependentUpon>ISubMenuEstudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISubMenuPagos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuPagos.Designer.cs">
-      <DependentUpon>ISubMenuPagos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISubMenuPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuPersonal.Designer.cs">
-      <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\frmIngresoAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,12 +308,6 @@
     <Compile Include="Login\IfrmSeleccionarTipoInicio.Designer.cs">
       <DependentUpon>IfrmSeleccionarTipoInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos de Empleados\IAñadirPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos de Empleados\IAñadirPersonal.Designer.cs">
-      <DependentUpon>IAñadirPersonal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulo de Pagos\IHistorialPagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,12 +320,6 @@
     </Compile>
     <Compile Include="Modulos Encargado\CrudEstudianteEncargado.Designer.cs">
       <DependentUpon>CrudEstudianteEncargado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.Designer.cs">
-      <DependentUpon>IMatriculaPrematriculaEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -447,9 +345,6 @@
     <EmbeddedResource Include="Modulos Estudiante\IVistaFichaEstudiante.resx">
       <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.resx">
-      <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
     </EmbeddedResource>
@@ -474,15 +369,6 @@
     <EmbeddedResource Include="IRegistroVisitaMedica.resx">
       <DependentUpon>IRegistroVisitaMedica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuEstudiante.resx">
-      <DependentUpon>ISubMenuEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuPagos.resx">
-      <DependentUpon>ISubMenuPagos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuPersonal.resx">
-      <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\frmIngresoAdmin.resx">
       <DependentUpon>frmIngresoAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,35 +384,11 @@
     <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxYesCancel.resx">
       <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos de Empleados\IAñadirPersonal.resx">
-      <DependentUpon>IAñadirPersonal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo de Pagos\IHistorialPagos.resx">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo Historial Medico\Historial medico.resx">
-      <DependentUpon>Historial medico.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\CrudEstudianteEncargado.resx">
       <DependentUpon>CrudEstudianteEncargado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha de Estudiante.resx">
-      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha Encargados del Estudiante.resx">
-      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.resx">
-      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha notas del estudiante.resx">
-      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\ICrudEstudiante.resx">
-      <DependentUpon>ICrudEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.resx">
-      <DependentUpon>IMatriculaPrematriculaEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -538,23 +400,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.resx">
-      <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\Alumnos_CursoSeccion.resx">
-      <DependentUpon>Alumnos_CursoSeccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\IfrmCuadro de Notas.resx">
-      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.resx">
       <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.resx">
-      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
-      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report Estudiantes\ReporteEstudiantes.resx">
       <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
