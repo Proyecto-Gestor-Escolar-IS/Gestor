@@ -241,11 +241,13 @@
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="StaMariaNazarethDatabaseServiceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StaMariaNazarethDatabaseServiceDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades\ClsCambioTema.cs" />
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="IAperturaExpedienteMedico.cs">
