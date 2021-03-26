@@ -42,13 +42,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.cmbCursos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gpxSeleccionAlumno = new System.Windows.Forms.GroupBox();
-            this.pbRegresar1 = new System.Windows.Forms.PictureBox();
             this.dgvSeleccionAlumno = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gpxIngreso_Notas = new System.Windows.Forms.GroupBox();
             this.chkVerClases = new System.Windows.Forms.CheckBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.chkLimpDatos = new System.Windows.Forms.CheckBox();
             this.txtNotaProm = new System.Windows.Forms.TextBox();
             this.txtNota4 = new System.Windows.Forms.TextBox();
@@ -76,8 +74,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label5 = new System.Windows.Forms.Label();
             this.errorPvIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpxCuadroNotas = new System.Windows.Forms.GroupBox();
-            this.pbRegresar3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dgvCuadroNotas = new System.Windows.Forms.DataGridView();
@@ -88,18 +84,22 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.abSiguiente = new AltoControls.AltoButton();
             this.abContinuar2 = new AltoControls.AltoButton();
             this.abContinuar = new AltoControls.AltoButton();
+            this.pbRegresar3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbRegresar1 = new System.Windows.Forms.PictureBox();
             this.gpxSeleccionCurso.SuspendLayout();
             this.gpxSeleccionAlumno.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionAlumno)).BeginInit();
             this.gpxIngreso_Notas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gpxDatosAlumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorPvIdentidad)).BeginInit();
             this.gpxCuadroNotas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuadroNotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCuadroNotas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar1)).BeginInit();
             this.SuspendLayout();
             // 
             // gpxSeleccionCurso
@@ -181,17 +181,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.gpxSeleccionAlumno.TabStop = false;
             this.gpxSeleccionAlumno.Text = "Seleccion del Alumno(a)";
             this.gpxSeleccionAlumno.VisibleChanged += new System.EventHandler(this.gpxSeleccionAlumno_VisibleChanged);
-            // 
-            // pbRegresar1
-            // 
-            this.pbRegresar1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
-            this.pbRegresar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbRegresar1.Location = new System.Drawing.Point(256, 115);
-            this.pbRegresar1.Name = "pbRegresar1";
-            this.pbRegresar1.Size = new System.Drawing.Size(43, 28);
-            this.pbRegresar1.TabIndex = 4;
-            this.pbRegresar1.TabStop = false;
-            this.pbRegresar1.Click += new System.EventHandler(this.pbRegresar1_Click);
             // 
             // dgvSeleccionAlumno
             // 
@@ -293,17 +282,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.chkVerClases.Text = "Ver Clases";
             this.chkVerClases.UseVisualStyleBackColor = true;
             this.chkVerClases.CheckedChanged += new System.EventHandler(this.chkVerClases_CheckedChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(283, 81);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 28);
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // chkLimpDatos
             // 
@@ -575,27 +553,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.gpxCuadroNotas.Text = "Cuadro de Notas";
             this.gpxCuadroNotas.VisibleChanged += new System.EventHandler(this.gpxCuadroNotas_VisibleChanged);
             // 
-            // pbRegresar3
-            // 
-            this.pbRegresar3.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
-            this.pbRegresar3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbRegresar3.Location = new System.Drawing.Point(210, 79);
-            this.pbRegresar3.Name = "pbRegresar3";
-            this.pbRegresar3.Size = new System.Drawing.Size(40, 30);
-            this.pbRegresar3.TabIndex = 5;
-            this.pbRegresar3.TabStop = false;
-            this.pbRegresar3.Click += new System.EventHandler(this.pbRegresar3_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1283, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 31);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(1315, 99);
@@ -796,14 +753,57 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.abContinuar.Transparency = false;
             this.abContinuar.Click += new System.EventHandler(this.abContinuar_Click);
             // 
+            // pbRegresar3
+            // 
+            this.pbRegresar3.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
+            this.pbRegresar3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbRegresar3.Location = new System.Drawing.Point(210, 79);
+            this.pbRegresar3.Name = "pbRegresar3";
+            this.pbRegresar3.Size = new System.Drawing.Size(40, 30);
+            this.pbRegresar3.TabIndex = 5;
+            this.pbRegresar3.TabStop = false;
+            this.pbRegresar3.Click += new System.EventHandler(this.pbRegresar3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(1283, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(283, 81);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 28);
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pbRegresar1
+            // 
+            this.pbRegresar1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
+            this.pbRegresar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbRegresar1.Location = new System.Drawing.Point(256, 115);
+            this.pbRegresar1.Name = "pbRegresar1";
+            this.pbRegresar1.Size = new System.Drawing.Size(43, 28);
+            this.pbRegresar1.TabIndex = 4;
+            this.pbRegresar1.TabStop = false;
+            this.pbRegresar1.Click += new System.EventHandler(this.pbRegresar1_Click);
+            // 
             // IfrmIngreso_de_Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.gpxIngreso_Notas);
             this.Controls.Add(this.gpxCuadroNotas);
+            this.Controls.Add(this.gpxIngreso_Notas);
             this.Controls.Add(this.gpxSeleccionAlumno);
             this.Controls.Add(this.gpxSeleccionCurso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -814,19 +814,19 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.gpxSeleccionCurso.PerformLayout();
             this.gpxSeleccionAlumno.ResumeLayout(false);
             this.gpxSeleccionAlumno.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionAlumno)).EndInit();
             this.gpxIngreso_Notas.ResumeLayout(false);
             this.gpxIngreso_Notas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gpxDatosAlumno.ResumeLayout(false);
             this.gpxDatosAlumno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorPvIdentidad)).EndInit();
             this.gpxCuadroNotas.ResumeLayout(false);
             this.gpxCuadroNotas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCuadroNotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRegresar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCuadroNotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRegresar1)).EndInit();
             this.ResumeLayout(false);
 
         }
