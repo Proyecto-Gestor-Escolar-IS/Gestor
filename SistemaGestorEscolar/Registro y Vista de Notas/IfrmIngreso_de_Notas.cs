@@ -102,7 +102,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             if (cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
             {
                 message.lblError.Text = "Seleccione un Curso y Sección";
-                messageOk.ShowDialog();
+                message.ShowDialog();
             }
             else
             {

@@ -126,7 +126,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(477, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(613, 45);
+            this.label2.Size = new System.Drawing.Size(622, 40);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ingreso de Notas para los Alumnos";
             // 
@@ -136,7 +136,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.cmbSeccion.FormattingEnabled = true;
             this.cmbSeccion.Location = new System.Drawing.Point(692, 523);
             this.cmbSeccion.Name = "cmbSeccion";
-            this.cmbSeccion.Size = new System.Drawing.Size(178, 35);
+            this.cmbSeccion.Size = new System.Drawing.Size(178, 32);
             this.cmbSeccion.TabIndex = 2;
             this.cmbSeccion.Text = "SECCIÓN";
             this.cmbSeccion.SelectedIndexChanged += new System.EventHandler(this.cmbSeccion_SelectedIndexChanged);
@@ -152,7 +152,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             "Primer Grado"});
             this.cmbCursos.Location = new System.Drawing.Point(692, 458);
             this.cmbCursos.Name = "cmbCursos";
-            this.cmbCursos.Size = new System.Drawing.Size(178, 35);
+            this.cmbCursos.Size = new System.Drawing.Size(178, 32);
             this.cmbCursos.TabIndex = 1;
             this.cmbCursos.Text = "CURSO";
             this.cmbCursos.SelectedIndexChanged += new System.EventHandler(this.cmbCursos_SelectedIndexChanged);
@@ -163,7 +163,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(549, 314);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(470, 35);
+            this.label1.Size = new System.Drawing.Size(480, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione un Curso y una Sección";
             // 
@@ -249,7 +249,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(472, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(717, 42);
+            this.label4.Size = new System.Drawing.Size(733, 37);
             this.label4.TabIndex = 1;
             this.label4.Text = "Alumnos del Curso y Sección seleccionados:";
             // 
@@ -259,7 +259,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 294);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 27);
+            this.label3.Size = new System.Drawing.Size(239, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Seleccione un Alumno:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -307,7 +307,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             "Inactivo"});
             this.cmbEstado.Location = new System.Drawing.Point(680, 778);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(171, 34);
+            this.cmbEstado.Size = new System.Drawing.Size(171, 31);
             this.cmbEstado.TabIndex = 23;
             this.cmbEstado.Text = "<Seleccione>";
             this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -317,7 +317,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(590, 781);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 26);
+            this.label17.Size = new System.Drawing.Size(85, 23);
             this.label17.TabIndex = 22;
             this.label17.Text = "Estado:";
             // 
@@ -327,7 +327,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.chkVerClases.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerClases.Location = new System.Drawing.Point(419, 510);
             this.chkVerClases.Name = "chkVerClases";
-            this.chkVerClases.Size = new System.Drawing.Size(115, 25);
+            this.chkVerClases.Size = new System.Drawing.Size(122, 23);
             this.chkVerClases.TabIndex = 21;
             this.chkVerClases.Text = "Ver Clases";
             this.chkVerClases.UseVisualStyleBackColor = true;
@@ -350,7 +350,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.chkLimpDatos.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkLimpDatos.Location = new System.Drawing.Point(551, 908);
             this.chkLimpDatos.Name = "chkLimpDatos";
-            this.chkLimpDatos.Size = new System.Drawing.Size(163, 25);
+            this.chkLimpDatos.Size = new System.Drawing.Size(174, 23);
             this.chkLimpDatos.TabIndex = 19;
             this.chkLimpDatos.Text = "Datos del Alumno";
             this.chkLimpDatos.UseVisualStyleBackColor = true;
@@ -413,7 +413,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.cmbClasesCS.FormattingEnabled = true;
             this.cmbClasesCS.Location = new System.Drawing.Point(419, 541);
             this.cmbClasesCS.Name = "cmbClasesCS";
-            this.cmbClasesCS.Size = new System.Drawing.Size(191, 34);
+            this.cmbClasesCS.Size = new System.Drawing.Size(191, 31);
             this.cmbClasesCS.TabIndex = 13;
             this.cmbClasesCS.Text = "<Seleccione>";
             // 
@@ -490,7 +490,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(743, 711);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(158, 26);
+            this.label15.Size = new System.Drawing.Size(161, 23);
             this.label15.TabIndex = 7;
             this.label15.Text = "Nota Promedio:";
             // 
@@ -499,7 +499,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(331, 711);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(157, 26);
+            this.label14.Size = new System.Drawing.Size(160, 23);
             this.label14.TabIndex = 6;
             this.label14.Text = "Cuarto Parcial:";
             // 
@@ -508,7 +508,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(743, 627);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(149, 26);
+            this.label13.Size = new System.Drawing.Size(150, 23);
             this.label13.TabIndex = 5;
             this.label13.Text = "Terce Parcial:";
             // 
@@ -517,7 +517,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(331, 627);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(173, 26);
+            this.label12.Size = new System.Drawing.Size(179, 23);
             this.label12.TabIndex = 4;
             this.label12.Text = "Segundo Parcial:";
             // 
@@ -526,7 +526,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(743, 544);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(207, 26);
+            this.label11.Size = new System.Drawing.Size(210, 23);
             this.label11.TabIndex = 3;
             this.label11.Text = "Nota Primer Parcial:";
             // 
@@ -535,7 +535,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(331, 544);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 26);
+            this.label10.Size = new System.Drawing.Size(72, 23);
             this.label10.TabIndex = 2;
             this.label10.Text = "Clase:";
             // 
@@ -620,7 +620,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(877, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 26);
+            this.label9.Size = new System.Drawing.Size(94, 23);
             this.label9.TabIndex = 3;
             this.label9.Text = "Secciòn:";
             // 
@@ -629,7 +629,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(608, 72);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 26);
+            this.label8.Size = new System.Drawing.Size(76, 23);
             this.label8.TabIndex = 2;
             this.label8.Text = "Curso:";
             // 
@@ -638,7 +638,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(101, 160);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(228, 26);
+            this.label7.Size = new System.Drawing.Size(235, 23);
             this.label7.TabIndex = 1;
             this.label7.Text = "Nombre del Alumno(a):";
             // 
@@ -647,7 +647,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(101, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 26);
+            this.label6.Size = new System.Drawing.Size(146, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "No. Identidad:";
             // 
@@ -657,7 +657,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(598, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(477, 41);
+            this.label5.Size = new System.Drawing.Size(486, 36);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ingrese las Notas del Alumno:";
             // 
@@ -730,7 +730,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label16.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(637, 81);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(356, 41);
+            this.label16.Size = new System.Drawing.Size(361, 36);
             this.label16.TabIndex = 1;
             this.label16.Text = "Notas de los Alumnos:";
             // 
