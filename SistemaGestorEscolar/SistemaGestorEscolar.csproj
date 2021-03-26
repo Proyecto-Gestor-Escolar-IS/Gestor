@@ -72,20 +72,20 @@
     <Reference Include="MailKit, Version=2.11.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.2.11.0\lib\net47\MailKit.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.802.134-rc\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
@@ -178,47 +178,11 @@
     <Compile Include="Modulo de Cursos\IGestionCursos.Designer.cs">
       <DependentUpon>IGestionCursos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulo Historial Medico\Historial medico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulo Historial Medico\Historial medico.Designer.cs">
-      <DependentUpon>Historial medico.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulos de Empleados\IFrmGestionEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos de Empleados\IFrmGestionEmpleados.Designer.cs">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha de Estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha de Estudiante.Designer.cs">
-      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Encargados del Estudiante.Designer.cs">
-      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.Designer.cs">
-      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\Ficha notas del estudiante.Designer.cs">
-      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\ICrudEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\ICrudEstudiante.Designer.cs">
-      <DependentUpon>ICrudEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\IMessaggeBoxLoginIncorrecto.cs" />
     <Compile Include="MessageBox Personalizados\IMessageBoxLoginIncorrecto.cs">
@@ -233,6 +197,12 @@
     <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.Designer.cs">
       <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos Estudiante\IFrmVista_de_Matricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\IFrmVista_de_Matricula.Designer.cs">
+      <DependentUpon>IFrmVista_de_Matricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos Estudiante\IMatriculaIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,53 +215,47 @@
     <Compile Include="Modulos Estudiante\IVistaFichaEstudiante.designer.cs">
       <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.Designer.cs">
-      <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\Alumnos_CursoSeccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\Alumnos_CursoSeccion.Designer.cs">
-      <DependentUpon>Alumnos_CursoSeccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmCuadro de Notas.designer.cs">
-      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registro y Vista de Notas\Herencia de Variables.cs" />
-    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.cs">
+    <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.designer.cs">
-      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
+    <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.Designer.cs">
+      <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.cs">
+    <Compile Include="Report Estudiantes\DataSetEstudiantes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report Estudiantes\ReporteEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmSeleccion de Curso.designer.cs">
-      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
+    <Compile Include="Report Estudiantes\ReporteEstudiantes.Designer.cs">
+      <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report Notas\DataSetNotas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNotas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report Notas\ReporteNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report Notas\ReporteNotas.Designer.cs">
+      <DependentUpon>ReporteNotas.cs</DependentUpon>
     </Compile>
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="StaMariaNazarethDatabaseServiceDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StaMariaNazarethDatabaseServiceDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades\ClsCambioTema.cs" />
     <Compile Include="Utilidades\clsUtilidades.cs" />
     <Compile Include="Conexiones BD\databaseConnection.cs" />
-    <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.Designer.cs">
-      <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="IAperturaExpedienteMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,24 +292,6 @@
     <Compile Include="IRegistroVisitaMedica.Designer.cs">
       <DependentUpon>IRegistroVisitaMedica.cs</DependentUpon>
     </Compile>
-    <Compile Include="ISubMenuEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuEstudiante.Designer.cs">
-      <DependentUpon>ISubMenuEstudiante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISubMenuPagos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuPagos.Designer.cs">
-      <DependentUpon>ISubMenuPagos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISubMenuPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ISubMenuPersonal.Designer.cs">
-      <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\frmIngresoAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,12 +316,6 @@
     <Compile Include="Login\IfrmSeleccionarTipoInicio.Designer.cs">
       <DependentUpon>IfrmSeleccionarTipoInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos de Empleados\IAñadirPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos de Empleados\IAñadirPersonal.Designer.cs">
-      <DependentUpon>IAñadirPersonal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulo de Pagos\IHistorialPagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,12 +328,6 @@
     </Compile>
     <Compile Include="Modulos Encargado\CrudEstudianteEncargado.Designer.cs">
       <DependentUpon>CrudEstudianteEncargado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.Designer.cs">
-      <DependentUpon>IMatriculaPrematriculaEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -413,14 +347,14 @@
     <EmbeddedResource Include="Modulos de Empleados\IFrmGestionEmpleados.resx">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\IFrmVista_de_Matricula.resx">
+      <DependentUpon>IFrmVista_de_Matricula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\IMatriculaIndividual.resx">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\IVistaFichaEstudiante.resx">
       <DependentUpon>IVistaFichaEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registro de Notas de los Alumnos\FormRegistro_Notas_Alumno.resx">
-      <DependentUpon>FormRegistro_Notas_Alumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IAperturaExpedienteMedico.resx">
       <DependentUpon>IAperturaExpedienteMedico.cs</DependentUpon>
@@ -446,15 +380,6 @@
     <EmbeddedResource Include="IRegistroVisitaMedica.resx">
       <DependentUpon>IRegistroVisitaMedica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuEstudiante.resx">
-      <DependentUpon>ISubMenuEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuPagos.resx">
-      <DependentUpon>ISubMenuPagos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISubMenuPersonal.resx">
-      <DependentUpon>ISubMenuPersonal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\frmIngresoAdmin.resx">
       <DependentUpon>frmIngresoAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,35 +395,11 @@
     <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxYesCancel.resx">
       <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos de Empleados\IAñadirPersonal.resx">
-      <DependentUpon>IAñadirPersonal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo de Pagos\IHistorialPagos.resx">
       <DependentUpon>IHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo Historial Medico\Historial medico.resx">
-      <DependentUpon>Historial medico.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulos Encargado\CrudEstudianteEncargado.resx">
       <DependentUpon>CrudEstudianteEncargado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha de Estudiante.resx">
-      <DependentUpon>Ficha de Estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha Encargados del Estudiante.resx">
-      <DependentUpon>Ficha Encargados del Estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha Expediente Medico del Estudiante.resx">
-      <DependentUpon>Ficha Expediente Medico del Estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\Ficha notas del estudiante.resx">
-      <DependentUpon>Ficha notas del estudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\ICrudEstudiante.resx">
-      <DependentUpon>ICrudEstudiante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\IMatriculaPrematriculaEstudiante.resx">
-      <DependentUpon>IMatriculaPrematriculaEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -510,21 +411,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro de Notas de los Alumnos\FrmIngreso_Notas.resx">
-      <DependentUpon>FrmIngreso_Notas.cs</DependentUpon>
+    <EmbeddedResource Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.resx">
+      <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\Alumnos_CursoSeccion.resx">
-      <DependentUpon>Alumnos_CursoSeccion.cs</DependentUpon>
+    <EmbeddedResource Include="Report Estudiantes\ReporteEstudiantes.resx">
+      <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\IfrmCuadro de Notas.resx">
-      <DependentUpon>IfrmCuadro de Notas.cs</DependentUpon>
+    <EmbeddedResource Include="Report Estudiantes\ReportEstudiante.rdlc" />
+    <EmbeddedResource Include="Report Notas\ReporteNotas.resx">
+      <DependentUpon>ReporteNotas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\IfrmRegistro_Datos_Notas.resx">
-      <DependentUpon>IfrmRegistro_Datos_Notas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registro y Vista de Notas\IfrmSeleccion de Curso.resx">
-      <DependentUpon>IfrmSeleccion de Curso.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Report Notas\ReportNotas.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -535,6 +432,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report Estudiantes\DataSetEstudiantes.xsc">
+      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
+    </None>
+    <None Include="Report Estudiantes\DataSetEstudiantes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEstudiantes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report Estudiantes\DataSetEstudiantes.xss">
+      <DependentUpon>DataSetEstudiantes.xsd</DependentUpon>
+    </None>
+    <None Include="Report Notas\DataSetNotas.xsc">
+      <DependentUpon>DataSetNotas.xsd</DependentUpon>
+    </None>
+    <None Include="Report Notas\DataSetNotas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNotas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report Notas\DataSetNotas.xss">
+      <DependentUpon>DataSetNotas.xsd</DependentUpon>
+    </None>
     <None Include="StaMariaNazarethDatabaseServiceDataSet.xsc">
       <DependentUpon>StaMariaNazarethDatabaseServiceDataSet.xsd</DependentUpon>
     </None>

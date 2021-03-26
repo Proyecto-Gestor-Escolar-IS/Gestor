@@ -50,12 +50,12 @@ namespace SistemaGestorEscolar
             this.txtIdentidadEstudiante = new System.Windows.Forms.TextBox();
             this.txtNombreEncargado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRegistrarPago = new System.Windows.Forms.Button();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnImagenExistente = new System.Windows.Forms.Button();
             this.btnImagenAgregar = new System.Windows.Forms.Button();
+            this.btnRegistrarPago = new System.Windows.Forms.Button();
             this.grpDatosPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
@@ -298,22 +298,6 @@ namespace SistemaGestorEscolar
             this.label3.Text = "Nombre del Padre, Madre o Encargado";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // btnRegistrarPago
-            // 
-            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarPago.Enabled = false;
-            this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarPago.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarPago.Location = new System.Drawing.Point(555, 880);
-            this.btnRegistrarPago.Name = "btnRegistrarPago";
-            this.btnRegistrarPago.Size = new System.Drawing.Size(538, 86);
-            this.btnRegistrarPago.TabIndex = 16;
-            this.btnRegistrarPago.Text = "REGISTRAR PAGO";
-            this.btnRegistrarPago.UseVisualStyleBackColor = false;
-            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
-            // 
             // errorIdentidad
             // 
             this.errorIdentidad.ContainerControl = this;
@@ -367,6 +351,22 @@ namespace SistemaGestorEscolar
             this.btnImagenAgregar.UseVisualStyleBackColor = true;
             this.btnImagenAgregar.Click += new System.EventHandler(this.btnImagenAgregar_Click);
             // 
+            // btnRegistrarPago
+            // 
+            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnRegistrarPago.Enabled = false;
+            this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarPago.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrarPago.Location = new System.Drawing.Point(555, 880);
+            this.btnRegistrarPago.Name = "btnRegistrarPago";
+            this.btnRegistrarPago.Size = new System.Drawing.Size(538, 86);
+            this.btnRegistrarPago.TabIndex = 16;
+            this.btnRegistrarPago.Text = "REGISTRAR PAGO";
+            this.btnRegistrarPago.UseVisualStyleBackColor = false;
+            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
+            // 
             // IRegistroPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +410,6 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTotalPagar;
         private System.Windows.Forms.TextBox txtSaldoDisponible;
-        private System.Windows.Forms.Button btnRegistrarPago;
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.CheckBox chkDescuento;
         private System.Windows.Forms.ErrorProvider errorIdentidad;
@@ -420,5 +419,6 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Button btnImagenExistente;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnImagenAgregar;
+        private System.Windows.Forms.Button btnRegistrarPago;
     }
 }
