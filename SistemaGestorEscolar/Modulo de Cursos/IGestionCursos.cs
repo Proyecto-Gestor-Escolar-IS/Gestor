@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Modulo_de_Cursos
 {
@@ -26,14 +27,10 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         IMessageBoxWarning messageWarning = new IMessageBoxWarning();
         IMessageBoxYesCancel messageQuestion = new IMessageBoxYesCancel();
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            actualizarDGV();
-        }
-
         private void IGestionCursos_Load(object sender, EventArgs e)
         {
             actualizarDGV();
+            ClsCambioTema.cambiarTemaBoton(grbPrincipal);
         }
 
         private void actualizarDGV()
@@ -41,13 +38,19 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             dbConn.llenarDGV(dgvCursos, "select [id_Curso] as 'Id Curso', [nombreCurso] as 'Nombre Curso', [precioCompleto] as 'Precio', es.[descripcionEstado] as 'Estado' from [dbo].[cursos]c join[dbo].[estados]es on c.[estadoCurso] = es.[id_Estado]");
         }
 
-        private void btnRegistro_Click(object sender, EventArgs e)
+        private void dgvCursos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtNombreCurso.Text = dgvCursos.CurrentRow.Cells[1].Value.ToString();
+            txtPrecio.Text = dgvCursos.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btnRegistrarCurso_Click(object sender, EventArgs e)
         {
             int estadoCurso;
             String nombreCurso;
-            double precio;          
+            double precio;
 
-            if(dbConn.ComprobarExistencia("select [estadoCurso] from [dbo].[cursos] where [estadoCurso] = 1 and [nombreCurso] = '" + txtNombreCurso.Text + "'"))
+            if (dbConn.ComprobarExistencia("select [estadoCurso] from [dbo].[cursos] where [estadoCurso] = 1 and [nombreCurso] = '" + txtNombreCurso.Text + "'"))
             {
                 messageError.lblError.Text = "EL CURSO YA EXISTE";
                 messageError.ShowDialog();
@@ -80,11 +83,10 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                 txtNombreCurso.Clear();
                 txtPrecio.Clear();
-            }      
-
+            }
         }
 
-        private void btnActualización_Click(object sender, EventArgs e)
+        private void btnActualizarCurso_Click(object sender, EventArgs e)
         {
             int idCurso;
             String nombreCurso;
@@ -92,7 +94,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
             if (Regex.IsMatch(txtNombreCurso.Text, "^[a-zA-Z]") || Regex.IsMatch(txtPrecio.Text, @"^\d+$"))
             {
-                
+
                 idCurso = Int32.Parse(dgvCursos.CurrentRow.Cells[0].Value.ToString());
                 nombreCurso = txtNombreCurso.Text;
                 precio = double.Parse(txtPrecio.Text);
@@ -115,13 +117,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             }
         }
 
-        private void dgvCursos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtNombreCurso.Text = dgvCursos.CurrentRow.Cells[1].Value.ToString();
-            txtPrecio.Text = dgvCursos.CurrentRow.Cells[2].Value.ToString();
-        }
-
-        private void btnEliminarCurso_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             int idCurso, Vid;
             idCurso = Int32.Parse(dgvCursos.CurrentRow.Cells[0].Value.ToString());
@@ -148,6 +144,11 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 txtPrecio.Clear();
 
             }
+        }
+
+        private void btnActualizarDgv_Click(object sender, EventArgs e)
+        {
+            actualizarDGV();
         }
     }
 }
