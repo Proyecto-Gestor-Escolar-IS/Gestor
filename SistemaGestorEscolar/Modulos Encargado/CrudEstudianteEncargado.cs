@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Modulos_Encargado
 {
@@ -582,6 +583,16 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
                 cmbgeneroEstudiante.SelectedIndex = -1;
             }
+        }
+
+        private void CrudEstudianteEncargado_Load(object sender, EventArgs e)
+        {
+            ClsCambioTema.cambiarTemaBoton(gbEstudiantes);
+            ClsCambioTema.cambiarTemaBoton(gbEncargados);
+            ClsCambioTema.cambiarTemaBoton(gbListadoEstudiantes);
+            ClsCambioTema.cambiarTemaBoton(gbListadoEncargado);
+            ClsCambioTema.cambiarTemaBoton(pnlGestionEstudianteEncargado);
+
         }
     }
 }

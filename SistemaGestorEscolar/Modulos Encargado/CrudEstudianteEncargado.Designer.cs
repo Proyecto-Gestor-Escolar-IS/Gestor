@@ -91,6 +91,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label10 = new System.Windows.Forms.Label();
             this.btnEncargados = new AltoControls.AltoButton();
             this.btnEstudiantes = new AltoControls.AltoButton();
+            this.pnlGestionEstudianteEncargado = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.gbEncargados.SuspendLayout();
             this.gbListadoEncargado.SuspendLayout();
@@ -100,6 +101,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEstudiantes)).BeginInit();
             this.gbEstudiantes.SuspendLayout();
+            this.pnlGestionEstudianteEncargado.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorIdentidad
@@ -425,7 +427,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.lblGestionEncargadosEstudiantes.AutoSize = true;
             this.lblGestionEncargadosEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionEncargadosEstudiantes.Location = new System.Drawing.Point(475, 248);
+            this.lblGestionEncargadosEstudiantes.Location = new System.Drawing.Point(491, 167);
             this.lblGestionEncargadosEstudiantes.Name = "lblGestionEncargadosEstudiantes";
             this.lblGestionEncargadosEstudiantes.Size = new System.Drawing.Size(711, 36);
             this.lblGestionEncargadosEstudiantes.TabIndex = 86;
@@ -921,7 +923,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnEncargados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnEncargados.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnEncargados.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEncargados.Location = new System.Drawing.Point(175, 464);
+            this.btnEncargados.Location = new System.Drawing.Point(217, 459);
             this.btnEncargados.Name = "btnEncargados";
             this.btnEncargados.Radius = 20;
             this.btnEncargados.Size = new System.Drawing.Size(407, 200);
@@ -942,7 +944,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnEstudiantes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnEstudiantes.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnEstudiantes.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEstudiantes.Location = new System.Drawing.Point(1072, 464);
+            this.btnEstudiantes.Location = new System.Drawing.Point(1063, 470);
             this.btnEstudiantes.Name = "btnEstudiantes";
             this.btnEstudiantes.Radius = 20;
             this.btnEstudiantes.Size = new System.Drawing.Size(407, 200);
@@ -953,23 +955,32 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnEstudiantes.Transparency = false;
             this.btnEstudiantes.Click += new System.EventHandler(this.btnEstudiantes_Click);
             // 
+            // pnlGestionEstudianteEncargado
+            // 
+            this.pnlGestionEstudianteEncargado.Controls.Add(this.btnEstudiantes);
+            this.pnlGestionEstudianteEncargado.Controls.Add(this.btnEncargados);
+            this.pnlGestionEstudianteEncargado.Controls.Add(this.lblGestionEncargadosEstudiantes);
+            this.pnlGestionEstudianteEncargado.Location = new System.Drawing.Point(12, 6);
+            this.pnlGestionEstudianteEncargado.Name = "pnlGestionEstudianteEncargado";
+            this.pnlGestionEstudianteEncargado.Size = new System.Drawing.Size(1611, 1020);
+            this.pnlGestionEstudianteEncargado.TabIndex = 99;
+            // 
             // CrudEstudianteEncargado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.pnlGestionEstudianteEncargado);
+            this.Controls.Add(this.gbEstudiantes);
             this.Controls.Add(this.gbEncargados);
             this.Controls.Add(this.gbListadoEstudiantes);
             this.Controls.Add(this.gbListadoEncargado);
-            this.Controls.Add(this.btnEncargados);
-            this.Controls.Add(this.lblGestionEncargadosEstudiantes);
-            this.Controls.Add(this.btnEstudiantes);
-            this.Controls.Add(this.gbEstudiantes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CrudEstudianteEncargado";
             this.Text = "IAñadirEncargado";
+            this.Load += new System.EventHandler(this.CrudEstudianteEncargado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).EndInit();
             this.gbEncargados.ResumeLayout(false);
             this.gbEncargados.PerformLayout();
@@ -983,8 +994,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEstudiantes)).EndInit();
             this.gbEstudiantes.ResumeLayout(false);
             this.gbEstudiantes.PerformLayout();
+            this.pnlGestionEstudianteEncargado.ResumeLayout(false);
+            this.pnlGestionEstudianteEncargado.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1046,5 +1058,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnlGestionEstudianteEncargado;
     }
 }
