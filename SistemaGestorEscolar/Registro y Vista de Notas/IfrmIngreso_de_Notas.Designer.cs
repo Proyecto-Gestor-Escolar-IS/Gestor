@@ -43,13 +43,10 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label1 = new System.Windows.Forms.Label();
             this.gpxSeleccionAlumno = new System.Windows.Forms.GroupBox();
             this.pbRegresar1 = new System.Windows.Forms.PictureBox();
-            this.btnContinuar1 = new System.Windows.Forms.Button();
             this.dgvSeleccionAlumno = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gpxIngreso_Notas = new System.Windows.Forms.GroupBox();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.chkVerClases = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.chkLimpDatos = new System.Windows.Forms.CheckBox();
@@ -59,11 +56,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.txtNota2 = new System.Windows.Forms.TextBox();
             this.txtNota1 = new System.Windows.Forms.TextBox();
             this.cmbClasesCS = new System.Windows.Forms.ComboBox();
-            this.btnCuadroNotas = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificarNotas = new System.Windows.Forms.Button();
-            this.btnAgregarNotas = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -85,11 +77,16 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.errorPvIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpxCuadroNotas = new System.Windows.Forms.GroupBox();
             this.pbRegresar3 = new System.Windows.Forms.PictureBox();
-            this.btnSiguiente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dgvCuadroNotas = new System.Windows.Forms.DataGridView();
+            this.abModificarNota = new AltoControls.AltoButton();
+            this.abAgregarNotas = new AltoControls.AltoButton();
+            this.abCuadroNotas = new AltoControls.AltoButton();
+            this.abLimpiar = new AltoControls.AltoButton();
+            this.abSiguiente = new AltoControls.AltoButton();
+            this.abContinuar2 = new AltoControls.AltoButton();
             this.abContinuar = new AltoControls.AltoButton();
             this.gpxSeleccionCurso.SuspendLayout();
             this.gpxSeleccionAlumno.SuspendLayout();
@@ -126,7 +123,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(477, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(622, 40);
+            this.label2.Size = new System.Drawing.Size(613, 45);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ingreso de Notas para los Alumnos";
             // 
@@ -134,9 +131,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             this.cmbSeccion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSeccion.FormattingEnabled = true;
+            this.cmbSeccion.Items.AddRange(new object[] {
+            "<Seleccione>"});
             this.cmbSeccion.Location = new System.Drawing.Point(692, 523);
             this.cmbSeccion.Name = "cmbSeccion";
-            this.cmbSeccion.Size = new System.Drawing.Size(178, 32);
+            this.cmbSeccion.Size = new System.Drawing.Size(178, 35);
             this.cmbSeccion.TabIndex = 2;
             this.cmbSeccion.Text = "SECCIÓN";
             this.cmbSeccion.SelectedIndexChanged += new System.EventHandler(this.cmbSeccion_SelectedIndexChanged);
@@ -152,7 +151,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             "Primer Grado"});
             this.cmbCursos.Location = new System.Drawing.Point(692, 458);
             this.cmbCursos.Name = "cmbCursos";
-            this.cmbCursos.Size = new System.Drawing.Size(178, 32);
+            this.cmbCursos.Size = new System.Drawing.Size(178, 35);
             this.cmbCursos.TabIndex = 1;
             this.cmbCursos.Text = "CURSO";
             this.cmbCursos.SelectedIndexChanged += new System.EventHandler(this.cmbCursos_SelectedIndexChanged);
@@ -163,14 +162,14 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(549, 314);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(480, 31);
+            this.label1.Size = new System.Drawing.Size(470, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione un Curso y una Sección";
             // 
             // gpxSeleccionAlumno
             // 
+            this.gpxSeleccionAlumno.Controls.Add(this.abContinuar2);
             this.gpxSeleccionAlumno.Controls.Add(this.pbRegresar1);
-            this.gpxSeleccionAlumno.Controls.Add(this.btnContinuar1);
             this.gpxSeleccionAlumno.Controls.Add(this.dgvSeleccionAlumno);
             this.gpxSeleccionAlumno.Controls.Add(this.label4);
             this.gpxSeleccionAlumno.Controls.Add(this.label3);
@@ -194,19 +193,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.pbRegresar1.TabStop = false;
             this.pbRegresar1.Click += new System.EventHandler(this.pbRegresar1_Click);
             // 
-            // btnContinuar1
-            // 
-            this.btnContinuar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnContinuar1.FlatAppearance.BorderSize = 0;
-            this.btnContinuar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinuar1.Location = new System.Drawing.Point(737, 939);
-            this.btnContinuar1.Name = "btnContinuar1";
-            this.btnContinuar1.Size = new System.Drawing.Size(170, 40);
-            this.btnContinuar1.TabIndex = 3;
-            this.btnContinuar1.Text = "Continuar";
-            this.btnContinuar1.UseVisualStyleBackColor = false;
-            this.btnContinuar1.Click += new System.EventHandler(this.btnContinuar1_Click);
-            // 
             // dgvSeleccionAlumno
             // 
             this.dgvSeleccionAlumno.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -227,7 +213,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSeleccionAlumno.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSeleccionAlumno.Location = new System.Drawing.Point(6, 324);
+            this.dgvSeleccionAlumno.Location = new System.Drawing.Point(6, 288);
             this.dgvSeleccionAlumno.Name = "dgvSeleccionAlumno";
             this.dgvSeleccionAlumno.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -249,7 +235,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(472, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(733, 37);
+            this.label4.Size = new System.Drawing.Size(717, 42);
             this.label4.TabIndex = 1;
             this.label4.Text = "Alumnos del Curso y Sección seleccionados:";
             // 
@@ -257,17 +243,19 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 294);
+            this.label3.Location = new System.Drawing.Point(9, 258);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(239, 24);
+            this.label3.Size = new System.Drawing.Size(238, 27);
             this.label3.TabIndex = 0;
             this.label3.Text = "Seleccione un Alumno:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // gpxIngreso_Notas
             // 
-            this.gpxIngreso_Notas.Controls.Add(this.cmbEstado);
-            this.gpxIngreso_Notas.Controls.Add(this.label17);
+            this.gpxIngreso_Notas.Controls.Add(this.abModificarNota);
+            this.gpxIngreso_Notas.Controls.Add(this.abAgregarNotas);
+            this.gpxIngreso_Notas.Controls.Add(this.abCuadroNotas);
+            this.gpxIngreso_Notas.Controls.Add(this.abLimpiar);
             this.gpxIngreso_Notas.Controls.Add(this.chkVerClases);
             this.gpxIngreso_Notas.Controls.Add(this.pictureBox2);
             this.gpxIngreso_Notas.Controls.Add(this.chkLimpDatos);
@@ -277,11 +265,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.gpxIngreso_Notas.Controls.Add(this.txtNota2);
             this.gpxIngreso_Notas.Controls.Add(this.txtNota1);
             this.gpxIngreso_Notas.Controls.Add(this.cmbClasesCS);
-            this.gpxIngreso_Notas.Controls.Add(this.btnCuadroNotas);
-            this.gpxIngreso_Notas.Controls.Add(this.btnLimpiar);
-            this.gpxIngreso_Notas.Controls.Add(this.btnEliminar);
-            this.gpxIngreso_Notas.Controls.Add(this.btnModificarNotas);
-            this.gpxIngreso_Notas.Controls.Add(this.btnAgregarNotas);
             this.gpxIngreso_Notas.Controls.Add(this.label15);
             this.gpxIngreso_Notas.Controls.Add(this.label14);
             this.gpxIngreso_Notas.Controls.Add(this.label13);
@@ -299,35 +282,13 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.gpxIngreso_Notas.Text = "Ingreso de Notas:";
             this.gpxIngreso_Notas.VisibleChanged += new System.EventHandler(this.gpxIngreso_Notas_VisibleChanged_1);
             // 
-            // cmbEstado
-            // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(680, 778);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(171, 31);
-            this.cmbEstado.TabIndex = 23;
-            this.cmbEstado.Text = "<Seleccione>";
-            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(590, 781);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 23);
-            this.label17.TabIndex = 22;
-            this.label17.Text = "Estado:";
-            // 
             // chkVerClases
             // 
             this.chkVerClases.AutoSize = true;
             this.chkVerClases.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkVerClases.Location = new System.Drawing.Point(419, 510);
             this.chkVerClases.Name = "chkVerClases";
-            this.chkVerClases.Size = new System.Drawing.Size(122, 23);
+            this.chkVerClases.Size = new System.Drawing.Size(115, 25);
             this.chkVerClases.TabIndex = 21;
             this.chkVerClases.Text = "Ver Clases";
             this.chkVerClases.UseVisualStyleBackColor = true;
@@ -350,7 +311,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.chkLimpDatos.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkLimpDatos.Location = new System.Drawing.Point(551, 908);
             this.chkLimpDatos.Name = "chkLimpDatos";
-            this.chkLimpDatos.Size = new System.Drawing.Size(174, 23);
+            this.chkLimpDatos.Size = new System.Drawing.Size(163, 25);
             this.chkLimpDatos.TabIndex = 19;
             this.chkLimpDatos.Text = "Datos del Alumno";
             this.chkLimpDatos.UseVisualStyleBackColor = true;
@@ -413,84 +374,16 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.cmbClasesCS.FormattingEnabled = true;
             this.cmbClasesCS.Location = new System.Drawing.Point(419, 541);
             this.cmbClasesCS.Name = "cmbClasesCS";
-            this.cmbClasesCS.Size = new System.Drawing.Size(191, 31);
+            this.cmbClasesCS.Size = new System.Drawing.Size(191, 34);
             this.cmbClasesCS.TabIndex = 13;
             this.cmbClasesCS.Text = "<Seleccione>";
-            // 
-            // btnCuadroNotas
-            // 
-            this.btnCuadroNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnCuadroNotas.FlatAppearance.BorderSize = 0;
-            this.btnCuadroNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCuadroNotas.Location = new System.Drawing.Point(882, 855);
-            this.btnCuadroNotas.Name = "btnCuadroNotas";
-            this.btnCuadroNotas.Size = new System.Drawing.Size(257, 46);
-            this.btnCuadroNotas.TabIndex = 12;
-            this.btnCuadroNotas.Text = "Ver Cuadro de Notas";
-            this.btnCuadroNotas.UseVisualStyleBackColor = false;
-            this.btnCuadroNotas.Click += new System.EventHandler(this.btnCuadroNotas_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Location = new System.Drawing.Point(506, 857);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(212, 43);
-            this.btnLimpiar.TabIndex = 11;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(1135, 679);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(213, 40);
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificarNotas
-            // 
-            this.btnModificarNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnModificarNotas.FlatAppearance.BorderSize = 0;
-            this.btnModificarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarNotas.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarNotas.Location = new System.Drawing.Point(1135, 611);
-            this.btnModificarNotas.Name = "btnModificarNotas";
-            this.btnModificarNotas.Size = new System.Drawing.Size(213, 42);
-            this.btnModificarNotas.TabIndex = 9;
-            this.btnModificarNotas.Text = "Modificar Notas";
-            this.btnModificarNotas.UseVisualStyleBackColor = false;
-            this.btnModificarNotas.Click += new System.EventHandler(this.btnModificarNotas_Click);
-            // 
-            // btnAgregarNotas
-            // 
-            this.btnAgregarNotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAgregarNotas.FlatAppearance.BorderSize = 0;
-            this.btnAgregarNotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarNotas.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarNotas.Location = new System.Drawing.Point(1135, 540);
-            this.btnAgregarNotas.Name = "btnAgregarNotas";
-            this.btnAgregarNotas.Size = new System.Drawing.Size(213, 42);
-            this.btnAgregarNotas.TabIndex = 8;
-            this.btnAgregarNotas.Text = "Agregar Notas";
-            this.btnAgregarNotas.UseVisualStyleBackColor = false;
-            this.btnAgregarNotas.Click += new System.EventHandler(this.btnAgregarNotas_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(743, 711);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(161, 23);
+            this.label15.Size = new System.Drawing.Size(158, 26);
             this.label15.TabIndex = 7;
             this.label15.Text = "Nota Promedio:";
             // 
@@ -499,7 +392,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(331, 711);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(160, 23);
+            this.label14.Size = new System.Drawing.Size(157, 26);
             this.label14.TabIndex = 6;
             this.label14.Text = "Cuarto Parcial:";
             // 
@@ -508,7 +401,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(743, 627);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(150, 23);
+            this.label13.Size = new System.Drawing.Size(149, 26);
             this.label13.TabIndex = 5;
             this.label13.Text = "Terce Parcial:";
             // 
@@ -517,7 +410,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(331, 627);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(179, 23);
+            this.label12.Size = new System.Drawing.Size(173, 26);
             this.label12.TabIndex = 4;
             this.label12.Text = "Segundo Parcial:";
             // 
@@ -526,7 +419,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(743, 544);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(210, 23);
+            this.label11.Size = new System.Drawing.Size(207, 26);
             this.label11.TabIndex = 3;
             this.label11.Text = "Nota Primer Parcial:";
             // 
@@ -535,7 +428,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(331, 544);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 23);
+            this.label10.Size = new System.Drawing.Size(72, 26);
             this.label10.TabIndex = 2;
             this.label10.Text = "Clase:";
             // 
@@ -620,7 +513,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(877, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 23);
+            this.label9.Size = new System.Drawing.Size(94, 26);
             this.label9.TabIndex = 3;
             this.label9.Text = "Secciòn:";
             // 
@@ -629,7 +522,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(608, 72);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 23);
+            this.label8.Size = new System.Drawing.Size(74, 26);
             this.label8.TabIndex = 2;
             this.label8.Text = "Curso:";
             // 
@@ -638,7 +531,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(101, 160);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(235, 23);
+            this.label7.Size = new System.Drawing.Size(228, 26);
             this.label7.TabIndex = 1;
             this.label7.Text = "Nombre del Alumno(a):";
             // 
@@ -647,7 +540,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(101, 72);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 23);
+            this.label6.Size = new System.Drawing.Size(144, 26);
             this.label6.TabIndex = 0;
             this.label6.Text = "No. Identidad:";
             // 
@@ -657,7 +550,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(598, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(486, 36);
+            this.label5.Size = new System.Drawing.Size(477, 41);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ingrese las Notas del Alumno:";
             // 
@@ -667,8 +560,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             // gpxCuadroNotas
             // 
+            this.gpxCuadroNotas.Controls.Add(this.abSiguiente);
             this.gpxCuadroNotas.Controls.Add(this.pbRegresar3);
-            this.gpxCuadroNotas.Controls.Add(this.btnSiguiente);
             this.gpxCuadroNotas.Controls.Add(this.pictureBox1);
             this.gpxCuadroNotas.Controls.Add(this.txtBuscar);
             this.gpxCuadroNotas.Controls.Add(this.label16);
@@ -686,31 +579,18 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             this.pbRegresar3.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.iconBackResized;
             this.pbRegresar3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbRegresar3.Location = new System.Drawing.Point(165, 62);
+            this.pbRegresar3.Location = new System.Drawing.Point(210, 79);
             this.pbRegresar3.Name = "pbRegresar3";
             this.pbRegresar3.Size = new System.Drawing.Size(40, 30);
             this.pbRegresar3.TabIndex = 5;
             this.pbRegresar3.TabStop = false;
             this.pbRegresar3.Click += new System.EventHandler(this.pbRegresar3_Click);
             // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSiguiente.FlatAppearance.BorderSize = 0;
-            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente.Location = new System.Drawing.Point(693, 926);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(209, 53);
-            this.btnSiguiente.TabIndex = 4;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = false;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1180, 91);
+            this.pictureBox1.Location = new System.Drawing.Point(1283, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 31);
             this.pictureBox1.TabIndex = 3;
@@ -718,7 +598,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(1212, 90);
+            this.txtBuscar.Location = new System.Drawing.Point(1315, 99);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(194, 33);
             this.txtBuscar.TabIndex = 2;
@@ -730,7 +610,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label16.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(637, 81);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(361, 36);
+            this.label16.Size = new System.Drawing.Size(356, 41);
             this.label16.TabIndex = 1;
             this.label16.Text = "Notas de los Alumnos:";
             // 
@@ -769,6 +649,132 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.dgvCuadroNotas.TabIndex = 0;
             this.dgvCuadroNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuadroNotas_CellClick);
             // 
+            // abModificarNota
+            // 
+            this.abModificarNota.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abModificarNota.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abModificarNota.BackColor = System.Drawing.Color.Transparent;
+            this.abModificarNota.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abModificarNota.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abModificarNota.ForeColor = System.Drawing.Color.Black;
+            this.abModificarNota.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abModificarNota.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abModificarNota.Location = new System.Drawing.Point(1129, 674);
+            this.abModificarNota.Name = "abModificarNota";
+            this.abModificarNota.Radius = 10;
+            this.abModificarNota.Size = new System.Drawing.Size(219, 45);
+            this.abModificarNota.Stroke = false;
+            this.abModificarNota.StrokeColor = System.Drawing.Color.Gray;
+            this.abModificarNota.TabIndex = 27;
+            this.abModificarNota.Text = "Modificar Nota";
+            this.abModificarNota.Transparency = false;
+            this.abModificarNota.Click += new System.EventHandler(this.abModificarNota_Click);
+            // 
+            // abAgregarNotas
+            // 
+            this.abAgregarNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abAgregarNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abAgregarNotas.BackColor = System.Drawing.Color.Transparent;
+            this.abAgregarNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abAgregarNotas.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abAgregarNotas.ForeColor = System.Drawing.Color.Black;
+            this.abAgregarNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abAgregarNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abAgregarNotas.Location = new System.Drawing.Point(1129, 572);
+            this.abAgregarNotas.Name = "abAgregarNotas";
+            this.abAgregarNotas.Radius = 10;
+            this.abAgregarNotas.Size = new System.Drawing.Size(219, 45);
+            this.abAgregarNotas.Stroke = false;
+            this.abAgregarNotas.StrokeColor = System.Drawing.Color.Gray;
+            this.abAgregarNotas.TabIndex = 26;
+            this.abAgregarNotas.Text = "Agregar Notas";
+            this.abAgregarNotas.Transparency = false;
+            this.abAgregarNotas.Click += new System.EventHandler(this.abAgregarNotas_Click);
+            // 
+            // abCuadroNotas
+            // 
+            this.abCuadroNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abCuadroNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abCuadroNotas.BackColor = System.Drawing.Color.Transparent;
+            this.abCuadroNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abCuadroNotas.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abCuadroNotas.ForeColor = System.Drawing.Color.Black;
+            this.abCuadroNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abCuadroNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abCuadroNotas.Location = new System.Drawing.Point(922, 855);
+            this.abCuadroNotas.Name = "abCuadroNotas";
+            this.abCuadroNotas.Radius = 10;
+            this.abCuadroNotas.Size = new System.Drawing.Size(244, 47);
+            this.abCuadroNotas.Stroke = false;
+            this.abCuadroNotas.StrokeColor = System.Drawing.Color.Gray;
+            this.abCuadroNotas.TabIndex = 25;
+            this.abCuadroNotas.Text = "Ver Cuadro de Notas";
+            this.abCuadroNotas.Transparency = false;
+            this.abCuadroNotas.Click += new System.EventHandler(this.abCuadroNotas_Click);
+            // 
+            // abLimpiar
+            // 
+            this.abLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.abLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.abLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abLimpiar.Location = new System.Drawing.Point(538, 855);
+            this.abLimpiar.Name = "abLimpiar";
+            this.abLimpiar.Radius = 10;
+            this.abLimpiar.Size = new System.Drawing.Size(200, 47);
+            this.abLimpiar.Stroke = false;
+            this.abLimpiar.StrokeColor = System.Drawing.Color.Gray;
+            this.abLimpiar.TabIndex = 24;
+            this.abLimpiar.Text = "Limpiar";
+            this.abLimpiar.Transparency = false;
+            this.abLimpiar.Click += new System.EventHandler(this.abLimpiar_Click);
+            // 
+            // abSiguiente
+            // 
+            this.abSiguiente.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abSiguiente.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abSiguiente.BackColor = System.Drawing.Color.Transparent;
+            this.abSiguiente.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abSiguiente.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abSiguiente.ForeColor = System.Drawing.Color.Black;
+            this.abSiguiente.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abSiguiente.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abSiguiente.Location = new System.Drawing.Point(666, 926);
+            this.abSiguiente.Name = "abSiguiente";
+            this.abSiguiente.Radius = 10;
+            this.abSiguiente.Size = new System.Drawing.Size(229, 53);
+            this.abSiguiente.Stroke = false;
+            this.abSiguiente.StrokeColor = System.Drawing.Color.Gray;
+            this.abSiguiente.TabIndex = 6;
+            this.abSiguiente.Text = "Siguiente";
+            this.abSiguiente.Transparency = false;
+            this.abSiguiente.Click += new System.EventHandler(this.abSiguiente_Click);
+            // 
+            // abContinuar2
+            // 
+            this.abContinuar2.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abContinuar2.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abContinuar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.abContinuar2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abContinuar2.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abContinuar2.ForeColor = System.Drawing.Color.Black;
+            this.abContinuar2.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abContinuar2.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abContinuar2.Location = new System.Drawing.Point(721, 926);
+            this.abContinuar2.Name = "abContinuar2";
+            this.abContinuar2.Radius = 10;
+            this.abContinuar2.Size = new System.Drawing.Size(186, 40);
+            this.abContinuar2.Stroke = false;
+            this.abContinuar2.StrokeColor = System.Drawing.Color.Gray;
+            this.abContinuar2.TabIndex = 5;
+            this.abContinuar2.Text = "Continuar";
+            this.abContinuar2.Transparency = false;
+            this.abContinuar2.Click += new System.EventHandler(this.abContinuar2_Click);
+            // 
             // abContinuar
             // 
             this.abContinuar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
@@ -796,10 +802,10 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.gpxSeleccionCurso);
-            this.Controls.Add(this.gpxCuadroNotas);
             this.Controls.Add(this.gpxIngreso_Notas);
+            this.Controls.Add(this.gpxCuadroNotas);
             this.Controls.Add(this.gpxSeleccionAlumno);
+            this.Controls.Add(this.gpxSeleccionCurso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IfrmIngreso_de_Notas";
             this.Text = "IfrmIngreso_de_Notas";
@@ -833,7 +839,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gpxSeleccionAlumno;
-        private System.Windows.Forms.Button btnContinuar1;
         private System.Windows.Forms.DataGridView dgvSeleccionAlumno;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -844,11 +849,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private System.Windows.Forms.TextBox txtNota2;
         private System.Windows.Forms.TextBox txtNota1;
         private System.Windows.Forms.ComboBox cmbClasesCS;
-        private System.Windows.Forms.Button btnCuadroNotas;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificarNotas;
-        private System.Windows.Forms.Button btnAgregarNotas;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -872,15 +872,18 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.PictureBox pbRegresar3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pbRegresar1;
         private System.Windows.Forms.TextBox txtIdentidadAE;
         private System.Windows.Forms.TextBox txtNombreAE;
         private System.Windows.Forms.CheckBox chkVerClases;
-        private System.Windows.Forms.ComboBox cmbEstado;
-        private System.Windows.Forms.Label label17;
         private AltoControls.AltoButton abContinuar;
+        private AltoControls.AltoButton abContinuar2;
+        private AltoControls.AltoButton abModificarNota;
+        private AltoControls.AltoButton abAgregarNotas;
+        private AltoControls.AltoButton abCuadroNotas;
+        private AltoControls.AltoButton abLimpiar;
+        private AltoControls.AltoButton abSiguiente;
     }
 }
