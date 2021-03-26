@@ -93,13 +93,13 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             seccionElegida = cmbSeccion.Text;
         }
 
-        private void btnContinuar_Click(object sender, EventArgs e)
+        private void abContinuar_Click(object sender, EventArgs e)
         {
 
             Registro_y_Vista_de_Notas.Herencia_de_Variables.CursoG = cursoElegido;
             Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG = seccionElegida;
 
-            if(cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
+            if (cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
             {
                 message.lblError.Text = "Seleccione un Curso y Sección";
                 message.ShowDialog();
@@ -185,8 +185,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 gpxIngreso_Notas.Visible = true;
             }
         }
-
-
 
 
         //---------------------------Grupbox Ingreso de Notas----------------------------------------
@@ -655,6 +653,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         {
 
         }
+
+
 
         private void dgvCuadroNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
