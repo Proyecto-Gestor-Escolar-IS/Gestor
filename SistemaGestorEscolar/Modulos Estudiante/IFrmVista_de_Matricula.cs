@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestorEscolar.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void IFrmVista_de_Matricula_Load(object sender, EventArgs e)
         {
             gpVistaM.Visible = false;
+
+            ClsCambioTema.cambiarTemaBoton(gpSeleccionCS);
+
         }
 
         private void cmbCurso_SelectedIndexChanged(object sender, EventArgs e)
