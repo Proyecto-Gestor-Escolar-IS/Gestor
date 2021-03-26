@@ -583,5 +583,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 cmbgeneroEstudiante.SelectedIndex = -1;
             }
         }
+
+        private void CrudEstudianteEncargado_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
