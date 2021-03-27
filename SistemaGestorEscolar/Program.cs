@@ -20,7 +20,7 @@ namespace SistemaGestorEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IFrmVista_de_Matricula());
+            Application.Run(new IfrmLogin());
         }
     }
 }

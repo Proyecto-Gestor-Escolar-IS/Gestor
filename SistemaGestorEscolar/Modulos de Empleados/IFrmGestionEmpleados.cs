@@ -344,7 +344,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             {
                 if (utilidades.isDate(txtActFechaNac.Text))
                 {
-                    if (txtActConfContra.TextLength >= 6 && txtActContra.TextLength >= 6)
+                    if (txtActContra.TextLength >= 6)
                     {
                         if(txtActConfContra.Text == txtActContra.Text)
                         {
@@ -630,6 +630,8 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         {
             txtContraseRecuperacion.Clear();
             txtCorreoRecuperacion.Clear();
+            txtHost.Clear();
+            txtPuerto.Clear();
             chkVerContraRecuperacion.Checked = false;
         }
 
@@ -645,7 +647,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             {
                 if (utilidades.verificarCorreo(txtCorreo.Text))
                 {
-                    if (txtConfirmContra.TextLength >= 6 && txtContra.TextLength >= 6)
+                    if (txtContra.TextLength >= 6)
                     {
                         if (txtContra.Text == txtConfirmContra.Text)
                         {

@@ -179,7 +179,7 @@
             this.txtPuerto.Mask = "99999";
             this.txtPuerto.Name = "txtPuerto";
             this.txtPuerto.Size = new System.Drawing.Size(99, 24);
-            this.txtPuerto.TabIndex = 59;
+            this.txtPuerto.TabIndex = 3;
             this.txtPuerto.ValidatingType = typeof(int);
             // 
             // t
@@ -200,7 +200,7 @@
             this.txtHost.Margin = new System.Windows.Forms.Padding(2);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(307, 24);
-            this.txtHost.TabIndex = 57;
+            this.txtHost.TabIndex = 2;
             this.txtHost.WordWrap = false;
             // 
             // Host
@@ -230,7 +230,7 @@
             this.btnFinalizar.Size = new System.Drawing.Size(134, 41);
             this.btnFinalizar.Stroke = true;
             this.btnFinalizar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnFinalizar.TabIndex = 55;
+            this.btnFinalizar.TabIndex = 4;
             this.btnFinalizar.Text = "FINALIZAR";
             this.btnFinalizar.Transparency = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
@@ -245,7 +245,7 @@
             this.btnAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnAtras.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnAtras.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtras.Location = new System.Drawing.Point(34, 521);
+            this.btnAtras.Location = new System.Drawing.Point(0, 521);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Radius = 15;
             this.btnAtras.Size = new System.Drawing.Size(134, 41);
@@ -296,14 +296,14 @@
             this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnSiguiente.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnSiguiente.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguiente.Location = new System.Drawing.Point(403, 503);
+            this.btnSiguiente.Location = new System.Drawing.Point(408, 505);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Radius = 15;
             this.btnSiguiente.Size = new System.Drawing.Size(134, 41);
             this.btnSiguiente.Stroke = true;
             this.btnSiguiente.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSiguiente.TabIndex = 53;
-            this.btnSiguiente.Text = "INGRESAR";
+            this.btnSiguiente.TabIndex = 10;
+            this.btnSiguiente.Text = "SIGUIENTE";
             this.btnSiguiente.Transparency = false;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click_1);
             // 
@@ -335,7 +335,7 @@
             this.txtFechaNa.Mask = "00/00/0000";
             this.txtFechaNa.Name = "txtFechaNa";
             this.txtFechaNa.Size = new System.Drawing.Size(100, 24);
-            this.txtFechaNa.TabIndex = 9;
+            this.txtFechaNa.TabIndex = 8;
             this.txtFechaNa.ValidatingType = typeof(System.DateTime);
             // 
             // txtTel
@@ -345,7 +345,7 @@
             this.txtTel.Mask = "00000000";
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(100, 24);
-            this.txtTel.TabIndex = 5;
+            this.txtTel.TabIndex = 4;
             // 
             // txtContra
             // 
@@ -355,7 +355,7 @@
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '●';
             this.txtContra.Size = new System.Drawing.Size(182, 24);
-            this.txtContra.TabIndex = 7;
+            this.txtContra.TabIndex = 6;
             this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             // 
             // chkVerContras
@@ -389,7 +389,7 @@
             this.txtConfirmContra.Name = "txtConfirmContra";
             this.txtConfirmContra.PasswordChar = '●';
             this.txtConfirmContra.Size = new System.Drawing.Size(182, 24);
-            this.txtConfirmContra.TabIndex = 8;
+            this.txtConfirmContra.TabIndex = 7;
             this.txtConfirmContra.TextChanged += new System.EventHandler(this.txtConfirmContra_TextChanged);
             // 
             // lblConfiContra
@@ -410,7 +410,7 @@
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(307, 24);
-            this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.TabIndex = 5;
             // 
             // txtApellido2
             // 
@@ -419,7 +419,7 @@
             this.txtApellido2.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(182, 24);
-            this.txtApellido2.TabIndex = 4;
+            this.txtApellido2.TabIndex = 3;
             // 
             // txtApellido1
             // 
@@ -428,7 +428,7 @@
             this.txtApellido1.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(182, 24);
-            this.txtApellido1.TabIndex = 3;
+            this.txtApellido1.TabIndex = 2;
             // 
             // txtNombre2
             // 
@@ -437,7 +437,7 @@
             this.txtNombre2.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(182, 24);
-            this.txtNombre2.TabIndex = 2;
+            this.txtNombre2.TabIndex = 1;
             // 
             // txtNombre1
             // 
@@ -446,7 +446,7 @@
             this.txtNombre1.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre1.Name = "txtNombre1";
             this.txtNombre1.Size = new System.Drawing.Size(182, 24);
-            this.txtNombre1.TabIndex = 1;
+            this.txtNombre1.TabIndex = 0;
             // 
             // cmbCargosSec
             // 
@@ -459,7 +459,7 @@
             this.cmbCargosSec.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCargosSec.Name = "cmbCargosSec";
             this.cmbCargosSec.Size = new System.Drawing.Size(183, 25);
-            this.cmbCargosSec.TabIndex = 31;
+            this.cmbCargosSec.TabIndex = 9;
             this.cmbCargosSec.Text = "Administrador";
             // 
             // lblCargo
@@ -550,8 +550,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(605, 688);
-            this.Controls.Add(this.pnlRecuperacion);
             this.Controls.Add(this.pnlPrincipal);
+            this.Controls.Add(this.pnlRecuperacion);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmIngresoAdmin";
