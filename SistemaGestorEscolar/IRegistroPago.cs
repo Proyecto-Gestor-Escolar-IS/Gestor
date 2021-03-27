@@ -14,7 +14,9 @@ namespace SistemaGestorEscolar
         public static Image image;
 
         clsUtilidades utilidades = new clsUtilidades();
+        IMessageBoxCheck messageOk = new IMessageBoxCheck();
         IMessageBoxCheck message = new IMessageBoxCheck();
+        IMessageBoxError messageE = new IMessageBoxError();
         private databaseConnection dbConn = new databaseConnection();
         
         private int idUltimaMensualidad;
@@ -234,15 +236,22 @@ namespace SistemaGestorEscolar
                                 txtMontoPagar.Clear();
                                 txtDescuento.Clear();
                                 chkDescuento.Checked = false;
-                            }
+                            image = null;
+                        }
                             else
                             {
-                                MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
+                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
+                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            messageE.lblError.Location = new Point(130, 75);
+                            messageE.ShowDialog();
                             }
                     }
                     else
                     {
-                            MessageBox.Show("Ingrese un Comprobante de Pago", "Sin Comprobante", MessageBoxButtons.OK);
+                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
+                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        messageE.lblError.Location = new Point(130, 75);
+                        messageE.ShowDialog();
                     }
                 }
                 else if (chkDescuento.Checked == false)
@@ -258,15 +267,22 @@ namespace SistemaGestorEscolar
                         txtMontoPagar.Clear();
                         txtDescuento.Clear();
                         chkDescuento.Checked = false;
+                            image = null;
                         }
                         else
                         {
-                            MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
+                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
+                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            messageE.lblError.Location = new Point(130, 75);
+                            messageE.ShowDialog();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un Comprobante de Pago", "Sin Comprobante", MessageBoxButtons.OK);
+                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
+                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        messageE.lblError.Location = new Point(130, 75);
+                        messageE.ShowDialog();
                     }
                 }
             }

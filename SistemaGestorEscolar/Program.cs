@@ -20,7 +20,7 @@ namespace SistemaGestorEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Modulos_Estudiante.IVistaFichaEstudiante());
+            Application.Run(new IfrmLogin());
         }
     }
 }
