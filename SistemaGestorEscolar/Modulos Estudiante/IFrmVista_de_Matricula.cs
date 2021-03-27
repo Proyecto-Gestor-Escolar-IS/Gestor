@@ -34,6 +34,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             ClsCambioTema.cambiarTemaBoton(gpSeleccionCS);
 
+            dbConn.llenarComboBox(cmbCurso, "Select nombreCurso from [dbo].[cursos]");
+
         }
 
         private void cmbCurso_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,34 +43,15 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             if (cmbCurso.Items.Count > 0)
             {
-                switch (cmbCurso.SelectedItem.ToString())
+
+                if(cmbCurso.Text != null)
                 {
-                    case "Nursery":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCurso.SelectedItem + "' ");
-                        break;
-
-                    case "Pre-Kinder":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCurso.SelectedItem + "' ");
-                        break;
-
-                    case "Kinder":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCurso.SelectedItem + "' ");
-                        break;
-
-                    case "Primer Grado":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCurso.SelectedItem + "' ");
-                        break;
+                    cmbSeccion.Items.Clear();
+                    dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
+                        "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCurso.SelectedItem + "' ");
                 }
-            }
 
+            }
 
             CursoElegido = cmbCurso.Text;
 
