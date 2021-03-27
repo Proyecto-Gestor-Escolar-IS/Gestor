@@ -71,6 +71,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
             else
             {
+                ultimaMatricula = dbConn.obtenerVariableEntera("SELECT max(id_RegistroMatricula) FROM matricula");
                 ultimaMatricula += 1;
                 txtNoMatricula.Text = "" + ultimaMatricula;
             }
