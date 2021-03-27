@@ -76,20 +76,21 @@
             // mtxtIdentidad
             // 
             this.mtxtIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtIdentidad.Location = new System.Drawing.Point(132, 141);
+            this.mtxtIdentidad.Location = new System.Drawing.Point(131, 141);
             this.mtxtIdentidad.Mask = "0000000000000";
             this.mtxtIdentidad.Name = "mtxtIdentidad";
             this.mtxtIdentidad.Size = new System.Drawing.Size(133, 28);
             this.mtxtIdentidad.TabIndex = 13;
+            this.mtxtIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnRecuperar
             // 
             this.btnRecuperar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnRecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecuperar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecuperar.Location = new System.Drawing.Point(132, 199);
+            this.btnRecuperar.Location = new System.Drawing.Point(127, 199);
             this.btnRecuperar.Name = "btnRecuperar";
-            this.btnRecuperar.Size = new System.Drawing.Size(133, 34);
+            this.btnRecuperar.Size = new System.Drawing.Size(142, 34);
             this.btnRecuperar.TabIndex = 14;
             this.btnRecuperar.Text = "RECUPERAR";
             this.btnRecuperar.UseVisualStyleBackColor = false;

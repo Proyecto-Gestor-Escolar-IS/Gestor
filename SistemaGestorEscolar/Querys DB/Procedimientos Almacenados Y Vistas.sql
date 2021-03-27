@@ -414,7 +414,7 @@ BEGIN
 	END
 
 END
-
+GO
 ---------------Registrar curso-----------------
 CREATE PROCEDURE PARegistrarCurso (
 @nombreCurso varchar(30),

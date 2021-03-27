@@ -356,6 +356,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbSeccion.Name = "cmbSeccion";
             this.cmbSeccion.Size = new System.Drawing.Size(147, 32);
             this.cmbSeccion.TabIndex = 95;
+            this.cmbSeccion.SelectedIndexChanged += new System.EventHandler(this.cmbSeccion_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -621,6 +622,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbSeccionR.Name = "cmbSeccionR";
             this.cmbSeccionR.Size = new System.Drawing.Size(191, 32);
             this.cmbSeccionR.TabIndex = 95;
+            this.cmbSeccionR.SelectedIndexChanged += new System.EventHandler(this.cmbSeccionR_SelectedIndexChanged);
             // 
             // label39
             // 

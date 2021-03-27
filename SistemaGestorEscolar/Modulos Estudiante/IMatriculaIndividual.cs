@@ -37,7 +37,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         string identidadEncargadoReingreso;
         string identidadEstudianteModDatos;
         string identidadEncargadoModDatos;
+        int idSeccion;
 
+        
         private void IMatriculaIndividual_Load(object sender, EventArgs e)
         {
             dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT nombreCurso FROM cursos");
@@ -69,6 +71,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
             else
             {
+                ultimaMatricula = dbConn.obtenerVariableEntera("SELECT max(id_RegistroMatricula) FROM matricula");
                 ultimaMatricula += 1;
                 txtNoMatricula.Text = "" + ultimaMatricula;
             }
@@ -123,7 +126,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                     mesesDePago = 10;
                                 }
 
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtNombreEncargado.Text, txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, cmbSeccion.SelectedIndex, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtNombreEncargado.Text, txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudiante.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -503,7 +506,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                 {
                                     mesesDePago = 10;
                                 }
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, cmbSeccionR.SelectedIndex, float.Parse(txtTotalR.Text), 1, mesesDePago, 1, 2))
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 1, mesesDePago, 1, 2))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -1599,6 +1602,33 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
         private void btnLimpiarEncargadoMat_Click(object sender, EventArgs e)
         {
             limpiarEncargadoAgregado();
+        }
+
+        private void cmbSeccion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSeccion.SelectedIndex != 0)
+            {
+                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccion.SelectedItem.ToString() + "'");
+
+
+            }
+            else {
+                idSeccion = 0;
+            }
+
+        }
+
+        private void cmbSeccionR_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSeccionR.SelectedIndex != 0)
+            {
+                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccion.SelectedItem.ToString() + "'");
+
+            }
+            else
+            {
+                idSeccion = 0;
+            }
         }
     }
 
