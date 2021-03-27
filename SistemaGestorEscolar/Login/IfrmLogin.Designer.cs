@@ -112,6 +112,9 @@
             this.panSuperior.Name = "panSuperior";
             this.panSuperior.Size = new System.Drawing.Size(1920, 45);
             this.panSuperior.TabIndex = 6;
+            this.panSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseDown);
+            this.panSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseMove);
+            this.panSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseUp);
             // 
             // btnMinimizar
             // 
@@ -126,6 +129,7 @@
             this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnMaximizar
             // 

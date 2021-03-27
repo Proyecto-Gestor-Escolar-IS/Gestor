@@ -509,6 +509,7 @@
     <Content Include="Querys DB\ModeloBaseDeDatos.sql" />
     <Content Include="Querys DB\Procedimientos Almacenados Y Vistas.sql" />
     <Content Include="Resources\icons8_refreshblack_32.png" />
+    <None Include="Resources\logout1.png" />
     <Content Include="Resources\search2_32px.png" />
     <None Include="Resources\search2_32px1.png" />
   </ItemGroup>

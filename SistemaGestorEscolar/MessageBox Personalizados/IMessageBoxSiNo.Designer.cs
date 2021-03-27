@@ -58,7 +58,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Black;
-            this.lblError.Location = new System.Drawing.Point(121, 98);
+            this.lblError.Location = new System.Drawing.Point(98, 98);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(245, 22);
             this.lblError.TabIndex = 21;
@@ -90,7 +90,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             // pctWarning
             // 
             this.pctWarning.Image = ((System.Drawing.Image)(resources.GetObject("pctWarning.Image")));
-            this.pctWarning.Location = new System.Drawing.Point(25, 61);
+            this.pctWarning.Location = new System.Drawing.Point(24, 61);
             this.pctWarning.Name = "pctWarning";
             this.pctWarning.Size = new System.Drawing.Size(65, 59);
             this.pctWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +102,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(163, 61);
+            this.label1.Location = new System.Drawing.Point(131, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 22);
             this.label1.TabIndex = 23;

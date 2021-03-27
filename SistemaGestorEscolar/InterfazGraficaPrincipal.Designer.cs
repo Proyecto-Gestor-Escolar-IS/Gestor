@@ -35,6 +35,7 @@ namespace SistemaGestorEscolar
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrarPrograma = new System.Windows.Forms.Button();
             this.panLateral = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnCambioTema = new System.Windows.Forms.Button();
             this.btnMenuPersonal = new System.Windows.Forms.Button();
             this.btnMenuRegistroPago = new System.Windows.Forms.Button();
@@ -142,6 +143,7 @@ namespace SistemaGestorEscolar
             // panLateral
             // 
             this.panLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.panLateral.Controls.Add(this.btnCerrarSesion);
             this.panLateral.Controls.Add(this.btnCambioTema);
             this.panLateral.Controls.Add(this.btnMenuPersonal);
             this.panLateral.Controls.Add(this.btnMenuRegistroPago);
@@ -158,6 +160,24 @@ namespace SistemaGestorEscolar
             this.panLateral.TabIndex = 1;
             this.panLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panLateral_Paint);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarSesion.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logout1;
+            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Black;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 991);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(43, 41);
+            this.btnCerrarSesion.TabIndex = 9;
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // btnCambioTema
             // 
             this.btnCambioTema.BackColor = System.Drawing.Color.Transparent;
@@ -169,7 +189,7 @@ namespace SistemaGestorEscolar
             this.btnCambioTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambioTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambioTema.ForeColor = System.Drawing.Color.Black;
-            this.btnCambioTema.Location = new System.Drawing.Point(3, 991);
+            this.btnCambioTema.Location = new System.Drawing.Point(66, 991);
             this.btnCambioTema.Name = "btnCambioTema";
             this.btnCambioTema.Size = new System.Drawing.Size(43, 41);
             this.btnCambioTema.TabIndex = 8;
@@ -578,9 +598,9 @@ namespace SistemaGestorEscolar
             this.panSubMenuPagos.Controls.Add(this.btnHistorialPagos);
             this.panSubMenuPagos.Controls.Add(this.btnRegistrarPago);
             this.panSubMenuPagos.Controls.Add(this.label1);
-            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 883);
+            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 888);
             this.panSubMenuPagos.Name = "panSubMenuPagos";
-            this.panSubMenuPagos.Size = new System.Drawing.Size(284, 50);
+            this.panSubMenuPagos.Size = new System.Drawing.Size(315, 80);
             this.panSubMenuPagos.TabIndex = 0;
             // 
             // btnHistorialPagos
@@ -601,6 +621,7 @@ namespace SistemaGestorEscolar
             this.btnHistorialPagos.TabIndex = 48;
             this.btnHistorialPagos.Text = "HISTORIAL PAGOS";
             this.btnHistorialPagos.UseVisualStyleBackColor = false;
+            this.btnHistorialPagos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnHistorialPagos_MouseDown);
             // 
             // btnRegistrarPago
             // 
@@ -722,6 +743,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Button btnIngresarNuevoUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrarSesion;
         //private BrbVideoManager.Controls.RoundedButton btnMatriEstudiante;
         //private BrbVideoManager.Controls.RoundedButton btnVistaMatriculas;
     }
