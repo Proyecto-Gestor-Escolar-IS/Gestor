@@ -726,7 +726,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
 
             try
             {
-                if (mktIdentidadEstud.TextLength > 13 || mktIdentidadEstud.TextLength < 13)
+                if (mktIdentidadEstud.Text.Length > 13 || mktIdentidadEstud.Text.Length < 13)
                 {
                     messageError.lblError.Text = "Error en la identidad";
                     messageError.ShowDialog();
@@ -896,117 +896,117 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
 
         private void txtprimerNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el primer nombre";
-                messageWarning.ShowDialog();
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el primer nombre";
+            //    messageWarning.ShowDialog();
 
-                e.Handled = true;
-                return;
-            }
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtsegundoNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el segundo nombre";
-                messageWarning.ShowDialog();
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el segundo nombre";
+            //    messageWarning.ShowDialog();
 
-                e.Handled = true;
-                return;
-            }
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtprimerApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el primer apellido";
-                messageWarning.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el primer apellido";
+            //    messageWarning.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtsegundoApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el segundo apellido";
-                messageWarning.ShowDialog();
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el segundo apellido";
+            //    messageWarning.ShowDialog();
 
-                e.Handled = true;
-                return;
-            }
+            //    e.Handled = true;
+            //    return;
+            //}
         }
         //Metodos y validaciones De registro de  Encargado
         private void txtPrimerNombreEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el primer nombre";
-                messageWarning.ShowDialog();
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el primer nombre";
+            //    messageWarning.ShowDialog();
 
-                e.Handled = true;
-                return;
-            }
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtSegundoNombreEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el segundo nombre";
-                messageWarning.ShowDialog();
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el segundo nombre";
+            //    messageWarning.ShowDialog();
 
-                e.Handled = true;
-                return;
-            }
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtPrimerApellidoEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el primer apellido";
-                messageWarning.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el primer apellido";
+            //    messageWarning.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtSegundoApellidoEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el segundo apellido";
-                messageWarning.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el segundo apellido";
+            //    messageWarning.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtprimerTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el número de teléfono";
-                messageWarning.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el número de teléfono";
+            //    messageWarning.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtTelefonoAlternativo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageWarning.lblError.Text = "Ingrese correctamente el número de teléfono";
-                messageWarning.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageWarning.lblError.Text = "Ingrese correctamente el número de teléfono";
+            //    messageWarning.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void mktIdentidadEncargado_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -1083,7 +1083,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (mktIdentidadEncargado.TextLength > 13 || mktIdentidadEncargado.TextLength < 13)
+                if (mktIdentidadEncargado.Text.Length > 13 || mktIdentidadEncargado.Text.Length < 13)
                 {
                     messageError.lblError.Text = "Error en la identidad";
                     messageError.ShowDialog();
@@ -1091,11 +1091,11 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                 }
                 else
                 {
-                        if (txtPrimerNombreEncarg.Text == "" && txtPrimerApellidoEncarg.Text == "" &&
-                         txtcorreoElectronico.Text == "" && txtprimerTelefono.Text == "" &&
-                         txtTelefonoAlternativo.Text == "" && txtDireccion.Text == "" && "2001/12/22" == "")
+                        if (txtPrimerNombreEncarg.Text == "" || txtPrimerApellidoEncarg.Text == "" ||
+                         txtcorreoElectronico.Text == "" || txtprimerTelefono.Text == "" ||
+                         txtTelefonoAlternativo.Text == "" || txtDireccion.Text == "" || mskFechaNacimientoEncarg.Text == "")
                         {
-                            messageError.lblError.Text = "Debe llenar los campos necesarios";
+                            messageError.lblError.Text = "DEBE LLENAR LOS CAMPOS NECESARIOS";
                             messageError.lblError.Location = new Point(120, 82);
                             messageError.ShowDialog();
                         }
@@ -1105,8 +1105,16 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                         {
                             if (utilidad.isDate(mskFechaNacimientoEncarg.Text))
                             {
+                                if (txtprimerTelefono.Text.Length == 8 && txtTelefonoAlternativo.Text.Length == 8)
+                                {
                                 RegistrarEncargado();
-                                limpiarEncargado();
+                                }
+                                else
+                                {
+                                    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS\nNUMEROS DE TELÉFONO";
+                                    messageError.lblError.Location = new Point(120, 82);
+                                    messageError.ShowDialog();
+                                }
                             }
                             else
                             {
@@ -1138,16 +1146,13 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
 
             try
             {
-                if (dbConn.PARegistroEncargado(identidadEstudiante ,mktIdentidadEncargado.Text,
-                    txtPrimerNombreEncarg.Text, txtSegundoApellidoEncarg.Text, txtPrimerApellidoEncarg.Text,
-                    txtSegundoApellidoEncarg.Text, txtcorreoElectronico.Text, txtprimerTelefono.Text,
-                    txtTelefonoAlternativo.Text, txtDireccion.Text, mskFechaNacimientoEncarg.Text))
+
+                if (dbConn.PARegistroEncargado(identidadEstudiante ,mktIdentidadEncargado.Text, txtPrimerNombreEncarg.Text, txtSegundoNombreEncarg.Text, txtPrimerApellidoEncarg.Text, txtSegundoApellidoEncarg.Text, txtcorreoElectronico.Text, txtprimerTelefono.Text, txtTelefonoAlternativo.Text, txtDireccion.Text, mskFechaNacimientoEncarg.Text))
                 {
               
                     message.lblCheck.Text = "Encargado Registrado";
                     message.ShowDialog();
 
-                    limpiarPantalla();
                 }
                 else
                 {
@@ -1288,7 +1293,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                 }
                 else
                 {
-                    if (txtPrimerNombreEstudMod.Text == "" && txtPrimerApellidoEstudMod.Text == "")
+                    if (txtPrimerNombreEstudMod.Text == "" || txtPrimerApellidoEstudMod.Text == "")
                     {
                         messageError.lblError.Text = "INGRESE TODOS LOS DATOS NECESARIOS";
                         messageError.ShowDialog();
@@ -1330,29 +1335,32 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
 
         private void btnEliminarEncargado_Click(object sender, EventArgs e)
         {
+            int cantidadninios = dbConn.obtenerVariableEntera("select count(*) from detalleEncargado where id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "'");
             try
             {
-                if (dbConn.ComprobarExistencia("select estado from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'"))
-                {
-                    dbConn.ejecutarComandoSQL("DELETE FROM detalleEncargado WHERE id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "' and id_Estudiante = '" + identidadEstudianteModDatos + "'");
-                    dbConn.ejecutarComandoSQL("update datosEncargado set estado = 2 where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
+               
+                    if (cantidadninios == 1)
+                    {
 
-                    message.lblCheck.Text = "ENCARGADO ELIMINADO";
-                    message.ShowDialog();
+                        // dbConn.ejecutarComandoSQL("update datosEncargado set estado = 2 where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");                        dbConn.ejecutarComandoSQL("DELETE FROM detalleEncargado WHERE id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "' and id_Estudiante = '" + identidadEstudianteModDatos + "'");
+                        messageWarning.lblError.Text = "No Puede dejar sin encargados\nal estudiante";
+                        messageWarning.ShowDialog();
+                    }
+                    else
+                    {
+                        dbConn.ejecutarComandoSQL("DELETE FROM detalleEncargado WHERE id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "' and id_Estudiante = '" + identidadEstudianteModDatos + "'");
+                        message.lblCheck.Text = "ENCARGADO ELIMINADO";
+                        message.ShowDialog();
 
-                    cmbEncargadosReingreso.Items.Clear();
-                    txtIdentidadEstudianteR.Text = identidadEstudianteModDatos;
+                    }
+
+
+        
                     limpiarModificaciones();
                     grpReingreso.Visible = true;
                     gbEncargados.Visible = false;
 
-                }
-                else
-                {
-                    dbConn.ejecutarComandoSQL("DELETE FROM detalleEncargado WHERE id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "' and id_Estudiante = '" + identidadEstudianteModDatos + "'");
-                    messageWarning.lblError.Text = "SE HA ELIMINADO DE ESTE ALUMNO";
-                    messageWarning.ShowDialog();
-                }
+            
 
             }
             catch (Exception ex)
@@ -1441,112 +1449,112 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
 
         private void txtprimerNombreEncargadoMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtsegundoNombreEncargadoMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtprimerApellidoEncargadoMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtsegundoApellidoEncargadoMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtTelefonoEncargadoMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtsegundoTelefonoEncargadoMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtPrimerNombreEstudMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtSegundoNombreEstudMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtPrimerApellidoEstudMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void txtSegundoApellidoEstudMod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-                messageError.ShowDialog();
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
+            //    messageError.ShowDialog();
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         private void btnActualizarEliminarEncargado_Click(object sender, EventArgs e)
@@ -1571,10 +1579,29 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                 dbConn.llenarTextBox(txtsegundoApellidoEncargadoMod, "select segundoApellido from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
                 dbConn.llenarTextBox(txtCorreoElectronicoEncargadoMod, "select correoElectronico from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
                 txtfechaNacimientoEncargadoMod.Text = dbConn.obtenerVariableDate("select fechaNacimiento from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'").ToString("dd/MM/yyyy");
-                dbConn.llenarTextBox(txtTelefonoEncargadoMod, "select numeroTelefono from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
-                dbConn.llenarTextBox(txtsegundoTelefonoEncargadoMod, "select numeroTelefonoAlt from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
+                txtTelefonoEncargadoMod.Text = dbConn.obtenerVariableString("select numeroTelefono from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
+                txtsegundoTelefonoEncargadoMod.Text = dbConn.obtenerVariableString("select numeroTelefonoAlt from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
                 dbConn.llenarTextBox(txtDireccionEncargadoMod, "select direccionTrabajo from datosEncargado where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");
             }
+        }
+
+        private void limpiarEncargadoAgregado()
+        {
+                mktIdentidadEncargado.Clear();
+                txtPrimerNombreEncarg.Clear();
+                txtSegundoNombreEncarg.Clear();
+                txtPrimerApellidoEncarg.Clear();
+                txtSegundoApellidoEncarg.Clear();
+                txtprimerTelefono.Clear();
+                txtTelefonoAlternativo.Clear();
+                txtcorreoElectronico.Clear();
+                mskFechaNacimientoEncarg.Clear();
+                txtDireccion.Clear();
+        }
+
+        private void btnLimpiarEncargadoMat_Click(object sender, EventArgs e)
+        {
+            limpiarEncargadoAgregado();
         }
 
         private void cmbSeccion_SelectedIndexChanged(object sender, EventArgs e)
