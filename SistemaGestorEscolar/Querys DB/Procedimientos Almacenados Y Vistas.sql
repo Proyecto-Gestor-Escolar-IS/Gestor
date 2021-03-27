@@ -156,7 +156,7 @@ AS BEGIN
 
 	SET @deudaMensualidad = @deudaMensualidad - @descuento
 
-	IF @deudaMensualidad = 0
+	IF @deudaMensualidad <= 0
 	BEGIN 
 		UPDATE detalleMensualidades SET fechaPago = @fechaPago,
 										saldoDisponible = @montoPago + saldoDisponible
