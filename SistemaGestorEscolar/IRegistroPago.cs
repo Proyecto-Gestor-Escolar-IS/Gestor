@@ -46,6 +46,7 @@ namespace SistemaGestorEscolar
             txtMontoPagar.Enabled = false;
             txtDescuento.Enabled = false;
             btnRegistrarPago.Enabled = false;
+            txtMontoPagar.Text = txtTotalPagar.Text;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -133,6 +134,7 @@ namespace SistemaGestorEscolar
                                 dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad); dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
                                 dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
                                 dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                                txtMontoPagar.Text = txtTotalPagar.Text;
                             }
                         }
                         else if (txtIdentidadEstudiante.TextLength > 13 || txtIdentidadEstudiante.TextLength < 13)
@@ -371,7 +373,7 @@ namespace SistemaGestorEscolar
                         {
                             txtDescuento.ForeColor = Color.Red;
                             txtMontoPagar.Enabled = false;
-                            errorIdentidad.SetError(this.txtDescuento, "Debe pagar un monto mayor a 0!");
+                            errorIdentidad.SetError(this.txtDescuento, "Debe pagar un monto mayor a 100!");
                         }
                     }
                     else
