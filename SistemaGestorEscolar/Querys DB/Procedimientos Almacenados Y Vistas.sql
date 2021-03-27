@@ -456,3 +456,19 @@ AS BEGIN
 			VALUES( @id_expediente, @id_DoctorEncargado, GETDATE(), @sintomas, @posibleEnfermedad, @medicamentos)
 END
 GO
+
+
+
+Create Procedure agregarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float, @nota2doParcial float, @nota3erParcial float, @nota4toParcial float, @notaFinal float)
+As Begin 
+
+		If exists(select id_DetalleMatricula from detalleNotas Where
+				   (id_DetalleMatricula = @id_DetalleMatricula))
+			 Raiserror('El Alumno ya tiene registro de notas', 16,1)
+
+		else 
+
+		Insert into detalleNotas values(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, 1)
+
+End
+GO

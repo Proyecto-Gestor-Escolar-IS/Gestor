@@ -57,32 +57,14 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         {
             if (cmbCursos.Items.Count > 0)
             {
-                switch (cmbCursos.SelectedItem.ToString())
+                 
+                if(cmbCursos.Text != null)
                 {
-                    case "Nursery":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
-                        break;
-
-                    case "Pre-Kinder":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
-                        break;
-
-                    case "Kinder":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
-                        break;
-
-                    case "Primer Grado":
-                        cmbSeccion.Items.Clear();
-                        dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                            "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
-                        break;
+                    cmbSeccion.Items.Clear();
+                    dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
+                        "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
                 }
+
             }
 
 
@@ -146,6 +128,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void IfrmIngreso_de_Notas_Load(object sender, EventArgs e)
         {
+
+            dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM cursos c INNER JOIN seccion s ON c.id_Curso = s.id_Curso WHERE id_Docente = '" + clsVariablesGlobales.numIdentidad + "'");
 
             gpxSeleccionAlumno.Visible = false;
             gpxIngreso_Notas.Visible = false;

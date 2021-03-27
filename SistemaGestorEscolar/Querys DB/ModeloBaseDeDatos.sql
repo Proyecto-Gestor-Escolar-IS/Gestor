@@ -173,10 +173,10 @@ CREATE TABLE detalleNotas(
 id_DetalleNotas int identity primary key not null,
 id_DetalleMatricula int not null,
 id_Clase int not null,
-nota1erParcial numeric(3,2) not null,
-nota2doParcial numeric(3,2) not null,
-nota3erParcial numeric(3,2) not null,
-nota4toParcial numeric(3,2) not null,
+nota1erParcial float not null,
+nota2doParcial float not null,
+nota3erParcial float not null,
+nota4toParcial float not null,
 notaFinal numeric(3,2) not null,
 estado int not null
 
