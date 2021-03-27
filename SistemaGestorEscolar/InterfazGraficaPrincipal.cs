@@ -23,7 +23,7 @@ namespace SistemaGestorEscolar
 
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-
+    
 
             Properties.Settings.Default.Reset();
             try
@@ -1274,7 +1274,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            //AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
+            AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
 
             if (codigoColor == 1)
             {
@@ -1284,6 +1284,14 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+
+            Login.IfrmLogin login = new Login.IfrmLogin();
+            login.Show();
+            this.Close();
         }
     }
 }

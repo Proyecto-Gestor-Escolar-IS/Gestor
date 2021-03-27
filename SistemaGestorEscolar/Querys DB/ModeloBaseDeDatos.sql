@@ -60,14 +60,24 @@ FOREIGN KEY (id_Docente) REFERENCES datosEmpleados(identidadPersona)
 )
 
 
+CREATE TABLE clases(
+id_Clase int primary key identity not null,
+nombreClase varchar(25) not null,
+estado int not null,
+
+FOREIGN KEY (estado) REFERENCES estados(id_Estado)
+)
+
 --Tabla que contiene las clases que conlleva cada curso
 CREATE TABLE clasesCurso(
-id_Clase int primary key identity not null,
+id_Clase int not null,
 id_Curso int not null,
-nombreClase varchar(25),
 
-FOREIGN KEY (id_Curso) REFERENCES cursos(id_Curso)
+PRIMARY KEY(id_Clase, id_Curso),
+FOREIGN KEY (id_Curso) REFERENCES cursos(id_Curso),
+FOREIGN KEY (id_Clase) REFERENCES clases(id_Clase)
 )
+
 
 --Tabla encargada de los datos de los estudiantes
 CREATE TABLE datosEstudiante(

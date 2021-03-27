@@ -109,6 +109,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 lblIdentidadNotas.Text = txtIdentidadEstudiante.Text;
                 lblNombreNotas.Text = txtNombreEstudiante.Text;
 
+                cmbCurso.Items.Clear();
                 dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT A.[nombreCurso] FROM [dbo].[cursos] A INNER JOIN[dbo].[detalleMatricula] B ON A.id_Curso = B.id_Curso INNER JOIN[dbo].[matricula] C ON B.id_RegistroMatricula = C.id_RegistroMatricula WHERE C.id_Estudiante = '" + identidadEstudiante + "'");
                 cmbCurso.SelectedIndex = 0;
             }
@@ -185,7 +186,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 {
                     txtLikeIdentidad.ForeColor = Color.Green;
                     errorIdentidad.Clear();
-                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre',  estado as 'Estado'  FROM datosEstudiante WHERE (identidadEstudiante LIKE '" + txtLikeIdentidad.Text + "%') OR (CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) like '" + txtLikeIdentidad.Text + "%')");
+                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre'  FROM datosEstudiante WHERE (identidadEstudiante LIKE '" + txtLikeIdentidad.Text + "%') OR (CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) like '" + txtLikeIdentidad.Text + "%')");
                 }
                 else
                 {
@@ -196,7 +197,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
             else
             {
-                dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre',  estado as 'Estado'  FROM datosEstudiante");
+                dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre'  FROM datosEstudiante");
 
             }
         }

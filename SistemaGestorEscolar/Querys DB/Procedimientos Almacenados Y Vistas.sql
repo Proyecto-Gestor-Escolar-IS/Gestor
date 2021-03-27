@@ -285,7 +285,7 @@ GO
 
 
 --Procedimiento almacenado para registrar un encargado 
-Create procedure RegistrarEncargado
+ALTER procedure RegistrarEncargado
 (
 @NumidentidadEstudiante varchar(13), @Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
 @segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),
@@ -299,6 +299,7 @@ begin
 	set primerNombre = @PrimerNombre, segundoNombre = @segundoNombre, primerApellido = @PrimerApellido, segundoApellido = @SegundoApellido,
 	correoElectronico = @correoElectronico, numeroTelefono = @numeroTelefono, numeroTelefonoAlt = @numeroTelefonoAlt, direccionTrabajo = @direccionTrabajo, estado = 1
 	where identidadEncargado = @Numidentidad
+
 end
 else if not exists(select identidadEncargado from datosEncargado where identidadEncargado = @Numidentidad)
 begin
@@ -306,8 +307,10 @@ begin
 	@correoElectronico, @direccionTrabajo, @fechaNacimiento, 1);
 end
 
-
+if not exists(select id_Estudiante from detalleEncargado where id_encargadoAlumno = @Numidentidad and  id_Estudiante = @NumidentidadEstudiante)
+begin
 INSERT INTO detalleEncargado VALUES(@Numidentidad, @NumidentidadEstudiante);
+end
 
 END
 GO
@@ -411,7 +414,7 @@ BEGIN
 	END
 
 END
-
+GO
 ---------------Registrar curso-----------------
 CREATE PROCEDURE PARegistrarCurso (
 @nombreCurso varchar(30),

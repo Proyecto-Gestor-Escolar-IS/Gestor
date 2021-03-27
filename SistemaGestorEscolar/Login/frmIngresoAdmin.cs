@@ -99,6 +99,7 @@ namespace SistemaGestorEscolar.Login
 
         private void frmIngresoAdmin_Load(object sender, EventArgs e)
         {
+            txtNombre1.Focus();
             btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             btnSiguiente.Enabled = false;
             txtIdentidad.Text = txtIdentid;
@@ -134,7 +135,7 @@ namespace SistemaGestorEscolar.Login
              
                         if(utilidad.enviarCorreo(" < h1 > VERIFICACI & Oacute; N DE CORREO ELECTR&Oacute; NICO </ h1 > ",txtCorreoRecuperacion.Text,txtCorreoRecuperacion.Text,txtContraseRecuperacion.Text, txtHost.Text, Convert.ToInt32(txtPuerto.Text)) == true)
                         {
-                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), "22/12/2021",
+                            if (dbConn.PAOperacionEmpleado(txtIdentid, txtNombre1.Text, txtNombre2.Text, txtApellido1.Text, txtApellido2.Text, Convert.ToInt32(txtTel.Text), txtFechaNa.Text,
                             txtCorreo.Text, 1, utilidad.EncriptarTexto(txtConfirmContra.Text), 1, -1, 1))
                             {
                                 try

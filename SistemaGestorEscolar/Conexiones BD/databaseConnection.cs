@@ -300,7 +300,7 @@ namespace SistemaGestorEscolar
                 else
                 {
                     databaseIntermediary.Close();
-                    MessageBox.Show("Error de Insercion Usuario", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Error de Insercion Usuario", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
