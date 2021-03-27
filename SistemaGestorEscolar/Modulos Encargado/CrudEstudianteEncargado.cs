@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Modulos_Encargado
 {
@@ -318,6 +319,16 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
 
                 txtIdentidad.Text = identidadEncargado;
+                dbConn.llenarTextBox(txtprimerNombre, "select primerNombre from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+                dbConn.llenarTextBox(txtsegundoNombre, "select segundoNombre from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+                dbConn.llenarTextBox(txtprimerApellido, "select primerApellido from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+                dbConn.llenarTextBox(txtsegundoApellido, "select segundoApellido from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+                dbConn.llenarTextBox(txtCorreoElectronico, "select correoElectronico from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+                txtfechaNacimiento.Text = dbConn.obtenerVariableDate("select fechaNacimiento from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'").ToString("dd/MM/yyyy");
+                txtprimerTelefono.Text = dbConn.obtenerVariableString("select numeroTelefono from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+                txtsegundoTelefono.Text = dbConn.obtenerVariableString("select numeroTelefonoAlt from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+                dbConn.llenarTextBox(txtDireccion, "select direccionTrabajo from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
+
                 gbListadoEncargado.Visible = false;
                 gbEncargados.Visible = true;
             }
@@ -330,15 +341,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtIdentidad_TextChanged_1(object sender, EventArgs e)
         {
-            dbConn.llenarTextBox(txtprimerNombre, "select primerNombre from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
-            dbConn.llenarTextBox(txtsegundoNombre, "select segundoNombre from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
-            dbConn.llenarTextBox(txtprimerApellido, "select primerApellido from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
-            dbConn.llenarTextBox(txtsegundoApellido, "select segundoApellido from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
-            dbConn.llenarTextBox(txtCorreoElectronico, "select correoElectronico from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
-            txtfechaNacimiento.Text = dbConn.obtenerVariableDate("select fechaNacimiento from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'").ToString("dd/MM/yyyy");
-            dbConn.llenarTextBox(txtprimerTelefono, "select numeroTelefono from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
-            dbConn.llenarTextBox(txtsegundoTelefono, "select numeroTelefonoAlt from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
-            dbConn.llenarTextBox(txtDireccion, "select direccionTrabajo from datosEncargado where identidadEncargado = '" + txtIdentidad.Text + "'");
 
         }
 
@@ -352,18 +354,14 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             gbListadoEncargado.Visible = false;
             gbEncargados.Visible = false;
-            btnEstudiantes.Visible = true;
-            btnEncargados.Visible = true;
-            lblGestionEncargadosEstudiantes.Visible = true;
+            pnlGestionEstudianteEncargado.Visible = false;
             limpiarPantalla();
         }
 
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
             gbListadoEstudiantes.Visible = true;
-            btnEstudiantes.Visible = false;
-            btnEncargados.Visible = false;
-            lblGestionEncargadosEstudiantes.Visible = false;
+            pnlGestionEstudianteEncargado.Visible = false;
 
         }
 
@@ -376,9 +374,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             gbListadoEstudiantes.Visible = false;
             gbEncargados.Visible = false;
-            btnEstudiantes.Visible = true;
-            btnEncargados.Visible = true;
-            lblGestionEncargadosEstudiantes.Visible = true;
+            pnlGestionEstudianteEncargado.Visible = true;
             limpiarPantalla();
         }
 
@@ -386,9 +382,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             gbEstudiantes.Visible = false;
             gbListadoEstudiantes.Visible = false;
-            btnEstudiantes.Visible = true;
-            btnEncargados.Visible = true;
-            lblGestionEncargadosEstudiantes.Visible = true;
+            pnlGestionEstudianteEncargado.Visible = true;
             limpiarPantalla();
         }
         private void dgvListadoEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -402,6 +396,27 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             {
 
                 txtIdentidadEstud.Text = identidadEstudiante;
+                string genero;
+                txtFechaNacimientocEstud.Text = dbConn.obtenerVariableDate("select fechaNacimiento from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'").ToString("dd/MM/yyyy");
+                dbConn.llenarTextBox(txtprimerNombreEstud, "select primerNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+                dbConn.llenarTextBox(txtsegundoNombreEstud, "select segundoNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+                dbConn.llenarTextBox(txtprimerApellidoEstud, "select primerApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+                dbConn.llenarTextBox(txtsegundoApellidoEstud, "select segundoApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+                genero = dbConn.obtenerVariableString("select genero from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
+
+                if (genero == "M")
+                {
+                    cmbgeneroEstudiante.SelectedItem = "M";
+                }
+                else if (genero == "F")
+                {
+                    cmbgeneroEstudiante.SelectedItem = "F";
+                }
+                else
+                {
+                    cmbgeneroEstudiante.SelectedIndex = -1;
+                }
+
                 gbListadoEstudiantes.Visible = false;
                 gbEstudiantes.Visible = true;
             }
@@ -562,26 +577,17 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtIdentidadEstud_TextChanged(object sender, EventArgs e)
         {
-            string genero;
-            txtFechaNacimientocEstud.Text = dbConn.obtenerVariableDate("select fechaNacimiento from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'").ToString("dd/MM/yyyy");
-            dbConn.llenarTextBox(txtprimerNombreEstud, "select primerNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
-            dbConn.llenarTextBox(txtsegundoNombreEstud, "select segundoNombre from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
-            dbConn.llenarTextBox(txtprimerApellidoEstud, "select primerApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
-            dbConn.llenarTextBox(txtsegundoApellidoEstud, "select segundoApellido from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
-            genero = dbConn.obtenerVariableString("select genero from datosEstudiante where identidadEstudiante = '" + txtIdentidadEstud.Text + "'");
 
-            if (genero == "M")
-            {
-                cmbgeneroEstudiante.SelectedItem = "M";
-            }
-            else if(genero == "F")
-            {
-                cmbgeneroEstudiante.SelectedItem = "F";
-            }
-            else
-            {
-                cmbgeneroEstudiante.SelectedIndex = -1;
-            }
+        }
+
+        private void CrudEstudianteEncargado_Load(object sender, EventArgs e)
+        {
+            ClsCambioTema.cambiarTemaBoton(gbEstudiantes);
+            ClsCambioTema.cambiarTemaBoton(gbEncargados);
+            ClsCambioTema.cambiarTemaBoton(gbListadoEstudiantes);
+            ClsCambioTema.cambiarTemaBoton(gbListadoEncargado);
+            ClsCambioTema.cambiarTemaBoton(pnlGestionEstudianteEncargado);
+
         }
     }
 }
