@@ -156,7 +156,7 @@ AS BEGIN
 
 	SET @deudaMensualidad = @deudaMensualidad - @descuento
 
-	IF @deudaMensualidad = 0
+	IF @deudaMensualidad <= 0
 	BEGIN 
 		UPDATE detalleMensualidades SET fechaPago = @fechaPago,
 										saldoDisponible = @montoPago + saldoDisponible
@@ -285,7 +285,7 @@ GO
 
 
 --Procedimiento almacenado para registrar un encargado 
-ALTER procedure RegistrarEncargado
+CREATE procedure RegistrarEncargado
 (
 @NumidentidadEstudiante varchar(13), @Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
 @segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),

@@ -29,8 +29,10 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IGestionCursos));
             this.grbPrincipal = new System.Windows.Forms.GroupBox();
+            this.btnAgregarSeccion = new AltoControls.AltoButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtIdCurso = new System.Windows.Forms.TextBox();
             this.btnEliminar = new AltoControls.AltoButton();
             this.btnActualizarCurso = new AltoControls.AltoButton();
             this.btnRegistrarCurso = new AltoControls.AltoButton();
@@ -38,18 +40,40 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCursos = new System.Windows.Forms.Label();
             this.grbDgv = new System.Windows.Forms.GroupBox();
+            this.btnActivos = new AltoControls.AltoButton();
+            this.btnInactivos = new AltoControls.AltoButton();
+            this.dgvCursosInactivos = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.btnActualizarDgv = new AltoControls.AltoButton();
+            this.grbSeccionesCont = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnActualizarSecc = new AltoControls.AltoButton();
+            this.btnRegistrarSecc = new AltoControls.AltoButton();
+            this.txtSeccion = new System.Windows.Forms.TextBox();
+            this.cmbDocentes = new System.Windows.Forms.ComboBox();
+            this.cmbCursos = new System.Windows.Forms.ComboBox();
+            this.btnRegresar = new AltoControls.AltoButton();
+            this.lblSecciones = new System.Windows.Forms.Label();
+            this.dgvSecciones = new System.Windows.Forms.DataGridView();
+            this.grbDgvSecciones = new System.Windows.Forms.GroupBox();
             this.grbPrincipal.SuspendLayout();
             this.grbDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosInactivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
+            this.grbSeccionesCont.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecciones)).BeginInit();
+            this.grbDgvSecciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbPrincipal
             // 
+            this.grbPrincipal.Controls.Add(this.btnAgregarSeccion);
+            this.grbPrincipal.Controls.Add(this.label5);
+            this.grbPrincipal.Controls.Add(this.txtIdCurso);
             this.grbPrincipal.Controls.Add(this.btnEliminar);
             this.grbPrincipal.Controls.Add(this.btnActualizarCurso);
             this.grbPrincipal.Controls.Add(this.btnRegistrarCurso);
@@ -58,11 +82,49 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grbPrincipal.Controls.Add(this.txtPrecio);
             this.grbPrincipal.Controls.Add(this.label3);
             this.grbPrincipal.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbPrincipal.Location = new System.Drawing.Point(47, 140);
+            this.grbPrincipal.Location = new System.Drawing.Point(32, 140);
             this.grbPrincipal.Name = "grbPrincipal";
-            this.grbPrincipal.Size = new System.Drawing.Size(846, 840);
+            this.grbPrincipal.Size = new System.Drawing.Size(861, 840);
             this.grbPrincipal.TabIndex = 0;
             this.grbPrincipal.TabStop = false;
+            // 
+            // btnAgregarSeccion
+            // 
+            this.btnAgregarSeccion.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.btnAgregarSeccion.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.btnAgregarSeccion.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarSeccion.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAgregarSeccion.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarSeccion.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregarSeccion.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.btnAgregarSeccion.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.btnAgregarSeccion.Location = new System.Drawing.Point(140, 617);
+            this.btnAgregarSeccion.Name = "btnAgregarSeccion";
+            this.btnAgregarSeccion.Radius = 10;
+            this.btnAgregarSeccion.Size = new System.Drawing.Size(258, 45);
+            this.btnAgregarSeccion.Stroke = false;
+            this.btnAgregarSeccion.StrokeColor = System.Drawing.Color.Gray;
+            this.btnAgregarSeccion.TabIndex = 13;
+            this.btnAgregarSeccion.Text = "Agregar sección";
+            this.btnAgregarSeccion.Transparency = false;
+            this.btnAgregarSeccion.Click += new System.EventHandler(this.btnAgregarSeccion_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(60, 297);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 24);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Curso";
+            // 
+            // txtIdCurso
+            // 
+            this.txtIdCurso.Location = new System.Drawing.Point(226, 290);
+            this.txtIdCurso.Name = "txtIdCurso";
+            this.txtIdCurso.ReadOnly = true;
+            this.txtIdCurso.Size = new System.Drawing.Size(100, 31);
+            this.txtIdCurso.TabIndex = 11;
             // 
             // btnEliminar
             // 
@@ -74,7 +136,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
             this.btnEliminar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
             this.btnEliminar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
-            this.btnEliminar.Location = new System.Drawing.Point(567, 506);
+            this.btnEliminar.Location = new System.Drawing.Point(567, 491);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Radius = 10;
             this.btnEliminar.Size = new System.Drawing.Size(241, 58);
@@ -133,6 +195,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(232, 31);
             this.txtNombreCurso.TabIndex = 6;
+            this.txtNombreCurso.TextChanged += new System.EventHandler(this.txtNombreCurso_TextChanged);
             // 
             // label4
             // 
@@ -149,6 +212,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(232, 31);
             this.txtPrecio.TabIndex = 4;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // label3
             // 
@@ -159,19 +223,22 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label3.TabIndex = 3;
             this.label3.Text = "Precio";
             // 
-            // label1
+            // lblCursos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(645, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(360, 41);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "GESTION DE CURSOS";
+            this.lblCursos.AutoSize = true;
+            this.lblCursos.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCursos.Location = new System.Drawing.Point(626, 54);
+            this.lblCursos.Name = "lblCursos";
+            this.lblCursos.Size = new System.Drawing.Size(360, 41);
+            this.lblCursos.TabIndex = 1;
+            this.lblCursos.Text = "GESTIÓN DE CURSOS";
+            this.lblCursos.Visible = false;
             // 
             // grbDgv
             // 
-            this.grbDgv.Controls.Add(this.btnActualizarDgv);
+            this.grbDgv.Controls.Add(this.btnActivos);
+            this.grbDgv.Controls.Add(this.btnInactivos);
+            this.grbDgv.Controls.Add(this.dgvCursosInactivos);
             this.grbDgv.Controls.Add(this.label2);
             this.grbDgv.Controls.Add(this.dgvCursos);
             this.grbDgv.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,6 +247,61 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grbDgv.Size = new System.Drawing.Size(715, 840);
             this.grbDgv.TabIndex = 3;
             this.grbDgv.TabStop = false;
+            // 
+            // btnActivos
+            // 
+            this.btnActivos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.btnActivos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.btnActivos.BackColor = System.Drawing.Color.Transparent;
+            this.btnActivos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActivos.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivos.ForeColor = System.Drawing.Color.Black;
+            this.btnActivos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.btnActivos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.btnActivos.Location = new System.Drawing.Point(507, 132);
+            this.btnActivos.Name = "btnActivos";
+            this.btnActivos.Radius = 10;
+            this.btnActivos.Size = new System.Drawing.Size(172, 46);
+            this.btnActivos.Stroke = false;
+            this.btnActivos.StrokeColor = System.Drawing.Color.Gray;
+            this.btnActivos.TabIndex = 8;
+            this.btnActivos.Text = "Ver Activos";
+            this.btnActivos.Transparency = false;
+            this.btnActivos.Visible = false;
+            this.btnActivos.Click += new System.EventHandler(this.btnActivos_Click);
+            // 
+            // btnInactivos
+            // 
+            this.btnInactivos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.btnInactivos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.btnInactivos.BackColor = System.Drawing.Color.Transparent;
+            this.btnInactivos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnInactivos.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInactivos.ForeColor = System.Drawing.Color.Black;
+            this.btnInactivos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.btnInactivos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.btnInactivos.Location = new System.Drawing.Point(507, 132);
+            this.btnInactivos.Name = "btnInactivos";
+            this.btnInactivos.Radius = 10;
+            this.btnInactivos.Size = new System.Drawing.Size(172, 46);
+            this.btnInactivos.Stroke = false;
+            this.btnInactivos.StrokeColor = System.Drawing.Color.Gray;
+            this.btnInactivos.TabIndex = 7;
+            this.btnInactivos.Text = "Ver Inactivos";
+            this.btnInactivos.Transparency = false;
+            this.btnInactivos.Click += new System.EventHandler(this.btnInactivos_Click);
+            // 
+            // dgvCursosInactivos
+            // 
+            this.dgvCursosInactivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCursosInactivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCursosInactivos.Location = new System.Drawing.Point(50, 184);
+            this.dgvCursosInactivos.Name = "dgvCursosInactivos";
+            this.dgvCursosInactivos.ReadOnly = true;
+            this.dgvCursosInactivos.Size = new System.Drawing.Size(629, 628);
+            this.dgvCursosInactivos.TabIndex = 5;
+            this.dgvCursosInactivos.Visible = false;
+            this.dgvCursosInactivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosInactivos_CellClick);
             // 
             // label2
             // 
@@ -202,27 +324,171 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvCursos.TabIndex = 0;
             this.dgvCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellClick);
             // 
-            // btnActualizarDgv
+            // grbSeccionesCont
             // 
-            this.btnActualizarDgv.Active1 = System.Drawing.Color.Transparent;
-            this.btnActualizarDgv.Active2 = System.Drawing.Color.Transparent;
-            this.btnActualizarDgv.BackColor = System.Drawing.Color.Transparent;
-            this.btnActualizarDgv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnActualizarDgv.BackgroundImage")));
-            this.btnActualizarDgv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnActualizarDgv.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnActualizarDgv.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
-            this.btnActualizarDgv.ForeColor = System.Drawing.Color.Transparent;
-            this.btnActualizarDgv.Inactive1 = System.Drawing.Color.Transparent;
-            this.btnActualizarDgv.Inactive2 = System.Drawing.Color.Transparent;
-            this.btnActualizarDgv.Location = new System.Drawing.Point(50, 132);
-            this.btnActualizarDgv.Name = "btnActualizarDgv";
-            this.btnActualizarDgv.Radius = 10;
-            this.btnActualizarDgv.Size = new System.Drawing.Size(47, 46);
-            this.btnActualizarDgv.Stroke = false;
-            this.btnActualizarDgv.StrokeColor = System.Drawing.Color.Gray;
-            this.btnActualizarDgv.TabIndex = 4;
-            this.btnActualizarDgv.Transparency = false;
-            this.btnActualizarDgv.Click += new System.EventHandler(this.btnActualizarDgv_Click);
+            this.grbSeccionesCont.Controls.Add(this.label7);
+            this.grbSeccionesCont.Controls.Add(this.label6);
+            this.grbSeccionesCont.Controls.Add(this.label1);
+            this.grbSeccionesCont.Controls.Add(this.btnActualizarSecc);
+            this.grbSeccionesCont.Controls.Add(this.btnRegistrarSecc);
+            this.grbSeccionesCont.Controls.Add(this.txtSeccion);
+            this.grbSeccionesCont.Controls.Add(this.cmbDocentes);
+            this.grbSeccionesCont.Controls.Add(this.cmbCursos);
+            this.grbSeccionesCont.Controls.Add(this.btnRegresar);
+            this.grbSeccionesCont.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSeccionesCont.Location = new System.Drawing.Point(32, 139);
+            this.grbSeccionesCont.Name = "grbSeccionesCont";
+            this.grbSeccionesCont.Size = new System.Drawing.Size(861, 884);
+            this.grbSeccionesCont.TabIndex = 4;
+            this.grbSeccionesCont.TabStop = false;
+            this.grbSeccionesCont.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(59, 308);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 26);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Sección:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(59, 507);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 26);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Docentes:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 407);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 26);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Cursos:";
+            // 
+            // btnActualizarSecc
+            // 
+            this.btnActualizarSecc.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.btnActualizarSecc.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.btnActualizarSecc.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizarSecc.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActualizarSecc.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarSecc.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizarSecc.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.btnActualizarSecc.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.btnActualizarSecc.Location = new System.Drawing.Point(611, 332);
+            this.btnActualizarSecc.Name = "btnActualizarSecc";
+            this.btnActualizarSecc.Radius = 10;
+            this.btnActualizarSecc.Size = new System.Drawing.Size(197, 58);
+            this.btnActualizarSecc.Stroke = false;
+            this.btnActualizarSecc.StrokeColor = System.Drawing.Color.Gray;
+            this.btnActualizarSecc.TabIndex = 6;
+            this.btnActualizarSecc.Text = "ACTUALIZAR";
+            this.btnActualizarSecc.Transparency = false;
+            // 
+            // btnRegistrarSecc
+            // 
+            this.btnRegistrarSecc.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.btnRegistrarSecc.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.btnRegistrarSecc.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarSecc.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistrarSecc.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarSecc.ForeColor = System.Drawing.Color.Black;
+            this.btnRegistrarSecc.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.btnRegistrarSecc.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.btnRegistrarSecc.Location = new System.Drawing.Point(611, 211);
+            this.btnRegistrarSecc.Name = "btnRegistrarSecc";
+            this.btnRegistrarSecc.Radius = 10;
+            this.btnRegistrarSecc.Size = new System.Drawing.Size(197, 58);
+            this.btnRegistrarSecc.Stroke = false;
+            this.btnRegistrarSecc.StrokeColor = System.Drawing.Color.Gray;
+            this.btnRegistrarSecc.TabIndex = 5;
+            this.btnRegistrarSecc.Text = "REGISTRAR";
+            this.btnRegistrarSecc.Transparency = false;
+            this.btnRegistrarSecc.Click += new System.EventHandler(this.btnRegistrarSecc_Click);
+            // 
+            // txtSeccion
+            // 
+            this.txtSeccion.Location = new System.Drawing.Point(226, 302);
+            this.txtSeccion.Name = "txtSeccion";
+            this.txtSeccion.Size = new System.Drawing.Size(209, 33);
+            this.txtSeccion.TabIndex = 4;
+            // 
+            // cmbDocentes
+            // 
+            this.cmbDocentes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDocentes.FormattingEnabled = true;
+            this.cmbDocentes.Location = new System.Drawing.Point(226, 499);
+            this.cmbDocentes.Name = "cmbDocentes";
+            this.cmbDocentes.Size = new System.Drawing.Size(311, 34);
+            this.cmbDocentes.TabIndex = 3;
+            // 
+            // cmbCursos
+            // 
+            this.cmbCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCursos.FormattingEnabled = true;
+            this.cmbCursos.Location = new System.Drawing.Point(226, 399);
+            this.cmbCursos.Name = "cmbCursos";
+            this.cmbCursos.Size = new System.Drawing.Size(311, 34);
+            this.cmbCursos.TabIndex = 1;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.btnRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.Black;
+            this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.btnRegresar.Location = new System.Drawing.Point(36, 801);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Radius = 10;
+            this.btnRegresar.Size = new System.Drawing.Size(198, 54);
+            this.btnRegresar.Stroke = false;
+            this.btnRegresar.StrokeColor = System.Drawing.Color.Gray;
+            this.btnRegresar.TabIndex = 0;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.Transparency = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // lblSecciones
+            // 
+            this.lblSecciones.AutoSize = true;
+            this.lblSecciones.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecciones.Location = new System.Drawing.Point(592, 54);
+            this.lblSecciones.Name = "lblSecciones";
+            this.lblSecciones.Size = new System.Drawing.Size(412, 41);
+            this.lblSecciones.TabIndex = 5;
+            this.lblSecciones.Text = "GESTIÓN DE SECCIONES";
+            this.lblSecciones.Visible = false;
+            // 
+            // dgvSecciones
+            // 
+            this.dgvSecciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSecciones.Location = new System.Drawing.Point(76, 157);
+            this.dgvSecciones.Name = "dgvSecciones";
+            this.dgvSecciones.ReadOnly = true;
+            this.dgvSecciones.Size = new System.Drawing.Size(585, 551);
+            this.dgvSecciones.TabIndex = 2;
+            this.dgvSecciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSecciones_CellClick);
+            // 
+            // grbDgvSecciones
+            // 
+            this.grbDgvSecciones.Controls.Add(this.dgvSecciones);
+            this.grbDgvSecciones.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDgvSecciones.Location = new System.Drawing.Point(908, 139);
+            this.grbDgvSecciones.Name = "grbDgvSecciones";
+            this.grbDgvSecciones.Size = new System.Drawing.Size(715, 884);
+            this.grbDgvSecciones.TabIndex = 6;
+            this.grbDgvSecciones.TabStop = false;
+            this.grbDgvSecciones.Visible = false;
             // 
             // IGestionCursos
             // 
@@ -230,9 +496,12 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.grbDgvSecciones);
+            this.Controls.Add(this.lblSecciones);
+            this.Controls.Add(this.grbSeccionesCont);
             this.Controls.Add(this.grbDgv);
             this.Controls.Add(this.grbPrincipal);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCursos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IGestionCursos";
             this.Text = "IGestionCursos";
@@ -241,7 +510,12 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grbPrincipal.PerformLayout();
             this.grbDgv.ResumeLayout(false);
             this.grbDgv.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosInactivos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
+            this.grbSeccionesCont.ResumeLayout(false);
+            this.grbSeccionesCont.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSecciones)).EndInit();
+            this.grbDgvSecciones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,13 +528,31 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCursos;
         private System.Windows.Forms.GroupBox grbDgv;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCursos;
         private AltoControls.AltoButton btnEliminar;
         private AltoControls.AltoButton btnActualizarCurso;
         private AltoControls.AltoButton btnRegistrarCurso;
-        private AltoControls.AltoButton btnActualizarDgv;
+        private System.Windows.Forms.DataGridView dgvCursosInactivos;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtIdCurso;
+        private AltoControls.AltoButton btnInactivos;
+        private AltoControls.AltoButton btnActivos;
+        private System.Windows.Forms.GroupBox grbSeccionesCont;
+        private AltoControls.AltoButton btnAgregarSeccion;
+        private System.Windows.Forms.Label lblSecciones;
+        private AltoControls.AltoButton btnRegresar;
+        private System.Windows.Forms.DataGridView dgvSecciones;
+        private System.Windows.Forms.ComboBox cmbCursos;
+        private System.Windows.Forms.TextBox txtSeccion;
+        private System.Windows.Forms.ComboBox cmbDocentes;
+        private AltoControls.AltoButton btnRegistrarSecc;
+        private System.Windows.Forms.GroupBox grbDgvSecciones;
+        private AltoControls.AltoButton btnActualizarSecc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
     }
 }

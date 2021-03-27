@@ -14,7 +14,9 @@ namespace SistemaGestorEscolar
         public static Image image;
 
         clsUtilidades utilidades = new clsUtilidades();
+        IMessageBoxCheck messageOk = new IMessageBoxCheck();
         IMessageBoxCheck message = new IMessageBoxCheck();
+        IMessageBoxError messageE = new IMessageBoxError();
         private databaseConnection dbConn = new databaseConnection();
         
         private int idUltimaMensualidad;
@@ -44,6 +46,7 @@ namespace SistemaGestorEscolar
             txtMontoPagar.Enabled = false;
             txtDescuento.Enabled = false;
             btnRegistrarPago.Enabled = false;
+            txtMontoPagar.Text = txtTotalPagar.Text;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -131,6 +134,7 @@ namespace SistemaGestorEscolar
                                 dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad); dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
                                 dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
                                 dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                                txtMontoPagar.Text = txtTotalPagar.Text;
                             }
                         }
                         else if (txtIdentidadEstudiante.TextLength > 13 || txtIdentidadEstudiante.TextLength < 13)
@@ -234,15 +238,22 @@ namespace SistemaGestorEscolar
                                 txtMontoPagar.Clear();
                                 txtDescuento.Clear();
                                 chkDescuento.Checked = false;
-                            }
+                            image = null;
+                        }
                             else
                             {
-                                MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
+                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
+                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            messageE.lblError.Location = new Point(130, 75);
+                            messageE.ShowDialog();
                             }
                     }
                     else
                     {
-                            MessageBox.Show("Ingrese un Comprobante de Pago", "Sin Comprobante", MessageBoxButtons.OK);
+                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
+                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        messageE.lblError.Location = new Point(130, 75);
+                        messageE.ShowDialog();
                     }
                 }
                 else if (chkDescuento.Checked == false)
@@ -258,15 +269,22 @@ namespace SistemaGestorEscolar
                         txtMontoPagar.Clear();
                         txtDescuento.Clear();
                         chkDescuento.Checked = false;
+                            image = null;
                         }
                         else
                         {
-                            MessageBox.Show("Error al Realizar el Pago", "Error Inesperado", MessageBoxButtons.OK);
+                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
+                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            messageE.lblError.Location = new Point(130, 75);
+                            messageE.ShowDialog();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese un Comprobante de Pago", "Sin Comprobante", MessageBoxButtons.OK);
+                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
+                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        messageE.lblError.Location = new Point(130, 75);
+                        messageE.ShowDialog();
                     }
                 }
             }
@@ -355,7 +373,7 @@ namespace SistemaGestorEscolar
                         {
                             txtDescuento.ForeColor = Color.Red;
                             txtMontoPagar.Enabled = false;
-                            errorIdentidad.SetError(this.txtDescuento, "Debe pagar un monto mayor a 0!");
+                            errorIdentidad.SetError(this.txtDescuento, "Debe pagar un monto mayor a 100!");
                         }
                     }
                     else

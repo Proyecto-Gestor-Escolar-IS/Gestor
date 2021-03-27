@@ -1293,5 +1293,23 @@ namespace SistemaGestorEscolar
             login.Show();
             this.Close();
         }
+
+        private void btnHistorialPagos_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
+            AbrirFormulario<Modulo_de_Pagos.IHistorialPagos>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
     }
 }
