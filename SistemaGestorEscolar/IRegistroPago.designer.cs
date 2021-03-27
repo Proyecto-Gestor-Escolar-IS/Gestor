@@ -359,7 +359,7 @@ namespace SistemaGestorEscolar
             this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarPago.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarPago.Location = new System.Drawing.Point(555, 880);
+            this.btnRegistrarPago.Location = new System.Drawing.Point(546, 880);
             this.btnRegistrarPago.Name = "btnRegistrarPago";
             this.btnRegistrarPago.Size = new System.Drawing.Size(538, 86);
             this.btnRegistrarPago.TabIndex = 16;
