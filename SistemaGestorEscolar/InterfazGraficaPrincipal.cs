@@ -23,7 +23,7 @@ namespace SistemaGestorEscolar
 
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-
+            clsVariablesGlobales.CodigoAcceso = 1;
 
             Properties.Settings.Default.Reset();
             try
@@ -1274,7 +1274,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            //AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
+            AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
 
             if (codigoColor == 1)
             {
