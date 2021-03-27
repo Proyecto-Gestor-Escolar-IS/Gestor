@@ -39,11 +39,11 @@ namespace SistemaGestorEscolar
             this.txtNombreEstudiante = new System.Windows.Forms.TextBox();
             this.txtFechaCreacion = new System.Windows.Forms.TextBox();
             this.txtAntecedenteMedico = new System.Windows.Forms.TextBox();
-            this.btnRegistrarAntecedente = new System.Windows.Forms.Button();
             this.panAntecedentes = new System.Windows.Forms.Panel();
             this.txtNumeroIdentidad = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtRegistarR = new AltoControls.AltoButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,22 +144,6 @@ namespace SistemaGestorEscolar
             this.txtAntecedenteMedico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAntecedenteMedico.TextChanged += new System.EventHandler(this.txtAntecedenteMedico_TextChanged);
             // 
-            // btnRegistrarAntecedente
-            // 
-            this.btnRegistrarAntecedente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarAntecedente.Enabled = false;
-            this.btnRegistrarAntecedente.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarAntecedente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarAntecedente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarAntecedente.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarAntecedente.Location = new System.Drawing.Point(682, 866);
-            this.btnRegistrarAntecedente.Name = "btnRegistrarAntecedente";
-            this.btnRegistrarAntecedente.Size = new System.Drawing.Size(272, 53);
-            this.btnRegistrarAntecedente.TabIndex = 20;
-            this.btnRegistrarAntecedente.Text = "REGISTRAR ";
-            this.btnRegistrarAntecedente.UseVisualStyleBackColor = false;
-            this.btnRegistrarAntecedente.Click += new System.EventHandler(this.btnRegistrarAntecedente_Click);
-            // 
             // panAntecedentes
             // 
             this.panAntecedentes.BackColor = System.Drawing.Color.Black;
@@ -193,16 +177,37 @@ namespace SistemaGestorEscolar
             // 
             this.errorIdentidad.ContainerControl = this;
             // 
+            // txtRegistarR
+            // 
+            this.txtRegistarR.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.txtRegistarR.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.txtRegistarR.BackColor = System.Drawing.Color.Transparent;
+            this.txtRegistarR.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.txtRegistarR.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegistarR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.txtRegistarR.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.txtRegistarR.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.txtRegistarR.Location = new System.Drawing.Point(668, 877);
+            this.txtRegistarR.Name = "txtRegistarR";
+            this.txtRegistarR.Radius = 20;
+            this.txtRegistarR.Size = new System.Drawing.Size(303, 84);
+            this.txtRegistarR.Stroke = true;
+            this.txtRegistarR.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.txtRegistarR.TabIndex = 85;
+            this.txtRegistarR.Text = "REGISTRAR";
+            this.txtRegistarR.Transparency = false;
+            this.txtRegistarR.Click += new System.EventHandler(this.txtRegistarR_Click);
+            // 
             // IAperturaExpedienteMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.txtRegistarR);
             this.Controls.Add(this.txtNumeroIdentidad);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panAntecedentes);
-            this.Controls.Add(this.btnRegistrarAntecedente);
             this.Controls.Add(this.txtAntecedenteMedico);
             this.Controls.Add(this.txtFechaCreacion);
             this.Controls.Add(this.txtNombreEstudiante);
@@ -234,10 +239,10 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.TextBox txtNombreEstudiante;
         private System.Windows.Forms.TextBox txtFechaCreacion;
         private System.Windows.Forms.TextBox txtAntecedenteMedico;
-        private System.Windows.Forms.Button btnRegistrarAntecedente;
         private System.Windows.Forms.Panel panAntecedentes;
         private System.Windows.Forms.TextBox txtNumeroIdentidad;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider errorIdentidad;
+        private AltoControls.AltoButton txtRegistarR;
     }
 }

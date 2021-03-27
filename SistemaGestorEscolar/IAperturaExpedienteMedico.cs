@@ -29,6 +29,8 @@ namespace SistemaGestorEscolar
 
         private void IAperturaExpedienteMedico_Load(object sender, EventArgs e)
         {
+
+
             if ((dbConn.retornarIdExpediente()) > 0)
             {
                 ultimoIdExpediente = dbConn.retornarIdExpediente() + 1;
@@ -121,7 +123,7 @@ namespace SistemaGestorEscolar
             }
         }
 
-        private void btnRegistrarAntecedente_Click(object sender, EventArgs e)
+       /* private void btnRegistrarAntecedente_Click(object sender, EventArgs e)
         {
             try
             {
@@ -148,7 +150,7 @@ namespace SistemaGestorEscolar
             {
                 Console.WriteLine(ex.Message);
             }
-        }
+        }*/
        
         private void txtNoExpediente_TextChanged(object sender, EventArgs e)
         {
@@ -174,12 +176,12 @@ namespace SistemaGestorEscolar
         {
             if(txtAntecedenteMedico.Text != string.Empty)
             {
-                btnRegistrarAntecedente.Enabled = true;
+                txtRegistarR.Enabled = true;
 
             }
             else
             {
-                btnRegistrarAntecedente.Enabled = false;
+                txtRegistarR.Enabled = false;
             }
         }
 
@@ -199,6 +201,35 @@ namespace SistemaGestorEscolar
         private void txtFechaCreacion_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtRegistarR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dbConn.abrirExpediente(txtNumeroIdentidad.Text, txtAntecedenteMedico.Text))
+
+                {
+                    messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
+                    messageOk.ShowDialog();
+                    txtNumeroIdentidad.Clear();
+                    txtNombreEstudiante.Clear();
+                    ultimoIdExpediente = dbConn.retornarIdExpediente() + 1;
+                    txtNoExpediente.Text = ultimoIdExpediente.ToString();
+                    txtAntecedenteMedico.Clear();
+                    txtFechaCreacion.Text = DateTime.Now.ToString();
+
+                }
+                else
+                {
+                    message.lblError.Text = "VERIFIQUE LOS DATOS";
+                    message.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

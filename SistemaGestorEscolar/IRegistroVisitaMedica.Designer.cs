@@ -30,8 +30,8 @@ namespace SistemaGestorEscolar
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreEstudiante = new System.Windows.Forms.TextBox();
@@ -45,7 +45,6 @@ namespace SistemaGestorEscolar
             this.txtSintomas = new System.Windows.Forms.TextBox();
             this.txtPosibleEnfermedad = new System.Windows.Forms.TextBox();
             this.txtMedicamentos = new System.Windows.Forms.TextBox();
-            this.btnRegistrarVisitaMedica = new System.Windows.Forms.Button();
             this.dgvHistorialMedico = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panSintomas = new System.Windows.Forms.Panel();
@@ -56,7 +55,8 @@ namespace SistemaGestorEscolar
             this.label10 = new System.Windows.Forms.Label();
             this.cmbMedicos = new System.Windows.Forms.ComboBox();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnRegistraar = new AltoControls.AltoButton();
+            this.btnLimpiaar = new AltoControls.AltoButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialMedico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
@@ -199,21 +199,6 @@ namespace SistemaGestorEscolar
             this.txtMedicamentos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMedicamentos.TextChanged += new System.EventHandler(this.txtMedicamentos_TextChanged);
             // 
-            // btnRegistrarVisitaMedica
-            // 
-            this.btnRegistrarVisitaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarVisitaMedica.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarVisitaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarVisitaMedica.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVisitaMedica.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(1186, 420);
-            this.btnRegistrarVisitaMedica.Name = "btnRegistrarVisitaMedica";
-            this.btnRegistrarVisitaMedica.Size = new System.Drawing.Size(272, 53);
-            this.btnRegistrarVisitaMedica.TabIndex = 28;
-            this.btnRegistrarVisitaMedica.Text = "REGISTRAR ";
-            this.btnRegistrarVisitaMedica.UseVisualStyleBackColor = false;
-            this.btnRegistrarVisitaMedica.Click += new System.EventHandler(this.btnRegistrarVisitaMedica_Click);
-            // 
             // dgvHistorialMedico
             // 
             this.dgvHistorialMedico.AllowUserToAddRows = false;
@@ -223,23 +208,23 @@ namespace SistemaGestorEscolar
             this.dgvHistorialMedico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dgvHistorialMedico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.dgvHistorialMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistorialMedico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistorialMedico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvHistorialMedico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistorialMedico.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistorialMedico.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvHistorialMedico.Location = new System.Drawing.Point(76, 665);
             this.dgvHistorialMedico.Name = "dgvHistorialMedico";
             this.dgvHistorialMedico.ReadOnly = true;
@@ -327,20 +312,47 @@ namespace SistemaGestorEscolar
             // 
             this.errorIdentidad.ContainerControl = this;
             // 
-            // btnLimpiar
+            // btnRegistraar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(236)))), ((int)(((byte)(172)))));
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiar.Location = new System.Drawing.Point(1186, 529);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(272, 50);
-            this.btnLimpiar.TabIndex = 38;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btnRegistraar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistraar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistraar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistraar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistraar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistraar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistraar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistraar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistraar.Location = new System.Drawing.Point(1173, 403);
+            this.btnRegistraar.Name = "btnRegistraar";
+            this.btnRegistraar.Radius = 20;
+            this.btnRegistraar.Size = new System.Drawing.Size(303, 84);
+            this.btnRegistraar.Stroke = true;
+            this.btnRegistraar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistraar.TabIndex = 86;
+            this.btnRegistraar.Text = "REGISTRAR";
+            this.btnRegistraar.Transparency = false;
+            this.btnRegistraar.Click += new System.EventHandler(this.btnRegistraar_Click);
+            // 
+            // btnLimpiaar
+            // 
+            this.btnLimpiaar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiaar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiaar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiaar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiaar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiaar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiaar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiaar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiaar.Location = new System.Drawing.Point(1189, 508);
+            this.btnLimpiaar.Name = "btnLimpiaar";
+            this.btnLimpiaar.Radius = 20;
+            this.btnLimpiaar.Size = new System.Drawing.Size(269, 65);
+            this.btnLimpiaar.Stroke = true;
+            this.btnLimpiaar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiaar.TabIndex = 85;
+            this.btnLimpiaar.Text = "LIMPIAR";
+            this.btnLimpiaar.Transparency = false;
+            this.btnLimpiaar.Click += new System.EventHandler(this.btnLimpiaar_Click);
             // 
             // IRegistroVisitaMedica
             // 
@@ -348,7 +360,8 @@ namespace SistemaGestorEscolar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnRegistraar);
+            this.Controls.Add(this.btnLimpiaar);
             this.Controls.Add(this.cmbMedicos);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNumeroIdentidad);
@@ -358,7 +371,6 @@ namespace SistemaGestorEscolar
             this.Controls.Add(this.panSintomas);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvHistorialMedico);
-            this.Controls.Add(this.btnRegistrarVisitaMedica);
             this.Controls.Add(this.txtMedicamentos);
             this.Controls.Add(this.txtPosibleEnfermedad);
             this.Controls.Add(this.txtSintomas);
@@ -398,7 +410,6 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.TextBox txtSintomas;
         private System.Windows.Forms.TextBox txtPosibleEnfermedad;
         private System.Windows.Forms.TextBox txtMedicamentos;
-        private System.Windows.Forms.Button btnRegistrarVisitaMedica;
         private System.Windows.Forms.DataGridView dgvHistorialMedico;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panSintomas;
@@ -409,6 +420,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbMedicos;
         private System.Windows.Forms.ErrorProvider errorIdentidad;
-        private System.Windows.Forms.Button btnLimpiar;
+        private AltoControls.AltoButton btnRegistraar;
+        private AltoControls.AltoButton btnLimpiaar;
     }
 }

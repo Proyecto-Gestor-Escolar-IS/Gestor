@@ -34,18 +34,11 @@ namespace SistemaGestorEscolar
             dgvHistorialMedico.DataSource = null;
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            limpiarPantalla();
-            txtFechaRegistro.Text = DateTime.Now.ToString();
-            txtNumeroIdentidad.Clear();
-            cmbMedicos.SelectedIndex = 0;
-
-        }
+       
 
         private void IRegistroVisitaMedica_Load(object sender, EventArgs e)
         {
-            txtFechaRegistro.Text = DateTime.Now.ToString();
+            txtFechaRegistro.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dbConn.llenarComboBoxValorInicial(cmbMedicos, "SELECT CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) FROM datosEmpleados INNER JOIN detalleCargos ON datosEmpleados.identidadPersona = detalleCargos.identidadEmpleado INNER JOIN cargos ON cargos.id_Cargo = detalleCargos.idCargoAsociado WHERE id_Cargo = 4");
             cmbMedicos.SelectedIndex = 0;
         }
@@ -144,43 +137,7 @@ namespace SistemaGestorEscolar
             }
         }
 
-        private void btnRegistrarVisitaMedica_Click(object sender, EventArgs e)
-        {
-            try
-            {   
-                if(txtNombreEstudiante.Text != string.Empty && cmbMedicos.SelectedIndex != 0 && txtSintomas.Text != string.Empty && txtPosibleEnfermedad.Text != string.Empty && txtMedicamentos.Text != string.Empty)
-                {
-                    if (dbConn.registroVisitaMedica(int.Parse(txtNoExpediente.Text), identidadMedico, txtSintomas.Text, txtPosibleEnfermedad.Text, txtMedicamentos.Text))
-
-                    {
-                        messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
-                        messageOk.lblCheck.Location = new Point(120, 75);
-                        messageOk.ShowDialog();
-                        dbConn.llenarDGV(dgvHistorialMedico, "SELECT id_detalleExpediente AS 'No.DetalleExpediente', id_expediente AS 'No.Expediente', CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', fecha AS 'Fecha', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
-
-                    }
-                    else
-                    {
-                        message.lblError.Text = "VERIFIQUE LOS DATOS";
-                        message.ShowDialog();
-                    }
-                }
-                else
-                {
-
-                    messageWarning.lblError.Text = "VERIFIQUE QUE TODOS \r\nLOS CAMPOS ESTEN LLENOS";
-                    messageWarning.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                    messageWarning.ShowDialog();
-
-                }
-                    
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
+      
         private void cmbMedicos_SelectedIndexChanged(object sender, EventArgs e)
         {
             identidadMedico = dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) = '" + cmbMedicos.SelectedItem.ToString() + "'");
@@ -203,6 +160,51 @@ namespace SistemaGestorEscolar
         private void txtMedicamentos_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegistraar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtNombreEstudiante.Text != string.Empty && cmbMedicos.SelectedIndex != 0 && txtSintomas.Text != string.Empty && txtPosibleEnfermedad.Text != string.Empty && txtMedicamentos.Text != string.Empty)
+                {
+                    if (dbConn.registroVisitaMedica(int.Parse(txtNoExpediente.Text), identidadMedico, txtSintomas.Text, txtPosibleEnfermedad.Text, txtMedicamentos.Text))
+
+                    {
+                        messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
+                        messageOk.lblCheck.Location = new Point(120, 75);
+                        messageOk.ShowDialog();
+                       // dbConn.llenarDGV(dgvHistorialMedico, "SELECT id_detalleExpediente AS 'No.DetalleExpediente', id_expediente AS 'No.Expediente', CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', fecha AS 'Fecha', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
+                        dbConn.llenarDGV(dgvHistorialMedico, "SELECT fecha AS 'Fecha',  CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
+                    }
+                    else
+                    {
+                        message.lblError.Text = "VERIFIQUE LOS DATOS";
+                        message.ShowDialog();
+                    }
+                }
+                else
+                {
+
+                    messageWarning.lblError.Text = "VERIFIQUE QUE TODOS \r\nLOS CAMPOS ESTEN LLENOS";
+                    messageWarning.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                    messageWarning.ShowDialog();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void btnLimpiaar_Click(object sender, EventArgs e)
+        {
+            limpiarPantalla();
+            txtFechaRegistro.Text = DateTime.Now.ToString();
+            txtNumeroIdentidad.Clear();
+            cmbMedicos.SelectedIndex = 0;
         }
     }
 }
