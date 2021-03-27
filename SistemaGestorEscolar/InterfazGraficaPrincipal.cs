@@ -23,7 +23,7 @@ namespace SistemaGestorEscolar
 
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-            clsVariablesGlobales.CodigoAcceso = 1;
+    
 
             Properties.Settings.Default.Reset();
             try
@@ -1284,6 +1284,14 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+
+            Login.IfrmLogin login = new Login.IfrmLogin();
+            login.Show();
+            this.Close();
         }
     }
 }
