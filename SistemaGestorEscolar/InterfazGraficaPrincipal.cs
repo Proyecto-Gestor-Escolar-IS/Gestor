@@ -1,4 +1,5 @@
-﻿using SistemaGestorEscolar.Utilidades;
+﻿using SistemaGestorEscolar.Modulos_Encargado;
+using SistemaGestorEscolar.Utilidades;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -1301,6 +1302,29 @@ namespace SistemaGestorEscolar
             panSubMenuPagos.Visible = false;
             panSubMenuPagos.Dock = DockStyle.None;
             AbrirFormulario<Modulo_de_Pagos.IHistorialPagos>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+        }
+
+        private void btnFichaEstudiante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCRUDEstudiate_Click(object sender, EventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuEstudiante.Visible = false;
+            panSubMenuEstudiante.Dock = DockStyle.None;
+            AbrirFormulario<CrudEstudianteEncargado>();
 
             if (codigoColor == 1)
             {

@@ -69,6 +69,7 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.btnCRUDEstudiate = new System.Windows.Forms.Button();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -367,7 +368,7 @@ namespace SistemaGestorEscolar
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(595, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(450, 36);
+            this.label3.Size = new System.Drawing.Size(453, 41);
             this.label3.TabIndex = 26;
             this.label3.Text = "PERSONAL INSTITUCIONAL";
             // 
@@ -518,13 +519,14 @@ namespace SistemaGestorEscolar
             // 
             // panSubMenuEstudiante
             // 
+            this.panSubMenuEstudiante.Controls.Add(this.btnCRUDEstudiate);
             this.panSubMenuEstudiante.Controls.Add(this.button1);
             this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
             this.panSubMenuEstudiante.Controls.Add(this.btnRegistrarVisitaMedica);
             this.panSubMenuEstudiante.Controls.Add(this.label2);
-            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 666);
+            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1286, 661);
             this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
-            this.panSubMenuEstudiante.Size = new System.Drawing.Size(174, 89);
+            this.panSubMenuEstudiante.Size = new System.Drawing.Size(205, 98);
             this.panSubMenuEstudiante.TabIndex = 26;
             // 
             // button1
@@ -550,12 +552,13 @@ namespace SistemaGestorEscolar
             this.btnFichaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFichaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFichaEstudiante.ForeColor = System.Drawing.Color.Black;
-            this.btnFichaEstudiante.Location = new System.Drawing.Point(615, 665);
+            this.btnFichaEstudiante.Location = new System.Drawing.Point(322, 666);
             this.btnFichaEstudiante.Name = "btnFichaEstudiante";
             this.btnFichaEstudiante.Size = new System.Drawing.Size(407, 200);
             this.btnFichaEstudiante.TabIndex = 30;
             this.btnFichaEstudiante.Text = "FICHA DE ESTUDIANTE";
             this.btnFichaEstudiante.UseVisualStyleBackColor = false;
+            this.btnFichaEstudiante.Click += new System.EventHandler(this.btnFichaEstudiante_Click);
             this.btnFichaEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFichaEstudiante_MouseDown);
             // 
             // btnRegistrarVisitaMedica
@@ -580,7 +583,7 @@ namespace SistemaGestorEscolar
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(697, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 36);
+            this.label2.Size = new System.Drawing.Size(242, 41);
             this.label2.TabIndex = 26;
             this.label2.Text = "ESTUDIANTES";
             // 
@@ -649,7 +652,7 @@ namespace SistemaGestorEscolar
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(742, 273);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 36);
+            this.label1.Size = new System.Drawing.Size(141, 41);
             this.label1.TabIndex = 23;
             this.label1.Text = " PAGOS";
             // 
@@ -660,7 +663,7 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
             this.lblMenuTitle.Location = new System.Drawing.Point(675, 100);
             this.lblMenuTitle.Name = "lblMenuTitle";
-            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
+            this.lblMenuTitle.Size = new System.Drawing.Size(292, 41);
             this.lblMenuTitle.TabIndex = 32;
             this.lblMenuTitle.Text = "MENU PRINCIPAL";
             // 
@@ -673,6 +676,21 @@ namespace SistemaGestorEscolar
             // 
             this.tmrMostrarMenu.Interval = 2;
             this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
+            // 
+            // btnCRUDEstudiate
+            // 
+            this.btnCRUDEstudiate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnCRUDEstudiate.FlatAppearance.BorderSize = 0;
+            this.btnCRUDEstudiate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCRUDEstudiate.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCRUDEstudiate.ForeColor = System.Drawing.Color.Black;
+            this.btnCRUDEstudiate.Location = new System.Drawing.Point(932, 666);
+            this.btnCRUDEstudiate.Name = "btnCRUDEstudiate";
+            this.btnCRUDEstudiate.Size = new System.Drawing.Size(407, 200);
+            this.btnCRUDEstudiate.TabIndex = 32;
+            this.btnCRUDEstudiate.Text = "MODIFICAR ESTUDIANTE";
+            this.btnCRUDEstudiate.UseVisualStyleBackColor = false;
+            this.btnCRUDEstudiate.Click += new System.EventHandler(this.btnCRUDEstudiate_Click);
             // 
             // InterfazGraficaPrincipal
             // 
@@ -744,6 +762,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnCRUDEstudiate;
         //private BrbVideoManager.Controls.RoundedButton btnMatriEstudiante;
         //private BrbVideoManager.Controls.RoundedButton btnVistaMatriculas;
     }

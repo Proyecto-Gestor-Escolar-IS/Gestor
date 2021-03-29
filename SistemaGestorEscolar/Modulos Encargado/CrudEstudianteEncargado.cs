@@ -784,7 +784,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             try
             {
-                if (dbConn.obtenerVariableEntera("  select count(*) from datosEncargado where identidadEncargado = '"+txtIdentidad.Text+"' and estado = 1") > 1)
+                if (dbConn.obtenerVariableEntera("  select count(*) from datosEncargado where identidadEncargado = '"+txtIdentidad.Text+"' and estado = 1") == 0)
                 {
                     if (dbConn.ejecutarComandoSQL("INSERT INTO datosEncargado VALUES('"+ txtIdentidad.Text + "', '"+ txtprimerNombre.Text+ "', '"+ txtsegundoNombre.Text + "', '" + txtprimerApellido.Text + "', '"+ txtsegundoApellido.Text+ "', '"+ txtprimerTelefono.Text+ "', '"+ txtsegundoTelefono.Text+ "', '"+ txtCorreoElectronico.Text+ "', '"+txtDireccion.Text+"', '"+ txtfechaNacimiento.Text+ "', 1)"))
                     {
