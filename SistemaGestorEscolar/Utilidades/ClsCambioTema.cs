@@ -20,20 +20,57 @@ namespace SistemaGestorEscolar.Utilidades
                 List<Object> listaAlto = new List<Object>();
                 List<Object> listaRounded = new List<Object>();
                 List<Object> listaNormal = new List<Object>();
-               
+                List<Object> listaLabels = new List<Object>();
+                List<Object> listaDGV = new List<Object>();
+
                 foreach (Control control1 in cont.Controls)
                 {
                     if (control1.GetType() == typeof(AltoButton))
                     {
                         listaAlto.Add(control1);
                     }
-                    if (control1.GetType() == typeof(RoundedButton))
+                    else if (control1.GetType() == typeof(RoundedButton))
                     {
                         listaRounded.Add(control1);
                     }
-                    if(control1.GetType() == typeof(Button))
+                    else if(control1.GetType() == typeof(Button))
                     {
                         listaNormal.Add(control1);
+                    }
+                    else if(control1.GetType() == typeof(Label) || control1.GetType() == typeof(CheckBox))
+                    {
+                        listaLabels.Add(control1);
+                    }
+                    else if (control1.GetType() == typeof(DataGridView))
+                    {
+                        listaDGV.Add(control1);
+                    }
+                }
+
+                if (!Properties.Settings.Default.isModoOscuro)
+                {
+                    foreach (Control con in listaLabels)
+                    {
+                        con.ForeColor = Color.Black;
+                        cont.Invalidate();
+                    }
+                    foreach (DataGridView con in listaDGV)
+                    {
+                        con.BackgroundColor = Color.FromArgb(9, 141, 216);
+                        cont.Invalidate();
+                    }
+                }
+                else
+                {
+                    foreach (Control con in listaLabels)
+                    {
+                        con.ForeColor = Color.White;
+                        cont.Invalidate();
+                    }
+                    foreach (DataGridView con in listaDGV)
+                    {
+                        con.BackgroundColor = Color.FromArgb(51, 52, 69);
+                        cont.Invalidate();
                     }
                 }
 
@@ -116,9 +153,9 @@ namespace SistemaGestorEscolar.Utilidades
                 }
                 
             }
-            catch
+            catch(Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
             
         }

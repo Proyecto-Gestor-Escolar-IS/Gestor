@@ -26,7 +26,7 @@ namespace SistemaGestorEscolar
         {
     
 
-            Properties.Settings.Default.Reset();
+            //Properties.Settings.Default.Reset();
             try
             {
                 actualizarModulos.verificarFecha();

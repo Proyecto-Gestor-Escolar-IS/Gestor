@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Windows;
 using SistemaGestorEscolar.MessageBox_Personalizados;
 using System.Globalization;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Login
 {
@@ -28,6 +29,31 @@ namespace SistemaGestorEscolar.Login
         IMessageBoxYesCancel messageYesNo = new IMessageBoxYesCancel();
         IMessageBoxWarning messageWarning = new IMessageBoxWarning();
         string txtIdentid = "0000000000000";
+
+        private void frmIngresoAdmin_Load(object sender, EventArgs e)
+        {
+            txtNombre1.Focus();
+            btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            btnSiguiente.Enabled = false;
+            txtIdentidad.Text = txtIdentid;
+
+            ClsCambioTema.cambiarTemaBoton(this);
+            ClsCambioTema.cambiarTemaBoton(pnlPrincipal);
+            ClsCambioTema.cambiarTemaBoton(pnlRecuperacion);
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                pnlRecuperacion.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                pnlRecuperacion.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+
+        }
 
         private void btnSiguiente_Click_1(object sender, EventArgs e)
         {
@@ -87,7 +113,7 @@ namespace SistemaGestorEscolar.Login
         {
             if (txtContra.Text == txtConfirmContra.Text)
             {
-                btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+                btnSiguiente.ForeColor = Color.Black;
                 btnSiguiente.Enabled = true;
             }
             else
@@ -95,14 +121,6 @@ namespace SistemaGestorEscolar.Login
                 btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
                 btnSiguiente.Enabled = false;
             }
-        }
-
-        private void frmIngresoAdmin_Load(object sender, EventArgs e)
-        {
-            txtNombre1.Focus();
-            btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            btnSiguiente.Enabled = false;
-            txtIdentidad.Text = txtIdentid;
         }
 
         private void chkVerContras_CheckedChanged(object sender, EventArgs e)

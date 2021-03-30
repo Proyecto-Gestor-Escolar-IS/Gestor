@@ -120,6 +120,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRecuperacionContrasenia";
             this.Text = "Recuperacion de Contraseña";
+            this.Load += new System.EventHandler(this.frmRecuperacionContrasenia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
