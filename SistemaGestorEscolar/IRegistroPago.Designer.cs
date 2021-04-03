@@ -55,7 +55,7 @@ namespace SistemaGestorEscolar
             this.label11 = new System.Windows.Forms.Label();
             this.btnImagenExistente = new System.Windows.Forms.Button();
             this.btnImagenAgregar = new System.Windows.Forms.Button();
-            this.btnRegistrarPago = new System.Windows.Forms.Button();
+            this.btnRegistrarPago = new AltoControls.AltoButton();
             this.grpDatosPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@ namespace SistemaGestorEscolar
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(639, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 36);
+            this.label1.Size = new System.Drawing.Size(359, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRO DE PAGOS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -77,7 +77,7 @@ namespace SistemaGestorEscolar
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(312, 152);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(253, 27);
+            this.label4.Size = new System.Drawing.Size(266, 31);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nombre del Alumno(a)";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -88,7 +88,7 @@ namespace SistemaGestorEscolar
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(275, 275);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 27);
+            this.label5.Size = new System.Drawing.Size(237, 31);
             this.label5.TabIndex = 4;
             this.label5.Text = "Numero de Factura";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -100,7 +100,7 @@ namespace SistemaGestorEscolar
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(312, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(405, 27);
+            this.label2.Size = new System.Drawing.Size(424, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Número de Identidad del Estudiante";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -111,7 +111,7 @@ namespace SistemaGestorEscolar
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(275, 328);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(246, 27);
+            this.label6.Size = new System.Drawing.Size(265, 31);
             this.label6.TabIndex = 5;
             this.label6.Text = "Fecha de Facturación";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -160,7 +160,7 @@ namespace SistemaGestorEscolar
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(914, 391);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(211, 27);
+            this.label8.Size = new System.Drawing.Size(217, 31);
             this.label8.TabIndex = 25;
             this.label8.Text = "MONTO A PAGAR";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -182,7 +182,7 @@ namespace SistemaGestorEscolar
             this.chkDescuento.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDescuento.Location = new System.Drawing.Point(911, 275);
             this.chkDescuento.Name = "chkDescuento";
-            this.chkDescuento.Size = new System.Drawing.Size(202, 23);
+            this.chkDescuento.Size = new System.Drawing.Size(204, 25);
             this.chkDescuento.TabIndex = 23;
             this.chkDescuento.Text = "APLICAR DESCUENTO";
             this.chkDescuento.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@ namespace SistemaGestorEscolar
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(275, 422);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(191, 27);
+            this.label7.Size = new System.Drawing.Size(200, 31);
             this.label7.TabIndex = 19;
             this.label7.Text = "Saldo Disponible";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -239,7 +239,7 @@ namespace SistemaGestorEscolar
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(275, 374);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(161, 27);
+            this.label9.Size = new System.Drawing.Size(169, 31);
             this.label9.TabIndex = 18;
             this.label9.Text = "Total a Pagar";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -293,7 +293,7 @@ namespace SistemaGestorEscolar
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(312, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(439, 27);
+            this.label3.Size = new System.Drawing.Size(460, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre del Padre, Madre o Encargado";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -308,7 +308,7 @@ namespace SistemaGestorEscolar
             this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(414, 673);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(340, 27);
+            this.label10.Size = new System.Drawing.Size(354, 31);
             this.label10.TabIndex = 27;
             this.label10.Text = "Agregar Imagen de Evidencia";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -320,7 +320,7 @@ namespace SistemaGestorEscolar
             this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(940, 673);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(287, 27);
+            this.label11.Size = new System.Drawing.Size(301, 31);
             this.label11.TabIndex = 29;
             this.label11.Text = "Ver Imagen de Evidencia";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -353,19 +353,24 @@ namespace SistemaGestorEscolar
             // 
             // btnRegistrarPago
             // 
-            this.btnRegistrarPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarPago.Enabled = false;
-            this.btnRegistrarPago.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarPago.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarPago.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarPago.Location = new System.Drawing.Point(546, 880);
+            this.btnRegistrarPago.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrarPago.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrarPago.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarPago.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistrarPago.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarPago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistrarPago.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrarPago.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrarPago.Location = new System.Drawing.Point(560, 872);
             this.btnRegistrarPago.Name = "btnRegistrarPago";
+            this.btnRegistrarPago.Radius = 20;
             this.btnRegistrarPago.Size = new System.Drawing.Size(538, 86);
-            this.btnRegistrarPago.TabIndex = 16;
+            this.btnRegistrarPago.Stroke = true;
+            this.btnRegistrarPago.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistrarPago.TabIndex = 31;
             this.btnRegistrarPago.Text = "REGISTRAR PAGO";
-            this.btnRegistrarPago.UseVisualStyleBackColor = false;
-            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
+            this.btnRegistrarPago.Transparency = false;
+            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click_1);
             // 
             // IRegistroPago
             // 
@@ -373,11 +378,11 @@ namespace SistemaGestorEscolar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.btnRegistrarPago);
             this.Controls.Add(this.btnImagenExistente);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnImagenAgregar);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btnRegistrarPago);
             this.Controls.Add(this.grpDatosPago);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -419,6 +424,6 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Button btnImagenExistente;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnImagenAgregar;
-        private System.Windows.Forms.Button btnRegistrarPago;
+        private AltoControls.AltoButton btnRegistrarPago;
     }
 }

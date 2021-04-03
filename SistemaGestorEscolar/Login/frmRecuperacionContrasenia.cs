@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Login
 {
@@ -68,6 +69,16 @@ namespace SistemaGestorEscolar.Login
             {
                 MessageBox.Show("Ingrese un correo electronico", "Error de recuperacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void frmRecuperacionContrasenia_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.isModoOscuro)
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                ClsCambioTema.cambiarTemaBoton(this);
+            }
+            btnCerrarPrograma.BackColor = Color.Red;
         }
     }
 }

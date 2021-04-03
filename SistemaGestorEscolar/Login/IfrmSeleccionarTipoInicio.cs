@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestorEscolar.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,25 @@ namespace SistemaGestorEscolar.Login
         InterfazGraficaPrincipal interfazPrincipal = new InterfazGraficaPrincipal();
         private void IfrmSeleccionarTipoInicio_Load(object sender, EventArgs e)
         {
+            ClsCambioTema.cambiarTemaBoton(panLateral);
+            ClsCambioTema.cambiarTemaBoton(panel1);
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                panLateral.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                panSuperior.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                panel1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                btnMenuAtras.BackColor = System.Drawing.Color.FromArgb(249, 212, 69);
+                btnMenuAtras.ForeColor = Color.Black;
+            }
+            else
+            {
+                panLateral.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                panSuperior.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                panel1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                btnMenuAtras.BackColor = Color.Red;
+                btnMenuAtras.ForeColor = Color.Black;
+            }
+
             int codigoTipos = 0;
             dbConn.llenarDGV(dgvTiposCargos, "SELECT descripcionCargo FROM datosEmpleados de INNER JOIN detalleCargos dc ON de.identidadPersona = dc.identidadEmpleado " +
                 "INNER JOIN cargos c ON dc.idCargoAsociado = c.id_Cargo WHERE de.identidadPersona = '" + clsVariablesGlobales.NumIdentidad + "' ");

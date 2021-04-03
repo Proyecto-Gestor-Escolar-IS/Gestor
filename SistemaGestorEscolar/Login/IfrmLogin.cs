@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Login
 {
@@ -28,6 +29,28 @@ namespace SistemaGestorEscolar.Login
         private void frmLogin_Load(object sender, EventArgs e)
         {
             dbConn.establecerConexion();
+            ClsCambioTema.cambiarTemaBoton(panelPrincipal);
+            ClsCambioTema.cambiarTemaBoton(panLateral);
+            ClsCambioTema.cambiarTemaBoton(panel1);
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                panLateral.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                panSuperior.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
+                panelPrincipal.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                panel1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                btnMenuAtras.BackColor = System.Drawing.Color.FromArgb(249, 212, 69);
+                btnMenuAtras.ForeColor = Color.Black;
+            }
+            else
+            {
+                panLateral.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                panSuperior.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
+                panelPrincipal.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                panel1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                btnMenuAtras.BackColor = Color.Red;
+                btnMenuAtras.ForeColor = Color.Black;
+            }
+            
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
