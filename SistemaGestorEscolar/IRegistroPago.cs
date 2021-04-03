@@ -1,4 +1,5 @@
 ﻿using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -43,10 +44,25 @@ namespace SistemaGestorEscolar
 
         private void IRegistroPago_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpDatosPago.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpDatosPago.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+
+            ClsCambioTema.cambiarTemaBoton(this);
+            ClsCambioTema.cambiarTemaBoton(grpDatosPago);
+
             txtMontoPagar.Enabled = false;
             txtDescuento.Enabled = false;
             btnRegistrarPago.Enabled = false;
             txtMontoPagar.Text = txtTotalPagar.Text;
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -221,77 +237,7 @@ namespace SistemaGestorEscolar
 
         private void btnRegistrarPago_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (chkDescuento.Checked == true)
-                {
-                        if (image != null)
-                        {
-                            if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, Double.Parse(txtDescuento.Text), image))
-                            {
-
-                                message.lblCheck.Text = "PAGO REGISTRADO";
-                                message.ShowDialog();
-
-                                dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                                dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                                txtMontoPagar.Clear();
-                                txtDescuento.Clear();
-                                chkDescuento.Checked = false;
-                            image = null;
-                        }
-                            else
-                            {
-                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
-                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                            messageE.lblError.Location = new Point(130, 75);
-                            messageE.ShowDialog();
-                            }
-                    }
-                    else
-                    {
-                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
-                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                        messageE.lblError.Location = new Point(130, 75);
-                        messageE.ShowDialog();
-                    }
-                }
-                else if (chkDescuento.Checked == false)
-                {
-                    if (image != null)
-                    {
-                        if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, 0, image))
-                        {
-                        message.lblCheck.Text = "PAGO REGISTRADO";
-                        message.ShowDialog();
-                        dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                        dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                        txtMontoPagar.Clear();
-                        txtDescuento.Clear();
-                        chkDescuento.Checked = false;
-                            image = null;
-                        }
-                        else
-                        {
-                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
-                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                            messageE.lblError.Location = new Point(130, 75);
-                            messageE.ShowDialog();
-                        }
-                    }
-                    else
-                    {
-                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
-                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                        messageE.lblError.Location = new Point(130, 75);
-                        messageE.ShowDialog();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            
         }
 
         private void txtMontoPagar_TextChanged(object sender, EventArgs e)
@@ -421,9 +367,79 @@ namespace SistemaGestorEscolar
             frmImagen.Show();
         }
 
-        private void altoButton1_Click(object sender, EventArgs e)
+        private void btnRegistrarPago_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                if (chkDescuento.Checked == true)
+                {
+                    if (image != null)
+                    {
+                        if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, Double.Parse(txtDescuento.Text), image))
+                        {
 
+                            message.lblCheck.Text = "PAGO REGISTRADO";
+                            message.ShowDialog();
+
+                            dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                            dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                            txtMontoPagar.Clear();
+                            txtDescuento.Clear();
+                            chkDescuento.Checked = false;
+                            image = null;
+                        }
+                        else
+                        {
+                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
+                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            messageE.lblError.Location = new Point(130, 75);
+                            messageE.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
+                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        messageE.lblError.Location = new Point(130, 75);
+                        messageE.ShowDialog();
+                    }
+                }
+                else if (chkDescuento.Checked == false)
+                {
+                    if (image != null)
+                    {
+                        if (dbConn.PARegistroPago(txtIdentidadEstudiante.Text, Double.Parse(txtMontoPagar.Text), DateTime.Now, 0, image))
+                        {
+                            message.lblCheck.Text = "PAGO REGISTRADO";
+                            message.ShowDialog();
+                            dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                            dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
+                            txtMontoPagar.Clear();
+                            txtDescuento.Clear();
+                            chkDescuento.Checked = false;
+                            image = null;
+                        }
+                        else
+                        {
+                            messageE.lblError.Text = "ERROR AL REALIZAR \n\rEL PAGO";
+                            messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                            messageE.lblError.Location = new Point(130, 75);
+                            messageE.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        messageE.lblError.Text = "INGRESE UN COMPROBANTE\n\r DE PAGO";
+                        messageE.lblError.TextAlign = ContentAlignment.MiddleCenter;
+                        messageE.lblError.Location = new Point(130, 75);
+                        messageE.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
