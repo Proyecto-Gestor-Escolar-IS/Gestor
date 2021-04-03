@@ -171,7 +171,7 @@ namespace SistemaGestorEscolar
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 991);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 991);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(43, 41);
             this.btnCerrarSesion.TabIndex = 9;
@@ -189,7 +189,7 @@ namespace SistemaGestorEscolar
             this.btnCambioTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambioTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambioTema.ForeColor = System.Drawing.Color.Black;
-            this.btnCambioTema.Location = new System.Drawing.Point(66, 991);
+            this.btnCambioTema.Location = new System.Drawing.Point(3, 927);
             this.btnCambioTema.Name = "btnCambioTema";
             this.btnCambioTema.Size = new System.Drawing.Size(43, 41);
             this.btnCambioTema.TabIndex = 8;
