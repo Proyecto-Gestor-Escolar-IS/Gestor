@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panSuperior = new System.Windows.Forms.Panel();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrarPrograma = new System.Windows.Forms.Button();
-            this.panLateral = new System.Windows.Forms.Panel();
-            this.btnMenuAtras = new System.Windows.Forms.Button();
-            this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtras = new AltoControls.AltoButton();
+            this.btnSalir = new AltoControls.AltoButton();
             this.btnDocenteMasAdmin = new AltoControls.AltoButton();
             this.btnDocenteSolo = new AltoControls.AltoButton();
             this.btnSuperUsuario = new AltoControls.AltoButton();
@@ -44,106 +39,17 @@
             this.btnAdmin = new AltoControls.AltoButton();
             this.dgvTiposCargos = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.panSuperior.SuspendLayout();
-            this.panLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
+            this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposCargos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panSuperior
-            // 
-            this.panSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.panSuperior.Controls.Add(this.btnMinimizar);
-            this.panSuperior.Controls.Add(this.btnMaximizar);
-            this.panSuperior.Controls.Add(this.btnCerrarPrograma);
-            this.panSuperior.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.panSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panSuperior.Location = new System.Drawing.Point(0, 0);
-            this.panSuperior.Name = "panSuperior";
-            this.panSuperior.Size = new System.Drawing.Size(1920, 45);
-            this.panSuperior.TabIndex = 7;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
-            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(1772, 7);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
-            this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
-            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(1813, 3);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(34, 34);
-            this.btnMaximizar.TabIndex = 1;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            // 
-            // btnCerrarPrograma
-            // 
-            this.btnCerrarPrograma.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
-            this.btnCerrarPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrarPrograma.FlatAppearance.BorderSize = 0;
-            this.btnCerrarPrograma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPrograma.Location = new System.Drawing.Point(1855, 2);
-            this.btnCerrarPrograma.Name = "btnCerrarPrograma";
-            this.btnCerrarPrograma.Size = new System.Drawing.Size(36, 36);
-            this.btnCerrarPrograma.TabIndex = 0;
-            this.btnCerrarPrograma.UseVisualStyleBackColor = true;
-            this.btnCerrarPrograma.Click += new System.EventHandler(this.btnCerrarPrograma_Click);
-            // 
-            // panLateral
-            // 
-            this.panLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.panLateral.Controls.Add(this.btnMenuAtras);
-            this.panLateral.Controls.Add(this.picImagotipo);
-            this.panLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panLateral.Location = new System.Drawing.Point(0, 45);
-            this.panLateral.Name = "panLateral";
-            this.panLateral.Size = new System.Drawing.Size(285, 1035);
-            this.panLateral.TabIndex = 8;
-            // 
-            // btnMenuAtras
-            // 
-            this.btnMenuAtras.BackColor = System.Drawing.Color.Red;
-            this.btnMenuAtras.FlatAppearance.BorderSize = 0;
-            this.btnMenuAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuAtras.ForeColor = System.Drawing.Color.White;
-            this.btnMenuAtras.Location = new System.Drawing.Point(0, 520);
-            this.btnMenuAtras.Name = "btnMenuAtras";
-            this.btnMenuAtras.Size = new System.Drawing.Size(285, 44);
-            this.btnMenuAtras.TabIndex = 1;
-            this.btnMenuAtras.Text = "ATRAS";
-            this.btnMenuAtras.UseVisualStyleBackColor = false;
-            this.btnMenuAtras.Click += new System.EventHandler(this.btnMenuAtras_Click);
-            // 
-            // picImagotipo
-            // 
-            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.Logo_Nazaret;
-            this.picImagotipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picImagotipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picImagotipo.Location = new System.Drawing.Point(0, 0);
-            this.picImagotipo.Name = "picImagotipo";
-            this.picImagotipo.Size = new System.Drawing.Size(285, 182);
-            this.picImagotipo.TabIndex = 0;
-            this.picImagotipo.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panel1.Controls.Add(this.btnAtras);
+            this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Controls.Add(this.btnDocenteMasAdmin);
             this.panel1.Controls.Add(this.btnDocenteSolo);
             this.panel1.Controls.Add(this.btnSuperUsuario);
@@ -152,12 +58,56 @@
             this.panel1.Controls.Add(this.btnAdmin);
             this.panel1.Controls.Add(this.dgvTiposCargos);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(285, 45);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(858, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1635, 1035);
+            this.panel1.Size = new System.Drawing.Size(1062, 1080);
             this.panel1.TabIndex = 17;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Active1 = System.Drawing.Color.DarkRed;
+            this.btnAtras.Active2 = System.Drawing.Color.DarkRed;
+            this.btnAtras.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtras.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14F, System.Drawing.FontStyle.Bold);
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
+            this.btnAtras.Inactive1 = System.Drawing.Color.Red;
+            this.btnAtras.Inactive2 = System.Drawing.Color.Red;
+            this.btnAtras.Location = new System.Drawing.Point(7, 1034);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Radius = 20;
+            this.btnAtras.Size = new System.Drawing.Size(155, 43);
+            this.btnAtras.Stroke = true;
+            this.btnAtras.StrokeColor = System.Drawing.Color.Red;
+            this.btnAtras.TabIndex = 105;
+            this.btnAtras.Text = "ATRAS";
+            this.btnAtras.Transparency = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Active1 = System.Drawing.Color.DarkRed;
+            this.btnSalir.Active2 = System.Drawing.Color.DarkRed;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSalir.Font = new System.Drawing.Font("Balsamiq Sans", 14F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Inactive1 = System.Drawing.Color.Red;
+            this.btnSalir.Inactive2 = System.Drawing.Color.Red;
+            this.btnSalir.Location = new System.Drawing.Point(904, 1034);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Radius = 20;
+            this.btnSalir.Size = new System.Drawing.Size(155, 43);
+            this.btnSalir.Stroke = true;
+            this.btnSalir.StrokeColor = System.Drawing.Color.Red;
+            this.btnSalir.TabIndex = 104;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.Transparency = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnDocenteMasAdmin
             // 
@@ -169,7 +119,7 @@
             this.btnDocenteMasAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnDocenteMasAdmin.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnDocenteMasAdmin.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnDocenteMasAdmin.Location = new System.Drawing.Point(696, 679);
+            this.btnDocenteMasAdmin.Location = new System.Drawing.Point(347, 699);
             this.btnDocenteMasAdmin.Name = "btnDocenteMasAdmin";
             this.btnDocenteMasAdmin.Radius = 20;
             this.btnDocenteMasAdmin.Size = new System.Drawing.Size(402, 130);
@@ -191,7 +141,7 @@
             this.btnDocenteSolo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnDocenteSolo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnDocenteSolo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnDocenteSolo.Location = new System.Drawing.Point(696, 543);
+            this.btnDocenteSolo.Location = new System.Drawing.Point(347, 514);
             this.btnDocenteSolo.Name = "btnDocenteSolo";
             this.btnDocenteSolo.Radius = 20;
             this.btnDocenteSolo.Size = new System.Drawing.Size(402, 130);
@@ -213,7 +163,7 @@
             this.btnSuperUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnSuperUsuario.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnSuperUsuario.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSuperUsuario.Location = new System.Drawing.Point(696, 543);
+            this.btnSuperUsuario.Location = new System.Drawing.Point(347, 514);
             this.btnSuperUsuario.Name = "btnSuperUsuario";
             this.btnSuperUsuario.Radius = 20;
             this.btnSuperUsuario.Size = new System.Drawing.Size(402, 130);
@@ -235,7 +185,7 @@
             this.btnMedico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnMedico.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnMedico.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnMedico.Location = new System.Drawing.Point(696, 543);
+            this.btnMedico.Location = new System.Drawing.Point(347, 514);
             this.btnMedico.Name = "btnMedico";
             this.btnMedico.Radius = 20;
             this.btnMedico.Size = new System.Drawing.Size(402, 130);
@@ -251,13 +201,14 @@
             // 
             this.lblSaludo.AutoSize = true;
             this.lblSaludo.BackColor = System.Drawing.Color.Transparent;
-            this.lblSaludo.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaludo.Location = new System.Drawing.Point(17, 14);
+            this.lblSaludo.Font = new System.Drawing.Font("Balsamiq Sans", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaludo.Location = new System.Drawing.Point(23, 29);
             this.lblSaludo.Name = "lblSaludo";
-            this.lblSaludo.Size = new System.Drawing.Size(885, 33);
-            this.lblSaludo.TabIndex = 99;
+            this.lblSaludo.Size = new System.Drawing.Size(801, 29);
+            this.lblSaludo.TabIndex = 8;
             this.lblSaludo.Text = "BUEN DÍA , ESPERAMOS QUE TENGAS UN EXCELENTE DÍA.";
             this.lblSaludo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSaludo.Click += new System.EventHandler(this.lblSaludo_Click);
             // 
             // btnAdmin
             // 
@@ -269,7 +220,7 @@
             this.btnAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnAdmin.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnAdmin.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAdmin.Location = new System.Drawing.Point(696, 407);
+            this.btnAdmin.Location = new System.Drawing.Point(347, 340);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Radius = 20;
             this.btnAdmin.Size = new System.Drawing.Size(402, 130);
@@ -286,24 +237,37 @@
             this.dgvTiposCargos.AllowUserToAddRows = false;
             this.dgvTiposCargos.AllowUserToDeleteRows = false;
             this.dgvTiposCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTiposCargos.Location = new System.Drawing.Point(6, 885);
+            this.dgvTiposCargos.Location = new System.Drawing.Point(419, 962);
             this.dgvTiposCargos.Name = "dgvTiposCargos";
             this.dgvTiposCargos.ReadOnly = true;
             this.dgvTiposCargos.Size = new System.Drawing.Size(240, 150);
             this.dgvTiposCargos.TabIndex = 18;
             this.dgvTiposCargos.Visible = false;
+            this.dgvTiposCargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiposCargos_CellContentClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(426, 220);
+            this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(143, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(926, 96);
+            this.label4.Size = new System.Drawing.Size(824, 84);
             this.label4.TabIndex = 8;
             this.label4.Text = "SELECCIONE CÓMO QUIERE INGRESAR\r\n A LA PLATAFORMA DE ADMINISTRACIÓN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picImagotipo
+            // 
+            this.picImagotipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logoredm2;
+            this.picImagotipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picImagotipo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picImagotipo.Location = new System.Drawing.Point(0, 0);
+            this.picImagotipo.Name = "picImagotipo";
+            this.picImagotipo.Size = new System.Drawing.Size(859, 1080);
+            this.picImagotipo.TabIndex = 0;
+            this.picImagotipo.TabStop = false;
             // 
             // IfrmSeleccionarTipoInicio
             // 
@@ -311,39 +275,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panLateral);
-            this.Controls.Add(this.panSuperior);
+            this.Controls.Add(this.picImagotipo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IfrmSeleccionarTipoInicio";
             this.Text = "Selección de Inicio";
             this.Load += new System.EventHandler(this.IfrmSeleccionarTipoInicio_Load);
-            this.panSuperior.ResumeLayout(false);
-            this.panLateral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposCargos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panSuperior;
-        private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnMaximizar;
-        private System.Windows.Forms.Button btnCerrarPrograma;
-        private System.Windows.Forms.Panel panLateral;
-        private System.Windows.Forms.Button btnMenuAtras;
-        private System.Windows.Forms.PictureBox picImagotipo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvTiposCargos;
         private System.Windows.Forms.Label lblSaludo;
         private AltoControls.AltoButton btnAdmin;
         private AltoControls.AltoButton btnDocenteMasAdmin;
         private AltoControls.AltoButton btnDocenteSolo;
         private AltoControls.AltoButton btnSuperUsuario;
         private AltoControls.AltoButton btnMedico;
+        private System.Windows.Forms.PictureBox picImagotipo;
+        private AltoControls.AltoButton btnSalir;
+        private System.Windows.Forms.DataGridView dgvTiposCargos;
+        private AltoControls.AltoButton btnAtras;
     }
 }

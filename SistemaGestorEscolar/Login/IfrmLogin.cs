@@ -30,27 +30,32 @@ namespace SistemaGestorEscolar.Login
         {
             dbConn.establecerConexion();
             ClsCambioTema.cambiarTemaBoton(panelPrincipal);
-            ClsCambioTema.cambiarTemaBoton(panLateral);
+
             ClsCambioTema.cambiarTemaBoton(panel1);
             if (Properties.Settings.Default.isModoOscuro == true)
             {
-                panLateral.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
-                panSuperior.BackColor = System.Drawing.Color.FromArgb(41, 40, 55);
+   
+
                 panelPrincipal.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 panel1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
-                btnMenuAtras.BackColor = System.Drawing.Color.FromArgb(249, 212, 69);
-                btnMenuAtras.ForeColor = Color.Black;
+
             }
             else
             {
-                panLateral.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
-                panSuperior.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
+
+
                 panelPrincipal.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 panel1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
-                btnMenuAtras.BackColor = Color.Red;
-                btnMenuAtras.ForeColor = Color.Black;
+
             }
-            
+
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Active1 = Color.Red;
+            btnSalir.Active2 = Color.Red;
+            btnSalir.Inactive1 = Color.Red;
+            btnSalir.Inactive2 = Color.Red;
+            btnSalir.StrokeColor = Color.Red;
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -145,6 +150,16 @@ namespace SistemaGestorEscolar.Login
         private void panSuperior_MouseUp(object sender, MouseEventArgs e)
         {
             windowMove = false;
+        }
+
+        private void picImagotipo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altoButton1_Click(object sender, EventArgs e)
+        {
+            siNo.ShowDialog();
         }
     }
 }

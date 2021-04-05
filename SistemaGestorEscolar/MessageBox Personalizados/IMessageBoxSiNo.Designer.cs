@@ -36,6 +36,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.panEncabezado = new System.Windows.Forms.Panel();
             this.pctWarning = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctWarning)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.btnCancelar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(243, 140);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(107, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(119, 41);
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -58,11 +59,12 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Black;
-            this.lblError.Location = new System.Drawing.Point(98, 98);
+            this.lblError.Location = new System.Drawing.Point(95, 80);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(245, 22);
+            this.lblError.Size = new System.Drawing.Size(281, 20);
             this.lblError.TabIndex = 21;
-            this.lblError.Text = "Esta seguro que desea salir?";
+            this.lblError.Text = "¿Esta seguro que desea salir?";
+            this.lblError.Click += new System.EventHandler(this.lblError_Click);
             // 
             // btnAceptar
             // 
@@ -72,7 +74,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.btnAceptar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.Location = new System.Drawing.Point(81, 140);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(107, 41);
+            this.btnAceptar.Size = new System.Drawing.Size(112, 41);
             this.btnAceptar.TabIndex = 20;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -81,6 +83,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             // panEncabezado
             // 
             this.panEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(1)))));
+            this.panEncabezado.Controls.Add(this.label1);
             this.panEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
@@ -90,7 +93,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             // pctWarning
             // 
             this.pctWarning.Image = ((System.Drawing.Image)(resources.GetObject("pctWarning.Image")));
-            this.pctWarning.Location = new System.Drawing.Point(24, 61);
+            this.pctWarning.Location = new System.Drawing.Point(12, 61);
             this.pctWarning.Name = "pctWarning";
             this.pctWarning.Size = new System.Drawing.Size(65, 59);
             this.pctWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,12 +102,13 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(131, 61);
+            this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 22);
+            this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 23;
             this.label1.Text = "Cerrar Aplicación";
             // 
@@ -113,7 +117,6 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 193);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAceptar);
@@ -123,6 +126,8 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.Name = "IMessageBoxSiNo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxSiNo";
+            this.panEncabezado.ResumeLayout(false);
+            this.panEncabezado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctWarning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
