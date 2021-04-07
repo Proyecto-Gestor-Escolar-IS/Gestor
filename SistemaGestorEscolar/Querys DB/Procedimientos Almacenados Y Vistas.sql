@@ -156,7 +156,7 @@ AS BEGIN
 
 	SET @deudaMensualidad = @deudaMensualidad - @descuento
 
-	IF @deudaMensualidad = 0
+	IF @deudaMensualidad <= 0
 	BEGIN 
 		UPDATE detalleMensualidades SET fechaPago = @fechaPago,
 										saldoDisponible = @montoPago + saldoDisponible
@@ -285,7 +285,7 @@ GO
 
 
 --Procedimiento almacenado para registrar un encargado 
-ALTER procedure RegistrarEncargado
+CREATE procedure RegistrarEncargado
 (
 @NumidentidadEstudiante varchar(13), @Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
 @segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),
@@ -456,3 +456,48 @@ AS BEGIN
 			VALUES( @id_expediente, @id_DoctorEncargado, GETDATE(), @sintomas, @posibleEnfermedad, @medicamentos)
 END
 GO
+
+
+
+Create Procedure agregarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float, @nota2doParcial float, @nota3erParcial float, @nota4toParcial float, @notaFinal float)
+As Begin 
+
+		If exists(select id_DetalleMatricula from detalleNotas Where
+				   (id_DetalleMatricula = @id_DetalleMatricula))
+			 Raiserror('El Alumno ya tiene registro de notas', 16,1)
+
+		else 
+
+		Insert into detalleNotas values(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, 1)
+
+End
+GO
+Create Procedure modificarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float, @nota2doParcial float, @nota3erParcial float, @nota4toParcial float, @notaFinal float)
+As Begin 
+
+		If exists(select id_DetalleMatricula from detalleNotas Where
+				  (id_DetalleMatricula = @id_DetalleMatricula))
+				  
+				  update detalleNotas set 
+										  nota1erParcial = @nota1erParcial, nota2doParcial = @nota2doParcial,
+										  nota3erParcial = @nota3erParcial, nota4toParcial = @nota4toParcial,
+										  notaFinal = @notaFinal
+					Where id_DetalleMatricula = @id_DetalleMatricula and id_Clase = @id_Clase
+        else 
+				raiserror('¡Revise los datos!, No se encontró el Alumno especificado', 16,1)
+
+End
+GO
+Create Procedure buscarAlumno(@identidadEstudiante varchar(13), @primerNombre varchar(20))
+As Begin 
+
+	If exists(select identidadEstudiante from datosEstudiante Where
+			   (identidadEstudiante Like @identidadEstudiante))
+
+			   select * from datosEstudiante where datosEstudiante.identidadEstudiante like @identidadEstudiante or 
+			   datosEstudiante.primerNombre like @primerNombre 
+
+	else 
+		raiserror('¡Revise los datos!, No se encontró el Alumno especificado', 16,1)
+
+End

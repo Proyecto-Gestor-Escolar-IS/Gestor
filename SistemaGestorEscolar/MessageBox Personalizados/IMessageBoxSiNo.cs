@@ -30,5 +30,10 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             isCodigoForm = false;
             this.Close();
         }
+
+        private void lblError_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

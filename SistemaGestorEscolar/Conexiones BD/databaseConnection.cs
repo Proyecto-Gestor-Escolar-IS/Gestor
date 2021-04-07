@@ -1003,6 +1003,42 @@ namespace SistemaGestorEscolar
                 return false;
             }
         }
+
+        public bool PARegistroSeccion(int IdCurso, String IdDocente, String nombreSeccion, int estado)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "PARegistrarSeccion";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idCurso", IdCurso);
+                comando.Parameters.AddWithValue("@idDocente", IdDocente);
+                comando.Parameters.AddWithValue("@nombreSeccion", nombreSeccion);
+                comando.Parameters.AddWithValue("@estado", estado);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Gestión cursos", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
     }
 
 }

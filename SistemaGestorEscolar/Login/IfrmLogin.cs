@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Login
 {
@@ -28,6 +29,33 @@ namespace SistemaGestorEscolar.Login
         private void frmLogin_Load(object sender, EventArgs e)
         {
             dbConn.establecerConexion();
+            ClsCambioTema.cambiarTemaBoton(panelPrincipal);
+
+            ClsCambioTema.cambiarTemaBoton(panel1);
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+   
+
+                panelPrincipal.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                panel1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+
+            }
+            else
+            {
+
+
+                panelPrincipal.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                panel1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+
+            }
+
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Active1 = Color.Red;
+            btnSalir.Active2 = Color.Red;
+            btnSalir.Inactive1 = Color.Red;
+            btnSalir.Inactive2 = Color.Red;
+            btnSalir.StrokeColor = Color.Red;
+
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -122,6 +150,16 @@ namespace SistemaGestorEscolar.Login
         private void panSuperior_MouseUp(object sender, MouseEventArgs e)
         {
             windowMove = false;
+        }
+
+        private void picImagotipo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altoButton1_Click(object sender, EventArgs e)
+        {
+            siNo.ShowDialog();
         }
     }
 }

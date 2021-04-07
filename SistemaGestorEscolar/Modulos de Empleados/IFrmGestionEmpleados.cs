@@ -33,11 +33,36 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
 
         private void IFrmGestionEmpleados_Load(object sender, EventArgs e)
         {
-            dbConn.establecerConexion();
+            ClsCambioTema.cambiarTemaBoton(this);
+            ClsCambioTema.cambiarTemaBoton(pnlRecuperacion);
             ClsCambioTema.cambiarTemaBoton(pnlSelector);
             ClsCambioTema.cambiarTemaBoton(pnldgv);
             ClsCambioTema.cambiarTemaBoton(grpActualizar);
             ClsCambioTema.cambiarTemaBoton(grpRegistroEmpleado);
+
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                pnlSelector.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                pnldgv.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                pnlRecuperacion.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpActualizar.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpRegistroEmpleado.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpActualizar.ForeColor = Color.White;
+                grpRegistroEmpleado.ForeColor = Color.White;
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                pnlSelector.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                pnldgv.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                pnlRecuperacion.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpActualizar.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpRegistroEmpleado.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpActualizar.ForeColor = Color.Black;
+                grpRegistroEmpleado.ForeColor = Color.Black;
+            }
         }
 
 

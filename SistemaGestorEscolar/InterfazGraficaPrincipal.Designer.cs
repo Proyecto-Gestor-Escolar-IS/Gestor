@@ -51,6 +51,7 @@ namespace SistemaGestorEscolar
             this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSubMenuEstudiante = new System.Windows.Forms.Panel();
+            this.btnCRUDEstudiate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnFichaEstudiante = new System.Windows.Forms.Button();
             this.btnRegistrarVisitaMedica = new System.Windows.Forms.Button();
@@ -425,14 +426,30 @@ namespace SistemaGestorEscolar
             // 
             // panSubMenuEstudiante
             // 
+            this.panSubMenuEstudiante.Controls.Add(this.btnCRUDEstudiate);
             this.panSubMenuEstudiante.Controls.Add(this.button1);
             this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
             this.panSubMenuEstudiante.Controls.Add(this.btnRegistrarVisitaMedica);
             this.panSubMenuEstudiante.Controls.Add(this.label2);
-            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 666);
+            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 659);
             this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
-            this.panSubMenuEstudiante.Size = new System.Drawing.Size(174, 89);
+            this.panSubMenuEstudiante.Size = new System.Drawing.Size(205, 98);
             this.panSubMenuEstudiante.TabIndex = 26;
+            // 
+            // btnCRUDEstudiate
+            // 
+            this.btnCRUDEstudiate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnCRUDEstudiate.FlatAppearance.BorderSize = 0;
+            this.btnCRUDEstudiate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCRUDEstudiate.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCRUDEstudiate.ForeColor = System.Drawing.Color.Black;
+            this.btnCRUDEstudiate.Location = new System.Drawing.Point(932, 666);
+            this.btnCRUDEstudiate.Name = "btnCRUDEstudiate";
+            this.btnCRUDEstudiate.Size = new System.Drawing.Size(407, 200);
+            this.btnCRUDEstudiate.TabIndex = 32;
+            this.btnCRUDEstudiate.Text = "MODIFICAR ESTUDIANTE";
+            this.btnCRUDEstudiate.UseVisualStyleBackColor = false;
+            this.btnCRUDEstudiate.Click += new System.EventHandler(this.btnCRUDEstudiate_Click);
             // 
             // button1
             // 
@@ -457,12 +474,13 @@ namespace SistemaGestorEscolar
             this.btnFichaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFichaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFichaEstudiante.ForeColor = System.Drawing.Color.Black;
-            this.btnFichaEstudiante.Location = new System.Drawing.Point(615, 665);
+            this.btnFichaEstudiante.Location = new System.Drawing.Point(322, 666);
             this.btnFichaEstudiante.Name = "btnFichaEstudiante";
             this.btnFichaEstudiante.Size = new System.Drawing.Size(407, 200);
             this.btnFichaEstudiante.TabIndex = 30;
             this.btnFichaEstudiante.Text = "FICHA DE ESTUDIANTE";
             this.btnFichaEstudiante.UseVisualStyleBackColor = false;
+            this.btnFichaEstudiante.Click += new System.EventHandler(this.btnFichaEstudiante_Click);
             this.btnFichaEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFichaEstudiante_MouseDown);
             // 
             // btnRegistrarVisitaMedica
@@ -505,9 +523,9 @@ namespace SistemaGestorEscolar
             this.panSubMenuPagos.Controls.Add(this.btnHistorialPagos);
             this.panSubMenuPagos.Controls.Add(this.btnRegistrarPago);
             this.panSubMenuPagos.Controls.Add(this.label1);
-            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 883);
+            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 888);
             this.panSubMenuPagos.Name = "panSubMenuPagos";
-            this.panSubMenuPagos.Size = new System.Drawing.Size(284, 50);
+            this.panSubMenuPagos.Size = new System.Drawing.Size(315, 80);
             this.panSubMenuPagos.TabIndex = 0;
             // 
             // btnHistorialPagos
@@ -528,6 +546,7 @@ namespace SistemaGestorEscolar
             this.btnHistorialPagos.TabIndex = 48;
             this.btnHistorialPagos.Text = "HISTORIAL PAGOS";
             this.btnHistorialPagos.UseVisualStyleBackColor = false;
+            this.btnHistorialPagos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnHistorialPagos_MouseDown);
             // 
             // btnRegistrarPago
             // 
@@ -591,7 +610,7 @@ namespace SistemaGestorEscolar
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 991);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 991);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(43, 41);
             this.btnCerrarSesion.TabIndex = 9;
@@ -609,7 +628,7 @@ namespace SistemaGestorEscolar
             this.btnCambioTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambioTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambioTema.ForeColor = System.Drawing.Color.Black;
-            this.btnCambioTema.Location = new System.Drawing.Point(66, 991);
+            this.btnCambioTema.Location = new System.Drawing.Point(63, 991);
             this.btnCambioTema.Name = "btnCambioTema";
             this.btnCambioTema.Size = new System.Drawing.Size(43, 41);
             this.btnCambioTema.TabIndex = 8;
@@ -618,7 +637,7 @@ namespace SistemaGestorEscolar
             // 
             // picImagotipo
             // 
-            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.Logo_Nazaret;
+            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logoredm;
             this.picImagotipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picImagotipo.Dock = System.Windows.Forms.DockStyle.Top;
             this.picImagotipo.Location = new System.Drawing.Point(0, 0);
@@ -743,6 +762,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnCRUDEstudiate;
         //private BrbVideoManager.Controls.RoundedButton btnMatriEstudiante;
         //private BrbVideoManager.Controls.RoundedButton btnVistaMatriculas;
     }

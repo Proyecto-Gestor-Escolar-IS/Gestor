@@ -37,12 +37,12 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.txtNoIdentidadEstudiante = new System.Windows.Forms.TextBox();
             this.txtNombrePadre = new System.Windows.Forms.TextBox();
             this.txtNombreEstudiante = new System.Windows.Forms.TextBox();
-            this.btnConsultarID = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.dgvHistorialPagos = new System.Windows.Forms.DataGridView();
             this.lblPendientePago = new System.Windows.Forms.Label();
             this.grpDataGrid = new System.Windows.Forms.GroupBox();
+            this.btnConsultarID = new AltoControls.AltoButton();
+            this.btnLimpiar = new AltoControls.AltoButton();
+            this.btnActualizar = new AltoControls.AltoButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialPagos)).BeginInit();
             this.grpDataGrid.SuspendLayout();
             this.SuspendLayout();
@@ -125,48 +125,6 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.txtNombreEstudiante.Size = new System.Drawing.Size(465, 28);
             this.txtNombreEstudiante.TabIndex = 8;
             // 
-            // btnConsultarID
-            // 
-            this.btnConsultarID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnConsultarID.FlatAppearance.BorderSize = 0;
-            this.btnConsultarID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarID.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarID.Location = new System.Drawing.Point(1073, 115);
-            this.btnConsultarID.Name = "btnConsultarID";
-            this.btnConsultarID.Size = new System.Drawing.Size(179, 33);
-            this.btnConsultarID.TabIndex = 9;
-            this.btnConsultarID.Text = "CONSULTAR";
-            this.btnConsultarID.UseVisualStyleBackColor = false;
-            this.btnConsultarID.Click += new System.EventHandler(this.btnConsultarID_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(1402, 234);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(179, 33);
-            this.btnLimpiar.TabIndex = 10;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(1207, 234);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(179, 33);
-            this.btnActualizar.TabIndex = 11;
-            this.btnActualizar.Text = "ACTUALIZAR";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // dgvHistorialPagos
             // 
             this.dgvHistorialPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -177,7 +135,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.dgvHistorialPagos.RowTemplate.ReadOnly = true;
             this.dgvHistorialPagos.Size = new System.Drawing.Size(1572, 519);
             this.dgvHistorialPagos.TabIndex = 12;
-            this.dgvHistorialPagos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorialPagos_CellContentDoubleClick);
+            this.dgvHistorialPagos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorialPagos_CellContentDoubleClick);
             // 
             // lblPendientePago
             // 
@@ -199,17 +157,80 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             this.grpDataGrid.TabIndex = 14;
             this.grpDataGrid.TabStop = false;
             // 
+            // btnConsultarID
+            // 
+            this.btnConsultarID.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnConsultarID.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnConsultarID.BackColor = System.Drawing.Color.Transparent;
+            this.btnConsultarID.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnConsultarID.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnConsultarID.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnConsultarID.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnConsultarID.Location = new System.Drawing.Point(1048, 120);
+            this.btnConsultarID.Name = "btnConsultarID";
+            this.btnConsultarID.Radius = 10;
+            this.btnConsultarID.Size = new System.Drawing.Size(179, 35);
+            this.btnConsultarID.Stroke = true;
+            this.btnConsultarID.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnConsultarID.TabIndex = 20;
+            this.btnConsultarID.Text = "CONSULTAR";
+            this.btnConsultarID.Transparency = false;
+            this.btnConsultarID.Click += new System.EventHandler(this.btnConsultarID_Click_1);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(1402, 232);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Radius = 10;
+            this.btnLimpiar.Size = new System.Drawing.Size(179, 35);
+            this.btnLimpiar.Stroke = true;
+            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiar.TabIndex = 21;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.Transparency = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActualizar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnActualizar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizar.Location = new System.Drawing.Point(1217, 232);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Radius = 10;
+            this.btnActualizar.Size = new System.Drawing.Size(179, 35);
+            this.btnActualizar.Stroke = true;
+            this.btnActualizar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnActualizar.TabIndex = 22;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.Transparency = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
+            // 
             // IHistorialPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.grpDataGrid);
-            this.Controls.Add(this.lblPendientePago);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnConsultarID);
+            this.Controls.Add(this.grpDataGrid);
+            this.Controls.Add(this.lblPendientePago);
             this.Controls.Add(this.txtNombreEstudiante);
             this.Controls.Add(this.txtNombrePadre);
             this.Controls.Add(this.txtNoIdentidadEstudiante);
@@ -239,11 +260,11 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
         private System.Windows.Forms.TextBox txtNoIdentidadEstudiante;
         private System.Windows.Forms.TextBox txtNombrePadre;
         private System.Windows.Forms.TextBox txtNombreEstudiante;
-        private System.Windows.Forms.Button btnConsultarID;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView dgvHistorialPagos;
         private System.Windows.Forms.Label lblPendientePago;
         private System.Windows.Forms.GroupBox grpDataGrid;
+        private AltoControls.AltoButton btnConsultarID;
+        private AltoControls.AltoButton btnLimpiar;
+        private AltoControls.AltoButton btnActualizar;
     }
 }

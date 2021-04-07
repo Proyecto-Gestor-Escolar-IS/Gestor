@@ -44,7 +44,7 @@
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(28, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(365, 27);
+            this.label5.Size = new System.Drawing.Size(379, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "RECUPERACIÓN DE CONTRASEÑA";
             // 
@@ -69,7 +69,7 @@
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(105, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 19);
+            this.label1.Size = new System.Drawing.Size(200, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "NUMERO DE IDENTIDAD";
             // 
@@ -119,7 +119,9 @@
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRecuperacionContrasenia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recuperacion de Contraseña";
+            this.Load += new System.EventHandler(this.frmRecuperacionContrasenia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaGestorEscolar.MessageBox_Personalizados;
+using SistemaGestorEscolar.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +19,26 @@ namespace SistemaGestorEscolar.Login
             InitializeComponent();
         }
 
+        IMessageBoxSiNo siNo = new IMessageBoxSiNo();
+
         databaseConnection dbConn = new databaseConnection();
         InterfazGraficaPrincipal interfazPrincipal = new InterfazGraficaPrincipal();
         private void IfrmSeleccionarTipoInicio_Load(object sender, EventArgs e)
         {
+
+            ClsCambioTema.cambiarTemaBoton(panel1);
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+
+                panel1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+            else
+            {
+
+                panel1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+
+            }
+
             int codigoTipos = 0;
             dbConn.llenarDGV(dgvTiposCargos, "SELECT descripcionCargo FROM datosEmpleados de INNER JOIN detalleCargos dc ON de.identidadPersona = dc.identidadEmpleado " +
                 "INNER JOIN cargos c ON dc.idCargoAsociado = c.id_Cargo WHERE de.identidadPersona = '" + clsVariablesGlobales.NumIdentidad + "' ");
@@ -79,6 +97,20 @@ namespace SistemaGestorEscolar.Login
                     break;
             }
 
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Active1 = Color.Red;
+            btnSalir.Active2 = Color.Red;
+            btnSalir.Inactive1 = Color.Red;
+            btnSalir.Inactive2 = Color.Red;
+            btnSalir.StrokeColor = Color.Red;
+
+            btnAtras.ForeColor = Color.White;
+            btnAtras.Active1 = Color.Red;
+            btnAtras.Active2 = Color.Red;
+            btnAtras.Inactive1 = Color.Red;
+            btnAtras.Inactive2 = Color.Red;
+            btnAtras.StrokeColor = Color.Red;
+
         }
 
         private void btnCerrarPrograma_Click(object sender, EventArgs e)
@@ -88,9 +120,7 @@ namespace SistemaGestorEscolar.Login
 
         private void btnMenuAtras_Click(object sender, EventArgs e)
         {
-            IfrmLogin frmLogin = new IfrmLogin();
-            frmLogin.Show();
-            this.Close();
+
         }
 
         private void btnSuperUsuario_Click(object sender, EventArgs e)
@@ -134,6 +164,28 @@ namespace SistemaGestorEscolar.Login
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblSaludo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            IfrmLogin frmLogin = new IfrmLogin();
+            frmLogin.Show();
+            this.Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            siNo.ShowDialog();
+        }
+
+        private void dgvTiposCargos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
