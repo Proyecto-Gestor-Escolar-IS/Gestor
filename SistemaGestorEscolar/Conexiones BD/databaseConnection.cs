@@ -1004,6 +1004,287 @@ namespace SistemaGestorEscolar
             }
         }
 
+        /*CRUD CURSOS*/
+        public bool PAInsertarCurso(String nombreCurso, float precioMensual, int tipoCalificacion, int estado)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "registrarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@nombreCurso", nombreCurso);
+                comando.Parameters.AddWithValue("@precio", precioMensual);
+                comando.Parameters.AddWithValue("@tipoCalificacion", tipoCalificacion);
+                comando.Parameters.AddWithValue("@estadoCurso", estado);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al registrar un Curso", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+        public bool PAInsertarDetalleClases(int idClase, int idCurso)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "registrarDetalleClases";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idClase", idClase);
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al registrar un Curso", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
+        public bool PAActualizarCurso(int idCurso, float precio)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "actualizarCurso";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
+                comando.Parameters.AddWithValue("@precioCurso", precio);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al actualizar un Curso", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
+        public bool PAEliminarDetallesClases(int idCurso)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "eliminarDetalleClases";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error Fatal al Registrar nuevas clases", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
+        public bool PAActualizarSeccion(int idSeccion, String docente, int estado)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "actualizarSeccion";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idSeccion", idSeccion);
+                comando.Parameters.AddWithValue("@docente", docente);
+                comando.Parameters.AddWithValue("@estado", estado);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al actualizar una Seccion", "Error de Actualizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
+
+        public bool PARegistrarSeccion(int idCurso, String docente, char seccion)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "insertarSeccion";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idCurso", idCurso);
+                comando.Parameters.AddWithValue("@identidadDocente", docente);
+                comando.Parameters.AddWithValue("@seccion", seccion);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al registrar una Seccion", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+        /*CLASES*/
+        public bool PAActualizarClase(int idClase, int estado)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "actualizarClase";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@idClase", idClase);
+                comando.Parameters.AddWithValue("@estado", estado);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al registrar una Seccion", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
+        public bool PARegistrarClase(String nombreClase)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = "registrarClase";
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@nombreClase", nombreClase);
+
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error al registrar una Seccion", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+
+        }
+
+
+
         /*
         public bool PARegistroSeccion(String seccion, int curso, int docente, int estado)
         {

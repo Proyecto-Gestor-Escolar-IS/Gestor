@@ -178,6 +178,12 @@
     <Compile Include="Modulo de Cursos\IGestionCursos.Designer.cs">
       <DependentUpon>IGestionCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulo de Cursos\IGestionCursosYClases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo de Cursos\IGestionCursosYClases.Designer.cs">
+      <DependentUpon>IGestionCursosYClases.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos de Empleados\IFrmGestionEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo de Cursos\IGestionCursos.resx">
       <DependentUpon>IGestionCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo de Cursos\IGestionCursosYClases.resx">
+      <DependentUpon>IGestionCursosYClases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos de Empleados\IFrmGestionEmpleados.resx">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>

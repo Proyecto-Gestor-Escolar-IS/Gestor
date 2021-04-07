@@ -31,7 +31,12 @@ namespace SistemaGestorEscolar
         {
             this.components = new System.ComponentModel.Container();
             this.panSuperior = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnCerrarPrograma = new System.Windows.Forms.Button();
             this.panLateral = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnCambioTema = new System.Windows.Forms.Button();
             this.btnMenuPersonal = new System.Windows.Forms.Button();
             this.btnMenuRegistroPago = new System.Windows.Forms.Button();
             this.btnMenuIngresoNotas = new System.Windows.Forms.Button();
@@ -39,9 +44,10 @@ namespace SistemaGestorEscolar
             this.btnMenuVistaMatricula = new System.Windows.Forms.Button();
             this.btnMenuMatriculaEstudiante = new System.Windows.Forms.Button();
             this.btnMenuAtras = new System.Windows.Forms.Button();
+            this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panSubMenuPersonal = new System.Windows.Forms.Panel();
-            this.btnIngresarNuevoUsuario = new System.Windows.Forms.Button();
+            this.btnIngresarUsuario = new SistemaGestorEscolar.Controls.RoundedButton();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPersonal = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
@@ -51,10 +57,11 @@ namespace SistemaGestorEscolar
             this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSubMenuEstudiante = new System.Windows.Forms.Panel();
-            this.btnCRUDEstudiate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnFichaEstudiante = new System.Windows.Forms.Button();
-            this.btnRegistrarVisitaMedica = new System.Windows.Forms.Button();
+            this.btnImprimirReporte = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnModificarEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnFichaEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnRegistroVisita = new SistemaGestorEscolar.Controls.RoundedButton();
+            this.btnAperturaExpediente = new SistemaGestorEscolar.Controls.RoundedButton();
             this.label2 = new System.Windows.Forms.Label();
             this.panelMostrador = new System.Windows.Forms.Panel();
             this.panSubMenuPagos = new System.Windows.Forms.Panel();
@@ -64,19 +71,13 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle = new System.Windows.Forms.Label();
             this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnCambioTema = new System.Windows.Forms.Button();
-            this.picImagotipo = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrarPrograma = new System.Windows.Forms.Button();
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
             this.panelPrincipal.SuspendLayout();
             this.panSubMenuPersonal.SuspendLayout();
             this.panSubMenuEstudiante.SuspendLayout();
             this.panSubMenuPagos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
             this.SuspendLayout();
             // 
             // panSuperior
@@ -95,6 +96,51 @@ namespace SistemaGestorEscolar
             this.panSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseDown);
             this.panSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseMove);
             this.panSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panSuperior_MouseUp);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(1786, 12);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
+            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Location = new System.Drawing.Point(1830, 4);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(34, 35);
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnCerrarPrograma
+            // 
+            this.btnCerrarPrograma.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
+            this.btnCerrarPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrarPrograma.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarPrograma.FlatAppearance.BorderSize = 0;
+            this.btnCerrarPrograma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCerrarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarPrograma.Location = new System.Drawing.Point(1872, 3);
+            this.btnCerrarPrograma.Name = "btnCerrarPrograma";
+            this.btnCerrarPrograma.Size = new System.Drawing.Size(36, 36);
+            this.btnCerrarPrograma.TabIndex = 0;
+            this.btnCerrarPrograma.UseVisualStyleBackColor = true;
+            this.btnCerrarPrograma.Click += new System.EventHandler(this.btnCerrarPrograma_Click);
             // 
             // panLateral
             // 
@@ -115,6 +161,42 @@ namespace SistemaGestorEscolar
             this.panLateral.Size = new System.Drawing.Size(285, 1035);
             this.panLateral.TabIndex = 1;
             this.panLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panLateral_Paint);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarSesion.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logout1;
+            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Black;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 991);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(43, 41);
+            this.btnCerrarSesion.TabIndex = 9;
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnCambioTema
+            // 
+            this.btnCambioTema.BackColor = System.Drawing.Color.Transparent;
+            this.btnCambioTema.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources._1033;
+            this.btnCambioTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCambioTema.FlatAppearance.BorderSize = 0;
+            this.btnCambioTema.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCambioTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCambioTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambioTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambioTema.ForeColor = System.Drawing.Color.Black;
+            this.btnCambioTema.Location = new System.Drawing.Point(63, 991);
+            this.btnCambioTema.Name = "btnCambioTema";
+            this.btnCambioTema.Size = new System.Drawing.Size(43, 41);
+            this.btnCambioTema.TabIndex = 8;
+            this.btnCambioTema.UseVisualStyleBackColor = false;
+            this.btnCambioTema.Click += new System.EventHandler(this.btnCambioTema_Click);
             // 
             // btnMenuPersonal
             // 
@@ -222,6 +304,18 @@ namespace SistemaGestorEscolar
             this.btnMenuAtras.UseVisualStyleBackColor = false;
             this.btnMenuAtras.Click += new System.EventHandler(this.btnMenuAtras_Click);
             // 
+            // picImagotipo
+            // 
+            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logoredm;
+            this.picImagotipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picImagotipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picImagotipo.Location = new System.Drawing.Point(0, 0);
+            this.picImagotipo.Name = "picImagotipo";
+            this.picImagotipo.Size = new System.Drawing.Size(285, 190);
+            this.picImagotipo.TabIndex = 0;
+            this.picImagotipo.TabStop = false;
+            this.picImagotipo.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
@@ -247,27 +341,32 @@ namespace SistemaGestorEscolar
             // 
             // panSubMenuPersonal
             // 
-            this.panSubMenuPersonal.Controls.Add(this.btnIngresarNuevoUsuario);
+            this.panSubMenuPersonal.Controls.Add(this.btnIngresarUsuario);
             this.panSubMenuPersonal.Controls.Add(this.label3);
-            this.panSubMenuPersonal.Location = new System.Drawing.Point(1276, 786);
+            this.panSubMenuPersonal.Location = new System.Drawing.Point(1276, 798);
             this.panSubMenuPersonal.Name = "panSubMenuPersonal";
             this.panSubMenuPersonal.Size = new System.Drawing.Size(284, 55);
             this.panSubMenuPersonal.TabIndex = 47;
             // 
-            // btnIngresarNuevoUsuario
+            // btnIngresarUsuario
             // 
-            this.btnIngresarNuevoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnIngresarNuevoUsuario.FlatAppearance.BorderSize = 0;
-            this.btnIngresarNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresarNuevoUsuario.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresarNuevoUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnIngresarNuevoUsuario.Location = new System.Drawing.Point(602, 467);
-            this.btnIngresarNuevoUsuario.Name = "btnIngresarNuevoUsuario";
-            this.btnIngresarNuevoUsuario.Size = new System.Drawing.Size(407, 200);
-            this.btnIngresarNuevoUsuario.TabIndex = 30;
-            this.btnIngresarNuevoUsuario.Text = "INGRESAR NUEVO USUARIO";
-            this.btnIngresarNuevoUsuario.UseVisualStyleBackColor = false;
-            this.btnIngresarNuevoUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarNuevoUsuario_MouseDown);
+            this.btnIngresarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnIngresarUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnIngresarUsuario.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnIngresarUsuario.BorderDownWidth = 0F;
+            this.btnIngresarUsuario.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnIngresarUsuario.BorderOverWidth = 0F;
+            this.btnIngresarUsuario.BorderRadius = 25;
+            this.btnIngresarUsuario.BorderWidth = 4F;
+            this.btnIngresarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnIngresarUsuario.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnIngresarUsuario.Location = new System.Drawing.Point(626, 394);
+            this.btnIngresarUsuario.Name = "btnIngresarUsuario";
+            this.btnIngresarUsuario.Size = new System.Drawing.Size(368, 155);
+            this.btnIngresarUsuario.TabIndex = 45;
+            this.btnIngresarUsuario.Text = "REGISTRAR NUEVO PERSONAL";
+            this.btnIngresarUsuario.UseVisualStyleBackColor = false;
+            this.btnIngresarUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarUsuario_MouseDown);
             // 
             // label3
             // 
@@ -338,6 +437,7 @@ namespace SistemaGestorEscolar
             this.btnIngresarNotas.TabIndex = 45;
             this.btnIngresarNotas.Text = "INGRESAR NOTAS";
             this.btnIngresarNotas.UseVisualStyleBackColor = false;
+            this.btnIngresarNotas.Click += new System.EventHandler(this.btnIngresarNotas_Click);
             this.btnIngresarNotas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarNotas_MouseDown);
             // 
             // btnPagos
@@ -426,84 +526,128 @@ namespace SistemaGestorEscolar
             // 
             // panSubMenuEstudiante
             // 
-            this.panSubMenuEstudiante.Controls.Add(this.btnCRUDEstudiate);
-            this.panSubMenuEstudiante.Controls.Add(this.button1);
+            this.panSubMenuEstudiante.Controls.Add(this.btnImprimirReporte);
+            this.panSubMenuEstudiante.Controls.Add(this.btnModificarEstudiante);
             this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
-            this.panSubMenuEstudiante.Controls.Add(this.btnRegistrarVisitaMedica);
+            this.panSubMenuEstudiante.Controls.Add(this.btnRegistroVisita);
+            this.panSubMenuEstudiante.Controls.Add(this.btnAperturaExpediente);
             this.panSubMenuEstudiante.Controls.Add(this.label2);
             this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 659);
             this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
             this.panSubMenuEstudiante.Size = new System.Drawing.Size(205, 98);
             this.panSubMenuEstudiante.TabIndex = 26;
             // 
-            // btnCRUDEstudiate
+            // btnImprimirReporte
             // 
-            this.btnCRUDEstudiate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnCRUDEstudiate.FlatAppearance.BorderSize = 0;
-            this.btnCRUDEstudiate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCRUDEstudiate.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCRUDEstudiate.ForeColor = System.Drawing.Color.Black;
-            this.btnCRUDEstudiate.Location = new System.Drawing.Point(932, 666);
-            this.btnCRUDEstudiate.Name = "btnCRUDEstudiate";
-            this.btnCRUDEstudiate.Size = new System.Drawing.Size(407, 200);
-            this.btnCRUDEstudiate.TabIndex = 32;
-            this.btnCRUDEstudiate.Text = "MODIFICAR ESTUDIANTE";
-            this.btnCRUDEstudiate.UseVisualStyleBackColor = false;
-            this.btnCRUDEstudiate.Click += new System.EventHandler(this.btnCRUDEstudiate_Click);
+            this.btnImprimirReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnImprimirReporte.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnImprimirReporte.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnImprimirReporte.BorderDownWidth = 0F;
+            this.btnImprimirReporte.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnImprimirReporte.BorderOverWidth = 0F;
+            this.btnImprimirReporte.BorderRadius = 25;
+            this.btnImprimirReporte.BorderWidth = 4F;
+            this.btnImprimirReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnImprimirReporte.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnImprimirReporte.Location = new System.Drawing.Point(601, 767);
+            this.btnImprimirReporte.Name = "btnImprimirReporte";
+            this.btnImprimirReporte.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnImprimirReporte.Size = new System.Drawing.Size(420, 155);
+            this.btnImprimirReporte.TabIndex = 52;
+            this.btnImprimirReporte.Text = "IMPRIMIR REPORTE";
+            this.btnImprimirReporte.UseVisualStyleBackColor = false;
+            this.btnImprimirReporte.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnImprimirReporte_MouseDown);
             // 
-            // button1
+            // btnModificarEstudiante
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(322, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(407, 200);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "APERTURA EXPEDIENTE MEDICO";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.btnModificarEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnModificarEstudiante.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnModificarEstudiante.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnModificarEstudiante.BorderDownWidth = 0F;
+            this.btnModificarEstudiante.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnModificarEstudiante.BorderOverWidth = 0F;
+            this.btnModificarEstudiante.BorderRadius = 25;
+            this.btnModificarEstudiante.BorderWidth = 4F;
+            this.btnModificarEstudiante.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnModificarEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificarEstudiante.Location = new System.Drawing.Point(919, 478);
+            this.btnModificarEstudiante.Name = "btnModificarEstudiante";
+            this.btnModificarEstudiante.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnModificarEstudiante.Size = new System.Drawing.Size(420, 155);
+            this.btnModificarEstudiante.TabIndex = 51;
+            this.btnModificarEstudiante.Text = "MODIFICAR ESTUDIANTE";
+            this.btnModificarEstudiante.UseVisualStyleBackColor = false;
+            this.btnModificarEstudiante.Click += new System.EventHandler(this.btnModificarEstudiante_Click);
             // 
             // btnFichaEstudiante
             // 
             this.btnFichaEstudiante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnFichaEstudiante.FlatAppearance.BorderSize = 0;
-            this.btnFichaEstudiante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFichaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFichaEstudiante.ForeColor = System.Drawing.Color.Black;
-            this.btnFichaEstudiante.Location = new System.Drawing.Point(322, 666);
+            this.btnFichaEstudiante.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnFichaEstudiante.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnFichaEstudiante.BorderDownWidth = 0F;
+            this.btnFichaEstudiante.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnFichaEstudiante.BorderOverWidth = 0F;
+            this.btnFichaEstudiante.BorderRadius = 25;
+            this.btnFichaEstudiante.BorderWidth = 4F;
+            this.btnFichaEstudiante.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnFichaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnFichaEstudiante.Location = new System.Drawing.Point(309, 478);
             this.btnFichaEstudiante.Name = "btnFichaEstudiante";
-            this.btnFichaEstudiante.Size = new System.Drawing.Size(407, 200);
-            this.btnFichaEstudiante.TabIndex = 30;
+            this.btnFichaEstudiante.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnFichaEstudiante.Size = new System.Drawing.Size(420, 155);
+            this.btnFichaEstudiante.TabIndex = 50;
             this.btnFichaEstudiante.Text = "FICHA DE ESTUDIANTE";
             this.btnFichaEstudiante.UseVisualStyleBackColor = false;
-            this.btnFichaEstudiante.Click += new System.EventHandler(this.btnFichaEstudiante_Click);
-            this.btnFichaEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnFichaEstudiante_MouseDown);
+            this.btnFichaEstudiante.Click += new System.EventHandler(this.roundedButton1_Click_2);
+            this.btnFichaEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.roundedButton1_MouseDown_1);
             // 
-            // btnRegistrarVisitaMedica
+            // btnRegistroVisita
             // 
-            this.btnRegistrarVisitaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnRegistrarVisitaMedica.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarVisitaMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarVisitaMedica.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVisitaMedica.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrarVisitaMedica.Location = new System.Drawing.Point(932, 350);
-            this.btnRegistrarVisitaMedica.Name = "btnRegistrarVisitaMedica";
-            this.btnRegistrarVisitaMedica.Size = new System.Drawing.Size(407, 200);
-            this.btnRegistrarVisitaMedica.TabIndex = 28;
-            this.btnRegistrarVisitaMedica.Text = "REGISTRAR VISITA MEDICA";
-            this.btnRegistrarVisitaMedica.UseVisualStyleBackColor = false;
-            this.btnRegistrarVisitaMedica.Click += new System.EventHandler(this.btnRegistrarVisitaMedica_Click);
-            this.btnRegistrarVisitaMedica.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistrarVisitaMedica_MouseDown);
+            this.btnRegistroVisita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnRegistroVisita.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnRegistroVisita.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnRegistroVisita.BorderDownWidth = 0F;
+            this.btnRegistroVisita.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnRegistroVisita.BorderOverWidth = 0F;
+            this.btnRegistroVisita.BorderRadius = 25;
+            this.btnRegistroVisita.BorderWidth = 4F;
+            this.btnRegistroVisita.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnRegistroVisita.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegistroVisita.Location = new System.Drawing.Point(919, 209);
+            this.btnRegistroVisita.Name = "btnRegistroVisita";
+            this.btnRegistroVisita.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnRegistroVisita.Size = new System.Drawing.Size(420, 155);
+            this.btnRegistroVisita.TabIndex = 49;
+            this.btnRegistroVisita.Text = "REGISTRO DE VISITA MEDICA";
+            this.btnRegistroVisita.UseVisualStyleBackColor = false;
+            this.btnRegistroVisita.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistroVisita_MouseDown);
+            // 
+            // btnAperturaExpediente
+            // 
+            this.btnAperturaExpediente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
+            this.btnAperturaExpediente.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
+            this.btnAperturaExpediente.BorderDownColor = System.Drawing.Color.Empty;
+            this.btnAperturaExpediente.BorderDownWidth = 0F;
+            this.btnAperturaExpediente.BorderOverColor = System.Drawing.Color.Empty;
+            this.btnAperturaExpediente.BorderOverWidth = 0F;
+            this.btnAperturaExpediente.BorderRadius = 25;
+            this.btnAperturaExpediente.BorderWidth = 4F;
+            this.btnAperturaExpediente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
+            this.btnAperturaExpediente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAperturaExpediente.Location = new System.Drawing.Point(309, 209);
+            this.btnAperturaExpediente.Name = "btnAperturaExpediente";
+            this.btnAperturaExpediente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAperturaExpediente.Size = new System.Drawing.Size(420, 155);
+            this.btnAperturaExpediente.TabIndex = 48;
+            this.btnAperturaExpediente.Text = "APERTURA DE EXPEDIENTE MEDICO";
+            this.btnAperturaExpediente.UseVisualStyleBackColor = false;
+            this.btnAperturaExpediente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAperturaExpediente_MouseDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(697, 170);
+            this.label2.Location = new System.Drawing.Point(703, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(240, 36);
             this.label2.TabIndex = 26;
@@ -599,99 +743,6 @@ namespace SistemaGestorEscolar
             this.tmrMostrarMenu.Interval = 2;
             this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
             // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarSesion.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logout1;
-            this.btnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Black;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 991);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(43, 41);
-            this.btnCerrarSesion.TabIndex = 9;
-            this.btnCerrarSesion.UseVisualStyleBackColor = false;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // btnCambioTema
-            // 
-            this.btnCambioTema.BackColor = System.Drawing.Color.Transparent;
-            this.btnCambioTema.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources._1033;
-            this.btnCambioTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCambioTema.FlatAppearance.BorderSize = 0;
-            this.btnCambioTema.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCambioTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCambioTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambioTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambioTema.ForeColor = System.Drawing.Color.Black;
-            this.btnCambioTema.Location = new System.Drawing.Point(63, 991);
-            this.btnCambioTema.Name = "btnCambioTema";
-            this.btnCambioTema.Size = new System.Drawing.Size(43, 41);
-            this.btnCambioTema.TabIndex = 8;
-            this.btnCambioTema.UseVisualStyleBackColor = false;
-            this.btnCambioTema.Click += new System.EventHandler(this.btnCambioTema_Click);
-            // 
-            // picImagotipo
-            // 
-            this.picImagotipo.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.logoredm;
-            this.picImagotipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picImagotipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picImagotipo.Location = new System.Drawing.Point(0, 0);
-            this.picImagotipo.Name = "picImagotipo";
-            this.picImagotipo.Size = new System.Drawing.Size(285, 182);
-            this.picImagotipo.TabIndex = 0;
-            this.picImagotipo.TabStop = false;
-            this.picImagotipo.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.minimize;
-            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(1786, 12);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(35, 35);
-            this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.maximize;
-            this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Location = new System.Drawing.Point(1830, 4);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(34, 35);
-            this.btnMaximizar.TabIndex = 1;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnCerrarPrograma
-            // 
-            this.btnCerrarPrograma.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.exitButton;
-            this.btnCerrarPrograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCerrarPrograma.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarPrograma.FlatAppearance.BorderSize = 0;
-            this.btnCerrarPrograma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarPrograma.Location = new System.Drawing.Point(1872, 3);
-            this.btnCerrarPrograma.Name = "btnCerrarPrograma";
-            this.btnCerrarPrograma.Size = new System.Drawing.Size(36, 36);
-            this.btnCerrarPrograma.TabIndex = 0;
-            this.btnCerrarPrograma.UseVisualStyleBackColor = true;
-            this.btnCerrarPrograma.Click += new System.EventHandler(this.btnCerrarPrograma_Click);
-            // 
             // InterfazGraficaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -708,6 +759,7 @@ namespace SistemaGestorEscolar
             this.Load += new System.EventHandler(this.InterfazGraficaPrincipal_Load);
             this.panSuperior.ResumeLayout(false);
             this.panLateral.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelPrincipal.PerformLayout();
             this.panSubMenuPersonal.ResumeLayout(false);
@@ -716,7 +768,6 @@ namespace SistemaGestorEscolar
             this.panSubMenuEstudiante.PerformLayout();
             this.panSubMenuPagos.ResumeLayout(false);
             this.panSubMenuPagos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -744,8 +795,6 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Panel panSubMenuPagos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panSubMenuEstudiante;
-        private System.Windows.Forms.Button btnFichaEstudiante;
-        private System.Windows.Forms.Button btnRegistrarVisitaMedica;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCambioTema;
         private Controls.RoundedButton btnMatricularEstudiante;
@@ -758,11 +807,14 @@ namespace SistemaGestorEscolar
         private Controls.RoundedButton btnHistorialPagos;
         private Controls.RoundedButton btnRegistrarPago;
         private System.Windows.Forms.Panel panSubMenuPersonal;
-        private System.Windows.Forms.Button btnIngresarNuevoUsuario;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Button btnCRUDEstudiate;
+        private Controls.RoundedButton btnAperturaExpediente;
+        private Controls.RoundedButton btnRegistroVisita;
+        private Controls.RoundedButton btnFichaEstudiante;
+        private Controls.RoundedButton btnModificarEstudiante;
+        private Controls.RoundedButton btnImprimirReporte;
+        private Controls.RoundedButton btnIngresarUsuario;
         //private BrbVideoManager.Controls.RoundedButton btnMatriEstudiante;
         //private BrbVideoManager.Controls.RoundedButton btnVistaMatriculas;
     }
