@@ -20,11 +20,10 @@ namespace SistemaGestorEscolar
         public static Form formulario = new Form();
         private int posicionX;
         private bool windowMove = false;
-        private int codigoColor = 1;
-
+        public static int codigoColor = 1;
+  
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-    
 
             //Properties.Settings.Default.Reset();
             try

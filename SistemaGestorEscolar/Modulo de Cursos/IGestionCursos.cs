@@ -249,7 +249,17 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 actualizarDGVSecciones();
 
                 dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM dbo.cursos where [estadoCurso] = 1");
-                dbConn.llenarComboBox(cmbDocentes, "SELECT concat(de.[primerNombre], ' ', de.[primerApellido]) as 'Docente' from [dbo].[datosEmpleados]de inner join [dbo].[detalleCargos]dc on dc.identidadEmpleado = de.identidadPersona inner join [dbo].[cargos]c on c.id_Cargo = dc.idCargoAsociado where de.[estadoEmpleado] = 1");
+
+                dbConn.llenarComboBox(cmbDocentes, "SELECT de.[identidadPersona] from [dbo].[datosEmpleados]de inner join [dbo].[detalleCargos]dc on dc.identidadEmpleado = de.identidadPersona " +
+                    "inner join [dbo].[cargos]c on c.id_Cargo = dc.idCargoAsociado where de.[estadoEmpleado] = 1");
+
+                String nombreCurso;
+
+                nombreCurso = txtNombreCurso.Text;
+
+                cmbCursos.SelectedItem = nombreCurso;
+
+                utilidad.limpiarTextBox(grbPrincipal);
 
             }
             else if (dbConn.obtenerVariableEntera("select [estadoCurso] from [dbo].[cursos]c inner join [dbo].[estados]e on c.estadoCurso = e.id_Estado where [estadoCurso] = 2 and [nombreCurso] = '" + txtNombreCurso.Text + "'") == 2)
@@ -273,44 +283,143 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             lblCursos.Visible = true;
             grbDgvSecciones.Visible = true;
             lblCursos.Visible = true;
+            grbDgvSecciones.Visible = false;
+            cmbDocentes.Items.Clear();
+            cmbCursos.Items.Clear();
+            utilidad.limpiarTextBox(grbSeccionesCont);
         }
 
         private void actualizarDGVSecciones()
         {
             dbConn.llenarDGV(dgvSecciones, "SELECT c.nombreCurso as 'Curso', concat(de.primerNombre,' ', de.primerApellido) as 'Docente', s.nombreSeccion as 'Nombre sección' FROM dbo.cursos c INNER JOIN dbo.seccion s ON c.id_Curso = s.id_Curso INNER JOIN dbo.datosEmpleados de ON s.id_Docente = de.identidadPersona");
+        
+        }
+        private void actualizarDGVSeccionesInac()
+        {
+            dbConn.llenarDGV(dgvSeccionesInac, "SELECT c.nombreCurso as 'Curso', concat(de.primerNombre,' ', de.primerApellido) as 'Docente', s.nombreSeccion as 'Nombre sección' FROM dbo.cursos c INNER JOIN dbo.seccion s ON c.id_Curso = s.id_Curso INNER JOIN dbo.datosEmpleados de ON s.id_Docente = de.identidadPersona");
+
+            //dbConn.llenarDGV(dgvSeccionesInac, "SELECT c.nombreCurso as 'Curso', de.primerNombre as 'Nombre docente', de.primerApellido as 'Apellido docente', s.nombreSeccion as 'Nombre sección', e.[descripcionEstado] as 'Estado'" +
+            //  "FROM dbo.cursos c INNER JOIN dbo.seccion s ON c.id_Curso = s.id_Curso INNER JOIN dbo.datosEmpleados de ON s.id_Docente = de.identidadPersona INNER JOIN [dbo].[estados]e ON s.estado = e.id_Estado where [estado] = 2");
         }
 
         private void dgvSecciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtSeccion.Text = dgvSecciones.CurrentRow.Cells[2].Value.ToString();
+
+            cmbCursos.SelectedItem = dgvSecciones.CurrentRow.Cells[0].Value.ToString();
+
+            String nombreDoce, identidad;
+            nombreDoce = dgvSecciones.CurrentRow.Cells[1].Value.ToString();
+
+            identidad = dbConn.obtenerVariableString("SELECT [identidadPersona] FROM [dbo].[datosEmpleados] WHERE CONCAT([primerNombre], ' ', [primerApellido]) ='" + nombreDoce + "'");
+
+            cmbDocentes.SelectedItem = identidad;
         }
         private void btnRegistrarSecc_Click(object sender, EventArgs e)
         {
-            if(cmbCursos.SelectedIndex == -1)
+            if (txtSeccion.Text == String.Empty)
+            {
+                messageError.lblError.Text = "INGRESE UNA SECCIÓN";
+                messageError.ShowDialog();
+            }
+            if (cmbCursos.SelectedIndex == -1)
             {
                 messageError.lblError.Text = "SELECCIONE UN CURSO";
                 messageError.ShowDialog();
 
-            }else if (cmbDocentes.SelectedIndex == -1)
+            }
+            else if (cmbDocentes.SelectedIndex == -1)
             {
-                messageError.lblError.Text = "SELECCIONE UNA SECCIÓN";
+                messageError.lblError.Text = "ASIGNE UN DOCENTE";
                 messageError.ShowDialog();
             }
-            else if (dbConn.ComprobarExistencia("SELECT [nombreSeccion] from [dbo].[seccion] WHERE [nombreSeccion] = '" + txtSeccion.Text + "'")){
+            else if ((dbConn.obtenerVariableString("EXEC VerificarDocente '" + txtNombreDoce.Text + "' '" + txtSeccion.Text + "'")) == null)
+            {
 
-                String seccion, estado;
-                int curso, docente;
-                /*
-                seccion = txtSeccion.Text
-                
-                dbConn.PARegistroSeccion(seccion, curso, docente, estado);
-                */
+                messageError.lblError.Text = "DOCENTE YA FUE ASIGNADO";
+                messageError.ShowDialog();
+                cmbDocentes.SelectedIndex = -1;
+            }
+            else if ((dbConn.obtenerVariableString("select [nombreSeccion] from [dbo].[seccion]s inner join [dbo].[estados]e on s.estado = e.id_Estado where s.[estado] = 1 and [nombreSeccion] = '" + txtSeccion.Text + "'") != txtSeccion.Text))
+            {
+
+                String nombreSeccion, IdDocente;
+                int Idcurso, estado;
+
+                nombreSeccion = txtSeccion.Text;
+
+                Idcurso = dbConn.obtenerVariableEntera("select [id_Curso] from [dbo].[cursos] where [nombreCurso] = '" + cmbCursos.Text + "'");
+
+                IdDocente = cmbDocentes.Text;
+
+                estado = 1;
+
+                dbConn.PARegistroSeccion(Idcurso, IdDocente, nombreSeccion, estado);
+
+                message.lblCheck.Text = "SECCIÓN REGISTRADA";
+                message.ShowDialog();
+
+                actualizarDGVSecciones();
+                actualizarDGVSeccionesInac();
             }
             else
             {
-                messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS SOLICITADOS";
+                messageError.lblError.Text = "DATOS INCORRECTOS";
                 messageError.ShowDialog();
             }
+        }
+
+
+
+        private void btnVerSeccAct_Click(object sender, EventArgs e)
+        {
+            btnVerSeccAct.Visible = false;
+            btnVerSeccIna.Visible = true;
+            dgvSeccionesInac.Visible = false;
+            actualizarDGVSecciones();
+        }
+
+        private void btnVerSeccIna_Click(object sender, EventArgs e)
+        {
+            btnVerSeccIna.Visible = false;
+            btnVerSeccAct.Visible = true;
+            dgvSeccionesInac.Visible = true;
+            actualizarDGVSeccionesInac();
+        }
+
+        private void dgvSeccionesInac_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtSeccion.Text = dgvSeccionesInac.CurrentRow.Cells[3].Value.ToString();
+
+
+        }
+
+        private void txtSeccion_TextChanged(object sender, EventArgs e)
+        {
+            txtIdSeccion.Text = dbConn.obtenerVariableEntera("select [id_Seccion] from [dbo].[seccion] where [nombreSeccion] =  '" + txtSeccion.Text + "'").ToString();
+        }
+
+        private void llenarDoc()
+        {
+            dbConn.llenarTextBox(txtNombreDoce, "SELECT concat(de.[primerNombre], ' ', de.[primerApellido])nombre from [dbo].[datosEmpleados]de inner join [dbo].[detalleCargos]dc " +
+                "on dc.identidadEmpleado = de.identidadPersona inner join [dbo].[cargos]c on c.id_Cargo = dc.idCargoAsociado where de.[estadoEmpleado] = 1 and de.[identidadPersona] = '" + cmbDocentes.Text + "'");
+        }
+
+        private void cmbDocentes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDocentes.SelectedIndex == -1)
+            {
+                txtNombreDoce.Clear();
+            }
+            else
+            {
+                llenarDoc();
+            }
+        }
+
+        private void btnActualizarSecc_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
