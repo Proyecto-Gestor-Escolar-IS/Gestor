@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaGestorEscolar.Utilidades;
 using System.Windows.Forms;
 
 namespace SistemaGestorEscolar
@@ -22,7 +23,7 @@ namespace SistemaGestorEscolar
         IMessageBoxWarning messageWarning = new IMessageBoxWarning();
         databaseConnection dbConn = new databaseConnection();
         private string identidadMedico;
-
+       
 
         private void limpiarPantalla()
         {
@@ -41,6 +42,23 @@ namespace SistemaGestorEscolar
             txtFechaRegistro.Text = DateTime.Now.ToString("dd/MM/yyyy");
             dbConn.llenarComboBoxValorInicial(cmbMedicos, "SELECT CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) FROM datosEmpleados INNER JOIN detalleCargos ON datosEmpleados.identidadPersona = detalleCargos.identidadEmpleado INNER JOIN cargos ON cargos.id_Cargo = detalleCargos.idCargoAsociado WHERE id_Cargo = 4");
             cmbMedicos.SelectedIndex = 0;
+           
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                txtSintomas.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                txtPosibleEnfermedad.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                txtMedicamentos.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                txtSintomas.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                txtPosibleEnfermedad.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                txtMedicamentos.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+
+            ClsCambioTema.cambiarTemaBoton(this);
         }
 
         private void label5_Click(object sender, EventArgs e)

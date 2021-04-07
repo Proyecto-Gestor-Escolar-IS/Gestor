@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaGestorEscolar.Utilidades;
 using System.Windows.Forms;
 
 namespace SistemaGestorEscolar
@@ -30,7 +31,6 @@ namespace SistemaGestorEscolar
         private void IAperturaExpedienteMedico_Load(object sender, EventArgs e)
         {
 
-
             if ((dbConn.retornarIdExpediente()) > 0)
             {
                 ultimoIdExpediente = dbConn.retornarIdExpediente() + 1;
@@ -44,6 +44,18 @@ namespace SistemaGestorEscolar
             
             txtFechaCreacion.Text = DateTime.Now.ToString();
 
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                txtAntecedenteMedico.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                txtAntecedenteMedico.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+
+            ClsCambioTema.cambiarTemaBoton(this);
         }
 
         private void limpiarPantalla()

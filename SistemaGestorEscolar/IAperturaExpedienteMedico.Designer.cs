@@ -132,11 +132,11 @@ namespace SistemaGestorEscolar
             // 
             // txtAntecedenteMedico
             // 
-            this.txtAntecedenteMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.txtAntecedenteMedico.BackColor = System.Drawing.SystemColors.Window;
             this.txtAntecedenteMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAntecedenteMedico.Enabled = false;
             this.txtAntecedenteMedico.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntecedenteMedico.Location = new System.Drawing.Point(292, 675);
+            this.txtAntecedenteMedico.Location = new System.Drawing.Point(292, 664);
             this.txtAntecedenteMedico.Multiline = true;
             this.txtAntecedenteMedico.Name = "txtAntecedenteMedico";
             this.txtAntecedenteMedico.Size = new System.Drawing.Size(1053, 58);

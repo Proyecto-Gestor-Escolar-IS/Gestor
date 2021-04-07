@@ -21,10 +21,9 @@ namespace SistemaGestorEscolar
         private int posicionX;
         private bool windowMove = false;
         public static int codigoColor = 1;
-
+  
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-    
 
             //Properties.Settings.Default.Reset();
             try
