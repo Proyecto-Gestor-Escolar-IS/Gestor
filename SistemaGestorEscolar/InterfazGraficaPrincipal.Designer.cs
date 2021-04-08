@@ -458,6 +458,7 @@ namespace SistemaGestorEscolar
             this.btnPagos.TabIndex = 44;
             this.btnPagos.Text = "PAGOS";
             this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.VisibleChanged += new System.EventHandler(this.btnPagos_VisibleChanged);
             this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click_1);
             this.btnPagos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPagos_MouseDown);
             // 
@@ -620,6 +621,7 @@ namespace SistemaGestorEscolar
             this.btnRegistroVisita.TabIndex = 49;
             this.btnRegistroVisita.Text = "REGISTRO DE VISITA MEDICA";
             this.btnRegistroVisita.UseVisualStyleBackColor = false;
+            this.btnRegistroVisita.Click += new System.EventHandler(this.btnRegistroVisita_Click);
             this.btnRegistroVisita.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistroVisita_MouseDown);
             // 
             // btnAperturaExpediente
@@ -641,6 +643,7 @@ namespace SistemaGestorEscolar
             this.btnAperturaExpediente.TabIndex = 48;
             this.btnAperturaExpediente.Text = "APERTURA DE EXPEDIENTE MEDICO";
             this.btnAperturaExpediente.UseVisualStyleBackColor = false;
+            this.btnAperturaExpediente.Click += new System.EventHandler(this.btnAperturaExpediente_Click);
             this.btnAperturaExpediente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAperturaExpediente_MouseDown);
             // 
             // label2
@@ -660,6 +663,7 @@ namespace SistemaGestorEscolar
             this.panelMostrador.Name = "panelMostrador";
             this.panelMostrador.Size = new System.Drawing.Size(484, 187);
             this.panelMostrador.TabIndex = 39;
+            this.panelMostrador.DockChanged += new System.EventHandler(this.panelMostrador_DockChanged);
             this.panelMostrador.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrador_Paint);
             // 
             // panSubMenuPagos

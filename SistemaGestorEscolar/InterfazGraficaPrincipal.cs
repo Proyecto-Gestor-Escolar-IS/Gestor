@@ -24,10 +24,16 @@ namespace SistemaGestorEscolar
   
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-
+            clsVariablesGlobales.CodigoAcceso = 1;
             //Properties.Settings.Default.Reset();
             try
             {
+
+                ClsCambioTema.cambiarTemaBoton(panelPrincipal);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuEstudiante);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuPagos);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuPersonal);
+
                 actualizarModulos.verificarFecha();
                 panelMostrador.Visible = false;
                 panSubMenuPersonal.Visible = false;
@@ -681,10 +687,15 @@ namespace SistemaGestorEscolar
                 Properties.Settings.Default.Save();
 
                 ClsCambioTema.cambiarTemaBoton(panelPrincipal);
-                ClsCambioTema.cambiarTemaBoton(panLateral);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuEstudiante);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuPagos);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuPersonal);
 
                 btnMenuAtras.BackColor = System.Drawing.Color.FromArgb(249, 212, 69);
                 btnMenuAtras.ForeColor = Color.Black;
+
+                btnCambioTema.BackColor = Color.Transparent;
+                btnCerrarSesion.BackColor = Color.Transparent;
 
                 /*btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
                 btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(254, 236, 172);
@@ -749,6 +760,8 @@ namespace SistemaGestorEscolar
             }
             else if (codigoColor == 2)
             {
+
+
                 panLateral.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
                 panSuperior.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
                 panelPrincipal.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
@@ -759,11 +772,15 @@ namespace SistemaGestorEscolar
                 Properties.Settings.Default.Save();
 
                 ClsCambioTema.cambiarTemaBoton(panelPrincipal);
-                ClsCambioTema.cambiarTemaBoton(panLateral);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuEstudiante);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuPagos);
+                ClsCambioTema.cambiarTemaBoton(panSubMenuPersonal);
+
 
                 btnMenuAtras.BackColor = Color.Red;
                 btnMenuAtras.ForeColor = Color.Black;
-
+                btnCambioTema.BackColor = Color.Transparent;
+                btnCerrarSesion.BackColor = Color.Transparent;
 
                 /*btnMenuMatriculaEstudiante.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
                 btnMenuVistaMatricula.BackColor = System.Drawing.Color.FromArgb(159, 197, 248);
@@ -1139,7 +1156,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulo_de_Cursos.IGestionCursos>();
+            AbrirFormulario<Modulo_de_Cursos.IGestionCursosYClases>();
 
             if (codigoColor == 1)
             {
@@ -1376,6 +1393,34 @@ namespace SistemaGestorEscolar
         }
 
         private void btnIngresarNuevoUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMostrador_DockChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPagos_VisibleChanged(object sender, EventArgs e)
+        {
+            if (btnPagos.Visible == false)
+            {
+                btnCambioTema.Visible = false;
+            }
+            else if (btnPagos.Visible == true)
+            {
+                btnCambioTema.Visible = true;
+
+            }
+        }
+
+        private void btnAperturaExpediente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistroVisita_Click(object sender, EventArgs e)
         {
 
         }
