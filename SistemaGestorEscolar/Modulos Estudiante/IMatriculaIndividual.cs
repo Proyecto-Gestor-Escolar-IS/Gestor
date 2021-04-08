@@ -57,7 +57,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
             dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
 
-            //recuperarMatricula();
+            recuperarMatricula();
 
             encargados.Columns.Add("identidadEstudiante");
             encargados.Columns.Add("identEncargado");
@@ -151,6 +151,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             btnPrimerIngreso.Visible = false;
             btnReingreso.Visible = false;
             btnActualizarMatricula.Visible = false;
+            cmbGeneroEstud.SelectedIndex = 0;
         }
 
         private void btnReingreso_Click(object sender, EventArgs e)
@@ -315,15 +316,18 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                         {
                             if (cmbSeccionR.SelectedIndex != 0)
                             {
-                                if (cmbModoPagoR.SelectedIndex == 0)
-                                {
-                                    mesesDePago = 12;
-                                }
-                                else if (cmbModoPagoR.SelectedIndex == 1)
-                                {
-                                    mesesDePago = 10;
-                                }
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 1, mesesDePago, 1, 2))
+                                if (cmbModoPagoR.SelectedIndex != -1)
+                                { 
+                                 if (cmbModoPagoR.SelectedIndex == 0)
+                                    {
+                                        mesesDePago = 12;
+                                    }
+                                    else if (cmbModoPagoR.SelectedIndex == 1)
+                                    {
+                                        mesesDePago = 10;
+                                    }
+
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -334,6 +338,12 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                 {
                                     messageError.lblError.Text = "ERROR INESPERADO";
                                     messageError.ShowDialog();
+                                }
+                            }
+                            else
+                            {
+                                    messageWarning.lblError.Text = "SELECCIONE UN MODO PAGO";
+                                    messageWarning.ShowDialog();
                                 }
                             }
                             else
@@ -480,36 +490,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void txtBusquedaNombre_TextChanged(object sender, EventArgs e)
         {
 
-            try
-            {
-                long number = 0;
-
-                if (txtBusquedaNombre.Text != string.Empty)
-                {
-
-                    if ((long.TryParse(txtBusquedaNombre.Text, out number) && Regex.IsMatch(txtBusquedaNombre.Text, @"^[a-z A-Z]+$") == false) || (Regex.IsMatch(txtBusquedaNombre.Text, @"^[a-z A-Z]+$") && long.TryParse(txtBusquedaNombre.Text, out number) == false))
-                    {
-                        txtBusquedaNombre.ForeColor = Color.Green;
-                        errorIdentidad.Clear();
-                        dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaNombre.Text + "%' OR identidadEstudiante LIKE '" + txtBusquedaNombre.Text + "%'");
-                    }
-                    else
-                    {
-                        txtBusquedaNombre.ForeColor = Color.Red;
-                        errorIdentidad.SetError(this.txtBusquedaNombre, "Ingrese valores correctos!");
-                        dgvBusquedaEstado.DataSource = null;
-                    }
-                }
-                else
-                {
-                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre'  FROM datosEstudiante");
-
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         }
 
         private void btnSiguienteDGVAct_Click(object sender, EventArgs e)
@@ -542,7 +522,14 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void dgvEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             identidadReingreso = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void txtIdentidadEstudianteR_TextChanged_1(object sender, EventArgs e)
@@ -628,38 +615,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void dgvBusquedaEstado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try {
             identidadActualizacion = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
-        }
-
-
-
-private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
-        {
-
-            long number = 0;
-
-            if (txtBusquedaIdentidadEstado.Text != string.Empty)
+            }   
+            catch (Exception ex)
             {
-
-                if ((long.TryParse(txtBusquedaIdentidadEstado.Text, out number) && Regex.IsMatch(txtBusquedaIdentidadEstado.Text, @"^[a-z A-Z]+$") == false) || (Regex.IsMatch(txtBusquedaIdentidadEstado.Text, @"^[a-z A-Z]+$") && long.TryParse(txtBusquedaIdentidadEstado.Text, out number) == false))
-                {
-                    txtBusquedaIdentidadEstado.ForeColor = Color.Green;
-                    errorIdentidad.Clear();
-                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante WHERE identidadEstudiante LIKE '" + txtBusquedaIdentidadEstado.Text + "%' OR CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaIdentidadEstado.Text+  "%'");
-                }
-                else
-                {
-                    txtBusquedaIdentidadEstado.ForeColor = Color.Red;
-                    errorIdentidad.SetError(this.txtBusquedaIdentidadEstado, "Ingrese valores correctos!");
-                    dgvBusquedaEstado.DataSource = null;
-                }
-            }
-            else
-            {
-                dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante");
-
+                Console.WriteLine(ex.Message);
             }
         }
+
+
+
 
 
         private void txtBusquedaNombreEstado_TextChanged(object sender, EventArgs e)
@@ -748,6 +714,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
             btnActualizarMatricula.Visible = true;
             identidadReingreso = "";
             grpRegistroEstudiante.Visible = false;
+            LimpiarEstudiante();
             
         }
 
@@ -761,7 +728,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                     messageError.lblError.Text = "Error en la identidad";
                     messageError.ShowDialog();
 
-          
+
                 }
                 else
                 {
@@ -775,7 +742,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                     }
                     else
                     {
-                        if (cmbGeneroEstud.SelectedIndex.Equals(-1))
+                        if (cmbGeneroEstud.SelectedIndex == -1)
                         {
                             messageError.lblError.Text = "DEBE SELECCIONAR EL GÉNERO";
                             messageError.ShowDialog();
@@ -784,19 +751,21 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                         {
                             if (utilidad.isDate(txtfechaNacimientoEstud.Text))
                             {
-                                messageQuestion.lblError.Text = "¿Esta seguro de los datos ingresados?";
-                                messageQuestion.ShowDialog();
-                                if (IMessageBoxYesCancel.isCodigoForm)
+                                string genero;
+                                identidadEstudiante = mktIdentidadEstud.Text;
+                                genero = Genero(cmbGeneroEstud);
+
+                                if (cmbGeneroEstud.SelectedIndex != 0)
                                 {
-                                    string genero;
-                                    identidadEstudiante = mktIdentidadEstud.Text;
-                                    genero = Genero(cmbGeneroEstud);
-                                    //RegistrarEstudiante();
                                     try
                                     {
-                                        if (dbConn.obtenerVariableEntera("select estado from datosEstudiante where identidadEstudiante = '" + mktIdentidadEstud.Text + "'") != 1)
+                                        messageQuestion.lblError.Text = "¿Esta seguro de los datos ingresados?";
+                                        messageQuestion.ShowDialog();
+                                        if (IMessageBoxYesCancel.isCodigoForm)
                                         {
-                                          
+                                            if (dbConn.obtenerVariableEntera("select estado from datosEstudiante where identidadEstudiante = '" + mktIdentidadEstud.Text + "'") != 1)
+                                            {
+
                                                 EstudianteMatricula[0, 0] = mktIdentidadEstud.Text;
                                                 EstudianteMatricula[0, 1] = txtprimerNombreEstud.Text;
                                                 EstudianteMatricula[0, 2] = txtsegundoNombreEstud.Text;
@@ -804,26 +773,34 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                                                 EstudianteMatricula[0, 4] = txtsegundoApellidoEstud.Text;
                                                 EstudianteMatricula[0, 5] = txtfechaNacimientoEstud.Text;
                                                 EstudianteMatricula[0, 6] = genero;
-                                                
-                                                message.lblCheck.Text = "Estudiante Registrado";
+
+                                                message.lblCheck.Text = "ESTUDIANTE REGISTRADO";
                                                 message.ShowDialog();
 
                                                 LimpiarEstudiante();
                                                 grpRegistroEstudiante.Visible = false;
                                                 grpRegistroEncargados.Visible = true;
-                                          
+
+                                            }
+                                            else
+                                            {
+                                                messageError.lblError.Text = "EL ESTUDIANTE YA EXISTE";
+                                                messageError.lblError.Location = new Point(120, 82);
+                                                messageError.ShowDialog();
+                                            }
                                         }
-                                        else
-                                        {
-                                            messageError.lblError.Text = "EL ESTUDIANTE YA EXISTE";
-                                            messageError.lblError.Location = new Point(120, 82);
-                                            messageError.ShowDialog();
-                                        }
+
                                     }
                                     catch (Exception ex)
                                     {
                                         Console.WriteLine(ex.Message);
                                     }
+                                }
+                                else
+                                {
+                                    messageError.lblError.Text = "SELECCIONE CORRECTAMENTE\n  EL GÉNERO";
+                                    messageError.lblError.Location = new Point(120, 82);
+                                    messageError.ShowDialog();
                                 }
                             }
                             else
@@ -853,7 +830,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
             txtprimerApellidoEstud.Clear();
             txtsegundoApellidoEstud.Clear();
             txtfechaNacimientoEstud.Clear();
-            cmbGeneroEstud.SelectedItem = -1;
+            cmbGeneroEstud.SelectedItem = 0;
         }
         private void mktIdentidadEstud_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {              
@@ -929,10 +906,15 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
             {
                 return "M";
             }
-            else
+            else if (CMB.SelectedItem.ToString() == "Femenino")
             {
                 return "F";
             }
+            else
+            {
+                return "";
+            }
+
          }
 
         private void txtprimerNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
@@ -1087,49 +1069,55 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                                 if (txtprimerTelefono.Text.Length == 8 && txtTelefonoAlternativo.Text.Length == 8)
                                 {
 
-                                    if (Numfilas == 0)
+                                    messageQuestion.lblError.Text = "¿Esta seguro de los datos ingresados?";
+                                    messageQuestion.ShowDialog();
+                                    if (IMessageBoxYesCancel.isCodigoForm)
                                     {
-                                        encargados.Rows.Add(new Object[]{ identidadEstudiante, mktIdentidadEncargado.Text, txtPrimerNombreEncarg.Text,
+                                        if (Numfilas == 0)
+                                        {
+                                            encargados.Rows.Add(new Object[]{ identidadEstudiante, mktIdentidadEncargado.Text, txtPrimerNombreEncarg.Text,
                                         txtSegundoNombreEncarg.Text, txtPrimerApellidoEncarg.Text, txtSegundoApellidoEncarg.Text, txtcorreoElectronico.Text,
                                         txtprimerTelefono.Text, txtTelefonoAlternativo.Text, txtDireccion.Text, mskFechaNacimientoEncarg.Text });
 
-                                        message.lblCheck.Text = "Encargado Registrado";
-                                        message.ShowDialog();
-                                        Encargados++;
+                                            message.lblCheck.Text = "Encargado Registrado";
+                                            message.ShowDialog();
+                                            Encargados++;
 
-                                    }
-                                    else
-                                    {
-                                        for (int i = 0; i < Numfilas; i++)
-                                        {
-                                       
-                                            identidadComparar = encargados.Rows[i][1].ToString();
-                                                                                       
-                                            if (mktIdentidadEncargado.Text.Equals(identidadComparar))
-                                            {
-                                                Existe = 1;
-                                            }
-                                                                                  
-                                        }
-
-                                        if (Existe == 1)
-                                        {
-                                            messageError.lblError.Text = "YA AGREGO ESTE ENCARGADO";
-                                            messageError.lblError.Location = new Point(120, 82);
-                                            messageError.ShowDialog();
-                                            Existe = 0;
                                         }
                                         else
                                         {
+                                            for (int i = 0; i < Numfilas; i++)
+                                            {
 
-                                            encargados.Rows.Add(new Object[]{ identidadEstudiante, mktIdentidadEncargado.Text, txtPrimerNombreEncarg.Text,
+                                                identidadComparar = encargados.Rows[i][1].ToString();
+
+                                                if (mktIdentidadEncargado.Text.Equals(identidadComparar))
+                                                {
+                                                    Existe = 1;
+                                                }
+
+                                            }
+
+                                            if (Existe == 1)
+                                            {
+                                                messageError.lblError.Text = "YA AGREGO ESTE ENCARGADO";
+                                                messageError.lblError.Location = new Point(120, 82);
+                                                messageError.ShowDialog();
+                                                Existe = 0;
+                                            }
+                                            else
+                                            {
+
+                                                encargados.Rows.Add(new Object[]{ identidadEstudiante, mktIdentidadEncargado.Text, txtPrimerNombreEncarg.Text,
                                             txtSegundoNombreEncarg.Text, txtPrimerApellidoEncarg.Text, txtSegundoApellidoEncarg.Text, txtcorreoElectronico.Text,
                                             txtprimerTelefono.Text, txtTelefonoAlternativo.Text, txtDireccion.Text, mskFechaNacimientoEncarg.Text });
 
-                                            message.lblCheck.Text = "Encargado Registrado";
-                                            message.ShowDialog();
+                                                message.lblCheck.Text = "Encargado Registrado";
+                                                message.ShowDialog();
+                                            }
                                         }
                                     }
+
                                   
 
                                 }
@@ -1571,7 +1559,7 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
         {
             if (cmbSeccionR.SelectedIndex != 0)
             {
-                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccion.SelectedItem.ToString() + "'");
+                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccionR.SelectedItem.ToString() + "'");
 
             }
             else
@@ -1613,6 +1601,74 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
             {
                 cmbgeneroEstudMod.SelectedIndex = -1;
             }
+        }
+
+        private void txtBusquedaIdentidadEstado_TextChanged_1(object sender, EventArgs e)
+        {
+
+            long number = 0;
+
+            if (txtBusquedaIdentidadEstado.Text != string.Empty)
+            {
+
+                if ((long.TryParse(txtBusquedaIdentidadEstado.Text, out number) && Regex.IsMatch(txtBusquedaIdentidadEstado.Text, @"^[a-z A-Z]+$") == false) || (Regex.IsMatch(txtBusquedaIdentidadEstado.Text, @"^[a-z A-Z]+$") && long.TryParse(txtBusquedaIdentidadEstado.Text, out number) == false))
+                {
+                    txtBusquedaIdentidadEstado.ForeColor = Color.Green;
+                    errorIdentidad.Clear();
+                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante WHERE identidadEstudiante LIKE '" + txtBusquedaIdentidadEstado.Text + "%' OR CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaIdentidadEstado.Text + "%'");
+                }
+                else
+                {
+                    txtBusquedaIdentidadEstado.ForeColor = Color.Red;
+                    errorIdentidad.SetError(this.txtBusquedaIdentidadEstado, "Ingrese valores correctos!");
+                    dgvBusquedaEstado.DataSource = null;
+                }
+            }
+            else
+            {
+                dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante");
+
+            }
+        }
+
+        private void txtBusquedaNombre_TextChanged_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                long number = 0;
+
+                if (txtBusquedaNombre.Text != string.Empty)
+                {
+
+                    if ((long.TryParse(txtBusquedaNombre.Text, out number) && Regex.IsMatch(txtBusquedaNombre.Text, @"^[a-z A-Z]+$") == false) || (Regex.IsMatch(txtBusquedaNombre.Text, @"^[a-z A-Z]+$") && long.TryParse(txtBusquedaNombre.Text, out number) == false))
+                    {
+                        txtBusquedaNombre.ForeColor = Color.Green;
+                        errorIdentidad.Clear();
+                        dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtBusquedaNombre.Text + "%' OR identidadEstudiante LIKE '" + txtBusquedaNombre.Text + "%'");
+                    }
+                    else
+                    {
+                        txtBusquedaNombre.ForeColor = Color.Red;
+                        errorIdentidad.SetError(this.txtBusquedaNombre, "Ingrese valores correctos!");
+                        dgvBusquedaEstado.DataSource = null;
+                    }
+                }
+                else
+                {
+                    dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre'  FROM datosEstudiante");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void cmbGeneroEstud_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
