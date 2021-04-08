@@ -598,7 +598,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulo_de_Cursos.IGestionCursos>();
+            AbrirFormulario<Modulo_de_Cursos.IGestionCursosYClases>();
 
             if (codigoColor == 1)
             {

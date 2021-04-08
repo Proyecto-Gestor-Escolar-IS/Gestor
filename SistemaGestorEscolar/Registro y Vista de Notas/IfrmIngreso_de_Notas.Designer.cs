@@ -49,6 +49,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gpxIngreso_Notas = new System.Windows.Forms.GroupBox();
+            this.mktNotaE = new System.Windows.Forms.MaskedTextBox();
+            this.mktNotaD = new System.Windows.Forms.MaskedTextBox();
+            this.mktNotaA = new System.Windows.Forms.MaskedTextBox();
+            this.mktNotaC = new System.Windows.Forms.MaskedTextBox();
+            this.mktNotaB = new System.Windows.Forms.MaskedTextBox();
             this.abModificarNota = new AltoControls.AltoButton();
             this.abAgregarNotas = new AltoControls.AltoButton();
             this.abCuadroNotas = new AltoControls.AltoButton();
@@ -289,6 +294,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             // gpxIngreso_Notas
             // 
+            this.gpxIngreso_Notas.Controls.Add(this.mktNotaE);
+            this.gpxIngreso_Notas.Controls.Add(this.mktNotaD);
+            this.gpxIngreso_Notas.Controls.Add(this.mktNotaA);
+            this.gpxIngreso_Notas.Controls.Add(this.mktNotaC);
+            this.gpxIngreso_Notas.Controls.Add(this.mktNotaB);
             this.gpxIngreso_Notas.Controls.Add(this.abModificarNota);
             this.gpxIngreso_Notas.Controls.Add(this.abAgregarNotas);
             this.gpxIngreso_Notas.Controls.Add(this.abCuadroNotas);
@@ -318,6 +328,56 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.gpxIngreso_Notas.TabStop = false;
             this.gpxIngreso_Notas.Text = "Ingreso de Notas:";
             this.gpxIngreso_Notas.VisibleChanged += new System.EventHandler(this.gpxIngreso_Notas_VisibleChanged_1);
+            // 
+            // mktNotaE
+            // 
+            this.mktNotaE.Location = new System.Drawing.Point(956, 704);
+            this.mktNotaE.Mask = "L";
+            this.mktNotaE.Name = "mktNotaE";
+            this.mktNotaE.Size = new System.Drawing.Size(83, 33);
+            this.mktNotaE.TabIndex = 32;
+            this.mktNotaE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mktNotaE.TextChanged += new System.EventHandler(this.mktNotaE_TextChanged);
+            // 
+            // mktNotaD
+            // 
+            this.mktNotaD.Location = new System.Drawing.Point(956, 624);
+            this.mktNotaD.Mask = "L";
+            this.mktNotaD.Name = "mktNotaD";
+            this.mktNotaD.Size = new System.Drawing.Size(83, 33);
+            this.mktNotaD.TabIndex = 31;
+            this.mktNotaD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mktNotaD.TextChanged += new System.EventHandler(this.mktNotaD_TextChanged);
+            // 
+            // mktNotaA
+            // 
+            this.mktNotaA.Location = new System.Drawing.Point(956, 541);
+            this.mktNotaA.Mask = "L";
+            this.mktNotaA.Name = "mktNotaA";
+            this.mktNotaA.Size = new System.Drawing.Size(83, 33);
+            this.mktNotaA.TabIndex = 30;
+            this.mktNotaA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mktNotaA.TextChanged += new System.EventHandler(this.mktNotaA_TextChanged);
+            // 
+            // mktNotaC
+            // 
+            this.mktNotaC.Location = new System.Drawing.Point(508, 704);
+            this.mktNotaC.Mask = "L";
+            this.mktNotaC.Name = "mktNotaC";
+            this.mktNotaC.Size = new System.Drawing.Size(83, 33);
+            this.mktNotaC.TabIndex = 29;
+            this.mktNotaC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mktNotaC.TextChanged += new System.EventHandler(this.mktNotaC_TextChanged);
+            // 
+            // mktNotaB
+            // 
+            this.mktNotaB.Location = new System.Drawing.Point(510, 624);
+            this.mktNotaB.Mask = "L";
+            this.mktNotaB.Name = "mktNotaB";
+            this.mktNotaB.Size = new System.Drawing.Size(81, 33);
+            this.mktNotaB.TabIndex = 28;
+            this.mktNotaB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mktNotaB.TextChanged += new System.EventHandler(this.mktNotaB_TextChanged);
             // 
             // abModificarNota
             // 
@@ -588,7 +648,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.txtIdentidadAE.Location = new System.Drawing.Point(248, 69);
             this.txtIdentidadAE.Name = "txtIdentidadAE";
             this.txtIdentidadAE.ReadOnly = true;
-            this.txtIdentidadAE.Size = new System.Drawing.Size(243, 33);
+            this.txtIdentidadAE.Size = new System.Drawing.Size(240, 33);
             this.txtIdentidadAE.TabIndex = 0;
             this.txtIdentidadAE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -621,6 +681,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             // txtIdentidad
             // 
+            this.txtIdentidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.txtIdentidad.Location = new System.Drawing.Point(248, 69);
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.ReadOnly = true;
@@ -880,5 +941,10 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private AltoControls.AltoButton abCuadroNotas;
         private AltoControls.AltoButton abLimpiar;
         private AltoControls.AltoButton abSiguiente;
+        private System.Windows.Forms.MaskedTextBox mktNotaE;
+        private System.Windows.Forms.MaskedTextBox mktNotaD;
+        private System.Windows.Forms.MaskedTextBox mktNotaA;
+        private System.Windows.Forms.MaskedTextBox mktNotaC;
+        private System.Windows.Forms.MaskedTextBox mktNotaB;
     }
 }

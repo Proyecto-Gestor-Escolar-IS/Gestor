@@ -113,13 +113,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtprimerNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog();
-            //    e.Handled = true;
-            //    return;
-            //}
+ 
         }
 
         private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -129,57 +123,27 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog();
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtprimerApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog();
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtsegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog();
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtprimerTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog();
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtsegundoTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog();
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
@@ -316,8 +280,18 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void dgvBusquedaEncargado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            identidadEncargado = dgvBusquedaEncargado.Rows[e.RowIndex].Cells[0].Value.ToString();
+            try
+            {
+                identidadEncargado = dgvBusquedaEncargado.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
+
+
 
         private void btnSiguienteEncargado_Click(object sender, EventArgs e)
         {
@@ -395,7 +369,14 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         }
         private void dgvListadoEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             identidadEstudiante = dgvListadoEstudiantes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void btnSiguienteEstud_Click(object sender, EventArgs e)
@@ -520,57 +501,27 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtIdentidadEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog();
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtprimerNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog(); 
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtsegundoNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog(); 
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtprimerApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog(); 
-            //    e.Handled = true;
-            //    return;
-            //}
+ 
         }
 
         private void txtsegundoApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            //{
-            //    messageError.lblError.Text = "INGRESE CORRECTAMENTE LOS DATOS";
-            //    messageError.ShowDialog(); 
-            //    e.Handled = true;
-            //    return;
-            //}
+
         }
 
         private void txtIdentidadEstud_TextChanged(object sender, EventArgs e)
@@ -586,6 +537,33 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             ClsCambioTema.cambiarTemaBoton(gbListadoEncargado);
             ClsCambioTema.cambiarTemaBoton(pnlGestionEstudianteEncargado);
             ClsCambioTema.cambiarTemaBoton(gbEncargadosEstudiante);
+
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+
+
+                gbEstudiantes.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                gbEncargados.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                gbListadoEstudiantes.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                gbListadoEncargado.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                pnlGestionEstudianteEncargado.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                gbEncargadosEstudiante.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+
+            }
+            else
+            {
+
+
+                gbEstudiantes.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                gbEncargados.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                gbListadoEstudiantes.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                gbListadoEncargado.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                pnlGestionEstudianteEncargado.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                gbEncargadosEstudiante.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+ 
+
+            }
+
 
         }
 
