@@ -35,7 +35,7 @@ namespace SistemaGestorEscolar.Modulo_de_Pagos
             {
                 this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
             }
-
+            
             ClsCambioTema.cambiarTemaBoton(this);
             lblFechaActual.Text = "Fecha Actual: " + DateTime.Now.ToShortDateString();
         }

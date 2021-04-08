@@ -393,51 +393,6 @@ BEGIN
 END
 GO
 
---SamuelOviedo--
------------------------------------------------------------------------Procedimientos Cursos----------------------------------------------------------------
-
----------------Actualizar curso-----------------
-CREATE PROCEDURE PAActualizarCurso(
-@id_Curso int,
-@nombreCurso varchar(30),
-@precioCompleto money
-)
-
-AS
-BEGIN
-
-	BEGIN
-
-	UPDATE [dbo].[cursos] SET [nombreCurso] = @nombreCurso WHERE [id_Curso] = @id_Curso
-    UPDATE [dbo].[cursos] SET [precioCompleto] = @precioCompleto WHERE [id_Curso] = @id_Curso
-
-	END
-
-END
-GO
----------------Registrar curso-----------------
-CREATE PROCEDURE PARegistrarCurso (
-@nombreCurso varchar(30),
-@precioCompleto money,
-@estadoCurso int
-)
-
-AS
-BEGIN
-
-	BEGIN
-		IF (EXISTS(SELECT [nombreCurso] from [dbo].[cursos] WHERE [nombreCurso] = @nombreCurso))
-
-			UPDATE [dbo].[cursos] SET [estadoCurso] = @estadoCurso WHERE [nombreCurso] = @nombreCurso
-
-		ELSE
-
-			INSERT INTO [dbo].[cursos] VALUES (@nombreCurso, @precioCompleto, @estadoCurso)
-	END
-
-END
-GO
-
 /*YESSY TINOCO*/
 
 --------------------------------------------------------- Apertura de Expediente Médico ---------------------------------------------------------------------
@@ -510,3 +465,59 @@ As Begin
 		raiserror('¡Revise los datos!, No se encontró el Alumno especificado', 16,1)
 
 End
+
+/*CRUD CURSOS - SECCIONES - CLASES*/
+GO
+/*REGISTRO CURSO*/
+CREATE PROCEDURE registrarCurso(@nombreCurso as varchar(30), @precio as money, @tipoCalificacion as int, @estadoCurso as int)
+AS BEGIN
+	INSERT INTO cursos VALUES(@nombreCurso, @precio, @tipoCalificacion, @estadoCurso)
+END
+GO
+/*ACTUALIZAR PRECIO*/
+CREATE PROCEDURE actualizarCurso(@idCurso int, @precioCurso money)
+AS BEGIN
+	UPDATE cursos SET precioCompleto = @precioCurso WHERE id_Curso = @idCurso
+END
+GO
+/*REGISTRO DETALLE CLASES*/
+CREATE PROCEDURE registrarDetalleClases(@idClase as int, @idCurso as int)
+AS BEGIN
+	INSERT INTO clasesCurso VALUES(@idClase, @idCurso)
+END
+GO
+
+/*ELIMINAR DETALLE CLASES*/
+CREATE PROCEDURE eliminarDetalleClases(@idCurso as int)
+AS BEGIN
+	DELETE FROM clasesCurso WHERE clasesCurso.id_Curso = @idCurso
+END
+go
+
+/*INSERTAR SECCION*/
+CREATE PROCEDURE insertarSeccion(@idCurso as int, @identidadDocente as varchar(13), @seccion as char(1))
+AS BEGIN
+	
+	INSERT INTO seccion values (@idCurso, @identidadDocente, @seccion, 1)
+	
+END
+GO
+/*ACTUALIZAR SECCION*/
+CREATE PROCEDURE actualizarSeccion(@idSeccion as int, @docente as varchar(13), @estado as int)
+AS BEGIN
+	
+	UPDATE seccion SET id_Docente = @docente, estado = @estado WHERE id_Seccion = @idSeccion
+	
+END
+GO
+/*ACTUALIZAR ESTADO DE CLASE*/
+CREATE PROCEDURE actualizarClase(@idClase as int, @estado as int)
+AS BEGIN
+	UPDATE clases SET estado = @estado WHERE id_Clase = @idClase
+END
+GO
+/*REGISTRAR UNA NUEVA CLASE*/
+CREATE PROCEDURE registrarClase(@nombreClase as varchar(25))
+AS BEGIN
+	INSERT INTO CLASES VALUES(@nombreClase, 1)
+END
