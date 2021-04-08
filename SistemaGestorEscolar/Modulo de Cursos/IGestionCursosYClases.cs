@@ -195,6 +195,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             ClsCambioTema.cambiarTemaBoton(groupBox1);
             ClsCambioTema.cambiarTemaBoton(panelRegistroNuevoCurso);
             ClsCambioTema.cambiarTemaBoton(panelIngresarCurso);
+            ClsCambioTema.cambiarTemaBoton(panelGrande);
+            ClsCambioTema.cambiarTemaBoton(grpRegistrarSeccion);
+            
 
 
             if (Properties.Settings.Default.isModoOscuro == true)
@@ -212,7 +215,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 groupBox2.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 groupBox1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 panelIngresarCurso.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
-
+                panelGrande.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpRegistrarSeccion.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
             else
             {
@@ -229,7 +234,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 groupBox2.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 groupBox1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 panelIngresarCurso.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
-
+                panelGrande.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpRegistrarSeccion.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
             }
 
             panelGestionClases.Visible = false;
@@ -250,12 +257,16 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         {
             hideShowButtons(1);
             panelRegistroNuevoCurso.Visible = false;
+            cmbCursosExistentes.SelectedIndex = 0;
+            txtPrecioCurso.Clear();
         }
 
         private void altoButton1_Click(object sender, EventArgs e)
         {
             hideShowButtons(1);
             panelRegistroNuevoCurso.Visible = false;
+            txtNombreCursoIngresar.Clear();
+            txtPrecioMensualAgregar.Clear();
         }
 
         private void btnAtrasDGVSecciones_Click(object sender, EventArgs e)
@@ -272,6 +283,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             grpDGVSecciones.Visible = true;
             idSeccionModificar = 0;
             btnSiguienteDGVSeccion.Enabled = false;
+
         }
 
         private void btnAtrasRegistrarSeccion_Click(object sender, EventArgs e)
@@ -315,7 +327,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                             if (dgvClasesSelected.RowCount > 0)
                             {
-                                if (Int32.Parse(txtPrecioCurso.Text) < 0)
+                                if (double.Parse(txtPrecioMensualAgregar.Text) > 0)
                                 {
 
                                     if (dbConn.PAInsertarCurso(txtNombreCursoIngresar.Text, float.Parse(txtPrecioMensualAgregar.Text), tipoCalificacion, 1))
@@ -331,7 +343,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                                         }
                                         message.lblCheck.Text = "CURSO REGISTRADO";
                                         message.ShowDialog();
-    
+                                        
                                     }
                                     else
                                     {
@@ -344,6 +356,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                                 {
                                     messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
                                     messageError.ShowDialog();
+                                    txtPrecioCurso.Clear();
                                 }
 
                                     
@@ -587,63 +600,71 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
             if (cmbCursosExistentes.SelectedIndex != 0)
             {
-                if (txtPrecioCurso.Text != "")
+                if (txtNombreCursoIngresar.Text != "")
                 {
-                    if (utilidades.isNumeric(txtPrecioCurso.Text))
+                    if (txtPrecioCurso.Text != "")
                     {
-                        if (Int32.Parse(txtPrecioCurso.Text) < 0)
+                        if (utilidades.isNumeric(txtPrecioCurso.Text))
                         {
-
-                            if (existentes.Rows.Count != 0)
+                            if (double.Parse(txtPrecioCurso.Text) > 0)
                             {
-                                if (dbConn.PAActualizarCurso(codigoCurso, float.Parse(txtPrecioCurso.Text)))
+                                if (existentes.Rows.Count != 0)
                                 {
-
-                                    dbConn.PAEliminarDetallesClases(codigoCurso);
-                                    for (int i = 0; i < existentes.Rows.Count; i++)
+                                    if (dbConn.PAActualizarCurso(codigoCurso, float.Parse(txtPrecioCurso.Text)))
                                     {
-                                        dbConn.PAInsertarDetalleClases(int.Parse(existentes.Rows[i]["ID"].ToString()), codigoCurso);
-                                    }
 
-                                    message.lblCheck.Text = "CURSO ACTUALIZADO";
-                                    message.ShowDialog();
+                                      dbConn.PAEliminarDetallesClases(codigoCurso);
+                                      for (int i = 0; i < existentes.Rows.Count; i++)
+                                      {
+                                          dbConn.PAInsertarDetalleClases(int.Parse(existentes.Rows[i]["ID"].ToString()), codigoCurso);
+                                      }
+
+                                      message.lblCheck.Text = "CURSO ACTUALIZADO";
+                                      message.ShowDialog();
+                                      
+                                      }
+                                      else
+                                      {
+                                      messageError.lblError.Text = "ERROR INESPERADO";
+                                      messageError.ShowDialog();
+                                      }
+
+                                    }
+                                    else
+                                    {
+                                        messageError.lblError.Text = "DEBE SELECCIONAR UNA CLASE!";
+                                        messageError.ShowDialog();
+                                    }
 
                                 }
                                 else
                                 {
-                                messageError.lblError.Text = "ERROR INESPERADO";
-                                messageError.ShowDialog();
+                                    messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
+                                    messageError.ShowDialog();
+                                    txtPrecioCurso.Clear();
                                 }
+                        
+
 
                             }
                             else
                             {
-                                messageError.lblError.Text = "DEBE SELECCIONAR UNA CLASE!";
+                                messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
                                 messageError.ShowDialog();
-                            }
 
+                            }
                         }
                         else
                         {
-                            messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
+                            messageError.lblError.Text = "ESPECIFIQUE UN PRECIO";
                             messageError.ShowDialog();
                         }
-                        
-
-
-                    }
-                    else
-                    {
-                        messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
-                        messageError.ShowDialog();
-
-                    }
                 }
                 else
                 {
-                    messageError.lblError.Text = "ESPECIFIQUE UN PRECIO";
-                    messageError.ShowDialog();
+
                 }
+                
             }
             else {
                 messageError.lblError.Text = "SELECCIONE UN CURSO!";
