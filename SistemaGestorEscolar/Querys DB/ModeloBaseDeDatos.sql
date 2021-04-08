@@ -169,19 +169,23 @@ FOREIGN KEY (id_Seccion) REFERENCES seccion(id_Seccion),
 
 
 --Tabla de detalle de notas, almacena la informacion relacionada a las notas de cada alumno por clase
-CREATE TABLE detalleNotas(
+Create TABLE detalleNotas(
 id_DetalleNotas int identity primary key not null,
 id_DetalleMatricula int not null,
 id_Clase int not null,
-nota1erParcial float not null,
-nota2doParcial float not null,
-nota3erParcial float not null,
-nota4toParcial float not null,
-notaFinal numeric(3,2) not null,
-estado int not null
+nota1erParcial float null,
+nota2doParcial float null,
+nota3erParcial float null,
+nota4toParcial float null,
+notaFinal float null,
+notaA char(1) null,
+notaB char(1) null,
+notaC char(1) null,
+notaD char(1) null,
+notaE char(1) null,
 
 FOREIGN KEY(id_DetalleMatricula) REFERENCES detalleMatricula(id_DetalleMatricula),
-FOREIGN KEY(id_Clase) REFERENCES clasesCurso(id_Clase)
+FOREIGN KEY(id_Clase) REFERENCES clasesCurso(id_DetalleClase)
 )
 
 --Tabla de detalle de mensualidades, almacena la informacion relacionada a los pagos de un estudiante

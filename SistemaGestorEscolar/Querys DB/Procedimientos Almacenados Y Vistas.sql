@@ -459,7 +459,12 @@ GO
 
 
 
-Create Procedure agregarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float, @nota2doParcial float, @nota3erParcial float, @nota4toParcial float, @notaFinal float)
+/*DAVID MEJIA*/
+
+--------------------------------------------------------- Registro Notas ---------------------------------------------------------------------
+
+Create Procedure agregarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float null, @nota2doParcial float null, @nota3erParcial float null, @nota4toParcial float null, @notaFinal float null, 
+							 @notaA char(1) null, @notaB char(1) null, @notaC char(1) null, @notaD char(1) null, @notaE char(1) null)
 As Begin 
 
 		If exists(select id_DetalleMatricula from detalleNotas Where
@@ -468,11 +473,13 @@ As Begin
 
 		else 
 
-		Insert into detalleNotas values(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, 1)
+		Insert into detalleNotas values(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, @notaA, @notaB, @notaC, @notaD, @notaE)
 
 End
-GO
-Create Procedure modificarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float, @nota2doParcial float, @nota3erParcial float, @nota4toParcial float, @notaFinal float)
+go
+
+Create Procedure modificarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float null, @nota2doParcial float null, @nota3erParcial float null, @nota4toParcial float null, @notaFinal float null, 
+							 @notaA char(1) null, @notaB char(1) null, @notaC char(1) null, @notaD char(1) null, @notaE char(1) null)
 As Begin 
 
 		If exists(select id_DetalleMatricula from detalleNotas Where
@@ -481,13 +488,15 @@ As Begin
 				  update detalleNotas set 
 										  nota1erParcial = @nota1erParcial, nota2doParcial = @nota2doParcial,
 										  nota3erParcial = @nota3erParcial, nota4toParcial = @nota4toParcial,
-										  notaFinal = @notaFinal
+										  notaFinal = @notaFinal, notaA = @notaA, notaB = @notaB, notaC = @notaC, 
+										  notaD = @notaD, notaE = @notaE
 					Where id_DetalleMatricula = @id_DetalleMatricula and id_Clase = @id_Clase
         else 
 				raiserror('¡Revise los datos!, No se encontró el Alumno especificado', 16,1)
 
-End
-GO
+End 
+go
+
 Create Procedure buscarAlumno(@identidadEstudiante varchar(13), @primerNombre varchar(20))
 As Begin 
 
