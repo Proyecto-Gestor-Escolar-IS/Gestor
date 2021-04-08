@@ -38,8 +38,11 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         String identidadDocente = "";
         String identidadDocenteActualizar = "";
+        String nombreDocente = "";
+
         int idSeccionModificar = 0;
         int idSiguienteClase = 0;
+
         private void panelGrande_Paint(object sender, PaintEventArgs e)
         {
 
@@ -283,13 +286,13 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             grpDGVSecciones.Visible = true;
             idSeccionModificar = 0;
             btnSiguienteDGVSeccion.Enabled = false;
-
         }
 
         private void btnAtrasRegistrarSeccion_Click(object sender, EventArgs e)
         {
             hideShowButtons(1);
             panelIngresarCurso.Visible = false;
+            mskNombreSeccionRegistrar.Clear();
         }
 
         private void btnAtrasClases_Click(object sender, EventArgs e)
@@ -311,7 +314,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             {
                 tipoCalificacion = 2;
             }
-            else if (radioTipoFloat.Checked == true) {
+            else if (radioSinEvaluacion.Checked == true) {
                 tipoCalificacion = 3;
             }
 
@@ -322,8 +325,8 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                     if (utilidades.isNumeric(txtPrecioMensualAgregar.Text))
                     {
 
-                        if ((radioTipoFloat.Checked == true) || (radioTipoFloat.Checked == true) || (radioTipoFloat.Checked == true))
-                          {
+                        if ((radioTipoFloat.Checked == true) || (radioTipoChar.Checked == true) || (radioSinEvaluacion.Checked == true))
+                        {
 
                             if (dgvClasesSelected.RowCount > 0)
                             {
@@ -356,40 +359,42 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                                 {
                                     messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
                                     messageError.ShowDialog();
-                                    txtPrecioCurso.Clear();
+                                    txtPrecioMensualAgregar.Clear();
                                 }
 
                                     
                             }
                             else
                             {
-                                messageError.lblError.Text = "SELECCIONE AL MENOS 1 CLASE!";
+                                messageError.lblError.Text = "SELECCIONE AL MENOS 1 CLASE";
                                 messageError.ShowDialog();
                             }
                         }
                         else
                         {
-                            messageError.lblError.Text = "SELECCIONE UNA EVALUACION!";
+                            messageError.lblError.Text = "SELECCIONE UNA EVALUACION";
                             messageError.ShowDialog();
 
                         }
                     }
                     else
                     {
-                        messageError.lblError.Text = "INGRESE UN PRECIO CORRECTO!";
+                        messageError.lblError.Text = "INGRESE UN PRECIO CORRECTO";
                         messageError.ShowDialog();
+                        txtPrecioMensualAgregar.Clear();
                     }
                 }
                 else
                 {
-                    messageError.lblError.Text = "ESTE CURSO YA EXISTE!";
+                    messageError.lblError.Text = "ESTE CURSO YA EXISTE";
                     messageError.ShowDialog();
+                    txtNombreCursoIngresar.Clear();
                 }
 
 
             }
             else {
-                messageError.lblError.Text = "ESCRIBA EL NOMBRE DEL CURSO!";
+                messageError.lblError.Text = "ESCRIBA EL NOMBRE DEL CURSO";
                 messageError.ShowDialog();
 
             }
@@ -405,9 +410,17 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void dgvClasesDisponibles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idClaseAgregarRegistro = int.Parse(dgvClasesDisponibles.Rows[e.RowIndex].Cells[0].Value.ToString());
-            nombreClaseRegistro = dgvClasesDisponibles.Rows[e.RowIndex].Cells[1].Value.ToString();
-            celdaActualTablaGrande = e.RowIndex;
+            try
+            {
+                idClaseAgregarRegistro = int.Parse(dgvClasesDisponibles.Rows[e.RowIndex].Cells[0].Value.ToString());
+                nombreClaseRegistro = dgvClasesDisponibles.Rows[e.RowIndex].Cells[1].Value.ToString();
+                celdaActualTablaGrande = e.RowIndex;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         private void btnAgregarClase_Click(object sender, EventArgs e)
@@ -463,13 +476,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         {
             if(cmbCursosExistentes.SelectedIndex != 0)
             {
-                int idCurso;
+                int idCurso, idClaseExistente, idClaseoriginal, IdEvaluacion;
                 float precioCurso;
-                int idClaseExistente;
-                String nombreClaseExistente;
-
-                int idClaseoriginal;
-                String idNombreoriginal;
+                String nombreClaseExistente, idNombreoriginal, formaEvaluacion;
 
                 originales.Rows.Clear();
                 existentes.Rows.Clear();
@@ -507,13 +516,26 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
 
                 dbConn.llenarTextBox(txtPrecioCurso, "SELECT precioCompleto FROM cursos where id_Curso = " + idCurso);
-
+                IdEvaluacion = dbConn.obtenerVariableEntera("SELECT [tipoCalificacion] FROM [dbo].[cursos] WHERE [id_Curso] = " + idCurso);
+                if (IdEvaluacion == 1)
+                {
+                    formaEvaluacion = "Numérica";
+                }else if(IdEvaluacion == 2)
+                {
+                    formaEvaluacion = "Letras";
+                }
+                else
+                {
+                    formaEvaluacion = "Sin Evaluación";
+                }
+                LblFormaEva.Text = formaEvaluacion;
             }
             else
             {
                 dgvClasesDisponiblesActualizar.DataSource = "";
                 dgvClasesExistentesActualizar.DataSource = "";
                 txtPrecioCurso.Text = "";
+
             }
 
         }
@@ -632,7 +654,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                                     }
                                     else
                                     {
-                                        messageError.lblError.Text = "DEBE SELECCIONAR UNA CLASE!";
+                                        messageError.lblError.Text = "DEBE SELECCIONAR UNA CLASE";
                                         messageError.ShowDialog();
                                     }
 
@@ -667,7 +689,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 
             }
             else {
-                messageError.lblError.Text = "SELECCIONE UN CURSO!";
+                messageError.lblError.Text = "SELECCIONE UN CURSO";
                 messageError.ShowDialog();
             }
         }
@@ -704,6 +726,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                         {
                             messageError.lblError.Text = "LA SECCION YA EXISTE";
                             messageError.ShowDialog();
+                            mskNombreSeccionRegistrar.ResetText();
                         }
                     }
                     else
@@ -715,13 +738,13 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 }
                 else
                 {
-                    messageError.lblError.Text = "SELECCIONE UN DOCENTE!";
+                    messageError.lblError.Text = "SELECCIONE UN DOCENTE";
                     messageError.ShowDialog();
                 }
 
             }
             else {
-                messageError.lblError.Text = "SELECCIONE UN CURSO!";
+                messageError.lblError.Text = "SELECCIONE UN CURSO";
                 messageError.ShowDialog();
             }
         }
@@ -774,13 +797,14 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         {
 
             int estadoSeccion;
-
+            
             grpDGVSecciones.Visible = false;
             grpActualizarSeccion.Visible = true;
             grpRegistrarSeccion.Visible = false;
 
             dbConn.llenarTextBox(txtCursos, "SELECT C.nombreCurso FROM [dbo].[seccion] A INNER JOIN[dbo].[cursos] C ON A.id_Curso = C.id_Curso WHERE A.id_Seccion = " + idSeccionModificar);
-            cmbDocentesActualizacion.SelectedItem = dbConn.obtenerVariableString("SELECT CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM [dbo].[seccion] A INNER JOIN datosEmpleados B ON A.id_Docente = B.identidadPersona WHERE A.id_Seccion = " + idSeccionModificar);
+            nombreDocente = dbConn.obtenerVariableString("SELECT CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM [dbo].[seccion] A INNER JOIN datosEmpleados B ON A.id_Docente = B.identidadPersona WHERE A.id_Seccion = " + idSeccionModificar);
+            cmbDocentesActualizacion.SelectedItem = nombreDocente;
             dbConn.llenarTextBox(txtNombreSeccion, "SELECT A.nombreSeccion FROM [dbo].[seccion] A WHERE A.id_Seccion = " + idSeccionModificar);
             estadoSeccion = dbConn.obtenerVariableEntera("SELECT A.estado FROM [dbo].[seccion] A WHERE A.id_Seccion = " + idSeccionModificar);
             switch (estadoSeccion)
@@ -820,21 +844,38 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 estado = 2;
             }
 
-            if(cmbDocentesActualizacion.SelectedIndex != 0)
+            if (estado == 1 && !cmbDocentesActualizacion.SelectedItem.Equals(nombreDocente))
             {
 
-                if (dbConn.PAActualizarSeccion(idSeccionModificar, identidadDocenteActualizar, estado)) {
-                    message.lblCheck.Text = "SECCION ACTUALIZADA";
-                    message.ShowDialog();
-                    dbConn.llenarDGV(dgvSecciones, "SELECT A.[id_Seccion] AS 'ID', C.nombreCurso AS 'Curso', A.nombreSeccion as 'Seccion', CONCAT(B.primerNombre, ' ', B.segundoNombre, ' ', B.primerApellido, ' ', B.segundoApellido) AS 'Docente', D.descripcionEstado as 'Estado'  FROM[dbo].[seccion] A INNER JOIN[dbo].[datosEmpleados] B ON A.id_Docente = B.identidadPersona INNER JOIN[dbo].[cursos] C ON A.id_Curso = C.id_Curso INNER JOIN estados D ON A.estado = D.id_Estado ");
+                if(cmbDocentesActualizacion.SelectedIndex != 0)
+                {
 
+                    if (dbConn.PAActualizarSeccion(idSeccionModificar, identidadDocenteActualizar, estado)) 
+                    {
+                        message.lblCheck.Text = "SECCION ACTUALIZADA";
+                        message.ShowDialog();
+                        dbConn.llenarDGV(dgvSecciones, "SELECT A.[id_Seccion] AS 'ID', C.nombreCurso AS 'Curso', A.nombreSeccion as 'Seccion', CONCAT(B.primerNombre, ' ', B.segundoNombre, ' ', B.primerApellido, ' ', B.segundoApellido) AS 'Docente', D.descripcionEstado as 'Estado'  FROM[dbo].[seccion] A INNER JOIN[dbo].[datosEmpleados] B ON A.id_Docente = B.identidadPersona INNER JOIN[dbo].[cursos] C ON A.id_Curso = C.id_Curso INNER JOIN estados D ON A.estado = D.id_Estado ");
+
+                    }
+                    else
+                    {
+                        messageError.lblError.Text = "ERROR INESPERADO";
+                        messageError.ShowDialog();
+                    }
                 }
+                else
+                {
+                messageError.lblError.Text = "SELECCIONE UN DOCENTE";
+                messageError.ShowDialog();
+                }
+
             }
             else
             {
-                messageError.lblError.Text = "SELECCIONE UN DOCENTE!";
+                messageError.lblError.Text = "CAMBIE EL ESTADO A ACTIVO";
                 messageError.ShowDialog();
             }
+            
         }
 
         private void cmbDocentesActualizacion_SelectedIndexChanged(object sender, EventArgs e)
@@ -878,7 +919,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 }
                 else
                 {
-                    messageError.lblError.Text = "ERROR INESPERADO!";
+                    messageError.lblError.Text = "ERROR INESPERADO";
                     messageError.ShowDialog();
                 }
             }
@@ -903,7 +944,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 }
                 else
                 {
-                    messageError.lblError.Text = "ERROR INESPERADO!";
+                    messageError.lblError.Text = "ERROR INESPERADO";
                     messageError.ShowDialog();
                 }
             }
@@ -928,7 +969,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 }
                 else
                 {
-                    messageError.lblError.Text = "ERROR INESPERADO!";
+                    messageError.lblError.Text = "ERROR INESPERADO";
                     messageError.ShowDialog();
                 }
 
@@ -961,6 +1002,18 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         {
             txtNombreCursoIngresar.Clear();
             txtPrecioMensualAgregar.Clear();
+            radioTipoFloat.Checked = false;
+            radioTipoChar.Checked = false;
+            radioSinEvaluacion.Checked = false;
+
         }
+
+        private void btnLimpiarRegistroSecc_Click(object sender, EventArgs e)
+        {
+            mskNombreSeccionRegistrar.ResetText();
+            cmbCursos.SelectedIndex = 0;
+            cmbDocentes.SelectedIndex = 0;
+        }
+
     }
 }
