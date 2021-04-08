@@ -237,7 +237,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.txtNombreClase.Size = new System.Drawing.Size(212, 31);
             this.txtNombreClase.TabIndex = 0;
             this.txtNombreClase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNombreClase.TextChanged += new System.EventHandler(this.txtNombreClase_TextChanged);
             // 
             // groupBox3
             // 
@@ -409,7 +408,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvClasesExistentesActualizar.Size = new System.Drawing.Size(638, 209);
             this.dgvClasesExistentesActualizar.TabIndex = 18;
             this.dgvClasesExistentesActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesExistentesActualizar_CellClick);
-            this.dgvClasesExistentesActualizar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesExistentesActualizar_CellContentClick);
             // 
             // dgvClasesDisponiblesActualizar
             // 
@@ -422,7 +420,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvClasesDisponiblesActualizar.Size = new System.Drawing.Size(526, 343);
             this.dgvClasesDisponiblesActualizar.TabIndex = 3;
             this.dgvClasesDisponiblesActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponiblesActualizar_CellClick);
-            this.dgvClasesDisponiblesActualizar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponiblesActualizar_CellContentClick);
             // 
             // label11
             // 
@@ -507,7 +504,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvClasesDisponibles.Size = new System.Drawing.Size(526, 343);
             this.dgvClasesDisponibles.TabIndex = 3;
             this.dgvClasesDisponibles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponibles_CellClick);
-            this.dgvClasesDisponibles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponibles_CellContentClick);
             // 
             // groupBox1
             // 
@@ -646,7 +642,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvSecciones.Size = new System.Drawing.Size(1370, 682);
             this.dgvSecciones.TabIndex = 41;
             this.dgvSecciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSecciones_CellClick);
-            this.dgvSecciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSecciones_CellContentClick);
             // 
             // grpActualizarSeccion
             // 
@@ -777,10 +772,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.mskNombreSeccionRegistrar.Size = new System.Drawing.Size(67, 33);
             this.mskNombreSeccionRegistrar.TabIndex = 19;
             this.mskNombreSeccionRegistrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mskNombreSeccionRegistrar.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskNombreSeccionRegistrar_MaskInputRejected);
             this.mskNombreSeccionRegistrar.TextChanged += new System.EventHandler(this.mskNombreSeccionRegistrar_TextChanged);
-            this.mskNombreSeccionRegistrar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskNombreSeccionRegistrar_KeyDown);
-            this.mskNombreSeccionRegistrar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mskNombreSeccionRegistrar_KeyPress);
             // 
             // label1
             // 

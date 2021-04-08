@@ -403,11 +403,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         }
 
-        private void dgvClasesDisponibles_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvClasesDisponibles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -467,9 +462,18 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void dgvClasesSelected_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idClaseAgregarRegistroPeque = int.Parse(dgvClasesSelected.Rows[e.RowIndex].Cells[0].Value.ToString());
-            nombreClaseRegistroPeque = dgvClasesSelected.Rows[e.RowIndex].Cells[1].Value.ToString();
-            celdaActualTablaPeque = e.RowIndex;
+            try
+            {
+
+                idClaseAgregarRegistroPeque = int.Parse(dgvClasesSelected.Rows[e.RowIndex].Cells[0].Value.ToString());
+                nombreClaseRegistroPeque = dgvClasesSelected.Rows[e.RowIndex].Cells[1].Value.ToString();
+                celdaActualTablaPeque = e.RowIndex;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
 
         private void cmbCursosExistentes_SelectedIndexChanged(object sender, EventArgs e)
@@ -581,36 +585,41 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 messageError.ShowDialog();
             }
         }
-
-        private void dgvClasesDisponiblesActualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvClasesDisponiblesActualizar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1)
+            try
             {
-                idClaseAgregarRegistro = int.Parse(dgvClasesDisponiblesActualizar.Rows[e.RowIndex].Cells[0].Value.ToString());
-                nombreClaseRegistro = dgvClasesDisponiblesActualizar.Rows[e.RowIndex].Cells[1].Value.ToString();
-                celdaActualTablaGrande = e.RowIndex;
+                if(e.RowIndex != -1)
+                {
+                    idClaseAgregarRegistro = int.Parse(dgvClasesDisponiblesActualizar.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    nombreClaseRegistro = dgvClasesDisponiblesActualizar.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    celdaActualTablaGrande = e.RowIndex;
+    
+                }   
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
         private void dgvClasesExistentesActualizar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            try
             {
-                idClaseAgregarRegistroPeque = int.Parse(dgvClasesExistentesActualizar.Rows[e.RowIndex].Cells[0].Value.ToString());
-            nombreClaseRegistroPeque = dgvClasesExistentesActualizar.Rows[e.RowIndex].Cells[1].Value.ToString();
-            celdaActualTablaPeque = e.RowIndex;
+                if (e.RowIndex != -1)
+                {
+                    idClaseAgregarRegistroPeque = int.Parse(dgvClasesExistentesActualizar.Rows[e.RowIndex].Cells[0].Value.ToString());
+                nombreClaseRegistroPeque = dgvClasesExistentesActualizar.Rows[e.RowIndex].Cells[1].Value.ToString();
+                celdaActualTablaPeque = e.RowIndex;
+                }   
+
             }
-        }
-
-        private void dgvClasesExistentesActualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void btnActualizarCurso_Click(object sender, EventArgs e)
@@ -760,31 +769,28 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
             }
         }
-
-        private void dgvSecciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvSecciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            try
             {
-                idSeccionModificar = int.Parse(dgvSecciones.Rows[e.RowIndex].Cells[0].Value.ToString());
-            }
-            if(idSeccionModificar != 0)
-            {
-                btnSiguienteDGVSeccion.Enabled = true;
-            }
-            else
-            {
-                btnSiguienteDGVSeccion.Enabled = false;
-            }
 
-        }
-
-        private void mskNombreSeccionRegistrar_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
+                if (e.RowIndex != -1)
+                {
+                    idSeccionModificar = int.Parse(dgvSecciones.Rows[e.RowIndex].Cells[0].Value.ToString());
+                }
+                if (idSeccionModificar != 0)
+                {
+                    btnSiguienteDGVSeccion.Enabled = true;
+                }
+                else
+                {
+                    btnSiguienteDGVSeccion.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
 
@@ -814,21 +820,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 case 2: cmbEstadoSeccion.SelectedIndex = 1;
                     break;
             }
-        }
-
-        private void mskNombreSeccionRegistrar_KeyDown(object sender, KeyEventArgs e)
-        {
-   
-        }
-
-        private void mskNombreSeccionRegistrar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void txtNombreSeccion_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
 
         private void btnActualizarSeccion_Click(object sender, EventArgs e)
@@ -893,18 +884,21 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void dgvClasesRegistradas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            try
             {
-                txtIDClaseSelected.Text = "" + int.Parse(dgvClasesRegistradas.Rows[e.RowIndex].Cells[0].Value.ToString());
-                txtNombreClaseSelected.Text = "" + dgvClasesRegistradas.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                if (e.RowIndex != -1)
+                {
+                    txtIDClaseSelected.Text = "" + int.Parse(dgvClasesRegistradas.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    txtNombreClaseSelected.Text = "" + dgvClasesRegistradas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                }   
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
-
-        private void txtNombreClase_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnHabilitar_Click(object sender, EventArgs e)
         {
             if(txtIDClaseSelected.Text != "" && txtNombreClaseSelected.Text != "")
