@@ -30,7 +30,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         public string NameA;
 
         //Ingreso de Notas.Variables
-
         public int id_detalleMatricula;
         public string Identidad;
         public int Id_Clase;
@@ -138,7 +137,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void IfrmIngreso_de_Notas_Load(object sender, EventArgs e)
         {
 
-            dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM cursos c INNER JOIN seccion s ON c.id_Curso = s.id_Curso WHERE id_Docente = '1623199970017'");
+            dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM cursos c INNER JOIN seccion s ON c.id_Curso = s.id_Curso WHERE id_Docente = '" + clsVariablesGlobales.numIdentidad + "'");
 
             gpxSeleccionAlumno.Visible = false;
             gpxIngreso_Notas.Visible = false;
@@ -858,39 +857,45 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void dgvCuadroNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if(formaEvaluacion == 1)
-            {
-                IDcn = dgvCuadroNotas.CurrentRow.Cells[0].Value.ToString();
-                nombreCN = dgvCuadroNotas.CurrentRow.Cells[1].Value.ToString();
-                Clase = dgvCuadroNotas.CurrentRow.Cells[2].Value.ToString();
-                Nota1 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[5].Value.ToString());
-                Nota2 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[6].Value.ToString());
-                Nota3 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString());
-                Nota4 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString());
-                NotaProm = float.Parse(dgvCuadroNotas.CurrentRow.Cells[9].Value.ToString());
-
-                Registro_y_Vista_de_Notas.Herencia_de_Variables.clase = Clase;
-                Registro_y_Vista_de_Notas.Herencia_de_Variables.nota1G2 = Nota1;
-                Registro_y_Vista_de_Notas.Herencia_de_Variables.nota2G2 = Nota2;
-                Registro_y_Vista_de_Notas.Herencia_de_Variables.nota3G2 = Nota3;
-                Registro_y_Vista_de_Notas.Herencia_de_Variables.nota4G2 = Nota4;
-            }
-            else if(formaEvaluacion == 2)
+            try
             {
 
-                ID = dgvCuadroNotas.CurrentRow.Cells[0].Value.ToString();
-                NameA = dgvCuadroNotas.CurrentRow.Cells[1].Value.ToString();
-                Clase = dgvCuadroNotas.CurrentRow.Cells[2].Value.ToString();
-                NotaA = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[5].Value.ToString());
-                NotaB = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[6].Value.ToString());
-                NotaC = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString());
-                NotaD = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString());
-                NotaE = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[9].Value.ToString());
+                if (formaEvaluacion == 1)
+                {
+                    IDcn = dgvCuadroNotas.CurrentRow.Cells[0].Value.ToString();
+                    nombreCN = dgvCuadroNotas.CurrentRow.Cells[1].Value.ToString();
+                    Clase = dgvCuadroNotas.CurrentRow.Cells[2].Value.ToString();
+                    Nota1 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[5].Value.ToString());
+                    Nota2 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[6].Value.ToString());
+                    Nota3 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString());
+                    Nota4 = float.Parse(dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString());
+                    NotaProm = float.Parse(dgvCuadroNotas.CurrentRow.Cells[9].Value.ToString());
+
+                    Registro_y_Vista_de_Notas.Herencia_de_Variables.clase = Clase;
+                    Registro_y_Vista_de_Notas.Herencia_de_Variables.nota1G2 = Nota1;
+                    Registro_y_Vista_de_Notas.Herencia_de_Variables.nota2G2 = Nota2;
+                    Registro_y_Vista_de_Notas.Herencia_de_Variables.nota3G2 = Nota3;
+                    Registro_y_Vista_de_Notas.Herencia_de_Variables.nota4G2 = Nota4;
+                }
+                else if (formaEvaluacion == 2)
+                {
+
+                    ID = dgvCuadroNotas.CurrentRow.Cells[0].Value.ToString();
+                    NameA = dgvCuadroNotas.CurrentRow.Cells[1].Value.ToString();
+                    Clase = dgvCuadroNotas.CurrentRow.Cells[2].Value.ToString();
+                    NotaA = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[5].Value.ToString());
+                    NotaB = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[6].Value.ToString());
+                    NotaC = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString());
+                    NotaD = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString());
+                    NotaE = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[9].Value.ToString());
+
+                }
 
             }
-
-
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
 
         }
