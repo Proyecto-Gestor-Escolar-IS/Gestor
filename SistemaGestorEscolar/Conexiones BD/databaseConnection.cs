@@ -21,7 +21,7 @@ namespace SistemaGestorEscolar
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-IFG9AL0\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-LEHSHML;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -684,7 +684,7 @@ namespace SistemaGestorEscolar
 
         //Registro de Notas
 
-        public bool PAAgregarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm)
+        public bool PAAgregarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm, char notaA, char notaB, char notaC, char notaD, char notaE)
         {
 
             try
@@ -699,6 +699,11 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@nota3erParcial", nota3);
                 comando.Parameters.AddWithValue("@nota4toParcial", nota4);
                 comando.Parameters.AddWithValue("@notaFinal", notaProm);
+                comando.Parameters.AddWithValue("@notaA", notaA);
+                comando.Parameters.AddWithValue("@notaB", notaB);
+                comando.Parameters.AddWithValue("@notaC", notaC);
+                comando.Parameters.AddWithValue("@notaD", notaD);
+                comando.Parameters.AddWithValue("@notaE", notaE);
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -709,7 +714,7 @@ namespace SistemaGestorEscolar
                 else
                 {
                     databaseIntermediary.Close();
-                    MessageBox.Show("Error de Registro de las Notas", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("Error de Registro de las Notas", "Error de Insercion");
                     return false;
                 }
 
@@ -717,7 +722,7 @@ namespace SistemaGestorEscolar
             catch (Exception ex)
             {
                 databaseIntermediary.Close();
-                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                Console.WriteLine("Error de base de datos! \n" + ex.ToString());
                 return false;
             }
 
@@ -725,7 +730,7 @@ namespace SistemaGestorEscolar
 
         //Modificar una Nota 
 
-        public bool PAModificarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm)
+        public bool PAModificarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm, char notaA, char notaB, char notaC, char notaD, char notaE)
         {
             try
             {
@@ -739,6 +744,11 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@nota3erParcial", nota3);
                 comando.Parameters.AddWithValue("@nota4toParcial", nota4);
                 comando.Parameters.AddWithValue("@notaFinal", notaProm);
+                comando.Parameters.AddWithValue("@notaA", notaA);
+                comando.Parameters.AddWithValue("@notaB", notaB);
+                comando.Parameters.AddWithValue("@notaC", notaC);
+                comando.Parameters.AddWithValue("@notaD", notaD);
+                comando.Parameters.AddWithValue("@notaE", notaE);
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -749,7 +759,7 @@ namespace SistemaGestorEscolar
                 else
                 {
                     databaseIntermediary.Close();
-                    MessageBox.Show("Error de Registro de las Notas", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("Error de Registro de las Notas", "Error de Insercion");
                     return false;
                 }
 
@@ -757,7 +767,7 @@ namespace SistemaGestorEscolar
             catch (Exception ex)
             {
                 databaseIntermediary.Close();
-                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                Console.WriteLine("Error de base de datos! \n" + ex.ToString());
                 return false;
             }
         }

@@ -34,6 +34,15 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             ClsCambioTema.cambiarTemaBoton(gpSeleccionCS);
 
+            if(Properties.Settings.Default.isModoOscuro == true)
+            {
+                gpSeleccionCS.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
+            else
+            {
+                gpSeleccionCS.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+
             dbConn.llenarComboBox(cmbCurso, "Select nombreCurso from [dbo].[cursos]");
 
         }
