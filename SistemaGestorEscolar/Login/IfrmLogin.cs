@@ -24,12 +24,17 @@ namespace SistemaGestorEscolar.Login
         IMessageBoxLoginIncorrecto message = new IMessageBoxLoginIncorrecto();
         IMessageBoxInformation message2 = new IMessageBoxInformation();
         IMessageBoxSiNo siNo = new IMessageBoxSiNo();
+        private Modulos_de_Arranque.verficacionArranque actualizarModulos = new Modulos_de_Arranque.verficacionArranque();
+
+
         private bool windowMove = false;
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
             dbConn.establecerConexion();
+            actualizarModulos.verificarFecha();
             ClsCambioTema.cambiarTemaBoton(panelPrincipal);
+      
 
             ClsCambioTema.cambiarTemaBoton(panel1);
             if (Properties.Settings.Default.isModoOscuro == true)
