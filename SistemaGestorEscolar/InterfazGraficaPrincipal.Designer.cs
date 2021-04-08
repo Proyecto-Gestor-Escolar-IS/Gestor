@@ -731,7 +731,7 @@ namespace SistemaGestorEscolar
             this.lblMenuTitle.AutoSize = true;
             this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
-            this.lblMenuTitle.Location = new System.Drawing.Point(674, 105);
+            this.lblMenuTitle.Location = new System.Drawing.Point(679, 105);
             this.lblMenuTitle.Name = "lblMenuTitle";
             this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
             this.lblMenuTitle.TabIndex = 32;
