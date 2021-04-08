@@ -30,10 +30,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpMatriculaPrimerIngreso = new System.Windows.Forms.GroupBox();
             this.txtNombreEncargado = new System.Windows.Forms.TextBox();
             this.cmbIdentidadEncargado = new System.Windows.Forms.ComboBox();
@@ -133,7 +133,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnRegresarEstud = new AltoControls.AltoButton();
             this.label31 = new System.Windows.Forms.Label();
             this.grpRegistroEncargados = new System.Windows.Forms.GroupBox();
-            this.dgvPrueba = new System.Windows.Forms.DataGridView();
             this.txtTelefonoAlternativo = new System.Windows.Forms.MaskedTextBox();
             this.txtprimerTelefono = new System.Windows.Forms.MaskedTextBox();
             this.btnLimpiarEncargadoMat = new AltoControls.AltoButton();
@@ -208,7 +207,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusquedaEstado)).BeginInit();
             this.grpRegistroEstudiante.SuspendLayout();
             this.grpRegistroEncargados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).BeginInit();
             this.gbEstudiantes.SuspendLayout();
             this.gbEncargados.SuspendLayout();
             this.SuspendLayout();
@@ -956,26 +954,26 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dgvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEstudiantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEstudiantes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEstudiantes.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvEstudiantes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvEstudiantes.Location = new System.Drawing.Point(44, 113);
             this.dgvEstudiantes.MultiSelect = false;
@@ -984,7 +982,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dgvEstudiantes.RowHeadersWidth = 20;
             this.dgvEstudiantes.Size = new System.Drawing.Size(1523, 733);
             this.dgvEstudiantes.TabIndex = 86;
-            this.dgvEstudiantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
+            this.dgvEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
             // 
             // btnSiguienteDGVAct
             // 
@@ -1297,26 +1295,26 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dgvBusquedaEstado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBusquedaEstado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBusquedaEstado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusquedaEstado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusquedaEstado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvBusquedaEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusquedaEstado.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBusquedaEstado.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusquedaEstado.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvBusquedaEstado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvBusquedaEstado.Location = new System.Drawing.Point(44, 113);
             this.dgvBusquedaEstado.MultiSelect = false;
@@ -1325,7 +1323,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dgvBusquedaEstado.RowHeadersWidth = 20;
             this.dgvBusquedaEstado.Size = new System.Drawing.Size(1512, 752);
             this.dgvBusquedaEstado.TabIndex = 86;
-            this.dgvBusquedaEstado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEstado_CellContentClick);
+            this.dgvBusquedaEstado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEstado_CellContentClick);
             // 
             // btnSiguienteEstado
             // 
@@ -1582,7 +1580,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpRegistroEncargados
             // 
-            this.grpRegistroEncargados.Controls.Add(this.dgvPrueba);
             this.grpRegistroEncargados.Controls.Add(this.txtTelefonoAlternativo);
             this.grpRegistroEncargados.Controls.Add(this.txtprimerTelefono);
             this.grpRegistroEncargados.Controls.Add(this.btnLimpiarEncargadoMat);
@@ -1613,14 +1610,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpRegistroEncargados.Text = "REGISTRO ENCARGADO";
             this.grpRegistroEncargados.Visible = false;
             this.grpRegistroEncargados.Enter += new System.EventHandler(this.grpRegistroEncargados_Enter);
-            // 
-            // dgvPrueba
-            // 
-            this.dgvPrueba.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrueba.Location = new System.Drawing.Point(1301, 314);
-            this.dgvPrueba.Name = "dgvPrueba";
-            this.dgvPrueba.Size = new System.Drawing.Size(240, 150);
-            this.dgvPrueba.TabIndex = 108;
             // 
             // txtTelefonoAlternativo
             // 
@@ -1913,6 +1902,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtIdentidadEstudMod.Size = new System.Drawing.Size(454, 34);
             this.txtIdentidadEstudMod.TabIndex = 114;
             this.txtIdentidadEstudMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIdentidadEstudMod.TextChanged += new System.EventHandler(this.txtIdentidadEstudMod_TextChanged_1);
             // 
             // cmbgeneroEstudMod
             // 
@@ -2035,6 +2025,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnRegresarEstudianteMod.TabIndex = 86;
             this.btnRegresarEstudianteMod.Text = "Regresar";
             this.btnRegresarEstudianteMod.Transparency = false;
+            this.btnRegresarEstudianteMod.Click += new System.EventHandler(this.btnRegresarEstudianteMod_Click);
             // 
             // btnActualizarEstudiante
             // 
@@ -2470,19 +2461,19 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.grpReingreso);
+            this.Controls.Add(this.grpListaEstudiantes);
             this.Controls.Add(this.grpMatriculaPrimerIngreso);
             this.Controls.Add(this.btnReingreso);
             this.Controls.Add(this.btnPrimerIngreso);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnActualizarMatricula);
             this.Controls.Add(this.grpRegistroEncargados);
             this.Controls.Add(this.grpRegistroEstudiante);
             this.Controls.Add(this.grpListadoEstado);
             this.Controls.Add(this.grpActualizarEstado);
             this.Controls.Add(this.gbEncargados);
             this.Controls.Add(this.gbEstudiantes);
-            this.Controls.Add(this.grpReingreso);
-            this.Controls.Add(this.grpListaEstudiantes);
+            this.Controls.Add(this.btnActualizarMatricula);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IMatriculaIndividual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2505,7 +2496,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpRegistroEstudiante.PerformLayout();
             this.grpRegistroEncargados.ResumeLayout(false);
             this.grpRegistroEncargados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).EndInit();
             this.gbEstudiantes.ResumeLayout(false);
             this.gbEstudiantes.PerformLayout();
             this.gbEncargados.ResumeLayout(false);
@@ -2680,6 +2670,5 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private System.Windows.Forms.MaskedTextBox txtTelefonoEncargadoMod;
         private System.Windows.Forms.MaskedTextBox txtIdentidadEncargadoMod;
         private System.Windows.Forms.MaskedTextBox txtIdentidadEstudMod;
-        private System.Windows.Forms.DataGridView dgvPrueba;
     }
 }
