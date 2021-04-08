@@ -843,8 +843,6 @@ private void txtBusquedaIdentidadEstado_TextChanged(object sender, EventArgs e)
                 Console.WriteLine(ex.Message);
             }
 
-
-
         }
 
         public void LimpiarEstudiante()
