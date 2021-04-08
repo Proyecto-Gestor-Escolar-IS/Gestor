@@ -24,7 +24,6 @@ namespace SistemaGestorEscolar
   
         private void InterfazGraficaPrincipal_Load(object sender, EventArgs e)
         {
-            clsVariablesGlobales.CodigoAcceso = 1;
             //Properties.Settings.Default.Reset();
             try
             {
