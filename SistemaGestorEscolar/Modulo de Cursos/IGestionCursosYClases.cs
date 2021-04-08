@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaGestorEscolar.Utilidades;
 
 namespace SistemaGestorEscolar.Modulo_de_Cursos
 {
@@ -181,6 +182,56 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void IGestionCursosYClases_Load(object sender, EventArgs e)
         {
+            ClsCambioTema.cambiarTemaBoton(panelGestionClases);
+            ClsCambioTema.cambiarTemaBoton(grpGestionClases);
+            ClsCambioTema.cambiarTemaBoton(groupBox3);
+            ClsCambioTema.cambiarTemaBoton(groupBox5);
+            ClsCambioTema.cambiarTemaBoton(grpActualizarCurso);
+            ClsCambioTema.cambiarTemaBoton(groupBox4);
+            ClsCambioTema.cambiarTemaBoton(grpDGVSecciones);
+            ClsCambioTema.cambiarTemaBoton(grpActualizarSeccion);
+            ClsCambioTema.cambiarTemaBoton(grpRegistroCurso);
+            ClsCambioTema.cambiarTemaBoton(groupBox2);
+            ClsCambioTema.cambiarTemaBoton(groupBox1);
+            ClsCambioTema.cambiarTemaBoton(panelRegistroNuevoCurso);
+            ClsCambioTema.cambiarTemaBoton(panelIngresarCurso);
+
+
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                panelRegistroNuevoCurso.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                panelGestionClases.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpGestionClases.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                groupBox3.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                groupBox5.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpActualizarCurso.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                groupBox4.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpDGVSecciones.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpActualizarSeccion.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpRegistroCurso.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                groupBox2.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                groupBox1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                panelIngresarCurso.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+
+            }
+            else
+            {
+                panelRegistroNuevoCurso.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                panelGestionClases.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpGestionClases.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                groupBox3.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                groupBox5.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpActualizarCurso.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                groupBox4.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpDGVSecciones.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpActualizarSeccion.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpRegistroCurso.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                groupBox2.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                groupBox1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                panelIngresarCurso.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+
+            }
+
             panelGestionClases.Visible = false;
             panelRegistroNuevoCurso.Visible = false;
             panelIngresarCurso.Visible = false;
@@ -264,28 +315,38 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                             if (dgvClasesSelected.RowCount > 0)
                             {
-
- 
-                                if (dbConn.PAInsertarCurso(txtNombreCursoIngresar.Text, float.Parse(txtPrecioMensualAgregar.Text), tipoCalificacion, 1))
+                                if (Int32.Parse(txtPrecioCurso.Text) < 0)
                                 {
-                                    int idCursoAgregado;
 
-                                    idCursoAgregado = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + txtNombreCursoIngresar.Text + "'");
-
-
-                                    for (int i = 0; i < existentes.Rows.Count; i++)
+                                    if (dbConn.PAInsertarCurso(txtNombreCursoIngresar.Text, float.Parse(txtPrecioMensualAgregar.Text), tipoCalificacion, 1))
                                     {
-                                        dbConn.PAInsertarDetalleClases(int.Parse(existentes.Rows[i]["ID"].ToString()), idCursoAgregado);
-                                    }
-                                    message.lblCheck.Text = "CURSO REGISTRADO";
-                                    message.ShowDialog();
+                                        int idCursoAgregado;
 
-                                }
-                                else
-                                {
+                                        idCursoAgregado = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + txtNombreCursoIngresar.Text + "'");
+
+
+                                        for (int i = 0; i < existentes.Rows.Count; i++)
+                                        {
+                                            dbConn.PAInsertarDetalleClases(int.Parse(existentes.Rows[i]["ID"].ToString()), idCursoAgregado);
+                                        }
+                                        message.lblCheck.Text = "CURSO REGISTRADO";
+                                        message.ShowDialog();
+    
+                                    }
+                                    else
+                                    {
                                     messageError.lblError.Text = "ERROR INESPERADO";
                                     messageError.ShowDialog();
+                                    }
+
                                 }
+                                else 
+                                {
+                                    messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
+                                    messageError.ShowDialog();
+                                }
+
+                                    
                             }
                             else
                             {
@@ -530,33 +591,44 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 {
                     if (utilidades.isNumeric(txtPrecioCurso.Text))
                     {
-                        if(existentes.Rows.Count != 0)
+                        if (Int32.Parse(txtPrecioCurso.Text) < 0)
                         {
-                            if (dbConn.PAActualizarCurso(codigoCurso, float.Parse(txtPrecioCurso.Text)))
+
+                            if (existentes.Rows.Count != 0)
                             {
-
-                                dbConn.PAEliminarDetallesClases(codigoCurso);
-                                for (int i = 0; i < existentes.Rows.Count; i++)
+                                if (dbConn.PAActualizarCurso(codigoCurso, float.Parse(txtPrecioCurso.Text)))
                                 {
-                                    dbConn.PAInsertarDetalleClases(int.Parse(existentes.Rows[i]["ID"].ToString()), codigoCurso);
-                                }
 
-                                message.lblCheck.Text = "CURSO ACTUALIZADO";
-                                message.ShowDialog();
+                                    dbConn.PAEliminarDetallesClases(codigoCurso);
+                                    for (int i = 0; i < existentes.Rows.Count; i++)
+                                    {
+                                        dbConn.PAInsertarDetalleClases(int.Parse(existentes.Rows[i]["ID"].ToString()), codigoCurso);
+                                    }
+
+                                    message.lblCheck.Text = "CURSO ACTUALIZADO";
+                                    message.ShowDialog();
+
+                                }
+                                else
+                                {
+                                messageError.lblError.Text = "ERROR INESPERADO";
+                                messageError.ShowDialog();
+                                }
 
                             }
                             else
                             {
-                                messageError.lblError.Text = "ERROR INESPERADO";
+                                messageError.lblError.Text = "DEBE SELECCIONAR UNA CLASE!";
                                 messageError.ShowDialog();
                             }
 
                         }
                         else
                         {
-                            messageError.lblError.Text = "DEBE SELECCIONAR UNA CLASE!";
+                            messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
                             messageError.ShowDialog();
                         }
+                        
 
 
                     }
@@ -846,6 +918,28 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 messageError.ShowDialog();
             }
 
+        }
+
+        private void btnLimpiarClaseModi_Click(object sender, EventArgs e)
+        {
+            txtNombreClaseSelected.Clear();
+            txtIDClaseSelected.Clear();
+        }
+
+        private void btnLimpiarNombreClase_Click(object sender, EventArgs e)
+        {
+            txtNombreClase.Clear();
+        }
+
+        private void btnLimpiarPrecioCurso_Click(object sender, EventArgs e)
+        {
+            txtPrecioCurso.Clear();
+        }
+
+        private void btnLimpiarRegistroCurso_Click(object sender, EventArgs e)
+        {
+            txtNombreCursoIngresar.Clear();
+            txtPrecioMensualAgregar.Clear();
         }
     }
 }

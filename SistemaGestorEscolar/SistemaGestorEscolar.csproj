@@ -172,12 +172,6 @@
     <Compile Include="MessageBox Personalizados\IMessageBoxSiNo.Designer.cs">
       <DependentUpon>IMessageBoxSiNo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulo de Cursos\IGestionCursos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulo de Cursos\IGestionCursos.Designer.cs">
-      <DependentUpon>IGestionCursos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modulo de Cursos\IGestionCursosYClases.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,9 +340,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxSiNo.resx">
       <DependentUpon>IMessageBoxSiNo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo de Cursos\IGestionCursos.resx">
-      <DependentUpon>IGestionCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo de Cursos\IGestionCursosYClases.resx">
       <DependentUpon>IGestionCursosYClases.cs</DependentUpon>
