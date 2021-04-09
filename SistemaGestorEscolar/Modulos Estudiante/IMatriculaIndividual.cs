@@ -129,16 +129,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void recuperarMatricula()
         {
-            if (Convert.IsDBNull(dbConn.obtenerVariableString("SELECT max(id_RegistroMatricula) FROM matricula")))
-            {
-                ultimaMatricula = 1;
-                txtNoMatricula.Text = "" + ultimaMatricula;
-            }
-            else
+            if (dbConn.obtenerVariableString("SELECT max(id_RegistroMatricula) FROM matricula") != "")
             {
                 ultimaMatricula = dbConn.obtenerVariableEntera("SELECT max(id_RegistroMatricula) FROM matricula");
                 ultimaMatricula += 1;
                 txtNoMatricula.Text = "" + ultimaMatricula;
+            }
+            else
+            {
+                ultimaMatricula = 1;
+                txtNoMatricula.Text = "" + ultimaMatricula;
+
             }
         }
 

@@ -243,5 +243,16 @@ namespace SistemaGestorEscolar
                 Console.WriteLine(ex.Message);
             }
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            InterfazGraficaPrincipal igp = Application.OpenForms.OfType<InterfazGraficaPrincipal>().SingleOrDefault();
+            igp.panelMostrador.Controls.Clear();
+            igp.panelMostrador.Dock = DockStyle.None;
+            igp.panelMostrador.Visible = false;
+            igp.panSubMenuEstudiante.Visible = true;
+            igp.panSubMenuEstudiante.Dock = DockStyle.Fill;
+            this.Close();
+        }
     }
 }

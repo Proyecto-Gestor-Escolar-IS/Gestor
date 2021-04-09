@@ -1352,11 +1352,16 @@ namespace SistemaGestorEscolar
 
         private void btnModificarEstudiante_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnImprimirReporte_MouseDown(object sender, MouseEventArgs e)
+        {
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            panSubMenuEstudiante.Visible = false;
-            panSubMenuEstudiante.Dock = DockStyle.None;
-            AbrirFormulario<CrudEstudianteEncargado>();
+            panSubMenuPersonal.Visible = false;
+            panSubMenuPersonal.Dock = DockStyle.None;
+            AbrirFormulario<Report_Notas.ReporteNotas>();
 
             if (codigoColor == 1)
             {
@@ -1366,11 +1371,6 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
-        }
-
-        private void btnImprimirReporte_MouseDown(object sender, MouseEventArgs e)
-        {
-
         }
 
         private void btnIngresarUsuario_MouseDown(object sender, MouseEventArgs e)
@@ -1422,6 +1422,24 @@ namespace SistemaGestorEscolar
         private void btnRegistroVisita_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnModificarEstudiante_MouseDown(object sender, MouseEventArgs e)
+        {
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuEstudiante.Visible = false;
+            panSubMenuEstudiante.Dock = DockStyle.None;
+            AbrirFormulario<CrudEstudianteEncargado>();
+
+            if (codigoColor == 1)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+            else if (codigoColor == 2)
+            {
+                formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+            }
         }
     }
 }

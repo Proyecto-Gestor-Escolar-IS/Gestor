@@ -170,7 +170,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void siguienteClase()
         {
-            if (dbConn.obtenerVariableString("SELECT MAX(id_Clase) FROM clases") == null)
+            if (dbConn.obtenerVariableString("SELECT MAX(id_Clase) FROM clases") == "")
             {
                 idSiguienteClase = 1;
                 txtIDNuevaClase.Text = "" + idSiguienteClase;

@@ -43,6 +43,7 @@ namespace SistemaGestorEscolar
             this.txtNumeroIdentidad = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAtras = new AltoControls.AltoButton();
             this.txtRegistarR = new AltoControls.AltoButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorIdentidad)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@ namespace SistemaGestorEscolar
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(550, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(537, 41);
+            this.label1.Size = new System.Drawing.Size(532, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "APERTURA EXPEDIENTE MEDICO";
             // 
@@ -63,7 +64,7 @@ namespace SistemaGestorEscolar
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(509, 242);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 31);
+            this.label2.Size = new System.Drawing.Size(177, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "Expediente No.";
             // 
@@ -73,7 +74,7 @@ namespace SistemaGestorEscolar
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(509, 392);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(275, 31);
+            this.label3.Size = new System.Drawing.Size(262, 27);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nombre del Estudiante";
             // 
@@ -83,7 +84,7 @@ namespace SistemaGestorEscolar
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(509, 482);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 31);
+            this.label4.Size = new System.Drawing.Size(217, 27);
             this.label4.TabIndex = 4;
             this.label4.Text = "Fecha de Creación";
             // 
@@ -93,7 +94,7 @@ namespace SistemaGestorEscolar
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(680, 605);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(279, 31);
+            this.label5.Size = new System.Drawing.Size(264, 27);
             this.label5.TabIndex = 5;
             this.label5.Text = "Antecedentes Médicos";
             // 
@@ -169,13 +170,34 @@ namespace SistemaGestorEscolar
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(509, 315);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(261, 31);
+            this.label9.Size = new System.Drawing.Size(248, 27);
             this.label9.TabIndex = 36;
             this.label9.Text = "Número de Identidad ";
             // 
             // errorIdentidad
             // 
             this.errorIdentidad.ContainerControl = this;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtras.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtras.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtras.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAtras.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtras.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtras.Location = new System.Drawing.Point(12, 970);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Radius = 20;
+            this.btnAtras.Size = new System.Drawing.Size(243, 53);
+            this.btnAtras.Stroke = true;
+            this.btnAtras.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAtras.TabIndex = 86;
+            this.btnAtras.Text = "ATRAS";
+            this.btnAtras.Transparency = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // txtRegistarR
             // 
@@ -204,6 +226,7 @@ namespace SistemaGestorEscolar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.txtRegistarR);
             this.Controls.Add(this.txtNumeroIdentidad);
             this.Controls.Add(this.label9);
@@ -244,5 +267,6 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider errorIdentidad;
         private AltoControls.AltoButton txtRegistarR;
+        private AltoControls.AltoButton btnAtras;
     }
 }

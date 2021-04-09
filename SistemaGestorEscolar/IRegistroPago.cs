@@ -2,6 +2,7 @@
 using SistemaGestorEscolar.Utilidades;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaGestorEscolar
@@ -440,6 +441,17 @@ namespace SistemaGestorEscolar
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            InterfazGraficaPrincipal igp = Application.OpenForms.OfType<InterfazGraficaPrincipal>().SingleOrDefault();
+            igp.panelMostrador.Controls.Clear();
+            igp.panelMostrador.Dock = DockStyle.None;
+            igp.panelMostrador.Visible = false;
+            igp.panSubMenuPagos.Visible = true;
+            igp.panSubMenuPagos.Dock = DockStyle.Fill;
+            this.Close();
         }
     }
 }

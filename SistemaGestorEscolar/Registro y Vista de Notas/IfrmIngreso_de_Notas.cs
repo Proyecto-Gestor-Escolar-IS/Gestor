@@ -88,7 +88,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             Registro_y_Vista_de_Notas.Herencia_de_Variables.CursoG = cursoElegido;
             Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG = seccionElegida;
 
-            formaEvaluacion = dbConn.obtenerVariableEntera("Select [formaEvaluacion] from [dbo].[cursos] where [nombreCurso] = '" + cursoElegido + "'");
+            formaEvaluacion = dbConn.obtenerVariableEntera("Select [tipoCalificacion] from [dbo].[cursos] where [nombreCurso] = '" + cursoElegido + "'");
 
 
             if (cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)

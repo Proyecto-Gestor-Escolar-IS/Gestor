@@ -224,5 +224,21 @@ namespace SistemaGestorEscolar
             txtNumeroIdentidad.Clear();
             cmbMedicos.SelectedIndex = 0;
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            InterfazGraficaPrincipal igp = Application.OpenForms.OfType<InterfazGraficaPrincipal>().SingleOrDefault();
+            igp.panelMostrador.Controls.Clear();
+            igp.panelMostrador.Dock = DockStyle.None;
+            igp.panelMostrador.Visible = false;
+            igp.panSubMenuEstudiante.Visible = true;
+            igp.panSubMenuEstudiante.Dock = DockStyle.Fill;
+            this.Close();
+        }
+
+        private void dgvHistorialMedico_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
