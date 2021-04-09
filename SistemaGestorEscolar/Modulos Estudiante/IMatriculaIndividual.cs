@@ -45,7 +45,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         string identidadEncargadoModDatos;
         int idSeccion;
 
-        
+
         private void IMatriculaIndividual_Load(object sender, EventArgs e)
         {
             dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT nombreCurso FROM cursos");
@@ -249,7 +249,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             dbConn.llenarComboBoxValorInicial(cmbSeccion, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE cursos.nombreCurso = '" + cmbCurso.SelectedItem + "'");
             cmbSeccion.SelectedIndex = 0;
 
-            dbConn.llenarTextBox(txtTotalPagar, "SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'");
+            
+            txtTotalPagar.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'").ToString();
+
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -262,6 +264,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             limpiarEncargado();
             LimpiarEstudiante();
             encargados.Clear();
+            cmbIdentidadEncargado.Items.Clear();
         }
 
         private void txtIdentidadEncargado_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -514,6 +517,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             grpReingreso.Visible = false;
             cmbEncargadosReingreso.Items.Clear();
             txtNombreEstudianteR.Clear();
+            identidadReingreso = "";
         }
 
         private void grpListaEstudiantes_Enter(object sender, EventArgs e)
@@ -530,6 +534,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             {
                 Console.WriteLine(ex.Message);
             }
+
         }
 
         private void txtIdentidadEstudianteR_TextChanged_1(object sender, EventArgs e)
@@ -555,7 +560,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             cmbSeccionR.SelectedIndex = 0;
 
 
-            dbConn.llenarTextBox(txtTotalR, "SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem + "'");
+            txtTotalR.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem + "'").ToString();
         }
 
         private void txtLimpiarR_Click(object sender, EventArgs e)
@@ -1668,6 +1673,61 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void cmbGeneroEstud_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal total;
+            double TotalPagar = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'");
+
+            if (txtDescuento.Text == "" || txtDescuento.Text == "0.00")
+            {
+                txtTotalPagar.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'").ToString();
+
+            }
+            else
+            {
+
+                total = (decimal.Parse(TotalPagar.ToString()) - decimal.Parse(txtDescuento.Text));
+                total = decimal.Round(total, 3);
+                txtTotalPagar.Text = total.ToString();
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        private void txtDescuentoR_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+            decimal total;
+            double TotalPagar = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem + "'");
+
+            if (txtDescuentoR.Text == "" || txtDescuentoR.Text == "0.00")
+            {
+                txtTotalR.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem + "'").ToString();
+
+            }
+            else
+            {
+                total = (decimal.Parse(TotalPagar.ToString()) - decimal.Parse(txtDescuentoR.Text));
+                total = decimal.Round(total, 3);
+                txtTotalR.Text = total.ToString();
+            }
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
 
         }
     }
