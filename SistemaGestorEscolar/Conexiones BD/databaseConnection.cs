@@ -1329,8 +1329,8 @@ namespace SistemaGestorEscolar
                 MessageBox.Show("Error de base de datos! \n" + ex.ToString());
                 return false;
             }
-        }
-        */
+        }*/
+
     }
 
 }

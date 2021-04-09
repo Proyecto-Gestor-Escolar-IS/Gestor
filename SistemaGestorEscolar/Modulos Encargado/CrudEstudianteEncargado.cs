@@ -280,8 +280,18 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void dgvBusquedaEncargado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            identidadEncargado = dgvBusquedaEncargado.Rows[e.RowIndex].Cells[0].Value.ToString();
+            try
+            {
+                identidadEncargado = dgvBusquedaEncargado.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
+
+
 
         private void btnSiguienteEncargado_Click(object sender, EventArgs e)
         {
@@ -359,7 +369,14 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         }
         private void dgvListadoEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             identidadEstudiante = dgvListadoEstudiantes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void btnSiguienteEstud_Click(object sender, EventArgs e)

@@ -354,7 +354,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                 estado = 1;
 
-                dbConn.PARegistroSeccion(Idcurso, IdDocente, nombreSeccion, estado);
+                //dbConn.PARegistroSeccion(Idcurso, IdDocente, nombreSeccion, estado);
 
                 message.lblCheck.Text = "SECCIÓN REGISTRADA";
                 message.ShowDialog();
