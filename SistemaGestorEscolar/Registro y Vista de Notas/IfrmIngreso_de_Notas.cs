@@ -88,7 +88,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             Registro_y_Vista_de_Notas.Herencia_de_Variables.CursoG = cursoElegido;
             Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG = seccionElegida;
 
-            formaEvaluacion = dbConn.obtenerVariableEntera("Select [formaEvaluacion] from [dbo].[cursos] where [nombreCurso] = '" + cursoElegido + "'");
+            formaEvaluacion = dbConn.obtenerVariableEntera("Select [tipoCalificacion] from [dbo].[cursos] where [nombreCurso] = '" + cursoElegido + "'");
 
 
             if (cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
@@ -192,7 +192,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula INNER JOIN " +
                 "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso INNER JOIN dbo.seccion ON" +
                 " dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where" +
-                " dbo.cursos.nombreCurso = '" + Herencia_de_Variables.CursoG + "' and dbo.seccion.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "' ");
+                " dbo.cursos.nombreCurso = '" + Herencia_de_Variables.CursoG + "' and dbo.seccion.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "'");
 
         }
 
@@ -283,7 +283,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void gpxIngreso_Notas_VisibleChanged(object sender, EventArgs e)
         {
-            Limpiar();
+            
         }
         private void gpxIngreso_Notas_VisibleChanged_1(object sender, EventArgs e)
         {
@@ -310,9 +310,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 txtNota4.Visible = false;
                 txtNotaProm.Visible = false;
             }
-            
-
-            Limpiar();        
+                   
             txtCurso.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.CursoG;
             txtSeccion.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.SeccionG;
             txtIdentidadAE.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.identidadG;
@@ -727,6 +725,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void Limpiar()
         {
                 txtIdentidadAE.Clear();
+                txtIdentidad.Clear();
+                txtNombreAlumno.Clear();
                 txtNombreAE.Clear();
                 txtCurso.Clear();
                 txtSeccion.Clear();
@@ -747,36 +747,13 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void abLimpiar_Click(object sender, EventArgs e)
         {
 
-            if (chkLimpDatos.Checked)
-            {
-                txtIdentidad.ResetText();
-                txtIdentidadAE.ResetText();
-                txtNombreAE.ResetText();
-                txtNombreAlumno.ResetText();
-                txtCurso.ResetText();
-                txtSeccion.ResetText();
-                cmbClasesCS.ResetText();
-            }
-            else
-            {
-                txtNota1.Text = "0";
-                txtNota2.Text = "0";
-                txtNota3.Text = "0";
-                txtNota4.Text = "0";
-                txtNotaProm.Text = "0";
-                mktNotaA.ResetText();
-                mktNotaB.ResetText();
-                mktNotaC.ResetText();
-                mktNotaD.ResetText();
-                mktNotaE.ResetText();
-            }
+            Limpiar();
 
         }
 
         private void abCuadroNotas_Click(object sender, EventArgs e)
         {
 
-            Limpiar();
             gpxIngreso_Notas.Visible = false;
             gpxCuadroNotas.Visible = true;
 

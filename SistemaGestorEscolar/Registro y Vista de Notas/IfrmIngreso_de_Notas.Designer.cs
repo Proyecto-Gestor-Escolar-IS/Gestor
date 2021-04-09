@@ -60,7 +60,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.abLimpiar = new AltoControls.AltoButton();
             this.chkVerClases = new System.Windows.Forms.CheckBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.chkLimpDatos = new System.Windows.Forms.CheckBox();
             this.txtNotaProm = new System.Windows.Forms.TextBox();
             this.txtNota4 = new System.Windows.Forms.TextBox();
             this.txtNota3 = new System.Windows.Forms.TextBox();
@@ -305,7 +304,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.gpxIngreso_Notas.Controls.Add(this.abLimpiar);
             this.gpxIngreso_Notas.Controls.Add(this.chkVerClases);
             this.gpxIngreso_Notas.Controls.Add(this.pictureBox2);
-            this.gpxIngreso_Notas.Controls.Add(this.chkLimpDatos);
             this.gpxIngreso_Notas.Controls.Add(this.txtNotaProm);
             this.gpxIngreso_Notas.Controls.Add(this.txtNota4);
             this.gpxIngreso_Notas.Controls.Add(this.txtNota3);
@@ -485,17 +483,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // chkLimpDatos
-            // 
-            this.chkLimpDatos.AutoSize = true;
-            this.chkLimpDatos.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkLimpDatos.Location = new System.Drawing.Point(551, 908);
-            this.chkLimpDatos.Name = "chkLimpDatos";
-            this.chkLimpDatos.Size = new System.Drawing.Size(163, 25);
-            this.chkLimpDatos.TabIndex = 19;
-            this.chkLimpDatos.Text = "Datos del Alumno";
-            this.chkLimpDatos.UseVisualStyleBackColor = true;
             // 
             // txtNotaProm
             // 
@@ -922,7 +909,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorPvIdentidad;
-        private System.Windows.Forms.CheckBox chkLimpDatos;
         private System.Windows.Forms.GroupBox gpxCuadroNotas;
         private System.Windows.Forms.DataGridView dgvCuadroNotas;
         private System.Windows.Forms.Label label16;
