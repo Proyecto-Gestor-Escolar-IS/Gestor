@@ -140,7 +140,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void IfrmIngreso_de_Notas_Load(object sender, EventArgs e)
         {
 
-            dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM cursos c INNER JOIN seccion s ON c.id_Curso = s.id_Curso WHERE id_Docente = '" + clsVariablesGlobales.numIdentidad + "'");
+            dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM cursos c INNER JOIN seccion s ON c.id_Curso = s.id_Curso WHERE id_Docente = '" + clsVariablesGlobales.numIdentidad + "'");//" + clsVariablesGlobales.numIdentidad + "
 
             gpxSeleccionAlumno.Visible = false;
             gpxIngreso_Notas.Visible = false;
@@ -195,7 +195,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula INNER JOIN " +
                 "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso INNER JOIN dbo.seccion ON" +
                 " dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where" +
-                " dbo.cursos.nombreCurso = '" + Herencia_de_Variables.CursoG + "' and dbo.seccion.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "' and and [dbo].[detalleMatricula].[estado] = 2");
+                " dbo.cursos.nombreCurso = '" + Herencia_de_Variables.CursoG + "' and dbo.seccion.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "' and [dbo].[detalleMatricula].[estado] = 2"); //and [dbo].[detalleMatricula].[estado] = 2
 
         }
 
@@ -326,8 +326,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
             mktNotaA.Text = NotaA;
             mktNotaB.Text = NotaB;
-            mktNotaC.Text = NotaC;
-            mktNotaD.Text = NotaD;
+            mktNotaC.Text = NotaD;
+            mktNotaD.Text = NotaC;
             mktNotaE.Text = NotaE;
 
 
@@ -489,12 +489,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void abAgregarNotas_Click(object sender, EventArgs e)
         {
 
-            id_detalleMatricula1 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
-                                             "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
-                                             " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
-
-            existenciaNota = dbConn.obtenerVariableString("Select [notaA] from [dbo].[detalleNotas] Where [id_DetalleMatricula] = '" + id_detalleMatricula1 + "'");
-            exist = dbConn.obtenerVariableEntera("Select [nota1erParcial] from [dbo].[detalleNotas] Where [id_DetalleMatricula] = '" + id_detalleMatricula1 + "'");
+            existenciaNota = dbConn.obtenerVariableString("Select [notaA] from [dbo].[detalleNotas] Where [id_DetalleMatricula] = '" + id_detalleMatricula2 + "'");
+            exist = dbConn.obtenerVariableEntera("Select [nota1erParcial] from [dbo].[detalleNotas] Where [id_DetalleMatricula] = '" + id_detalleMatricula2 + "'");
 
             if(existenciaNota == "" || exist == 0)
             {
@@ -564,6 +560,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     }
                     else
                     {
+
                           id_detalleMatricula2 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
                                                  "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "'  and" +
                                                  " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
@@ -704,6 +701,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                         }
                         else
                         {
+                               txtIdentidadAE.Clear();
+
                             id_detalleMatricula2 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
                                                  "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
                                                  " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
@@ -746,6 +745,9 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                             }
                             else
                             {
+
+                                txtIdentidadAE.Clear();        
+
                                 id_detalleMatricula2 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
                                                      "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "'  and" +
                                                      " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
@@ -1021,6 +1023,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     txtNombreAlumno.Visible = true;
                     gpxCuadroNotas.Visible = false;
                     gpxIngreso_Notas.Visible = true;
+                    txtIdentidadAE.Clear();
 
                 }
             }
@@ -1042,6 +1045,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     txtNombreAlumno.Visible = true;
                     gpxCuadroNotas.Visible = false;
                     gpxIngreso_Notas.Visible = true;
+                    txtIdentidadAE.Clear();
 
                 }
             }
