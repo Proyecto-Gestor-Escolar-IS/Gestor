@@ -684,7 +684,7 @@ namespace SistemaGestorEscolar
 
         //Registro de Notas
 
-        public bool PAAgregarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm, char notaA, char notaB, char notaC, char notaD, char notaE)
+        public bool PAAgregarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm, string notaA, string notaB, string notaC, string notaD, string notaE)
         {
 
             try
@@ -730,7 +730,7 @@ namespace SistemaGestorEscolar
 
         //Modificar una Nota 
 
-        public bool PAModificarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm, char notaA, char notaB, char notaC, char notaD, char notaE)
+        public bool PAModificarNota(int id_detalleMatricula, int id_Clase, float nota1, float nota2, float nota3, float nota4, float notaProm, string notaA, string notaB, string notaC, string notaD, string notaE)
         {
             try
             {
