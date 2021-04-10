@@ -65,11 +65,13 @@ namespace SistemaGestorEscolar
         //Comprueba la existencia de los usuarios en la base de datos
         public bool comprobarUsuario(string usuario, string contra)
         {
+            
             databaseIntermediary.Open();
             string comandoSql = "SELECT COUNT(*) FROM datosEmpleados WHERE identidadPersona = '" + usuario + "' AND contraseniaEmpleado = '" + contra + "' AND estadoEmpleado <> 2";
             comando = databaseIntermediary.CreateCommand();
             comando.CommandText = comandoSql;
 
+            //ERROR FATAL AQUI ! - AL INSERTAR EL CARACTER <'> EL PROGRAMA CRASHEA
             var t = Convert.ToInt32(comando.ExecuteScalar());
             databaseIntermediary.Close();
 
