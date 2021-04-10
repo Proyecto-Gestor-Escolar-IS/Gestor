@@ -231,6 +231,8 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 panelIngresarCurso.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 panelGrande.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 grpRegistrarSeccion.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                grpCursos.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                groupBox6.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
             else
@@ -250,6 +252,8 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 panelIngresarCurso.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 panelGrande.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 grpRegistrarSeccion.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                grpCursos.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+                groupBox6.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
             }
 
