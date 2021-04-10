@@ -438,7 +438,8 @@ As Begin
 			Insert into detalleNotas values(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, @notaA, @notaB, @notaC, @notaD, @notaE)
 		End
 
-End 
+End
+Go
 
 Create Procedure buscarAlumno(@identidadEstudiante varchar(13), @primerNombre varchar(20))
 As Begin 
