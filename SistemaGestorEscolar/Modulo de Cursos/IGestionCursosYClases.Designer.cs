@@ -29,14 +29,13 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGrande = new System.Windows.Forms.Panel();
             this.panelGestionClases = new System.Windows.Forms.Panel();
             this.grpGestionClases = new System.Windows.Forms.GroupBox();
-            this.btnLimpiarNombreClase = new AltoControls.AltoButton();
             this.btnAtrasClases = new AltoControls.AltoButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -177,14 +176,14 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // panelGestionClases
             // 
             this.panelGestionClases.Controls.Add(this.grpGestionClases);
-            this.panelGestionClases.Location = new System.Drawing.Point(1336, 139);
+            this.panelGestionClases.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGestionClases.Location = new System.Drawing.Point(0, 0);
             this.panelGestionClases.Name = "panelGestionClases";
-            this.panelGestionClases.Size = new System.Drawing.Size(258, 87);
+            this.panelGestionClases.Size = new System.Drawing.Size(1635, 1035);
             this.panelGestionClases.TabIndex = 39;
             // 
             // grpGestionClases
             // 
-            this.grpGestionClases.Controls.Add(this.btnLimpiarNombreClase);
             this.grpGestionClases.Controls.Add(this.btnAtrasClases);
             this.grpGestionClases.Controls.Add(this.groupBox5);
             this.grpGestionClases.Controls.Add(this.groupBox3);
@@ -198,26 +197,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpGestionClases.TabIndex = 0;
             this.grpGestionClases.TabStop = false;
             this.grpGestionClases.Text = "GESTION DE CLASES";
-            // 
-            // btnLimpiarNombreClase
-            // 
-            this.btnLimpiarNombreClase.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarNombreClase.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarNombreClase.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiarNombreClase.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLimpiarNombreClase.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarNombreClase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiarNombreClase.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarNombreClase.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarNombreClase.Location = new System.Drawing.Point(1327, 881);
-            this.btnLimpiarNombreClase.Name = "btnLimpiarNombreClase";
-            this.btnLimpiarNombreClase.Radius = 20;
-            this.btnLimpiarNombreClase.Size = new System.Drawing.Size(152, 48);
-            this.btnLimpiarNombreClase.Stroke = true;
-            this.btnLimpiarNombreClase.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiarNombreClase.TabIndex = 48;
-            this.btnLimpiarNombreClase.Text = "LIMPIAR";
-            this.btnLimpiarNombreClase.Transparency = false;
             // 
             // btnAtrasClases
             // 
@@ -259,7 +238,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(74, 193);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(158, 21);
+            this.label18.Size = new System.Drawing.Size(159, 24);
             this.label18.TabIndex = 47;
             this.label18.Text = "NOMBRE CLASE";
             // 
@@ -268,7 +247,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(74, 111);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(137, 21);
+            this.label17.Size = new System.Drawing.Size(139, 24);
             this.label17.TabIndex = 46;
             this.label17.Text = "SIGUIENTE ID";
             // 
@@ -343,7 +322,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnDeshabilitar.TabIndex = 45;
             this.btnDeshabilitar.Text = "DESHABILITAR";
             this.btnDeshabilitar.Transparency = false;
-            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click_1);
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click_2);
             // 
             // btnHabilitar
             // 
@@ -364,14 +343,14 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnHabilitar.TabIndex = 44;
             this.btnHabilitar.Text = "HABILITAR";
             this.btnHabilitar.Transparency = false;
-            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click_1);
+            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click_2);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(165, 59);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(228, 21);
+            this.label15.Size = new System.Drawing.Size(227, 24);
             this.label15.TabIndex = 44;
             this.label15.Text = "CLASE SELECCIONADA";
             // 
@@ -398,7 +377,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(607, 68);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(376, 21);
+            this.label14.Size = new System.Drawing.Size(373, 24);
             this.label14.TabIndex = 42;
             this.label14.Text = "CLASES REGISTRADAS ACTUALMENTE";
             // 
@@ -406,23 +385,23 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             this.dgvClasesRegistradas.AllowUserToAddRows = false;
             this.dgvClasesRegistradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClasesRegistradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClasesRegistradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvClasesRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClasesRegistradas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClasesRegistradas.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvClasesRegistradas.Location = new System.Drawing.Point(57, 110);
             this.dgvClasesRegistradas.Name = "dgvClasesRegistradas";
             this.dgvClasesRegistradas.ReadOnly = true;
@@ -435,9 +414,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.panelRegistroNuevoCurso.Controls.Add(this.grpCursos);
             this.panelRegistroNuevoCurso.Controls.Add(this.grpActualizarCurso);
             this.panelRegistroNuevoCurso.Controls.Add(this.grpRegistroCurso);
-            this.panelRegistroNuevoCurso.Location = new System.Drawing.Point(1336, 43);
+            this.panelRegistroNuevoCurso.Location = new System.Drawing.Point(1336, 28);
             this.panelRegistroNuevoCurso.Name = "panelRegistroNuevoCurso";
-            this.panelRegistroNuevoCurso.Size = new System.Drawing.Size(239, 58);
+            this.panelRegistroNuevoCurso.Size = new System.Drawing.Size(258, 92);
             this.panelRegistroNuevoCurso.TabIndex = 21;
             // 
             // grpCursos
@@ -447,9 +426,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpCursos.Controls.Add(this.groupBox6);
             this.grpCursos.Controls.Add(this.dgvTodosCursos);
             this.grpCursos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCursos.Location = new System.Drawing.Point(33, 29);
+            this.grpCursos.Location = new System.Drawing.Point(40, 29);
             this.grpCursos.Name = "grpCursos";
-            this.grpCursos.Size = new System.Drawing.Size(1575, 962);
+            this.grpCursos.Size = new System.Drawing.Size(1568, 962);
             this.grpCursos.TabIndex = 39;
             this.grpCursos.TabStop = false;
             this.grpCursos.Text = "TODOS LOS CURSOS";
@@ -597,9 +576,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpActualizarCurso.Controls.Add(this.label11);
             this.grpActualizarCurso.Controls.Add(this.label12);
             this.grpActualizarCurso.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpActualizarCurso.Location = new System.Drawing.Point(35, 29);
+            this.grpActualizarCurso.Location = new System.Drawing.Point(40, 29);
             this.grpActualizarCurso.Name = "grpActualizarCurso";
-            this.grpActualizarCurso.Size = new System.Drawing.Size(1573, 962);
+            this.grpActualizarCurso.Size = new System.Drawing.Size(1568, 962);
             this.grpActualizarCurso.TabIndex = 18;
             this.grpActualizarCurso.TabStop = false;
             this.grpActualizarCurso.Text = "ACTUALIZAR UN CURSO";
@@ -630,7 +609,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.LblFormaEva.AutoSize = true;
             this.LblFormaEva.Location = new System.Drawing.Point(330, 310);
             this.LblFormaEva.Name = "LblFormaEva";
-            this.LblFormaEva.Size = new System.Drawing.Size(22, 21);
+            this.LblFormaEva.Size = new System.Drawing.Size(25, 24);
             this.LblFormaEva.TabIndex = 24;
             this.LblFormaEva.Text = "...";
             // 
@@ -639,7 +618,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(136, 312);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(170, 21);
+            this.label21.Size = new System.Drawing.Size(176, 24);
             this.label21.TabIndex = 23;
             this.label21.Text = "Forma Evaluación:";
             // 
@@ -648,7 +627,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(153, 321);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(0, 21);
+            this.label20.Size = new System.Drawing.Size(0, 24);
             this.label20.TabIndex = 21;
             // 
             // btnLimpiarPrecioCurso
@@ -687,6 +666,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.txtPrecioCurso.Name = "txtPrecioCurso";
             this.txtPrecioCurso.Size = new System.Drawing.Size(175, 31);
             this.txtPrecioCurso.TabIndex = 19;
+            this.txtPrecioCurso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCurso_KeyPress);
             // 
             // cmbCursosExistentes
             // 
@@ -694,7 +674,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbCursosExistentes.FormattingEnabled = true;
             this.cmbCursosExistentes.Location = new System.Drawing.Point(326, 156);
             this.cmbCursosExistentes.Name = "cmbCursosExistentes";
-            this.cmbCursosExistentes.Size = new System.Drawing.Size(175, 29);
+            this.cmbCursosExistentes.Size = new System.Drawing.Size(175, 32);
             this.cmbCursosExistentes.TabIndex = 18;
             this.cmbCursosExistentes.SelectedIndexChanged += new System.EventHandler(this.cmbCursosExistentes_SelectedIndexChanged);
             // 
@@ -759,7 +739,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(296, 446);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(160, 21);
+            this.label10.Size = new System.Drawing.Size(164, 24);
             this.label10.TabIndex = 17;
             this.label10.Text = "Clases del Curso";
             // 
@@ -834,7 +814,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(136, 232);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 21);
+            this.label11.Size = new System.Drawing.Size(148, 24);
             this.label11.TabIndex = 6;
             this.label11.Text = "Precio Mensual";
             // 
@@ -843,7 +823,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(136, 164);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 21);
+            this.label12.Size = new System.Drawing.Size(64, 24);
             this.label12.TabIndex = 1;
             this.label12.Text = "Curso";
             // 
@@ -948,7 +928,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(286, 446);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(205, 21);
+            this.label9.Size = new System.Drawing.Size(208, 24);
             this.label9.TabIndex = 17;
             this.label9.Text = "Clases Seleccionadas";
             // 
@@ -1035,7 +1015,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.radioSinEvaluacion.AutoSize = true;
             this.radioSinEvaluacion.Location = new System.Drawing.Point(34, 165);
             this.radioSinEvaluacion.Name = "radioSinEvaluacion";
-            this.radioSinEvaluacion.Size = new System.Drawing.Size(189, 25);
+            this.radioSinEvaluacion.Size = new System.Drawing.Size(190, 28);
             this.radioSinEvaluacion.TabIndex = 6;
             this.radioSinEvaluacion.TabStop = true;
             this.radioSinEvaluacion.Text = "SIN EVALUACION";
@@ -1046,7 +1026,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.radioTipoFloat.AutoSize = true;
             this.radioTipoFloat.Location = new System.Drawing.Point(34, 52);
             this.radioTipoFloat.Name = "radioTipoFloat";
-            this.radioTipoFloat.Size = new System.Drawing.Size(256, 25);
+            this.radioTipoFloat.Size = new System.Drawing.Size(258, 28);
             this.radioTipoFloat.TabIndex = 4;
             this.radioTipoFloat.TabStop = true;
             this.radioTipoFloat.Text = "EVALUACION NUMERICA";
@@ -1057,7 +1037,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.radioTipoChar.AutoSize = true;
             this.radioTipoChar.Location = new System.Drawing.Point(34, 107);
             this.radioTipoChar.Name = "radioTipoChar";
-            this.radioTipoChar.Size = new System.Drawing.Size(280, 25);
+            this.radioTipoChar.Size = new System.Drawing.Size(280, 28);
             this.radioTipoChar.TabIndex = 5;
             this.radioTipoChar.TabStop = true;
             this.radioTipoChar.Text = "EVALUACION CON LETRAS";
@@ -1069,13 +1049,14 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.txtPrecioMensualAgregar.Name = "txtPrecioMensualAgregar";
             this.txtPrecioMensualAgregar.Size = new System.Drawing.Size(145, 31);
             this.txtPrecioMensualAgregar.TabIndex = 7;
+            this.txtPrecioMensualAgregar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMensualAgregar_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(125, 167);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 21);
+            this.label8.Size = new System.Drawing.Size(148, 24);
             this.label8.TabIndex = 6;
             this.label8.Text = "Precio Mensual";
             // 
@@ -1084,7 +1065,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(125, 102);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 21);
+            this.label5.Size = new System.Drawing.Size(176, 24);
             this.label5.TabIndex = 1;
             this.label5.Text = "Nombre del Curso";
             // 
@@ -1145,7 +1126,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label16.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(582, 60);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(445, 36);
+            this.label16.Size = new System.Drawing.Size(432, 41);
             this.label16.TabIndex = 42;
             this.label16.Text = "SECCIONES DISPONIBLES";
             // 
@@ -1153,23 +1134,23 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             this.dgvSecciones.AllowUserToAddRows = false;
             this.dgvSecciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSecciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSecciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSecciones.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSecciones.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSecciones.Location = new System.Drawing.Point(131, 126);
             this.dgvSecciones.Name = "dgvSecciones";
             this.dgvSecciones.ReadOnly = true;
@@ -1229,7 +1210,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             "INACTIVA"});
             this.cmbEstadoSeccion.Location = new System.Drawing.Point(444, 354);
             this.cmbEstadoSeccion.Name = "cmbEstadoSeccion";
-            this.cmbEstadoSeccion.Size = new System.Drawing.Size(182, 32);
+            this.cmbEstadoSeccion.Size = new System.Drawing.Size(182, 35);
             this.cmbEstadoSeccion.TabIndex = 24;
             // 
             // label19
@@ -1238,7 +1219,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label19.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(301, 357);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 24);
+            this.label19.Size = new System.Drawing.Size(81, 27);
             this.label19.TabIndex = 23;
             this.label19.Text = "Estado";
             // 
@@ -1287,7 +1268,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(178, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
+            this.label2.Size = new System.Drawing.Size(71, 27);
             this.label2.TabIndex = 16;
             this.label2.Text = "Curso";
             // 
@@ -1318,7 +1299,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(178, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 24);
+            this.label3.Size = new System.Drawing.Size(98, 27);
             this.label3.TabIndex = 17;
             this.label3.Text = "Docente";
             // 
@@ -1328,7 +1309,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(294, 287);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 24);
+            this.label4.Size = new System.Drawing.Size(92, 27);
             this.label4.TabIndex = 18;
             this.label4.Text = "Seccion";
             // 
@@ -1339,7 +1320,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbDocentesActualizacion.FormattingEnabled = true;
             this.cmbDocentesActualizacion.Location = new System.Drawing.Point(324, 166);
             this.cmbDocentesActualizacion.Name = "cmbDocentesActualizacion";
-            this.cmbDocentesActualizacion.Size = new System.Drawing.Size(359, 32);
+            this.cmbDocentesActualizacion.Size = new System.Drawing.Size(359, 35);
             this.cmbDocentesActualizacion.TabIndex = 12;
             this.cmbDocentesActualizacion.SelectedIndexChanged += new System.EventHandler(this.cmbDocentesActualizacion_SelectedIndexChanged);
             // 
@@ -1420,7 +1401,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(178, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 24);
+            this.label1.Size = new System.Drawing.Size(71, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "Curso";
             // 
@@ -1451,7 +1432,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(178, 174);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 24);
+            this.label6.Size = new System.Drawing.Size(98, 27);
             this.label6.TabIndex = 17;
             this.label6.Text = "Docente";
             // 
@@ -1461,7 +1442,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(246, 287);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(217, 24);
+            this.label7.Size = new System.Drawing.Size(232, 27);
             this.label7.TabIndex = 18;
             this.label7.Text = "Nombre de la Seccion";
             // 
@@ -1472,7 +1453,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbCursos.FormattingEnabled = true;
             this.cmbCursos.Location = new System.Drawing.Point(299, 91);
             this.cmbCursos.Name = "cmbCursos";
-            this.cmbCursos.Size = new System.Drawing.Size(331, 32);
+            this.cmbCursos.Size = new System.Drawing.Size(331, 35);
             this.cmbCursos.TabIndex = 11;
             // 
             // cmbDocentes
@@ -1482,7 +1463,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbDocentes.FormattingEnabled = true;
             this.cmbDocentes.Location = new System.Drawing.Point(299, 171);
             this.cmbDocentes.Name = "cmbDocentes";
-            this.cmbDocentes.Size = new System.Drawing.Size(435, 32);
+            this.cmbDocentes.Size = new System.Drawing.Size(435, 35);
             this.cmbDocentes.TabIndex = 12;
             this.cmbDocentes.SelectedIndexChanged += new System.EventHandler(this.cmbDocentes_SelectedIndexChanged);
             // 
@@ -1729,7 +1710,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         private System.Windows.Forms.GroupBox grpGestionClases;
         private AltoControls.AltoButton btnAtrasClases;
         private System.Windows.Forms.GroupBox groupBox5;
-        private AltoControls.AltoButton btnLimpiarNombreClase;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private AltoControls.AltoButton btnAgregarNuevaClase;
