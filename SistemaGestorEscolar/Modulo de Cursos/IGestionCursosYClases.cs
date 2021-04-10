@@ -43,6 +43,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         int idSeccionModificar = 0;
         int idSiguienteClase = 0;
 
+        int idCursoCambiarEstado = 0;
+        String nombreCursoCambiarEstado = "";
+
         private void panelGrande_Paint(object sender, PaintEventArgs e)
         {
 
@@ -150,7 +153,8 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             grpActualizarCurso.Visible = true;
             grpRegistroCurso.Visible = false;
             cmbCursosExistentes.Items.Clear();
-            dbConn.llenarComboBoxValorInicial(cmbCursosExistentes, "SELECT nombreCurso FROM cursos");
+            dbConn.llenarComboBoxValorInicial(cmbCursosExistentes, "SELECT nombreCurso FROM cursos WHERE estadoCurso = 1");
+            grpCursos.Visible = false;
             cmbCursosExistentes.SelectedIndex = 0;
 
         }
@@ -170,7 +174,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void siguienteClase()
         {
-            if (dbConn.obtenerVariableString("SELECT MAX(id_Clase) FROM clases") == null)
+            if (dbConn.obtenerVariableString("SELECT MAX(id_Clase) FROM clases") == "")
             {
                 idSiguienteClase = 1;
                 txtIDNuevaClase.Text = "" + idSiguienteClase;
@@ -185,6 +189,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void IGestionCursosYClases_Load(object sender, EventArgs e)
         {
+
+            grpCursos.Visible = false;
+
             ClsCambioTema.cambiarTemaBoton(panelGestionClases);
             ClsCambioTema.cambiarTemaBoton(grpGestionClases);
             ClsCambioTema.cambiarTemaBoton(groupBox3);
@@ -1009,5 +1016,80 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             cmbDocentes.SelectedIndex = 0;
         }
 
+        private void btnAtrasTodo_Click(object sender, EventArgs e)
+        {
+            grpCursos.Visible = false;
+            cmbCursosExistentes.Items.Clear();
+            dbConn.llenarComboBoxValorInicial(cmbCursosExistentes, "SELECT nombreCurso FROM cursos WHERE estadoCurso = 1");
+            cmbCursosExistentes.SelectedIndex = 0;
+            
+        }
+
+        private void btnMostrarTodosCursos_Click(object sender, EventArgs e)
+        {
+            dbConn.llenarDGV(dgvTodosCursos, "SELECT id_Curso, nombreCurso, estadoCurso FROM cursos");
+            grpCursos.Visible = true;
+
+        }
+
+        private void dgvTodosCursos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                idCursoCambiarEstado = int.Parse(dgvTodosCursos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                nombreCursoCambiarEstado = dgvTodosCursos.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                txtCursoSeleccionadoTodos.Text = "" + idCursoCambiarEstado;
+                txtNombreCursoTodos.Text = nombreCursoCambiarEstado;
+            }
+        }
+
+        private void btnHabilitarTodo_Click(object sender, EventArgs e)
+        {
+            if(txtCursoSeleccionadoTodos.Text != "")
+            {
+                if (dbConn.PACambiarEstadoCurso(idCursoCambiarEstado, 1))
+                {
+                    message.lblCheck.Text = "CURSO HABILITADO";
+                    message.ShowDialog();
+                    dbConn.llenarDGV(dgvTodosCursos, "SELECT id_Curso, nombreCurso, estadoCurso FROM cursos");
+                }
+                else
+                {
+                    messageError.lblError.Text = "ERROR INESPERADO";
+                    messageError.ShowDialog();
+                }
+
+            }
+            else
+            {
+                messageError.lblError.Text = "SELECCIONE UN CURSO";
+                messageError.ShowDialog();
+            }
+        }
+
+        private void btnDeshabilitarTodo_Click(object sender, EventArgs e)
+        {
+            if (txtCursoSeleccionadoTodos.Text != "")
+            {
+                if (dbConn.PACambiarEstadoCurso(idCursoCambiarEstado, 2))
+                {
+                    message.lblCheck.Text = "CURSO DESHABILITADO";
+                    message.ShowDialog();
+                    dbConn.llenarDGV(dgvTodosCursos, "SELECT id_Curso, nombreCurso, estadoCurso FROM cursos");
+                }
+                else
+                {
+                    messageError.lblError.Text = "ERROR INESPERADO";
+                    messageError.ShowDialog();
+                }
+
+            }
+            else
+            {
+                messageError.lblError.Text = "SELECCIONE UN CURSO";
+                messageError.ShowDialog();
+            }
+        }
     }
 }

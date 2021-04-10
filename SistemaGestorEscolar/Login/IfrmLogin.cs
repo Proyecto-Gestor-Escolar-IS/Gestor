@@ -60,7 +60,7 @@ namespace SistemaGestorEscolar.Login
             btnSalir.Inactive1 = Color.Red;
             btnSalir.Inactive2 = Color.Red;
             btnSalir.StrokeColor = Color.Red;
-
+            picImagotipo.BackColor = Color.FromArgb(0, 97, 169);
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

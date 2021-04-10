@@ -533,9 +533,10 @@ namespace SistemaGestorEscolar
             this.panSubMenuEstudiante.Controls.Add(this.btnRegistroVisita);
             this.panSubMenuEstudiante.Controls.Add(this.btnAperturaExpediente);
             this.panSubMenuEstudiante.Controls.Add(this.label2);
-            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 659);
+            this.panSubMenuEstudiante.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panSubMenuEstudiante.Location = new System.Drawing.Point(0, 0);
             this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
-            this.panSubMenuEstudiante.Size = new System.Drawing.Size(205, 98);
+            this.panSubMenuEstudiante.Size = new System.Drawing.Size(1635, 1035);
             this.panSubMenuEstudiante.TabIndex = 26;
             // 
             // btnImprimirReporte
@@ -579,6 +580,7 @@ namespace SistemaGestorEscolar
             this.btnModificarEstudiante.Text = "MODIFICAR ESTUDIANTE";
             this.btnModificarEstudiante.UseVisualStyleBackColor = false;
             this.btnModificarEstudiante.Click += new System.EventHandler(this.btnModificarEstudiante_Click);
+            this.btnModificarEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnModificarEstudiante_MouseDown);
             // 
             // btnFichaEstudiante
             // 
@@ -795,10 +797,7 @@ namespace SistemaGestorEscolar
         private System.Windows.Forms.Button btnMinimizar;
         public System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Label lblMenuTitle;
-        private System.Windows.Forms.Panel panelMostrador;
-        private System.Windows.Forms.Panel panSubMenuPagos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panSubMenuEstudiante;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCambioTema;
         private Controls.RoundedButton btnMatricularEstudiante;
@@ -819,6 +818,9 @@ namespace SistemaGestorEscolar
         private Controls.RoundedButton btnModificarEstudiante;
         private Controls.RoundedButton btnImprimirReporte;
         private Controls.RoundedButton btnIngresarUsuario;
+        public System.Windows.Forms.Panel panelMostrador;
+        public System.Windows.Forms.Panel panSubMenuEstudiante;
+        public System.Windows.Forms.Panel panSubMenuPagos;
         //private BrbVideoManager.Controls.RoundedButton btnMatriEstudiante;
         //private BrbVideoManager.Controls.RoundedButton btnVistaMatriculas;
     }
