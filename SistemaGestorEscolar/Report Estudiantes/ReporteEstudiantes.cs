@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar.Report_Estudiantes
+namespace SistemaGestorEscolar
 {
     public partial class ReporteEstudiantes : Form
     {
@@ -23,6 +23,11 @@ namespace SistemaGestorEscolar.Report_Estudiantes
             this.Tabla_EstudianteTableAdapter.Fill(this.DataSetEstudiantes.Tabla_Estudiante);
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -25,7 +25,7 @@ AS BEGIN
 			SET @idUltimoDetalleMatricula = (SELECT MAX(id_DetalleMatricula) FROM
 											detalleMatricula 
 											INNER JOIN matricula ON detalleMatricula.id_RegistroMatricula = matricula.id_RegistroMatricula
-										    WHERE matricula.id_Estudiante = @identidadEstudiante)
+										    WHERE matricula.id_Estudiante =  @identidadEstudiante)
 
 			SET @totalMatricula = (SELECT totalMatricula FROM 
 										   detalleMatricula 
@@ -33,13 +33,13 @@ AS BEGIN
 
 			SET @idUltimoPago = (SELECT MAX(id_Mensualidad) FROM
 													   detalleMensualidades 
-													   WHERE id_Estudiante = @identidadEstudiante)
+													   WHERE id_Estudiante =  @identidadEstudiante)
 			
 			SET @mesesPago = (SELECT mesesParaPagar FROM 
 										                 detalleMatricula 
 														 INNER JOIN matricula 
 														 ON matricula.id_RegistroMatricula = detalleMatricula.id_RegistroMatricula 
-														 WHERE matricula.id_RegistroMatricula = @idUltimoDetalleMatricula)
+														 WHERE detalleMatricula.id_DetalleMatricula = @idUltimoDetalleMatricula)
 
 			SET @noFacturaActual = (SELECT noFacturaTemporal FROM 
 										                 detalleMensualidades 
@@ -52,13 +52,9 @@ AS BEGIN
 			SET @ultimoSaldo = (SELECT saldoDisponible FROM detalleMensualidades 
 					           WHERE id_Mensualidad = @idUltimoPago)
 			
-			If @noFacturaActual < @mesesPago
+			If @noFacturaActual < 12
 			BEGIN
-				IF @mesesPago = 10
-				BEGIN
-					SET @totalMatricula = @totalMatricula * 12
-					SET @totalMatricula = @totalMatricula / 10
-				END
+
 
 				IF @ultimaDeuda > 0
 				BEGIN

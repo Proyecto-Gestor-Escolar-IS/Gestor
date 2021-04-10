@@ -42,7 +42,7 @@ namespace SistemaGestorEscolar
             this.panEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(96)))), ((int)(((byte)(170)))));
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
-            this.panEncabezado.Size = new System.Drawing.Size(432, 30);
+            this.panEncabezado.Size = new System.Drawing.Size(500, 30);
             this.panEncabezado.TabIndex = 1;
             // 
             // lblError
@@ -50,9 +50,9 @@ namespace SistemaGestorEscolar
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Black;
-            this.lblError.Location = new System.Drawing.Point(104, 67);
+            this.lblError.Location = new System.Drawing.Point(119, 70);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(287, 44);
+            this.lblError.Size = new System.Drawing.Size(312, 40);
             this.lblError.TabIndex = 11;
             this.lblError.Text = "El número de identidad ingresado\r\nno existe como usuario registrado";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,7 +63,7 @@ namespace SistemaGestorEscolar
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(179, 133);
+            this.btnOK.Location = new System.Drawing.Point(218, 140);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(78, 41);
             this.btnOK.TabIndex = 13;
@@ -86,7 +86,7 @@ namespace SistemaGestorEscolar
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(432, 193);
+            this.ClientSize = new System.Drawing.Size(499, 193);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.pctWarning);

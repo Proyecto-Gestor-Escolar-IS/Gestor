@@ -842,8 +842,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 estado = 2;
             }
 
-            if (estado == 1 && !cmbDocentesActualizacion.SelectedItem.Equals(nombreDocente))
-            {
+  
 
                 if(cmbDocentesActualizacion.SelectedIndex != 0)
                 {
@@ -867,14 +866,10 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 messageError.ShowDialog();
                 }
 
-            }
-            else
-            {
-                messageError.lblError.Text = "CAMBIE EL ESTADO A ACTIVO";
-                messageError.ShowDialog();
-            }
-            
         }
+  
+            
+        
 
         private void cmbDocentesActualizacion_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1089,6 +1084,108 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             {
                 messageError.lblError.Text = "SELECCIONE UN CURSO";
                 messageError.ShowDialog();
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            idCursoCambiarEstado = 0;
+            txtCursoSeleccionadoTodos.Clear();
+            txtNombreCursoTodos.Clear();
+            dbConn.llenarDGV(dgvTodosCursos, "SELECT id_Curso, nombreCurso, estadoCurso FROM cursos");
+
+        }
+
+        private void btnAtrasClases_Click_1(object sender, EventArgs e)
+        {
+            panelGestionClases.Visible = false;
+            panelGrande.Visible = true;
+
+            hideShowButtons(1);
+        }
+
+        private void btnHabilitar_Click_1(object sender, EventArgs e)
+        {
+            if (txtIDClaseSelected.Text != "" && txtNombreClaseSelected.Text != "")
+            {
+                if (dbConn.PAActualizarClase(int.Parse(txtIDClaseSelected.Text), 1))
+                {
+                    message.lblCheck.Text = "CLASE HABILITADA";
+                    message.ShowDialog();
+                    dbConn.llenarDGV(dgvClasesRegistradas, "SELECT id_Clase as 'ID', nombreClase as 'Clase', descripcionEstado as 'Estado' FROM clases INNER JOIN estados on clases.estado = estados.id_Estado");
+
+
+                }
+                else
+                {
+                    messageError.lblError.Text = "ERROR INESPERADO!";
+                    messageError.ShowDialog();
+                }
+            }
+            else
+            {
+                messageError.lblError.Text = "SELECCIONE UNA CLASE";
+                messageError.ShowDialog();
+            }
+        }
+
+        private void btnDeshabilitar_Click_1(object sender, EventArgs e)
+        {
+            if (txtIDClaseSelected.Text != "" && txtNombreClaseSelected.Text != "")
+            {
+                if (dbConn.PAActualizarClase(int.Parse(txtIDClaseSelected.Text), 2))
+                {
+                    message.lblCheck.Text = "CLASE INHABILITADA";
+                    message.ShowDialog();
+                    dbConn.llenarDGV(dgvClasesRegistradas, "SELECT id_Clase as 'ID', nombreClase as 'Clase', descripcionEstado as 'Estado' FROM clases INNER JOIN estados on clases.estado = estados.id_Estado");
+
+
+                }
+                else
+                {
+                    messageError.lblError.Text = "ERROR INESPERADO!";
+                    messageError.ShowDialog();
+                }
+            }
+            else
+            {
+                messageError.lblError.Text = "SELECCIONE UNA CLASE";
+                messageError.ShowDialog();
+            }
+        }
+
+        private void btnAgregarNuevaClase_Click_1(object sender, EventArgs e)
+        {
+            if (txtNombreClase.Text != "")
+            {
+                if (dbConn.PARegistrarClase(txtNombreClase.Text))
+                {
+                    message.lblCheck.Text = "CLASE AGREGADA";
+                    txtNombreClase.Clear();
+                    message.ShowDialog();
+                    dbConn.llenarDGV(dgvClasesRegistradas, "SELECT id_Clase as 'ID', nombreClase as 'Clase', descripcionEstado as 'Estado' FROM clases INNER JOIN estados on clases.estado = estados.id_Estado");
+                    siguienteClase();
+                }
+                else
+                {
+                    messageError.lblError.Text = "ERROR INESPERADO!";
+                    messageError.ShowDialog();
+                }
+
+            }
+            else
+            {
+                messageError.lblError.Text = "ESCRIBA EL NOMBRE DE LA CLASE";
+                messageError.ShowDialog();
+            }
+        }
+
+        private void dgvClasesRegistradas_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                txtIDClaseSelected.Text = "" + int.Parse(dgvClasesRegistradas.Rows[e.RowIndex].Cells[0].Value.ToString());
+                txtNombreClaseSelected.Text = "" + dgvClasesRegistradas.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
         }
     }

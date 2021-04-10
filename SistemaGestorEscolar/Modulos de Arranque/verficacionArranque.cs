@@ -20,7 +20,7 @@ namespace SistemaGestorEscolar.Modulos_de_Arranque
                 {
                     ultimaFacturacion = dbConn.obtenerVariableDate("SELECT MAX(fechaFacturacion) FROM detalleMensualidades");
 
-                    if (ultimaFacturacion.Month > DateTime.Now.Month && (ultimaFacturacion.Year == DateTime.Now.Year || ultimaFacturacion.Year < DateTime.Now.Year))
+                    if (ultimaFacturacion.Month < DateTime.Now.Month && (ultimaFacturacion.Year == DateTime.Now.Year || ultimaFacturacion.Year < DateTime.Now.Year))
                     {
                         if (dbConn.PAGeneracionPagos(DateTime.Now))
                         {
@@ -29,6 +29,7 @@ namespace SistemaGestorEscolar.Modulos_de_Arranque
                         else
                         {
                             Console.WriteLine("Error al Facturar");
+
                         }
                     }
                 }

@@ -47,8 +47,16 @@ namespace SistemaGestorEscolar
             this.picImagotipo = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panSubMenuPersonal = new System.Windows.Forms.Panel();
-            this.btnIngresarUsuario = new SistemaGestorEscolar.Controls.RoundedButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.panSubMenuEstudiante = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelMostrador = new System.Windows.Forms.Panel();
+            this.panSubMenuPagos = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblMenuTitle = new System.Windows.Forms.Label();
+            this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.btnIngresarUsuario = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnPersonal = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnIngresarNotas = new SistemaGestorEscolar.Controls.RoundedButton();
@@ -56,21 +64,13 @@ namespace SistemaGestorEscolar
             this.btnCursos = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.panSubMenuEstudiante = new System.Windows.Forms.Panel();
             this.btnImprimirReporte = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnModificarEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnFichaEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnRegistroVisita = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnAperturaExpediente = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelMostrador = new System.Windows.Forms.Panel();
-            this.panSubMenuPagos = new System.Windows.Forms.Panel();
             this.btnHistorialPagos = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnRegistrarPago = new SistemaGestorEscolar.Controls.RoundedButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblMenuTitle = new System.Windows.Forms.Label();
-            this.tmrOcultarMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmrMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.panSuperior.SuspendLayout();
             this.panLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagotipo)).BeginInit();
@@ -345,8 +345,92 @@ namespace SistemaGestorEscolar
             this.panSubMenuPersonal.Controls.Add(this.label3);
             this.panSubMenuPersonal.Location = new System.Drawing.Point(1276, 798);
             this.panSubMenuPersonal.Name = "panSubMenuPersonal";
-            this.panSubMenuPersonal.Size = new System.Drawing.Size(284, 55);
+            this.panSubMenuPersonal.Size = new System.Drawing.Size(284, 44);
             this.panSubMenuPersonal.TabIndex = 47;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(595, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(450, 36);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "PERSONAL INSTITUCIONAL";
+            // 
+            // panSubMenuEstudiante
+            // 
+            this.panSubMenuEstudiante.Controls.Add(this.btnImprimirReporte);
+            this.panSubMenuEstudiante.Controls.Add(this.btnModificarEstudiante);
+            this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
+            this.panSubMenuEstudiante.Controls.Add(this.btnRegistroVisita);
+            this.panSubMenuEstudiante.Controls.Add(this.btnAperturaExpediente);
+            this.panSubMenuEstudiante.Controls.Add(this.label2);
+            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 716);
+            this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
+            this.panSubMenuEstudiante.Size = new System.Drawing.Size(284, 44);
+            this.panSubMenuEstudiante.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(703, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(240, 36);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "ESTUDIANTES";
+            // 
+            // panelMostrador
+            // 
+            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            this.panelMostrador.Location = new System.Drawing.Point(45, 746);
+            this.panelMostrador.Name = "panelMostrador";
+            this.panelMostrador.Size = new System.Drawing.Size(484, 187);
+            this.panelMostrador.TabIndex = 39;
+            this.panelMostrador.DockChanged += new System.EventHandler(this.panelMostrador_DockChanged);
+            this.panelMostrador.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrador_Paint);
+            // 
+            // panSubMenuPagos
+            // 
+            this.panSubMenuPagos.Controls.Add(this.btnHistorialPagos);
+            this.panSubMenuPagos.Controls.Add(this.btnRegistrarPago);
+            this.panSubMenuPagos.Controls.Add(this.label1);
+            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 888);
+            this.panSubMenuPagos.Name = "panSubMenuPagos";
+            this.panSubMenuPagos.Size = new System.Drawing.Size(284, 45);
+            this.panSubMenuPagos.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(742, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 36);
+            this.label1.TabIndex = 23;
+            this.label1.Text = " PAGOS";
+            // 
+            // lblMenuTitle
+            // 
+            this.lblMenuTitle.AutoSize = true;
+            this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
+            this.lblMenuTitle.Location = new System.Drawing.Point(679, 105);
+            this.lblMenuTitle.Name = "lblMenuTitle";
+            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
+            this.lblMenuTitle.TabIndex = 32;
+            this.lblMenuTitle.Text = "MENU PRINCIPAL";
+            // 
+            // tmrOcultarMenu
+            // 
+            this.tmrOcultarMenu.Interval = 2;
+            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
+            // 
+            // tmrMostrarMenu
+            // 
+            this.tmrMostrarMenu.Interval = 2;
+            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
             // 
             // btnIngresarUsuario
             // 
@@ -367,16 +451,6 @@ namespace SistemaGestorEscolar
             this.btnIngresarUsuario.Text = "REGISTRAR NUEVO PERSONAL";
             this.btnIngresarUsuario.UseVisualStyleBackColor = false;
             this.btnIngresarUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnIngresarUsuario_MouseDown);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(595, 160);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(450, 36);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "PERSONAL INSTITUCIONAL";
             // 
             // btnPersonal
             // 
@@ -525,20 +599,6 @@ namespace SistemaGestorEscolar
             this.btnMatricularEstudiante.Click += new System.EventHandler(this.btnMatricularEstudiante_Click_1);
             this.btnMatricularEstudiante.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMatricularEstudiante_MouseDown);
             // 
-            // panSubMenuEstudiante
-            // 
-            this.panSubMenuEstudiante.Controls.Add(this.btnImprimirReporte);
-            this.panSubMenuEstudiante.Controls.Add(this.btnModificarEstudiante);
-            this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
-            this.panSubMenuEstudiante.Controls.Add(this.btnRegistroVisita);
-            this.panSubMenuEstudiante.Controls.Add(this.btnAperturaExpediente);
-            this.panSubMenuEstudiante.Controls.Add(this.label2);
-            this.panSubMenuEstudiante.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panSubMenuEstudiante.Location = new System.Drawing.Point(0, 0);
-            this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
-            this.panSubMenuEstudiante.Size = new System.Drawing.Size(1635, 1035);
-            this.panSubMenuEstudiante.TabIndex = 26;
-            // 
             // btnImprimirReporte
             // 
             this.btnImprimirReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
@@ -558,7 +618,9 @@ namespace SistemaGestorEscolar
             this.btnImprimirReporte.TabIndex = 52;
             this.btnImprimirReporte.Text = "IMPRIMIR REPORTE";
             this.btnImprimirReporte.UseVisualStyleBackColor = false;
+            this.btnImprimirReporte.Click += new System.EventHandler(this.btnImprimirReporte_Click);
             this.btnImprimirReporte.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnImprimirReporte_MouseDown);
+            this.btnImprimirReporte.MouseEnter += new System.EventHandler(this.btnImprimirReporte_MouseEnter);
             // 
             // btnModificarEstudiante
             // 
@@ -648,36 +710,6 @@ namespace SistemaGestorEscolar
             this.btnAperturaExpediente.Click += new System.EventHandler(this.btnAperturaExpediente_Click);
             this.btnAperturaExpediente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAperturaExpediente_MouseDown);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(703, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 36);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "ESTUDIANTES";
-            // 
-            // panelMostrador
-            // 
-            this.panelMostrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.panelMostrador.Location = new System.Drawing.Point(45, 746);
-            this.panelMostrador.Name = "panelMostrador";
-            this.panelMostrador.Size = new System.Drawing.Size(484, 187);
-            this.panelMostrador.TabIndex = 39;
-            this.panelMostrador.DockChanged += new System.EventHandler(this.panelMostrador_DockChanged);
-            this.panelMostrador.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMostrador_Paint);
-            // 
-            // panSubMenuPagos
-            // 
-            this.panSubMenuPagos.Controls.Add(this.btnHistorialPagos);
-            this.panSubMenuPagos.Controls.Add(this.btnRegistrarPago);
-            this.panSubMenuPagos.Controls.Add(this.label1);
-            this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 888);
-            this.panSubMenuPagos.Name = "panSubMenuPagos";
-            this.panSubMenuPagos.Size = new System.Drawing.Size(315, 80);
-            this.panSubMenuPagos.TabIndex = 0;
-            // 
             // btnHistorialPagos
             // 
             this.btnHistorialPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
@@ -717,37 +749,6 @@ namespace SistemaGestorEscolar
             this.btnRegistrarPago.Text = "REGISTRAR PAGO";
             this.btnRegistrarPago.UseVisualStyleBackColor = false;
             this.btnRegistrarPago.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRegistrarPago_MouseDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(742, 273);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 36);
-            this.label1.TabIndex = 23;
-            this.label1.Text = " PAGOS";
-            // 
-            // lblMenuTitle
-            // 
-            this.lblMenuTitle.AutoSize = true;
-            this.lblMenuTitle.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuTitle.ForeColor = System.Drawing.Color.White;
-            this.lblMenuTitle.Location = new System.Drawing.Point(679, 105);
-            this.lblMenuTitle.Name = "lblMenuTitle";
-            this.lblMenuTitle.Size = new System.Drawing.Size(299, 36);
-            this.lblMenuTitle.TabIndex = 32;
-            this.lblMenuTitle.Text = "MENU PRINCIPAL";
-            // 
-            // tmrOcultarMenu
-            // 
-            this.tmrOcultarMenu.Interval = 2;
-            this.tmrOcultarMenu.Tick += new System.EventHandler(this.tmrOcultarMenu_Tick);
-            // 
-            // tmrMostrarMenu
-            // 
-            this.tmrMostrarMenu.Interval = 2;
-            this.tmrMostrarMenu.Tick += new System.EventHandler(this.tmrMostrarMenu_Tick);
             // 
             // InterfazGraficaPrincipal
             // 

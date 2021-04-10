@@ -29,23 +29,22 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGrande = new System.Windows.Forms.Panel();
             this.panelGestionClases = new System.Windows.Forms.Panel();
             this.grpGestionClases = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarNombreClase = new AltoControls.AltoButton();
             this.btnAtrasClases = new AltoControls.AltoButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnLimpiarNombreClase = new AltoControls.AltoButton();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.btnAgregarNuevaClase = new AltoControls.AltoButton();
             this.txtIDNuevaClase = new System.Windows.Forms.TextBox();
             this.txtNombreClase = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnLimpiarClaseModi = new AltoControls.AltoButton();
             this.btnDeshabilitar = new AltoControls.AltoButton();
             this.btnHabilitar = new AltoControls.AltoButton();
             this.label15 = new System.Windows.Forms.Label();
@@ -54,7 +53,17 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label14 = new System.Windows.Forms.Label();
             this.dgvClasesRegistradas = new System.Windows.Forms.DataGridView();
             this.panelRegistroNuevoCurso = new System.Windows.Forms.Panel();
+            this.grpCursos = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new AltoControls.AltoButton();
+            this.btnAtrasTodo = new AltoControls.AltoButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnDeshabilitarTodo = new AltoControls.AltoButton();
+            this.btnHabilitarTodo = new AltoControls.AltoButton();
+            this.txtNombreCursoTodos = new System.Windows.Forms.TextBox();
+            this.txtCursoSeleccionadoTodos = new System.Windows.Forms.TextBox();
+            this.dgvTodosCursos = new System.Windows.Forms.DataGridView();
             this.grpActualizarCurso = new System.Windows.Forms.GroupBox();
+            this.btnMostrarTodosCursos = new AltoControls.AltoButton();
             this.LblFormaEva = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -122,15 +131,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnCrearSeccion = new AltoControls.AltoButton();
             this.btnModificarSeccion = new AltoControls.AltoButton();
             this.btnRegistrarCurso = new AltoControls.AltoButton();
-            this.grpCursos = new System.Windows.Forms.GroupBox();
-            this.dgvTodosCursos = new System.Windows.Forms.DataGridView();
-            this.txtCursoSeleccionadoTodos = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txtNombreCursoTodos = new System.Windows.Forms.TextBox();
-            this.btnHabilitarTodo = new AltoControls.AltoButton();
-            this.btnDeshabilitarTodo = new AltoControls.AltoButton();
-            this.btnAtrasTodo = new AltoControls.AltoButton();
-            this.btnMostrarTodosCursos = new AltoControls.AltoButton();
             this.panelGrande.SuspendLayout();
             this.panelGestionClases.SuspendLayout();
             this.grpGestionClases.SuspendLayout();
@@ -138,6 +138,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasesRegistradas)).BeginInit();
             this.panelRegistroNuevoCurso.SuspendLayout();
+            this.grpCursos.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTodosCursos)).BeginInit();
             this.grpActualizarCurso.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasesExistentesActualizar)).BeginInit();
@@ -152,13 +155,11 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             ((System.ComponentModel.ISupportInitialize)(this.dgvSecciones)).BeginInit();
             this.grpActualizarSeccion.SuspendLayout();
             this.grpRegistrarSeccion.SuspendLayout();
-            this.grpCursos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTodosCursos)).BeginInit();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelGrande
             // 
+            this.panelGrande.Controls.Add(this.panelGestionClases);
             this.panelGrande.Controls.Add(this.panelRegistroNuevoCurso);
             this.panelGrande.Controls.Add(this.panelIngresarCurso);
             this.panelGrande.Controls.Add(this.btnModificarCurso);
@@ -176,13 +177,14 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // panelGestionClases
             // 
             this.panelGestionClases.Controls.Add(this.grpGestionClases);
-            this.panelGestionClases.Location = new System.Drawing.Point(1614, 128);
+            this.panelGestionClases.Location = new System.Drawing.Point(1336, 139);
             this.panelGestionClases.Name = "panelGestionClases";
-            this.panelGestionClases.Size = new System.Drawing.Size(84, 41);
-            this.panelGestionClases.TabIndex = 38;
+            this.panelGestionClases.Size = new System.Drawing.Size(258, 87);
+            this.panelGestionClases.TabIndex = 39;
             // 
             // grpGestionClases
             // 
+            this.grpGestionClases.Controls.Add(this.btnLimpiarNombreClase);
             this.grpGestionClases.Controls.Add(this.btnAtrasClases);
             this.grpGestionClases.Controls.Add(this.groupBox5);
             this.grpGestionClases.Controls.Add(this.groupBox3);
@@ -196,6 +198,26 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpGestionClases.TabIndex = 0;
             this.grpGestionClases.TabStop = false;
             this.grpGestionClases.Text = "GESTION DE CLASES";
+            // 
+            // btnLimpiarNombreClase
+            // 
+            this.btnLimpiarNombreClase.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiarNombreClase.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiarNombreClase.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiarNombreClase.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiarNombreClase.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarNombreClase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiarNombreClase.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiarNombreClase.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiarNombreClase.Location = new System.Drawing.Point(1327, 881);
+            this.btnLimpiarNombreClase.Name = "btnLimpiarNombreClase";
+            this.btnLimpiarNombreClase.Radius = 20;
+            this.btnLimpiarNombreClase.Size = new System.Drawing.Size(152, 48);
+            this.btnLimpiarNombreClase.Stroke = true;
+            this.btnLimpiarNombreClase.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiarNombreClase.TabIndex = 48;
+            this.btnLimpiarNombreClase.Text = "LIMPIAR";
+            this.btnLimpiarNombreClase.Transparency = false;
             // 
             // btnAtrasClases
             // 
@@ -216,11 +238,10 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnAtrasClases.TabIndex = 46;
             this.btnAtrasClases.Text = "ATRAS";
             this.btnAtrasClases.Transparency = false;
-            this.btnAtrasClases.Click += new System.EventHandler(this.btnAtrasClases_Click);
+            this.btnAtrasClases.Click += new System.EventHandler(this.btnAtrasClases_Click_1);
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnLimpiarNombreClase);
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Controls.Add(this.btnAgregarNuevaClase);
@@ -232,28 +253,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.groupBox5.TabIndex = 46;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "AGREGAR CLASE";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
-            // 
-            // btnLimpiarNombreClase
-            // 
-            this.btnLimpiarNombreClase.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarNombreClase.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarNombreClase.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiarNombreClase.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLimpiarNombreClase.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarNombreClase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiarNombreClase.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarNombreClase.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarNombreClase.Location = new System.Drawing.Point(212, 256);
-            this.btnLimpiarNombreClase.Name = "btnLimpiarNombreClase";
-            this.btnLimpiarNombreClase.Radius = 20;
-            this.btnLimpiarNombreClase.Size = new System.Drawing.Size(152, 48);
-            this.btnLimpiarNombreClase.Stroke = true;
-            this.btnLimpiarNombreClase.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiarNombreClase.TabIndex = 48;
-            this.btnLimpiarNombreClase.Text = "LIMPIAR";
-            this.btnLimpiarNombreClase.Transparency = false;
-            this.btnLimpiarNombreClase.Click += new System.EventHandler(this.btnLimpiarNombreClase_Click);
             // 
             // label18
             // 
@@ -292,7 +291,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnAgregarNuevaClase.TabIndex = 44;
             this.btnAgregarNuevaClase.Text = "AGREGAR";
             this.btnAgregarNuevaClase.Transparency = false;
-            this.btnAgregarNuevaClase.Click += new System.EventHandler(this.btnAgregarNuevaClase_Click);
+            this.btnAgregarNuevaClase.Click += new System.EventHandler(this.btnAgregarNuevaClase_Click_1);
             // 
             // txtIDNuevaClase
             // 
@@ -313,7 +312,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnLimpiarClaseModi);
             this.groupBox3.Controls.Add(this.btnDeshabilitar);
             this.groupBox3.Controls.Add(this.btnHabilitar);
             this.groupBox3.Controls.Add(this.label15);
@@ -325,27 +323,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "MODIFICAR CLASE";
-            // 
-            // btnLimpiarClaseModi
-            // 
-            this.btnLimpiarClaseModi.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarClaseModi.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarClaseModi.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiarClaseModi.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLimpiarClaseModi.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarClaseModi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiarClaseModi.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarClaseModi.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarClaseModi.Location = new System.Drawing.Point(355, 148);
-            this.btnLimpiarClaseModi.Name = "btnLimpiarClaseModi";
-            this.btnLimpiarClaseModi.Radius = 20;
-            this.btnLimpiarClaseModi.Size = new System.Drawing.Size(152, 48);
-            this.btnLimpiarClaseModi.Stroke = true;
-            this.btnLimpiarClaseModi.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiarClaseModi.TabIndex = 46;
-            this.btnLimpiarClaseModi.Text = "LIMPIAR";
-            this.btnLimpiarClaseModi.Transparency = false;
-            this.btnLimpiarClaseModi.Click += new System.EventHandler(this.btnLimpiarClaseModi_Click);
             // 
             // btnDeshabilitar
             // 
@@ -366,7 +343,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnDeshabilitar.TabIndex = 45;
             this.btnDeshabilitar.Text = "DESHABILITAR";
             this.btnDeshabilitar.Transparency = false;
-            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click_1);
             // 
             // btnHabilitar
             // 
@@ -387,12 +364,12 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnHabilitar.TabIndex = 44;
             this.btnHabilitar.Text = "HABILITAR";
             this.btnHabilitar.Transparency = false;
-            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
+            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click_1);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(73, 107);
+            this.label15.Location = new System.Drawing.Point(165, 59);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(228, 21);
             this.label15.TabIndex = 44;
@@ -400,7 +377,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             // txtIDClaseSelected
             // 
-            this.txtIDClaseSelected.Location = new System.Drawing.Point(32, 156);
+            this.txtIDClaseSelected.Location = new System.Drawing.Point(121, 111);
             this.txtIDClaseSelected.Name = "txtIDClaseSelected";
             this.txtIDClaseSelected.ReadOnly = true;
             this.txtIDClaseSelected.Size = new System.Drawing.Size(69, 31);
@@ -409,7 +386,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             // txtNombreClaseSelected
             // 
-            this.txtNombreClaseSelected.Location = new System.Drawing.Point(121, 156);
+            this.txtNombreClaseSelected.Location = new System.Drawing.Point(216, 111);
             this.txtNombreClaseSelected.Name = "txtNombreClaseSelected";
             this.txtNombreClaseSelected.ReadOnly = true;
             this.txtNombreClaseSelected.Size = new System.Drawing.Size(212, 31);
@@ -429,41 +406,180 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             this.dgvClasesRegistradas.AllowUserToAddRows = false;
             this.dgvClasesRegistradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClasesRegistradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClasesRegistradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClasesRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClasesRegistradas.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClasesRegistradas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClasesRegistradas.Location = new System.Drawing.Point(57, 110);
             this.dgvClasesRegistradas.Name = "dgvClasesRegistradas";
             this.dgvClasesRegistradas.ReadOnly = true;
             this.dgvClasesRegistradas.Size = new System.Drawing.Size(1426, 397);
             this.dgvClasesRegistradas.TabIndex = 41;
-            this.dgvClasesRegistradas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesRegistradas_CellClick);
+            this.dgvClasesRegistradas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesRegistradas_CellClick_1);
             // 
             // panelRegistroNuevoCurso
             // 
             this.panelRegistroNuevoCurso.Controls.Add(this.grpCursos);
             this.panelRegistroNuevoCurso.Controls.Add(this.grpActualizarCurso);
             this.panelRegistroNuevoCurso.Controls.Add(this.grpRegistroCurso);
-            this.panelRegistroNuevoCurso.Controls.Add(this.panelGestionClases);
-            this.panelRegistroNuevoCurso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRegistroNuevoCurso.Location = new System.Drawing.Point(0, 0);
+            this.panelRegistroNuevoCurso.Location = new System.Drawing.Point(1336, 43);
             this.panelRegistroNuevoCurso.Name = "panelRegistroNuevoCurso";
-            this.panelRegistroNuevoCurso.Size = new System.Drawing.Size(1635, 1035);
+            this.panelRegistroNuevoCurso.Size = new System.Drawing.Size(239, 58);
             this.panelRegistroNuevoCurso.TabIndex = 21;
+            // 
+            // grpCursos
+            // 
+            this.grpCursos.Controls.Add(this.btnLimpiar);
+            this.grpCursos.Controls.Add(this.btnAtrasTodo);
+            this.grpCursos.Controls.Add(this.groupBox6);
+            this.grpCursos.Controls.Add(this.dgvTodosCursos);
+            this.grpCursos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpCursos.Location = new System.Drawing.Point(33, 29);
+            this.grpCursos.Name = "grpCursos";
+            this.grpCursos.Size = new System.Drawing.Size(1575, 962);
+            this.grpCursos.TabIndex = 39;
+            this.grpCursos.TabStop = false;
+            this.grpCursos.Text = "TODOS LOS CURSOS";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(1224, 516);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Radius = 10;
+            this.btnLimpiar.Size = new System.Drawing.Size(126, 45);
+            this.btnLimpiar.Stroke = true;
+            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.Transparency = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnAtrasTodo
+            // 
+            this.btnAtrasTodo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasTodo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasTodo.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtrasTodo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtrasTodo.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAtrasTodo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasTodo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasTodo.Location = new System.Drawing.Point(25, 905);
+            this.btnAtrasTodo.Name = "btnAtrasTodo";
+            this.btnAtrasTodo.Radius = 10;
+            this.btnAtrasTodo.Size = new System.Drawing.Size(216, 45);
+            this.btnAtrasTodo.Stroke = true;
+            this.btnAtrasTodo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAtrasTodo.TabIndex = 20;
+            this.btnAtrasTodo.Text = "ATRAS";
+            this.btnAtrasTodo.Transparency = false;
+            this.btnAtrasTodo.Click += new System.EventHandler(this.btnAtrasTodo_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnDeshabilitarTodo);
+            this.groupBox6.Controls.Add(this.btnHabilitarTodo);
+            this.groupBox6.Controls.Add(this.txtNombreCursoTodos);
+            this.groupBox6.Controls.Add(this.txtCursoSeleccionadoTodos);
+            this.groupBox6.Location = new System.Drawing.Point(481, 572);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(650, 314);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Curso Seleccionado";
+            // 
+            // btnDeshabilitarTodo
+            // 
+            this.btnDeshabilitarTodo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDeshabilitarTodo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDeshabilitarTodo.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeshabilitarTodo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnDeshabilitarTodo.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeshabilitarTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnDeshabilitarTodo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDeshabilitarTodo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDeshabilitarTodo.Location = new System.Drawing.Point(358, 191);
+            this.btnDeshabilitarTodo.Name = "btnDeshabilitarTodo";
+            this.btnDeshabilitarTodo.Radius = 10;
+            this.btnDeshabilitarTodo.Size = new System.Drawing.Size(165, 45);
+            this.btnDeshabilitarTodo.Stroke = true;
+            this.btnDeshabilitarTodo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnDeshabilitarTodo.TabIndex = 19;
+            this.btnDeshabilitarTodo.Text = "DESHABILITAR";
+            this.btnDeshabilitarTodo.Transparency = false;
+            this.btnDeshabilitarTodo.Click += new System.EventHandler(this.btnDeshabilitarTodo_Click);
+            // 
+            // btnHabilitarTodo
+            // 
+            this.btnHabilitarTodo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnHabilitarTodo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnHabilitarTodo.BackColor = System.Drawing.Color.Transparent;
+            this.btnHabilitarTodo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnHabilitarTodo.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHabilitarTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnHabilitarTodo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnHabilitarTodo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnHabilitarTodo.Location = new System.Drawing.Point(127, 191);
+            this.btnHabilitarTodo.Name = "btnHabilitarTodo";
+            this.btnHabilitarTodo.Radius = 10;
+            this.btnHabilitarTodo.Size = new System.Drawing.Size(165, 45);
+            this.btnHabilitarTodo.Stroke = true;
+            this.btnHabilitarTodo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnHabilitarTodo.TabIndex = 18;
+            this.btnHabilitarTodo.Text = "HABILITAR";
+            this.btnHabilitarTodo.Transparency = false;
+            this.btnHabilitarTodo.Click += new System.EventHandler(this.btnHabilitarTodo_Click);
+            // 
+            // txtNombreCursoTodos
+            // 
+            this.txtNombreCursoTodos.Location = new System.Drawing.Point(224, 79);
+            this.txtNombreCursoTodos.Name = "txtNombreCursoTodos";
+            this.txtNombreCursoTodos.ReadOnly = true;
+            this.txtNombreCursoTodos.Size = new System.Drawing.Size(344, 31);
+            this.txtNombreCursoTodos.TabIndex = 6;
+            this.txtNombreCursoTodos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCursoSeleccionadoTodos
+            // 
+            this.txtCursoSeleccionadoTodos.Location = new System.Drawing.Point(102, 79);
+            this.txtCursoSeleccionadoTodos.Name = "txtCursoSeleccionadoTodos";
+            this.txtCursoSeleccionadoTodos.ReadOnly = true;
+            this.txtCursoSeleccionadoTodos.Size = new System.Drawing.Size(100, 31);
+            this.txtCursoSeleccionadoTodos.TabIndex = 5;
+            this.txtCursoSeleccionadoTodos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dgvTodosCursos
+            // 
+            this.dgvTodosCursos.AllowUserToAddRows = false;
+            this.dgvTodosCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTodosCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTodosCursos.Location = new System.Drawing.Point(231, 99);
+            this.dgvTodosCursos.Name = "dgvTodosCursos";
+            this.dgvTodosCursos.ReadOnly = true;
+            this.dgvTodosCursos.Size = new System.Drawing.Size(1119, 409);
+            this.dgvTodosCursos.TabIndex = 4;
+            this.dgvTodosCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTodosCursos_CellClick);
             // 
             // grpActualizarCurso
             // 
@@ -487,6 +603,27 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpActualizarCurso.TabIndex = 18;
             this.grpActualizarCurso.TabStop = false;
             this.grpActualizarCurso.Text = "ACTUALIZAR UN CURSO";
+            // 
+            // btnMostrarTodosCursos
+            // 
+            this.btnMostrarTodosCursos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnMostrarTodosCursos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnMostrarTodosCursos.BackColor = System.Drawing.Color.Transparent;
+            this.btnMostrarTodosCursos.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnMostrarTodosCursos.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarTodosCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnMostrarTodosCursos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnMostrarTodosCursos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnMostrarTodosCursos.Location = new System.Drawing.Point(237, 722);
+            this.btnMostrarTodosCursos.Name = "btnMostrarTodosCursos";
+            this.btnMostrarTodosCursos.Radius = 10;
+            this.btnMostrarTodosCursos.Size = new System.Drawing.Size(282, 45);
+            this.btnMostrarTodosCursos.Stroke = true;
+            this.btnMostrarTodosCursos.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnMostrarTodosCursos.TabIndex = 19;
+            this.btnMostrarTodosCursos.Text = "VER TODOS LOS CURSOS";
+            this.btnMostrarTodosCursos.Transparency = false;
+            this.btnMostrarTodosCursos.Click += new System.EventHandler(this.btnMostrarTodosCursos_Click);
             // 
             // LblFormaEva
             // 
@@ -963,9 +1100,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.panelIngresarCurso.Controls.Add(this.grpDGVSecciones);
             this.panelIngresarCurso.Controls.Add(this.grpActualizarSeccion);
             this.panelIngresarCurso.Controls.Add(this.grpRegistrarSeccion);
-            this.panelIngresarCurso.Location = new System.Drawing.Point(0, 0);
+            this.panelIngresarCurso.Location = new System.Drawing.Point(12, 43);
             this.panelIngresarCurso.Name = "panelIngresarCurso";
-            this.panelIngresarCurso.Size = new System.Drawing.Size(209, 190);
+            this.panelIngresarCurso.Size = new System.Drawing.Size(253, 77);
             this.panelIngresarCurso.TabIndex = 35;
             // 
             // grpDGVSecciones
@@ -975,9 +1112,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpDGVSecciones.Controls.Add(this.dgvSecciones);
             this.grpDGVSecciones.Controls.Add(this.btnSiguienteDGVSeccion);
             this.grpDGVSecciones.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDGVSecciones.Location = new System.Drawing.Point(28, 40);
+            this.grpDGVSecciones.Location = new System.Drawing.Point(28, 24);
             this.grpDGVSecciones.Name = "grpDGVSecciones";
-            this.grpDGVSecciones.Size = new System.Drawing.Size(1568, 967);
+            this.grpDGVSecciones.Size = new System.Drawing.Size(1568, 983);
             this.grpDGVSecciones.TabIndex = 20;
             this.grpDGVSecciones.TabStop = false;
             // 
@@ -1016,23 +1153,23 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             this.dgvSecciones.AllowUserToAddRows = false;
             this.dgvSecciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSecciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSecciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSecciones.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSecciones.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSecciones.Location = new System.Drawing.Point(131, 126);
             this.dgvSecciones.Name = "dgvSecciones";
             this.dgvSecciones.ReadOnly = true;
@@ -1454,146 +1591,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.btnRegistrarCurso.Transparency = false;
             this.btnRegistrarCurso.Click += new System.EventHandler(this.btnRegistrarCurso_Click);
             // 
-            // grpCursos
-            // 
-            this.grpCursos.Controls.Add(this.btnAtrasTodo);
-            this.grpCursos.Controls.Add(this.groupBox6);
-            this.grpCursos.Controls.Add(this.dgvTodosCursos);
-            this.grpCursos.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCursos.Location = new System.Drawing.Point(33, 29);
-            this.grpCursos.Name = "grpCursos";
-            this.grpCursos.Size = new System.Drawing.Size(1575, 962);
-            this.grpCursos.TabIndex = 39;
-            this.grpCursos.TabStop = false;
-            this.grpCursos.Text = "TODOS LOS CURSOS";
-            // 
-            // dgvTodosCursos
-            // 
-            this.dgvTodosCursos.AllowUserToAddRows = false;
-            this.dgvTodosCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTodosCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTodosCursos.Location = new System.Drawing.Point(231, 99);
-            this.dgvTodosCursos.Name = "dgvTodosCursos";
-            this.dgvTodosCursos.ReadOnly = true;
-            this.dgvTodosCursos.Size = new System.Drawing.Size(1119, 409);
-            this.dgvTodosCursos.TabIndex = 4;
-            this.dgvTodosCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTodosCursos_CellClick);
-            // 
-            // txtCursoSeleccionadoTodos
-            // 
-            this.txtCursoSeleccionadoTodos.Location = new System.Drawing.Point(102, 79);
-            this.txtCursoSeleccionadoTodos.Name = "txtCursoSeleccionadoTodos";
-            this.txtCursoSeleccionadoTodos.ReadOnly = true;
-            this.txtCursoSeleccionadoTodos.Size = new System.Drawing.Size(100, 31);
-            this.txtCursoSeleccionadoTodos.TabIndex = 5;
-            this.txtCursoSeleccionadoTodos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.btnDeshabilitarTodo);
-            this.groupBox6.Controls.Add(this.btnHabilitarTodo);
-            this.groupBox6.Controls.Add(this.txtNombreCursoTodos);
-            this.groupBox6.Controls.Add(this.txtCursoSeleccionadoTodos);
-            this.groupBox6.Location = new System.Drawing.Point(481, 572);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(650, 314);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Curso Seleccionado";
-            // 
-            // txtNombreCursoTodos
-            // 
-            this.txtNombreCursoTodos.Location = new System.Drawing.Point(224, 79);
-            this.txtNombreCursoTodos.Name = "txtNombreCursoTodos";
-            this.txtNombreCursoTodos.ReadOnly = true;
-            this.txtNombreCursoTodos.Size = new System.Drawing.Size(344, 31);
-            this.txtNombreCursoTodos.TabIndex = 6;
-            this.txtNombreCursoTodos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnHabilitarTodo
-            // 
-            this.btnHabilitarTodo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnHabilitarTodo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnHabilitarTodo.BackColor = System.Drawing.Color.Transparent;
-            this.btnHabilitarTodo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnHabilitarTodo.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHabilitarTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnHabilitarTodo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnHabilitarTodo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnHabilitarTodo.Location = new System.Drawing.Point(127, 191);
-            this.btnHabilitarTodo.Name = "btnHabilitarTodo";
-            this.btnHabilitarTodo.Radius = 10;
-            this.btnHabilitarTodo.Size = new System.Drawing.Size(165, 45);
-            this.btnHabilitarTodo.Stroke = true;
-            this.btnHabilitarTodo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnHabilitarTodo.TabIndex = 18;
-            this.btnHabilitarTodo.Text = "HABILITAR";
-            this.btnHabilitarTodo.Transparency = false;
-            this.btnHabilitarTodo.Click += new System.EventHandler(this.btnHabilitarTodo_Click);
-            // 
-            // btnDeshabilitarTodo
-            // 
-            this.btnDeshabilitarTodo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDeshabilitarTodo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDeshabilitarTodo.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeshabilitarTodo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnDeshabilitarTodo.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitarTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnDeshabilitarTodo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDeshabilitarTodo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDeshabilitarTodo.Location = new System.Drawing.Point(358, 191);
-            this.btnDeshabilitarTodo.Name = "btnDeshabilitarTodo";
-            this.btnDeshabilitarTodo.Radius = 10;
-            this.btnDeshabilitarTodo.Size = new System.Drawing.Size(165, 45);
-            this.btnDeshabilitarTodo.Stroke = true;
-            this.btnDeshabilitarTodo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnDeshabilitarTodo.TabIndex = 19;
-            this.btnDeshabilitarTodo.Text = "DESHABILITAR";
-            this.btnDeshabilitarTodo.Transparency = false;
-            this.btnDeshabilitarTodo.Click += new System.EventHandler(this.btnDeshabilitarTodo_Click);
-            // 
-            // btnAtrasTodo
-            // 
-            this.btnAtrasTodo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasTodo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasTodo.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtrasTodo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAtrasTodo.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrasTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAtrasTodo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasTodo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasTodo.Location = new System.Drawing.Point(25, 905);
-            this.btnAtrasTodo.Name = "btnAtrasTodo";
-            this.btnAtrasTodo.Radius = 10;
-            this.btnAtrasTodo.Size = new System.Drawing.Size(216, 45);
-            this.btnAtrasTodo.Stroke = true;
-            this.btnAtrasTodo.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAtrasTodo.TabIndex = 20;
-            this.btnAtrasTodo.Text = "ATRAS";
-            this.btnAtrasTodo.Transparency = false;
-            this.btnAtrasTodo.Click += new System.EventHandler(this.btnAtrasTodo_Click);
-            // 
-            // btnMostrarTodosCursos
-            // 
-            this.btnMostrarTodosCursos.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnMostrarTodosCursos.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnMostrarTodosCursos.BackColor = System.Drawing.Color.Transparent;
-            this.btnMostrarTodosCursos.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnMostrarTodosCursos.Font = new System.Drawing.Font("Balsamiq Sans", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarTodosCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnMostrarTodosCursos.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnMostrarTodosCursos.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnMostrarTodosCursos.Location = new System.Drawing.Point(237, 722);
-            this.btnMostrarTodosCursos.Name = "btnMostrarTodosCursos";
-            this.btnMostrarTodosCursos.Radius = 10;
-            this.btnMostrarTodosCursos.Size = new System.Drawing.Size(282, 45);
-            this.btnMostrarTodosCursos.Stroke = true;
-            this.btnMostrarTodosCursos.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnMostrarTodosCursos.TabIndex = 19;
-            this.btnMostrarTodosCursos.Text = "VER TODOS LOS CURSOS";
-            this.btnMostrarTodosCursos.Transparency = false;
-            this.btnMostrarTodosCursos.Click += new System.EventHandler(this.btnMostrarTodosCursos_Click);
-            // 
             // IGestionCursosYClases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1616,6 +1613,10 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasesRegistradas)).EndInit();
             this.panelRegistroNuevoCurso.ResumeLayout(false);
+            this.grpCursos.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTodosCursos)).EndInit();
             this.grpActualizarCurso.ResumeLayout(false);
             this.grpActualizarCurso.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1638,10 +1639,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpActualizarSeccion.PerformLayout();
             this.grpRegistrarSeccion.ResumeLayout(false);
             this.grpRegistrarSeccion.PerformLayout();
-            this.grpCursos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTodosCursos)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1706,31 +1703,12 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         private System.Windows.Forms.TextBox txtPrecioCurso;
         private AltoControls.AltoButton btnCrearSeccion;
         private AltoControls.AltoButton btnModificarSeccion;
-        private System.Windows.Forms.Panel panelGestionClases;
-        private System.Windows.Forms.GroupBox grpGestionClases;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtIDClaseSelected;
-        private System.Windows.Forms.TextBox txtNombreClaseSelected;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dgvClasesRegistradas;
-        private AltoControls.AltoButton btnDeshabilitar;
-        private AltoControls.AltoButton btnHabilitar;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private AltoControls.AltoButton btnAgregarNuevaClase;
-        private System.Windows.Forms.TextBox txtIDNuevaClase;
-        private System.Windows.Forms.TextBox txtNombreClase;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         private AltoControls.AltoButton btnAtrasDGVSecciones;
         private AltoControls.AltoButton btnAtrasActualizarSeccion;
         private AltoControls.AltoButton btnAtrasRegistrarSeccion;
-        private AltoControls.AltoButton btnAtrasClases;
         private System.Windows.Forms.TextBox txtNombreSeccion;
         private System.Windows.Forms.ComboBox cmbEstadoSeccion;
         private System.Windows.Forms.Label label19;
-        private AltoControls.AltoButton btnLimpiarNombreClase;
-        private AltoControls.AltoButton btnLimpiarClaseModi;
         private AltoControls.AltoButton btnLimpiarPrecioCurso;
         private AltoControls.AltoButton btnLimpiarRegistroCurso;
         private AltoControls.AltoButton btnLimpiarRegistroSecc;
@@ -1746,5 +1724,24 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         private System.Windows.Forms.TextBox txtNombreCursoTodos;
         private System.Windows.Forms.TextBox txtCursoSeleccionadoTodos;
         private AltoControls.AltoButton btnMostrarTodosCursos;
+        private AltoControls.AltoButton btnLimpiar;
+        private System.Windows.Forms.Panel panelGestionClases;
+        private System.Windows.Forms.GroupBox grpGestionClases;
+        private AltoControls.AltoButton btnAtrasClases;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private AltoControls.AltoButton btnLimpiarNombreClase;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private AltoControls.AltoButton btnAgregarNuevaClase;
+        private System.Windows.Forms.TextBox txtIDNuevaClase;
+        private System.Windows.Forms.TextBox txtNombreClase;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private AltoControls.AltoButton btnDeshabilitar;
+        private AltoControls.AltoButton btnHabilitar;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtIDClaseSelected;
+        private System.Windows.Forms.TextBox txtNombreClaseSelected;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView dgvClasesRegistradas;
     }
 }
