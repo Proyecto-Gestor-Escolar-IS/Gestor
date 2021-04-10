@@ -939,43 +939,99 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void txtprimerNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtsegundoNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtprimerApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
-        { 
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtsegundoApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         //Metodos y validaciones De registro de  Encargado
         private void txtPrimerNombreEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtSegundoNombreEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtPrimerApellidoEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtSegundoApellidoEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtprimerTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -1755,6 +1811,42 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
 
 
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Contains('.'))
+                        e.Handled = true;
+                    else
+                        e.Handled = false;
+                }
+            }
+        }
+
+        private void txtDescuentoR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Contains('.'))
+                        e.Handled = true;
+                    else
+                        e.Handled = false;
+                }
+            }
         }
     }
 
