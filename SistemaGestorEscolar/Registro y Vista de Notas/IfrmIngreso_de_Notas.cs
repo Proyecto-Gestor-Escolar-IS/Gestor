@@ -28,9 +28,12 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         public int formaEvaluacion;
         public string ID;
         public string NameA;
+        int exist;
+        public string existenciaNota;
 
         //Ingreso de Notas.Variables
-        public int id_detalleMatricula;
+        public int id_detalleMatricula1;
+        public int id_detalleMatricula2;
         public string Identidad;
         public int Id_Clase;
         public string nombreClase;
@@ -39,7 +42,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         public string seccion;
         public string nombreAlumno;
         public float nota1, nota2, nota3, nota4, notaFinal;
-        public char notaA, notaB, notaC, notaD, notaE;
+        string notaA, notaB, notaC, notaD, notaE;
 
         //Cuadro de Notas.Variables
         public string IDcn;
@@ -51,7 +54,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         public float Nota3;
         public float Nota4;
         public float NotaProm;
-        public char NotaA, NotaB, NotaC, NotaD, NotaE;
+        string NotaA, NotaB, NotaC, NotaD, NotaE;
 
 
         public IfrmIngreso_de_Notas()
@@ -192,7 +195,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula INNER JOIN " +
                 "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso INNER JOIN dbo.seccion ON" +
                 " dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where" +
-                " dbo.cursos.nombreCurso = '" + Herencia_de_Variables.CursoG + "' and dbo.seccion.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "'");
+                " dbo.cursos.nombreCurso = '" + Herencia_de_Variables.CursoG + "' and dbo.seccion.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "' and and [dbo].[detalleMatricula].[estado] = 2");
 
         }
 
@@ -321,11 +324,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             txtNota3.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.nota3G2.ToString();
             txtNota4.Text = Registro_y_Vista_de_Notas.Herencia_de_Variables.nota4G2.ToString();
 
-            mktNotaA.Text = NotaA.ToString();
-            mktNotaB.Text = NotaB.ToString();
-            mktNotaC.Text = NotaC.ToString();
-            mktNotaD.Text = NotaD.ToString();
-            mktNotaE.Text = NotaE.ToString();
+            mktNotaA.Text = NotaA;
+            mktNotaB.Text = NotaB;
+            mktNotaC.Text = NotaC;
+            mktNotaD.Text = NotaD;
+            mktNotaE.Text = NotaE;
 
 
         }
@@ -486,213 +489,290 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void abAgregarNotas_Click(object sender, EventArgs e)
         {
 
-            Identidad = txtIdentidad.Text;
-            curso = txtCurso.Text;
-            seccion = txtSeccion.Text;
-            nombreAlumno = txtNombreAlumno.Text;
-
-            if(formaEvaluacion == 1)
-            {
-                if(txtNota1.Text != "" && txtNota2.Text != "" && txtNota3.Text != "" && txtNota4.Text != "" && txtNotaProm.Text != "")
-                {
-
-                    nota1 = float.Parse(txtNota1.Text);
-                    nota2 = float.Parse(txtNota2.Text);
-                    nota3 = float.Parse(txtNota3.Text);
-                    nota4 = float.Parse(txtNota4.Text);
-                    notaFinal = float.Parse(txtNotaProm.Text);
-
-                    if (cmbClasesCS.SelectedItem == null)
-                    {
-                        message.lblError.Text = "Debe seleccionar una Clase\n";
-                        message.ShowDialog();
-                    }
-                    else
-                    {
-                        id_detalleMatricula = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
+            id_detalleMatricula1 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
                                              "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
                                              " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
 
-                        Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
-                            " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
+            existenciaNota = dbConn.obtenerVariableString("Select [notaA] from [dbo].[detalleNotas] Where [id_DetalleMatricula] = '" + id_detalleMatricula1 + "'");
+            exist = dbConn.obtenerVariableEntera("Select [nota1erParcial] from [dbo].[detalleNotas] Where [id_DetalleMatricula] = '" + id_detalleMatricula1 + "'");
 
-                        if (dbConn.PAAgregarNota(id_detalleMatricula, Id_Clase, nota1, nota2, nota3, nota4, notaFinal, notaA, notaB, notaC, notaD, notaE))
-                        {
-                            messageOk.lblCheck.Text = "Se Agregaron correctamente";
-                            messageOk.ShowDialog();
-                            gpxIngreso_Notas.Visible = false;
-                            gpxCuadroNotas.Visible = true;
+            if(existenciaNota == "" || exist == 0)
+            {
+                Identidad = txtIdentidad.Text;
+                curso = txtCurso.Text;
+                seccion = txtSeccion.Text;
+                nombreAlumno = txtNombreAlumno.Text;
 
-                        }
-                        else
+                if (formaEvaluacion == 1)
+                {
+                    if(txtNota1.Text == "0")
+                    {
+                        nota1 = 0;
+                    }
+                    else
+                    {
+                        nota1 = float.Parse(txtNota1.Text);
+                    }
+
+                    if (txtNota2.Text == "0")
+                    {
+                        nota2 = 0;
+                    }
+                    else
+                    {
+                        nota2 = float.Parse(txtNota2.Text);
+                    }
+
+                    if (txtNota3.Text == "0")
+                    {
+                        nota3 = 0;
+                    }
+                    else
+                    {
+                        nota3 = float.Parse(txtNota3.Text);
+                    }
+
+                    if (txtNota4.Text == "0")
+                    {
+                        nota4 = 0;
+                    }
+                    else
+                    {
+                        nota4 = float.Parse(txtNota4.Text);
+                    }
+
+                    if (txtNotaProm.Text == "0")
+                    {
+                        notaFinal = 0;
+                    }
+                    else
+                    {
+                        notaFinal = float.Parse(txtNotaProm.Text);
+                    }
+
+                    notaA = "";
+                    notaB = "";
+                    notaC = "";
+                    notaD = "";
+                    notaE = "";
+
+
+                    if (cmbClasesCS.SelectedItem == null)
                         {
-                            message.lblError.Text = "Error al Ingresar las Notas\n";
+                            message.lblError.Text = "Debe seleccionar una Clase\n";
                             message.ShowDialog();
-                        }
+                    }
+                    else
+                    {
+                          id_detalleMatricula2 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
+                                                 "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "'  and" +
+                                                 " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
+
+                          Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
+                                " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
+
+                        if (dbConn.PAModificarNota(id_detalleMatricula2, Id_Clase, nota1, nota2, nota3, nota4, notaFinal, notaA, notaB, notaC, notaD, notaE))
+                          {
+                                messageOk.lblCheck.Text = "Se Agregaron correctamente";
+                                messageOk.ShowDialog();
+                                gpxIngreso_Notas.Visible = false;
+                                gpxCuadroNotas.Visible = true;
+
+                                id_detalleMatricula2 = 0;
+
+                          }
+                          else
+                          {
+                                message.lblError.Text = "Error al Ingresar las Notas\n";
+                                message.ShowDialog();
+                          }
 
                     }
 
                 }
-                else
+                else if (formaEvaluacion == 2)
                 {
-                    message.lblError.Text = "Debe llenar todos los Datos\n";
-                    message.ShowDialog();
+
+                        notaA = mktNotaA.Text;
+                        notaB = mktNotaB.Text;
+                        notaC = mktNotaC.Text;
+                        notaD = mktNotaD.Text;
+                        notaE = mktNotaE.Text;
+
+                        if (cmbClasesCS.SelectedItem == null)
+                        {
+                            message.lblError.Text = "Debe seleccionar una Clase\n";
+                            message.ShowDialog();
+                        }
+                        else
+                        {
+                           id_detalleMatricula2 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
+                                             "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
+                                             " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
+
+
+                            Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
+                                " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
+
+                            if (dbConn.PAModificarNota(id_detalleMatricula2, Id_Clase, nota1, nota2, nota3, nota4, notaFinal, notaA, notaB, notaC, notaD, notaE))
+                            {
+                                messageOk.lblCheck.Text = "Se Agregaron correctamente";
+                                messageOk.ShowDialog();
+                                gpxIngreso_Notas.Visible = false;
+                                gpxCuadroNotas.Visible = true;
+
+                                 id_detalleMatricula2 = 0;
+
+                            }
+                            else
+                            {
+                                message.lblError.Text = "Error al Ingresar las Notas\n";
+                                message.ShowDialog();
+                            }
+
+                        }
+
                 }
             }
-            else if(formaEvaluacion == 2)
+            else if(existenciaNota != "" || exist != 0)
             {
-                if(mktNotaA.Text != "" && mktNotaB.Text != "" && mktNotaC.Text != "" && mktNotaD.Text != "" && mktNotaE.Text != "")
+
+                IDcn = txtIdentidad.Text;
+                curso = txtCurso.Text;
+                seccion = txtSeccion.Text;
+                nombreCN = txtNombreAlumno.Text;
+
+                if (formaEvaluacion == 1)
                 {
 
-                    notaA = Convert.ToChar(mktNotaA.Text);
-                    notaB = Convert.ToChar(mktNotaB.Text);
-                    notaC = Convert.ToChar(mktNotaC.Text);
-                    notaD = Convert.ToChar(mktNotaD.Text);
-                    notaE = Convert.ToChar(mktNotaE.Text);
-
-                    if (cmbClasesCS.SelectedItem == null)
+                    if (txtNota1.Text == "")
                     {
-                        message.lblError.Text = "Debe seleccionar una Clase\n";
-                        message.ShowDialog();
+                        Nota1 = 0;
                     }
                     else
                     {
-                        id_detalleMatricula = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
-                                             "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
-                                             " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
-
-                        Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
-                            " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
-
-                        if (dbConn.PAAgregarNota(id_detalleMatricula, Id_Clase, nota1, nota2, nota3, nota4, notaFinal, notaA, notaB, notaC, notaD, notaE))
-                        {
-                            messageOk.lblCheck.Text = "Se Agregaron correctamente";
-                            messageOk.ShowDialog();
-                            gpxIngreso_Notas.Visible = false;
-                            gpxCuadroNotas.Visible = true;
-
-                        }
-                        else
-                        {
-                            message.lblError.Text = "Error al Ingresar las Notas\n";
-                            message.ShowDialog();
-                        }
-
+                        Nota1 = float.Parse(txtNota1.Text);
                     }
 
-                }
-                else
-                {
-                    message.lblError.Text = "Debe llenar todos los Datos\n";
-                    message.ShowDialog();
-                }
-            }
-
-        }
-
-        private void abModificarNota_Click(object sender, EventArgs e)
-        {
-
-            IDcn = txtIdentidad.Text;
-            curso = txtCurso.Text;
-            seccion = txtSeccion.Text;
-            nombreCN = txtNombreAlumno.Text;
-
-            if (formaEvaluacion == 1)
-            {
-                if (txtNota1.Text != "" && txtNota2.Text != "" && txtNota3.Text != "" && txtNota4.Text != "" && txtNotaProm.Text != "" && txtNota1.Text != "0" && txtNota2.Text != "0" && txtNota3.Text != "0" && txtNota4.Text != "0" && txtNotaProm.Text != "0")
-                {
-
-                    Nota1 = float.Parse(txtNota1.Text);
-                    Nota2 = float.Parse(txtNota2.Text);
-                    Nota3 = float.Parse(txtNota3.Text);
-                    Nota4 = float.Parse(txtNota4.Text);
-                    NotaProm = float.Parse(txtNotaProm.Text);
-
-                    if (cmbClasesCS.SelectedItem == null)
+                    if (txtNota2.Text == "")
                     {
-                        message.lblError.Text = "Debe seleccionar una Clase\n";
-                        message.ShowDialog();
+                        Nota2 = 0;
                     }
                     else
                     {
-                        id_detalleMatricula = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
-                                             "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
-                                             " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
-
-                        Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
-                            " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
-
-                        if (dbConn.PAModificarNota(id_detalleMatricula, Id_Clase, Nota1, Nota2, Nota3, Nota4, NotaProm, NotaA, NotaB, NotaC, NotaD, NotaE))
-                        {
-                            messageOk.lblCheck.Text = "Se Modificaron correctamente";
-                            messageOk.ShowDialog();
-                            gpxIngreso_Notas.Visible = false;
-                            gpxCuadroNotas.Visible = true;
-
-                        }
-                        else
-                        {
-                            message.lblError.Text = "Error al Modificar las Notas\n";
-                            message.ShowDialog();
-                        }
-
+                        Nota2 = float.Parse(txtNota2.Text);
                     }
 
-                }
-                else
-                {
-                    message.lblError.Text = "Debe llenar todos los Datos\n";
-                    message.ShowDialog();
-                }
-            }
-            else if (formaEvaluacion == 2)
-            {
-                if (mktNotaA.Text != "" && mktNotaB.Text != "" && mktNotaC.Text != "" && mktNotaD.Text != "" && mktNotaE.Text != "")
-                {
-
-                    NotaA = Convert.ToChar(mktNotaA.Text);
-                    NotaB = Convert.ToChar(mktNotaB.Text);
-                    NotaC = Convert.ToChar(mktNotaD.Text);
-                    NotaD = Convert.ToChar(mktNotaC.Text);
-                    NotaE = Convert.ToChar(mktNotaE.Text);
-
-                    if (cmbClasesCS.SelectedItem == null)
+                    if (txtNota3.Text == "")
                     {
-                        message.lblError.Text = "Debe seleccionar una Clase\n";
-                        message.ShowDialog();
+                        Nota3 = 0;
                     }
                     else
                     {
-                        id_detalleMatricula = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
-                                             "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
-                                             " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
+                        Nota3 = float.Parse(txtNota3.Text);
+                    }
 
-                        Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
-                            " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
+                    if (txtNota4.Text == "")
+                    {
+                        Nota4 = 0;
+                    }
+                    else
+                    {
+                        Nota4 = float.Parse(txtNota4.Text);
+                    }
 
-                        if (dbConn.PAModificarNota(id_detalleMatricula, Id_Clase, Nota1, Nota2, Nota3, Nota4, NotaProm, NotaA, NotaB, NotaC, NotaD, NotaE))
+                    if (txtNotaProm.Text == "")
+                    {
+                        NotaProm = 0;
+                    }
+                    else
+                    {
+                        NotaProm = float.Parse(txtNotaProm.Text);
+                    }
+
+
+                    NotaA = "";
+                    NotaB = "";
+                    NotaC = "";
+                    NotaD = "";
+                    NotaE = "";
+
+                    if (cmbClasesCS.SelectedItem == null)
                         {
-                            messageOk.lblCheck.Text = "Se Modificaron correctamente";
-                            messageOk.ShowDialog();
-                            gpxIngreso_Notas.Visible = false;
-                            gpxCuadroNotas.Visible = true;
-
+                            message.lblError.Text = "Debe seleccionar una Clase\n";
+                            message.ShowDialog();
                         }
                         else
                         {
-                            message.lblError.Text = "Error al Modificar las Notas\n";
-                            message.ShowDialog();
+                            id_detalleMatricula2 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
+                                                 "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "' and" +
+                                                 " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
+
+                            Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
+                                " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
+
+                            if (dbConn.PAModificarNota(id_detalleMatricula2, Id_Clase, Nota1, Nota2, Nota3, Nota4, NotaProm, NotaA, NotaB, NotaC, NotaD, NotaE))
+                            {
+                                messageOk.lblCheck.Text = "Se Modificaron correctamente";
+                                messageOk.ShowDialog();
+                                gpxIngreso_Notas.Visible = false;
+                                gpxCuadroNotas.Visible = true;
+
+                                 id_detalleMatricula2 = 0;
+
+                            }
+                            else
+                            {
+                                message.lblError.Text = "Error al Modificar las Notas\n";
+                                message.ShowDialog();
+                            }
+
                         }
 
-                    }
+                }
+                else if (formaEvaluacion == 2)
+                {
+
+                            NotaA = mktNotaA.Text;
+                            NotaB = mktNotaB.Text;
+                            NotaC = mktNotaD.Text;
+                            NotaD = mktNotaC.Text;
+                            NotaE = mktNotaE.Text;
+
+                            if (cmbClasesCS.SelectedItem == null)
+                            {
+                                message.lblError.Text = "Debe seleccionar una Clase\n";
+                                message.ShowDialog();
+                            }
+                            else
+                            {
+                                id_detalleMatricula2 = dbConn.obtenerVariableEntera("SELECT dbo.detalleMatricula.id_DetalleMatricula FROM     dbo.datosEstudiante INNER JOIN dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula " +
+                                                     "inner join dbo.cursos on dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso inner join dbo.seccion on dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion where dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidad.Text + "' OR dbo.datosEstudiante.identidadEstudiante = '" + txtIdentidadAE.Text + "'  and" +
+                                                     " dbo.cursos.nombreCurso = '" + txtCurso.Text + "' and dbo.seccion.nombreSeccion = '" + txtSeccion.Text + "' ");
+
+                                Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
+                                    " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
+
+                                if (dbConn.PAModificarNota(id_detalleMatricula2, Id_Clase, Nota1, Nota2, Nota3, Nota4, NotaProm, NotaA, NotaB, NotaC, NotaD, NotaE))
+                                {
+                                    messageOk.lblCheck.Text = "Se Modificaron correctamente";
+                                    messageOk.ShowDialog();
+                                    gpxIngreso_Notas.Visible = false;
+                                    gpxCuadroNotas.Visible = true;
+
+                                      id_detalleMatricula2 = 0;
+
+                                }
+                                else
+                                {
+                                    message.lblError.Text = "Error al Modificar las Notas\n";
+                                    message.ShowDialog();
+                                }
+
+                            }
 
                 }
-                else
-                {
-                    message.lblError.Text = "Debe llenar todos los Datos\n";
-                    message.ShowDialog();
-                }
+
             }
 
         }
@@ -812,6 +892,10 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             txtIdentidadAE.Visible = true;
             txtNombreAlumno.Visible = false;
             txtNombreAE.Visible = true;
+            txtIdentidadAE.Clear();
+            txtIdentidad.Clear();
+            id_detalleMatricula2 = 0;
+            id_detalleMatricula1 = 0;
             
         }
 
@@ -860,11 +944,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     ID = dgvCuadroNotas.CurrentRow.Cells[0].Value.ToString();
                     NameA = dgvCuadroNotas.CurrentRow.Cells[1].Value.ToString();
                     Clase = dgvCuadroNotas.CurrentRow.Cells[2].Value.ToString();
-                    NotaA = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[5].Value.ToString());
-                    NotaB = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[6].Value.ToString());
-                    NotaC = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString());
-                    NotaD = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString());
-                    NotaE = Convert.ToChar(dgvCuadroNotas.CurrentRow.Cells[9].Value.ToString());
+                    NotaA = dgvCuadroNotas.CurrentRow.Cells[5].Value.ToString();
+                    NotaB = dgvCuadroNotas.CurrentRow.Cells[6].Value.ToString();
+                    NotaC = dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString();
+                    NotaD = dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString();
+                    NotaE = dgvCuadroNotas.CurrentRow.Cells[9].Value.ToString();
 
                 }
 
