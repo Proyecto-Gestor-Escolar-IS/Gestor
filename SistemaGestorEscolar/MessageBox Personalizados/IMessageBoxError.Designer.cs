@@ -42,7 +42,7 @@ namespace SistemaGestorEscolar
             this.panEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
-            this.panEncabezado.Size = new System.Drawing.Size(432, 30);
+            this.panEncabezado.Size = new System.Drawing.Size(501, 30);
             this.panEncabezado.TabIndex = 1;
             // 
             // btnOK
@@ -51,7 +51,7 @@ namespace SistemaGestorEscolar
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(181, 131);
+            this.btnOK.Location = new System.Drawing.Point(212, 131);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(78, 41);
             this.btnOK.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace SistemaGestorEscolar
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(432, 193);
+            this.ClientSize = new System.Drawing.Size(499, 193);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.pctError);

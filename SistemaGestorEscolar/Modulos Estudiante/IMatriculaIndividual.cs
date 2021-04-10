@@ -331,19 +331,30 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                         mesesDePago = 10;
                                     }
 
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2))
-                                {
-                                    dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
-                                    message.lblCheck.Text = "MATRICULA REGISTRADA";
-                                    message.ShowDialog();
-                                    limpiarPantalla();
+                                    if (dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "') = E.id_DetalleMatricula") != 1) 
+                                    {
+                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2))
+                                        {
+                                            dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
+                                            message.lblCheck.Text = "MATRICULA REGISTRADA";
+                                            message.ShowDialog();
+                                            limpiarPantalla();
+                                        }
+                                        else
+                                        {
+                                            messageError.lblError.Text = "ERROR INESPERADO";
+                                            messageError.ShowDialog();
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        messageWarning.lblError.Text = "ESTE ESTUDIANTE ESTA EN UN CURSO";
+                                        messageWarning.ShowDialog();
+                                    }
+
+
                                 }
-                                else
-                                {
-                                    messageError.lblError.Text = "ERROR INESPERADO";
-                                    messageError.ShowDialog();
-                                }
-                            }
                             else
                             {
                                     messageWarning.lblError.Text = "SELECCIONE UN MODO PAGO";
@@ -504,6 +515,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 txtIdentidadEstudianteR.Text = identidadReingreso;
                 grpListaEstudiantes.Visible = false;
                 grpReingreso.Visible = true;
+
+
+
             }
             else
             {
@@ -652,20 +666,20 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             dbConn.llenarTextBox(txtNombreCurso, "SELECT nombreCurso FROM cursos INNER JOIN detalleMatricula ON detalleMatricula.id_Curso = cursos.id_Curso WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
             dbConn.llenarTextBox(txtSeccionEstado, "SELECT nombreSeccion FROM seccion INNER JOIN detalleMatricula ON detalleMatricula.id_Seccion = seccion.id_Seccion WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
 
-            estadoMatricula = dbConn.obtenerVariableEntera("SELECT estado FROM detalleMatricula WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
-
-            switch (estadoMatricula)
+            estadoMatricula = dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + identidadActualizacion + "') = E.id_DetalleMatricula");
+            
+        
+            if(estadoMatricula == 1)
             {
-                case 1:
-                    cmbEstadoMatri.SelectedIndex = 0;
-                    break;
+                cmbEstadoMatri.SelectedIndex = 0;
+            }else if(estadoMatricula == 2)
+            {
+                cmbEstadoMatri.SelectedIndex = 1;
+            }
+            else if(estadoMatricula == 3)
+            {
+                cmbEstadoMatri.SelectedIndex = 2;
 
-                case 2:
-                    cmbEstadoMatri.SelectedIndex = 1;
-                    break;
-                case 3:
-                    cmbEstadoMatri.SelectedIndex = 2;
-                    break;
             }
 
 
@@ -1720,7 +1734,18 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             {
                 total = (decimal.Parse(TotalPagar.ToString()) - decimal.Parse(txtDescuentoR.Text));
                 total = decimal.Round(total, 3);
-                txtTotalR.Text = total.ToString();
+                
+                    if(total >= 0)
+                    {
+                        txtTotalR.Text = total.ToString();
+                    }
+                    else if(total < 0)
+                    {
+
+                        txtTotalR.Text = "" + 0.00;
+                    }
+
+
             }
 
             }
