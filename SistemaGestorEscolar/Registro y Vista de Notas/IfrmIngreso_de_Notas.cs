@@ -19,6 +19,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         IMessageBoxError message = new IMessageBoxError();
         IMessageBoxWarning messageWarning = new IMessageBoxWarning();
 
+
+
         public string cursoElegido;
         public string seccionElegida;
         public string identidadA;
@@ -68,7 +70,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 if(cmbCursos.Text != null)
                 {
                     cmbSeccion.Items.Clear();
-                    dbConn.llenarComboBoxValorInicial(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM dbo.cursos INNER JOIN dbo.seccion ON dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
+                    dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
+                        "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
                 }
 
             }
@@ -91,7 +94,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             formaEvaluacion = dbConn.obtenerVariableEntera("Select [tipoCalificacion] from [dbo].[cursos] where [nombreCurso] = '" + cursoElegido + "'");
 
 
-            if (cmbCursos.SelectedIndex == 0 || cmbSeccion.SelectedIndex == 0)
+            if (cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
             {
                 message.lblError.Text = "Seleccione un Curso y Sección";
                 message.ShowDialog();
@@ -211,9 +214,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             else
             {
                 Limpiar();
-                cmbClasesCS.Items.Clear();
-
-
                 gpxSeleccionAlumno.Visible = false;
                 gpxIngreso_Notas.Visible = true;
             }
@@ -335,6 +335,18 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void chkVerClases_CheckedChanged(object sender, EventArgs e)
         {
+
+            if (chkVerClases.Checked)
+            {
+                dbConn.llenarComboBox(cmbClasesCS, "SELECT        dbo.clases.nombreClase FROM            dbo.clases INNER JOIN " +
+                    "dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN " +
+                    "dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso INNER JOIN " +
+                    "dbo.seccion ON dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.[nombreCurso] = '" + txtCurso.Text + "' and dbo.seccion.[nombreSeccion] = '" + txtSeccion.Text + "'");
+            }
+            else
+            {
+                cmbClasesCS.Items.Clear();
+            }
 
         }
 
@@ -722,8 +734,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
                             NotaA = mktNotaA.Text;
                             NotaB = mktNotaB.Text;
-                            NotaC = mktNotaD.Text;
-                            NotaD = mktNotaC.Text;
+                            NotaC = mktNotaC.Text;
+                            NotaD = mktNotaD.Text;
                             NotaE = mktNotaE.Text;
 
                             if (cmbClasesCS.SelectedItem == null)
@@ -790,30 +802,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
         private void mktNotaE_TextChanged(object sender, EventArgs e)
         {
             mktNotaE.Text = mktNotaE.Text.ToUpper();
-        }
-
-        private void txtSeccion_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void txtSeccion_TextChanged_1(object sender, EventArgs e)
-        {
-            cmbClasesCS.Items.Clear();
-            dbConn.llenarComboBoxValorInicial(cmbClasesCS, "SELECT dbo.clases.nombreClase FROM dbo.clases INNER JOIN " +
-  "dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN " +
-  "dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso INNER JOIN " +
-  "dbo.seccion ON dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.[nombreCurso] = '" + txtCurso.Text + "' and dbo.seccion.[nombreSeccion] = '" + txtSeccion.Text + "'");
-        }
-
-        private void txtNombreAE_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIdentidadAE_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Limpiar()
@@ -960,8 +948,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     Clase = dgvCuadroNotas.CurrentRow.Cells[2].Value.ToString();
                     NotaA = dgvCuadroNotas.CurrentRow.Cells[5].Value.ToString();
                     NotaB = dgvCuadroNotas.CurrentRow.Cells[6].Value.ToString();
-                    NotaC = dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString();
-                    NotaD = dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString();
+                    NotaC = dgvCuadroNotas.CurrentRow.Cells[7].Value.ToString();
+                    NotaD = dgvCuadroNotas.CurrentRow.Cells[8].Value.ToString();
                     NotaE = dgvCuadroNotas.CurrentRow.Cells[9].Value.ToString();
 
                 }
@@ -989,7 +977,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     " dbo.detalleNotas INNER JOIN dbo.clasesCurso ON dbo.detalleNotas.id_Clase = dbo.clasesCurso.id_DetalleClase INNER JOIN" +
                     " dbo.clases ON dbo.clasesCurso.id_Clase = dbo.clases.id_Clase ON dbo.detalleMatricula.id_DetalleMatricula = dbo.detalleNotas.id_DetalleMatricula INNER JOIN" +
                     " dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso AND dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso INNER JOIN" +
-                    " dbo.seccion ON dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where (identidadEstudiante like '" + text + "%' OR primerNombre like '" + text + "%') and [dbo].[cursos].[tipoCalificacion] = '" + formaEvaluacion + "'");
+                    " dbo.seccion ON dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where (identidadEstudiante like '" + text + "%' OR primerNombre like '" + text + "%') and [dbo].[cursos].[formaEvaluacion] = '" + formaEvaluacion + "'");
             }
             else if (formaEvaluacion == 2)
             {
@@ -1002,7 +990,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     " dbo.detalleNotas INNER JOIN dbo.clasesCurso ON dbo.detalleNotas.id_Clase = dbo.clasesCurso.id_DetalleClase INNER JOIN" +
                     " dbo.clases ON dbo.clasesCurso.id_Clase = dbo.clases.id_Clase ON dbo.detalleMatricula.id_DetalleMatricula = dbo.detalleNotas.id_DetalleMatricula INNER JOIN " +
                     "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso AND dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso INNER JOIN" +
-                    " dbo.seccion ON dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where (identidadEstudiante like '" + text + "%' OR primerNombre like '" + text + "%') and [dbo].[cursos].[tipoCalificacion] = '" + formaEvaluacion + "'");
+                    " dbo.seccion ON dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where (identidadEstudiante like '" + text + "%' OR primerNombre like '" + text + "%') and [dbo].[cursos].[formaEvaluacion] = '" + formaEvaluacion + "'");
             }
 
         }

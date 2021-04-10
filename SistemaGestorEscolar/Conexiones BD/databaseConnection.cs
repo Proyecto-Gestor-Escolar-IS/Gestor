@@ -21,7 +21,7 @@ namespace SistemaGestorEscolar
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-7MB4NES;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-P4A3L4O;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -65,21 +65,29 @@ namespace SistemaGestorEscolar
         //Comprueba la existencia de los usuarios en la base de datos
         public bool comprobarUsuario(string usuario, string contra)
         {
-            
-            databaseIntermediary.Open();
-            string comandoSql = "SELECT COUNT(*) FROM datosEmpleados WHERE identidadPersona = '" + usuario + "' AND contraseniaEmpleado = '" + contra + "' AND estadoEmpleado <> 2";
-            comando = databaseIntermediary.CreateCommand();
-            comando.CommandText = comandoSql;
-
-            //ERROR FATAL AQUI ! - AL INSERTAR EL CARACTER <'> EL PROGRAMA CRASHEA
-            var t = Convert.ToInt32(comando.ExecuteScalar());
-            databaseIntermediary.Close();
-
-            if (t != 0)
+            try
             {
-                return true;
+                databaseIntermediary.Open();
+                string comandoSql = "SELECT COUNT(*) FROM datosEmpleados WHERE identidadPersona = '" + usuario + "' AND contraseniaEmpleado = '" + contra + "' AND estadoEmpleado <> 2";
+                comando = databaseIntermediary.CreateCommand();
+                comando.CommandText = comandoSql;
+
+                //ERROR FATAL AQUI ! - AL INSERTAR EL CARACTER <'> EL PROGRAMA CRASHEA
+                var t = Convert.ToInt32(comando.ExecuteScalar());
+                databaseIntermediary.Close();
+
+                if (t != 0)
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                return false;
+            }
+
         }
 
         //Metodo para llenar combobox (se envia el combobox a llenar) e (instruccion sql)

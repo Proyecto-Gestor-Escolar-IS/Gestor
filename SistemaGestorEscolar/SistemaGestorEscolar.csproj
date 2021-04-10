@@ -219,7 +219,7 @@
     <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.Designer.cs">
+    <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.designer.cs">
       <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
     </Compile>
     <Compile Include="Report Estudiantes\DataSetEstudiantes.Designer.cs">

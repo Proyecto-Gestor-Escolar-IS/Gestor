@@ -106,7 +106,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                          "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula INNER JOIN " +
                          "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso INNER JOIN dbo.seccion ON" +
                          " dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where" +
-                         " dbo.cursos.nombreCurso = '" + CursoElegido + "' and dbo.seccion.nombreSeccion = '" + SeccionElegida + "' ");
+                         " dbo.cursos.nombreCurso = '" + CursoElegido + "' and dbo.seccion.nombreSeccion = '" + SeccionElegida + "' AND dbo.detalleMatricula.estado = 1");
 
         }
 

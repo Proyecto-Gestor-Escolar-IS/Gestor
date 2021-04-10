@@ -45,13 +45,26 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCurso.SelectedIndex != 0)
-            { 
-                dbConn.llenarDGV(dgvNotas, "SELECT C.[nombreCurso] as 'Curso', B.[nombreClase] as 'Nombre Clase', A.[nota1erParcial] as 'I Parcial', A.[nota2doParcial] as 'II Parcial', A.[nota3erParcial] as 'III Parcial', A.[nota4toParcial] as 'IV Parcial', A.[notaFinal] AS 'Promedio' FROM[dbo].[detalleNotas] A INNER JOIN[dbo].[clasesCurso] B ON A.id_Clase = B.id_Clase INNER JOIN[dbo].[cursos] C ON B.id_Curso = C.id_Curso INNER JOIN[dbo].[detalleMatricula] D ON A.id_DetalleMatricula = D.id_DetalleMatricula INNER JOIN[dbo].[matricula] E ON D.id_RegistroMatricula = E.id_RegistroMatricula WHERE E.id_Estudiante = '" + identidadEstudiante + "' AND C.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'");
+            try
+            {
+                if (cmbCurso.SelectedIndex != 0)
+                {
+                    if (dbConn.obtenerVariableEntera("SELECT count(id_DetalleNotas) FROM[dbo].[detalleNotas] A INNER JOIN[dbo].[clasesCurso] B ON A.id_Clase = B.id_Clase INNER JOIN[dbo].[cursos] C ON B.id_Curso = C.id_Curso INNER JOIN[dbo].[detalleMatricula] D ON A.id_DetalleMatricula = D.id_DetalleMatricula INNER JOIN[dbo].[matricula] E ON D.id_RegistroMatricula = E.id_RegistroMatricula WHERE E.id_Estudiante = '" + identidadEstudiante + "' AND C.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'") != 0)
+                    {
+                        dbConn.llenarDGV(dgvNotas, "SELECT C.[nombreCurso] as 'Curso', B.[nombreClase] as 'Nombre Clase', A.[nota1erParcial] as 'I Parcial', A.[nota2doParcial] as 'II Parcial', A.[nota3erParcial] as 'III Parcial', A.[nota4toParcial] as 'IV Parcial', A.[notaFinal] AS 'Promedio' FROM[dbo].[detalleNotas] A INNER JOIN[dbo].[clasesCurso] B ON A.id_Clase = B.id_Clase INNER JOIN[dbo].[cursos] C ON B.id_Curso = C.id_Curso INNER JOIN[dbo].[detalleMatricula] D ON A.id_DetalleMatricula = D.id_DetalleMatricula INNER JOIN[dbo].[matricula] E ON D.id_RegistroMatricula = E.id_RegistroMatricula WHERE E.id_Estudiante = '" + identidadEstudiante + "' AND C.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'");
+
+                    }
+                }
+                else
+                {
+                    dgvNotas.DataSource = "";
+                }
             }
-            else {
-                dgvNotas.DataSource = "";
+            catch
+            {
+                dgvNotas.DataSource = null; 
             }
+
         }
 
         private void panelPantallaSeleccion_Paint(object sender, PaintEventArgs e)
@@ -284,6 +297,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT A.[nombreCurso] FROM [dbo].[cursos] A INNER JOIN[dbo].[detalleMatricula] B ON A.id_Curso = B.id_Curso INNER JOIN[dbo].[matricula] C ON B.id_RegistroMatricula = C.id_RegistroMatricula WHERE C.id_Estudiante = '" + identidadEstudiante + "'");
                 cmbCurso.SelectedIndex = 0;
                 btnDGVNExt.Visible = false;
+                btnAtrasMenu.Visible = false;
             }
             else
             {

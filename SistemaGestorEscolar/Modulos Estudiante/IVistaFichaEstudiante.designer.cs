@@ -30,19 +30,28 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelPantallaSeleccion = new System.Windows.Forms.Panel();
+            this.btnAtrasMenu = new AltoControls.AltoButton();
+            this.btnDGVNExt = new AltoControls.AltoButton();
             this.panelDatosGenerales = new System.Windows.Forms.Panel();
+            this.btnSiguienteMain = new AltoControls.AltoButton();
+            this.btnAtrasMain = new AltoControls.AltoButton();
             this.panelVistaEncargardos = new System.Windows.Forms.Panel();
+            this.btnSIguienteEnc = new AltoControls.AltoButton();
+            this.btnAtrasEnc = new AltoControls.AltoButton();
             this.panelHistorialMedico = new System.Windows.Forms.Panel();
+            this.btnAtras = new AltoControls.AltoButton();
+            this.btnSiguienteParaNotas = new AltoControls.AltoButton();
             this.panelNotas = new System.Windows.Forms.Panel();
+            this.btnAtrasNotas = new AltoControls.AltoButton();
             this.cmbCurso = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.lblIdentidadNotas = new System.Windows.Forms.Label();
@@ -77,15 +86,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBusquedaEstado = new System.Windows.Forms.DataGridView();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAtrasNotas = new AltoControls.AltoButton();
-            this.btnSiguienteParaNotas = new AltoControls.AltoButton();
-            this.btnAtras = new AltoControls.AltoButton();
-            this.btnAtrasEnc = new AltoControls.AltoButton();
-            this.btnSIguienteEnc = new AltoControls.AltoButton();
-            this.btnAtrasMain = new AltoControls.AltoButton();
-            this.btnSiguienteMain = new AltoControls.AltoButton();
-            this.btnDGVNExt = new AltoControls.AltoButton();
-            this.btnAtrasMenu = new AltoControls.AltoButton();
             this.panelPantallaSeleccion.SuspendLayout();
             this.panelDatosGenerales.SuspendLayout();
             this.panelVistaEncargardos.SuspendLayout();
@@ -115,6 +115,48 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panelPantallaSeleccion.TabIndex = 0;
             this.panelPantallaSeleccion.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPantallaSeleccion_Paint);
             // 
+            // btnAtrasMenu
+            // 
+            this.btnAtrasMenu.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasMenu.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtrasMenu.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtrasMenu.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAtrasMenu.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasMenu.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasMenu.Location = new System.Drawing.Point(3, 970);
+            this.btnAtrasMenu.Name = "btnAtrasMenu";
+            this.btnAtrasMenu.Radius = 20;
+            this.btnAtrasMenu.Size = new System.Drawing.Size(243, 53);
+            this.btnAtrasMenu.Stroke = true;
+            this.btnAtrasMenu.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAtrasMenu.TabIndex = 103;
+            this.btnAtrasMenu.Text = "ATRAS";
+            this.btnAtrasMenu.Transparency = false;
+            this.btnAtrasMenu.Click += new System.EventHandler(this.btnAtrasMenu_Click);
+            // 
+            // btnDGVNExt
+            // 
+            this.btnDGVNExt.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDGVNExt.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnDGVNExt.BackColor = System.Drawing.Color.Transparent;
+            this.btnDGVNExt.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnDGVNExt.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDGVNExt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnDGVNExt.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnDGVNExt.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnDGVNExt.Location = new System.Drawing.Point(742, 942);
+            this.btnDGVNExt.Name = "btnDGVNExt";
+            this.btnDGVNExt.Radius = 20;
+            this.btnDGVNExt.Size = new System.Drawing.Size(243, 53);
+            this.btnDGVNExt.Stroke = true;
+            this.btnDGVNExt.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnDGVNExt.TabIndex = 102;
+            this.btnDGVNExt.Text = "SIGUIENTE";
+            this.btnDGVNExt.Transparency = false;
+            this.btnDGVNExt.Click += new System.EventHandler(this.btnDGVNExt_Click);
+            // 
             // panelDatosGenerales
             // 
             this.panelDatosGenerales.Controls.Add(this.btnSiguienteMain);
@@ -140,6 +182,48 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panelDatosGenerales.TabIndex = 99;
             this.panelDatosGenerales.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnSiguienteMain
+            // 
+            this.btnSiguienteMain.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteMain.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteMain.BackColor = System.Drawing.Color.Transparent;
+            this.btnSiguienteMain.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSiguienteMain.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSiguienteMain.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteMain.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteMain.Location = new System.Drawing.Point(1335, 955);
+            this.btnSiguienteMain.Name = "btnSiguienteMain";
+            this.btnSiguienteMain.Radius = 20;
+            this.btnSiguienteMain.Size = new System.Drawing.Size(243, 53);
+            this.btnSiguienteMain.Stroke = true;
+            this.btnSiguienteMain.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnSiguienteMain.TabIndex = 95;
+            this.btnSiguienteMain.Text = "SIGUIENTE";
+            this.btnSiguienteMain.Transparency = false;
+            this.btnSiguienteMain.Click += new System.EventHandler(this.altoButton2_Click);
+            // 
+            // btnAtrasMain
+            // 
+            this.btnAtrasMain.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasMain.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasMain.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtrasMain.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtrasMain.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAtrasMain.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasMain.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasMain.Location = new System.Drawing.Point(31, 955);
+            this.btnAtrasMain.Name = "btnAtrasMain";
+            this.btnAtrasMain.Radius = 20;
+            this.btnAtrasMain.Size = new System.Drawing.Size(243, 53);
+            this.btnAtrasMain.Stroke = true;
+            this.btnAtrasMain.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAtrasMain.TabIndex = 94;
+            this.btnAtrasMain.Text = "ATRAS";
+            this.btnAtrasMain.Transparency = false;
+            this.btnAtrasMain.Click += new System.EventHandler(this.btnAtrasMain_Click);
+            // 
             // panelVistaEncargardos
             // 
             this.panelVistaEncargardos.Controls.Add(this.btnSIguienteEnc);
@@ -154,6 +238,48 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panelVistaEncargardos.Name = "panelVistaEncargardos";
             this.panelVistaEncargardos.Size = new System.Drawing.Size(1635, 1035);
             this.panelVistaEncargardos.TabIndex = 34;
+            // 
+            // btnSIguienteEnc
+            // 
+            this.btnSIguienteEnc.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSIguienteEnc.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSIguienteEnc.BackColor = System.Drawing.Color.Transparent;
+            this.btnSIguienteEnc.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSIguienteEnc.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIguienteEnc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSIguienteEnc.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSIguienteEnc.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSIguienteEnc.Location = new System.Drawing.Point(1380, 955);
+            this.btnSIguienteEnc.Name = "btnSIguienteEnc";
+            this.btnSIguienteEnc.Radius = 20;
+            this.btnSIguienteEnc.Size = new System.Drawing.Size(243, 53);
+            this.btnSIguienteEnc.Stroke = true;
+            this.btnSIguienteEnc.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnSIguienteEnc.TabIndex = 94;
+            this.btnSIguienteEnc.Text = "SIGUIENTE";
+            this.btnSIguienteEnc.Transparency = false;
+            this.btnSIguienteEnc.Click += new System.EventHandler(this.altoButton1_Click_1);
+            // 
+            // btnAtrasEnc
+            // 
+            this.btnAtrasEnc.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasEnc.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasEnc.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtrasEnc.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtrasEnc.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasEnc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAtrasEnc.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasEnc.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasEnc.Location = new System.Drawing.Point(12, 955);
+            this.btnAtrasEnc.Name = "btnAtrasEnc";
+            this.btnAtrasEnc.Radius = 20;
+            this.btnAtrasEnc.Size = new System.Drawing.Size(243, 53);
+            this.btnAtrasEnc.Stroke = true;
+            this.btnAtrasEnc.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAtrasEnc.TabIndex = 93;
+            this.btnAtrasEnc.Text = "ATRAS";
+            this.btnAtrasEnc.Transparency = false;
+            this.btnAtrasEnc.Click += new System.EventHandler(this.btnAtrasEnc_Click);
             // 
             // panelHistorialMedico
             // 
@@ -172,6 +298,49 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panelHistorialMedico.Size = new System.Drawing.Size(1635, 1035);
             this.panelHistorialMedico.TabIndex = 32;
             // 
+            // btnAtras
+            // 
+            this.btnAtras.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtras.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtras.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtras.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAtras.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtras.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtras.Location = new System.Drawing.Point(25, 970);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Radius = 20;
+            this.btnAtras.Size = new System.Drawing.Size(243, 53);
+            this.btnAtras.Stroke = true;
+            this.btnAtras.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAtras.TabIndex = 92;
+            this.btnAtras.Text = "ATRAS";
+            this.btnAtras.Transparency = false;
+            this.btnAtras.Click += new System.EventHandler(this.altoButton1_Click);
+            // 
+            // btnSiguienteParaNotas
+            // 
+            this.btnSiguienteParaNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteParaNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteParaNotas.BackColor = System.Drawing.Color.Transparent;
+            this.btnSiguienteParaNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSiguienteParaNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteParaNotas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSiguienteParaNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteParaNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteParaNotas.Location = new System.Drawing.Point(1371, 970);
+            this.btnSiguienteParaNotas.Name = "btnSiguienteParaNotas";
+            this.btnSiguienteParaNotas.Radius = 20;
+            this.btnSiguienteParaNotas.Size = new System.Drawing.Size(243, 53);
+            this.btnSiguienteParaNotas.Stroke = true;
+            this.btnSiguienteParaNotas.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnSiguienteParaNotas.TabIndex = 91;
+            this.btnSiguienteParaNotas.Text = "SIGUIENTE";
+            this.btnSiguienteParaNotas.Transparency = false;
+            this.btnSiguienteParaNotas.Visible = false;
+            this.btnSiguienteParaNotas.Click += new System.EventHandler(this.btnSiguienteParaNotas_Click);
+            // 
             // panelNotas
             // 
             this.panelNotas.Controls.Add(this.btnAtrasNotas);
@@ -181,12 +350,33 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panelNotas.Controls.Add(this.lblNombreNotas);
             this.panelNotas.Controls.Add(this.label16);
             this.panelNotas.Controls.Add(this.dgvNotas);
-            this.panelNotas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNotas.Location = new System.Drawing.Point(0, 0);
+            this.panelNotas.Location = new System.Drawing.Point(1607, 0);
             this.panelNotas.Name = "panelNotas";
-            this.panelNotas.Size = new System.Drawing.Size(1635, 1035);
+            this.panelNotas.Size = new System.Drawing.Size(28, 347);
             this.panelNotas.TabIndex = 40;
+            this.panelNotas.Visible = false;
             this.panelNotas.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNotas_Paint);
+            // 
+            // btnAtrasNotas
+            // 
+            this.btnAtrasNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAtrasNotas.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtrasNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAtrasNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasNotas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAtrasNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAtrasNotas.Location = new System.Drawing.Point(718, 942);
+            this.btnAtrasNotas.Name = "btnAtrasNotas";
+            this.btnAtrasNotas.Radius = 20;
+            this.btnAtrasNotas.Size = new System.Drawing.Size(243, 53);
+            this.btnAtrasNotas.Stroke = true;
+            this.btnAtrasNotas.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAtrasNotas.TabIndex = 90;
+            this.btnAtrasNotas.Text = "ATRAS";
+            this.btnAtrasNotas.Transparency = false;
+            this.btnAtrasNotas.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // cmbCurso
             // 
@@ -242,23 +432,23 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // dgvNotas
             // 
             this.dgvNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNotas.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNotas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNotas.Location = new System.Drawing.Point(38, 219);
             this.dgvNotas.Name = "dgvNotas";
             this.dgvNotas.ReadOnly = true;
@@ -319,23 +509,23 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // dgvHistorialMedico
             // 
             this.dgvHistorialMedico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHistorialMedico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHistorialMedico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHistorialMedico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistorialMedico.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistorialMedico.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHistorialMedico.Location = new System.Drawing.Point(38, 219);
             this.dgvHistorialMedico.Name = "dgvHistorialMedico";
             this.dgvHistorialMedico.ReadOnly = true;
@@ -375,23 +565,23 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // dgvEncargados
             // 
             this.dgvEncargados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEncargados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEncargados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEncargados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEncargados.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEncargados.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEncargados.Location = new System.Drawing.Point(42, 185);
             this.dgvEncargados.Name = "dgvEncargados";
             this.dgvEncargados.ReadOnly = true;
@@ -569,26 +759,26 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dgvBusquedaEstado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBusquedaEstado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBusquedaEstado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusquedaEstado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusquedaEstado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBusquedaEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusquedaEstado.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBusquedaEstado.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusquedaEstado.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBusquedaEstado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvBusquedaEstado.Location = new System.Drawing.Point(112, 206);
             this.dgvBusquedaEstado.MultiSelect = false;
@@ -603,195 +793,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // errorIdentidad
             // 
             this.errorIdentidad.ContainerControl = this;
-            // 
-            // btnAtrasNotas
-            // 
-            this.btnAtrasNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasNotas.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtrasNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAtrasNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrasNotas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAtrasNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasNotas.Location = new System.Drawing.Point(718, 942);
-            this.btnAtrasNotas.Name = "btnAtrasNotas";
-            this.btnAtrasNotas.Radius = 20;
-            this.btnAtrasNotas.Size = new System.Drawing.Size(243, 53);
-            this.btnAtrasNotas.Stroke = true;
-            this.btnAtrasNotas.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAtrasNotas.TabIndex = 90;
-            this.btnAtrasNotas.Text = "ATRAS";
-            this.btnAtrasNotas.Transparency = false;
-            this.btnAtrasNotas.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // btnSiguienteParaNotas
-            // 
-            this.btnSiguienteParaNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteParaNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteParaNotas.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguienteParaNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSiguienteParaNotas.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguienteParaNotas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSiguienteParaNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteParaNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteParaNotas.Location = new System.Drawing.Point(1371, 970);
-            this.btnSiguienteParaNotas.Name = "btnSiguienteParaNotas";
-            this.btnSiguienteParaNotas.Radius = 20;
-            this.btnSiguienteParaNotas.Size = new System.Drawing.Size(243, 53);
-            this.btnSiguienteParaNotas.Stroke = true;
-            this.btnSiguienteParaNotas.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSiguienteParaNotas.TabIndex = 91;
-            this.btnSiguienteParaNotas.Text = "SIGUIENTE";
-            this.btnSiguienteParaNotas.Transparency = false;
-            this.btnSiguienteParaNotas.Click += new System.EventHandler(this.btnSiguienteParaNotas_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtras.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtras.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtras.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAtras.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAtras.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtras.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtras.Location = new System.Drawing.Point(25, 970);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Radius = 20;
-            this.btnAtras.Size = new System.Drawing.Size(243, 53);
-            this.btnAtras.Stroke = true;
-            this.btnAtras.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAtras.TabIndex = 92;
-            this.btnAtras.Text = "ATRAS";
-            this.btnAtras.Transparency = false;
-            this.btnAtras.Click += new System.EventHandler(this.altoButton1_Click);
-            // 
-            // btnAtrasEnc
-            // 
-            this.btnAtrasEnc.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasEnc.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasEnc.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtrasEnc.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAtrasEnc.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrasEnc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAtrasEnc.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasEnc.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasEnc.Location = new System.Drawing.Point(12, 955);
-            this.btnAtrasEnc.Name = "btnAtrasEnc";
-            this.btnAtrasEnc.Radius = 20;
-            this.btnAtrasEnc.Size = new System.Drawing.Size(243, 53);
-            this.btnAtrasEnc.Stroke = true;
-            this.btnAtrasEnc.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAtrasEnc.TabIndex = 93;
-            this.btnAtrasEnc.Text = "ATRAS";
-            this.btnAtrasEnc.Transparency = false;
-            this.btnAtrasEnc.Click += new System.EventHandler(this.btnAtrasEnc_Click);
-            // 
-            // btnSIguienteEnc
-            // 
-            this.btnSIguienteEnc.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSIguienteEnc.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSIguienteEnc.BackColor = System.Drawing.Color.Transparent;
-            this.btnSIguienteEnc.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSIguienteEnc.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSIguienteEnc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSIguienteEnc.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSIguienteEnc.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSIguienteEnc.Location = new System.Drawing.Point(1380, 955);
-            this.btnSIguienteEnc.Name = "btnSIguienteEnc";
-            this.btnSIguienteEnc.Radius = 20;
-            this.btnSIguienteEnc.Size = new System.Drawing.Size(243, 53);
-            this.btnSIguienteEnc.Stroke = true;
-            this.btnSIguienteEnc.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSIguienteEnc.TabIndex = 94;
-            this.btnSIguienteEnc.Text = "SIGUIENTE";
-            this.btnSIguienteEnc.Transparency = false;
-            this.btnSIguienteEnc.Click += new System.EventHandler(this.altoButton1_Click_1);
-            // 
-            // btnAtrasMain
-            // 
-            this.btnAtrasMain.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasMain.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasMain.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtrasMain.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAtrasMain.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrasMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAtrasMain.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasMain.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasMain.Location = new System.Drawing.Point(31, 955);
-            this.btnAtrasMain.Name = "btnAtrasMain";
-            this.btnAtrasMain.Radius = 20;
-            this.btnAtrasMain.Size = new System.Drawing.Size(243, 53);
-            this.btnAtrasMain.Stroke = true;
-            this.btnAtrasMain.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAtrasMain.TabIndex = 94;
-            this.btnAtrasMain.Text = "ATRAS";
-            this.btnAtrasMain.Transparency = false;
-            this.btnAtrasMain.Click += new System.EventHandler(this.btnAtrasMain_Click);
-            // 
-            // btnSiguienteMain
-            // 
-            this.btnSiguienteMain.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteMain.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteMain.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguienteMain.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSiguienteMain.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguienteMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSiguienteMain.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteMain.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteMain.Location = new System.Drawing.Point(1335, 955);
-            this.btnSiguienteMain.Name = "btnSiguienteMain";
-            this.btnSiguienteMain.Radius = 20;
-            this.btnSiguienteMain.Size = new System.Drawing.Size(243, 53);
-            this.btnSiguienteMain.Stroke = true;
-            this.btnSiguienteMain.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSiguienteMain.TabIndex = 95;
-            this.btnSiguienteMain.Text = "SIGUIENTE";
-            this.btnSiguienteMain.Transparency = false;
-            this.btnSiguienteMain.Click += new System.EventHandler(this.altoButton2_Click);
-            // 
-            // btnDGVNExt
-            // 
-            this.btnDGVNExt.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDGVNExt.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnDGVNExt.BackColor = System.Drawing.Color.Transparent;
-            this.btnDGVNExt.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnDGVNExt.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDGVNExt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnDGVNExt.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnDGVNExt.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnDGVNExt.Location = new System.Drawing.Point(742, 942);
-            this.btnDGVNExt.Name = "btnDGVNExt";
-            this.btnDGVNExt.Radius = 20;
-            this.btnDGVNExt.Size = new System.Drawing.Size(243, 53);
-            this.btnDGVNExt.Stroke = true;
-            this.btnDGVNExt.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnDGVNExt.TabIndex = 102;
-            this.btnDGVNExt.Text = "SIGUIENTE";
-            this.btnDGVNExt.Transparency = false;
-            this.btnDGVNExt.Click += new System.EventHandler(this.btnDGVNExt_Click);
-            // 
-            // btnAtrasMenu
-            // 
-            this.btnAtrasMenu.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasMenu.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAtrasMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtrasMenu.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAtrasMenu.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtrasMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAtrasMenu.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasMenu.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAtrasMenu.Location = new System.Drawing.Point(3, 970);
-            this.btnAtrasMenu.Name = "btnAtrasMenu";
-            this.btnAtrasMenu.Radius = 20;
-            this.btnAtrasMenu.Size = new System.Drawing.Size(243, 53);
-            this.btnAtrasMenu.Stroke = true;
-            this.btnAtrasMenu.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAtrasMenu.TabIndex = 103;
-            this.btnAtrasMenu.Text = "ATRAS";
-            this.btnAtrasMenu.Transparency = false;
-            this.btnAtrasMenu.Click += new System.EventHandler(this.btnAtrasMenu_Click);
             // 
             // IVistaFichaEstudiante
             // 
