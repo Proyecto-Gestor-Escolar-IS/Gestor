@@ -21,7 +21,7 @@ namespace SistemaGestorEscolar
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-7MB4NES;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-IFG9AL0\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -561,7 +561,7 @@ namespace SistemaGestorEscolar
             databaseIntermediary.Close();
         }
 
-        public bool PARegistrarMatricula(string identidadEmpleado, string identidadEncargado, string identidadEstudiante, int idCurso, int idSeccion, float totalMatricula, int tipoMatricula, int mesesPago, int estado, int codigoOperacion)
+        public bool PARegistrarMatricula(string identidadEmpleado, string identidadEncargado, string identidadEstudiante, int idCurso, int idSeccion, float totalMatricula, int tipoMatricula, int mesesPago, int estado, int codigoOperacion, Image img)
         {
             try
             {
@@ -579,6 +579,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@mesesPago", mesesPago);
                 comando.Parameters.AddWithValue("@estado", estado);
                 comando.Parameters.AddWithValue("@codigoOperacion", codigoOperacion);
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(img));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)

@@ -190,7 +190,7 @@ GO
 
 
 /*PROCEDIMIENTOS PARA INSERTAR EN MATRICULA Y DETALLE MATRICULA*/
-ALTER PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int, @imagen as image)
+CREATE PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int, @imagen as image)
 AS BEGIN
 	
 	DECLARE @idMatricula as int, @ultimoDetalleMatricula as int;
