@@ -166,6 +166,12 @@
     <Compile Include="MessageBox Personalizados\frmMostrarImagenEvidencia.Designer.cs">
       <DependentUpon>frmMostrarImagenEvidencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxEvaluacionCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox Personalizados\IMessageBoxEvaluacionCurso.Designer.cs">
+      <DependentUpon>IMessageBoxEvaluacionCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageBox Personalizados\IMessageBoxSiNo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IRegistroPago.resx">
       <DependentUpon>IRegistroPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxEvaluacionCurso.resx">
+      <DependentUpon>IMessageBoxEvaluacionCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageBox Personalizados\IMessageBoxSiNo.resx">
       <DependentUpon>IMessageBoxSiNo.cs</DependentUpon>
