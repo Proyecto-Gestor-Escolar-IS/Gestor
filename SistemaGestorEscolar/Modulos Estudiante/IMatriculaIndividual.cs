@@ -1863,6 +1863,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void btnVerImagenR_Click(object sender, EventArgs e)
         {
             frmMostrarImagenEvidencia frmImagen = new frmMostrarImagenEvidencia();
+            frmImagen.Text = "Boleta de calificaciones";
             if (image != null)
             {
                 frmImagen.pictureBox1.Image = image;
@@ -1889,6 +1890,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void btnVerImagenPI_Click(object sender, EventArgs e)
         {
             frmMostrarImagenEvidencia frmImagen = new frmMostrarImagenEvidencia();
+            frmImagen.Text = "Boleta de calificaciones";
             if (image != null)
             {
                 frmImagen.pictureBox1.Image = image;
