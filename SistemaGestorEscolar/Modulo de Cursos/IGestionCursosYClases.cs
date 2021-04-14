@@ -340,7 +340,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             {
                 if (dbConn.obtenerVariableString("SELECT nombreCurso FROM cursos WHERE nombreCurso = '" + txtNombreCursoIngresar.Text + "'") == null)
                 {
-                    if (utilidades.isNumeric(txtPrecioMensualAgregar.Text))
+                    if (double.Parse(txtPrecioMensualAgregar.Text) > 0)
                     {
 
                         if ((radioTipoFloat.Checked == true) || (radioTipoChar.Checked == true) || (radioSinEvaluacion.Checked == true))
@@ -348,8 +348,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                             if (dgvClasesSelected.RowCount > 0)
                             {
-                                if (double.Parse(txtPrecioMensualAgregar.Text) > 0)
-                                {
                                     if (tipoCalificacion == 3)
                                     {
                                         msgEva.ShowDialog();
@@ -404,16 +402,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
                                     }
                                     
-
-                                }
-                                else 
-                                {
-                                    messageError.lblError.Text = "EL PRECIO ES INCORRECTO";
-                                    messageError.ShowDialog();
-                                    txtPrecioMensualAgregar.Clear();
-                                }
-
-                                    
                             }
                             else
                             {
@@ -432,25 +420,18 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                     {
                         messageError.lblError.Text = "INGRESE UN PRECIO CORRECTO";
                         messageError.ShowDialog();
-                        txtPrecioMensualAgregar.Clear();
                     }
                 }
                 else
                 {
                     messageError.lblError.Text = "ESTE CURSO YA EXISTE";
                     messageError.ShowDialog();
-                    txtNombreCursoIngresar.Clear();
                 }
-
-
             }
             else {
                 messageError.lblError.Text = "ESCRIBA EL NOMBRE DEL CURSO";
                 messageError.ShowDialog();
-
             }
-
-
 
         }
 
@@ -502,6 +483,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             dgvClasesSelected.DataSource = null;
             idClaseAgregarRegistroPeque = 0;
             nombreClaseRegistroPeque = "";
+
         }
 
         private void btnEliminarClaseSeleccionada_Click(object sender, EventArgs e)
@@ -981,7 +963,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void btnLimpiarPrecioCurso_Click(object sender, EventArgs e)
         {
-            txtPrecioCurso.Clear();
+            cmbCursosExistentes.SelectedIndex = 0;
         }
 
         private void btnLimpiarRegistroCurso_Click(object sender, EventArgs e)
@@ -1003,6 +985,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
 
         private void btnAtrasTodo_Click(object sender, EventArgs e)
         {
+            txtCursoSeleccionadoTodos.Clear();
+            txtNombreCursoTodos.Clear();
+            idCursoCambiarEstado = 0;
             grpCursos.Visible = false;
             cmbCursosExistentes.Items.Clear();
             dbConn.llenarComboBoxValorInicial(cmbCursosExistentes, "SELECT nombreCurso FROM cursos WHERE estadoCurso = 1");
@@ -1213,6 +1198,31 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 messageError.lblError.Text = "SELECCIONE UNA CLASE";
                 messageError.ShowDialog();
             }
+        }
+
+        private void dgvClasesRegistradas_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+
+        }
+
+        private void dgvClasesDisponiblesActualizar_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void dgvClasesExistentesActualizar_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void dgvClasesDisponibles_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void dgvClasesSelected_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
         }
     }
 }
