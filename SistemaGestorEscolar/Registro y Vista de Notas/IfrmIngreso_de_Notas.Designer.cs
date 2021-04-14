@@ -84,12 +84,12 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.abRegresar1 = new AltoControls.AltoButton();
             this.abAgregarNotas = new AltoControls.AltoButton();
             this.abLimpiar = new AltoControls.AltoButton();
+            this.abContinuar = new AltoControls.AltoButton();
             this.abRegresar2 = new AltoControls.AltoButton();
             this.abSiguiente = new AltoControls.AltoButton();
             this.abCuadroNotas = new AltoControls.AltoButton();
             this.abRegresar = new AltoControls.AltoButton();
             this.abContinuar2 = new AltoControls.AltoButton();
-            this.abContinuar = new AltoControls.AltoButton();
             this.gpxSeleccionCurso.SuspendLayout();
             this.gpxSeleccionAlumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionAlumno)).BeginInit();
@@ -214,7 +214,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.dgvSeleccionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -306,7 +306,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             // mktNotaD
             // 
-            this.mktNotaD.Location = new System.Drawing.Point(956, 624);
+            this.mktNotaD.Location = new System.Drawing.Point(508, 704);
             this.mktNotaD.Mask = "L";
             this.mktNotaD.Name = "mktNotaD";
             this.mktNotaD.Size = new System.Drawing.Size(83, 33);
@@ -326,7 +326,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             // 
             // mktNotaC
             // 
-            this.mktNotaC.Location = new System.Drawing.Point(508, 704);
+            this.mktNotaC.Location = new System.Drawing.Point(956, 624);
             this.mktNotaC.Mask = "L";
             this.mktNotaC.Name = "mktNotaC";
             this.mktNotaC.Size = new System.Drawing.Size(83, 33);
@@ -631,7 +631,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.dgvCuadroNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 5, 0);
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -717,6 +717,27 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.abLimpiar.Text = "LIMPIAR";
             this.abLimpiar.Transparency = false;
             this.abLimpiar.Click += new System.EventHandler(this.abLimpiar_Click);
+            // 
+            // abContinuar
+            // 
+            this.abContinuar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abContinuar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abContinuar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.abContinuar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abContinuar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abContinuar.ForeColor = System.Drawing.Color.Black;
+            this.abContinuar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abContinuar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abContinuar.Location = new System.Drawing.Point(680, 656);
+            this.abContinuar.Name = "abContinuar";
+            this.abContinuar.Radius = 10;
+            this.abContinuar.Size = new System.Drawing.Size(208, 63);
+            this.abContinuar.Stroke = false;
+            this.abContinuar.StrokeColor = System.Drawing.Color.Gray;
+            this.abContinuar.TabIndex = 5;
+            this.abContinuar.Text = "CONTINUAR";
+            this.abContinuar.Transparency = false;
+            this.abContinuar.Click += new System.EventHandler(this.abContinuar_Click);
             // 
             // abRegresar2
             // 
@@ -823,37 +844,16 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.abContinuar2.Transparency = false;
             this.abContinuar2.Click += new System.EventHandler(this.abContinuar2_Click);
             // 
-            // abContinuar
-            // 
-            this.abContinuar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
-            this.abContinuar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
-            this.abContinuar.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.abContinuar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.abContinuar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abContinuar.ForeColor = System.Drawing.Color.Black;
-            this.abContinuar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
-            this.abContinuar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
-            this.abContinuar.Location = new System.Drawing.Point(680, 656);
-            this.abContinuar.Name = "abContinuar";
-            this.abContinuar.Radius = 10;
-            this.abContinuar.Size = new System.Drawing.Size(208, 63);
-            this.abContinuar.Stroke = false;
-            this.abContinuar.StrokeColor = System.Drawing.Color.Gray;
-            this.abContinuar.TabIndex = 5;
-            this.abContinuar.Text = "CONTINUAR";
-            this.abContinuar.Transparency = false;
-            this.abContinuar.Click += new System.EventHandler(this.abContinuar_Click);
-            // 
             // IfrmIngreso_de_Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.gpxSeleccionAlumno);
             this.Controls.Add(this.gpxSeleccionCurso);
-            this.Controls.Add(this.gpxIngreso_Notas);
             this.Controls.Add(this.gpxCuadroNotas);
+            this.Controls.Add(this.gpxSeleccionAlumno);
+            this.Controls.Add(this.gpxIngreso_Notas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IfrmIngreso_de_Notas";
             this.Text = "IfrmIngreso_de_Notas";
