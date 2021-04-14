@@ -27,6 +27,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         IMessageBoxYesCancel messageQuestion = new IMessageBoxYesCancel();
         clsUtilidades utilidad = new clsUtilidades();
         DataTable encargados = new DataTable();
+        public static Image image;
 
         int Existe = 0;
         string[,] EncargadoMatricula = new string[10,11];
@@ -197,7 +198,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                     mesesDePago = 10;
                                 }
 
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString() , txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString() , txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1, image))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudiante.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -333,7 +334,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
                                     if (dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "') = E.id_DetalleMatricula") != 1) 
                                     {
-                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2))
+                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2, image))
                                         {
                                             dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
                                             message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -703,7 +704,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
 
 
-            if (dbConn.PARegistrarMatricula("000000000000", "000000000000", txtIdentidadEstado.Text, 1, 1, 1, 1, 1, estadoActualizado, 3))
+            if (dbConn.PARegistrarMatricula("000000000000", "000000000000", txtIdentidadEstado.Text, 1, 1, 1, 1, 1, estadoActualizado, 3, image))
             {
                 message.lblCheck.Text = "CAMBIO REGISTRADO";
                 message.ShowDialog();
@@ -1847,6 +1848,60 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                         e.Handled = false;
                 }
             }
+        }
+
+        private void btnImagenAgregarR_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Imagen JPG|*.JPG|Imagen PNG|*.PNG";
+            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                image = Image.FromFile(fileDialog.FileName);
+            }
+        }
+
+        private void btnVerImagenR_Click(object sender, EventArgs e)
+        {
+            frmMostrarImagenEvidencia frmImagen = new frmMostrarImagenEvidencia();
+            frmImagen.Text = "Boleta de calificaciones";
+            if (image != null)
+            {
+                frmImagen.pictureBox1.Image = image;
+            }
+            else
+            {
+                frmImagen.pictureBox1.Image = Properties.Resources.imgComprobantePendiente;
+            }
+            frmImagen.label2.Text = "BOLETA DE CALIFICACIONES INGRESADA";
+            frmImagen.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            frmImagen.Show();
+        }
+
+        private void btnAgregarImagenPI_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Imagen JPG|*.JPG|Imagen PNG|*.PNG";
+            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                image = Image.FromFile(fileDialog.FileName);
+            }
+        }
+
+        private void btnVerImagenPI_Click(object sender, EventArgs e)
+        {
+            frmMostrarImagenEvidencia frmImagen = new frmMostrarImagenEvidencia();
+            frmImagen.Text = "Boleta de calificaciones";
+            if (image != null)
+            {
+                frmImagen.pictureBox1.Image = image;
+            }
+            else
+            {
+                frmImagen.pictureBox1.Image = Properties.Resources.imgComprobantePendiente;
+            }
+            frmImagen.label2.Text = "BOLETA DE CALIFICACIONES INGRESADA ";
+            frmImagen.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            frmImagen.Show();
         }
     }
 

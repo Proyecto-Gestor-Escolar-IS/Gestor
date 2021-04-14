@@ -190,7 +190,7 @@ GO
 
 
 /*PROCEDIMIENTOS PARA INSERTAR EN MATRICULA Y DETALLE MATRICULA*/
-create PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int)
+CREATE PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int, @imagen as image)
 AS BEGIN
 	
 	DECLARE @idMatricula as int, @ultimoDetalleMatricula as int;
@@ -200,14 +200,14 @@ AS BEGIN
 		INSERT INTO matricula VALUES(GETDATE(), @identidadAdministracion, @identidadEncargado, @identidadEstudiante)
 		SET @idMatricula = (SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = @identidadEstudiante)
 		
-		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado)
+		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado, @imagen)
 	END
 	ELSE IF @codigoOperacion = 2
 	BEGIN
 		
 		SET @idMatricula = (SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = @identidadEstudiante)
 
-		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado)
+		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado, @imagen)
 	END
 
 	ELSE IF @codigoOperacion = 3

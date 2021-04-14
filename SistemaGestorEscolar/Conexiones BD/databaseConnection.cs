@@ -566,7 +566,7 @@ namespace SistemaGestorEscolar
             databaseIntermediary.Close();
         }
 
-        public bool PARegistrarMatricula(string identidadEmpleado, string identidadEncargado, string identidadEstudiante, int idCurso, int idSeccion, float totalMatricula, int tipoMatricula, int mesesPago, int estado, int codigoOperacion)
+        public bool PARegistrarMatricula(string identidadEmpleado, string identidadEncargado, string identidadEstudiante, int idCurso, int idSeccion, float totalMatricula, int tipoMatricula, int mesesPago, int estado, int codigoOperacion, Image img)
         {
             try
             {
@@ -584,6 +584,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@mesesPago", mesesPago);
                 comando.Parameters.AddWithValue("@estado", estado);
                 comando.Parameters.AddWithValue("@codigoOperacion", codigoOperacion);
+                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(img));
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)

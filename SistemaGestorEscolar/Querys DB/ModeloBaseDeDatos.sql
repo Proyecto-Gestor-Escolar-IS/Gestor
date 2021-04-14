@@ -159,6 +159,7 @@ totalMatricula money null,
 tipoMatricula varchar(15) null,
 mesesParaPagar int not null,
 estado int not null,
+BoletaDeCalificaciones image null,
 
 FOREIGN KEY (id_RegistroMatricula) REFERENCES matricula(id_RegistroMatricula),
 FOREIGN KEY (id_Curso) REFERENCES cursos(id_Curso),

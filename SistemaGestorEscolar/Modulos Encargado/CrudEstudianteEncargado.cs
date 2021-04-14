@@ -222,8 +222,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 else
                 {
 
-                    if (txtprimerNombre.Text == "" || txtsegundoNombre.Text == "" || txtprimerApellido.Text == "" || txtsegundoApellido.Text == "" ||
-                                       txtCorreoElectronico.Text == "" || txtprimerTelefono.Text == "" || txtsegundoTelefono.Text == "" || txtDireccion.Text == "")
+                    if (txtprimerNombre.Text == "" || txtprimerApellido.Text == "" || txtCorreoElectronico.Text == "" || txtprimerTelefono.Text == "" || txtsegundoTelefono.Text == "" || txtDireccion.Text == "")
                     {
                    
                         messageError.lblError.Text = "LLENE LOS CAMPOS SOLICITADOS";
