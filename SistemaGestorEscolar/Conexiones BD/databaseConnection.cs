@@ -21,7 +21,7 @@ namespace SistemaGestorEscolar
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=HACKNEL;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-IFG9AL0\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -599,7 +599,7 @@ namespace SistemaGestorEscolar
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "PARegistroMatricula";
                 comando.CommandType = CommandType.StoredProcedure;
-
+                           
                 comando.Parameters.AddWithValue("@identidadAdministracion", identidadEmpleado);
                 comando.Parameters.AddWithValue("@identidadEncargado", identidadEncargado);
                 comando.Parameters.AddWithValue("@identidadEstudiante", identidadEstudiante);
@@ -610,7 +610,18 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@mesesPago", mesesPago);
                 comando.Parameters.AddWithValue("@estado", estado);
                 comando.Parameters.AddWithValue("@codigoOperacion", codigoOperacion);
-                comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(img));
+                if (img == null)
+                {
+                    SqlParameter photoParam = new SqlParameter("@imagen", SqlDbType.Image);
+                    photoParam.Value = DBNull.Value;
+                    comando.Parameters.Add(photoParam);
+                }
+                else
+                {
+                    comando.Parameters.AddWithValue("@imagen", utilidades.imagenAByte(img));
+                }
+
+
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
