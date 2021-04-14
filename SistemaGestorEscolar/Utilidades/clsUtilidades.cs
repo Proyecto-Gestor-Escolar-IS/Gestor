@@ -117,7 +117,8 @@ namespace SistemaGestorEscolar
             try
             {
                 DateTime dt;
-                if(DateTime.TryParseExact(fecha, "dd/MM/yyyy", CultureInfo.GetCultureInfo("es-HN"), DateTimeStyles.None, out dt))
+                if(DateTime.TryParseExact(fecha, "dd/MM/yyyy", CultureInfo.GetCultureInfo("es-HN"), DateTimeStyles.None, out dt) ||
+                    DateTime.TryParseExact(fecha, "dd-MM-yyyy", CultureInfo.GetCultureInfo("es-HN"), DateTimeStyles.None, out dt))
                 {
                     return true;
                 }
