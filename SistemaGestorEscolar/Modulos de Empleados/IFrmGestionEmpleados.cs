@@ -70,7 +70,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
         {
             pnlSelector.Hide();
             grpRegistroEmpleado.Show();
-            identidad = "0";
+            identidad = null;
             utilidades.limpiarTextBox(grpRegistroEmpleado);
             cmbCargosSec.Items.Clear();
             dbConn.llenarComboBoxValorInicial(cmbCargosSec, "SELECT descripcionCargo FROM cargos WHERE descripcionCargo <> 'Super Usuario'");
@@ -217,7 +217,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             }
             else
             {
-                boxError.lblError.Location = new Point(118, 68);
+                boxError.lblError.Location = new Point(130, 68);
                 boxError.lblError.Text = "SELECCIONE UNA CELDA\nPARA CONTINUAR";
                 boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 boxError.ShowDialog();
@@ -230,7 +230,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             
             if(dgvEmpleados.CurrentRow is null)
             {
-                boxError.lblError.Location = new Point(118, 68);
+                boxError.lblError.Location = new Point(130, 68);
                 boxError.lblError.Text = "SELECCIONE UNA CELDA\nPARA CONTINUAR";
                 boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 boxError.ShowDialog();
@@ -351,7 +351,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                         boxError.lblError.Text = "ESTA PERSONA \n\rYA TIENE ESTE CARGO\n\r REGISTRADO";
                         boxError.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                        boxError.lblError.Location = new Point(125, 60);
+                        boxError.lblError.Location = new Point(135, 60);
                         boxError.ShowDialog();
                     }
                 }
@@ -365,7 +365,8 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             string txtNum = txtActTelef.Text;
             if (txtIdentid.Trim() != string.Empty && txtActNombre1.Text != string.Empty && txtActApellido1.Text != string.Empty && txtNum != string.Empty &&
                 txtActMail.Text != string.Empty && txtActContra.Text != string.Empty && txtActConfContra.Text != string.Empty && txtActFechaNac.Text != string.Empty &&
-                txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8 && cmbActCargo.Text != string.Empty/* && cmbActCargo.Text != "<SELECCIONE>"*/)
+                txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8 && cmbActCargo.Text != string.Empty &&
+                !txtActNombre1.Text.Any(char.IsDigit) && !txtActNombre2.Text.Any(char.IsDigit) && !txtActApellido1.Text.Any(char.IsDigit) && !txtActApellido2.Text.Any(char.IsDigit)/* && cmbActCargo.Text != "<SELECCIONE>"*/)
             {
                 if (utilidades.isDate(txtActFechaNac.Text))
                 {
@@ -376,7 +377,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             if (utilidades.verificarCorreo(txtActMail.Text))
                             {
                                 messageYesNo.lblError.Text = "¿HA REVISADO SUS DATOS \r\nY DESEA CONTINUAR?";
-                                messageYesNo.lblError.Location = new Point(96, 67);
+                                messageYesNo.lblError.Location = new Point(135, 67);
                                 messageYesNo.lblError.TextAlign = ContentAlignment.MiddleCenter;
                                 messageYesNo.ShowDialog();
                                 if (IMessageBoxYesCancel.isCodigoForm)
@@ -388,14 +389,14 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             {
                                 boxError.lblError.Text = "VERIFIQUE CORREO \n\rELECTRÓNICO";
                                 boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                                boxError.lblError.Location = new Point(130, 75);
+                                boxError.lblError.Location = new Point(145, 75);
                                 boxError.ShowDialog();
                             }
                         }
                         else
                         {
                             boxError.lblError.Text = "CONTRASEÑAS NO COINCIDEN";
-                            boxError.lblError.Location = new Point(120, 82);
+                            boxError.lblError.Location = new Point(135, 82);
                             boxError.ShowDialog();
                         }
                         
@@ -409,7 +410,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 else
                 {
                     boxError.lblError.Text = "INGRESE UNA FECHA VALIDA";
-                    boxError.lblError.Location = new Point(120, 82);
+                    boxError.lblError.Location = new Point(135, 82);
                     boxError.ShowDialog();
                 }
                 
@@ -417,7 +418,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             else
             {
                 boxError.lblError.Text = "VERIFIQUE LOS VALORES";
-                boxError.lblError.Location = new Point(130, 82);
+                boxError.lblError.Location = new Point(145, 82);
                 boxError.ShowDialog();
             }
             return false;
@@ -452,7 +453,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                     boxError.lblError.Text = "NO SE PUEDE ELMINAR ESTE CARGO.\n\rESTA PERSONA SOLO TIENE 1 CARGO.\n\r SI DESEA ELIMINAR A UN EMPLEADO\r\nUTILICE LA OPCION INHABILITAR";
                     boxError.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                    boxError.lblError.Location = new Point(95, 45);
+                    boxError.lblError.Location = new Point(125, 45);
                     boxError.ShowDialog();
                     cmbActCargo.Enabled = true;
                 }   
@@ -494,7 +495,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             boxError.lblError.Text = "ESTA PERSONA \n\rYA TIENE ESTE CARGO\n\r REGISTRADO";
                             boxError.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                             boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                            boxError.lblError.Location = new Point(125, 60);
+                            boxError.lblError.Location = new Point(145, 60);
                             boxError.ShowDialog();
                         }
                     }
@@ -504,7 +505,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                     boxError.lblError.Text = "NO PUEDE INGRESAR\n\r ESTE CARGO";
                     boxError.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                    boxError.lblError.Location = new Point(125, 64);
+                    boxError.lblError.Location = new Point(145, 64);
                     boxError.ShowDialog();
                 }
             }
@@ -519,7 +520,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             {
                 messageYesNo.lblError.Text = "ESTO ELIMINARÁ LOS CARGOS\r\n ASOCIADOS A ESTA PERSONA\r\nY PASARÁ A MODO INACTIVO \r\n ¿DESEA CONTINUAR?";
                 messageYesNo.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                messageYesNo.lblError.Location = new Point(94, 40);
+                messageYesNo.lblError.Location = new Point(130, 40);
                 messageYesNo.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 messageYesNo.ShowDialog();
                 if (IMessageBoxYesCancel.isCodigoForm)
@@ -527,7 +528,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                     if(dbConn.ejecutarComandoSQL("DELETE FROM detalleCargos WHERE identidadEmpleado = '" + identidad + "' ") && dbConn.ejecutarComandoSQL("UPDATE datosEmpleados SET estadoEmpleado = 2 WHERE identidadPersona = '"+identidad+"' "))
                     {
                         messageOk.lblCheck.Text = "ELIMINADO CORRECTAMENTE";
-                        messageOk.lblCheck.Location = new Point(120, 83);
+                        messageOk.lblCheck.Location = new Point(125, 83);
                         messageOk.ShowDialog();
                         grpActualizar.Hide();
                         pnldgv.Show();
@@ -601,6 +602,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 if (utilidades.verificarCorreo(txtCorreoRecuperacion.Text))
                 {
                     messageYesNo.lblError.Text = "¿HA REVISADO SUS DATOS \r\nY DESEA CONTINUAR?";
+                    messageYesNo.lblError.Location = new Point(135, 67);
                     messageYesNo.lblError.TextAlign = ContentAlignment.MiddleCenter;
                     messageYesNo.ShowDialog();
 
@@ -627,7 +629,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                         else
                         {
                             boxError.lblError.Text = "CREDENCIALES DE CORREO \r\nELECTRONICO INCORRECTAS";
-                            boxError.lblError.Location = new Point(105, 75);
+                            boxError.lblError.Location = new Point(145, 75);
                             boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
                             boxError.ShowDialog();
                         }
@@ -638,7 +640,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 {
                     boxError.lblError.Text = "VERIFIQUE\n\r CORREO ELECTRÓNICO";
                     boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                    boxError.lblError.Location = new Point(130, 75);
+                    boxError.lblError.Location = new Point(145, 75);
                     boxError.ShowDialog();
                 }
 
@@ -646,7 +648,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             else
             {
                 boxError.lblError.Text = "VERIFIQUE LOS VALORES";
-                boxError.lblError.Location = new Point(130, 82);
+                boxError.lblError.Location = new Point(145, 82);
                 boxError.ShowDialog();
             }
         }
@@ -668,7 +670,8 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             string txtNum = txtTel.Text;
             if (txtIdentid.Trim() != string.Empty && txtNombre1.Text != string.Empty && txtApellido1.Text != string.Empty && txtNum != string.Empty &&
                 txtCorreo.Text != string.Empty && txtContra.Text != string.Empty && txtConfirmContra.Text != string.Empty && txtFechaNa.Text != string.Empty &&
-                txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8 && cmbCargosSec.Text != string.Empty && cmbCargosSec.Text != "<SELECCIONE>")
+                txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8 && cmbCargosSec.Text != string.Empty && cmbCargosSec.Text != "<SELECCIONE>"
+                && !txtNombre1.Text.Any(char.IsDigit) && !txtNombre2.Text.Any(char.IsDigit) && !txtApellido1.Text.Any(char.IsDigit) && !txtApellido2.Text.Any(char.IsDigit))
             {
                 if (utilidades.verificarCorreo(txtCorreo.Text))
                 {
@@ -679,7 +682,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             if (utilidades.isDate(txtFechaNa.Text))
                             {
                                 messageYesNo.lblError.Text = "¿HA REVISADO SUS DATOS \r\nY DESEA CONTINUAR?";
-                                messageYesNo.lblError.Location = new Point(96, 67);
+                                messageYesNo.lblError.Location = new Point(135, 67);
                                 messageYesNo.lblError.TextAlign = ContentAlignment.MiddleCenter;
                                 messageYesNo.ShowDialog();
                                 if (IMessageBoxYesCancel.isCodigoForm)
@@ -698,7 +701,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                                     else
                                     {
                                         boxError.lblError.Text = "YA EXISTE UN REGISTRO\n CON ESTA IDENTIDAD";
-                                        boxError.lblError.Location = new Point(120, 70);
+                                        boxError.lblError.Location = new Point(140, 70);
                                         boxError.ShowDialog();
                                     }
                                 }
@@ -706,7 +709,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                             else
                             {
                                 boxError.lblError.Text = "INGRESE UNA FECHA VALIDA";
-                                boxError.lblError.Location = new Point(120, 82);
+                                boxError.lblError.Location = new Point(140, 82);
                                 boxError.ShowDialog();
                             }
 
@@ -714,7 +717,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                         else
                         {
                             boxError.lblError.Text = "CONTRASEÑAS NO COINCIDEN";
-                            boxError.lblError.Location = new Point(120, 82);
+                            boxError.lblError.Location = new Point(140, 82);
                             boxError.ShowDialog();
                         }
 
@@ -729,7 +732,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
                 {
                     boxError.lblError.Text = "VERIFIQUE CORREO \n\rELECTRÓNICO";
                     boxError.lblError.TextAlign = ContentAlignment.MiddleCenter;
-                    boxError.lblError.Location = new Point(130, 75);
+                    boxError.lblError.Location = new Point(145, 75);
                     boxError.ShowDialog();
                 }
 
@@ -737,7 +740,7 @@ namespace SistemaGestorEscolar.Modulos_de_Empleados
             else
             {
                 boxError.lblError.Text = "VERIFIQUE LOS VALORES";
-                boxError.lblError.Location = new Point(130, 82);
+                boxError.lblError.Location = new Point(145, 82);
                 boxError.ShowDialog();
             }
         }

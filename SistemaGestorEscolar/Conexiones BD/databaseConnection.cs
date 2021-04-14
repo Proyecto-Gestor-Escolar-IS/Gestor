@@ -138,6 +138,32 @@ namespace SistemaGestorEscolar
             }
         }
 
+        //Metodo para llenar MaskedTextBox (se envia el TextBox a llenar) e (instruccion sql)
+        public bool llenarMaskedTextBox(MaskedTextBox text, string instruccion)
+        {
+            try
+            {
+                databaseIntermediary.Open();
+                comando = new SqlCommand(instruccion, databaseIntermediary);
+                lectorVariables = comando.ExecuteReader();
+                if (lectorVariables.Read())
+                {
+                    text.Text = lectorVariables.GetValue(0).ToString();
+                    lectorVariables.Close();
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                lectorVariables.Close();
+                databaseIntermediary.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
         public void llenarComboBoxValorInicial(ComboBox cmb, string instruccion)
         {
             try

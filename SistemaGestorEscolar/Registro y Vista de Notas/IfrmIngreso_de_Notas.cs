@@ -64,8 +64,19 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void IfrmIngreso_de_Notas_Load(object sender, EventArgs e)
         {
-            clsVariablesGlobales.numIdentidad = "1001200100364";
-            dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM cursos c INNER JOIN seccion s ON c.id_Curso = s.id_Curso WHERE id_Docente = '" + clsVariablesGlobales.numIdentidad + "'");//" + clsVariablesGlobales.numIdentidad + "
+            nota1 = 0;
+            nota2 = 0;
+            nota3 = 0;
+            nota4 = 0;
+            notaFinal = 0;
+            notaA = "";
+            notaB = "";
+            notaC = "";
+            notaD = "";
+            notaE = "";
+            cmbClasesCS.Items.Clear();
+            Limpiar();
+            dbConn.llenarComboBox(cmbCursos, "SELECT nombreCurso FROM cursos c INNER JOIN seccion s ON c.id_Curso = s.id_Curso WHERE id_Docente = '"+ clsVariablesGlobales.numIdentidad + "' AND c.tipoCalificacion <> 3");
 
             gpxSeleccionAlumno.Visible = false;
             gpxIngreso_Notas.Visible = false;
@@ -109,8 +120,9 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 if(cmbCursos.Text != null)
                 {
                     cmbSeccion.Items.Clear();
-                    dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                        "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCursos.SelectedItem + "' ");
+                    dbConn.llenarComboBox(cmbSeccion, "SELECT secc.nombreSeccion FROM cursos cur INNER JOIN seccion secc ON cur.id_Curso = secc.id_Curso Where cur.nombreCurso = '"+cmbCursos.SelectedItem.ToString()+"' " +
+                        "AND secc.id_Docente = '"+clsVariablesGlobales.numIdentidad+"' ");
+
                 }
 
             }
@@ -135,7 +147,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
             if (cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
             {
-                message.lblError.Location = new Point(118, 68);
+                message.lblError.Location = new Point(130, 75);
                 message.lblError.Text = "SELECCIONE UN CURSO Y SECCIÓN";
                 message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 message.ShowDialog();
@@ -143,7 +155,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             }
             else if (cmbSeccion.Text != seccionElegida)
             {
-                message.lblError.Location = new Point(118, 68);
+                message.lblError.Location = new Point(130, 75);
                 message.lblError.Text = "SELECCIONE UNA SECCIÓN";
                 message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 message.ShowDialog();
@@ -152,7 +164,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             {
                 if (formaEvaluacion == 3)
                 {
-                    messageWarning.lblError.Location = new Point(118, 68);
+                    messageWarning.lblError.Location = new Point(130, 68);
                     messageWarning.lblError.Text = "EL CURSO ELEGIDO NO TIENE\n UNA FORMA DE EVALUACIÓN";
                     messageWarning.lblError.TextAlign = ContentAlignment.MiddleCenter;
                     messageWarning.ShowDialog();
@@ -186,7 +198,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
             if(dgvSeleccionAlumno.CurrentRow is null)
             {
-                message.lblError.Location = new Point(118, 68);
+                message.lblError.Location = new Point(135, 68);
                 message.lblError.Text = "SELECCIONE UNA CELDA\nPARA CONTINUAR";
                 message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 message.ShowDialog();
@@ -208,7 +220,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             if (identidadA == null || nombre == null)
             {
 
-                message.lblError.Location = new Point(118, 68);
+                message.lblError.Location = new Point(135, 68);
                 message.lblError.Text = "SELECCIONE UNA CELDA\nPARA CONTINUAR";
                 message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 message.ShowDialog();
@@ -235,66 +247,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         //---------------------------Grupbox Ingreso de Notas----------------------------------------
 
-        private void txtIdentidad_TextChanged(object sender, EventArgs e)
-        {
-
-            string idEstudiante;
-            long number = 0;
-
-            try
-            {
-                if (txtIdentidad.Text != string.Empty)
-                {
-                    txtIdentidad.ForeColor = Color.Black;
-                    errorPvIdentidad.Clear();
-                    if (long.TryParse(txtIdentidad.Text, out number))
-                    {
-                        txtIdentidad.ForeColor = Color.Black;
-                        errorPvIdentidad.Clear();
-
-                        if (txtIdentidad.TextLength == 13)
-                        {
-                            txtIdentidad.ForeColor = Color.Green;
-                            errorPvIdentidad.Clear();
-
-                            idEstudiante = dbConn.obtenerVariableString("SELECT id_Registro FROM datosEstudiante WHERE identidadEstudiante = " + txtIdentidad.Text);
-
-                            if (!string.IsNullOrEmpty(idEstudiante))
-                            {
-                                dbConn.llenarTextBox(txtNombreAlumno, "SELECT CONCAT(primerNombre,' ',segundoNombre,' ',primerApellido,' ',segundoApellido) as 'Nombre Estudiante' " +
-                                    "FROM  dbo.datosEstudiante Where identidadEstudiante = " + txtIdentidad.Text);
-                            }
-                            else
-                            {
-                                txtIdentidad.ForeColor = Color.Red;
-                                errorPvIdentidad.SetError(this.txtIdentidad, "El Alumno ya tiene un registro de notas");
-                            }
-                        }
-                        else
-                        {
-                            txtIdentidad.ForeColor = Color.Red;
-                            errorPvIdentidad.SetError(this.txtIdentidad, "No se encontró el alumno especificado");
-                        }
-                    }
-                    else if (txtIdentidad.TextLength > 13 || txtIdentidad.TextLength < 13)
-                    {
-                        txtIdentidad.ForeColor = Color.Red;
-                        errorPvIdentidad.SetError(this.txtIdentidad, "El numero de indentidad ingresado es invalido!");
-                        txtIdentidad.ResetText();
-                        txtNombreAlumno.ResetText();
-                    }
-                }
-                else
-                {
-                    errorPvIdentidad.Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
         private void gpxIngreso_Notas_VisibleChanged(object sender, EventArgs e)
         {
             
@@ -304,25 +256,29 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
             if(formaEvaluacion == 1)
             {
-                txtIdentidad.Text = IDcn;
-                txtIdentidad.ForeColor = Color.Green;
-                txtNombreAlumno.Text = nombreCN;
                 mktNotaA.Visible = false;
                 mktNotaB.Visible = false;
                 mktNotaC.Visible = false;
                 mktNotaD.Visible = false;
                 mktNotaE.Visible = false;
+                txtNota1.Visible = true;
+                txtNota2.Visible = true;
+                txtNota3.Visible = true;
+                txtNota4.Visible = true;
+                txtNotaProm.Visible = true;
             }
-            else if(formaEvaluacion == 2)
+            else
             {
-                txtIdentidad.Text = ID;
-                txtIdentidad.ForeColor = Color.Green; 
-                txtNombreAlumno.Text = NameA;
                 txtNota1.Visible = false;
                 txtNota2.Visible = false;
                 txtNota3.Visible = false;
                 txtNota4.Visible = false;
                 txtNotaProm.Visible = false;
+                mktNotaA.Visible = true;
+                mktNotaB.Visible = true;
+                mktNotaC.Visible = true;
+                mktNotaD.Visible = true;
+                mktNotaE.Visible = true;
             }
             cmbClasesCS.Items.Clear();
             dbConn.llenarComboBox(cmbClasesCS, "SELECT        dbo.clases.nombreClase FROM            dbo.clases INNER JOIN " +
@@ -357,6 +313,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
                     if (Convert.ToInt32(txtNota1.Text) >= 101)
                     {
+                        message.lblError.Location = new Point(145, 68);
                         message.lblError.Text = "INGRESE UNA NOTA VÁLIDA";
                         message.ShowDialog();
                         txtNota1.Text = "0";
@@ -371,7 +328,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 }
                 else
                 {
-                    txtNotaProm.Clear();
+                    txtNotaProm.Text = "0";
                 }
             }
             catch
@@ -389,6 +346,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 {
                     if (Convert.ToInt32(txtNota2.Text) >= 101)
                     {
+                        message.lblError.Location = new Point(145, 68);
                         message.lblError.Text = "INGRESE UNA NOTA VÁLIDA";
                         message.ShowDialog();
                         txtNota2.Text = "0";
@@ -402,7 +360,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 }
                 else
                 {
-                    txtNotaProm.Clear();
+                    txtNotaProm.Text = "0";
                 }
             }
             catch
@@ -419,6 +377,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 {
                     if (Convert.ToInt32(txtNota3.Text) >= 101)
                     {
+                        message.lblError.Location = new Point(145, 68);
                         message.lblError.Text = "INGRESE UNA NOTA VÁLIDA";
                         message.ShowDialog();
                         txtNota3.Text = "0";
@@ -432,7 +391,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 }
                 else
                 {
-                    txtNotaProm.Clear();
+                    txtNotaProm.Text = "0";
                 }
             }
             catch
@@ -449,6 +408,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 {
                     if (Convert.ToInt32(txtNota4.Text) >= 101)
                     {
+                        message.lblError.Location = new Point(145, 68);
                         message.lblError.Text = "INGRESE UNA NOTA VÁLIDA";
                         message.ShowDialog();
                         txtNota4.Text = "0";
@@ -462,7 +422,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 }
                 else
                 {
-                    txtNotaProm.Clear();
+                    txtNotaProm.Text = "0";
                 }
             }
             catch
@@ -553,10 +513,6 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 Id_Clase = dbConn.obtenerVariableEntera("SELECT        dbo.clasesCurso.id_Clase FROM            dbo.clases INNER JOIN dbo.clasesCurso ON dbo.clases.id_Clase = dbo.clasesCurso.id_Clase INNER JOIN" +
                                       " dbo.cursos ON dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso Where dbo.clases.[nombreClase] = '" + cmbClasesCS.SelectedItem.ToString() + "' ");
 
-                Identidad = txtIdentidad.Text;
-                curso = txtCurso.Text;
-                seccion = txtSeccion.Text;
-                nombreAlumno = txtNombreAlumno.Text;
                 if (formaEvaluacion == 1)
                 {
                     if (txtNota1.Text != "0")
@@ -577,7 +533,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
                             if (dbConn.PAModificarNota(id_detalleMatricula2, Id_Clase, nota1, nota2, nota3, nota4, notaFinal, notaA, notaB, notaC, notaD, notaE))
                             {
-                                messageOk.lblCheck.Text = "Se Agregaron correctamente";
+                                message.lblError.Location = new Point(145, 68);
+                                messageOk.lblCheck.Text = "SE AGREGARON CORRECTAMENTE";
                                 messageOk.ShowDialog();
 
                                 id_detalleMatricula2 = 0;
@@ -585,55 +542,69 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                             }
                             else
                             {
-                                message.lblError.Text = "Error al Ingresar las Notas\n";
+                                message.lblError.Location = new Point(145, 68);
+                                message.lblError.Text = "ERROR AL INGRESAR NOTAS";
                                 message.ShowDialog();
                             }
                         }
                         else
                         {
-                            message.lblError.Text = "Ingrese todas las notas\n";
+                            message.lblError.Location = new Point(145, 68);
+                            message.lblError.Text = "INGRESE TODAS LAS NOTAS";
                             message.ShowDialog();
                         }
                     }
                     else
                     {
-                        message.lblError.Text = "Nota 1 debe ser\n diferente de 0";
+                        message.lblError.Location = new Point(145, 68);
+                        message.lblError.Text = "NOTA 1 DEBE SER\n DIFERENTE DE 0";
                         message.ShowDialog();
                     }
                 }
                 else if (formaEvaluacion == 2)
                 {
-
+                    nota1 = 0;
+                    nota2 = 0;
+                    nota3 = 0;
+                    nota4 = 0;
+                    notaFinal = 0;
                     notaA = mktNotaA.Text;
                     notaB = mktNotaB.Text;
                     notaC = mktNotaC.Text;
                     notaD = mktNotaD.Text;
                     notaE = mktNotaE.Text;
 
-                    if (dbConn.PAModificarNota(id_detalleMatricula2, Id_Clase, nota1, nota2, nota3, nota4, notaFinal, notaA, notaB, notaC, notaD, notaE))
+                    if(mktNotaA.Text != string.Empty)
                     {
-                        messageOk.lblCheck.Text = "Se Agregaron correctamente";
-                        messageOk.ShowDialog();
-                        gpxIngreso_Notas.Visible = false;
-                        gpxCuadroNotas.Visible = true;
+                        if (dbConn.PAModificarNota(id_detalleMatricula2, Id_Clase, nota1, nota2, nota3, nota4, notaFinal, notaA, notaB, notaC, notaD, notaE))
+                        {
+                            message.lblError.Location = new Point(145, 68);
+                            messageOk.lblCheck.Text = "SE AGREGARON CORRECTAMENTE";
+                            messageOk.ShowDialog();
 
-                        id_detalleMatricula2 = 0;
+                            id_detalleMatricula2 = 0;
 
+                        }
+                        else
+                        {
+                            message.lblError.Location = new Point(145, 68);
+                            message.lblError.Text = "ERROR AL INGRESAR NOTAS";
+                            message.ShowDialog();
+                        }
                     }
                     else
                     {
-                        message.lblError.Text = "Error al Ingresar las Notas\n";
+                        message.lblError.Location = new Point(145, 68);
+                        message.lblError.Text = "INGRESE\n LA PRIMERA NOTA";
                         message.ShowDialog();
                     }
-
-
-
                 }
 
             }
             else
             {
-                message.lblError.Text = "Debe seleccionar una Clase\n";
+                message.lblError.Location = new Point(145, 68);
+                message.lblError.Text = "DEBE SELECCIONAR UNA CLASE";
                 message.ShowDialog();
             }
 
@@ -641,22 +612,22 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void mktNotaB_TextChanged(object sender, EventArgs e)
         {
-            mktNotaB.Text = mktNotaB.Text.ToUpper();
+            formatoNota(mktNotaB);
         }
 
         private void mktNotaA_TextChanged(object sender, EventArgs e)
         {
-            mktNotaA.Text = mktNotaA.Text.ToUpper();
+            formatoNota(mktNotaA);
         }
 
         private void mktNotaD_TextChanged(object sender, EventArgs e)
         {
-            mktNotaD.Text = mktNotaD.Text.ToUpper();
+            formatoNota(mktNotaD);
         }
 
         private void mktNotaC_TextChanged(object sender, EventArgs e)
         {
-            mktNotaC.Text = mktNotaC.Text.ToUpper();
+            formatoNota(mktNotaC);
         }
 
         private void mktNotaE_TextChanged(object sender, EventArgs e)
@@ -698,13 +669,49 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                 {
                     txtNotaProm.Text = "0";
                 }
-               
-                
             }
             else
             {
+                if (!dbConn.llenarMaskedTextBox(mktNotaA, "SELECT notas.notaA FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '" + txtCurso.Text.Trim() + "' AND sec.nombreSeccion = '" + txtSeccion.Text + "' AND estu.identidadEstudiante = '" + txtIdentidadAE.Text + "' AND cls.nombreClase = '" + cmbClasesCS.Text + "'"))
+                {
+                    mktNotaA.ResetText();
+                }
+                if (!dbConn.llenarMaskedTextBox(mktNotaB, "SELECT notas.notaB FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '" + txtCurso.Text.Trim() + "' AND sec.nombreSeccion = '" + txtSeccion.Text + "' AND estu.identidadEstudiante = '" + txtIdentidadAE.Text + "' AND cls.nombreClase = '" + cmbClasesCS.Text + "'"))
+                {
+                    mktNotaB.ResetText();
+                }
+                if (!dbConn.llenarMaskedTextBox(mktNotaC, "SELECT notas.notaC FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '" + txtCurso.Text.Trim() + "' AND sec.nombreSeccion = '" + txtSeccion.Text + "' AND estu.identidadEstudiante = '" + txtIdentidadAE.Text + "' AND cls.nombreClase = '" + cmbClasesCS.Text + "'"))
+                {
+                    mktNotaC.ResetText();
+                }
+                if (!dbConn.llenarMaskedTextBox(mktNotaD, "SELECT notas.notaD FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '" + txtCurso.Text.Trim() + "' AND sec.nombreSeccion = '" + txtSeccion.Text + "' AND estu.identidadEstudiante = '" + txtIdentidadAE.Text + "' AND cls.nombreClase = '" + cmbClasesCS.Text + "'"))
+                {
+                    mktNotaD.ResetText();
+                }
+                if (!dbConn.llenarMaskedTextBox(mktNotaE, "SELECT notas.notaE FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '" + txtCurso.Text.Trim() + "' AND sec.nombreSeccion = '" + txtSeccion.Text + "' AND estu.identidadEstudiante = '" + txtIdentidadAE.Text + "' AND cls.nombreClase = '" + cmbClasesCS.Text + "'"))
+                {
+                    mktNotaE.ResetText();
+                }
 
             }
+        }
+
+        private void formatoNota(MaskedTextBox msk)
+        {
+            if (msk.Text == "A" || msk.Text == "B" || msk.Text == "C" || msk.Text == "D" || msk.Text == "a" || msk.Text == "b" || msk.Text == "c" || msk.Text == "d")
+            {
+                msk.Text = msk.Text.ToUpper();
+            }
+            else
+            {
+                msk.ResetText();
+            }
+            
+        }
+
+        private void txtIdentidadAE_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void abRegresar2_Click(object sender, EventArgs e)
@@ -719,12 +726,9 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             Limpiar();
             gpxIngreso_Notas.Visible = false;
             gpxSeleccionAlumno.Visible = true;
-            txtIdentidad.Visible = false;
             txtIdentidadAE.Visible = true;
-            txtNombreAlumno.Visible = false;
             txtNombreAE.Visible = true;
             txtIdentidadAE.Clear();
-            txtIdentidad.Clear();
             id_detalleMatricula2 = 0;
             id_detalleMatricula1 = 0;
         }
@@ -779,20 +783,11 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
             if(formaEvaluacion == 1)
             {
-                dbConn.llenarDGV(dgvCuadroNotas, "SELECT estu.identidadEstudiante as 'Identidad del Estudiante', CONCAT(estu.primerNombre,' ', estu.segundoNombre,' ', estu.primerApellido,' ', estu.segundoApellido)as 'Nombre Estudiante', cls.nombreClase as 'Clase', cur.nombreCurso as 'Curso', sec.nombreSeccion as 'Sección', notas.nota1erParcial as 'Nota Primer Parcial', notas.nota2doParcial as 'Segundo Parcial', notas.nota3erParcial as 'Tercer Parcial', notas.nota4toParcial as 'Cuarto Parcial', notas.notaFinal as 'Nota Promedio' FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '"+Herencia_de_Variables.CursoG+"' AND sec.nombreSeccion = '"+Herencia_de_Variables.SeccionG+"'");
+                dbConn.llenarDGV(dgvCuadroNotas, "SELECT estu.identidadEstudiante as 'Identidad', CONCAT(estu.primerNombre,' ', estu.segundoNombre,' ', estu.primerApellido,' ', estu.segundoApellido)as 'Nombre Estudiante', cls.nombreClase as 'Clase', cur.nombreCurso as 'Curso', sec.nombreSeccion as 'Sección', notas.nota1erParcial as 'Primer Parcial', notas.nota2doParcial as 'Segundo Parcial', notas.nota3erParcial as 'Tercer Parcial', notas.nota4toParcial as 'Cuarto Parcial', notas.notaFinal as 'Promedio' FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '"+Herencia_de_Variables.CursoG+"' AND sec.nombreSeccion = '"+Herencia_de_Variables.SeccionG+"'");
             }
             else if(formaEvaluacion == 2)
             {
-                dbConn.llenarDGV(dgvCuadroNotas, "SELECT        dbo.datosEstudiante.identidadEstudiante as 'Identidad del Estudiante', CONCAT(dbo.datosEstudiante.primerNombre,' ', dbo.datosEstudiante.segundoNombre,' ', dbo.datosEstudiante.primerApellido,' ', dbo.datosEstudiante.segundoApellido)as 'Nombre Estudiante', " +
-                    "dbo.clases.nombreClase as 'Clase', dbo.cursos.nombreCurso as 'Curso', dbo.seccion.nombreSeccion as 'Sección', dbo.detalleNotas.notaA as 'Nota Primer Parcial'," +
-                    " dbo.detalleNotas.notaB as 'Segundo Parcial', dbo.detalleNotas.notaC as 'Tercer Parcial', dbo.detalleNotas.notaD as 'Cuarto Parcial'," +
-                    " dbo.detalleNotas.notaE as 'Nota Promedio' FROM          dbo.matricula INNER JOIN " +
-                    "dbo.datosEstudiante ON dbo.matricula.id_Estudiante = dbo.datosEstudiante.identidadEstudiante INNER JOIN " +
-                    "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula INNER JOIN" +
-                    " dbo.detalleNotas INNER JOIN dbo.clasesCurso ON dbo.detalleNotas.id_Clase = dbo.clasesCurso.id_DetalleClase INNER JOIN" +
-                    " dbo.clases ON dbo.clasesCurso.id_Clase = dbo.clases.id_Clase ON dbo.detalleMatricula.id_DetalleMatricula = dbo.detalleNotas.id_DetalleMatricula INNER JOIN " +
-                    "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso AND dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso INNER JOIN" +
-                    " dbo.seccion ON dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where [dbo].[cursos].[tipoCalificacion] = '" + formaEvaluacion + "' and [dbo].[detalleMatricula].[estado] = 1");
+                dbConn.llenarDGV(dgvCuadroNotas, "SELECT estu.identidadEstudiante as 'Identidad', CONCAT(estu.primerNombre,' ', estu.segundoNombre,' ', estu.primerApellido,' ', estu.segundoApellido)as 'Nombre Estudiante', cls.nombreClase as 'Clase', cur.nombreCurso as 'Curso', sec.nombreSeccion as 'Sección', notas.notaA as 'Primer Parcial', notas.notaB as 'Segundo Parcial', notas.notaC as 'Tercer Parcial', notas.notaD as 'Cuarto Parcial', notas.notaE as 'Promedio' FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion WHERE dm.estado = 1 AND cur.nombreCurso = '" + Herencia_de_Variables.CursoG + "' AND sec.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "'");
             }
 
             
@@ -856,21 +851,13 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
             if (formaEvaluacion == 1)
             {
-                dbConn.llenarDGV(dgvCuadroNotas, "SELECT estu.identidadEstudiante as 'Identidad del Estudiante', CONCAT(estu.primerNombre,' ', estu.segundoNombre,' ', estu.primerApellido,' ', estu.segundoApellido)as 'Nombre Estudiante', cls.nombreClase as 'Clase', cur.nombreCurso as 'Curso', sec.nombreSeccion as 'Sección', notas.nota1erParcial as 'Nota Primer Parcial', notas.nota2doParcial as 'Segundo Parcial', notas.nota3erParcial as 'Tercer Parcial', notas.nota4toParcial as 'Cuarto Parcial', notas.notaFinal as 'Nota Promedio' FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion " +
-                    "WHERE dm.estado = 1 AND cur.nombreCurso = '"+Herencia_de_Variables.CursoG+"' AND sec.nombreSeccion = '"+Herencia_de_Variables.SeccionG+"' AND (estu.identidadEstudiante like '" + text + "%' OR estu.primerNombre like '" + text + "%')");
+                dbConn.llenarDGV(dgvCuadroNotas, "SELECT estu.identidadEstudiante as 'Identidad', CONCAT(estu.primerNombre,' ', estu.segundoNombre,' ', estu.primerApellido,' ', estu.segundoApellido)as 'Nombre Estudiante', cls.nombreClase as 'Clase', cur.nombreCurso as 'Curso', sec.nombreSeccion as 'Sección', notas.nota1erParcial as 'Nota Primer Parcial', notas.nota2doParcial as 'Segundo Parcial', notas.nota3erParcial as 'Tercer Parcial', notas.nota4toParcial as 'Cuarto Parcial', notas.notaFinal as 'Promedio' FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion " +
+                    "WHERE dm.estado = 1 AND cur.nombreCurso = '"+Herencia_de_Variables.CursoG+"' AND sec.nombreSeccion = '"+Herencia_de_Variables.SeccionG+"' AND (estu.identidadEstudiante like '" + text + "%' OR estu.primerNombre like '" + text + "%' OR cls.nombreClase like '"+text+"%')");
             }
             else if (formaEvaluacion == 2)
             {
-                dbConn.llenarDGV(dgvCuadroNotas, "SELECT        dbo.datosEstudiante.identidadEstudiante as 'Identidad del Estudiante', CONCAT(dbo.datosEstudiante.primerNombre,' ', dbo.datosEstudiante.segundoNombre,' ', dbo.datosEstudiante.primerApellido,' ', dbo.datosEstudiante.segundoApellido)as 'Nombre Estudiante', " +
-                    "dbo.clases.nombreClase as 'Clase', dbo.cursos.nombreCurso as 'Curso', dbo.seccion.nombreSeccion as 'Sección', dbo.detalleNotas.notaA as 'Nota Primer Parcial'," +
-                    " dbo.detalleNotas.notaB as 'Segundo Parcial', dbo.detalleNotas.notaC as 'Tercer Parcial', dbo.detalleNotas.notaD as 'Cuarto Parcial'," +
-                    " dbo.detalleNotas.notaE as 'Nota Promedio' FROM          dbo.matricula INNER JOIN " +
-                    "dbo.datosEstudiante ON dbo.matricula.id_Estudiante = dbo.datosEstudiante.identidadEstudiante INNER JOIN " +
-                    "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula INNER JOIN" +
-                    " dbo.detalleNotas INNER JOIN dbo.clasesCurso ON dbo.detalleNotas.id_Clase = dbo.clasesCurso.id_DetalleClase INNER JOIN" +
-                    " dbo.clases ON dbo.clasesCurso.id_Clase = dbo.clases.id_Clase ON dbo.detalleMatricula.id_DetalleMatricula = dbo.detalleNotas.id_DetalleMatricula INNER JOIN " +
-                    "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso AND dbo.clasesCurso.id_Curso = dbo.cursos.id_Curso INNER JOIN" +
-                    " dbo.seccion ON dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where (identidadEstudiante like '" + text + "%' OR primerNombre like '" + text + "%') and [dbo].[cursos].[formaEvaluacion] = '" + formaEvaluacion + "' and [dbo].[detalleMatricula].[estado] = 1");
+                dbConn.llenarDGV(dgvCuadroNotas, "SELECT estu.identidadEstudiante as 'Identidad', CONCAT(estu.primerNombre,' ', estu.segundoNombre,' ', estu.primerApellido,' ', estu.segundoApellido)as 'Nombre Estudiante', cls.nombreClase as 'Clase', cur.nombreCurso as 'Curso', sec.nombreSeccion as 'Sección', notas.notaA as 'Primer Parcial', notas.notaB as 'Segundo Parcial', notas.notaC as 'Tercer Parcial', notas.notaD as 'Cuarto Parcial', notas.notaD as 'Promedio' FROM detalleMatricula dm INNER JOIN matricula matr ON dm.id_RegistroMatricula = matr.id_RegistroMatricula INNER JOIN datosEstudiante estu on matr.id_Estudiante = estu.identidadEstudiante INNER JOIN detalleNotas notas ON dm.id_DetalleMatricula = notas.id_DetalleMatricula INNER JOIN clasesCurso cCurs ON notas.id_Clase = cCurs.id_Clase INNER JOIN clases cls ON cCurs.id_Clase = cls.id_Clase INNER JOIN cursos cur ON cCurs.id_Curso = cur.id_Curso INNER JOIN seccion sec On cur.id_Curso = sec.id_Curso AND sec.id_Seccion = dm.id_Seccion " +
+                    "WHERE dm.estado = 1 AND cur.nombreCurso = '" + Herencia_de_Variables.CursoG + "' AND sec.nombreSeccion = '" + Herencia_de_Variables.SeccionG + "' AND (estu.identidadEstudiante like '" + text + "%' OR estu.primerNombre like '" + text + "%' OR cls.nombreClase like '" + text + "%')");
             }
 
         }
@@ -889,44 +876,34 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             {
                 if (IDcn == null || nombreCN == null)
                 {
-                    message.lblError.Location = new Point(118, 68);
+                    message.lblError.Location = new Point(135, 68);
                     message.lblError.Text = "SELECCIONE UNA CELDA\nPARA CONTINUAR";
                     message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                     message.ShowDialog();
                 }
                 else
                 {
-
-                    txtIdentidadAE.Visible = false;
-                    txtIdentidad.Visible = true;
-                    txtNombreAE.Visible = false;
-                    txtNombreAlumno.Visible = true;
                     gpxCuadroNotas.Visible = false;
                     gpxIngreso_Notas.Visible = true;
                     txtIdentidadAE.Clear();
-
+                    txtIdentidadAE.Text = Herencia_de_Variables.identidadG;
                 }
             }
             else if(formaEvaluacion == 2)
             {
                 if (ID == null || NameA == null)
                 {
-                    message.lblError.Location = new Point(118, 68);
+                    message.lblError.Location = new Point(135, 68);
                     message.lblError.Text = "SELECCIONE UNA CELDA\nPARA CONTINUAR";
                     message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                     message.ShowDialog();
                 }
                 else
                 {
-
-                    txtIdentidadAE.Visible = false;
-                    txtIdentidad.Visible = true;
-                    txtNombreAE.Visible = false;
-                    txtNombreAlumno.Visible = true;
                     gpxCuadroNotas.Visible = false;
                     gpxIngreso_Notas.Visible = true;
                     txtIdentidadAE.Clear();
-
+                    txtIdentidadAE.Text = Herencia_de_Variables.identidadG;
                 }
             }
 

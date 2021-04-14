@@ -167,11 +167,19 @@ namespace SistemaGestorEscolar
 
         public byte[] imagenAByte(Image img)
         {
-            using (MemoryStream mStream = new MemoryStream())
+            try
             {
-                img.Save(mStream, img.RawFormat);
-                return mStream.ToArray();
+                using (MemoryStream mStream = new MemoryStream())
+                {
+                    img.Save(mStream, img.RawFormat);
+                    return mStream.ToArray();
+                }
             }
+            catch
+            {
+                return null;
+            }
+            
         }
 
         /*public Image ByteAImagen(byte[] byteArrayIn)
