@@ -525,3 +525,33 @@ CREATE PROCEDURE cambiarEstadoCurso(@idCurso as int, @estado as int)
 AS BEGIN
 	UPDATE cursos SET estadoCurso = @estado WHERE id_Curso = @idCurso
 END
+GO
+
+/*HECTOR */
+CREATE PROCEDURE agregarNuevoEncargado(@Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
+@segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),
+ @direccionTrabajo varchar(MAX), @fechaNacimiento DATE)
+ AS
+BEGIN
+INSERT INTO datosEncargado VALUES(@Numidentidad, @primerNombre, @segundoNombre, @primerApellido, @segundoApellido, @numeroTelefono, @numeroTelefonoAlt,
+	@correoElectronico, @direccionTrabajo, @fechaNacimiento, 1);
+END
+go
+
+/*REPORTES*/
+CREATE PROCEDURE vistaMatriculaCurso(@codigoOperacion as int, @idSeccion as int, @idCurso as int)
+AS BEGIN
+	
+	IF @codigoOperacion = 1
+	BEGIN
+		SELECT B.identidadEstudiante as 'Identidad', CONCAT(B.primerNombre, ' ', B.segundoNombre, ' ', B.primerApellido , ' ', B.segundoApellido) as 'Nombre del Estudiante'
+		FROM datosEstudiante B
+		INNER JOIN matricula A ON A.id_Estudiante = B.identidadEstudiante
+		INNER JOIN detalleMatricula C ON A.id_RegistroMatricula = C.id_RegistroMatricula
+		INNER JOIN cursos D ON D.id_Curso = C.id_Curso 
+		INNER JOIN seccion E ON C.id_Seccion = E.id_Seccion
+		WHERE C.id_Seccion = @idSeccion AND C.id_Curso = @idCurso
+	END
+
+END
+
