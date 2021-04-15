@@ -29,10 +29,10 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGrande = new System.Windows.Forms.Panel();
             this.panelGestionClases = new System.Windows.Forms.Panel();
             this.grpGestionClases = new System.Windows.Forms.GroupBox();
@@ -301,29 +301,30 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             this.dgvClasesRegistradas.AllowUserToAddRows = false;
             this.dgvClasesRegistradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClasesRegistradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClasesRegistradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvClasesRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClasesRegistradas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClasesRegistradas.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvClasesRegistradas.Location = new System.Drawing.Point(57, 110);
             this.dgvClasesRegistradas.Name = "dgvClasesRegistradas";
             this.dgvClasesRegistradas.ReadOnly = true;
             this.dgvClasesRegistradas.Size = new System.Drawing.Size(1426, 397);
             this.dgvClasesRegistradas.TabIndex = 41;
             this.dgvClasesRegistradas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesRegistradas_CellClick_1);
+            this.dgvClasesRegistradas.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvClasesRegistradas_ColumnAdded);
             // 
             // panelRegistroNuevoCurso
             // 
@@ -502,6 +503,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvClasesExistentesActualizar.Size = new System.Drawing.Size(638, 209);
             this.dgvClasesExistentesActualizar.TabIndex = 18;
             this.dgvClasesExistentesActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesExistentesActualizar_CellClick);
+            this.dgvClasesExistentesActualizar.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvClasesExistentesActualizar_ColumnAdded);
             // 
             // dgvClasesDisponiblesActualizar
             // 
@@ -514,6 +516,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvClasesDisponiblesActualizar.Size = new System.Drawing.Size(526, 343);
             this.dgvClasesDisponiblesActualizar.TabIndex = 3;
             this.dgvClasesDisponiblesActualizar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponiblesActualizar_CellClick);
+            this.dgvClasesDisponiblesActualizar.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvClasesDisponiblesActualizar_ColumnAdded);
             // 
             // label11
             // 
@@ -586,6 +589,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvClasesSelected.Size = new System.Drawing.Size(638, 209);
             this.dgvClasesSelected.TabIndex = 18;
             this.dgvClasesSelected.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesSelected_CellClick);
+            this.dgvClasesSelected.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvClasesSelected_ColumnAdded);
             // 
             // dgvClasesDisponibles
             // 
@@ -598,6 +602,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.dgvClasesDisponibles.Size = new System.Drawing.Size(526, 343);
             this.dgvClasesDisponibles.TabIndex = 3;
             this.dgvClasesDisponibles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClasesDisponibles_CellClick);
+            this.dgvClasesDisponibles.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvClasesDisponibles_ColumnAdded);
             // 
             // groupBox1
             // 
@@ -715,23 +720,23 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // 
             this.dgvSecciones.AllowUserToAddRows = false;
             this.dgvSecciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSecciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSecciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvSecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSecciones.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSecciones.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvSecciones.Location = new System.Drawing.Point(131, 126);
             this.dgvSecciones.Name = "dgvSecciones";
             this.dgvSecciones.ReadOnly = true;
@@ -877,7 +882,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(178, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 24);
+            this.label1.Size = new System.Drawing.Size(71, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "Curso";
             // 
@@ -887,7 +892,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(178, 174);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 24);
+            this.label6.Size = new System.Drawing.Size(98, 27);
             this.label6.TabIndex = 17;
             this.label6.Text = "Docente";
             // 
@@ -897,7 +902,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(246, 287);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(217, 24);
+            this.label7.Size = new System.Drawing.Size(232, 27);
             this.label7.TabIndex = 18;
             this.label7.Text = "Nombre de la Seccion";
             // 
@@ -908,7 +913,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbCursos.FormattingEnabled = true;
             this.cmbCursos.Location = new System.Drawing.Point(299, 91);
             this.cmbCursos.Name = "cmbCursos";
-            this.cmbCursos.Size = new System.Drawing.Size(331, 32);
+            this.cmbCursos.Size = new System.Drawing.Size(331, 35);
             this.cmbCursos.TabIndex = 11;
             // 
             // cmbDocentes
@@ -918,7 +923,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbDocentes.FormattingEnabled = true;
             this.cmbDocentes.Location = new System.Drawing.Point(299, 171);
             this.cmbDocentes.Name = "cmbDocentes";
-            this.cmbDocentes.Size = new System.Drawing.Size(435, 32);
+            this.cmbDocentes.Size = new System.Drawing.Size(435, 35);
             this.cmbDocentes.TabIndex = 12;
             this.cmbDocentes.SelectedIndexChanged += new System.EventHandler(this.cmbDocentes_SelectedIndexChanged);
             // 

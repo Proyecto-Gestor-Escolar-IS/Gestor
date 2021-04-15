@@ -59,7 +59,8 @@ namespace SistemaGestorEscolar.Login
         {
             string txtNum = txtTel.Text;
             if (txtIdentid.Trim() != string.Empty && txtNombre1.Text != string.Empty && txtApellido1.Text != string.Empty && txtNum != string.Empty &&
-                txtCorreo.Text != string.Empty && txtContra.Text != string.Empty && txtConfirmContra.Text != string.Empty && txtFechaNa.Text != string.Empty && txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8)
+                txtCorreo.Text != string.Empty && txtContra.Text != string.Empty && txtConfirmContra.Text != string.Empty && txtFechaNa.Text != string.Empty && txtIdentid.Trim().Length == 13 && txtNum.Trim().Length == 8
+                && !txtNombre1.Text.Any(char.IsDigit) && !txtNombre2.Text.Any(char.IsDigit) && !txtApellido1.Text.Any(char.IsDigit) && !txtApellido2.Text.Any(char.IsDigit))
             {
                 if (utilidad.verificarCorreo(txtCorreo.Text))
                 {

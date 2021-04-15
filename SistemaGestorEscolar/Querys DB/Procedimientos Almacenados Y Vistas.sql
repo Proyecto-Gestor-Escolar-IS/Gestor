@@ -1,4 +1,4 @@
-USE StaMariaNazarethDatabaseService
+ï»¿USE StaMariaNazarethDatabaseService
 GO
 
 /*PROCEDIMIENTOS OSCAR MEJIA*/
@@ -206,7 +206,7 @@ GO
 
 
 /*PROCEDIMIENTOS PARA INSERTAR EN MATRICULA Y DETALLE MATRICULA*/
-create PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int)
+CREATE PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int, @imagen as image)
 AS BEGIN
 	
 	DECLARE @idMatricula as int, @ultimoDetalleMatricula as int;
@@ -216,14 +216,14 @@ AS BEGIN
 		INSERT INTO matricula VALUES(GETDATE(), @identidadAdministracion, @identidadEncargado, @identidadEstudiante)
 		SET @idMatricula = (SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = @identidadEstudiante)
 		
-		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado)
+		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado, @imagen)
 	END
 	ELSE IF @codigoOperacion = 2
 	BEGIN
 		
 		SET @idMatricula = (SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = @identidadEstudiante)
 
-		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado)
+		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado, @imagen)
 	END
 
 	ELSE IF @codigoOperacion = 3
@@ -407,7 +407,7 @@ GO
 
 /*YESSY TINOCO*/
 
---------------------------------------------------------- Apertura de Expediente Médico ---------------------------------------------------------------------
+--------------------------------------------------------- Apertura de Expediente Mï¿½dico ---------------------------------------------------------------------
 
 CREATE PROCEDURE abrirExpediente(@id_Estudiante varchar(13), @antecedentesMedicos text)
 AS BEGIN
@@ -415,7 +415,7 @@ AS BEGIN
 		VALUES( @id_Estudiante, GETDATE(), @antecedentesMedicos)
 END
 GO
---------------------------------------------------------- Registro de Visita Médica ---------------------------------------------------------------------
+--------------------------------------------------------- Registro de Visita Mï¿½dica ---------------------------------------------------------------------
 
 CREATE PROCEDURE registroVisitaMedica(@id_expediente int, @id_DoctorEncargado varchar(13), @sintomas text, @posibleEnfermedad text, @medicamentos text)
 AS BEGIN
@@ -430,28 +430,24 @@ GO
 
 --------------------------------------------------------- Registro Notas ---------------------------------------------------------------------
 
-Create Procedure modificarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float null, @nota2doParcial float null, @nota3erParcial float null, @nota4toParcial float null, @notaFinal float null, 
+CREATE PROCEDURE PAOperacionesNotas(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float null, @nota2doParcial float null, @nota3erParcial float null, @nota4toParcial float null, @notaFinal float null, 
 							 @notaA char(1) null, @notaB char(1) null, @notaC char(1) null, @notaD char(1) null, @notaE char(1) null)
-As Begin 
+AS BEGIN
 
-		If exists(select id_DetalleMatricula from detalleNotas Where
-				  (id_DetalleMatricula = @id_DetalleMatricula))
-		Begin		  
-				  update detalleNotas set 
-										  nota1erParcial = @nota1erParcial, nota2doParcial = @nota2doParcial,
-										  nota3erParcial = @nota3erParcial, nota4toParcial = @nota4toParcial,
-										  notaFinal = @notaFinal, notaA = @notaA, notaB = @notaB, notaC = @notaC, 
-										  notaD = @notaD, notaE = @notaE
-					Where id_DetalleMatricula = @id_DetalleMatricula and id_Clase = @id_Clase
-		End
-		
-		else 
-		Begin
-			Insert into detalleNotas values(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, @notaA, @notaB, @notaC, @notaD, @notaE)
-		End
-
-End
-Go
+	IF NOT EXISTS(SELECT id_Clase FROM detalleNotas WHERE id_Clase = @id_Clase AND id_DetalleMatricula = @id_DetalleMatricula)
+	BEGIN
+		INSERT INTO detalleNotas VALUES(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial,
+		@notaFinal, @notaA, @notaB, @notaC, @notaD, @notaE)
+	END
+	ELSE IF EXISTS(SELECT id_DetalleMatricula FROM detalleNotas WHERE id_DetalleMatricula = @id_DetalleMatricula) AND EXISTS(SELECT id_Clase FROM detalleNotas WHERE id_Clase = @id_Clase)
+	BEGIN
+		UPDATE detalleNotas SET nota1erParcial = @nota1erParcial, nota2doParcial = @nota2doParcial, nota3erParcial = @nota3erParcial, nota4toParcial = @nota4toParcial, notaFinal = @notaFinal,
+		notaA = @notaA, notaB = @notaB, notaC = @notaC, notaD = @notaD, notaE = @notaE WHERE id_DetalleMatricula = @id_DetalleMatricula AND id_Clase = @id_Clase
+	END
+	ELSE
+		raiserror('Error de operacion de notas', 16, 2)
+END
+GO
 
 Create Procedure buscarAlumno(@identidadEstudiante varchar(13), @primerNombre varchar(20))
 As Begin 
@@ -463,7 +459,7 @@ As Begin
 			   datosEstudiante.primerNombre like @primerNombre 
 
 	else 
-		raiserror('¡Revise los datos!, No se encontró el Alumno especificado', 16,1)
+		raiserror('ï¿½Revise los datos!, No se encontrï¿½ el Alumno especificado', 16,1)
 
 End
 

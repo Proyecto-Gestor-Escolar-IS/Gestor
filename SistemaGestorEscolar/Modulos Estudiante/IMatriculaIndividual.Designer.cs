@@ -35,6 +35,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpMatriculaPrimerIngreso = new System.Windows.Forms.GroupBox();
+            this.btnVerImagenPI = new System.Windows.Forms.Button();
+            this.label53 = new System.Windows.Forms.Label();
+            this.btnAgregarImagenPI = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
             this.txtNombreEncargado = new System.Windows.Forms.TextBox();
             this.cmbIdentidadEncargado = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -60,6 +64,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnRegresar = new AltoControls.AltoButton();
             this.label4 = new System.Windows.Forms.Label();
             this.grpReingreso = new System.Windows.Forms.GroupBox();
+            this.btnVerImagenR = new System.Windows.Forms.Button();
+            this.label47 = new System.Windows.Forms.Label();
+            this.btnImagenAgregarR = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnActualizarEliminarEncargado = new AltoControls.AltoButton();
             this.btnModificarEstud = new AltoControls.AltoButton();
             this.cmbEncargadosReingreso = new System.Windows.Forms.ComboBox();
@@ -117,6 +125,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnSiguienteEstado = new AltoControls.AltoButton();
             this.altoButton2 = new AltoControls.AltoButton();
             this.grpRegistroEstudiante = new System.Windows.Forms.GroupBox();
+            this.label58 = new System.Windows.Forms.Label();
             this.txtfechaNacimientoEstud = new System.Windows.Forms.MaskedTextBox();
             this.cmbGeneroEstud = new System.Windows.Forms.ComboBox();
             this.lblgenero = new System.Windows.Forms.Label();
@@ -133,6 +142,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnRegresarEstud = new AltoControls.AltoButton();
             this.label31 = new System.Windows.Forms.Label();
             this.grpRegistroEncargados = new System.Windows.Forms.GroupBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.btnRegresarAEstud = new AltoControls.AltoButton();
             this.txtTelefonoAlternativo = new System.Windows.Forms.MaskedTextBox();
             this.txtprimerTelefono = new System.Windows.Forms.MaskedTextBox();
             this.btnLimpiarEncargadoMat = new AltoControls.AltoButton();
@@ -155,6 +166,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnSiguienteEncarg = new AltoControls.AltoButton();
             this.label30 = new System.Windows.Forms.Label();
             this.gbEstudiantes = new System.Windows.Forms.GroupBox();
+            this.label56 = new System.Windows.Forms.Label();
             this.txtIdentidadEstudMod = new System.Windows.Forms.MaskedTextBox();
             this.cmbgeneroEstudMod = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -172,6 +184,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label34 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.gbEncargados = new System.Windows.Forms.GroupBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.txtsegundoTelefonoEncargadoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefonoEncargadoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtIdentidadEncargadoMod = new System.Windows.Forms.MaskedTextBox();
@@ -215,6 +228,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpMatriculaPrimerIngreso
             // 
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.btnVerImagenPI);
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.label53);
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.btnAgregarImagenPI);
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.label54);
             this.grpMatriculaPrimerIngreso.Controls.Add(this.txtNombreEncargado);
             this.grpMatriculaPrimerIngreso.Controls.Add(this.cmbIdentidadEncargado);
             this.grpMatriculaPrimerIngreso.Controls.Add(this.label14);
@@ -249,6 +266,54 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpMatriculaPrimerIngreso.Visible = false;
             this.grpMatriculaPrimerIngreso.Enter += new System.EventHandler(this.grpMatriculaPrimerIngreso_Enter);
             // 
+            // btnVerImagenPI
+            // 
+            this.btnVerImagenPI.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.adds;
+            this.btnVerImagenPI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVerImagenPI.FlatAppearance.BorderSize = 0;
+            this.btnVerImagenPI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerImagenPI.Location = new System.Drawing.Point(1081, 697);
+            this.btnVerImagenPI.Name = "btnVerImagenPI";
+            this.btnVerImagenPI.Size = new System.Drawing.Size(70, 66);
+            this.btnVerImagenPI.TabIndex = 119;
+            this.btnVerImagenPI.UseVisualStyleBackColor = true;
+            this.btnVerImagenPI.Click += new System.EventHandler(this.btnVerImagenPI_Click);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(945, 641);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(345, 31);
+            this.label53.TabIndex = 118;
+            this.label53.Text = "Ver Boleta De Calificaciones";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnAgregarImagenPI
+            // 
+            this.btnAgregarImagenPI.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.add;
+            this.btnAgregarImagenPI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarImagenPI.FlatAppearance.BorderSize = 0;
+            this.btnAgregarImagenPI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarImagenPI.Location = new System.Drawing.Point(422, 692);
+            this.btnAgregarImagenPI.Name = "btnAgregarImagenPI";
+            this.btnAgregarImagenPI.Size = new System.Drawing.Size(77, 77);
+            this.btnAgregarImagenPI.TabIndex = 117;
+            this.btnAgregarImagenPI.UseVisualStyleBackColor = true;
+            this.btnAgregarImagenPI.Click += new System.EventHandler(this.btnAgregarImagenPI_Click);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(260, 634);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(390, 31);
+            this.label54.TabIndex = 116;
+            this.label54.Text = "Agregar Boleta de Calficaciones";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // txtNombreEncargado
             // 
             this.txtNombreEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,7 +340,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(600, 660);
+            this.label14.Location = new System.Drawing.Point(934, 426);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(120, 24);
@@ -286,7 +351,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // txtDescuento
             // 
             this.txtDescuento.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuento.Location = new System.Drawing.Point(574, 691);
+            this.txtDescuento.Location = new System.Drawing.Point(908, 457);
             this.txtDescuento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(179, 34);
@@ -303,7 +368,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbModoPago.Items.AddRange(new object[] {
             "12",
             "10"});
-            this.cmbModoPago.Location = new System.Drawing.Point(864, 590);
+            this.cmbModoPago.Location = new System.Drawing.Point(1173, 362);
             this.cmbModoPago.Name = "cmbModoPago";
             this.cmbModoPago.Size = new System.Drawing.Size(118, 29);
             this.cmbModoPago.TabIndex = 104;
@@ -313,7 +378,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(660, 590);
+            this.label13.Location = new System.Drawing.Point(922, 361);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(157, 24);
@@ -324,7 +389,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(899, 660);
+            this.label12.Location = new System.Drawing.Point(1235, 426);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 24);
@@ -334,7 +399,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // txtTotalPagar
             // 
             this.txtTotalPagar.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPagar.Location = new System.Drawing.Point(839, 691);
+            this.txtTotalPagar.Location = new System.Drawing.Point(1173, 457);
             this.txtTotalPagar.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.ReadOnly = true;
@@ -346,7 +411,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(710, 532);
+            this.label9.Location = new System.Drawing.Point(1044, 304);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(208, 27);
             this.label9.TabIndex = 96;
@@ -356,7 +421,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.cmbSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeccion.FormattingEnabled = true;
-            this.cmbSeccion.Location = new System.Drawing.Point(646, 417);
+            this.cmbSeccion.Location = new System.Drawing.Point(326, 422);
             this.cmbSeccion.Name = "cmbSeccion";
             this.cmbSeccion.Size = new System.Drawing.Size(171, 29);
             this.cmbSeccion.TabIndex = 95;
@@ -366,7 +431,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(544, 422);
+            this.label8.Location = new System.Drawing.Point(224, 427);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 24);
@@ -377,7 +442,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.cmbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCurso.FormattingEnabled = true;
-            this.cmbCurso.Location = new System.Drawing.Point(646, 370);
+            this.cmbCurso.Location = new System.Drawing.Point(326, 354);
             this.cmbCurso.Name = "cmbCurso";
             this.cmbCurso.Size = new System.Drawing.Size(351, 29);
             this.cmbCurso.TabIndex = 93;
@@ -387,7 +452,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(544, 371);
+            this.label7.Location = new System.Drawing.Point(224, 355);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 24);
@@ -398,7 +463,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(699, 320);
+            this.label6.Location = new System.Drawing.Point(379, 304);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(239, 27);
             this.label6.TabIndex = 91;
@@ -548,6 +613,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpReingreso
             // 
+            this.grpReingreso.Controls.Add(this.btnVerImagenR);
+            this.grpReingreso.Controls.Add(this.label47);
+            this.grpReingreso.Controls.Add(this.btnImagenAgregarR);
+            this.grpReingreso.Controls.Add(this.label11);
             this.grpReingreso.Controls.Add(this.btnActualizarEliminarEncargado);
             this.grpReingreso.Controls.Add(this.btnModificarEstud);
             this.grpReingreso.Controls.Add(this.cmbEncargadosReingreso);
@@ -583,6 +652,54 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpReingreso.Text = "MATRICULA REINGRESO";
             this.grpReingreso.Visible = false;
             this.grpReingreso.Enter += new System.EventHandler(this.grpReingreso_Enter);
+            // 
+            // btnVerImagenR
+            // 
+            this.btnVerImagenR.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.adds;
+            this.btnVerImagenR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVerImagenR.FlatAppearance.BorderSize = 0;
+            this.btnVerImagenR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerImagenR.Location = new System.Drawing.Point(1100, 714);
+            this.btnVerImagenR.Name = "btnVerImagenR";
+            this.btnVerImagenR.Size = new System.Drawing.Size(70, 66);
+            this.btnVerImagenR.TabIndex = 115;
+            this.btnVerImagenR.UseVisualStyleBackColor = true;
+            this.btnVerImagenR.Click += new System.EventHandler(this.btnVerImagenR_Click);
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(971, 658);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(345, 31);
+            this.label47.TabIndex = 114;
+            this.label47.Text = "Ver Boleta De Calificaciones";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnImagenAgregarR
+            // 
+            this.btnImagenAgregarR.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.add;
+            this.btnImagenAgregarR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImagenAgregarR.FlatAppearance.BorderSize = 0;
+            this.btnImagenAgregarR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagenAgregarR.Location = new System.Drawing.Point(448, 709);
+            this.btnImagenAgregarR.Name = "btnImagenAgregarR";
+            this.btnImagenAgregarR.Size = new System.Drawing.Size(77, 77);
+            this.btnImagenAgregarR.TabIndex = 113;
+            this.btnImagenAgregarR.UseVisualStyleBackColor = true;
+            this.btnImagenAgregarR.Click += new System.EventHandler(this.btnImagenAgregarR_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(286, 651);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(390, 31);
+            this.label11.TabIndex = 112;
+            this.label11.Text = "Agregar Boleta de Calficaciones";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnActualizarEliminarEncargado
             // 
@@ -652,7 +769,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(586, 656);
+            this.label35.Location = new System.Drawing.Point(922, 475);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(120, 24);
@@ -662,7 +779,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // txtDescuentoR
             // 
             this.txtDescuentoR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuentoR.Location = new System.Drawing.Point(559, 682);
+            this.txtDescuentoR.Location = new System.Drawing.Point(895, 513);
             this.txtDescuentoR.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescuentoR.Name = "txtDescuentoR";
             this.txtDescuentoR.Size = new System.Drawing.Size(179, 34);
@@ -679,7 +796,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbModoPagoR.Items.AddRange(new object[] {
             "12",
             "10"});
-            this.cmbModoPagoR.Location = new System.Drawing.Point(849, 590);
+            this.cmbModoPagoR.Location = new System.Drawing.Point(1157, 412);
             this.cmbModoPagoR.Name = "cmbModoPagoR";
             this.cmbModoPagoR.Size = new System.Drawing.Size(118, 29);
             this.cmbModoPagoR.TabIndex = 104;
@@ -688,7 +805,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(645, 590);
+            this.label36.Location = new System.Drawing.Point(909, 413);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(157, 24);
@@ -699,7 +816,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(913, 656);
+            this.label37.Location = new System.Drawing.Point(1212, 475);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(64, 24);
@@ -709,7 +826,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // txtTotalR
             // 
             this.txtTotalR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalR.Location = new System.Drawing.Point(852, 682);
+            this.txtTotalR.Location = new System.Drawing.Point(1157, 511);
             this.txtTotalR.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalR.Name = "txtTotalR";
             this.txtTotalR.ReadOnly = true;
@@ -720,7 +837,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(695, 532);
+            this.label38.Location = new System.Drawing.Point(1015, 359);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(208, 27);
             this.label38.TabIndex = 96;
@@ -730,7 +847,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.cmbSeccionR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeccionR.FormattingEnabled = true;
-            this.cmbSeccionR.Location = new System.Drawing.Point(626, 417);
+            this.cmbSeccionR.Location = new System.Drawing.Point(352, 473);
             this.cmbSeccionR.Name = "cmbSeccionR";
             this.cmbSeccionR.Size = new System.Drawing.Size(191, 29);
             this.cmbSeccionR.TabIndex = 95;
@@ -740,7 +857,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(524, 422);
+            this.label39.Location = new System.Drawing.Point(250, 478);
             this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(91, 24);
@@ -751,7 +868,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.cmbCursoR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCursoR.FormattingEnabled = true;
-            this.cmbCursoR.Location = new System.Drawing.Point(626, 370);
+            this.cmbCursoR.Location = new System.Drawing.Point(352, 407);
             this.cmbCursoR.Name = "cmbCursoR";
             this.cmbCursoR.Size = new System.Drawing.Size(351, 29);
             this.cmbCursoR.TabIndex = 93;
@@ -761,7 +878,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(524, 371);
+            this.label40.Location = new System.Drawing.Point(250, 408);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(79, 24);
@@ -772,7 +889,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(679, 320);
+            this.label41.Location = new System.Drawing.Point(405, 357);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(239, 27);
             this.label41.TabIndex = 91;
@@ -989,7 +1106,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dgvEstudiantes.RowHeadersWidth = 20;
             this.dgvEstudiantes.Size = new System.Drawing.Size(1523, 733);
             this.dgvEstudiantes.TabIndex = 86;
-            this.dgvEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
+            this.dgvEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellClick);
             // 
             // btnSiguienteDGVAct
             // 
@@ -1251,7 +1368,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(228, 205);
+            this.label25.Location = new System.Drawing.Point(227, 199);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(386, 24);
@@ -1329,7 +1446,49 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.dgvBusquedaEstado.RowHeadersWidth = 20;
             this.dgvBusquedaEstado.Size = new System.Drawing.Size(1512, 752);
             this.dgvBusquedaEstado.TabIndex = 86;
-            this.dgvBusquedaEstado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEstado_CellContentClick);
+            this.dgvBusquedaEstado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEstado_CellClick);
+            // 
+            // btnSiguienteEstado
+            // 
+            this.btnSiguienteEstado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteEstado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteEstado.BackColor = System.Drawing.Color.Transparent;
+            this.btnSiguienteEstado.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSiguienteEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSiguienteEstado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteEstado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteEstado.Location = new System.Drawing.Point(1287, 895);
+            this.btnSiguienteEstado.Name = "btnSiguienteEstado";
+            this.btnSiguienteEstado.Radius = 20;
+            this.btnSiguienteEstado.Size = new System.Drawing.Size(269, 65);
+            this.btnSiguienteEstado.Stroke = true;
+            this.btnSiguienteEstado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnSiguienteEstado.TabIndex = 85;
+            this.btnSiguienteEstado.Text = "SIGUIENTE";
+            this.btnSiguienteEstado.Transparency = false;
+            this.btnSiguienteEstado.Click += new System.EventHandler(this.altoButton1_Click);
+            // 
+            // altoButton2
+            // 
+            this.altoButton2.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.altoButton2.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.altoButton2.BackColor = System.Drawing.Color.Transparent;
+            this.altoButton2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.altoButton2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altoButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.altoButton2.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.altoButton2.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.altoButton2.Location = new System.Drawing.Point(44, 895);
+            this.altoButton2.Name = "altoButton2";
+            this.altoButton2.Radius = 20;
+            this.altoButton2.Size = new System.Drawing.Size(269, 65);
+            this.altoButton2.Stroke = true;
+            this.altoButton2.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.altoButton2.TabIndex = 82;
+            this.altoButton2.Text = "REGRESAR";
+            this.altoButton2.Transparency = false;
+            this.altoButton2.Click += new System.EventHandler(this.altoButton2_Click);
             // 
             // btnSiguienteEstado
             // 
@@ -1375,6 +1534,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpRegistroEstudiante
             // 
+            this.grpRegistroEstudiante.Controls.Add(this.label58);
             this.grpRegistroEstudiante.Controls.Add(this.txtfechaNacimientoEstud);
             this.grpRegistroEstudiante.Controls.Add(this.cmbGeneroEstud);
             this.grpRegistroEstudiante.Controls.Add(this.lblgenero);
@@ -1398,6 +1558,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpRegistroEstudiante.TabStop = false;
             this.grpRegistroEstudiante.Text = "REGISTRO ESTUDIANTE";
             this.grpRegistroEstudiante.Visible = false;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(951, 523);
+            this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(138, 27);
+            this.label58.TabIndex = 99;
+            this.label58.Text = "dd/mm/aaaa";
             // 
             // txtfechaNacimientoEstud
             // 
@@ -1588,6 +1759,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpRegistroEncargados
             // 
+            this.grpRegistroEncargados.Controls.Add(this.label57);
+            this.grpRegistroEncargados.Controls.Add(this.btnRegresarAEstud);
             this.grpRegistroEncargados.Controls.Add(this.txtTelefonoAlternativo);
             this.grpRegistroEncargados.Controls.Add(this.txtprimerTelefono);
             this.grpRegistroEncargados.Controls.Add(this.btnLimpiarEncargadoMat);
@@ -1618,6 +1791,38 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpRegistroEncargados.Text = "REGISTRO ENCARGADO";
             this.grpRegistroEncargados.Visible = false;
             this.grpRegistroEncargados.Enter += new System.EventHandler(this.grpRegistroEncargados_Enter);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(945, 605);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(138, 27);
+            this.label57.TabIndex = 109;
+            this.label57.Text = "dd/mm/aaaa";
+            // 
+            // btnRegresarAEstud
+            // 
+            this.btnRegresarAEstud.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarAEstud.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarAEstud.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresarAEstud.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresarAEstud.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarAEstud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresarAEstud.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarAEstud.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarAEstud.Location = new System.Drawing.Point(73, 854);
+            this.btnRegresarAEstud.Name = "btnRegresarAEstud";
+            this.btnRegresarAEstud.Radius = 20;
+            this.btnRegresarAEstud.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresarAEstud.Stroke = true;
+            this.btnRegresarAEstud.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresarAEstud.TabIndex = 108;
+            this.btnRegresarAEstud.Text = "REGRESAR";
+            this.btnRegresarAEstud.Transparency = false;
+            this.btnRegresarAEstud.Click += new System.EventHandler(this.btnRegresarAEstud_Click);
             // 
             // txtTelefonoAlternativo
             // 
@@ -1670,7 +1875,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnAgregarEncarg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnAgregarEncarg.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnAgregarEncarg.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAgregarEncarg.Location = new System.Drawing.Point(60, 854);
+            this.btnAgregarEncarg.Location = new System.Drawing.Point(360, 854);
             this.btnAgregarEncarg.Name = "btnAgregarEncarg";
             this.btnAgregarEncarg.Radius = 20;
             this.btnAgregarEncarg.Size = new System.Drawing.Size(269, 65);
@@ -1876,6 +2081,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // gbEstudiantes
             // 
+            this.gbEstudiantes.Controls.Add(this.label56);
             this.gbEstudiantes.Controls.Add(this.txtIdentidadEstudMod);
             this.gbEstudiantes.Controls.Add(this.cmbgeneroEstudMod);
             this.gbEstudiantes.Controls.Add(this.label10);
@@ -1901,12 +2107,24 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.gbEstudiantes.Text = "DATOS ESTUDIANTE";
             this.gbEstudiantes.Visible = false;
             // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(958, 540);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(138, 27);
+            this.label56.TabIndex = 115;
+            this.label56.Text = "dd/mm/aaaa";
+            // 
             // txtIdentidadEstudMod
             // 
             this.txtIdentidadEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentidadEstudMod.Location = new System.Drawing.Point(718, 197);
             this.txtIdentidadEstudMod.Mask = "0000000000000";
             this.txtIdentidadEstudMod.Name = "txtIdentidadEstudMod";
+            this.txtIdentidadEstudMod.ReadOnly = true;
             this.txtIdentidadEstudMod.Size = new System.Drawing.Size(454, 34);
             this.txtIdentidadEstudMod.TabIndex = 114;
             this.txtIdentidadEstudMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1918,8 +2136,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbgeneroEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
             this.cmbgeneroEstudMod.FormattingEnabled = true;
             this.cmbgeneroEstudMod.Items.AddRange(new object[] {
-            "F",
-            "M"});
+            "Femenino",
+            "Masculino"});
             this.cmbgeneroEstudMod.Location = new System.Drawing.Point(719, 660);
             this.cmbgeneroEstudMod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbgeneroEstudMod.Name = "cmbgeneroEstudMod";
@@ -2073,6 +2291,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtFechaNacimientoEstudMod.Location = new System.Drawing.Point(719, 535);
             this.txtFechaNacimientoEstudMod.Mask = "00/00/0000";
             this.txtFechaNacimientoEstudMod.Name = "txtFechaNacimientoEstudMod";
+            this.txtFechaNacimientoEstudMod.ReadOnly = true;
             this.txtFechaNacimientoEstudMod.Size = new System.Drawing.Size(219, 34);
             this.txtFechaNacimientoEstudMod.TabIndex = 22;
             this.txtFechaNacimientoEstudMod.ValidatingType = typeof(System.DateTime);
@@ -2101,6 +2320,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // gbEncargados
             // 
+            this.gbEncargados.Controls.Add(this.label55);
             this.gbEncargados.Controls.Add(this.txtsegundoTelefonoEncargadoMod);
             this.gbEncargados.Controls.Add(this.txtTelefonoEncargadoMod);
             this.gbEncargados.Controls.Add(this.txtIdentidadEncargadoMod);
@@ -2132,6 +2352,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.gbEncargados.Text = "DATOS ENCARGADOS";
             this.gbEncargados.Visible = false;
             // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(1326, 238);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(138, 27);
+            this.label55.TabIndex = 116;
+            this.label55.Text = "dd/mm/aaaa";
+            // 
             // txtsegundoTelefonoEncargadoMod
             // 
             this.txtsegundoTelefonoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2158,6 +2389,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtIdentidadEncargadoMod.Location = new System.Drawing.Point(308, 234);
             this.txtIdentidadEncargadoMod.Mask = "0000000000000";
             this.txtIdentidadEncargadoMod.Name = "txtIdentidadEncargadoMod";
+            this.txtIdentidadEncargadoMod.ReadOnly = true;
             this.txtIdentidadEncargadoMod.Size = new System.Drawing.Size(350, 34);
             this.txtIdentidadEncargadoMod.TabIndex = 113;
             this.txtIdentidadEncargadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2178,7 +2410,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtCorreoElectronicoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtCorreoElectronicoEncargadoMod.Location = new System.Drawing.Point(308, 629);
             this.txtCorreoElectronicoEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCorreoElectronicoEncargadoMod.MaxLength = 13;
             this.txtCorreoElectronicoEncargadoMod.Multiline = true;
             this.txtCorreoElectronicoEncargadoMod.Name = "txtCorreoElectronicoEncargadoMod";
             this.txtCorreoElectronicoEncargadoMod.Size = new System.Drawing.Size(350, 34);
@@ -2469,19 +2700,19 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1641, 1035);
-            this.Controls.Add(this.gbEncargados);
-            this.Controls.Add(this.gbEstudiantes);
-            this.Controls.Add(this.grpReingreso);
-            this.Controls.Add(this.btnReingreso);
-            this.Controls.Add(this.btnPrimerIngreso);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnActualizarMatricula);
-            this.Controls.Add(this.grpListaEstudiantes);
-            this.Controls.Add(this.grpMatriculaPrimerIngreso);
             this.Controls.Add(this.grpRegistroEncargados);
             this.Controls.Add(this.grpRegistroEstudiante);
             this.Controls.Add(this.grpListadoEstado);
             this.Controls.Add(this.grpActualizarEstado);
+            this.Controls.Add(this.gbEncargados);
+            this.Controls.Add(this.gbEstudiantes);
+            this.Controls.Add(this.btnReingreso);
+            this.Controls.Add(this.btnPrimerIngreso);
+            this.Controls.Add(this.btnActualizarMatricula);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grpReingreso);
+            this.Controls.Add(this.grpListaEstudiantes);
+            this.Controls.Add(this.grpMatriculaPrimerIngreso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IMatriculaIndividual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2680,5 +2911,18 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private System.Windows.Forms.TextBox txtBusquedaIdentidadEstado;
         private System.Windows.Forms.TextBox txtBusquedaNombre;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnImagenAgregarR;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnVerImagenR;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button btnVerImagenPI;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Button btnAgregarImagenPI;
+        private System.Windows.Forms.Label label54;
+        private AltoControls.AltoButton btnRegresarAEstud;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label55;
     }
 }
