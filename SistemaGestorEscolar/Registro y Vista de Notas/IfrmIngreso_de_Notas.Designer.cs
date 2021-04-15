@@ -81,15 +81,15 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dgvCuadroNotas = new System.Windows.Forms.DataGridView();
+            this.abRegresar1 = new AltoControls.AltoButton();
+            this.abAgregarNotas = new AltoControls.AltoButton();
+            this.abLimpiar = new AltoControls.AltoButton();
+            this.abContinuar = new AltoControls.AltoButton();
             this.abRegresar2 = new AltoControls.AltoButton();
             this.abSiguiente = new AltoControls.AltoButton();
             this.abCuadroNotas = new AltoControls.AltoButton();
             this.abRegresar = new AltoControls.AltoButton();
             this.abContinuar2 = new AltoControls.AltoButton();
-            this.abRegresar1 = new AltoControls.AltoButton();
-            this.abAgregarNotas = new AltoControls.AltoButton();
-            this.abLimpiar = new AltoControls.AltoButton();
-            this.abContinuar = new AltoControls.AltoButton();
             this.gpxSeleccionCurso.SuspendLayout();
             this.gpxSeleccionAlumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionAlumno)).BeginInit();
@@ -655,6 +655,90 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.dgvCuadroNotas.TabIndex = 0;
             this.dgvCuadroNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuadroNotas_CellClick);
             // 
+            // abRegresar1
+            // 
+            this.abRegresar1.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abRegresar1.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abRegresar1.BackColor = System.Drawing.Color.Transparent;
+            this.abRegresar1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abRegresar1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abRegresar1.ForeColor = System.Drawing.Color.Black;
+            this.abRegresar1.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abRegresar1.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abRegresar1.Location = new System.Drawing.Point(8, 944);
+            this.abRegresar1.Name = "abRegresar1";
+            this.abRegresar1.Radius = 10;
+            this.abRegresar1.Size = new System.Drawing.Size(148, 43);
+            this.abRegresar1.Stroke = false;
+            this.abRegresar1.StrokeColor = System.Drawing.Color.Gray;
+            this.abRegresar1.TabIndex = 33;
+            this.abRegresar1.Text = "REGRESAR";
+            this.abRegresar1.Transparency = false;
+            this.abRegresar1.Click += new System.EventHandler(this.abRegresar1_Click);
+            // 
+            // abAgregarNotas
+            // 
+            this.abAgregarNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abAgregarNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abAgregarNotas.BackColor = System.Drawing.Color.Transparent;
+            this.abAgregarNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abAgregarNotas.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abAgregarNotas.ForeColor = System.Drawing.Color.Black;
+            this.abAgregarNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abAgregarNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abAgregarNotas.Location = new System.Drawing.Point(615, 806);
+            this.abAgregarNotas.Name = "abAgregarNotas";
+            this.abAgregarNotas.Radius = 10;
+            this.abAgregarNotas.Size = new System.Drawing.Size(219, 45);
+            this.abAgregarNotas.Stroke = false;
+            this.abAgregarNotas.StrokeColor = System.Drawing.Color.Gray;
+            this.abAgregarNotas.TabIndex = 2;
+            this.abAgregarNotas.Text = "AGREGAR NOTAS";
+            this.abAgregarNotas.Transparency = false;
+            this.abAgregarNotas.Click += new System.EventHandler(this.abAgregarNotas_Click);
+            // 
+            // abLimpiar
+            // 
+            this.abLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.abLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.abLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abLimpiar.Location = new System.Drawing.Point(1171, 610);
+            this.abLimpiar.Name = "abLimpiar";
+            this.abLimpiar.Radius = 10;
+            this.abLimpiar.Size = new System.Drawing.Size(200, 47);
+            this.abLimpiar.Stroke = false;
+            this.abLimpiar.StrokeColor = System.Drawing.Color.Gray;
+            this.abLimpiar.TabIndex = 24;
+            this.abLimpiar.Text = "LIMPIAR";
+            this.abLimpiar.Transparency = false;
+            this.abLimpiar.Click += new System.EventHandler(this.abLimpiar_Click);
+            // 
+            // abContinuar
+            // 
+            this.abContinuar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
+            this.abContinuar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
+            this.abContinuar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.abContinuar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.abContinuar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abContinuar.ForeColor = System.Drawing.Color.Black;
+            this.abContinuar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
+            this.abContinuar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
+            this.abContinuar.Location = new System.Drawing.Point(680, 656);
+            this.abContinuar.Name = "abContinuar";
+            this.abContinuar.Radius = 10;
+            this.abContinuar.Size = new System.Drawing.Size(208, 63);
+            this.abContinuar.Stroke = false;
+            this.abContinuar.StrokeColor = System.Drawing.Color.Gray;
+            this.abContinuar.TabIndex = 5;
+            this.abContinuar.Text = "CONTINUAR";
+            this.abContinuar.Transparency = false;
+            this.abContinuar.Click += new System.EventHandler(this.abContinuar_Click);
+            // 
             // abRegresar2
             // 
             this.abRegresar2.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
@@ -760,100 +844,16 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.abContinuar2.Transparency = false;
             this.abContinuar2.Click += new System.EventHandler(this.abContinuar2_Click);
             // 
-            // abRegresar1
-            // 
-            this.abRegresar1.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
-            this.abRegresar1.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
-            this.abRegresar1.BackColor = System.Drawing.Color.Transparent;
-            this.abRegresar1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.abRegresar1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abRegresar1.ForeColor = System.Drawing.Color.Black;
-            this.abRegresar1.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
-            this.abRegresar1.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
-            this.abRegresar1.Location = new System.Drawing.Point(8, 944);
-            this.abRegresar1.Name = "abRegresar1";
-            this.abRegresar1.Radius = 10;
-            this.abRegresar1.Size = new System.Drawing.Size(148, 43);
-            this.abRegresar1.Stroke = false;
-            this.abRegresar1.StrokeColor = System.Drawing.Color.Gray;
-            this.abRegresar1.TabIndex = 33;
-            this.abRegresar1.Text = "REGRESAR";
-            this.abRegresar1.Transparency = false;
-            this.abRegresar1.Click += new System.EventHandler(this.abRegresar1_Click);
-            // 
-            // abAgregarNotas
-            // 
-            this.abAgregarNotas.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
-            this.abAgregarNotas.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
-            this.abAgregarNotas.BackColor = System.Drawing.Color.Transparent;
-            this.abAgregarNotas.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.abAgregarNotas.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abAgregarNotas.ForeColor = System.Drawing.Color.Black;
-            this.abAgregarNotas.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
-            this.abAgregarNotas.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
-            this.abAgregarNotas.Location = new System.Drawing.Point(615, 806);
-            this.abAgregarNotas.Name = "abAgregarNotas";
-            this.abAgregarNotas.Radius = 10;
-            this.abAgregarNotas.Size = new System.Drawing.Size(219, 45);
-            this.abAgregarNotas.Stroke = false;
-            this.abAgregarNotas.StrokeColor = System.Drawing.Color.Gray;
-            this.abAgregarNotas.TabIndex = 2;
-            this.abAgregarNotas.Text = "AGREGAR NOTAS";
-            this.abAgregarNotas.Transparency = false;
-            this.abAgregarNotas.Click += new System.EventHandler(this.abAgregarNotas_Click);
-            // 
-            // abLimpiar
-            // 
-            this.abLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
-            this.abLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
-            this.abLimpiar.BackColor = System.Drawing.Color.Transparent;
-            this.abLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.abLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.abLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
-            this.abLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
-            this.abLimpiar.Location = new System.Drawing.Point(1171, 610);
-            this.abLimpiar.Name = "abLimpiar";
-            this.abLimpiar.Radius = 10;
-            this.abLimpiar.Size = new System.Drawing.Size(200, 47);
-            this.abLimpiar.Stroke = false;
-            this.abLimpiar.StrokeColor = System.Drawing.Color.Gray;
-            this.abLimpiar.TabIndex = 24;
-            this.abLimpiar.Text = "LIMPIAR";
-            this.abLimpiar.Transparency = false;
-            this.abLimpiar.Click += new System.EventHandler(this.abLimpiar_Click);
-            // 
-            // abContinuar
-            // 
-            this.abContinuar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(168)))), ((int)(((byte)(183)))));
-            this.abContinuar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(164)))), ((int)(((byte)(183)))));
-            this.abContinuar.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.abContinuar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.abContinuar.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abContinuar.ForeColor = System.Drawing.Color.Black;
-            this.abContinuar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(188)))), ((int)(((byte)(210)))));
-            this.abContinuar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(167)))), ((int)(((byte)(188)))));
-            this.abContinuar.Location = new System.Drawing.Point(680, 656);
-            this.abContinuar.Name = "abContinuar";
-            this.abContinuar.Radius = 10;
-            this.abContinuar.Size = new System.Drawing.Size(208, 63);
-            this.abContinuar.Stroke = false;
-            this.abContinuar.StrokeColor = System.Drawing.Color.Gray;
-            this.abContinuar.TabIndex = 5;
-            this.abContinuar.Text = "CONTINUAR";
-            this.abContinuar.Transparency = false;
-            this.abContinuar.Click += new System.EventHandler(this.abContinuar_Click);
-            // 
             // IfrmIngreso_de_Notas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.gpxSeleccionAlumno);
             this.Controls.Add(this.gpxIngreso_Notas);
             this.Controls.Add(this.gpxSeleccionCurso);
             this.Controls.Add(this.gpxCuadroNotas);
-            this.Controls.Add(this.gpxSeleccionAlumno);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IfrmIngreso_de_Notas";
             this.Text = "IfrmIngreso_de_Notas";

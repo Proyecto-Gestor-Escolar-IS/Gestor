@@ -216,6 +216,18 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void abContinuar2_Click(object sender, EventArgs e)
         {
+            nota1 = 0;
+            nota2 = 0;
+            nota3 = 0;
+            nota4 = 0;
+            notaFinal = 0;
+            notaA = "";
+            notaB = "";
+            notaC = "";
+            notaD = "";
+            notaE = "";
+            cmbClasesCS.Items.Clear();
+
 
             if (identidadA == null || nombre == null)
             {
@@ -297,8 +309,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
             mktNotaA.Text = NotaA;
             mktNotaB.Text = NotaB;
-            mktNotaC.Text = NotaD;
-            mktNotaD.Text = NotaC;
+            mktNotaC.Text = NotaC;
+            mktNotaD.Text = NotaD;
             mktNotaE.Text = NotaE;
 
 
@@ -723,7 +735,18 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void abRegresar1_Click(object sender, EventArgs e)
         {
-            Limpiar();
+            nota1 = 0;
+            nota2 = 0;
+            nota3 = 0;
+            nota4 = 0;
+            notaFinal = 0;
+            notaA = "";
+            notaB = "";
+            notaC = "";
+            notaD = "";
+            notaE = "";
+            cmbClasesCS.Items.Clear();
+
             gpxIngreso_Notas.Visible = false;
             gpxSeleccionAlumno.Visible = true;
             txtIdentidadAE.Visible = true;
