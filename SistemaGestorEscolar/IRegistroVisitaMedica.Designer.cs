@@ -70,7 +70,7 @@ namespace SistemaGestorEscolar
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(604, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(434, 36);
+            this.label1.Size = new System.Drawing.Size(437, 41);
             this.label1.TabIndex = 2;
             this.label1.Text = "REGISTRO VISITA MEDICA";
             // 
@@ -80,7 +80,7 @@ namespace SistemaGestorEscolar
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(175, 217);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 27);
+            this.label2.Size = new System.Drawing.Size(275, 31);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre del Estudiante";
             // 
@@ -101,7 +101,7 @@ namespace SistemaGestorEscolar
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(175, 469);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 27);
+            this.label3.Size = new System.Drawing.Size(180, 31);
             this.label3.TabIndex = 18;
             this.label3.Text = "Medicamentos";
             // 
@@ -111,7 +111,7 @@ namespace SistemaGestorEscolar
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(175, 403);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 27);
+            this.label4.Size = new System.Drawing.Size(245, 31);
             this.label4.TabIndex = 19;
             this.label4.Text = "Posible Enfermedad";
             // 
@@ -121,7 +121,7 @@ namespace SistemaGestorEscolar
             this.label5.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(1047, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 27);
+            this.label5.Size = new System.Drawing.Size(186, 31);
             this.label5.TabIndex = 20;
             this.label5.Text = "Expediente No.";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -132,7 +132,7 @@ namespace SistemaGestorEscolar
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(175, 341);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 27);
+            this.label6.Size = new System.Drawing.Size(122, 31);
             this.label6.TabIndex = 21;
             this.label6.Text = "Síntomas";
             // 
@@ -142,7 +142,7 @@ namespace SistemaGestorEscolar
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(748, 617);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 27);
+            this.label7.Size = new System.Drawing.Size(146, 31);
             this.label7.TabIndex = 22;
             this.label7.Text = "HISTORIAL";
             // 
@@ -207,7 +207,8 @@ namespace SistemaGestorEscolar
             this.dgvHistorialMedico.AllowUserToAddRows = false;
             this.dgvHistorialMedico.AllowUserToDeleteRows = false;
             this.dgvHistorialMedico.AllowUserToOrderColumns = true;
-            this.dgvHistorialMedico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvHistorialMedico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHistorialMedico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvHistorialMedico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.dgvHistorialMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -242,7 +243,7 @@ namespace SistemaGestorEscolar
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(1047, 217);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 27);
+            this.label8.Size = new System.Drawing.Size(165, 31);
             this.label8.TabIndex = 30;
             this.label8.Text = "Fecha Actual";
             // 
@@ -277,7 +278,7 @@ namespace SistemaGestorEscolar
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(175, 156);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(248, 27);
+            this.label9.Size = new System.Drawing.Size(261, 31);
             this.label9.TabIndex = 34;
             this.label9.Text = "Número de Identidad ";
             // 
@@ -298,7 +299,7 @@ namespace SistemaGestorEscolar
             this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(175, 280);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(215, 27);
+            this.label10.Size = new System.Drawing.Size(225, 31);
             this.label10.TabIndex = 36;
             this.label10.Text = "Médico Encargado";
             // 
@@ -309,7 +310,7 @@ namespace SistemaGestorEscolar
             this.cmbMedicos.FormattingEnabled = true;
             this.cmbMedicos.Location = new System.Drawing.Point(475, 279);
             this.cmbMedicos.Name = "cmbMedicos";
-            this.cmbMedicos.Size = new System.Drawing.Size(309, 29);
+            this.cmbMedicos.Size = new System.Drawing.Size(309, 32);
             this.cmbMedicos.TabIndex = 37;
             this.cmbMedicos.SelectedIndexChanged += new System.EventHandler(this.cmbMedicos_SelectedIndexChanged);
             // 
