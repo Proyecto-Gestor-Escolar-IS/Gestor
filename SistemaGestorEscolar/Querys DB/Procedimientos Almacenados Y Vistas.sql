@@ -525,3 +525,13 @@ CREATE PROCEDURE cambiarEstadoCurso(@idCurso as int, @estado as int)
 AS BEGIN
 	UPDATE cursos SET estadoCurso = @estado WHERE id_Curso = @idCurso
 END
+
+/*Procedimiento nuevo para agregar un encargado nuevo*/
+CREATE PROCEDURE agregarNuevoEncargado(@Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
+@segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),
+ @direccionTrabajo varchar(MAX), @fechaNacimiento DATE)
+ AS
+BEGIN
+INSERT INTO datosEncargado VALUES(@Numidentidad, @primerNombre, @segundoNombre, @primerApellido, @segundoApellido, @numeroTelefono, @numeroTelefonoAlt,
+	@correoElectronico, @direccionTrabajo, @fechaNacimiento, 1);
+END
