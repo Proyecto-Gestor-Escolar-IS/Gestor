@@ -38,7 +38,7 @@ namespace SistemaGestorEscolar
                 panSubMenuPersonal.Visible = false;
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
-                clsVariablesGlobales.CodigoAcceso = 4;
+                
 
                 if (clsVariablesGlobales.CodigoAcceso == 0)
                 {
