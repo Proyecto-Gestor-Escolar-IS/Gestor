@@ -509,6 +509,3 @@ CREATE PROCEDURE cambiarEstadoCurso(@idCurso as int, @estado as int)
 AS BEGIN
 	UPDATE cursos SET estadoCurso = @estado WHERE id_Curso = @idCurso
 END
-EXEC cambiarEstadoCurso 1, 2
-
-SELECT * FROM cursos

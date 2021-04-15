@@ -296,7 +296,6 @@ namespace SistemaGestorEscolar
 
         }
 
-
         public bool PAOperacionEmpleado(string idPerona, string nombre1, string nombre2, string apellido1, string apellido2, int tel, string fechaN,
             string mail, int estado, string contra, int idCargo, int cargoAnterior, int codigo)
         {
@@ -653,7 +652,7 @@ namespace SistemaGestorEscolar
             try
             {
                 SqlCommand comando = databaseIntermediary.CreateCommand();
-                //DateTime dt = DateTime.Parse(fechaNacimiento);
+                DateTime dt = DateTime.Parse(fechaNacimiento);
                 comando.CommandText = "RegistrarEncargado";
                 comando.CommandType = CommandType.StoredProcedure;
 
@@ -667,7 +666,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@numeroTelefono", int.Parse(numeroTelefono));
                 comando.Parameters.AddWithValue("@numeroTelefonoAlt", int.Parse(numeroTelefonoAlt));
                 comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                comando.Parameters.AddWithValue("@fechaNacimiento", dt);
 
                 databaseIntermediary.Open();
                 if (comando.ExecuteNonQuery() != -1)
@@ -961,7 +960,7 @@ namespace SistemaGestorEscolar
         {
             try
             {
-                //DateTime dt = DateTime.Parse(fechaNacimiento);
+                DateTime dt = DateTime.Parse(fechaNacimiento);
 
                 SqlCommand comando = databaseIntermediary.CreateCommand();
                 comando.CommandText = "RegistrarEstudiante";
@@ -972,7 +971,7 @@ namespace SistemaGestorEscolar
                 comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
                 comando.Parameters.AddWithValue("@primerApellido", primerApellido);
                 comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
-                comando.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                comando.Parameters.AddWithValue("@fechaNacimiento", dt);
                 comando.Parameters.AddWithValue("@genero", genero);
                 
                 databaseIntermediary.Open();

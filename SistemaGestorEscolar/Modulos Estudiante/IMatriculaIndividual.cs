@@ -214,6 +214,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                     cmbIdentidadEncargado.Items.Clear();
                                     recuperarMatricula();
                                     limpiarPantalla();
+                                    image = null;
                                     encargados.Clear();
                                 }
                                 else
@@ -267,15 +268,21 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
+            messageQuestion.lblError.Text = "¿Esta seguro de Regresar?\nPerdera todos los datos ingresados.";
+            messageQuestion.ShowDialog();
+            if (IMessageBoxYesCancel.isCodigoForm)
+            {
             grpMatriculaPrimerIngreso.Visible = false;
             label1.Visible = true;
             btnPrimerIngreso.Visible = true;
             btnReingreso.Visible = true;
-            btnActualizarMatricula.Visible = true;
+            btnActualizarMatricula.Visible = true;    
+            image = null;
             limpiarEncargado();
             LimpiarEstudiante();
             encargados.Clear();
             cmbIdentidadEncargado.Items.Clear();
+            }
         }
 
         private void txtIdentidadEncargado_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -361,10 +368,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                             btnReingreso.Visible = true;
                                             identidadReingreso = "";
                                             btnActualizarMatricula.Visible = true;
-
-                                            //cmbEncargadosReingreso.Items.Clear();
-
-
+                                            image = null;
                                             limpiarPantalla();
                                         }
                                         else
@@ -427,6 +431,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             cmbIdentidadEncargado.SelectedIndex = 0;
             txtDescuento.Text = "0.00";
             txtTotalPagar.Clear();
+            image = null;
         }
 
         private void limpiarPantalla()
@@ -528,7 +533,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             btnReingreso.Visible = true;
             identidadReingreso = "";
             btnActualizarMatricula.Visible = true;
-            //cmbEncargadosReingreso.Items.Clear();
+            txtBusquedaNombre.Clear();
         }
 
         private void txtBusquedaIdentidad_TextChanged(object sender, EventArgs e)
@@ -549,10 +554,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             {
 
                 txtIdentidadEstudianteR.Text = identidadReingreso;
+                txtBusquedaNombre.Clear();
                 grpListaEstudiantes.Visible = false;
                 grpReingreso.Visible = true;
-
-
+                dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
 
             }
             else
@@ -567,26 +572,22 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             grpListaEstudiantes.Visible = true;
             grpReingreso.Visible = false;
             cmbEncargadosReingreso.Items.Clear();
-            txtNombreEstudianteR.Clear();
+            txtIdentidadEstudianteR.Clear();
+            image = null;
             identidadReingreso = "";
+
+            cmbCursoR.SelectedIndex = 0;
+            cmbSeccionR.SelectedIndex = 0;
+            cmbModoPagoR.SelectedIndex = 0;
+            txtDescuentoR.Text = "0.00";
+            txtTotalR.Clear();
+            image = null;
         }
 
         private void grpListaEstudiantes_Enter(object sender, EventArgs e)
         {
         }
 
-        private void dgvEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-            identidadReingreso = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-        }
 
         private void txtIdentidadEstudianteR_TextChanged_1(object sender, EventArgs e)
         {
@@ -622,6 +623,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             cmbEncargadosReingreso.SelectedIndex = 0;
             txtDescuentoR.Text = "0.00";
             txtTotalR.Clear();
+            image = null;
         }
 
         private void txtRegistarR_MouseDown(object sender, MouseEventArgs e)
@@ -641,6 +643,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             btnReingreso.Visible = true;
             btnActualizarMatricula.Visible = true;
             identidadActualizacion = "";
+            txtBusquedaIdentidadEstado.Clear();
             grpActualizarEstado.Visible = false;
             grpListadoEstado.Visible = false;
         }
@@ -666,6 +669,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 txtIdentidadEstado.Text = identidadActualizacion;
                 grpListadoEstado.Visible = false;
                 grpActualizarEstado.Visible = true;
+                txtBusquedaIdentidadEstado.Clear();
+                dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante");
+
             }
             else
             {
@@ -673,20 +679,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 messageWarning.ShowDialog();
             }
         }
-
-        private void dgvBusquedaEstado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try {
-            identidadActualizacion = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
-            }   
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-
-
 
 
         private void txtBusquedaNombreEstado_TextChanged(object sender, EventArgs e)
@@ -799,21 +791,23 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             try
             {
-                if (mktIdentidadEstud.Text.Length > 13 || mktIdentidadEstud.Text.Length < 13)
-                {
-                    messageError.lblError.Text = "Error en la identidad";
-                    messageError.ShowDialog();
 
+                if (mktIdentidadEstud.Text == "" || txtprimerNombreEstud.Text == "" || txtprimerApellidoEstud.Text == "" ||
+                     txtfechaNacimientoEstud.Text == "")
+                {
+                    messageError.lblError.Text = "Debe llenar los campos necesarios";
+                    messageError.ShowDialog();
 
                 }
                 else
                 {
 
-                    if (mktIdentidadEstud.Text == "" || txtprimerNombreEstud.Text == "" || txtprimerApellidoEstud.Text == "" ||
-                         txtfechaNacimientoEstud.Text == "")
+
+                    if (mktIdentidadEstud.Text.Length > 13 || mktIdentidadEstud.Text.Length < 13)
                     {
-                        messageError.lblError.Text = "Debe llenar los campos necesarios";
+                        messageError.lblError.Text = "Error en la identidad";
                         messageError.ShowDialog();
+
 
                     }
                     else
@@ -906,7 +900,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             txtprimerApellidoEstud.Clear();
             txtsegundoApellidoEstud.Clear();
             txtfechaNacimientoEstud.Clear();
-            cmbGeneroEstud.SelectedItem = 0;
+            cmbGeneroEstud.SelectedIndex = 0;
         }
         private void mktIdentidadEstud_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {              
@@ -1176,24 +1170,29 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 string identidadComparar;
                 int Numfilas = encargados.Rows.Count;
 
-                if (mktIdentidadEncargado.Text.Length > 13 || mktIdentidadEncargado.Text.Length < 13)
-                {
-                    messageError.lblError.Text = "Error en la identidad";
-                    messageError.ShowDialog();
-                    
-                }
-                else
-                {
-                        if (txtPrimerNombreEncarg.Text == "" || txtPrimerApellidoEncarg.Text == "" ||
+
+                      
+                if (mktIdentidadEncargado.Text == "" || txtPrimerNombreEncarg.Text == "" || txtPrimerApellidoEncarg.Text == "" ||
                          txtcorreoElectronico.Text == "" || txtprimerTelefono.Text == "" ||
                          txtTelefonoAlternativo.Text == "" || txtDireccion.Text == "" || mskFechaNacimientoEncarg.Text == "")
-                        {
+                {
                             messageError.lblError.Text = "DEBE LLENAR LOS CAMPOS NECESARIOS";
                             messageError.lblError.Location = new Point(120, 82);
                             messageError.ShowDialog();
-                        }
-                        else
-                        {
+                }    
+                else
+                {
+                    if (mktIdentidadEncargado.Text.Length > 13 || mktIdentidadEncargado.Text.Length < 13)
+                    
+                    {
+                            messageError.lblError.Text = "Error en la identidad";
+                            messageError.ShowDialog();
+
+                    
+                    }
+                    else 
+                    { 
+                    
                         if (utilidad.verificarCorreo(txtcorreoElectronico.Text))
                         {
                             if (utilidad.isDate(mskFechaNacimientoEncarg.Text))
@@ -1277,7 +1276,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                         }
 
                     }
-                }
+                
+                    }
             }
             catch (Exception ex)
             {
@@ -1396,6 +1396,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void limpiarModificaciones()
         {
+            txtIdentidadEstudMod.Clear();
             txtPrimerNombreEstudMod.Clear();
             txtSegundoNombreEstudMod.Clear();
             txtPrimerApellidoEstudMod.Clear();
@@ -1458,14 +1459,13 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void btnEliminarEncargado_Click(object sender, EventArgs e)
         {
-            int cantidadninios = dbConn.obtenerVariableEntera("select count(*) from detalleEncargado where id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "'");
+            int cantidadEncargados = dbConn.obtenerVariableEntera("select count(*) from detalleEncargado where id_Estudiante = '" + identidadEstudianteModDatos + "'");
             try
             {
                
-                    if (cantidadninios == 1)
+                    if (cantidadEncargados == 1)
                     {
 
-                        // dbConn.ejecutarComandoSQL("update datosEncargado set estado = 2 where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");                        dbConn.ejecutarComandoSQL("DELETE FROM detalleEncargado WHERE id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "' and id_Estudiante = '" + identidadEstudianteModDatos + "'");
                         messageWarning.lblError.Text = "No Puede dejar sin encargados\nal estudiante";
                         messageWarning.ShowDialog();
                     }
@@ -1483,11 +1483,13 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     }
                     }
 
+                
+                cmbEncargadosReingreso.Items.Clear();
+                txtIdentidadEstudianteR.Text = identidadEstudianteModDatos;
 
-        
-                    limpiarModificaciones();
-                    grpReingreso.Visible = true;
-                    gbEncargados.Visible = false;
+                limpiarModificaciones();
+                grpReingreso.Visible = true;
+                gbEncargados.Visible = false;
 
             
 
@@ -1538,7 +1540,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     if (txtprimerNombreEncargadoMod.Text == "" || txtprimerApellidoEncargadoMod.Text == "" || txtCorreoElectronicoEncargadoMod.Text == "" || txtTelefonoEncargadoMod.Text == "" || txtsegundoTelefonoEncargadoMod.Text == "" || txtDireccionEncargadoMod.Text == "")
                     {
 
-                        messageError.lblError.Text = "LLENE LOS CAMPOS SOLICITADOS";
+                        messageError.lblError.Text = "LLENE TODOS LOS CAMPOS NECESARIOS";
                         messageError.ShowDialog();
                     }
                     else
@@ -1723,11 +1725,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             if (genero == "M")
             {
-                cmbgeneroEstudMod.SelectedItem = "M";
+                cmbgeneroEstudMod.SelectedItem = "Masculino";
             }
             else if (genero == "F")
             {
-                cmbgeneroEstudMod.SelectedItem = "F";
+                cmbgeneroEstudMod.SelectedItem = "Femenino";
             }
             else
             {
@@ -1972,6 +1974,30 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 limpiarEncargadoAgregado();
             }
 
+        }
+
+        private void dgvEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                identidadReingreso = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void dgvBusquedaEstado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                identidadActualizacion = dgvBusquedaEstado.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 
