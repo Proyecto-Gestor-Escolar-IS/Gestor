@@ -16,20 +16,18 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
         {
             InitializeComponent();
         }
-        //Cuando se presione el boton ACEPTAR el valor retornara verdadero, cuando se presione CANCELAR falso 
-        public static bool isCodigoForm = false;
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Login.IfrmLogin login = new Login.IfrmLogin();
-            login.Show();
-         
+            login.Show();   
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            isCodigoForm = false;
-            this.Close();
+            InterfazGraficaPrincipal IGP = new InterfazGraficaPrincipal();
+            IGP.Show();
+          
         }
     }
 }
