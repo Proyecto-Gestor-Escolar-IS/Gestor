@@ -30,16 +30,17 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbEncargados = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnLimpiar = new AltoControls.AltoButton();
             this.btnAgregarNuevoEncargado = new AltoControls.AltoButton();
             this.txtsegundoTelefono = new System.Windows.Forms.MaskedTextBox();
@@ -79,6 +80,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegresarEstud = new AltoControls.AltoButton();
             this.dgvListadoEstudiantes = new System.Windows.Forms.DataGridView();
             this.gbEstudiantes = new System.Windows.Forms.GroupBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.txtIdentidadEstud = new System.Windows.Forms.MaskedTextBox();
             this.cmbgeneroEstudiante = new System.Windows.Forms.ComboBox();
             this.lblgenero = new System.Windows.Forms.Label();
@@ -97,6 +99,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pnlGestionEstudianteEncargado = new System.Windows.Forms.Panel();
+            this.btnRegresarMenu = new AltoControls.AltoButton();
             this.btnEncargadosEstudiante = new AltoControls.AltoButton();
             this.btnEstudiantes = new AltoControls.AltoButton();
             this.btnEncargados = new AltoControls.AltoButton();
@@ -142,6 +145,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             // gbEncargados
             // 
+            this.gbEncargados.Controls.Add(this.label14);
             this.gbEncargados.Controls.Add(this.btnLimpiar);
             this.gbEncargados.Controls.Add(this.btnAgregarNuevoEncargado);
             this.gbEncargados.Controls.Add(this.txtsegundoTelefono);
@@ -169,11 +173,22 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbEncargados.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbEncargados.Location = new System.Drawing.Point(12, 12);
             this.gbEncargados.Name = "gbEncargados";
-            this.gbEncargados.Size = new System.Drawing.Size(1599, 996);
+            this.gbEncargados.Size = new System.Drawing.Size(1599, 1011);
             this.gbEncargados.TabIndex = 23;
             this.gbEncargados.TabStop = false;
             this.gbEncargados.Text = "DATOS ENCARGADOS";
             this.gbEncargados.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1328, 239);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(138, 27);
+            this.label14.TabIndex = 116;
+            this.label14.Text = "dd/mm/aaaa";
             // 
             // btnLimpiar
             // 
@@ -185,7 +200,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(635, 856);
+            this.btnLimpiar.Location = new System.Drawing.Point(635, 903);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Radius = 20;
             this.btnLimpiar.Size = new System.Drawing.Size(303, 84);
@@ -207,7 +222,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnAgregarNuevoEncargado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnAgregarNuevoEncargado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnAgregarNuevoEncargado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAgregarNuevoEncargado.Location = new System.Drawing.Point(1216, 856);
+            this.btnAgregarNuevoEncargado.Location = new System.Drawing.Point(1216, 903);
             this.btnAgregarNuevoEncargado.Name = "btnAgregarNuevoEncargado";
             this.btnAgregarNuevoEncargado.Radius = 20;
             this.btnAgregarNuevoEncargado.Size = new System.Drawing.Size(303, 84);
@@ -257,9 +272,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.label1.Location = new System.Drawing.Point(44, 629);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 35);
+            this.label1.Size = new System.Drawing.Size(261, 35);
             this.label1.TabIndex = 88;
-            this.label1.Text = "Correo Electronico";
+            this.label1.Text = "Correo Electrónico";
             // 
             // txtCorreoElectronico
             // 
@@ -282,7 +297,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnEliminar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnEliminar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEliminar.Location = new System.Drawing.Point(635, 859);
+            this.btnEliminar.Location = new System.Drawing.Point(635, 902);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Radius = 20;
             this.btnEliminar.Size = new System.Drawing.Size(303, 84);
@@ -303,7 +318,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegresarEncargado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnRegresarEncargado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnRegresarEncargado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEncargado.Location = new System.Drawing.Point(64, 859);
+            this.btnRegresarEncargado.Location = new System.Drawing.Point(64, 906);
             this.btnRegresarEncargado.Name = "btnRegresarEncargado";
             this.btnRegresarEncargado.Radius = 20;
             this.btnRegresarEncargado.Size = new System.Drawing.Size(303, 84);
@@ -324,7 +339,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnActualizar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnActualizar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizar.Location = new System.Drawing.Point(1216, 856);
+            this.btnActualizar.Location = new System.Drawing.Point(1216, 899);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Radius = 20;
             this.btnActualizar.Size = new System.Drawing.Size(303, 84);
@@ -515,7 +530,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbListadoEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbListadoEncargado.Location = new System.Drawing.Point(12, 12);
             this.gbListadoEncargado.Name = "gbListadoEncargado";
-            this.gbListadoEncargado.Size = new System.Drawing.Size(1606, 960);
+            this.gbListadoEncargado.Size = new System.Drawing.Size(1606, 1011);
             this.gbListadoEncargado.TabIndex = 108;
             this.gbListadoEncargado.TabStop = false;
             this.gbListadoEncargado.Text = "LISTADO ENCARGADOS";
@@ -531,7 +546,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnNuevoEncargado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnNuevoEncargado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnNuevoEncargado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnNuevoEncargado.Location = new System.Drawing.Point(693, 877);
+            this.btnNuevoEncargado.Location = new System.Drawing.Point(693, 927);
             this.btnNuevoEncargado.Name = "btnNuevoEncargado";
             this.btnNuevoEncargado.Radius = 20;
             this.btnNuevoEncargado.Size = new System.Drawing.Size(269, 65);
@@ -572,7 +587,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnSiguienteEncargado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnSiguienteEncargado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnSiguienteEncargado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteEncargado.Location = new System.Drawing.Point(1297, 877);
+            this.btnSiguienteEncargado.Location = new System.Drawing.Point(1297, 927);
             this.btnSiguienteEncargado.Name = "btnSiguienteEncargado";
             this.btnSiguienteEncargado.Radius = 20;
             this.btnSiguienteEncargado.Size = new System.Drawing.Size(269, 65);
@@ -593,7 +608,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.Location = new System.Drawing.Point(44, 877);
+            this.btnRegresar.Location = new System.Drawing.Point(44, 927);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Radius = 20;
             this.btnRegresar.Size = new System.Drawing.Size(269, 65);
@@ -611,33 +626,33 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.dgvBusquedaEncargado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBusquedaEncargado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBusquedaEncargado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusquedaEncargado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusquedaEncargado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBusquedaEncargado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusquedaEncargado.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBusquedaEncargado.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusquedaEncargado.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvBusquedaEncargado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvBusquedaEncargado.Location = new System.Drawing.Point(44, 113);
             this.dgvBusquedaEncargado.MultiSelect = false;
             this.dgvBusquedaEncargado.Name = "dgvBusquedaEncargado";
             this.dgvBusquedaEncargado.ReadOnly = true;
             this.dgvBusquedaEncargado.RowHeadersWidth = 20;
-            this.dgvBusquedaEncargado.Size = new System.Drawing.Size(1522, 737);
+            this.dgvBusquedaEncargado.Size = new System.Drawing.Size(1522, 779);
             this.dgvBusquedaEncargado.TabIndex = 86;
             this.dgvBusquedaEncargado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEncargado_CellContentClick);
             // 
@@ -651,7 +666,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbListadoEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbListadoEstudiantes.Location = new System.Drawing.Point(9, 18);
             this.gbListadoEstudiantes.Name = "gbListadoEstudiantes";
-            this.gbListadoEstudiantes.Size = new System.Drawing.Size(1605, 971);
+            this.gbListadoEstudiantes.Size = new System.Drawing.Size(1605, 1005);
             this.gbListadoEstudiantes.TabIndex = 0;
             this.gbListadoEstudiantes.TabStop = false;
             this.gbListadoEstudiantes.Text = "LISTADO ESTUDIANTES";
@@ -687,7 +702,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnSiguienteEstud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnSiguienteEstud.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnSiguienteEstud.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteEstud.Location = new System.Drawing.Point(1297, 877);
+            this.btnSiguienteEstud.Location = new System.Drawing.Point(1297, 921);
             this.btnSiguienteEstud.Name = "btnSiguienteEstud";
             this.btnSiguienteEstud.Radius = 20;
             this.btnSiguienteEstud.Size = new System.Drawing.Size(269, 65);
@@ -708,7 +723,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegresarEstud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnRegresarEstud.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnRegresarEstud.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstud.Location = new System.Drawing.Point(44, 877);
+            this.btnRegresarEstud.Location = new System.Drawing.Point(44, 921);
             this.btnRegresarEstud.Name = "btnRegresarEstud";
             this.btnRegresarEstud.Radius = 20;
             this.btnRegresarEstud.Size = new System.Drawing.Size(269, 65);
@@ -726,38 +741,39 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.dgvListadoEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListadoEstudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListadoEstudiantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListadoEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListadoEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvListadoEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoEstudiantes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListadoEstudiantes.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListadoEstudiantes.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvListadoEstudiantes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvListadoEstudiantes.Location = new System.Drawing.Point(44, 113);
             this.dgvListadoEstudiantes.MultiSelect = false;
             this.dgvListadoEstudiantes.Name = "dgvListadoEstudiantes";
             this.dgvListadoEstudiantes.ReadOnly = true;
             this.dgvListadoEstudiantes.RowHeadersWidth = 20;
-            this.dgvListadoEstudiantes.Size = new System.Drawing.Size(1522, 737);
+            this.dgvListadoEstudiantes.Size = new System.Drawing.Size(1522, 781);
             this.dgvListadoEstudiantes.TabIndex = 86;
             this.dgvListadoEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoEstudiantes_CellContentClick);
             // 
             // gbEstudiantes
             // 
+            this.gbEstudiantes.Controls.Add(this.label57);
             this.gbEstudiantes.Controls.Add(this.txtIdentidadEstud);
             this.gbEstudiantes.Controls.Add(this.cmbgeneroEstudiante);
             this.gbEstudiantes.Controls.Add(this.lblgenero);
@@ -783,6 +799,17 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbEstudiantes.TabStop = false;
             this.gbEstudiantes.Text = "DATOS ESTUDIANTE";
             this.gbEstudiantes.Visible = false;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(949, 538);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(138, 27);
+            this.label57.TabIndex = 110;
+            this.label57.Text = "dd/mm/aaaa";
             // 
             // txtIdentidadEstud
             // 
@@ -908,7 +935,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnEliminarEstud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnEliminarEstud.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnEliminarEstud.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEliminarEstud.Location = new System.Drawing.Point(635, 859);
+            this.btnEliminarEstud.Location = new System.Drawing.Point(635, 901);
             this.btnEliminarEstud.Name = "btnEliminarEstud";
             this.btnEliminarEstud.Radius = 20;
             this.btnEliminarEstud.Size = new System.Drawing.Size(303, 84);
@@ -929,7 +956,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegresarEstudiante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnRegresarEstudiante.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnRegresarEstudiante.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstudiante.Location = new System.Drawing.Point(64, 859);
+            this.btnRegresarEstudiante.Location = new System.Drawing.Point(64, 901);
             this.btnRegresarEstudiante.Name = "btnRegresarEstudiante";
             this.btnRegresarEstudiante.Radius = 20;
             this.btnRegresarEstudiante.Size = new System.Drawing.Size(303, 84);
@@ -950,7 +977,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnActualizarEstudiante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnActualizarEstudiante.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnActualizarEstudiante.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizarEstudiante.Location = new System.Drawing.Point(1247, 859);
+            this.btnActualizarEstudiante.Location = new System.Drawing.Point(1247, 901);
             this.btnActualizarEstudiante.Name = "btnActualizarEstudiante";
             this.btnActualizarEstudiante.Radius = 20;
             this.btnActualizarEstudiante.Size = new System.Drawing.Size(303, 84);
@@ -1006,6 +1033,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             // pnlGestionEstudianteEncargado
             // 
+            this.pnlGestionEstudianteEncargado.Controls.Add(this.btnRegresarMenu);
             this.pnlGestionEstudianteEncargado.Controls.Add(this.btnEncargadosEstudiante);
             this.pnlGestionEstudianteEncargado.Controls.Add(this.btnEstudiantes);
             this.pnlGestionEstudianteEncargado.Controls.Add(this.btnEncargados);
@@ -1014,6 +1042,27 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.pnlGestionEstudianteEncargado.Name = "pnlGestionEstudianteEncargado";
             this.pnlGestionEstudianteEncargado.Size = new System.Drawing.Size(1630, 1008);
             this.pnlGestionEstudianteEncargado.TabIndex = 99;
+            // 
+            // btnRegresarMenu
+            // 
+            this.btnRegresarMenu.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarMenu.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresarMenu.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresarMenu.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresarMenu.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarMenu.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarMenu.Location = new System.Drawing.Point(12, 937);
+            this.btnRegresarMenu.Name = "btnRegresarMenu";
+            this.btnRegresarMenu.Radius = 20;
+            this.btnRegresarMenu.Size = new System.Drawing.Size(243, 53);
+            this.btnRegresarMenu.Stroke = true;
+            this.btnRegresarMenu.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresarMenu.TabIndex = 87;
+            this.btnRegresarMenu.Text = "REGRESAR";
+            this.btnRegresarMenu.Transparency = false;
+            this.btnRegresarMenu.Click += new System.EventHandler(this.btnRegresarMenu_Click);
             // 
             // btnEncargadosEstudiante
             // 
@@ -1101,7 +1150,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.gbEncargadosEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
             this.gbEncargadosEstudiante.Location = new System.Drawing.Point(12, 8);
             this.gbEncargadosEstudiante.Name = "gbEncargadosEstudiante";
-            this.gbEncargadosEstudiante.Size = new System.Drawing.Size(1606, 981);
+            this.gbEncargadosEstudiante.Size = new System.Drawing.Size(1606, 1015);
             this.gbEncargadosEstudiante.TabIndex = 95;
             this.gbEncargadosEstudiante.TabStop = false;
             this.gbEncargadosEstudiante.Text = "Encargados Estudiante";
@@ -1150,26 +1199,26 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtNombreEstudianteDetalle
             // 
             this.txtNombreEstudianteDetalle.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtNombreEstudianteDetalle.Location = new System.Drawing.Point(1196, 741);
+            this.txtNombreEstudianteDetalle.Location = new System.Drawing.Point(1142, 741);
             this.txtNombreEstudianteDetalle.Name = "txtNombreEstudianteDetalle";
             this.txtNombreEstudianteDetalle.ReadOnly = true;
-            this.txtNombreEstudianteDetalle.Size = new System.Drawing.Size(340, 34);
+            this.txtNombreEstudianteDetalle.Size = new System.Drawing.Size(395, 34);
             this.txtNombreEstudianteDetalle.TabIndex = 5;
             // 
             // txtNombreEncargadoDetalle
             // 
             this.txtNombreEncargadoDetalle.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtNombreEncargadoDetalle.Location = new System.Drawing.Point(378, 744);
+            this.txtNombreEncargadoDetalle.Location = new System.Drawing.Point(362, 743);
             this.txtNombreEncargadoDetalle.Name = "txtNombreEncargadoDetalle";
             this.txtNombreEncargadoDetalle.ReadOnly = true;
-            this.txtNombreEncargadoDetalle.Size = new System.Drawing.Size(340, 34);
+            this.txtNombreEncargadoDetalle.Size = new System.Drawing.Size(395, 34);
             this.txtNombreEncargadoDetalle.TabIndex = 3;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(58, 740);
+            this.label12.Location = new System.Drawing.Point(32, 740);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(266, 35);
@@ -1180,7 +1229,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(58, 672);
+            this.label13.Location = new System.Drawing.Point(32, 672);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(285, 35);
@@ -1190,11 +1239,11 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtIdentidadEncargadoDetalle
             // 
             this.txtIdentidadEncargadoDetalle.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEncargadoDetalle.Location = new System.Drawing.Point(378, 672);
+            this.txtIdentidadEncargadoDetalle.Location = new System.Drawing.Point(362, 671);
             this.txtIdentidadEncargadoDetalle.Mask = "0000000000000";
             this.txtIdentidadEncargadoDetalle.Name = "txtIdentidadEncargadoDetalle";
             this.txtIdentidadEncargadoDetalle.ReadOnly = true;
-            this.txtIdentidadEncargadoDetalle.Size = new System.Drawing.Size(340, 34);
+            this.txtIdentidadEncargadoDetalle.Size = new System.Drawing.Size(395, 34);
             this.txtIdentidadEncargadoDetalle.TabIndex = 2;
             this.txtIdentidadEncargadoDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIdentidadEncargadoDetalle.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtIdentidadEncargadoDetalle_MaskInputRejected);
@@ -1203,7 +1252,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(876, 743);
+            this.label11.Location = new System.Drawing.Point(850, 743);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(266, 35);
@@ -1214,7 +1263,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(876, 675);
+            this.label9.Location = new System.Drawing.Point(850, 675);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(285, 35);
@@ -1224,11 +1273,11 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             // txtIdentidadEstudianteDetalle
             // 
             this.txtIdentidadEstudianteDetalle.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEstudianteDetalle.Location = new System.Drawing.Point(1196, 675);
+            this.txtIdentidadEstudianteDetalle.Location = new System.Drawing.Point(1142, 675);
             this.txtIdentidadEstudianteDetalle.Mask = "0000000000000";
             this.txtIdentidadEstudianteDetalle.Name = "txtIdentidadEstudianteDetalle";
             this.txtIdentidadEstudianteDetalle.ReadOnly = true;
-            this.txtIdentidadEstudianteDetalle.Size = new System.Drawing.Size(340, 34);
+            this.txtIdentidadEstudianteDetalle.Size = new System.Drawing.Size(395, 34);
             this.txtIdentidadEstudianteDetalle.TabIndex = 4;
             this.txtIdentidadEstudianteDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIdentidadEstudianteDetalle.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtIdentidadEstudianteDetalle_MaskInputRejected);
@@ -1262,26 +1311,26 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.dgvEstudiantesDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEstudiantesDetalle.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEstudiantesDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstudiantesDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstudiantesDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvEstudiantesDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantesDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEstudiantesDetalle.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEstudiantesDetalle.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvEstudiantesDetalle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvEstudiantesDetalle.Location = new System.Drawing.Point(824, 123);
             this.dgvEstudiantesDetalle.MultiSelect = false;
@@ -1299,26 +1348,26 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.dgvEncargadosDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEncargadosDetalle.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEncargadosDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEncargadosDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEncargadosDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvEncargadosDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEncargadosDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEncargadosDetalle.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEncargadosDetalle.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvEncargadosDetalle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.dgvEncargadosDetalle.Location = new System.Drawing.Point(33, 123);
             this.dgvEncargadosDetalle.MultiSelect = false;
@@ -1339,7 +1388,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnAgregarDetalleEncargados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnAgregarDetalleEncargados.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnAgregarDetalleEncargados.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAgregarDetalleEncargados.Location = new System.Drawing.Point(1285, 816);
+            this.btnAgregarDetalleEncargados.Location = new System.Drawing.Point(1285, 931);
             this.btnAgregarDetalleEncargados.Name = "btnAgregarDetalleEncargados";
             this.btnAgregarDetalleEncargados.Radius = 20;
             this.btnAgregarDetalleEncargados.Size = new System.Drawing.Size(269, 65);
@@ -1360,7 +1409,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.btnRegresarDetalleEncargados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnRegresarDetalleEncargados.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnRegresarDetalleEncargados.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarDetalleEncargados.Location = new System.Drawing.Point(33, 831);
+            this.btnRegresarDetalleEncargados.Location = new System.Drawing.Point(33, 929);
             this.btnRegresarDetalleEncargados.Name = "btnRegresarDetalleEncargados";
             this.btnRegresarDetalleEncargados.Radius = 20;
             this.btnRegresarDetalleEncargados.Size = new System.Drawing.Size(269, 65);
@@ -1377,12 +1426,12 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
+            this.Controls.Add(this.gbEncargados);
             this.Controls.Add(this.gbEncargadosEstudiante);
             this.Controls.Add(this.gbListadoEstudiantes);
             this.Controls.Add(this.pnlGestionEstudianteEncargado);
             this.Controls.Add(this.gbListadoEncargado);
             this.Controls.Add(this.gbEstudiantes);
-            this.Controls.Add(this.gbEncargados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CrudEstudianteEncargado";
@@ -1417,7 +1466,6 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private System.Windows.Forms.ErrorProvider errorIdentidad;
         private System.Windows.Forms.GroupBox gbEncargados;
         private System.Windows.Forms.Label lblregistroEncargado;
-        private System.Windows.Forms.MaskedTextBox txtfechaNacimiento;
         private System.Windows.Forms.TextBox txtsegundoNombre;
         private System.Windows.Forms.Label lblnumeroIdentidad;
         private System.Windows.Forms.Label lblnombres;
@@ -1495,5 +1543,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private AltoControls.AltoButton btnNuevoEncargado;
         private AltoControls.AltoButton btnAgregarNuevoEncargado;
         private AltoControls.AltoButton btnLimpiar;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label14;
+        private AltoControls.AltoButton btnRegresarMenu;
+        private System.Windows.Forms.MaskedTextBox txtfechaNacimiento;
     }
 }

@@ -57,7 +57,6 @@ namespace SistemaGestorEscolar
             this.btnVistaMatriculas = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnMatricularEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.panSubMenuEstudiante = new System.Windows.Forms.Panel();
-            this.btnImprimirReporte = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnModificarEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnFichaEstudiante = new SistemaGestorEscolar.Controls.RoundedButton();
             this.btnRegistroVisita = new SistemaGestorEscolar.Controls.RoundedButton();
@@ -345,7 +344,7 @@ namespace SistemaGestorEscolar
             this.panSubMenuPersonal.Controls.Add(this.label3);
             this.panSubMenuPersonal.Location = new System.Drawing.Point(1276, 798);
             this.panSubMenuPersonal.Name = "panSubMenuPersonal";
-            this.panSubMenuPersonal.Size = new System.Drawing.Size(284, 55);
+            this.panSubMenuPersonal.Size = new System.Drawing.Size(284, 44);
             this.panSubMenuPersonal.TabIndex = 47;
             // 
             // btnIngresarUsuario
@@ -527,38 +526,15 @@ namespace SistemaGestorEscolar
             // 
             // panSubMenuEstudiante
             // 
-            this.panSubMenuEstudiante.Controls.Add(this.btnImprimirReporte);
             this.panSubMenuEstudiante.Controls.Add(this.btnModificarEstudiante);
             this.panSubMenuEstudiante.Controls.Add(this.btnFichaEstudiante);
             this.panSubMenuEstudiante.Controls.Add(this.btnRegistroVisita);
             this.panSubMenuEstudiante.Controls.Add(this.btnAperturaExpediente);
             this.panSubMenuEstudiante.Controls.Add(this.label2);
-            this.panSubMenuEstudiante.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panSubMenuEstudiante.Location = new System.Drawing.Point(0, 0);
+            this.panSubMenuEstudiante.Location = new System.Drawing.Point(1276, 716);
             this.panSubMenuEstudiante.Name = "panSubMenuEstudiante";
-            this.panSubMenuEstudiante.Size = new System.Drawing.Size(1635, 1035);
+            this.panSubMenuEstudiante.Size = new System.Drawing.Size(284, 44);
             this.panSubMenuEstudiante.TabIndex = 26;
-            // 
-            // btnImprimirReporte
-            // 
-            this.btnImprimirReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(197)))), ((int)(((byte)(248)))));
-            this.btnImprimirReporte.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(97)))), ((int)(((byte)(169)))));
-            this.btnImprimirReporte.BorderDownColor = System.Drawing.Color.Empty;
-            this.btnImprimirReporte.BorderDownWidth = 0F;
-            this.btnImprimirReporte.BorderOverColor = System.Drawing.Color.Empty;
-            this.btnImprimirReporte.BorderOverWidth = 0F;
-            this.btnImprimirReporte.BorderRadius = 25;
-            this.btnImprimirReporte.BorderWidth = 4F;
-            this.btnImprimirReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
-            this.btnImprimirReporte.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnImprimirReporte.Location = new System.Drawing.Point(601, 767);
-            this.btnImprimirReporte.Name = "btnImprimirReporte";
-            this.btnImprimirReporte.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnImprimirReporte.Size = new System.Drawing.Size(420, 155);
-            this.btnImprimirReporte.TabIndex = 52;
-            this.btnImprimirReporte.Text = "IMPRIMIR REPORTE";
-            this.btnImprimirReporte.UseVisualStyleBackColor = false;
-            this.btnImprimirReporte.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnImprimirReporte_MouseDown);
             // 
             // btnModificarEstudiante
             // 
@@ -572,7 +548,7 @@ namespace SistemaGestorEscolar
             this.btnModificarEstudiante.BorderWidth = 4F;
             this.btnModificarEstudiante.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
             this.btnModificarEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnModificarEstudiante.Location = new System.Drawing.Point(919, 478);
+            this.btnModificarEstudiante.Location = new System.Drawing.Point(913, 586);
             this.btnModificarEstudiante.Name = "btnModificarEstudiante";
             this.btnModificarEstudiante.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnModificarEstudiante.Size = new System.Drawing.Size(420, 155);
@@ -594,7 +570,7 @@ namespace SistemaGestorEscolar
             this.btnFichaEstudiante.BorderWidth = 4F;
             this.btnFichaEstudiante.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
             this.btnFichaEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnFichaEstudiante.Location = new System.Drawing.Point(309, 478);
+            this.btnFichaEstudiante.Location = new System.Drawing.Point(303, 586);
             this.btnFichaEstudiante.Name = "btnFichaEstudiante";
             this.btnFichaEstudiante.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnFichaEstudiante.Size = new System.Drawing.Size(420, 155);
@@ -616,7 +592,7 @@ namespace SistemaGestorEscolar
             this.btnRegistroVisita.BorderWidth = 4F;
             this.btnRegistroVisita.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
             this.btnRegistroVisita.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegistroVisita.Location = new System.Drawing.Point(919, 209);
+            this.btnRegistroVisita.Location = new System.Drawing.Point(913, 317);
             this.btnRegistroVisita.Name = "btnRegistroVisita";
             this.btnRegistroVisita.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnRegistroVisita.Size = new System.Drawing.Size(420, 155);
@@ -638,7 +614,7 @@ namespace SistemaGestorEscolar
             this.btnAperturaExpediente.BorderWidth = 4F;
             this.btnAperturaExpediente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(177)))), ((int)(((byte)(223)))));
             this.btnAperturaExpediente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnAperturaExpediente.Location = new System.Drawing.Point(309, 209);
+            this.btnAperturaExpediente.Location = new System.Drawing.Point(303, 317);
             this.btnAperturaExpediente.Name = "btnAperturaExpediente";
             this.btnAperturaExpediente.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAperturaExpediente.Size = new System.Drawing.Size(420, 155);
@@ -652,7 +628,7 @@ namespace SistemaGestorEscolar
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(703, 100);
+            this.label2.Location = new System.Drawing.Point(707, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(240, 36);
             this.label2.TabIndex = 26;
@@ -675,7 +651,7 @@ namespace SistemaGestorEscolar
             this.panSubMenuPagos.Controls.Add(this.label1);
             this.panSubMenuPagos.Location = new System.Drawing.Point(1276, 888);
             this.panSubMenuPagos.Name = "panSubMenuPagos";
-            this.panSubMenuPagos.Size = new System.Drawing.Size(315, 80);
+            this.panSubMenuPagos.Size = new System.Drawing.Size(284, 45);
             this.panSubMenuPagos.TabIndex = 0;
             // 
             // btnHistorialPagos
@@ -816,7 +792,6 @@ namespace SistemaGestorEscolar
         private Controls.RoundedButton btnRegistroVisita;
         private Controls.RoundedButton btnFichaEstudiante;
         private Controls.RoundedButton btnModificarEstudiante;
-        private Controls.RoundedButton btnImprimirReporte;
         private Controls.RoundedButton btnIngresarUsuario;
         public System.Windows.Forms.Panel panelMostrador;
         public System.Windows.Forms.Panel panSubMenuEstudiante;

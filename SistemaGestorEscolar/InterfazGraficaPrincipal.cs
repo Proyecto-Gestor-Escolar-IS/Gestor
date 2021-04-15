@@ -33,7 +33,7 @@ namespace SistemaGestorEscolar
                 ClsCambioTema.cambiarTemaBoton(panSubMenuPagos);
                 ClsCambioTema.cambiarTemaBoton(panSubMenuPersonal);
 
-                actualizarModulos.verificarFecha();
+                //actualizarModulos.verificarFecha();
                 panelMostrador.Visible = false;
                 panSubMenuPersonal.Visible = false;
                 panSubMenuPagos.Visible = false;
@@ -562,9 +562,13 @@ namespace SistemaGestorEscolar
 
         private void btnMenuRegistroPago_Click(object sender, EventArgs e)
         {
-            panSubMenuPagos.Visible = true;
-            panSubMenuPagos.Dock = DockStyle.Fill;
             ocultarBotones();
+            panelMostrador.Visible = true;
+            panelMostrador.Dock = DockStyle.Fill;
+            panSubMenuPagos.Visible = false;
+            panSubMenuPagos.Dock = DockStyle.None;
+
+            AbrirFormulario<IRegistroPago>();
 
             if (codigoColor == 1)
             {
@@ -574,6 +578,7 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+
         }
 
         private void btnMenuIngresoNotas_Click(object sender, EventArgs e)
@@ -615,7 +620,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            //AbrirFormulario<Registro_y_Vista_de_Notas.Alumnos_CursoSeccion>();
+            //AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
 
             if (codigoColor == 1)
             {
@@ -1239,7 +1244,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
+           // AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
 
             if (codigoColor == 1)
             {
@@ -1362,7 +1367,7 @@ namespace SistemaGestorEscolar
             panelMostrador.Dock = DockStyle.Fill;
             panSubMenuPersonal.Visible = false;
             panSubMenuPersonal.Dock = DockStyle.None;
-            AbrirFormulario<Report_Notas.ReporteNotas>();
+           // AbrirFormulario<Report_Notas.ReporteNotas>();
 
             if (codigoColor == 1)
             {
@@ -1441,6 +1446,16 @@ namespace SistemaGestorEscolar
             {
                 formulario.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
+        }
+
+        private void btnImprimirReporte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimirReporte_MouseEnter(object sender, EventArgs e)
+        {
+
         }
     }
 }

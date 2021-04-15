@@ -147,11 +147,13 @@ namespace SistemaGestorEscolar
                                 dbConn.llenarTextBox(txtNombreEncargado, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEncargado INNER JOIN detalleEncargado ON datosEncargado.identidadEncargado = detalleEncargado.id_encargadoAlumno WHERE detalleEncargado.id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 idUltimaMensualidad = dbConn.obtenerVariableEntera("SELECT MAX(id_Mensualidad) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 txtMontoPagar.Enabled = true;
+
+                                /*SI ES NECESARIO, CAMBIAR LA SIGUIENTE LINEA*/
                                 dbConn.llenarTextBox(txtNoFactura, "SELECT count(*) FROM detalleMensualidades WHERE id_Estudiante = " + txtIdentidadEstudiante.Text);
                                 dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad); dbConn.llenarTextBox(txtFechaFacturacion, "SELECT fechaFacturacion FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
                                 dbConn.llenarTextBox(txtTotalPagar, "SELECT deudaPendiente FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
                                 dbConn.llenarTextBox(txtSaldoDisponible, "SELECT saldoDisponible FROM detalleMensualidades WHERE id_Mensualidad = " + idUltimaMensualidad);
-                                txtMontoPagar.Text = txtTotalPagar.Text;
+                                txtMontoPagar.Text = "" + float.Parse(txtTotalPagar.Text);
                             }
                         }
                         else if (txtIdentidadEstudiante.TextLength > 13 || txtIdentidadEstudiante.TextLength < 13)
@@ -211,6 +213,14 @@ namespace SistemaGestorEscolar
 
         private void txtTotalPagar_TextChanged(object sender, EventArgs e)
         {
+            if(float.Parse(txtTotalPagar.Text) > 0)
+            {
+                chkDescuento.Enabled = true;
+
+            }
+            else {
+                chkDescuento.Enabled = false;
+            }
         }
 
         private void txtFechaFacturacion_TextChanged(object sender, EventArgs e)

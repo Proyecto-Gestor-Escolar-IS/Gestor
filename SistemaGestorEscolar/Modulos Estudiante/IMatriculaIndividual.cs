@@ -27,6 +27,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         IMessageBoxYesCancel messageQuestion = new IMessageBoxYesCancel();
         clsUtilidades utilidad = new clsUtilidades();
         DataTable encargados = new DataTable();
+        public static Image image;
 
         int Existe = 0;
         string[,] EncargadoMatricula = new string[10,11];
@@ -182,6 +183,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     {
                         if (cmbCurso.SelectedIndex != 0)
                         {
+                            int idCurso = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "'");
+
+
                             if (cmbSeccion.SelectedIndex != 0)
                             {
                                 RegistrarEstudiante();
@@ -197,13 +201,23 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                     mesesDePago = 10;
                                 }
 
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString() , txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString() , txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1, image))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudiante.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
                                     message.ShowDialog();
+
+                                    grpMatriculaPrimerIngreso.Visible = false;
+                                    label1.Visible = true;
+                                    btnPrimerIngreso.Visible = true;
+                                    btnReingreso.Visible = true;
+                                    btnActualizarMatricula.Visible = true;
+                                    limpiarEncargado();
+                                    LimpiarEstudiante();                                    
+                                    cmbIdentidadEncargado.Items.Clear();
                                     recuperarMatricula();
                                     limpiarPantalla();
+                                    image = null;
                                     encargados.Clear();
                                 }
                                 else
@@ -247,7 +261,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             cmbSeccion.Items.Clear();
 
-            dbConn.llenarComboBoxValorInicial(cmbSeccion, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE cursos.nombreCurso = '" + cmbCurso.SelectedItem + "'");
+            dbConn.llenarComboBoxValorInicial(cmbSeccion, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE estado = 1 and cursos.nombreCurso = '" + cmbCurso.SelectedItem + "'");
             cmbSeccion.SelectedIndex = 0;
 
             
@@ -257,15 +271,21 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
+            messageQuestion.lblError.Text = "¿Esta seguro de Regresar?\nPerdera todos los datos ingresados.";
+            messageQuestion.ShowDialog();
+            if (IMessageBoxYesCancel.isCodigoForm)
+            {
             grpMatriculaPrimerIngreso.Visible = false;
             label1.Visible = true;
             btnPrimerIngreso.Visible = true;
             btnReingreso.Visible = true;
-            btnActualizarMatricula.Visible = true;
+            btnActualizarMatricula.Visible = true;    
+            image = null;
             limpiarEncargado();
             LimpiarEstudiante();
             encargados.Clear();
             cmbIdentidadEncargado.Items.Clear();
+            }
         }
 
         private void txtIdentidadEncargado_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -318,6 +338,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     {
                         if (cmbCursoR.SelectedIndex != 0)
                         {
+                            int idCurso = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "'");
+
                             if (cmbSeccionR.SelectedIndex != 0)
                             {
                                 if (cmbModoPagoR.SelectedIndex != -1)
@@ -331,19 +353,51 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                         mesesDePago = 10;
                                     }
 
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2))
-                                {
-                                    dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
-                                    message.lblCheck.Text = "MATRICULA REGISTRADA";
-                                    message.ShowDialog();
-                                    limpiarPantalla();
+                            if (dbConn.obtenerVariableEntera("select count(*) from detalleMatricula INNER JOIN matricula ON detalleMatricula.id_RegistroMatricula = matricula.id_RegistroMatricula WHERE  id_Curso = " + idCurso + " and id_Seccion = " + idSeccion + " and matricula.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "'") < 1)
+                            {
+                                if (dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "') = E.id_DetalleMatricula") != 1) 
+                                    {
+                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2, image))
+                                        {
+                                            dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
+                                            message.lblCheck.Text = "MATRICULA REGISTRADA";
+                                            message.ShowDialog();
+
+
+                                            
+                                            grpReingreso.Visible = false;
+                                            cmbEncargadosReingreso.Items.Clear();
+                                            txtNombreEstudianteR.Clear();
+                                            identidadReingreso = "";
+                                            grpListaEstudiantes.Visible = false;
+                                            label1.Visible = true;
+                                            btnPrimerIngreso.Visible = true;
+                                            btnReingreso.Visible = true;
+                                            identidadReingreso = "";
+                                            btnActualizarMatricula.Visible = true;
+                                            image = null;
+                                            limpiarPantalla();
+                                        }
+                                        else
+                                        {
+                                            messageError.lblError.Text = "ERROR INESPERADO";
+                                            messageError.ShowDialog();
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        messageWarning.lblError.Text = "ESTE ESTUDIANTE ESTA EN UN CURSO";
+                                        messageWarning.ShowDialog();
+                                    }
+
+                                    }
+                                    else
+                                    {
+                                        messageWarning.lblError.Text = "ESTE ALUMNO YA ESTA MATRICULADO!";
+                                        messageWarning.ShowDialog();
+                                    }
                                 }
-                                else
-                                {
-                                    messageError.lblError.Text = "ERROR INESPERADO";
-                                    messageError.ShowDialog();
-                                }
-                            }
                             else
                             {
                                     messageWarning.lblError.Text = "SELECCIONE UN MODO PAGO";
@@ -383,8 +437,13 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            limpiarPantalla();
-
+            cmbCurso.SelectedIndex = 0;
+            cmbSeccion.SelectedIndex = 0;
+            cmbModoPago.SelectedIndex = 0;
+            cmbIdentidadEncargado.SelectedIndex = 0;
+            txtDescuento.Text = "0.00";
+            txtTotalPagar.Clear();
+            image = null;
         }
 
         private void limpiarPantalla()
@@ -409,6 +468,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             cmbEncargadosReingreso.Items.Clear();
             txtDescuentoR.Text = "0.00";
             txtTotalR.Clear();
+
+            txtSeccionEstado.Clear();
+            txtNombreCurso.Clear();
+            txtNombreEstudianteEstado.Clear();
+            txtIdentidadEstado.Clear();
         }
 
         private void grpMatriculaPrimerIngreso_Enter(object sender, EventArgs e)
@@ -481,7 +545,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             btnReingreso.Visible = true;
             identidadReingreso = "";
             btnActualizarMatricula.Visible = true;
-            //cmbEncargadosReingreso.Items.Clear();
+            txtBusquedaNombre.Clear();
         }
 
         private void txtBusquedaIdentidad_TextChanged(object sender, EventArgs e)
@@ -502,8 +566,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             {
 
                 txtIdentidadEstudianteR.Text = identidadReingreso;
+                txtBusquedaNombre.Clear();
                 grpListaEstudiantes.Visible = false;
                 grpReingreso.Visible = true;
+                dbConn.llenarDGV(dgvEstudiantes, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero', estado as 'Estado'  FROM datosEstudiante");
+
             }
             else
             {
@@ -517,26 +584,22 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             grpListaEstudiantes.Visible = true;
             grpReingreso.Visible = false;
             cmbEncargadosReingreso.Items.Clear();
-            txtNombreEstudianteR.Clear();
+            txtIdentidadEstudianteR.Clear();
+            image = null;
             identidadReingreso = "";
+
+            cmbCursoR.SelectedIndex = 0;
+            cmbSeccionR.SelectedIndex = 0;
+            cmbModoPagoR.SelectedIndex = 0;
+            txtDescuentoR.Text = "0.00";
+            txtTotalR.Clear();
+            image = null;
         }
 
         private void grpListaEstudiantes_Enter(object sender, EventArgs e)
         {
         }
 
-        private void dgvEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-            identidadReingreso = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-        }
 
         private void txtIdentidadEstudianteR_TextChanged_1(object sender, EventArgs e)
         {
@@ -557,7 +620,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void cmbCursoR_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbSeccionR.Items.Clear();
-            dbConn.llenarComboBoxValorInicial(cmbSeccionR, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE cursos.nombreCurso = '" + cmbCursoR.SelectedItem + "'");
+            dbConn.llenarComboBoxValorInicial(cmbSeccionR, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE estado = 1 and cursos.nombreCurso = '" + cmbCursoR.SelectedItem + "'");
             cmbSeccionR.SelectedIndex = 0;
 
 
@@ -566,7 +629,13 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void txtLimpiarR_Click(object sender, EventArgs e)
         {
-            limpiarPantalla();
+            cmbCursoR.SelectedIndex = 0;
+            cmbSeccionR.SelectedIndex = 0;
+            cmbModoPagoR.SelectedIndex = 0;
+            cmbEncargadosReingreso.SelectedIndex = 0;
+            txtDescuentoR.Text = "0.00";
+            txtTotalR.Clear();
+            image = null;
         }
 
         private void txtRegistarR_MouseDown(object sender, MouseEventArgs e)
@@ -585,7 +654,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             btnPrimerIngreso.Visible = true;
             btnReingreso.Visible = true;
             btnActualizarMatricula.Visible = true;
-            identidadReingreso = "";
+            identidadActualizacion = "";
+            txtBusquedaIdentidadEstado.Clear();
             grpActualizarEstado.Visible = false;
             grpListadoEstado.Visible = false;
         }
@@ -611,6 +681,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 txtIdentidadEstado.Text = identidadActualizacion;
                 grpListadoEstado.Visible = false;
                 grpActualizarEstado.Visible = true;
+                txtBusquedaIdentidadEstado.Clear();
+                dbConn.llenarDGV(dgvBusquedaEstado, "SELECT id_Registro as 'ID', identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante");
+
             }
             else
             {
@@ -618,20 +691,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 messageWarning.ShowDialog();
             }
         }
-
-        private void dgvBusquedaEstado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try {
-            identidadActualizacion = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
-            }   
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-
-
 
 
         private void txtBusquedaNombreEstado_TextChanged(object sender, EventArgs e)
@@ -642,33 +701,37 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void txtIdentidadEstado_TextChanged(object sender, EventArgs e)
         {
             int estadoMatricula;
-
-            dbConn.llenarTextBox(txtNombreEstudianteEstado, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = '" + identidadActualizacion + "'");
-            idMatriculaEstudiante = dbConn.obtenerVariableEntera("SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = '" + identidadActualizacion + "'");
-            txtMatriculaEstado.Text = "" + idMatriculaEstudiante;
-
-
-            ultimoDetalleMatricula = dbConn.obtenerVariableEntera("SELECT MAX(id_DetalleMatricula) FROM detalleMatricula WHERE id_RegistroMatricula = " + idMatriculaEstudiante);
-            dbConn.llenarTextBox(txtNombreCurso, "SELECT nombreCurso FROM cursos INNER JOIN detalleMatricula ON detalleMatricula.id_Curso = cursos.id_Curso WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
-            dbConn.llenarTextBox(txtSeccionEstado, "SELECT nombreSeccion FROM seccion INNER JOIN detalleMatricula ON detalleMatricula.id_Seccion = seccion.id_Seccion WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
-
-            estadoMatricula = dbConn.obtenerVariableEntera("SELECT estado FROM detalleMatricula WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
-
-            switch (estadoMatricula)
+            if (identidadActualizacion != "")
             {
-                case 1:
+
+                dbConn.llenarTextBox(txtNombreEstudianteEstado, "SELECT concat(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = '" + identidadActualizacion + "'");      
+                idMatriculaEstudiante = dbConn.obtenerVariableEntera("SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = '" + identidadActualizacion + "'");      
+                txtMatriculaEstado.Text = "" + idMatriculaEstudiante;
+        
+                ultimoDetalleMatricula = dbConn.obtenerVariableEntera("SELECT MAX(id_DetalleMatricula) FROM detalleMatricula WHERE id_RegistroMatricula = " + idMatriculaEstudiante);         
+                dbConn.llenarTextBox(txtNombreCurso, "SELECT nombreCurso FROM cursos INNER JOIN detalleMatricula ON detalleMatricula.id_Curso = cursos.id_Curso WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
+                dbConn.llenarTextBox(txtSeccionEstado, "SELECT nombreSeccion FROM seccion INNER JOIN detalleMatricula ON detalleMatricula.id_Seccion = seccion.id_Seccion WHERE id_DetalleMatricula = " + ultimoDetalleMatricula);
+
+        
+                estadoMatricula = dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + identidadActualizacion + "') = E.id_DetalleMatricula");
+
+         
+                if(estadoMatricula == 1)
+                {
                     cmbEstadoMatri.SelectedIndex = 0;
-                    break;
-
-                case 2:
+                }else if(estadoMatricula == 2)
+          
+                {
                     cmbEstadoMatri.SelectedIndex = 1;
-                    break;
-                case 3:
+                }
+                else if(estadoMatricula == 3)
+           
+                {
                     cmbEstadoMatri.SelectedIndex = 2;
-                    break;
+
+                }
+            
             }
-
-
         }
 
         private void altoButton3_Click(object sender, EventArgs e)
@@ -689,10 +752,20 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
 
 
-            if (dbConn.PARegistrarMatricula("000000000000", "000000000000", txtIdentidadEstado.Text, 1, 1, 1, 1, 1, estadoActualizado, 3))
+            if (dbConn.PARegistrarMatricula("000000000000", "000000000000", txtIdentidadEstado.Text, 1, 1, 1, 1, 1, estadoActualizado, 3, null))
             {
                 message.lblCheck.Text = "CAMBIO REGISTRADO";
                 message.ShowDialog();
+
+                identidadActualizacion = "";
+
+                label1.Visible = true;
+                btnPrimerIngreso.Visible = true;
+                btnReingreso.Visible = true;
+                btnActualizarMatricula.Visible = true;
+                grpActualizarEstado.Visible = false;
+                grpListadoEstado.Visible = false;
+
                 limpiarPantalla();
             }
 
@@ -708,6 +781,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             grpListadoEstado.Visible = true;
             grpActualizarEstado.Visible = false;
             identidadActualizacion = "";
+            limpiarPantalla();
         }
 
      
@@ -729,21 +803,23 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             try
             {
-                if (mktIdentidadEstud.Text.Length > 13 || mktIdentidadEstud.Text.Length < 13)
-                {
-                    messageError.lblError.Text = "Error en la identidad";
-                    messageError.ShowDialog();
 
+                if (mktIdentidadEstud.Text == "" || txtprimerNombreEstud.Text == "" || txtprimerApellidoEstud.Text == "" ||
+                     txtfechaNacimientoEstud.Text == "")
+                {
+                    messageError.lblError.Text = "Debe llenar los campos necesarios";
+                    messageError.ShowDialog();
 
                 }
                 else
                 {
 
-                    if (mktIdentidadEstud.Text == "" || txtprimerNombreEstud.Text == "" || txtprimerApellidoEstud.Text == "" ||
-                         txtfechaNacimientoEstud.Text == "")
+
+                    if (mktIdentidadEstud.Text.Length > 13 || mktIdentidadEstud.Text.Length < 13)
                     {
-                        messageError.lblError.Text = "Debe llenar los campos necesarios";
+                        messageError.lblError.Text = "Error en la identidad";
                         messageError.ShowDialog();
+
 
                     }
                     else
@@ -836,7 +912,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             txtprimerApellidoEstud.Clear();
             txtsegundoApellidoEstud.Clear();
             txtfechaNacimientoEstud.Clear();
-            cmbGeneroEstud.SelectedItem = 0;
+            cmbGeneroEstud.SelectedIndex = 0;
         }
         private void mktIdentidadEstud_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {              
@@ -925,43 +1001,99 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void txtprimerNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtsegundoNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtprimerApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
-        { 
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtsegundoApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         //Metodos y validaciones De registro de  Encargado
         private void txtPrimerNombreEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtSegundoNombreEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtPrimerApellidoEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtSegundoApellidoEncarg_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtprimerTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -1050,24 +1182,29 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 string identidadComparar;
                 int Numfilas = encargados.Rows.Count;
 
-                if (mktIdentidadEncargado.Text.Length > 13 || mktIdentidadEncargado.Text.Length < 13)
-                {
-                    messageError.lblError.Text = "Error en la identidad";
-                    messageError.ShowDialog();
-                    
-                }
-                else
-                {
-                        if (txtPrimerNombreEncarg.Text == "" || txtPrimerApellidoEncarg.Text == "" ||
+
+                      
+                if (mktIdentidadEncargado.Text == "" || txtPrimerNombreEncarg.Text == "" || txtPrimerApellidoEncarg.Text == "" ||
                          txtcorreoElectronico.Text == "" || txtprimerTelefono.Text == "" ||
                          txtTelefonoAlternativo.Text == "" || txtDireccion.Text == "" || mskFechaNacimientoEncarg.Text == "")
-                        {
+                {
                             messageError.lblError.Text = "DEBE LLENAR LOS CAMPOS NECESARIOS";
                             messageError.lblError.Location = new Point(120, 82);
                             messageError.ShowDialog();
-                        }
-                        else
-                        {
+                }    
+                else
+                {
+                    if (mktIdentidadEncargado.Text.Length > 13 || mktIdentidadEncargado.Text.Length < 13)
+                    
+                    {
+                            messageError.lblError.Text = "Error en la identidad";
+                            messageError.ShowDialog();
+
+                    
+                    }
+                    else 
+                    { 
+                    
                         if (utilidad.verificarCorreo(txtcorreoElectronico.Text))
                         {
                             if (utilidad.isDate(mskFechaNacimientoEncarg.Text))
@@ -1151,7 +1288,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                         }
 
                     }
-                }
+                
+                    }
             }
             catch (Exception ex)
             {
@@ -1270,6 +1408,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void limpiarModificaciones()
         {
+            txtIdentidadEstudMod.Clear();
             txtPrimerNombreEstudMod.Clear();
             txtSegundoNombreEstudMod.Clear();
             txtPrimerApellidoEstudMod.Clear();
@@ -1332,14 +1471,13 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void btnEliminarEncargado_Click(object sender, EventArgs e)
         {
-            int cantidadninios = dbConn.obtenerVariableEntera("select count(*) from detalleEncargado where id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "'");
+            int cantidadEncargados = dbConn.obtenerVariableEntera("select count(*) from detalleEncargado where id_Estudiante = '" + identidadEstudianteModDatos + "'");
             try
             {
                
-                    if (cantidadninios == 1)
+                    if (cantidadEncargados == 1)
                     {
 
-                        // dbConn.ejecutarComandoSQL("update datosEncargado set estado = 2 where identidadEncargado = '" + txtIdentidadEncargadoMod.Text + "'");                        dbConn.ejecutarComandoSQL("DELETE FROM detalleEncargado WHERE id_encargadoAlumno = '" + txtIdentidadEncargadoMod.Text + "' and id_Estudiante = '" + identidadEstudianteModDatos + "'");
                         messageWarning.lblError.Text = "No Puede dejar sin encargados\nal estudiante";
                         messageWarning.ShowDialog();
                     }
@@ -1357,11 +1495,13 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     }
                     }
 
+                
+                cmbEncargadosReingreso.Items.Clear();
+                txtIdentidadEstudianteR.Text = identidadEstudianteModDatos;
 
-        
-                    limpiarModificaciones();
-                    grpReingreso.Visible = true;
-                    gbEncargados.Visible = false;
+                limpiarModificaciones();
+                grpReingreso.Visible = true;
+                gbEncargados.Visible = false;
 
             
 
@@ -1412,7 +1552,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     if (txtprimerNombreEncargadoMod.Text == "" || txtprimerApellidoEncargadoMod.Text == "" || txtCorreoElectronicoEncargadoMod.Text == "" || txtTelefonoEncargadoMod.Text == "" || txtsegundoTelefonoEncargadoMod.Text == "" || txtDireccionEncargadoMod.Text == "")
                     {
 
-                        messageError.lblError.Text = "LLENE LOS CAMPOS SOLICITADOS";
+                        messageError.lblError.Text = "LLENE TODOS LOS CAMPOS NECESARIOS";
                         messageError.ShowDialog();
                     }
                     else
@@ -1551,7 +1691,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             if (cmbSeccion.SelectedIndex != 0)
             {
-                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccion.SelectedItem.ToString() + "'");
+                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where estado = 1 and cursos.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccion.SelectedItem.ToString() + "'");
 
 
             }
@@ -1565,7 +1705,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             if (cmbSeccionR.SelectedIndex != 0)
             {
-                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccionR.SelectedItem.ToString() + "'");
+                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where estado = 1 and cursos.nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccionR.SelectedItem.ToString() + "'");
 
             }
             else
@@ -1597,11 +1737,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             if (genero == "M")
             {
-                cmbgeneroEstudMod.SelectedItem = "M";
+                cmbgeneroEstudMod.SelectedItem = "Masculino";
             }
             else if (genero == "F")
             {
-                cmbgeneroEstudMod.SelectedItem = "F";
+                cmbgeneroEstudMod.SelectedItem = "Femenino";
             }
             else
             {
@@ -1720,7 +1860,18 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             {
                 total = (decimal.Parse(TotalPagar.ToString()) - decimal.Parse(txtDescuentoR.Text));
                 total = decimal.Round(total, 3);
-                txtTotalR.Text = total.ToString();
+                
+                    if(total >= 0)
+                    {
+                        txtTotalR.Text = total.ToString();
+                    }
+                    else if(total < 0)
+                    {
+
+                        txtTotalR.Text = "" + 0.00;
+                    }
+
+
             }
 
             }
@@ -1730,6 +1881,135 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             }
 
 
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Contains('.'))
+                        e.Handled = true;
+                    else
+                        e.Handled = false;
+                }
+            }
+        }
+
+        private void txtDescuentoR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                if (e.KeyChar == '.')
+                {
+                    if (((TextBox)sender).Text.Contains('.'))
+                        e.Handled = true;
+                    else
+                        e.Handled = false;
+                }
+            }
+        }
+
+        private void btnImagenAgregarR_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Imagen JPG|*.JPG|Imagen PNG|*.PNG";
+            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                image = Image.FromFile(fileDialog.FileName);
+            }
+        }
+
+        private void btnVerImagenR_Click(object sender, EventArgs e)
+        {
+            frmMostrarImagenEvidencia frmImagen = new frmMostrarImagenEvidencia();
+            frmImagen.Text = "Boleta de calificaciones";
+            if (image != null)
+            {
+                frmImagen.pictureBox1.Image = image;
+            }
+            else
+            {
+                frmImagen.pictureBox1.Image = Properties.Resources.imgComprobantePendiente;
+            }
+            frmImagen.label2.Text = "BOLETA DE CALIFICACIONES INGRESADA";
+            frmImagen.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            frmImagen.Show();
+        }
+
+        private void btnAgregarImagenPI_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Imagen JPG|*.JPG|Imagen PNG|*.PNG";
+            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                image = Image.FromFile(fileDialog.FileName);
+            }
+        }
+
+        private void btnVerImagenPI_Click(object sender, EventArgs e)
+        {
+            frmMostrarImagenEvidencia frmImagen = new frmMostrarImagenEvidencia();
+            frmImagen.Text = "Boleta de calificaciones";
+            if (image != null)
+            {
+                frmImagen.pictureBox1.Image = image;
+            }
+            else
+            {
+                frmImagen.pictureBox1.Image = Properties.Resources.imgComprobantePendiente;
+            }
+            frmImagen.label2.Text = "BOLETA DE CALIFICACIONES INGRESADA ";
+            frmImagen.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            frmImagen.Show();
+        }
+
+        private void btnRegresarAEstud_Click(object sender, EventArgs e)
+        {
+
+            messageQuestion.lblError.Text = "¿Esta seguro de Regresar? Los encargados\n agregados y el estudiante se perderan.";
+            messageQuestion.ShowDialog();
+            if (IMessageBoxYesCancel.isCodigoForm)
+            {
+                grpRegistroEncargados.Visible = false;
+                grpRegistroEstudiante.Visible = true;
+                encargados.Clear();
+                limpiarEncargadoAgregado();
+            }
+
+        }
+
+        private void dgvEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                identidadReingreso = dgvEstudiantes.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void dgvBusquedaEstado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                identidadActualizacion = dgvBusquedaEstado.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 

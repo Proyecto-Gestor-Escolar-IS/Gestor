@@ -30,11 +30,15 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpMatriculaPrimerIngreso = new System.Windows.Forms.GroupBox();
+            this.btnVerImagenPI = new System.Windows.Forms.Button();
+            this.label53 = new System.Windows.Forms.Label();
+            this.btnAgregarImagenPI = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
             this.txtNombreEncargado = new System.Windows.Forms.TextBox();
             this.cmbIdentidadEncargado = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -55,8 +59,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label5 = new System.Windows.Forms.Label();
             this.txtNoMatricula = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnRegistrar = new AltoControls.AltoButton();
+            this.btnLimpiar = new AltoControls.AltoButton();
+            this.btnRegresar = new AltoControls.AltoButton();
             this.label4 = new System.Windows.Forms.Label();
             this.grpReingreso = new System.Windows.Forms.GroupBox();
+            this.btnVerImagenR = new System.Windows.Forms.Button();
+            this.label47 = new System.Windows.Forms.Label();
+            this.btnImagenAgregarR = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnActualizarEliminarEncargado = new AltoControls.AltoButton();
+            this.btnModificarEstud = new AltoControls.AltoButton();
             this.cmbEncargadosReingreso = new System.Windows.Forms.ComboBox();
             this.txtIdentidadEstudianteR = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -76,12 +89,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label43 = new System.Windows.Forms.Label();
             this.txtNoMatriculaR = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
+            this.txtRegistarR = new AltoControls.AltoButton();
+            this.txtLimpiarR = new AltoControls.AltoButton();
+            this.txtRegresarR = new AltoControls.AltoButton();
             this.txtIdentidadEncargadoR = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.grpListaEstudiantes = new System.Windows.Forms.GroupBox();
             this.txtBusquedaNombre = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
+            this.btnSiguienteDGVAct = new AltoControls.AltoButton();
+            this.btnRegresarDGV = new AltoControls.AltoButton();
             this.label1 = new System.Windows.Forms.Label();
             this.errorIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpActualizarEstado = new System.Windows.Forms.GroupBox();
@@ -97,12 +115,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtNombreEstudianteEstado = new System.Windows.Forms.TextBox();
             this.txtMatriculaEstado = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.altoButton3 = new AltoControls.AltoButton();
+            this.btnRegresarEstado = new AltoControls.AltoButton();
             this.label25 = new System.Windows.Forms.Label();
             this.grpListadoEstado = new System.Windows.Forms.GroupBox();
             this.txtBusquedaIdentidadEstado = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dgvBusquedaEstado = new System.Windows.Forms.DataGridView();
+            this.btnSiguienteEstado = new AltoControls.AltoButton();
+            this.altoButton2 = new AltoControls.AltoButton();
             this.grpRegistroEstudiante = new System.Windows.Forms.GroupBox();
+            this.label58 = new System.Windows.Forms.Label();
             this.txtfechaNacimientoEstud = new System.Windows.Forms.MaskedTextBox();
             this.cmbGeneroEstud = new System.Windows.Forms.ComboBox();
             this.lblgenero = new System.Windows.Forms.Label();
@@ -115,10 +138,16 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.lblnombres = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.mktIdentidadEstud = new System.Windows.Forms.MaskedTextBox();
+            this.btnEstSiguiente = new AltoControls.AltoButton();
+            this.btnRegresarEstud = new AltoControls.AltoButton();
             this.label31 = new System.Windows.Forms.Label();
             this.grpRegistroEncargados = new System.Windows.Forms.GroupBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.btnRegresarAEstud = new AltoControls.AltoButton();
             this.txtTelefonoAlternativo = new System.Windows.Forms.MaskedTextBox();
             this.txtprimerTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.btnLimpiarEncargadoMat = new AltoControls.AltoButton();
+            this.btnAgregarEncarg = new AltoControls.AltoButton();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lbldireccion = new System.Windows.Forms.Label();
             this.txtcorreoElectronico = new System.Windows.Forms.TextBox();
@@ -134,8 +163,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label23 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.mktIdentidadEncargado = new System.Windows.Forms.MaskedTextBox();
+            this.btnSiguienteEncarg = new AltoControls.AltoButton();
             this.label30 = new System.Windows.Forms.Label();
             this.gbEstudiantes = new System.Windows.Forms.GroupBox();
+            this.label56 = new System.Windows.Forms.Label();
             this.txtIdentidadEstudMod = new System.Windows.Forms.MaskedTextBox();
             this.cmbgeneroEstudMod = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -146,16 +177,22 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.btnRegresarEstudianteMod = new AltoControls.AltoButton();
+            this.btnActualizarEstudiante = new AltoControls.AltoButton();
             this.label33 = new System.Windows.Forms.Label();
             this.txtFechaNacimientoEstudMod = new System.Windows.Forms.MaskedTextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.gbEncargados = new System.Windows.Forms.GroupBox();
+            this.label55 = new System.Windows.Forms.Label();
             this.txtsegundoTelefonoEncargadoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefonoEncargadoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtIdentidadEncargadoMod = new System.Windows.Forms.MaskedTextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.txtCorreoElectronicoEncargadoMod = new System.Windows.Forms.TextBox();
+            this.btnEliminarEncargado = new AltoControls.AltoButton();
+            this.btnRegresarEncargado = new AltoControls.AltoButton();
+            this.btnActualizarEncargado = new AltoControls.AltoButton();
             this.lblregistroEncargado = new System.Windows.Forms.Label();
             this.txtfechaNacimientoEncargadoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtsegundoNombreEncargadoMod = new System.Windows.Forms.TextBox();
@@ -170,30 +207,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtprimerNombreEncargadoMod = new System.Windows.Forms.TextBox();
             this.lblcorreoElectronico = new System.Windows.Forms.Label();
             this.txtsegundoApellidoEncargadoMod = new System.Windows.Forms.TextBox();
-            this.btnActualizarEliminarEncargado = new AltoControls.AltoButton();
-            this.btnModificarEstud = new AltoControls.AltoButton();
-            this.txtRegistarR = new AltoControls.AltoButton();
-            this.txtLimpiarR = new AltoControls.AltoButton();
-            this.txtRegresarR = new AltoControls.AltoButton();
-            this.btnSiguienteDGVAct = new AltoControls.AltoButton();
-            this.btnRegresarDGV = new AltoControls.AltoButton();
-            this.btnRegistrar = new AltoControls.AltoButton();
-            this.btnLimpiar = new AltoControls.AltoButton();
-            this.btnRegresar = new AltoControls.AltoButton();
-            this.btnLimpiarEncargadoMat = new AltoControls.AltoButton();
-            this.btnAgregarEncarg = new AltoControls.AltoButton();
-            this.btnSiguienteEncarg = new AltoControls.AltoButton();
-            this.btnEstSiguiente = new AltoControls.AltoButton();
-            this.btnRegresarEstud = new AltoControls.AltoButton();
-            this.btnSiguienteEstado = new AltoControls.AltoButton();
-            this.altoButton2 = new AltoControls.AltoButton();
-            this.altoButton3 = new AltoControls.AltoButton();
-            this.btnRegresarEstado = new AltoControls.AltoButton();
-            this.btnEliminarEncargado = new AltoControls.AltoButton();
-            this.btnRegresarEncargado = new AltoControls.AltoButton();
-            this.btnActualizarEncargado = new AltoControls.AltoButton();
-            this.btnRegresarEstudianteMod = new AltoControls.AltoButton();
-            this.btnActualizarEstudiante = new AltoControls.AltoButton();
             this.btnReingreso = new AltoControls.AltoButton();
             this.btnPrimerIngreso = new AltoControls.AltoButton();
             this.btnActualizarMatricula = new AltoControls.AltoButton();
@@ -215,6 +228,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             // grpMatriculaPrimerIngreso
             // 
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.btnVerImagenPI);
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.label53);
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.btnAgregarImagenPI);
+            this.grpMatriculaPrimerIngreso.Controls.Add(this.label54);
             this.grpMatriculaPrimerIngreso.Controls.Add(this.txtNombreEncargado);
             this.grpMatriculaPrimerIngreso.Controls.Add(this.cmbIdentidadEncargado);
             this.grpMatriculaPrimerIngreso.Controls.Add(this.label14);
@@ -249,6 +266,54 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpMatriculaPrimerIngreso.Visible = false;
             this.grpMatriculaPrimerIngreso.Enter += new System.EventHandler(this.grpMatriculaPrimerIngreso_Enter);
             // 
+            // btnVerImagenPI
+            // 
+            this.btnVerImagenPI.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.adds;
+            this.btnVerImagenPI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVerImagenPI.FlatAppearance.BorderSize = 0;
+            this.btnVerImagenPI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerImagenPI.Location = new System.Drawing.Point(1081, 697);
+            this.btnVerImagenPI.Name = "btnVerImagenPI";
+            this.btnVerImagenPI.Size = new System.Drawing.Size(70, 66);
+            this.btnVerImagenPI.TabIndex = 119;
+            this.btnVerImagenPI.UseVisualStyleBackColor = true;
+            this.btnVerImagenPI.Click += new System.EventHandler(this.btnVerImagenPI_Click);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(945, 641);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(322, 27);
+            this.label53.TabIndex = 118;
+            this.label53.Text = "Ver Boleta De Calificaciones";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnAgregarImagenPI
+            // 
+            this.btnAgregarImagenPI.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.add;
+            this.btnAgregarImagenPI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregarImagenPI.FlatAppearance.BorderSize = 0;
+            this.btnAgregarImagenPI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarImagenPI.Location = new System.Drawing.Point(422, 692);
+            this.btnAgregarImagenPI.Name = "btnAgregarImagenPI";
+            this.btnAgregarImagenPI.Size = new System.Drawing.Size(77, 77);
+            this.btnAgregarImagenPI.TabIndex = 117;
+            this.btnAgregarImagenPI.UseVisualStyleBackColor = true;
+            this.btnAgregarImagenPI.Click += new System.EventHandler(this.btnAgregarImagenPI_Click);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(260, 634);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(368, 27);
+            this.label54.TabIndex = 116;
+            this.label54.Text = "Agregar Boleta de Calficaciones";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // txtNombreEncargado
             // 
             this.txtNombreEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,7 +332,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbIdentidadEncargado.FormattingEnabled = true;
             this.cmbIdentidadEncargado.Location = new System.Drawing.Point(626, 185);
             this.cmbIdentidadEncargado.Name = "cmbIdentidadEncargado";
-            this.cmbIdentidadEncargado.Size = new System.Drawing.Size(236, 35);
+            this.cmbIdentidadEncargado.Size = new System.Drawing.Size(236, 32);
             this.cmbIdentidadEncargado.TabIndex = 107;
             this.cmbIdentidadEncargado.SelectedIndexChanged += new System.EventHandler(this.cmbIdentidadEncargado_SelectedIndexChanged);
             // 
@@ -275,10 +340,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(600, 660);
+            this.label14.Location = new System.Drawing.Point(934, 426);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(121, 27);
+            this.label14.Size = new System.Drawing.Size(120, 24);
             this.label14.TabIndex = 106;
             this.label14.Text = "Descuento";
             this.label14.Click += new System.EventHandler(this.label14_Click);
@@ -286,7 +351,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // txtDescuento
             // 
             this.txtDescuento.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuento.Location = new System.Drawing.Point(574, 691);
+            this.txtDescuento.Location = new System.Drawing.Point(908, 457);
             this.txtDescuento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(179, 34);
@@ -294,6 +359,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtDescuento.Text = "0.00";
             this.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
             // cmbModoPago
             // 
@@ -302,9 +368,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.cmbModoPago.Items.AddRange(new object[] {
             "12",
             "10"});
-            this.cmbModoPago.Location = new System.Drawing.Point(864, 590);
+            this.cmbModoPago.Location = new System.Drawing.Point(1173, 362);
             this.cmbModoPago.Name = "cmbModoPago";
-            this.cmbModoPago.Size = new System.Drawing.Size(118, 32);
+            this.cmbModoPago.Size = new System.Drawing.Size(118, 29);
             this.cmbModoPago.TabIndex = 104;
             this.cmbModoPago.SelectedIndexChanged += new System.EventHandler(this.cmbModoPago_SelectedIndexChanged);
             // 
@@ -312,10 +378,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(660, 590);
+            this.label13.Location = new System.Drawing.Point(922, 361);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(152, 27);
+            this.label13.Size = new System.Drawing.Size(157, 24);
             this.label13.TabIndex = 103;
             this.label13.Text = "Modo de Pago";
             // 
@@ -323,17 +389,17 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(899, 660);
+            this.label12.Location = new System.Drawing.Point(1235, 426);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 27);
+            this.label12.Size = new System.Drawing.Size(64, 24);
             this.label12.TabIndex = 102;
             this.label12.Text = "Total";
             // 
             // txtTotalPagar
             // 
             this.txtTotalPagar.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPagar.Location = new System.Drawing.Point(839, 691);
+            this.txtTotalPagar.Location = new System.Drawing.Point(1173, 457);
             this.txtTotalPagar.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.ReadOnly = true;
@@ -345,9 +411,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(710, 532);
+            this.label9.Location = new System.Drawing.Point(1044, 304);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(214, 31);
+            this.label9.Size = new System.Drawing.Size(208, 27);
             this.label9.TabIndex = 96;
             this.label9.Text = "DATOS DE PAGO";
             // 
@@ -355,9 +421,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.cmbSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeccion.FormattingEnabled = true;
-            this.cmbSeccion.Location = new System.Drawing.Point(646, 417);
+            this.cmbSeccion.Location = new System.Drawing.Point(326, 422);
             this.cmbSeccion.Name = "cmbSeccion";
-            this.cmbSeccion.Size = new System.Drawing.Size(171, 32);
+            this.cmbSeccion.Size = new System.Drawing.Size(171, 29);
             this.cmbSeccion.TabIndex = 95;
             this.cmbSeccion.SelectedIndexChanged += new System.EventHandler(this.cmbSeccion_SelectedIndexChanged);
             // 
@@ -365,10 +431,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(544, 422);
+            this.label8.Location = new System.Drawing.Point(224, 427);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 27);
+            this.label8.Size = new System.Drawing.Size(91, 24);
             this.label8.TabIndex = 94;
             this.label8.Text = "Seccion";
             // 
@@ -376,9 +442,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.cmbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCurso.FormattingEnabled = true;
-            this.cmbCurso.Location = new System.Drawing.Point(646, 370);
+            this.cmbCurso.Location = new System.Drawing.Point(326, 354);
             this.cmbCurso.Name = "cmbCurso";
-            this.cmbCurso.Size = new System.Drawing.Size(351, 32);
+            this.cmbCurso.Size = new System.Drawing.Size(351, 29);
             this.cmbCurso.TabIndex = 93;
             this.cmbCurso.SelectedIndexChanged += new System.EventHandler(this.cmbCurso_SelectedIndexChanged);
             // 
@@ -386,10 +452,10 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(544, 371);
+            this.label7.Location = new System.Drawing.Point(224, 355);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 27);
+            this.label7.Size = new System.Drawing.Size(79, 24);
             this.label7.TabIndex = 92;
             this.label7.Text = "Curso ";
             // 
@@ -397,9 +463,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(699, 320);
+            this.label6.Location = new System.Drawing.Point(379, 304);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(244, 31);
+            this.label6.Size = new System.Drawing.Size(239, 27);
             this.label6.TabIndex = 91;
             this.label6.Text = "DATOS DEL CURSO";
             // 
@@ -409,7 +475,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(569, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(481, 31);
+            this.label2.Size = new System.Drawing.Size(470, 27);
             this.label2.TabIndex = 90;
             this.label2.Text = "DATOS DE ENCARGADO Y ESTUDIANTE";
             // 
@@ -431,6 +497,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtIdentidadEstudiante.Location = new System.Drawing.Point(626, 131);
             this.txtIdentidadEstudiante.Mask = "0000000000000";
             this.txtIdentidadEstudiante.Name = "txtIdentidadEstudiante";
+            this.txtIdentidadEstudiante.ReadOnly = true;
             this.txtIdentidadEstudiante.Size = new System.Drawing.Size(236, 34);
             this.txtIdentidadEstudiante.TabIndex = 88;
             this.txtIdentidadEstudiante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -444,7 +511,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label5.Location = new System.Drawing.Point(381, 190);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(219, 27);
+            this.label5.Size = new System.Drawing.Size(229, 24);
             this.label5.TabIndex = 87;
             this.label5.Text = "Datos del Encargado";
             // 
@@ -466,9 +533,72 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label3.Location = new System.Drawing.Point(15, 43);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 27);
+            this.label3.Size = new System.Drawing.Size(136, 24);
             this.label3.TabIndex = 85;
             this.label3.Text = "Matricula ID";
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegistrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(649, 835);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Radius = 20;
+            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
+            this.btnRegistrar.Stroke = true;
+            this.btnRegistrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegistrar.TabIndex = 84;
+            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.Transparency = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(1258, 854);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Radius = 20;
+            this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
+            this.btnLimpiar.Stroke = true;
+            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiar.TabIndex = 83;
+            this.btnLimpiar.Text = "LIMPIAR";
+            this.btnLimpiar.Transparency = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresar.Location = new System.Drawing.Point(44, 854);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Radius = 20;
+            this.btnRegresar.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresar.Stroke = true;
+            this.btnRegresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresar.TabIndex = 82;
+            this.btnRegresar.Text = "REGRESAR";
+            this.btnRegresar.Transparency = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // label4
             // 
@@ -477,12 +607,16 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label4.Location = new System.Drawing.Point(224, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(373, 27);
+            this.label4.Size = new System.Drawing.Size(386, 24);
             this.label4.TabIndex = 63;
             this.label4.Text = "Numero de Identidad del Estudiante";
             // 
             // grpReingreso
             // 
+            this.grpReingreso.Controls.Add(this.btnVerImagenR);
+            this.grpReingreso.Controls.Add(this.label47);
+            this.grpReingreso.Controls.Add(this.btnImagenAgregarR);
+            this.grpReingreso.Controls.Add(this.label11);
             this.grpReingreso.Controls.Add(this.btnActualizarEliminarEncargado);
             this.grpReingreso.Controls.Add(this.btnModificarEstud);
             this.grpReingreso.Controls.Add(this.cmbEncargadosReingreso);
@@ -519,1378 +653,53 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.grpReingreso.Visible = false;
             this.grpReingreso.Enter += new System.EventHandler(this.grpReingreso_Enter);
             // 
-            // cmbEncargadosReingreso
-            // 
-            this.cmbEncargadosReingreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEncargadosReingreso.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cmbEncargadosReingreso.FormattingEnabled = true;
-            this.cmbEncargadosReingreso.Location = new System.Drawing.Point(478, 229);
-            this.cmbEncargadosReingreso.Name = "cmbEncargadosReingreso";
-            this.cmbEncargadosReingreso.Size = new System.Drawing.Size(400, 35);
-            this.cmbEncargadosReingreso.TabIndex = 109;
-            this.cmbEncargadosReingreso.SelectedIndexChanged += new System.EventHandler(this.cmbEncargadosReingreso_SelectedIndexChanged);
-            // 
-            // txtIdentidadEstudianteR
-            // 
-            this.txtIdentidadEstudianteR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEstudianteR.Location = new System.Drawing.Point(900, 168);
-            this.txtIdentidadEstudianteR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdentidadEstudianteR.Name = "txtIdentidadEstudianteR";
-            this.txtIdentidadEstudianteR.ReadOnly = true;
-            this.txtIdentidadEstudianteR.Size = new System.Drawing.Size(283, 34);
-            this.txtIdentidadEstudianteR.TabIndex = 108;
-            this.txtIdentidadEstudianteR.TextChanged += new System.EventHandler(this.txtIdentidadEstudianteR_TextChanged_1);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(586, 656);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(121, 27);
-            this.label35.TabIndex = 106;
-            this.label35.Text = "Descuento";
-            // 
-            // txtDescuentoR
-            // 
-            this.txtDescuentoR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescuentoR.Location = new System.Drawing.Point(559, 682);
-            this.txtDescuentoR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescuentoR.Name = "txtDescuentoR";
-            this.txtDescuentoR.Size = new System.Drawing.Size(179, 34);
-            this.txtDescuentoR.TabIndex = 105;
-            this.txtDescuentoR.Text = "0.00";
-            this.txtDescuentoR.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtDescuentoR.TextChanged += new System.EventHandler(this.txtDescuentoR_TextChanged);
-            // 
-            // cmbModoPagoR
-            // 
-            this.cmbModoPagoR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModoPagoR.FormattingEnabled = true;
-            this.cmbModoPagoR.Items.AddRange(new object[] {
-            "12",
-            "10"});
-            this.cmbModoPagoR.Location = new System.Drawing.Point(849, 590);
-            this.cmbModoPagoR.Name = "cmbModoPagoR";
-            this.cmbModoPagoR.Size = new System.Drawing.Size(118, 32);
-            this.cmbModoPagoR.TabIndex = 104;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(645, 590);
-            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(152, 27);
-            this.label36.TabIndex = 103;
-            this.label36.Text = "Modo de Pago";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(913, 656);
-            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(64, 27);
-            this.label37.TabIndex = 102;
-            this.label37.Text = "Total";
-            // 
-            // txtTotalR
-            // 
-            this.txtTotalR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalR.Location = new System.Drawing.Point(852, 682);
-            this.txtTotalR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTotalR.Name = "txtTotalR";
-            this.txtTotalR.ReadOnly = true;
-            this.txtTotalR.Size = new System.Drawing.Size(188, 34);
-            this.txtTotalR.TabIndex = 101;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(695, 532);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(214, 31);
-            this.label38.TabIndex = 96;
-            this.label38.Text = "DATOS DE PAGO";
-            // 
-            // cmbSeccionR
-            // 
-            this.cmbSeccionR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSeccionR.FormattingEnabled = true;
-            this.cmbSeccionR.Location = new System.Drawing.Point(626, 417);
-            this.cmbSeccionR.Name = "cmbSeccionR";
-            this.cmbSeccionR.Size = new System.Drawing.Size(191, 32);
-            this.cmbSeccionR.TabIndex = 95;
-            this.cmbSeccionR.SelectedIndexChanged += new System.EventHandler(this.cmbSeccionR_SelectedIndexChanged);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(524, 422);
-            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(92, 27);
-            this.label39.TabIndex = 94;
-            this.label39.Text = "Seccion";
-            // 
-            // cmbCursoR
-            // 
-            this.cmbCursoR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCursoR.FormattingEnabled = true;
-            this.cmbCursoR.Location = new System.Drawing.Point(626, 370);
-            this.cmbCursoR.Name = "cmbCursoR";
-            this.cmbCursoR.Size = new System.Drawing.Size(351, 32);
-            this.cmbCursoR.TabIndex = 93;
-            this.cmbCursoR.SelectedIndexChanged += new System.EventHandler(this.cmbCursoR_SelectedIndexChanged);
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(524, 371);
-            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(77, 27);
-            this.label40.TabIndex = 92;
-            this.label40.Text = "Curso ";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(679, 320);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(244, 31);
-            this.label41.TabIndex = 91;
-            this.label41.Text = "DATOS DEL CURSO";
-            this.label41.TextChanged += new System.EventHandler(this.label41_TextChanged);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(570, 93);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(481, 31);
-            this.label42.TabIndex = 90;
-            this.label42.Text = "DATOS DE ENCARGADO Y ESTUDIANTE";
-            // 
-            // txtNombreEstudianteR
-            // 
-            this.txtNombreEstudianteR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstudianteR.Location = new System.Drawing.Point(478, 168);
-            this.txtNombreEstudianteR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombreEstudianteR.Name = "txtNombreEstudianteR";
-            this.txtNombreEstudianteR.ReadOnly = true;
-            this.txtNombreEstudianteR.Size = new System.Drawing.Size(400, 34);
-            this.txtNombreEstudianteR.TabIndex = 89;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(79, 230);
-            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(360, 27);
-            this.label43.TabIndex = 87;
-            this.label43.Text = "Nombre e Identidad del Encargado";
-            // 
-            // txtNoMatriculaR
-            // 
-            this.txtNoMatriculaR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoMatriculaR.Location = new System.Drawing.Point(173, 40);
-            this.txtNoMatriculaR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNoMatriculaR.Name = "txtNoMatriculaR";
-            this.txtNoMatriculaR.ReadOnly = true;
-            this.txtNoMatriculaR.Size = new System.Drawing.Size(78, 34);
-            this.txtNoMatriculaR.TabIndex = 86;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(15, 43);
-            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(143, 27);
-            this.label44.TabIndex = 85;
-            this.label44.Text = "Matricula No.";
-            // 
-            // txtIdentidadEncargadoR
-            // 
-            this.txtIdentidadEncargadoR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEncargadoR.Location = new System.Drawing.Point(900, 227);
-            this.txtIdentidadEncargadoR.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdentidadEncargadoR.Name = "txtIdentidadEncargadoR";
-            this.txtIdentidadEncargadoR.ReadOnly = true;
-            this.txtIdentidadEncargadoR.Size = new System.Drawing.Size(283, 34);
-            this.txtIdentidadEncargadoR.TabIndex = 54;
-            this.txtIdentidadEncargadoR.TextChanged += new System.EventHandler(this.txtNombreEncargadoR_TextChanged);
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(79, 175);
-            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(362, 27);
-            this.label45.TabIndex = 63;
-            this.label45.Text = "Nombre e Identidad del Estudiante";
-            // 
-            // grpListaEstudiantes
-            // 
-            this.grpListaEstudiantes.Controls.Add(this.txtBusquedaNombre);
-            this.grpListaEstudiantes.Controls.Add(this.pictureBox1);
-            this.grpListaEstudiantes.Controls.Add(this.dgvEstudiantes);
-            this.grpListaEstudiantes.Controls.Add(this.btnSiguienteDGVAct);
-            this.grpListaEstudiantes.Controls.Add(this.btnRegresarDGV);
-            this.grpListaEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpListaEstudiantes.Location = new System.Drawing.Point(6, 12);
-            this.grpListaEstudiantes.Name = "grpListaEstudiantes";
-            this.grpListaEstudiantes.Size = new System.Drawing.Size(1605, 995);
-            this.grpListaEstudiantes.TabIndex = 107;
-            this.grpListaEstudiantes.TabStop = false;
-            this.grpListaEstudiantes.Text = "LISTADO DE ESTUDIANTES";
-            this.grpListaEstudiantes.Visible = false;
-            this.grpListaEstudiantes.Enter += new System.EventHandler(this.grpListaEstudiantes_Enter);
-            // 
-            // txtBusquedaNombre
-            // 
-            this.txtBusquedaNombre.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaNombre.Location = new System.Drawing.Point(1271, 56);
-            this.txtBusquedaNombre.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBusquedaNombre.Name = "txtBusquedaNombre";
-            this.txtBusquedaNombre.Size = new System.Drawing.Size(269, 34);
-            this.txtBusquedaNombre.TabIndex = 107;
-            this.txtBusquedaNombre.TextChanged += new System.EventHandler(this.txtBusquedaNombre_TextChanged_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
-            this.pictureBox1.Location = new System.Drawing.Point(1226, 53);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 108;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dgvEstudiantes
-            // 
-            this.dgvEstudiantes.AllowUserToAddRows = false;
-            this.dgvEstudiantes.AllowUserToDeleteRows = false;
-            this.dgvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEstudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEstudiantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstudiantes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEstudiantes.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvEstudiantes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.dgvEstudiantes.Location = new System.Drawing.Point(44, 113);
-            this.dgvEstudiantes.MultiSelect = false;
-            this.dgvEstudiantes.Name = "dgvEstudiantes";
-            this.dgvEstudiantes.ReadOnly = true;
-            this.dgvEstudiantes.RowHeadersWidth = 20;
-            this.dgvEstudiantes.Size = new System.Drawing.Size(1523, 733);
-            this.dgvEstudiantes.TabIndex = 86;
-            this.dgvEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(661, 203);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 41);
-            this.label1.TabIndex = 83;
-            this.label1.Text = "GESTION DE MATRICULA";
-            // 
-            // errorIdentidad
-            // 
-            this.errorIdentidad.ContainerControl = this;
-            // 
-            // grpActualizarEstado
-            // 
-            this.grpActualizarEstado.Controls.Add(this.txtSeccionEstado);
-            this.grpActualizarEstado.Controls.Add(this.label16);
-            this.grpActualizarEstado.Controls.Add(this.label15);
-            this.grpActualizarEstado.Controls.Add(this.txtNombreCurso);
-            this.grpActualizarEstado.Controls.Add(this.txtIdentidadEstado);
-            this.grpActualizarEstado.Controls.Add(this.cmbEstadoMatri);
-            this.grpActualizarEstado.Controls.Add(this.ESTADO);
-            this.grpActualizarEstado.Controls.Add(this.label21);
-            this.grpActualizarEstado.Controls.Add(this.label22);
-            this.grpActualizarEstado.Controls.Add(this.txtNombreEstudianteEstado);
-            this.grpActualizarEstado.Controls.Add(this.txtMatriculaEstado);
-            this.grpActualizarEstado.Controls.Add(this.label24);
-            this.grpActualizarEstado.Controls.Add(this.altoButton3);
-            this.grpActualizarEstado.Controls.Add(this.btnRegresarEstado);
-            this.grpActualizarEstado.Controls.Add(this.label25);
-            this.grpActualizarEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpActualizarEstado.Location = new System.Drawing.Point(25, 18);
-            this.grpActualizarEstado.Name = "grpActualizarEstado";
-            this.grpActualizarEstado.Size = new System.Drawing.Size(1579, 991);
-            this.grpActualizarEstado.TabIndex = 109;
-            this.grpActualizarEstado.TabStop = false;
-            this.grpActualizarEstado.Text = "ACTUALIZACION";
-            this.grpActualizarEstado.Visible = false;
-            this.grpActualizarEstado.Enter += new System.EventHandler(this.grpActualizarEstado_Enter);
-            // 
-            // txtSeccionEstado
-            // 
-            this.txtSeccionEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeccionEstado.Location = new System.Drawing.Point(781, 455);
-            this.txtSeccionEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSeccionEstado.Name = "txtSeccionEstado";
-            this.txtSeccionEstado.ReadOnly = true;
-            this.txtSeccionEstado.Size = new System.Drawing.Size(112, 34);
-            this.txtSeccionEstado.TabIndex = 112;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(678, 458);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(92, 27);
-            this.label16.TabIndex = 111;
-            this.label16.Text = "Seccion";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(571, 404);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(193, 27);
-            this.label15.TabIndex = 110;
-            this.label15.Text = "Nombre del Curso";
-            // 
-            // txtNombreCurso
-            // 
-            this.txtNombreCurso.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCurso.Location = new System.Drawing.Point(781, 398);
-            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombreCurso.Name = "txtNombreCurso";
-            this.txtNombreCurso.ReadOnly = true;
-            this.txtNombreCurso.Size = new System.Drawing.Size(236, 34);
-            this.txtNombreCurso.TabIndex = 109;
-            // 
-            // txtIdentidadEstado
-            // 
-            this.txtIdentidadEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEstado.Location = new System.Drawing.Point(626, 194);
-            this.txtIdentidadEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIdentidadEstado.Name = "txtIdentidadEstado";
-            this.txtIdentidadEstado.ReadOnly = true;
-            this.txtIdentidadEstado.Size = new System.Drawing.Size(236, 34);
-            this.txtIdentidadEstado.TabIndex = 108;
-            this.txtIdentidadEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIdentidadEstado.TextChanged += new System.EventHandler(this.txtIdentidadEstado_TextChanged);
-            // 
-            // cmbEstadoMatri
-            // 
-            this.cmbEstadoMatri.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoMatri.FormattingEnabled = true;
-            this.cmbEstadoMatri.Items.AddRange(new object[] {
-            "MATRICULADO",
-            "APROBADO",
-            "RETIRADO"});
-            this.cmbEstadoMatri.Location = new System.Drawing.Point(711, 628);
-            this.cmbEstadoMatri.Name = "cmbEstadoMatri";
-            this.cmbEstadoMatri.Size = new System.Drawing.Size(182, 32);
-            this.cmbEstadoMatri.TabIndex = 95;
-            // 
-            // ESTADO
-            // 
-            this.ESTADO.AutoSize = true;
-            this.ESTADO.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ESTADO.Location = new System.Drawing.Point(758, 590);
-            this.ESTADO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ESTADO.Name = "ESTADO";
-            this.ESTADO.Size = new System.Drawing.Size(81, 27);
-            this.ESTADO.TabIndex = 94;
-            this.ESTADO.Text = "Estado";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(641, 347);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(349, 31);
-            this.label21.TabIndex = 91;
-            this.label21.Text = "DATOS DEL CURSO ACTUAL";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(659, 131);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(312, 31);
-            this.label22.TabIndex = 90;
-            this.label22.Text = "DATOS DEL ESTUDIANTE";
-            // 
-            // txtNombreEstudianteEstado
-            // 
-            this.txtNombreEstudianteEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreEstudianteEstado.Location = new System.Drawing.Point(883, 195);
-            this.txtNombreEstudianteEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombreEstudianteEstado.Name = "txtNombreEstudianteEstado";
-            this.txtNombreEstudianteEstado.ReadOnly = true;
-            this.txtNombreEstudianteEstado.Size = new System.Drawing.Size(400, 34);
-            this.txtNombreEstudianteEstado.TabIndex = 89;
-            this.txtNombreEstudianteEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMatriculaEstado
-            // 
-            this.txtMatriculaEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatriculaEstado.Location = new System.Drawing.Point(173, 40);
-            this.txtMatriculaEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMatriculaEstado.Name = "txtMatriculaEstado";
-            this.txtMatriculaEstado.ReadOnly = true;
-            this.txtMatriculaEstado.Size = new System.Drawing.Size(51, 34);
-            this.txtMatriculaEstado.TabIndex = 86;
-            this.txtMatriculaEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(15, 43);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(143, 27);
-            this.label24.TabIndex = 85;
-            this.label24.Text = "Matricula No.";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(228, 205);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(373, 27);
-            this.label25.TabIndex = 63;
-            this.label25.Text = "Numero de Identidad del Estudiante";
-            // 
-            // grpListadoEstado
-            // 
-            this.grpListadoEstado.Controls.Add(this.txtBusquedaIdentidadEstado);
-            this.grpListadoEstado.Controls.Add(this.pictureBox3);
-            this.grpListadoEstado.Controls.Add(this.dgvBusquedaEstado);
-            this.grpListadoEstado.Controls.Add(this.btnSiguienteEstado);
-            this.grpListadoEstado.Controls.Add(this.altoButton2);
-            this.grpListadoEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpListadoEstado.Location = new System.Drawing.Point(6, 18);
-            this.grpListadoEstado.Name = "grpListadoEstado";
-            this.grpListadoEstado.Size = new System.Drawing.Size(1598, 1005);
-            this.grpListadoEstado.TabIndex = 107;
-            this.grpListadoEstado.TabStop = false;
-            this.grpListadoEstado.Text = "LISTADO DE ESTUDIANTES";
-            this.grpListadoEstado.Visible = false;
-            // 
-            // txtBusquedaIdentidadEstado
-            // 
-            this.txtBusquedaIdentidadEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaIdentidadEstado.Location = new System.Drawing.Point(1271, 61);
-            this.txtBusquedaIdentidadEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBusquedaIdentidadEstado.Name = "txtBusquedaIdentidadEstado";
-            this.txtBusquedaIdentidadEstado.Size = new System.Drawing.Size(269, 34);
-            this.txtBusquedaIdentidadEstado.TabIndex = 105;
-            this.txtBusquedaIdentidadEstado.TextChanged += new System.EventHandler(this.txtBusquedaIdentidadEstado_TextChanged_1);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
-            this.pictureBox3.Location = new System.Drawing.Point(1226, 58);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 106;
-            this.pictureBox3.TabStop = false;
-            // 
-            // dgvBusquedaEstado
-            // 
-            this.dgvBusquedaEstado.AllowUserToAddRows = false;
-            this.dgvBusquedaEstado.AllowUserToDeleteRows = false;
-            this.dgvBusquedaEstado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBusquedaEstado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvBusquedaEstado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.DarkRed;
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusquedaEstado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.dgvBusquedaEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusquedaEstado.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBusquedaEstado.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dgvBusquedaEstado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.dgvBusquedaEstado.Location = new System.Drawing.Point(44, 113);
-            this.dgvBusquedaEstado.MultiSelect = false;
-            this.dgvBusquedaEstado.Name = "dgvBusquedaEstado";
-            this.dgvBusquedaEstado.ReadOnly = true;
-            this.dgvBusquedaEstado.RowHeadersWidth = 20;
-            this.dgvBusquedaEstado.Size = new System.Drawing.Size(1512, 752);
-            this.dgvBusquedaEstado.TabIndex = 86;
-            this.dgvBusquedaEstado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEstado_CellContentClick);
-            // 
-            // grpRegistroEstudiante
-            // 
-            this.grpRegistroEstudiante.Controls.Add(this.txtfechaNacimientoEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.cmbGeneroEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.lblgenero);
-            this.grpRegistroEstudiante.Controls.Add(this.label17);
-            this.grpRegistroEstudiante.Controls.Add(this.txtprimerApellidoEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.txtsegundoApellidoEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.txtprimerNombreEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.txtsegundoNombreEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.lblApellidos);
-            this.grpRegistroEstudiante.Controls.Add(this.lblnombres);
-            this.grpRegistroEstudiante.Controls.Add(this.label28);
-            this.grpRegistroEstudiante.Controls.Add(this.mktIdentidadEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.btnEstSiguiente);
-            this.grpRegistroEstudiante.Controls.Add(this.btnRegresarEstud);
-            this.grpRegistroEstudiante.Controls.Add(this.label31);
-            this.grpRegistroEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpRegistroEstudiante.Location = new System.Drawing.Point(25, 12);
-            this.grpRegistroEstudiante.Name = "grpRegistroEstudiante";
-            this.grpRegistroEstudiante.Size = new System.Drawing.Size(1579, 987);
-            this.grpRegistroEstudiante.TabIndex = 110;
-            this.grpRegistroEstudiante.TabStop = false;
-            this.grpRegistroEstudiante.Text = "REGISTRO ESTUDIANTE";
-            this.grpRegistroEstudiante.Visible = false;
-            // 
-            // txtfechaNacimientoEstud
-            // 
-            this.txtfechaNacimientoEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtfechaNacimientoEstud.Location = new System.Drawing.Point(695, 520);
-            this.txtfechaNacimientoEstud.Mask = "00/00/0000";
-            this.txtfechaNacimientoEstud.Name = "txtfechaNacimientoEstud";
-            this.txtfechaNacimientoEstud.Size = new System.Drawing.Size(239, 34);
-            this.txtfechaNacimientoEstud.TabIndex = 5;
-            this.txtfechaNacimientoEstud.ValidatingType = typeof(System.DateTime);
-            // 
-            // cmbGeneroEstud
-            // 
-            this.cmbGeneroEstud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGeneroEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cmbGeneroEstud.FormattingEnabled = true;
-            this.cmbGeneroEstud.Items.AddRange(new object[] {
-            "<SELECCIONE>",
-            "Masculino",
-            "Femenino"});
-            this.cmbGeneroEstud.Location = new System.Drawing.Point(695, 599);
-            this.cmbGeneroEstud.Name = "cmbGeneroEstud";
-            this.cmbGeneroEstud.Size = new System.Drawing.Size(239, 35);
-            this.cmbGeneroEstud.TabIndex = 6;
-            this.cmbGeneroEstud.SelectedIndexChanged += new System.EventHandler(this.cmbGeneroEstud_SelectedIndexChanged);
-            // 
-            // lblgenero
-            // 
-            this.lblgenero.AutoSize = true;
-            this.lblgenero.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgenero.Location = new System.Drawing.Point(581, 604);
-            this.lblgenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblgenero.Name = "lblgenero";
-            this.lblgenero.Size = new System.Drawing.Size(87, 27);
-            this.lblgenero.TabIndex = 98;
-            this.lblgenero.Text = "Género";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(476, 529);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(192, 27);
-            this.label17.TabIndex = 97;
-            this.label17.Text = "Fecha Nacimiento";
-            // 
-            // txtprimerApellidoEstud
-            // 
-            this.txtprimerApellidoEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtprimerApellidoEstud.Location = new System.Drawing.Point(695, 444);
-            this.txtprimerApellidoEstud.Margin = new System.Windows.Forms.Padding(2);
-            this.txtprimerApellidoEstud.Multiline = true;
-            this.txtprimerApellidoEstud.Name = "txtprimerApellidoEstud";
-            this.txtprimerApellidoEstud.Size = new System.Drawing.Size(239, 34);
-            this.txtprimerApellidoEstud.TabIndex = 3;
-            this.txtprimerApellidoEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerApellidoEstud_KeyPress);
-            // 
-            // txtsegundoApellidoEstud
-            // 
-            this.txtsegundoApellidoEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtsegundoApellidoEstud.Location = new System.Drawing.Point(956, 444);
-            this.txtsegundoApellidoEstud.Margin = new System.Windows.Forms.Padding(2);
-            this.txtsegundoApellidoEstud.Multiline = true;
-            this.txtsegundoApellidoEstud.Name = "txtsegundoApellidoEstud";
-            this.txtsegundoApellidoEstud.Size = new System.Drawing.Size(239, 32);
-            this.txtsegundoApellidoEstud.TabIndex = 4;
-            this.txtsegundoApellidoEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoApellidoEstud_KeyPress);
-            // 
-            // txtprimerNombreEstud
-            // 
-            this.txtprimerNombreEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtprimerNombreEstud.Location = new System.Drawing.Point(695, 363);
-            this.txtprimerNombreEstud.Margin = new System.Windows.Forms.Padding(2);
-            this.txtprimerNombreEstud.Multiline = true;
-            this.txtprimerNombreEstud.Name = "txtprimerNombreEstud";
-            this.txtprimerNombreEstud.Size = new System.Drawing.Size(239, 34);
-            this.txtprimerNombreEstud.TabIndex = 1;
-            this.txtprimerNombreEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerNombreEstud_KeyPress);
-            // 
-            // txtsegundoNombreEstud
-            // 
-            this.txtsegundoNombreEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtsegundoNombreEstud.Location = new System.Drawing.Point(956, 363);
-            this.txtsegundoNombreEstud.Margin = new System.Windows.Forms.Padding(2);
-            this.txtsegundoNombreEstud.Multiline = true;
-            this.txtsegundoNombreEstud.Name = "txtsegundoNombreEstud";
-            this.txtsegundoNombreEstud.Size = new System.Drawing.Size(239, 34);
-            this.txtsegundoNombreEstud.TabIndex = 2;
-            this.txtsegundoNombreEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoNombreEstud_KeyPress);
-            // 
-            // lblApellidos
-            // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidos.Location = new System.Drawing.Point(566, 449);
-            this.lblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(102, 27);
-            this.lblApellidos.TabIndex = 92;
-            this.lblApellidos.Text = "Apellidos";
-            // 
-            // lblnombres
-            // 
-            this.lblnombres.AutoSize = true;
-            this.lblnombres.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombres.Location = new System.Drawing.Point(566, 368);
-            this.lblnombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblnombres.Name = "lblnombres";
-            this.lblnombres.Size = new System.Drawing.Size(103, 27);
-            this.lblnombres.TabIndex = 91;
-            this.lblnombres.Text = "Nombres";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(689, 70);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(298, 31);
-            this.label28.TabIndex = 90;
-            this.label28.Text = "DATOS DE ESTUDIANTE";
-            // 
-            // mktIdentidadEstud
-            // 
-            this.mktIdentidadEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mktIdentidadEstud.Location = new System.Drawing.Point(695, 277);
-            this.mktIdentidadEstud.Mask = "0000000000000";
-            this.mktIdentidadEstud.Name = "mktIdentidadEstud";
-            this.mktIdentidadEstud.Size = new System.Drawing.Size(239, 34);
-            this.mktIdentidadEstud.TabIndex = 0;
-            this.mktIdentidadEstud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mktIdentidadEstud.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mktIdentidadEstud_MaskInputRejected);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(296, 287);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(373, 27);
-            this.label31.TabIndex = 63;
-            this.label31.Text = "Numero de Identidad del Estudiante";
-            // 
-            // grpRegistroEncargados
-            // 
-            this.grpRegistroEncargados.Controls.Add(this.txtTelefonoAlternativo);
-            this.grpRegistroEncargados.Controls.Add(this.txtprimerTelefono);
-            this.grpRegistroEncargados.Controls.Add(this.btnLimpiarEncargadoMat);
-            this.grpRegistroEncargados.Controls.Add(this.btnAgregarEncarg);
-            this.grpRegistroEncargados.Controls.Add(this.txtDireccion);
-            this.grpRegistroEncargados.Controls.Add(this.lbldireccion);
-            this.grpRegistroEncargados.Controls.Add(this.txtcorreoElectronico);
-            this.grpRegistroEncargados.Controls.Add(this.label18);
-            this.grpRegistroEncargados.Controls.Add(this.lbltelefonos);
-            this.grpRegistroEncargados.Controls.Add(this.mskFechaNacimientoEncarg);
-            this.grpRegistroEncargados.Controls.Add(this.label19);
-            this.grpRegistroEncargados.Controls.Add(this.txtPrimerApellidoEncarg);
-            this.grpRegistroEncargados.Controls.Add(this.txtSegundoApellidoEncarg);
-            this.grpRegistroEncargados.Controls.Add(this.txtPrimerNombreEncarg);
-            this.grpRegistroEncargados.Controls.Add(this.txtSegundoNombreEncarg);
-            this.grpRegistroEncargados.Controls.Add(this.label20);
-            this.grpRegistroEncargados.Controls.Add(this.label23);
-            this.grpRegistroEncargados.Controls.Add(this.label26);
-            this.grpRegistroEncargados.Controls.Add(this.mktIdentidadEncargado);
-            this.grpRegistroEncargados.Controls.Add(this.btnSiguienteEncarg);
-            this.grpRegistroEncargados.Controls.Add(this.label30);
-            this.grpRegistroEncargados.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpRegistroEncargados.Location = new System.Drawing.Point(12, 14);
-            this.grpRegistroEncargados.Name = "grpRegistroEncargados";
-            this.grpRegistroEncargados.Size = new System.Drawing.Size(1611, 991);
-            this.grpRegistroEncargados.TabIndex = 111;
-            this.grpRegistroEncargados.TabStop = false;
-            this.grpRegistroEncargados.Text = "REGISTRO ENCARGADO";
-            this.grpRegistroEncargados.Visible = false;
-            this.grpRegistroEncargados.Enter += new System.EventHandler(this.grpRegistroEncargados_Enter);
-            // 
-            // txtTelefonoAlternativo
-            // 
-            this.txtTelefonoAlternativo.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoAlternativo.Location = new System.Drawing.Point(949, 435);
-            this.txtTelefonoAlternativo.Mask = "00000000";
-            this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
-            this.txtTelefonoAlternativo.Size = new System.Drawing.Size(234, 34);
-            this.txtTelefonoAlternativo.TabIndex = 6;
-            this.txtTelefonoAlternativo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtprimerTelefono
-            // 
-            this.txtprimerTelefono.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprimerTelefono.Location = new System.Drawing.Point(694, 435);
-            this.txtprimerTelefono.Mask = "00000000";
-            this.txtprimerTelefono.Name = "txtprimerTelefono";
-            this.txtprimerTelefono.Size = new System.Drawing.Size(234, 34);
-            this.txtprimerTelefono.TabIndex = 5;
-            this.txtprimerTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtDireccion.Location = new System.Drawing.Point(695, 679);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(488, 96);
-            this.txtDireccion.TabIndex = 9;
-            // 
-            // lbldireccion
-            // 
-            this.lbldireccion.AutoSize = true;
-            this.lbldireccion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldireccion.Location = new System.Drawing.Point(555, 683);
-            this.lbldireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbldireccion.Name = "lbldireccion";
-            this.lbldireccion.Size = new System.Drawing.Size(107, 27);
-            this.lbldireccion.TabIndex = 107;
-            this.lbldireccion.Text = "Dirección";
-            // 
-            // txtcorreoElectronico
-            // 
-            this.txtcorreoElectronico.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtcorreoElectronico.Location = new System.Drawing.Point(695, 522);
-            this.txtcorreoElectronico.Margin = new System.Windows.Forms.Padding(2);
-            this.txtcorreoElectronico.Multiline = true;
-            this.txtcorreoElectronico.Name = "txtcorreoElectronico";
-            this.txtcorreoElectronico.Size = new System.Drawing.Size(233, 34);
-            this.txtcorreoElectronico.TabIndex = 7;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(459, 522);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(202, 27);
-            this.label18.TabIndex = 105;
-            this.label18.Text = "Correo Electronico";
-            // 
-            // lbltelefonos
-            // 
-            this.lbltelefonos.AutoSize = true;
-            this.lbltelefonos.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltelefonos.Location = new System.Drawing.Point(549, 440);
-            this.lbltelefonos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbltelefonos.Name = "lbltelefonos";
-            this.lbltelefonos.Size = new System.Drawing.Size(114, 27);
-            this.lbltelefonos.TabIndex = 102;
-            this.lbltelefonos.Text = "Teléfonos";
-            // 
-            // mskFechaNacimientoEncarg
-            // 
-            this.mskFechaNacimientoEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.mskFechaNacimientoEncarg.Location = new System.Drawing.Point(695, 602);
-            this.mskFechaNacimientoEncarg.Mask = "00/00/0000";
-            this.mskFechaNacimientoEncarg.Name = "mskFechaNacimientoEncarg";
-            this.mskFechaNacimientoEncarg.Size = new System.Drawing.Size(232, 34);
-            this.mskFechaNacimientoEncarg.TabIndex = 8;
-            this.mskFechaNacimientoEncarg.ValidatingType = typeof(System.DateTime);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(469, 611);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(192, 27);
-            this.label19.TabIndex = 97;
-            this.label19.Text = "Fecha Nacimiento";
-            // 
-            // txtPrimerApellidoEncarg
-            // 
-            this.txtPrimerApellidoEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtPrimerApellidoEncarg.Location = new System.Drawing.Point(695, 356);
-            this.txtPrimerApellidoEncarg.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrimerApellidoEncarg.Multiline = true;
-            this.txtPrimerApellidoEncarg.Name = "txtPrimerApellidoEncarg";
-            this.txtPrimerApellidoEncarg.Size = new System.Drawing.Size(233, 34);
-            this.txtPrimerApellidoEncarg.TabIndex = 3;
-            this.txtPrimerApellidoEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerApellidoEncarg_KeyPress);
-            // 
-            // txtSegundoApellidoEncarg
-            // 
-            this.txtSegundoApellidoEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtSegundoApellidoEncarg.Location = new System.Drawing.Point(950, 356);
-            this.txtSegundoApellidoEncarg.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSegundoApellidoEncarg.Multiline = true;
-            this.txtSegundoApellidoEncarg.Name = "txtSegundoApellidoEncarg";
-            this.txtSegundoApellidoEncarg.Size = new System.Drawing.Size(234, 34);
-            this.txtSegundoApellidoEncarg.TabIndex = 4;
-            this.txtSegundoApellidoEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellidoEncarg_KeyPress);
-            // 
-            // txtPrimerNombreEncarg
-            // 
-            this.txtPrimerNombreEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtPrimerNombreEncarg.Location = new System.Drawing.Point(695, 275);
-            this.txtPrimerNombreEncarg.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrimerNombreEncarg.Multiline = true;
-            this.txtPrimerNombreEncarg.Name = "txtPrimerNombreEncarg";
-            this.txtPrimerNombreEncarg.Size = new System.Drawing.Size(232, 34);
-            this.txtPrimerNombreEncarg.TabIndex = 1;
-            this.txtPrimerNombreEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombreEncarg_KeyPress);
-            // 
-            // txtSegundoNombreEncarg
-            // 
-            this.txtSegundoNombreEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtSegundoNombreEncarg.Location = new System.Drawing.Point(950, 275);
-            this.txtSegundoNombreEncarg.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSegundoNombreEncarg.Multiline = true;
-            this.txtSegundoNombreEncarg.Name = "txtSegundoNombreEncarg";
-            this.txtSegundoNombreEncarg.Size = new System.Drawing.Size(234, 34);
-            this.txtSegundoNombreEncarg.TabIndex = 2;
-            this.txtSegundoNombreEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombreEncarg_KeyPress);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(560, 361);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(102, 27);
-            this.label20.TabIndex = 92;
-            this.label20.Text = "Apellidos";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(560, 280);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 27);
-            this.label23.TabIndex = 91;
-            this.label23.Text = "Nombres";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(636, 62);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(370, 31);
-            this.label26.TabIndex = 90;
-            this.label26.Text = "DATOS DE LOS ENCARGADOS";
-            // 
-            // mktIdentidadEncargado
-            // 
-            this.mktIdentidadEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mktIdentidadEncargado.Location = new System.Drawing.Point(695, 184);
-            this.mktIdentidadEncargado.Mask = "0000000000000";
-            this.mktIdentidadEncargado.Name = "mktIdentidadEncargado";
-            this.mktIdentidadEncargado.Size = new System.Drawing.Size(234, 34);
-            this.mktIdentidadEncargado.TabIndex = 0;
-            this.mktIdentidadEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mktIdentidadEncargado.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mktIdentidadEncargado_MaskInputRejected);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(292, 187);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(371, 27);
-            this.label30.TabIndex = 63;
-            this.label30.Text = "Numero de Identidad del Encargado";
-            // 
-            // gbEstudiantes
-            // 
-            this.gbEstudiantes.Controls.Add(this.txtIdentidadEstudMod);
-            this.gbEstudiantes.Controls.Add(this.cmbgeneroEstudMod);
-            this.gbEstudiantes.Controls.Add(this.label10);
-            this.gbEstudiantes.Controls.Add(this.txtPrimerApellidoEstudMod);
-            this.gbEstudiantes.Controls.Add(this.txtSegundoApellidoEstudMod);
-            this.gbEstudiantes.Controls.Add(this.txtPrimerNombreEstudMod);
-            this.gbEstudiantes.Controls.Add(this.txtSegundoNombreEstudMod);
-            this.gbEstudiantes.Controls.Add(this.label27);
-            this.gbEstudiantes.Controls.Add(this.label29);
-            this.gbEstudiantes.Controls.Add(this.label32);
-            this.gbEstudiantes.Controls.Add(this.btnRegresarEstudianteMod);
-            this.gbEstudiantes.Controls.Add(this.btnActualizarEstudiante);
-            this.gbEstudiantes.Controls.Add(this.label33);
-            this.gbEstudiantes.Controls.Add(this.txtFechaNacimientoEstudMod);
-            this.gbEstudiantes.Controls.Add(this.label34);
-            this.gbEstudiantes.Controls.Add(this.label46);
-            this.gbEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEstudiantes.Location = new System.Drawing.Point(18, 13);
-            this.gbEstudiantes.Name = "gbEstudiantes";
-            this.gbEstudiantes.Size = new System.Drawing.Size(1599, 1008);
-            this.gbEstudiantes.TabIndex = 112;
-            this.gbEstudiantes.TabStop = false;
-            this.gbEstudiantes.Text = "DATOS ESTUDIANTE";
-            this.gbEstudiantes.Visible = false;
-            // 
-            // txtIdentidadEstudMod
-            // 
-            this.txtIdentidadEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEstudMod.Location = new System.Drawing.Point(718, 197);
-            this.txtIdentidadEstudMod.Mask = "0000000000000";
-            this.txtIdentidadEstudMod.Name = "txtIdentidadEstudMod";
-            this.txtIdentidadEstudMod.Size = new System.Drawing.Size(454, 34);
-            this.txtIdentidadEstudMod.TabIndex = 114;
-            this.txtIdentidadEstudMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIdentidadEstudMod.TextChanged += new System.EventHandler(this.txtIdentidadEstudMod_TextChanged_1);
-            // 
-            // cmbgeneroEstudMod
-            // 
-            this.cmbgeneroEstudMod.Enabled = false;
-            this.cmbgeneroEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cmbgeneroEstudMod.FormattingEnabled = true;
-            this.cmbgeneroEstudMod.Items.AddRange(new object[] {
-            "F",
-            "M"});
-            this.cmbgeneroEstudMod.Location = new System.Drawing.Point(719, 660);
-            this.cmbgeneroEstudMod.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbgeneroEstudMod.Name = "cmbgeneroEstudMod";
-            this.cmbgeneroEstudMod.Size = new System.Drawing.Size(219, 35);
-            this.cmbgeneroEstudMod.TabIndex = 98;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(438, 647);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 37);
-            this.label10.TabIndex = 97;
-            this.label10.Text = "Género";
-            // 
-            // txtPrimerApellidoEstudMod
-            // 
-            this.txtPrimerApellidoEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtPrimerApellidoEstudMod.Location = new System.Drawing.Point(719, 431);
-            this.txtPrimerApellidoEstudMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrimerApellidoEstudMod.Multiline = true;
-            this.txtPrimerApellidoEstudMod.Name = "txtPrimerApellidoEstudMod";
-            this.txtPrimerApellidoEstudMod.Size = new System.Drawing.Size(219, 34);
-            this.txtPrimerApellidoEstudMod.TabIndex = 95;
-            this.txtPrimerApellidoEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerApellidoEstudMod_KeyPress);
-            // 
-            // txtSegundoApellidoEstudMod
-            // 
-            this.txtSegundoApellidoEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtSegundoApellidoEstudMod.Location = new System.Drawing.Point(954, 431);
-            this.txtSegundoApellidoEstudMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSegundoApellidoEstudMod.Multiline = true;
-            this.txtSegundoApellidoEstudMod.Name = "txtSegundoApellidoEstudMod";
-            this.txtSegundoApellidoEstudMod.Size = new System.Drawing.Size(219, 34);
-            this.txtSegundoApellidoEstudMod.TabIndex = 94;
-            this.txtSegundoApellidoEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellidoEstudMod_KeyPress);
-            // 
-            // txtPrimerNombreEstudMod
-            // 
-            this.txtPrimerNombreEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtPrimerNombreEstudMod.Location = new System.Drawing.Point(719, 315);
-            this.txtPrimerNombreEstudMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrimerNombreEstudMod.Multiline = true;
-            this.txtPrimerNombreEstudMod.Name = "txtPrimerNombreEstudMod";
-            this.txtPrimerNombreEstudMod.Size = new System.Drawing.Size(219, 34);
-            this.txtPrimerNombreEstudMod.TabIndex = 93;
-            this.txtPrimerNombreEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombreEstudMod_KeyPress);
-            // 
-            // txtSegundoNombreEstudMod
-            // 
-            this.txtSegundoNombreEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtSegundoNombreEstudMod.Location = new System.Drawing.Point(954, 315);
-            this.txtSegundoNombreEstudMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSegundoNombreEstudMod.Multiline = true;
-            this.txtSegundoNombreEstudMod.Name = "txtSegundoNombreEstudMod";
-            this.txtSegundoNombreEstudMod.Size = new System.Drawing.Size(219, 34);
-            this.txtSegundoNombreEstudMod.TabIndex = 92;
-            this.txtSegundoNombreEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombreEstudMod_KeyPress);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(439, 433);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(131, 35);
-            this.label27.TabIndex = 90;
-            this.label27.Text = "Apellidos";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(439, 315);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(134, 35);
-            this.label29.TabIndex = 89;
-            this.label29.Text = "Nombres";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(439, 194);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(248, 35);
-            this.label32.TabIndex = 88;
-            this.label32.Text = "Numero Identidad";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Balsamiq Sans", 24F);
-            this.label33.Location = new System.Drawing.Point(653, 55);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(285, 41);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "Datos Estudiante";
-            // 
-            // txtFechaNacimientoEstudMod
-            // 
-            this.txtFechaNacimientoEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtFechaNacimientoEstudMod.Location = new System.Drawing.Point(719, 535);
-            this.txtFechaNacimientoEstudMod.Mask = "00/00/0000";
-            this.txtFechaNacimientoEstudMod.Name = "txtFechaNacimientoEstudMod";
-            this.txtFechaNacimientoEstudMod.Size = new System.Drawing.Size(219, 34);
-            this.txtFechaNacimientoEstudMod.TabIndex = 22;
-            this.txtFechaNacimientoEstudMod.ValidatingType = typeof(System.DateTime);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(439, 538);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(248, 35);
-            this.label34.TabIndex = 8;
-            this.label34.Text = "Fecha Nacimiento";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(292, -105);
-            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(261, 35);
-            this.label46.TabIndex = 6;
-            this.label46.Text = "Correo Electrónico";
-            // 
-            // gbEncargados
-            // 
-            this.gbEncargados.Controls.Add(this.txtsegundoTelefonoEncargadoMod);
-            this.gbEncargados.Controls.Add(this.txtTelefonoEncargadoMod);
-            this.gbEncargados.Controls.Add(this.txtIdentidadEncargadoMod);
-            this.gbEncargados.Controls.Add(this.label48);
-            this.gbEncargados.Controls.Add(this.txtCorreoElectronicoEncargadoMod);
-            this.gbEncargados.Controls.Add(this.btnEliminarEncargado);
-            this.gbEncargados.Controls.Add(this.btnRegresarEncargado);
-            this.gbEncargados.Controls.Add(this.btnActualizarEncargado);
-            this.gbEncargados.Controls.Add(this.lblregistroEncargado);
-            this.gbEncargados.Controls.Add(this.txtfechaNacimientoEncargadoMod);
-            this.gbEncargados.Controls.Add(this.txtsegundoNombreEncargadoMod);
-            this.gbEncargados.Controls.Add(this.lblnumeroIdentidad);
-            this.gbEncargados.Controls.Add(this.label49);
-            this.gbEncargados.Controls.Add(this.txtDireccionEncargadoMod);
-            this.gbEncargados.Controls.Add(this.label50);
-            this.gbEncargados.Controls.Add(this.label51);
-            this.gbEncargados.Controls.Add(this.lblfechaNacimiento);
-            this.gbEncargados.Controls.Add(this.txtprimerApellidoEncargadoMod);
-            this.gbEncargados.Controls.Add(this.label52);
-            this.gbEncargados.Controls.Add(this.txtprimerNombreEncargadoMod);
-            this.gbEncargados.Controls.Add(this.lblcorreoElectronico);
-            this.gbEncargados.Controls.Add(this.txtsegundoApellidoEncargadoMod);
-            this.gbEncargados.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEncargados.Location = new System.Drawing.Point(12, 13);
-            this.gbEncargados.Name = "gbEncargados";
-            this.gbEncargados.Size = new System.Drawing.Size(1611, 1008);
-            this.gbEncargados.TabIndex = 113;
-            this.gbEncargados.TabStop = false;
-            this.gbEncargados.Text = "DATOS ENCARGADOS";
-            this.gbEncargados.Visible = false;
-            // 
-            // txtsegundoTelefonoEncargadoMod
-            // 
-            this.txtsegundoTelefonoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsegundoTelefonoEncargadoMod.Location = new System.Drawing.Point(1321, 355);
-            this.txtsegundoTelefonoEncargadoMod.Mask = "00000000";
-            this.txtsegundoTelefonoEncargadoMod.Name = "txtsegundoTelefonoEncargadoMod";
-            this.txtsegundoTelefonoEncargadoMod.Size = new System.Drawing.Size(160, 34);
-            this.txtsegundoTelefonoEncargadoMod.TabIndex = 115;
-            this.txtsegundoTelefonoEncargadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtTelefonoEncargadoMod
-            // 
-            this.txtTelefonoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoEncargadoMod.Location = new System.Drawing.Point(1143, 355);
-            this.txtTelefonoEncargadoMod.Mask = "00000000";
-            this.txtTelefonoEncargadoMod.Name = "txtTelefonoEncargadoMod";
-            this.txtTelefonoEncargadoMod.Size = new System.Drawing.Size(161, 34);
-            this.txtTelefonoEncargadoMod.TabIndex = 114;
-            this.txtTelefonoEncargadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtIdentidadEncargadoMod
-            // 
-            this.txtIdentidadEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentidadEncargadoMod.Location = new System.Drawing.Point(308, 234);
-            this.txtIdentidadEncargadoMod.Mask = "0000000000000";
-            this.txtIdentidadEncargadoMod.Name = "txtIdentidadEncargadoMod";
-            this.txtIdentidadEncargadoMod.Size = new System.Drawing.Size(350, 34);
-            this.txtIdentidadEncargadoMod.TabIndex = 113;
-            this.txtIdentidadEncargadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(44, 629);
-            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(260, 35);
-            this.label48.TabIndex = 88;
-            this.label48.Text = "Correo Electronico";
-            // 
-            // txtCorreoElectronicoEncargadoMod
-            // 
-            this.txtCorreoElectronicoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtCorreoElectronicoEncargadoMod.Location = new System.Drawing.Point(308, 629);
-            this.txtCorreoElectronicoEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCorreoElectronicoEncargadoMod.MaxLength = 13;
-            this.txtCorreoElectronicoEncargadoMod.Multiline = true;
-            this.txtCorreoElectronicoEncargadoMod.Name = "txtCorreoElectronicoEncargadoMod";
-            this.txtCorreoElectronicoEncargadoMod.Size = new System.Drawing.Size(350, 34);
-            this.txtCorreoElectronicoEncargadoMod.TabIndex = 89;
-            // 
-            // lblregistroEncargado
-            // 
-            this.lblregistroEncargado.AutoSize = true;
-            this.lblregistroEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 24F);
-            this.lblregistroEncargado.Location = new System.Drawing.Point(638, 55);
-            this.lblregistroEncargado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblregistroEncargado.Name = "lblregistroEncargado";
-            this.lblregistroEncargado.Size = new System.Drawing.Size(283, 41);
-            this.lblregistroEncargado.TabIndex = 1;
-            this.lblregistroEncargado.Text = "Datos Encargado";
-            // 
-            // txtfechaNacimientoEncargadoMod
-            // 
-            this.txtfechaNacimientoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtfechaNacimientoEncargadoMod.Location = new System.Drawing.Point(1142, 235);
-            this.txtfechaNacimientoEncargadoMod.Mask = "00/00/0000";
-            this.txtfechaNacimientoEncargadoMod.Name = "txtfechaNacimientoEncargadoMod";
-            this.txtfechaNacimientoEncargadoMod.ReadOnly = true;
-            this.txtfechaNacimientoEncargadoMod.Size = new System.Drawing.Size(161, 34);
-            this.txtfechaNacimientoEncargadoMod.TabIndex = 22;
-            this.txtfechaNacimientoEncargadoMod.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtsegundoNombreEncargadoMod
-            // 
-            this.txtsegundoNombreEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtsegundoNombreEncargadoMod.Location = new System.Drawing.Point(486, 360);
-            this.txtsegundoNombreEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtsegundoNombreEncargadoMod.Multiline = true;
-            this.txtsegundoNombreEncargadoMod.Name = "txtsegundoNombreEncargadoMod";
-            this.txtsegundoNombreEncargadoMod.Size = new System.Drawing.Size(172, 34);
-            this.txtsegundoNombreEncargadoMod.TabIndex = 12;
-            this.txtsegundoNombreEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoNombreEncargadoMod_KeyPress);
-            // 
-            // lblnumeroIdentidad
-            // 
-            this.lblnumeroIdentidad.AutoSize = true;
-            this.lblnumeroIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnumeroIdentidad.Location = new System.Drawing.Point(44, 233);
-            this.lblnumeroIdentidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblnumeroIdentidad.Name = "lblnumeroIdentidad";
-            this.lblnumeroIdentidad.Size = new System.Drawing.Size(248, 35);
-            this.lblnumeroIdentidad.TabIndex = 3;
-            this.lblnumeroIdentidad.Text = "Numero Identidad";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(44, 360);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(134, 35);
-            this.label49.TabIndex = 4;
-            this.label49.Text = "Nombres";
-            // 
-            // txtDireccionEncargadoMod
-            // 
-            this.txtDireccionEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtDireccionEncargadoMod.Location = new System.Drawing.Point(1142, 499);
-            this.txtDireccionEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDireccionEncargadoMod.Multiline = true;
-            this.txtDireccionEncargadoMod.Name = "txtDireccionEncargadoMod";
-            this.txtDireccionEncargadoMod.Size = new System.Drawing.Size(339, 165);
-            this.txtDireccionEncargadoMod.TabIndex = 19;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(44, 499);
-            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(131, 35);
-            this.label50.TabIndex = 5;
-            this.label50.Text = "Apellidos";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(871, 499);
-            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(138, 35);
-            this.label51.TabIndex = 9;
-            this.label51.Text = "Dirección";
-            // 
-            // lblfechaNacimiento
-            // 
-            this.lblfechaNacimiento.AutoSize = true;
-            this.lblfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfechaNacimiento.Location = new System.Drawing.Point(871, 235);
-            this.lblfechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblfechaNacimiento.Name = "lblfechaNacimiento";
-            this.lblfechaNacimiento.Size = new System.Drawing.Size(248, 35);
-            this.lblfechaNacimiento.TabIndex = 8;
-            this.lblfechaNacimiento.Text = "Fecha Nacimiento";
-            // 
-            // txtprimerApellidoEncargadoMod
-            // 
-            this.txtprimerApellidoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtprimerApellidoEncargadoMod.Location = new System.Drawing.Point(308, 499);
-            this.txtprimerApellidoEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtprimerApellidoEncargadoMod.Multiline = true;
-            this.txtprimerApellidoEncargadoMod.Name = "txtprimerApellidoEncargadoMod";
-            this.txtprimerApellidoEncargadoMod.Size = new System.Drawing.Size(172, 34);
-            this.txtprimerApellidoEncargadoMod.TabIndex = 15;
-            this.txtprimerApellidoEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerApellidoEncargadoMod_KeyPress);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(871, 355);
-            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(145, 35);
-            this.label52.TabIndex = 7;
-            this.label52.Text = "Teléfonos";
-            // 
-            // txtprimerNombreEncargadoMod
-            // 
-            this.txtprimerNombreEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtprimerNombreEncargadoMod.Location = new System.Drawing.Point(308, 360);
-            this.txtprimerNombreEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtprimerNombreEncargadoMod.Multiline = true;
-            this.txtprimerNombreEncargadoMod.Name = "txtprimerNombreEncargadoMod";
-            this.txtprimerNombreEncargadoMod.Size = new System.Drawing.Size(172, 34);
-            this.txtprimerNombreEncargadoMod.TabIndex = 13;
-            this.txtprimerNombreEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerNombreEncargadoMod_KeyPress);
-            // 
-            // lblcorreoElectronico
-            // 
-            this.lblcorreoElectronico.AutoSize = true;
-            this.lblcorreoElectronico.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcorreoElectronico.Location = new System.Drawing.Point(292, -105);
-            this.lblcorreoElectronico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblcorreoElectronico.Name = "lblcorreoElectronico";
-            this.lblcorreoElectronico.Size = new System.Drawing.Size(261, 35);
-            this.lblcorreoElectronico.TabIndex = 6;
-            this.lblcorreoElectronico.Text = "Correo Electrónico";
-            // 
-            // txtsegundoApellidoEncargadoMod
-            // 
-            this.txtsegundoApellidoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
-            this.txtsegundoApellidoEncargadoMod.Location = new System.Drawing.Point(486, 500);
-            this.txtsegundoApellidoEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
-            this.txtsegundoApellidoEncargadoMod.Multiline = true;
-            this.txtsegundoApellidoEncargadoMod.Name = "txtsegundoApellidoEncargadoMod";
-            this.txtsegundoApellidoEncargadoMod.Size = new System.Drawing.Size(172, 34);
-            this.txtsegundoApellidoEncargadoMod.TabIndex = 14;
-            this.txtsegundoApellidoEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoApellidoEncargadoMod_KeyPress);
+            // btnVerImagenR
+            // 
+            this.btnVerImagenR.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.adds;
+            this.btnVerImagenR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVerImagenR.FlatAppearance.BorderSize = 0;
+            this.btnVerImagenR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerImagenR.Location = new System.Drawing.Point(1100, 714);
+            this.btnVerImagenR.Name = "btnVerImagenR";
+            this.btnVerImagenR.Size = new System.Drawing.Size(70, 66);
+            this.btnVerImagenR.TabIndex = 115;
+            this.btnVerImagenR.UseVisualStyleBackColor = true;
+            this.btnVerImagenR.Click += new System.EventHandler(this.btnVerImagenR_Click);
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(971, 658);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(322, 27);
+            this.label47.TabIndex = 114;
+            this.label47.Text = "Ver Boleta De Calificaciones";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnImagenAgregarR
+            // 
+            this.btnImagenAgregarR.BackgroundImage = global::SistemaGestorEscolar.Properties.Resources.add;
+            this.btnImagenAgregarR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImagenAgregarR.FlatAppearance.BorderSize = 0;
+            this.btnImagenAgregarR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagenAgregarR.Location = new System.Drawing.Point(448, 709);
+            this.btnImagenAgregarR.Name = "btnImagenAgregarR";
+            this.btnImagenAgregarR.Size = new System.Drawing.Size(77, 77);
+            this.btnImagenAgregarR.TabIndex = 113;
+            this.btnImagenAgregarR.UseVisualStyleBackColor = true;
+            this.btnImagenAgregarR.Click += new System.EventHandler(this.btnImagenAgregarR_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(286, 651);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(368, 27);
+            this.label11.TabIndex = 112;
+            this.label11.Text = "Agregar Boleta de Calficaciones";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnActualizarEliminarEncargado
             // 
@@ -1933,6 +742,211 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnModificarEstud.Text = "Actualizar estudiante";
             this.btnModificarEstud.Transparency = false;
             this.btnModificarEstud.Click += new System.EventHandler(this.btnModificarEstud_Click);
+            // 
+            // cmbEncargadosReingreso
+            // 
+            this.cmbEncargadosReingreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEncargadosReingreso.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cmbEncargadosReingreso.FormattingEnabled = true;
+            this.cmbEncargadosReingreso.Location = new System.Drawing.Point(478, 229);
+            this.cmbEncargadosReingreso.Name = "cmbEncargadosReingreso";
+            this.cmbEncargadosReingreso.Size = new System.Drawing.Size(400, 32);
+            this.cmbEncargadosReingreso.TabIndex = 109;
+            this.cmbEncargadosReingreso.SelectedIndexChanged += new System.EventHandler(this.cmbEncargadosReingreso_SelectedIndexChanged);
+            // 
+            // txtIdentidadEstudianteR
+            // 
+            this.txtIdentidadEstudianteR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentidadEstudianteR.Location = new System.Drawing.Point(900, 168);
+            this.txtIdentidadEstudianteR.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdentidadEstudianteR.Name = "txtIdentidadEstudianteR";
+            this.txtIdentidadEstudianteR.ReadOnly = true;
+            this.txtIdentidadEstudianteR.Size = new System.Drawing.Size(283, 34);
+            this.txtIdentidadEstudianteR.TabIndex = 108;
+            this.txtIdentidadEstudianteR.TextChanged += new System.EventHandler(this.txtIdentidadEstudianteR_TextChanged_1);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(922, 475);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(120, 24);
+            this.label35.TabIndex = 106;
+            this.label35.Text = "Descuento";
+            // 
+            // txtDescuentoR
+            // 
+            this.txtDescuentoR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescuentoR.Location = new System.Drawing.Point(895, 513);
+            this.txtDescuentoR.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescuentoR.Name = "txtDescuentoR";
+            this.txtDescuentoR.Size = new System.Drawing.Size(179, 34);
+            this.txtDescuentoR.TabIndex = 105;
+            this.txtDescuentoR.Text = "0.00";
+            this.txtDescuentoR.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDescuentoR.TextChanged += new System.EventHandler(this.txtDescuentoR_TextChanged);
+            this.txtDescuentoR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuentoR_KeyPress);
+            // 
+            // cmbModoPagoR
+            // 
+            this.cmbModoPagoR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModoPagoR.FormattingEnabled = true;
+            this.cmbModoPagoR.Items.AddRange(new object[] {
+            "12",
+            "10"});
+            this.cmbModoPagoR.Location = new System.Drawing.Point(1157, 412);
+            this.cmbModoPagoR.Name = "cmbModoPagoR";
+            this.cmbModoPagoR.Size = new System.Drawing.Size(118, 29);
+            this.cmbModoPagoR.TabIndex = 104;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(909, 413);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(157, 24);
+            this.label36.TabIndex = 103;
+            this.label36.Text = "Modo de Pago";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(1212, 475);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(64, 24);
+            this.label37.TabIndex = 102;
+            this.label37.Text = "Total";
+            // 
+            // txtTotalR
+            // 
+            this.txtTotalR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalR.Location = new System.Drawing.Point(1157, 511);
+            this.txtTotalR.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalR.Name = "txtTotalR";
+            this.txtTotalR.ReadOnly = true;
+            this.txtTotalR.Size = new System.Drawing.Size(188, 34);
+            this.txtTotalR.TabIndex = 101;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(1015, 359);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(208, 27);
+            this.label38.TabIndex = 96;
+            this.label38.Text = "DATOS DE PAGO";
+            // 
+            // cmbSeccionR
+            // 
+            this.cmbSeccionR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeccionR.FormattingEnabled = true;
+            this.cmbSeccionR.Location = new System.Drawing.Point(352, 473);
+            this.cmbSeccionR.Name = "cmbSeccionR";
+            this.cmbSeccionR.Size = new System.Drawing.Size(191, 29);
+            this.cmbSeccionR.TabIndex = 95;
+            this.cmbSeccionR.SelectedIndexChanged += new System.EventHandler(this.cmbSeccionR_SelectedIndexChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(250, 478);
+            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(91, 24);
+            this.label39.TabIndex = 94;
+            this.label39.Text = "Seccion";
+            // 
+            // cmbCursoR
+            // 
+            this.cmbCursoR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCursoR.FormattingEnabled = true;
+            this.cmbCursoR.Location = new System.Drawing.Point(352, 407);
+            this.cmbCursoR.Name = "cmbCursoR";
+            this.cmbCursoR.Size = new System.Drawing.Size(351, 29);
+            this.cmbCursoR.TabIndex = 93;
+            this.cmbCursoR.SelectedIndexChanged += new System.EventHandler(this.cmbCursoR_SelectedIndexChanged);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(250, 408);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(79, 24);
+            this.label40.TabIndex = 92;
+            this.label40.Text = "Curso ";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(405, 357);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(239, 27);
+            this.label41.TabIndex = 91;
+            this.label41.Text = "DATOS DEL CURSO";
+            this.label41.TextChanged += new System.EventHandler(this.label41_TextChanged);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(570, 93);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(470, 27);
+            this.label42.TabIndex = 90;
+            this.label42.Text = "DATOS DE ENCARGADO Y ESTUDIANTE";
+            // 
+            // txtNombreEstudianteR
+            // 
+            this.txtNombreEstudianteR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreEstudianteR.Location = new System.Drawing.Point(478, 168);
+            this.txtNombreEstudianteR.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreEstudianteR.Name = "txtNombreEstudianteR";
+            this.txtNombreEstudianteR.ReadOnly = true;
+            this.txtNombreEstudianteR.Size = new System.Drawing.Size(400, 34);
+            this.txtNombreEstudianteR.TabIndex = 89;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(79, 230);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(375, 24);
+            this.label43.TabIndex = 87;
+            this.label43.Text = "Nombre e Identidad del Encargado";
+            // 
+            // txtNoMatriculaR
+            // 
+            this.txtNoMatriculaR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoMatriculaR.Location = new System.Drawing.Point(173, 40);
+            this.txtNoMatriculaR.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNoMatriculaR.Name = "txtNoMatriculaR";
+            this.txtNoMatriculaR.ReadOnly = true;
+            this.txtNoMatriculaR.Size = new System.Drawing.Size(78, 34);
+            this.txtNoMatriculaR.TabIndex = 86;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(15, 43);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(145, 24);
+            this.label44.TabIndex = 85;
+            this.label44.Text = "Matricula No.";
             // 
             // txtRegistarR
             // 
@@ -1998,6 +1012,102 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.txtRegresarR.Transparency = false;
             this.txtRegresarR.Click += new System.EventHandler(this.txtRegresarR_Click);
             // 
+            // txtIdentidadEncargadoR
+            // 
+            this.txtIdentidadEncargadoR.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentidadEncargadoR.Location = new System.Drawing.Point(900, 227);
+            this.txtIdentidadEncargadoR.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdentidadEncargadoR.Name = "txtIdentidadEncargadoR";
+            this.txtIdentidadEncargadoR.ReadOnly = true;
+            this.txtIdentidadEncargadoR.Size = new System.Drawing.Size(283, 34);
+            this.txtIdentidadEncargadoR.TabIndex = 54;
+            this.txtIdentidadEncargadoR.TextChanged += new System.EventHandler(this.txtNombreEncargadoR_TextChanged);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(79, 175);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(374, 24);
+            this.label45.TabIndex = 63;
+            this.label45.Text = "Nombre e Identidad del Estudiante";
+            // 
+            // grpListaEstudiantes
+            // 
+            this.grpListaEstudiantes.Controls.Add(this.txtBusquedaNombre);
+            this.grpListaEstudiantes.Controls.Add(this.pictureBox1);
+            this.grpListaEstudiantes.Controls.Add(this.dgvEstudiantes);
+            this.grpListaEstudiantes.Controls.Add(this.btnSiguienteDGVAct);
+            this.grpListaEstudiantes.Controls.Add(this.btnRegresarDGV);
+            this.grpListaEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpListaEstudiantes.Location = new System.Drawing.Point(6, 12);
+            this.grpListaEstudiantes.Name = "grpListaEstudiantes";
+            this.grpListaEstudiantes.Size = new System.Drawing.Size(1605, 995);
+            this.grpListaEstudiantes.TabIndex = 107;
+            this.grpListaEstudiantes.TabStop = false;
+            this.grpListaEstudiantes.Text = "LISTADO DE ESTUDIANTES";
+            this.grpListaEstudiantes.Visible = false;
+            this.grpListaEstudiantes.Enter += new System.EventHandler(this.grpListaEstudiantes_Enter);
+            // 
+            // txtBusquedaNombre
+            // 
+            this.txtBusquedaNombre.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusquedaNombre.Location = new System.Drawing.Point(1271, 56);
+            this.txtBusquedaNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusquedaNombre.Name = "txtBusquedaNombre";
+            this.txtBusquedaNombre.Size = new System.Drawing.Size(269, 34);
+            this.txtBusquedaNombre.TabIndex = 107;
+            this.txtBusquedaNombre.TextChanged += new System.EventHandler(this.txtBusquedaNombre_TextChanged_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
+            this.pictureBox1.Location = new System.Drawing.Point(1226, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 108;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dgvEstudiantes
+            // 
+            this.dgvEstudiantes.AllowUserToAddRows = false;
+            this.dgvEstudiantes.AllowUserToDeleteRows = false;
+            this.dgvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEstudiantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEstudiantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstudiantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstudiantes.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEstudiantes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEstudiantes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.dgvEstudiantes.Location = new System.Drawing.Point(44, 113);
+            this.dgvEstudiantes.MultiSelect = false;
+            this.dgvEstudiantes.Name = "dgvEstudiantes";
+            this.dgvEstudiantes.ReadOnly = true;
+            this.dgvEstudiantes.RowHeadersWidth = 20;
+            this.dgvEstudiantes.Size = new System.Drawing.Size(1523, 733);
+            this.dgvEstudiantes.TabIndex = 86;
+            this.dgvEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstudiantes_CellClick);
+            // 
             // btnSiguienteDGVAct
             // 
             this.btnSiguienteDGVAct.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
@@ -2040,173 +1150,303 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnRegresarDGV.Transparency = false;
             this.btnRegresarDGV.Click += new System.EventHandler(this.altoButton12_Click);
             // 
-            // btnRegistrar
+            // label1
             // 
-            this.btnRegistrar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegistrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegistrar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegistrar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(649, 835);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Radius = 20;
-            this.btnRegistrar.Size = new System.Drawing.Size(303, 84);
-            this.btnRegistrar.Stroke = true;
-            this.btnRegistrar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegistrar.TabIndex = 84;
-            this.btnRegistrar.Text = "REGISTRAR";
-            this.btnRegistrar.Transparency = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(661, 203);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(410, 36);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "GESTION DE MATRICULA";
             // 
-            // btnLimpiar
+            // errorIdentidad
             // 
-            this.btnLimpiar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLimpiar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(1258, 854);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Radius = 20;
-            this.btnLimpiar.Size = new System.Drawing.Size(269, 65);
-            this.btnLimpiar.Stroke = true;
-            this.btnLimpiar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiar.TabIndex = 83;
-            this.btnLimpiar.Text = "LIMPIAR";
-            this.btnLimpiar.Transparency = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.errorIdentidad.ContainerControl = this;
             // 
-            // btnRegresar
+            // grpActualizarEstado
             // 
-            this.btnRegresar.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresar.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegresar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegresar.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresar.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresar.Location = new System.Drawing.Point(44, 854);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Radius = 20;
-            this.btnRegresar.Size = new System.Drawing.Size(269, 65);
-            this.btnRegresar.Stroke = true;
-            this.btnRegresar.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegresar.TabIndex = 82;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.Transparency = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.grpActualizarEstado.Controls.Add(this.txtSeccionEstado);
+            this.grpActualizarEstado.Controls.Add(this.label16);
+            this.grpActualizarEstado.Controls.Add(this.label15);
+            this.grpActualizarEstado.Controls.Add(this.txtNombreCurso);
+            this.grpActualizarEstado.Controls.Add(this.txtIdentidadEstado);
+            this.grpActualizarEstado.Controls.Add(this.cmbEstadoMatri);
+            this.grpActualizarEstado.Controls.Add(this.ESTADO);
+            this.grpActualizarEstado.Controls.Add(this.label21);
+            this.grpActualizarEstado.Controls.Add(this.label22);
+            this.grpActualizarEstado.Controls.Add(this.txtNombreEstudianteEstado);
+            this.grpActualizarEstado.Controls.Add(this.txtMatriculaEstado);
+            this.grpActualizarEstado.Controls.Add(this.label24);
+            this.grpActualizarEstado.Controls.Add(this.altoButton3);
+            this.grpActualizarEstado.Controls.Add(this.btnRegresarEstado);
+            this.grpActualizarEstado.Controls.Add(this.label25);
+            this.grpActualizarEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpActualizarEstado.Location = new System.Drawing.Point(25, 18);
+            this.grpActualizarEstado.Name = "grpActualizarEstado";
+            this.grpActualizarEstado.Size = new System.Drawing.Size(1579, 991);
+            this.grpActualizarEstado.TabIndex = 109;
+            this.grpActualizarEstado.TabStop = false;
+            this.grpActualizarEstado.Text = "ACTUALIZACION";
+            this.grpActualizarEstado.Visible = false;
+            this.grpActualizarEstado.Enter += new System.EventHandler(this.grpActualizarEstado_Enter);
             // 
-            // btnLimpiarEncargadoMat
+            // txtSeccionEstado
             // 
-            this.btnLimpiarEncargadoMat.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarEncargadoMat.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnLimpiarEncargadoMat.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiarEncargadoMat.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLimpiarEncargadoMat.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarEncargadoMat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnLimpiarEncargadoMat.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarEncargadoMat.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarEncargadoMat.Location = new System.Drawing.Point(990, 854);
-            this.btnLimpiarEncargadoMat.Name = "btnLimpiarEncargadoMat";
-            this.btnLimpiarEncargadoMat.Radius = 20;
-            this.btnLimpiarEncargadoMat.Size = new System.Drawing.Size(269, 65);
-            this.btnLimpiarEncargadoMat.Stroke = true;
-            this.btnLimpiarEncargadoMat.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnLimpiarEncargadoMat.TabIndex = 11;
-            this.btnLimpiarEncargadoMat.Text = "LIMPIAR";
-            this.btnLimpiarEncargadoMat.Transparency = false;
-            this.btnLimpiarEncargadoMat.Click += new System.EventHandler(this.btnLimpiarEncargadoMat_Click);
+            this.txtSeccionEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeccionEstado.Location = new System.Drawing.Point(781, 455);
+            this.txtSeccionEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSeccionEstado.Name = "txtSeccionEstado";
+            this.txtSeccionEstado.ReadOnly = true;
+            this.txtSeccionEstado.Size = new System.Drawing.Size(112, 34);
+            this.txtSeccionEstado.TabIndex = 112;
             // 
-            // btnAgregarEncarg
+            // label16
             // 
-            this.btnAgregarEncarg.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAgregarEncarg.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnAgregarEncarg.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarEncarg.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAgregarEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarEncarg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnAgregarEncarg.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAgregarEncarg.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnAgregarEncarg.Location = new System.Drawing.Point(60, 854);
-            this.btnAgregarEncarg.Name = "btnAgregarEncarg";
-            this.btnAgregarEncarg.Radius = 20;
-            this.btnAgregarEncarg.Size = new System.Drawing.Size(269, 65);
-            this.btnAgregarEncarg.Stroke = true;
-            this.btnAgregarEncarg.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnAgregarEncarg.TabIndex = 10;
-            this.btnAgregarEncarg.Text = "AGREGAR ENCARGADO";
-            this.btnAgregarEncarg.Transparency = false;
-            this.btnAgregarEncarg.Click += new System.EventHandler(this.btnAgregarEncarg_Click);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(678, 458);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 24);
+            this.label16.TabIndex = 111;
+            this.label16.Text = "Seccion";
             // 
-            // btnSiguienteEncarg
+            // label15
             // 
-            this.btnSiguienteEncarg.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteEncarg.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteEncarg.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguienteEncarg.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSiguienteEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguienteEncarg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSiguienteEncarg.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteEncarg.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteEncarg.Location = new System.Drawing.Point(1281, 854);
-            this.btnSiguienteEncarg.Name = "btnSiguienteEncarg";
-            this.btnSiguienteEncarg.Radius = 20;
-            this.btnSiguienteEncarg.Size = new System.Drawing.Size(269, 65);
-            this.btnSiguienteEncarg.Stroke = true;
-            this.btnSiguienteEncarg.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSiguienteEncarg.TabIndex = 12;
-            this.btnSiguienteEncarg.Text = "SIGUIENTE";
-            this.btnSiguienteEncarg.Transparency = false;
-            this.btnSiguienteEncarg.Click += new System.EventHandler(this.btnSiguienteEncarg_Click_1);
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(571, 404);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(198, 24);
+            this.label15.TabIndex = 110;
+            this.label15.Text = "Nombre del Curso";
             // 
-            // btnEstSiguiente
+            // txtNombreCurso
             // 
-            this.btnEstSiguiente.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnEstSiguiente.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnEstSiguiente.BackColor = System.Drawing.Color.Transparent;
-            this.btnEstSiguiente.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnEstSiguiente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnEstSiguiente.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEstSiguiente.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnEstSiguiente.Location = new System.Drawing.Point(1258, 854);
-            this.btnEstSiguiente.Name = "btnEstSiguiente";
-            this.btnEstSiguiente.Radius = 20;
-            this.btnEstSiguiente.Size = new System.Drawing.Size(269, 65);
-            this.btnEstSiguiente.Stroke = true;
-            this.btnEstSiguiente.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnEstSiguiente.TabIndex = 83;
-            this.btnEstSiguiente.Text = "SIGUIENTE";
-            this.btnEstSiguiente.Transparency = false;
-            this.btnEstSiguiente.Click += new System.EventHandler(this.btnEstSiguiente_Click);
+            this.txtNombreCurso.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCurso.Location = new System.Drawing.Point(781, 398);
+            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreCurso.Name = "txtNombreCurso";
+            this.txtNombreCurso.ReadOnly = true;
+            this.txtNombreCurso.Size = new System.Drawing.Size(236, 34);
+            this.txtNombreCurso.TabIndex = 109;
             // 
-            // btnRegresarEstud
+            // txtIdentidadEstado
             // 
-            this.btnRegresarEstud.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarEstud.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarEstud.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegresarEstud.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegresarEstud.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresarEstud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresarEstud.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstud.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstud.Location = new System.Drawing.Point(44, 854);
-            this.btnRegresarEstud.Name = "btnRegresarEstud";
-            this.btnRegresarEstud.Radius = 20;
-            this.btnRegresarEstud.Size = new System.Drawing.Size(269, 65);
-            this.btnRegresarEstud.Stroke = true;
-            this.btnRegresarEstud.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegresarEstud.TabIndex = 82;
-            this.btnRegresarEstud.Text = "REGRESAR";
-            this.btnRegresarEstud.Transparency = false;
-            this.btnRegresarEstud.Click += new System.EventHandler(this.btnRegresarEstud_Click);
+            this.txtIdentidadEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentidadEstado.Location = new System.Drawing.Point(626, 194);
+            this.txtIdentidadEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdentidadEstado.Name = "txtIdentidadEstado";
+            this.txtIdentidadEstado.ReadOnly = true;
+            this.txtIdentidadEstado.Size = new System.Drawing.Size(236, 34);
+            this.txtIdentidadEstado.TabIndex = 108;
+            this.txtIdentidadEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIdentidadEstado.TextChanged += new System.EventHandler(this.txtIdentidadEstado_TextChanged);
+            // 
+            // cmbEstadoMatri
+            // 
+            this.cmbEstadoMatri.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoMatri.FormattingEnabled = true;
+            this.cmbEstadoMatri.Items.AddRange(new object[] {
+            "MATRICULADO",
+            "APROBADO",
+            "RETIRADO"});
+            this.cmbEstadoMatri.Location = new System.Drawing.Point(711, 628);
+            this.cmbEstadoMatri.Name = "cmbEstadoMatri";
+            this.cmbEstadoMatri.Size = new System.Drawing.Size(182, 29);
+            this.cmbEstadoMatri.TabIndex = 95;
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.AutoSize = true;
+            this.ESTADO.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ESTADO.Location = new System.Drawing.Point(758, 590);
+            this.ESTADO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ESTADO.Name = "ESTADO";
+            this.ESTADO.Size = new System.Drawing.Size(83, 24);
+            this.ESTADO.TabIndex = 94;
+            this.ESTADO.Text = "Estado";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(641, 347);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(342, 27);
+            this.label21.TabIndex = 91;
+            this.label21.Text = "DATOS DEL CURSO ACTUAL";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(659, 131);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(304, 27);
+            this.label22.TabIndex = 90;
+            this.label22.Text = "DATOS DEL ESTUDIANTE";
+            // 
+            // txtNombreEstudianteEstado
+            // 
+            this.txtNombreEstudianteEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreEstudianteEstado.Location = new System.Drawing.Point(883, 195);
+            this.txtNombreEstudianteEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreEstudianteEstado.Name = "txtNombreEstudianteEstado";
+            this.txtNombreEstudianteEstado.ReadOnly = true;
+            this.txtNombreEstudianteEstado.Size = new System.Drawing.Size(400, 34);
+            this.txtNombreEstudianteEstado.TabIndex = 89;
+            this.txtNombreEstudianteEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMatriculaEstado
+            // 
+            this.txtMatriculaEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatriculaEstado.Location = new System.Drawing.Point(173, 40);
+            this.txtMatriculaEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMatriculaEstado.Name = "txtMatriculaEstado";
+            this.txtMatriculaEstado.ReadOnly = true;
+            this.txtMatriculaEstado.Size = new System.Drawing.Size(51, 34);
+            this.txtMatriculaEstado.TabIndex = 86;
+            this.txtMatriculaEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(15, 43);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(145, 24);
+            this.label24.TabIndex = 85;
+            this.label24.Text = "Matricula No.";
+            // 
+            // altoButton3
+            // 
+            this.altoButton3.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.altoButton3.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.altoButton3.BackColor = System.Drawing.Color.Transparent;
+            this.altoButton3.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.altoButton3.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altoButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.altoButton3.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.altoButton3.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.altoButton3.Location = new System.Drawing.Point(649, 844);
+            this.altoButton3.Name = "altoButton3";
+            this.altoButton3.Radius = 20;
+            this.altoButton3.Size = new System.Drawing.Size(303, 84);
+            this.altoButton3.Stroke = true;
+            this.altoButton3.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.altoButton3.TabIndex = 84;
+            this.altoButton3.Text = "Actualizar";
+            this.altoButton3.Transparency = false;
+            this.altoButton3.Click += new System.EventHandler(this.altoButton3_Click);
+            // 
+            // btnRegresarEstado
+            // 
+            this.btnRegresarEstado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarEstado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarEstado.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresarEstado.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresarEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresarEstado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarEstado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarEstado.Location = new System.Drawing.Point(56, 854);
+            this.btnRegresarEstado.Name = "btnRegresarEstado";
+            this.btnRegresarEstado.Radius = 20;
+            this.btnRegresarEstado.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresarEstado.Stroke = true;
+            this.btnRegresarEstado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresarEstado.TabIndex = 82;
+            this.btnRegresarEstado.Text = "REGRESAR";
+            this.btnRegresarEstado.Transparency = false;
+            this.btnRegresarEstado.Click += new System.EventHandler(this.btnRegresarEstado_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(227, 199);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(386, 24);
+            this.label25.TabIndex = 63;
+            this.label25.Text = "Numero de Identidad del Estudiante";
+            // 
+            // grpListadoEstado
+            // 
+            this.grpListadoEstado.Controls.Add(this.txtBusquedaIdentidadEstado);
+            this.grpListadoEstado.Controls.Add(this.pictureBox3);
+            this.grpListadoEstado.Controls.Add(this.dgvBusquedaEstado);
+            this.grpListadoEstado.Controls.Add(this.btnSiguienteEstado);
+            this.grpListadoEstado.Controls.Add(this.altoButton2);
+            this.grpListadoEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpListadoEstado.Location = new System.Drawing.Point(6, 18);
+            this.grpListadoEstado.Name = "grpListadoEstado";
+            this.grpListadoEstado.Size = new System.Drawing.Size(1598, 1005);
+            this.grpListadoEstado.TabIndex = 107;
+            this.grpListadoEstado.TabStop = false;
+            this.grpListadoEstado.Text = "LISTADO DE ESTUDIANTES";
+            this.grpListadoEstado.Visible = false;
+            // 
+            // txtBusquedaIdentidadEstado
+            // 
+            this.txtBusquedaIdentidadEstado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusquedaIdentidadEstado.Location = new System.Drawing.Point(1271, 61);
+            this.txtBusquedaIdentidadEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusquedaIdentidadEstado.Name = "txtBusquedaIdentidadEstado";
+            this.txtBusquedaIdentidadEstado.Size = new System.Drawing.Size(269, 34);
+            this.txtBusquedaIdentidadEstado.TabIndex = 105;
+            this.txtBusquedaIdentidadEstado.TextChanged += new System.EventHandler(this.txtBusquedaIdentidadEstado_TextChanged_1);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SistemaGestorEscolar.Properties.Resources.buscarIcono;
+            this.pictureBox3.Location = new System.Drawing.Point(1226, 58);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 106;
+            this.pictureBox3.TabStop = false;
+            // 
+            // dgvBusquedaEstado
+            // 
+            this.dgvBusquedaEstado.AllowUserToAddRows = false;
+            this.dgvBusquedaEstado.AllowUserToDeleteRows = false;
+            this.dgvBusquedaEstado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBusquedaEstado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvBusquedaEstado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusquedaEstado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBusquedaEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBusquedaEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusquedaEstado.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvBusquedaEstado.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.dgvBusquedaEstado.Location = new System.Drawing.Point(44, 113);
+            this.dgvBusquedaEstado.MultiSelect = false;
+            this.dgvBusquedaEstado.Name = "dgvBusquedaEstado";
+            this.dgvBusquedaEstado.ReadOnly = true;
+            this.dgvBusquedaEstado.RowHeadersWidth = 20;
+            this.dgvBusquedaEstado.Size = new System.Drawing.Size(1512, 752);
+            this.dgvBusquedaEstado.TabIndex = 86;
+            this.dgvBusquedaEstado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusquedaEstado_CellClick);
             // 
             // btnSiguienteEstado
             // 
@@ -2250,47 +1490,888 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.altoButton2.Transparency = false;
             this.altoButton2.Click += new System.EventHandler(this.altoButton2_Click);
             // 
-            // altoButton3
+            // grpRegistroEstudiante
             // 
-            this.altoButton3.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.altoButton3.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.altoButton3.BackColor = System.Drawing.Color.Transparent;
-            this.altoButton3.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.altoButton3.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.altoButton3.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.altoButton3.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.altoButton3.Location = new System.Drawing.Point(649, 844);
-            this.altoButton3.Name = "altoButton3";
-            this.altoButton3.Radius = 20;
-            this.altoButton3.Size = new System.Drawing.Size(303, 84);
-            this.altoButton3.Stroke = true;
-            this.altoButton3.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.altoButton3.TabIndex = 84;
-            this.altoButton3.Text = "Actualizar";
-            this.altoButton3.Transparency = false;
-            this.altoButton3.Click += new System.EventHandler(this.altoButton3_Click);
+            this.grpRegistroEstudiante.Controls.Add(this.label58);
+            this.grpRegistroEstudiante.Controls.Add(this.txtfechaNacimientoEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.cmbGeneroEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.lblgenero);
+            this.grpRegistroEstudiante.Controls.Add(this.label17);
+            this.grpRegistroEstudiante.Controls.Add(this.txtprimerApellidoEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.txtsegundoApellidoEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.txtprimerNombreEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.txtsegundoNombreEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.lblApellidos);
+            this.grpRegistroEstudiante.Controls.Add(this.lblnombres);
+            this.grpRegistroEstudiante.Controls.Add(this.label28);
+            this.grpRegistroEstudiante.Controls.Add(this.mktIdentidadEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.btnEstSiguiente);
+            this.grpRegistroEstudiante.Controls.Add(this.btnRegresarEstud);
+            this.grpRegistroEstudiante.Controls.Add(this.label31);
+            this.grpRegistroEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpRegistroEstudiante.Location = new System.Drawing.Point(25, 12);
+            this.grpRegistroEstudiante.Name = "grpRegistroEstudiante";
+            this.grpRegistroEstudiante.Size = new System.Drawing.Size(1579, 987);
+            this.grpRegistroEstudiante.TabIndex = 110;
+            this.grpRegistroEstudiante.TabStop = false;
+            this.grpRegistroEstudiante.Text = "REGISTRO ESTUDIANTE";
+            this.grpRegistroEstudiante.Visible = false;
             // 
-            // btnRegresarEstado
+            // label58
             // 
-            this.btnRegresarEstado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarEstado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarEstado.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegresarEstado.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegresarEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresarEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresarEstado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstado.Location = new System.Drawing.Point(56, 854);
-            this.btnRegresarEstado.Name = "btnRegresarEstado";
-            this.btnRegresarEstado.Radius = 20;
-            this.btnRegresarEstado.Size = new System.Drawing.Size(269, 65);
-            this.btnRegresarEstado.Stroke = true;
-            this.btnRegresarEstado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegresarEstado.TabIndex = 82;
-            this.btnRegresarEstado.Text = "REGRESAR";
-            this.btnRegresarEstado.Transparency = false;
-            this.btnRegresarEstado.Click += new System.EventHandler(this.btnRegresarEstado_Click);
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(951, 523);
+            this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(144, 24);
+            this.label58.TabIndex = 99;
+            this.label58.Text = "dd/mm/aaaa";
+            // 
+            // txtfechaNacimientoEstud
+            // 
+            this.txtfechaNacimientoEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtfechaNacimientoEstud.Location = new System.Drawing.Point(695, 520);
+            this.txtfechaNacimientoEstud.Mask = "00/00/0000";
+            this.txtfechaNacimientoEstud.Name = "txtfechaNacimientoEstud";
+            this.txtfechaNacimientoEstud.Size = new System.Drawing.Size(250, 34);
+            this.txtfechaNacimientoEstud.TabIndex = 5;
+            this.txtfechaNacimientoEstud.ValidatingType = typeof(System.DateTime);
+            // 
+            // cmbGeneroEstud
+            // 
+            this.cmbGeneroEstud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGeneroEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cmbGeneroEstud.FormattingEnabled = true;
+            this.cmbGeneroEstud.Items.AddRange(new object[] {
+            "<SELECCIONE>",
+            "Masculino",
+            "Femenino"});
+            this.cmbGeneroEstud.Location = new System.Drawing.Point(695, 599);
+            this.cmbGeneroEstud.Name = "cmbGeneroEstud";
+            this.cmbGeneroEstud.Size = new System.Drawing.Size(250, 32);
+            this.cmbGeneroEstud.TabIndex = 6;
+            this.cmbGeneroEstud.SelectedIndexChanged += new System.EventHandler(this.cmbGeneroEstud_SelectedIndexChanged);
+            // 
+            // lblgenero
+            // 
+            this.lblgenero.AutoSize = true;
+            this.lblgenero.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblgenero.Location = new System.Drawing.Point(581, 604);
+            this.lblgenero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblgenero.Name = "lblgenero";
+            this.lblgenero.Size = new System.Drawing.Size(87, 24);
+            this.lblgenero.TabIndex = 98;
+            this.lblgenero.Text = "Género";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(476, 529);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(192, 24);
+            this.label17.TabIndex = 97;
+            this.label17.Text = "Fecha Nacimiento";
+            // 
+            // txtprimerApellidoEstud
+            // 
+            this.txtprimerApellidoEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtprimerApellidoEstud.Location = new System.Drawing.Point(695, 444);
+            this.txtprimerApellidoEstud.Margin = new System.Windows.Forms.Padding(2);
+            this.txtprimerApellidoEstud.Multiline = true;
+            this.txtprimerApellidoEstud.Name = "txtprimerApellidoEstud";
+            this.txtprimerApellidoEstud.Size = new System.Drawing.Size(250, 34);
+            this.txtprimerApellidoEstud.TabIndex = 3;
+            this.txtprimerApellidoEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerApellidoEstud_KeyPress);
+            // 
+            // txtsegundoApellidoEstud
+            // 
+            this.txtsegundoApellidoEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtsegundoApellidoEstud.Location = new System.Drawing.Point(956, 444);
+            this.txtsegundoApellidoEstud.Margin = new System.Windows.Forms.Padding(2);
+            this.txtsegundoApellidoEstud.Multiline = true;
+            this.txtsegundoApellidoEstud.Name = "txtsegundoApellidoEstud";
+            this.txtsegundoApellidoEstud.Size = new System.Drawing.Size(250, 34);
+            this.txtsegundoApellidoEstud.TabIndex = 4;
+            this.txtsegundoApellidoEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoApellidoEstud_KeyPress);
+            // 
+            // txtprimerNombreEstud
+            // 
+            this.txtprimerNombreEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtprimerNombreEstud.Location = new System.Drawing.Point(695, 363);
+            this.txtprimerNombreEstud.Margin = new System.Windows.Forms.Padding(2);
+            this.txtprimerNombreEstud.Multiline = true;
+            this.txtprimerNombreEstud.Name = "txtprimerNombreEstud";
+            this.txtprimerNombreEstud.Size = new System.Drawing.Size(250, 34);
+            this.txtprimerNombreEstud.TabIndex = 1;
+            this.txtprimerNombreEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerNombreEstud_KeyPress);
+            // 
+            // txtsegundoNombreEstud
+            // 
+            this.txtsegundoNombreEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtsegundoNombreEstud.Location = new System.Drawing.Point(956, 363);
+            this.txtsegundoNombreEstud.Margin = new System.Windows.Forms.Padding(2);
+            this.txtsegundoNombreEstud.Multiline = true;
+            this.txtsegundoNombreEstud.Name = "txtsegundoNombreEstud";
+            this.txtsegundoNombreEstud.Size = new System.Drawing.Size(250, 34);
+            this.txtsegundoNombreEstud.TabIndex = 2;
+            this.txtsegundoNombreEstud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoNombreEstud_KeyPress);
+            // 
+            // lblApellidos
+            // 
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.Location = new System.Drawing.Point(566, 449);
+            this.lblApellidos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(103, 24);
+            this.lblApellidos.TabIndex = 92;
+            this.lblApellidos.Text = "Apellidos";
+            // 
+            // lblnombres
+            // 
+            this.lblnombres.AutoSize = true;
+            this.lblnombres.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnombres.Location = new System.Drawing.Point(566, 368);
+            this.lblnombres.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblnombres.Name = "lblnombres";
+            this.lblnombres.Size = new System.Drawing.Size(103, 24);
+            this.lblnombres.TabIndex = 91;
+            this.lblnombres.Text = "Nombres";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(689, 70);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(290, 27);
+            this.label28.TabIndex = 90;
+            this.label28.Text = "DATOS DE ESTUDIANTE";
+            // 
+            // mktIdentidadEstud
+            // 
+            this.mktIdentidadEstud.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mktIdentidadEstud.Location = new System.Drawing.Point(695, 277);
+            this.mktIdentidadEstud.Mask = "0000000000000";
+            this.mktIdentidadEstud.Name = "mktIdentidadEstud";
+            this.mktIdentidadEstud.Size = new System.Drawing.Size(250, 34);
+            this.mktIdentidadEstud.TabIndex = 0;
+            this.mktIdentidadEstud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mktIdentidadEstud.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mktIdentidadEstud_MaskInputRejected);
+            // 
+            // btnEstSiguiente
+            // 
+            this.btnEstSiguiente.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnEstSiguiente.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnEstSiguiente.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstSiguiente.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnEstSiguiente.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnEstSiguiente.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnEstSiguiente.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnEstSiguiente.Location = new System.Drawing.Point(1258, 854);
+            this.btnEstSiguiente.Name = "btnEstSiguiente";
+            this.btnEstSiguiente.Radius = 20;
+            this.btnEstSiguiente.Size = new System.Drawing.Size(269, 65);
+            this.btnEstSiguiente.Stroke = true;
+            this.btnEstSiguiente.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnEstSiguiente.TabIndex = 83;
+            this.btnEstSiguiente.Text = "SIGUIENTE";
+            this.btnEstSiguiente.Transparency = false;
+            this.btnEstSiguiente.Click += new System.EventHandler(this.btnEstSiguiente_Click);
+            // 
+            // btnRegresarEstud
+            // 
+            this.btnRegresarEstud.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarEstud.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarEstud.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresarEstud.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresarEstud.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarEstud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresarEstud.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarEstud.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarEstud.Location = new System.Drawing.Point(44, 854);
+            this.btnRegresarEstud.Name = "btnRegresarEstud";
+            this.btnRegresarEstud.Radius = 20;
+            this.btnRegresarEstud.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresarEstud.Stroke = true;
+            this.btnRegresarEstud.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresarEstud.TabIndex = 82;
+            this.btnRegresarEstud.Text = "REGRESAR";
+            this.btnRegresarEstud.Transparency = false;
+            this.btnRegresarEstud.Click += new System.EventHandler(this.btnRegresarEstud_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(296, 287);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(386, 24);
+            this.label31.TabIndex = 63;
+            this.label31.Text = "Numero de Identidad del Estudiante";
+            // 
+            // grpRegistroEncargados
+            // 
+            this.grpRegistroEncargados.Controls.Add(this.label57);
+            this.grpRegistroEncargados.Controls.Add(this.btnRegresarAEstud);
+            this.grpRegistroEncargados.Controls.Add(this.txtTelefonoAlternativo);
+            this.grpRegistroEncargados.Controls.Add(this.txtprimerTelefono);
+            this.grpRegistroEncargados.Controls.Add(this.btnLimpiarEncargadoMat);
+            this.grpRegistroEncargados.Controls.Add(this.btnAgregarEncarg);
+            this.grpRegistroEncargados.Controls.Add(this.txtDireccion);
+            this.grpRegistroEncargados.Controls.Add(this.lbldireccion);
+            this.grpRegistroEncargados.Controls.Add(this.txtcorreoElectronico);
+            this.grpRegistroEncargados.Controls.Add(this.label18);
+            this.grpRegistroEncargados.Controls.Add(this.lbltelefonos);
+            this.grpRegistroEncargados.Controls.Add(this.mskFechaNacimientoEncarg);
+            this.grpRegistroEncargados.Controls.Add(this.label19);
+            this.grpRegistroEncargados.Controls.Add(this.txtPrimerApellidoEncarg);
+            this.grpRegistroEncargados.Controls.Add(this.txtSegundoApellidoEncarg);
+            this.grpRegistroEncargados.Controls.Add(this.txtPrimerNombreEncarg);
+            this.grpRegistroEncargados.Controls.Add(this.txtSegundoNombreEncarg);
+            this.grpRegistroEncargados.Controls.Add(this.label20);
+            this.grpRegistroEncargados.Controls.Add(this.label23);
+            this.grpRegistroEncargados.Controls.Add(this.label26);
+            this.grpRegistroEncargados.Controls.Add(this.mktIdentidadEncargado);
+            this.grpRegistroEncargados.Controls.Add(this.btnSiguienteEncarg);
+            this.grpRegistroEncargados.Controls.Add(this.label30);
+            this.grpRegistroEncargados.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpRegistroEncargados.Location = new System.Drawing.Point(12, 14);
+            this.grpRegistroEncargados.Name = "grpRegistroEncargados";
+            this.grpRegistroEncargados.Size = new System.Drawing.Size(1611, 991);
+            this.grpRegistroEncargados.TabIndex = 111;
+            this.grpRegistroEncargados.TabStop = false;
+            this.grpRegistroEncargados.Text = "REGISTRO ENCARGADO";
+            this.grpRegistroEncargados.Visible = false;
+            this.grpRegistroEncargados.Enter += new System.EventHandler(this.grpRegistroEncargados_Enter);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(945, 605);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(144, 24);
+            this.label57.TabIndex = 109;
+            this.label57.Text = "dd/mm/aaaa";
+            // 
+            // btnRegresarAEstud
+            // 
+            this.btnRegresarAEstud.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarAEstud.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarAEstud.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresarAEstud.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresarAEstud.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarAEstud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresarAEstud.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarAEstud.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarAEstud.Location = new System.Drawing.Point(73, 854);
+            this.btnRegresarAEstud.Name = "btnRegresarAEstud";
+            this.btnRegresarAEstud.Radius = 20;
+            this.btnRegresarAEstud.Size = new System.Drawing.Size(269, 65);
+            this.btnRegresarAEstud.Stroke = true;
+            this.btnRegresarAEstud.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresarAEstud.TabIndex = 108;
+            this.btnRegresarAEstud.Text = "REGRESAR";
+            this.btnRegresarAEstud.Transparency = false;
+            this.btnRegresarAEstud.Click += new System.EventHandler(this.btnRegresarAEstud_Click);
+            // 
+            // txtTelefonoAlternativo
+            // 
+            this.txtTelefonoAlternativo.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoAlternativo.Location = new System.Drawing.Point(949, 435);
+            this.txtTelefonoAlternativo.Mask = "00000000";
+            this.txtTelefonoAlternativo.Name = "txtTelefonoAlternativo";
+            this.txtTelefonoAlternativo.Size = new System.Drawing.Size(230, 34);
+            this.txtTelefonoAlternativo.TabIndex = 6;
+            this.txtTelefonoAlternativo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtprimerTelefono
+            // 
+            this.txtprimerTelefono.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprimerTelefono.Location = new System.Drawing.Point(694, 435);
+            this.txtprimerTelefono.Mask = "00000000";
+            this.txtprimerTelefono.Name = "txtprimerTelefono";
+            this.txtprimerTelefono.Size = new System.Drawing.Size(230, 34);
+            this.txtprimerTelefono.TabIndex = 5;
+            this.txtprimerTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnLimpiarEncargadoMat
+            // 
+            this.btnLimpiarEncargadoMat.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiarEncargadoMat.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnLimpiarEncargadoMat.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiarEncargadoMat.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLimpiarEncargadoMat.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarEncargadoMat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnLimpiarEncargadoMat.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiarEncargadoMat.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnLimpiarEncargadoMat.Location = new System.Drawing.Point(978, 854);
+            this.btnLimpiarEncargadoMat.Name = "btnLimpiarEncargadoMat";
+            this.btnLimpiarEncargadoMat.Radius = 20;
+            this.btnLimpiarEncargadoMat.Size = new System.Drawing.Size(269, 65);
+            this.btnLimpiarEncargadoMat.Stroke = true;
+            this.btnLimpiarEncargadoMat.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnLimpiarEncargadoMat.TabIndex = 11;
+            this.btnLimpiarEncargadoMat.Text = "LIMPIAR";
+            this.btnLimpiarEncargadoMat.Transparency = false;
+            this.btnLimpiarEncargadoMat.Click += new System.EventHandler(this.btnLimpiarEncargadoMat_Click);
+            // 
+            // btnAgregarEncarg
+            // 
+            this.btnAgregarEncarg.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAgregarEncarg.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnAgregarEncarg.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarEncarg.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAgregarEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarEncarg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnAgregarEncarg.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAgregarEncarg.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnAgregarEncarg.Location = new System.Drawing.Point(360, 854);
+            this.btnAgregarEncarg.Name = "btnAgregarEncarg";
+            this.btnAgregarEncarg.Radius = 20;
+            this.btnAgregarEncarg.Size = new System.Drawing.Size(269, 65);
+            this.btnAgregarEncarg.Stroke = true;
+            this.btnAgregarEncarg.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnAgregarEncarg.TabIndex = 10;
+            this.btnAgregarEncarg.Text = "AGREGAR ENCARGADO";
+            this.btnAgregarEncarg.Transparency = false;
+            this.btnAgregarEncarg.Click += new System.EventHandler(this.btnAgregarEncarg_Click);
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtDireccion.Location = new System.Drawing.Point(695, 679);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(483, 100);
+            this.txtDireccion.TabIndex = 9;
+            // 
+            // lbldireccion
+            // 
+            this.lbldireccion.AutoSize = true;
+            this.lbldireccion.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldireccion.Location = new System.Drawing.Point(555, 683);
+            this.lbldireccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbldireccion.Name = "lbldireccion";
+            this.lbldireccion.Size = new System.Drawing.Size(107, 24);
+            this.lbldireccion.TabIndex = 107;
+            this.lbldireccion.Text = "Dirección";
+            // 
+            // txtcorreoElectronico
+            // 
+            this.txtcorreoElectronico.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtcorreoElectronico.Location = new System.Drawing.Point(695, 522);
+            this.txtcorreoElectronico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcorreoElectronico.Multiline = true;
+            this.txtcorreoElectronico.Name = "txtcorreoElectronico";
+            this.txtcorreoElectronico.Size = new System.Drawing.Size(484, 34);
+            this.txtcorreoElectronico.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(459, 522);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(206, 24);
+            this.label18.TabIndex = 105;
+            this.label18.Text = "Correo Electronico";
+            // 
+            // lbltelefonos
+            // 
+            this.lbltelefonos.AutoSize = true;
+            this.lbltelefonos.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltelefonos.Location = new System.Drawing.Point(549, 440);
+            this.lbltelefonos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbltelefonos.Name = "lbltelefonos";
+            this.lbltelefonos.Size = new System.Drawing.Size(114, 24);
+            this.lbltelefonos.TabIndex = 102;
+            this.lbltelefonos.Text = "Teléfonos";
+            // 
+            // mskFechaNacimientoEncarg
+            // 
+            this.mskFechaNacimientoEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.mskFechaNacimientoEncarg.Location = new System.Drawing.Point(695, 602);
+            this.mskFechaNacimientoEncarg.Mask = "00/00/0000";
+            this.mskFechaNacimientoEncarg.Name = "mskFechaNacimientoEncarg";
+            this.mskFechaNacimientoEncarg.Size = new System.Drawing.Size(230, 34);
+            this.mskFechaNacimientoEncarg.TabIndex = 8;
+            this.mskFechaNacimientoEncarg.ValidatingType = typeof(System.DateTime);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(469, 611);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(192, 24);
+            this.label19.TabIndex = 97;
+            this.label19.Text = "Fecha Nacimiento";
+            // 
+            // txtPrimerApellidoEncarg
+            // 
+            this.txtPrimerApellidoEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtPrimerApellidoEncarg.Location = new System.Drawing.Point(695, 356);
+            this.txtPrimerApellidoEncarg.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrimerApellidoEncarg.Multiline = true;
+            this.txtPrimerApellidoEncarg.Name = "txtPrimerApellidoEncarg";
+            this.txtPrimerApellidoEncarg.Size = new System.Drawing.Size(230, 34);
+            this.txtPrimerApellidoEncarg.TabIndex = 3;
+            this.txtPrimerApellidoEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerApellidoEncarg_KeyPress);
+            // 
+            // txtSegundoApellidoEncarg
+            // 
+            this.txtSegundoApellidoEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtSegundoApellidoEncarg.Location = new System.Drawing.Point(950, 356);
+            this.txtSegundoApellidoEncarg.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSegundoApellidoEncarg.Multiline = true;
+            this.txtSegundoApellidoEncarg.Name = "txtSegundoApellidoEncarg";
+            this.txtSegundoApellidoEncarg.Size = new System.Drawing.Size(230, 34);
+            this.txtSegundoApellidoEncarg.TabIndex = 4;
+            this.txtSegundoApellidoEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellidoEncarg_KeyPress);
+            // 
+            // txtPrimerNombreEncarg
+            // 
+            this.txtPrimerNombreEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtPrimerNombreEncarg.Location = new System.Drawing.Point(695, 275);
+            this.txtPrimerNombreEncarg.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrimerNombreEncarg.Multiline = true;
+            this.txtPrimerNombreEncarg.Name = "txtPrimerNombreEncarg";
+            this.txtPrimerNombreEncarg.Size = new System.Drawing.Size(230, 34);
+            this.txtPrimerNombreEncarg.TabIndex = 1;
+            this.txtPrimerNombreEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombreEncarg_KeyPress);
+            // 
+            // txtSegundoNombreEncarg
+            // 
+            this.txtSegundoNombreEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtSegundoNombreEncarg.Location = new System.Drawing.Point(950, 275);
+            this.txtSegundoNombreEncarg.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSegundoNombreEncarg.Multiline = true;
+            this.txtSegundoNombreEncarg.Name = "txtSegundoNombreEncarg";
+            this.txtSegundoNombreEncarg.Size = new System.Drawing.Size(230, 34);
+            this.txtSegundoNombreEncarg.TabIndex = 2;
+            this.txtSegundoNombreEncarg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombreEncarg_KeyPress);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(560, 361);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(103, 24);
+            this.label20.TabIndex = 92;
+            this.label20.Text = "Apellidos";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(560, 280);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 24);
+            this.label23.TabIndex = 91;
+            this.label23.Text = "Nombres";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(636, 62);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(362, 27);
+            this.label26.TabIndex = 90;
+            this.label26.Text = "DATOS DE LOS ENCARGADOS";
+            // 
+            // mktIdentidadEncargado
+            // 
+            this.mktIdentidadEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mktIdentidadEncargado.Location = new System.Drawing.Point(695, 184);
+            this.mktIdentidadEncargado.Mask = "0000000000000";
+            this.mktIdentidadEncargado.Name = "mktIdentidadEncargado";
+            this.mktIdentidadEncargado.Size = new System.Drawing.Size(230, 34);
+            this.mktIdentidadEncargado.TabIndex = 0;
+            this.mktIdentidadEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mktIdentidadEncargado.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mktIdentidadEncargado_MaskInputRejected);
+            // 
+            // btnSiguienteEncarg
+            // 
+            this.btnSiguienteEncarg.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteEncarg.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnSiguienteEncarg.BackColor = System.Drawing.Color.Transparent;
+            this.btnSiguienteEncarg.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSiguienteEncarg.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteEncarg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnSiguienteEncarg.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteEncarg.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnSiguienteEncarg.Location = new System.Drawing.Point(1281, 854);
+            this.btnSiguienteEncarg.Name = "btnSiguienteEncarg";
+            this.btnSiguienteEncarg.Radius = 20;
+            this.btnSiguienteEncarg.Size = new System.Drawing.Size(269, 65);
+            this.btnSiguienteEncarg.Stroke = true;
+            this.btnSiguienteEncarg.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnSiguienteEncarg.TabIndex = 12;
+            this.btnSiguienteEncarg.Text = "SIGUIENTE";
+            this.btnSiguienteEncarg.Transparency = false;
+            this.btnSiguienteEncarg.Click += new System.EventHandler(this.btnSiguienteEncarg_Click_1);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(292, 187);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(387, 24);
+            this.label30.TabIndex = 63;
+            this.label30.Text = "Numero de Identidad del Encargado";
+            // 
+            // gbEstudiantes
+            // 
+            this.gbEstudiantes.Controls.Add(this.label56);
+            this.gbEstudiantes.Controls.Add(this.txtIdentidadEstudMod);
+            this.gbEstudiantes.Controls.Add(this.cmbgeneroEstudMod);
+            this.gbEstudiantes.Controls.Add(this.label10);
+            this.gbEstudiantes.Controls.Add(this.txtPrimerApellidoEstudMod);
+            this.gbEstudiantes.Controls.Add(this.txtSegundoApellidoEstudMod);
+            this.gbEstudiantes.Controls.Add(this.txtPrimerNombreEstudMod);
+            this.gbEstudiantes.Controls.Add(this.txtSegundoNombreEstudMod);
+            this.gbEstudiantes.Controls.Add(this.label27);
+            this.gbEstudiantes.Controls.Add(this.label29);
+            this.gbEstudiantes.Controls.Add(this.label32);
+            this.gbEstudiantes.Controls.Add(this.btnRegresarEstudianteMod);
+            this.gbEstudiantes.Controls.Add(this.btnActualizarEstudiante);
+            this.gbEstudiantes.Controls.Add(this.label33);
+            this.gbEstudiantes.Controls.Add(this.txtFechaNacimientoEstudMod);
+            this.gbEstudiantes.Controls.Add(this.label34);
+            this.gbEstudiantes.Controls.Add(this.label46);
+            this.gbEstudiantes.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEstudiantes.Location = new System.Drawing.Point(18, 13);
+            this.gbEstudiantes.Name = "gbEstudiantes";
+            this.gbEstudiantes.Size = new System.Drawing.Size(1599, 1008);
+            this.gbEstudiantes.TabIndex = 112;
+            this.gbEstudiantes.TabStop = false;
+            this.gbEstudiantes.Text = "DATOS ESTUDIANTE";
+            this.gbEstudiantes.Visible = false;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(958, 540);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(144, 24);
+            this.label56.TabIndex = 115;
+            this.label56.Text = "dd/mm/aaaa";
+            // 
+            // txtIdentidadEstudMod
+            // 
+            this.txtIdentidadEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentidadEstudMod.Location = new System.Drawing.Point(718, 197);
+            this.txtIdentidadEstudMod.Mask = "0000000000000";
+            this.txtIdentidadEstudMod.Name = "txtIdentidadEstudMod";
+            this.txtIdentidadEstudMod.ReadOnly = true;
+            this.txtIdentidadEstudMod.Size = new System.Drawing.Size(454, 34);
+            this.txtIdentidadEstudMod.TabIndex = 114;
+            this.txtIdentidadEstudMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIdentidadEstudMod.TextChanged += new System.EventHandler(this.txtIdentidadEstudMod_TextChanged_1);
+            // 
+            // cmbgeneroEstudMod
+            // 
+            this.cmbgeneroEstudMod.Enabled = false;
+            this.cmbgeneroEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cmbgeneroEstudMod.FormattingEnabled = true;
+            this.cmbgeneroEstudMod.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.cmbgeneroEstudMod.Location = new System.Drawing.Point(719, 660);
+            this.cmbgeneroEstudMod.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbgeneroEstudMod.Name = "cmbgeneroEstudMod";
+            this.cmbgeneroEstudMod.Size = new System.Drawing.Size(219, 32);
+            this.cmbgeneroEstudMod.TabIndex = 98;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Balsamiq Sans", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(438, 647);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 33);
+            this.label10.TabIndex = 97;
+            this.label10.Text = "Género";
+            // 
+            // txtPrimerApellidoEstudMod
+            // 
+            this.txtPrimerApellidoEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtPrimerApellidoEstudMod.Location = new System.Drawing.Point(719, 431);
+            this.txtPrimerApellidoEstudMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrimerApellidoEstudMod.Multiline = true;
+            this.txtPrimerApellidoEstudMod.Name = "txtPrimerApellidoEstudMod";
+            this.txtPrimerApellidoEstudMod.Size = new System.Drawing.Size(219, 34);
+            this.txtPrimerApellidoEstudMod.TabIndex = 95;
+            this.txtPrimerApellidoEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerApellidoEstudMod_KeyPress);
+            // 
+            // txtSegundoApellidoEstudMod
+            // 
+            this.txtSegundoApellidoEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtSegundoApellidoEstudMod.Location = new System.Drawing.Point(954, 431);
+            this.txtSegundoApellidoEstudMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSegundoApellidoEstudMod.Multiline = true;
+            this.txtSegundoApellidoEstudMod.Name = "txtSegundoApellidoEstudMod";
+            this.txtSegundoApellidoEstudMod.Size = new System.Drawing.Size(219, 34);
+            this.txtSegundoApellidoEstudMod.TabIndex = 94;
+            this.txtSegundoApellidoEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellidoEstudMod_KeyPress);
+            // 
+            // txtPrimerNombreEstudMod
+            // 
+            this.txtPrimerNombreEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtPrimerNombreEstudMod.Location = new System.Drawing.Point(719, 315);
+            this.txtPrimerNombreEstudMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrimerNombreEstudMod.Multiline = true;
+            this.txtPrimerNombreEstudMod.Name = "txtPrimerNombreEstudMod";
+            this.txtPrimerNombreEstudMod.Size = new System.Drawing.Size(219, 34);
+            this.txtPrimerNombreEstudMod.TabIndex = 93;
+            this.txtPrimerNombreEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombreEstudMod_KeyPress);
+            // 
+            // txtSegundoNombreEstudMod
+            // 
+            this.txtSegundoNombreEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtSegundoNombreEstudMod.Location = new System.Drawing.Point(954, 315);
+            this.txtSegundoNombreEstudMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSegundoNombreEstudMod.Multiline = true;
+            this.txtSegundoNombreEstudMod.Name = "txtSegundoNombreEstudMod";
+            this.txtSegundoNombreEstudMod.Size = new System.Drawing.Size(219, 34);
+            this.txtSegundoNombreEstudMod.TabIndex = 92;
+            this.txtSegundoNombreEstudMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombreEstudMod_KeyPress);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(439, 433);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(123, 31);
+            this.label27.TabIndex = 90;
+            this.label27.Text = "Apellidos";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(439, 315);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(123, 31);
+            this.label29.TabIndex = 89;
+            this.label29.Text = "Nombres";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(439, 194);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(230, 31);
+            this.label32.TabIndex = 88;
+            this.label32.Text = "Numero Identidad";
+            // 
+            // btnRegresarEstudianteMod
+            // 
+            this.btnRegresarEstudianteMod.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarEstudianteMod.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnRegresarEstudianteMod.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegresarEstudianteMod.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnRegresarEstudianteMod.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresarEstudianteMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnRegresarEstudianteMod.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarEstudianteMod.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnRegresarEstudianteMod.Location = new System.Drawing.Point(64, 859);
+            this.btnRegresarEstudianteMod.Name = "btnRegresarEstudianteMod";
+            this.btnRegresarEstudianteMod.Radius = 20;
+            this.btnRegresarEstudianteMod.Size = new System.Drawing.Size(303, 84);
+            this.btnRegresarEstudianteMod.Stroke = true;
+            this.btnRegresarEstudianteMod.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnRegresarEstudianteMod.TabIndex = 86;
+            this.btnRegresarEstudianteMod.Text = "Regresar";
+            this.btnRegresarEstudianteMod.Transparency = false;
+            this.btnRegresarEstudianteMod.Click += new System.EventHandler(this.btnRegresarEstudianteMod_Click);
+            // 
+            // btnActualizarEstudiante
+            // 
+            this.btnActualizarEstudiante.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizarEstudiante.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
+            this.btnActualizarEstudiante.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizarEstudiante.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnActualizarEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarEstudiante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
+            this.btnActualizarEstudiante.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizarEstudiante.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
+            this.btnActualizarEstudiante.Location = new System.Drawing.Point(1247, 859);
+            this.btnActualizarEstudiante.Name = "btnActualizarEstudiante";
+            this.btnActualizarEstudiante.Radius = 20;
+            this.btnActualizarEstudiante.Size = new System.Drawing.Size(303, 84);
+            this.btnActualizarEstudiante.Stroke = true;
+            this.btnActualizarEstudiante.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
+            this.btnActualizarEstudiante.TabIndex = 85;
+            this.btnActualizarEstudiante.Text = "Actualizar";
+            this.btnActualizarEstudiante.Transparency = false;
+            this.btnActualizarEstudiante.Click += new System.EventHandler(this.btnActualizarEstudiante_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Balsamiq Sans", 24F);
+            this.label33.Location = new System.Drawing.Point(653, 55);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(268, 36);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Datos Estudiante";
+            // 
+            // txtFechaNacimientoEstudMod
+            // 
+            this.txtFechaNacimientoEstudMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtFechaNacimientoEstudMod.Location = new System.Drawing.Point(719, 535);
+            this.txtFechaNacimientoEstudMod.Mask = "00/00/0000";
+            this.txtFechaNacimientoEstudMod.Name = "txtFechaNacimientoEstudMod";
+            this.txtFechaNacimientoEstudMod.ReadOnly = true;
+            this.txtFechaNacimientoEstudMod.Size = new System.Drawing.Size(219, 34);
+            this.txtFechaNacimientoEstudMod.TabIndex = 22;
+            this.txtFechaNacimientoEstudMod.ValidatingType = typeof(System.DateTime);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(439, 538);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(225, 31);
+            this.label34.TabIndex = 8;
+            this.label34.Text = "Fecha Nacimiento";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(292, -105);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(244, 31);
+            this.label46.TabIndex = 6;
+            this.label46.Text = "Correo Electrónico";
+            // 
+            // gbEncargados
+            // 
+            this.gbEncargados.Controls.Add(this.label55);
+            this.gbEncargados.Controls.Add(this.txtsegundoTelefonoEncargadoMod);
+            this.gbEncargados.Controls.Add(this.txtTelefonoEncargadoMod);
+            this.gbEncargados.Controls.Add(this.txtIdentidadEncargadoMod);
+            this.gbEncargados.Controls.Add(this.label48);
+            this.gbEncargados.Controls.Add(this.txtCorreoElectronicoEncargadoMod);
+            this.gbEncargados.Controls.Add(this.btnEliminarEncargado);
+            this.gbEncargados.Controls.Add(this.btnRegresarEncargado);
+            this.gbEncargados.Controls.Add(this.btnActualizarEncargado);
+            this.gbEncargados.Controls.Add(this.lblregistroEncargado);
+            this.gbEncargados.Controls.Add(this.txtfechaNacimientoEncargadoMod);
+            this.gbEncargados.Controls.Add(this.txtsegundoNombreEncargadoMod);
+            this.gbEncargados.Controls.Add(this.lblnumeroIdentidad);
+            this.gbEncargados.Controls.Add(this.label49);
+            this.gbEncargados.Controls.Add(this.txtDireccionEncargadoMod);
+            this.gbEncargados.Controls.Add(this.label50);
+            this.gbEncargados.Controls.Add(this.label51);
+            this.gbEncargados.Controls.Add(this.lblfechaNacimiento);
+            this.gbEncargados.Controls.Add(this.txtprimerApellidoEncargadoMod);
+            this.gbEncargados.Controls.Add(this.label52);
+            this.gbEncargados.Controls.Add(this.txtprimerNombreEncargadoMod);
+            this.gbEncargados.Controls.Add(this.lblcorreoElectronico);
+            this.gbEncargados.Controls.Add(this.txtsegundoApellidoEncargadoMod);
+            this.gbEncargados.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEncargados.Location = new System.Drawing.Point(12, 13);
+            this.gbEncargados.Name = "gbEncargados";
+            this.gbEncargados.Size = new System.Drawing.Size(1611, 1008);
+            this.gbEncargados.TabIndex = 113;
+            this.gbEncargados.TabStop = false;
+            this.gbEncargados.Text = "DATOS ENCARGADOS";
+            this.gbEncargados.Visible = false;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(1326, 238);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(144, 24);
+            this.label55.TabIndex = 116;
+            this.label55.Text = "dd/mm/aaaa";
+            // 
+            // txtsegundoTelefonoEncargadoMod
+            // 
+            this.txtsegundoTelefonoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsegundoTelefonoEncargadoMod.Location = new System.Drawing.Point(1321, 355);
+            this.txtsegundoTelefonoEncargadoMod.Mask = "00000000";
+            this.txtsegundoTelefonoEncargadoMod.Name = "txtsegundoTelefonoEncargadoMod";
+            this.txtsegundoTelefonoEncargadoMod.Size = new System.Drawing.Size(160, 34);
+            this.txtsegundoTelefonoEncargadoMod.TabIndex = 115;
+            this.txtsegundoTelefonoEncargadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTelefonoEncargadoMod
+            // 
+            this.txtTelefonoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoEncargadoMod.Location = new System.Drawing.Point(1143, 355);
+            this.txtTelefonoEncargadoMod.Mask = "00000000";
+            this.txtTelefonoEncargadoMod.Name = "txtTelefonoEncargadoMod";
+            this.txtTelefonoEncargadoMod.Size = new System.Drawing.Size(161, 34);
+            this.txtTelefonoEncargadoMod.TabIndex = 114;
+            this.txtTelefonoEncargadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtIdentidadEncargadoMod
+            // 
+            this.txtIdentidadEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentidadEncargadoMod.Location = new System.Drawing.Point(308, 234);
+            this.txtIdentidadEncargadoMod.Mask = "0000000000000";
+            this.txtIdentidadEncargadoMod.Name = "txtIdentidadEncargadoMod";
+            this.txtIdentidadEncargadoMod.ReadOnly = true;
+            this.txtIdentidadEncargadoMod.Size = new System.Drawing.Size(350, 34);
+            this.txtIdentidadEncargadoMod.TabIndex = 113;
+            this.txtIdentidadEncargadoMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(44, 629);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(242, 31);
+            this.label48.TabIndex = 88;
+            this.label48.Text = "Correo Electronico";
+            // 
+            // txtCorreoElectronicoEncargadoMod
+            // 
+            this.txtCorreoElectronicoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtCorreoElectronicoEncargadoMod.Location = new System.Drawing.Point(308, 629);
+            this.txtCorreoElectronicoEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCorreoElectronicoEncargadoMod.Multiline = true;
+            this.txtCorreoElectronicoEncargadoMod.Name = "txtCorreoElectronicoEncargadoMod";
+            this.txtCorreoElectronicoEncargadoMod.Size = new System.Drawing.Size(350, 34);
+            this.txtCorreoElectronicoEncargadoMod.TabIndex = 89;
             // 
             // btnEliminarEncargado
             // 
@@ -2355,47 +2436,158 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnActualizarEncargado.Transparency = false;
             this.btnActualizarEncargado.Click += new System.EventHandler(this.btnActualizarEncargado_Click);
             // 
-            // btnRegresarEstudianteMod
+            // lblregistroEncargado
             // 
-            this.btnRegresarEstudianteMod.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarEstudianteMod.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnRegresarEstudianteMod.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegresarEstudianteMod.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnRegresarEstudianteMod.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresarEstudianteMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnRegresarEstudianteMod.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstudianteMod.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnRegresarEstudianteMod.Location = new System.Drawing.Point(64, 859);
-            this.btnRegresarEstudianteMod.Name = "btnRegresarEstudianteMod";
-            this.btnRegresarEstudianteMod.Radius = 20;
-            this.btnRegresarEstudianteMod.Size = new System.Drawing.Size(303, 84);
-            this.btnRegresarEstudianteMod.Stroke = true;
-            this.btnRegresarEstudianteMod.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnRegresarEstudianteMod.TabIndex = 86;
-            this.btnRegresarEstudianteMod.Text = "Regresar";
-            this.btnRegresarEstudianteMod.Transparency = false;
-            this.btnRegresarEstudianteMod.Click += new System.EventHandler(this.btnRegresarEstudianteMod_Click);
+            this.lblregistroEncargado.AutoSize = true;
+            this.lblregistroEncargado.Font = new System.Drawing.Font("Balsamiq Sans", 24F);
+            this.lblregistroEncargado.Location = new System.Drawing.Point(638, 55);
+            this.lblregistroEncargado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblregistroEncargado.Name = "lblregistroEncargado";
+            this.lblregistroEncargado.Size = new System.Drawing.Size(273, 36);
+            this.lblregistroEncargado.TabIndex = 1;
+            this.lblregistroEncargado.Text = "Datos Encargado";
             // 
-            // btnActualizarEstudiante
+            // txtfechaNacimientoEncargadoMod
             // 
-            this.btnActualizarEstudiante.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizarEstudiante.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnActualizarEstudiante.BackColor = System.Drawing.Color.Transparent;
-            this.btnActualizarEstudiante.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnActualizarEstudiante.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarEstudiante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnActualizarEstudiante.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizarEstudiante.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnActualizarEstudiante.Location = new System.Drawing.Point(1247, 859);
-            this.btnActualizarEstudiante.Name = "btnActualizarEstudiante";
-            this.btnActualizarEstudiante.Radius = 20;
-            this.btnActualizarEstudiante.Size = new System.Drawing.Size(303, 84);
-            this.btnActualizarEstudiante.Stroke = true;
-            this.btnActualizarEstudiante.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnActualizarEstudiante.TabIndex = 85;
-            this.btnActualizarEstudiante.Text = "Actualizar";
-            this.btnActualizarEstudiante.Transparency = false;
-            this.btnActualizarEstudiante.Click += new System.EventHandler(this.btnActualizarEstudiante_Click);
+            this.txtfechaNacimientoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtfechaNacimientoEncargadoMod.Location = new System.Drawing.Point(1142, 235);
+            this.txtfechaNacimientoEncargadoMod.Mask = "00/00/0000";
+            this.txtfechaNacimientoEncargadoMod.Name = "txtfechaNacimientoEncargadoMod";
+            this.txtfechaNacimientoEncargadoMod.ReadOnly = true;
+            this.txtfechaNacimientoEncargadoMod.Size = new System.Drawing.Size(161, 34);
+            this.txtfechaNacimientoEncargadoMod.TabIndex = 22;
+            this.txtfechaNacimientoEncargadoMod.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtsegundoNombreEncargadoMod
+            // 
+            this.txtsegundoNombreEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtsegundoNombreEncargadoMod.Location = new System.Drawing.Point(486, 360);
+            this.txtsegundoNombreEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtsegundoNombreEncargadoMod.Multiline = true;
+            this.txtsegundoNombreEncargadoMod.Name = "txtsegundoNombreEncargadoMod";
+            this.txtsegundoNombreEncargadoMod.Size = new System.Drawing.Size(172, 34);
+            this.txtsegundoNombreEncargadoMod.TabIndex = 12;
+            this.txtsegundoNombreEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoNombreEncargadoMod_KeyPress);
+            // 
+            // lblnumeroIdentidad
+            // 
+            this.lblnumeroIdentidad.AutoSize = true;
+            this.lblnumeroIdentidad.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnumeroIdentidad.Location = new System.Drawing.Point(44, 233);
+            this.lblnumeroIdentidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblnumeroIdentidad.Name = "lblnumeroIdentidad";
+            this.lblnumeroIdentidad.Size = new System.Drawing.Size(230, 31);
+            this.lblnumeroIdentidad.TabIndex = 3;
+            this.lblnumeroIdentidad.Text = "Numero Identidad";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(44, 360);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(123, 31);
+            this.label49.TabIndex = 4;
+            this.label49.Text = "Nombres";
+            // 
+            // txtDireccionEncargadoMod
+            // 
+            this.txtDireccionEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtDireccionEncargadoMod.Location = new System.Drawing.Point(1142, 499);
+            this.txtDireccionEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDireccionEncargadoMod.Multiline = true;
+            this.txtDireccionEncargadoMod.Name = "txtDireccionEncargadoMod";
+            this.txtDireccionEncargadoMod.Size = new System.Drawing.Size(339, 165);
+            this.txtDireccionEncargadoMod.TabIndex = 19;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(44, 499);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(123, 31);
+            this.label50.TabIndex = 5;
+            this.label50.Text = "Apellidos";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(871, 499);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(127, 31);
+            this.label51.TabIndex = 9;
+            this.label51.Text = "Dirección";
+            // 
+            // lblfechaNacimiento
+            // 
+            this.lblfechaNacimiento.AutoSize = true;
+            this.lblfechaNacimiento.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechaNacimiento.Location = new System.Drawing.Point(871, 235);
+            this.lblfechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblfechaNacimiento.Name = "lblfechaNacimiento";
+            this.lblfechaNacimiento.Size = new System.Drawing.Size(225, 31);
+            this.lblfechaNacimiento.TabIndex = 8;
+            this.lblfechaNacimiento.Text = "Fecha Nacimiento";
+            // 
+            // txtprimerApellidoEncargadoMod
+            // 
+            this.txtprimerApellidoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtprimerApellidoEncargadoMod.Location = new System.Drawing.Point(308, 499);
+            this.txtprimerApellidoEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtprimerApellidoEncargadoMod.Multiline = true;
+            this.txtprimerApellidoEncargadoMod.Name = "txtprimerApellidoEncargadoMod";
+            this.txtprimerApellidoEncargadoMod.Size = new System.Drawing.Size(172, 34);
+            this.txtprimerApellidoEncargadoMod.TabIndex = 15;
+            this.txtprimerApellidoEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerApellidoEncargadoMod_KeyPress);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(871, 355);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(138, 31);
+            this.label52.TabIndex = 7;
+            this.label52.Text = "Teléfonos";
+            // 
+            // txtprimerNombreEncargadoMod
+            // 
+            this.txtprimerNombreEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtprimerNombreEncargadoMod.Location = new System.Drawing.Point(308, 360);
+            this.txtprimerNombreEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtprimerNombreEncargadoMod.Multiline = true;
+            this.txtprimerNombreEncargadoMod.Name = "txtprimerNombreEncargadoMod";
+            this.txtprimerNombreEncargadoMod.Size = new System.Drawing.Size(172, 34);
+            this.txtprimerNombreEncargadoMod.TabIndex = 13;
+            this.txtprimerNombreEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprimerNombreEncargadoMod_KeyPress);
+            // 
+            // lblcorreoElectronico
+            // 
+            this.lblcorreoElectronico.AutoSize = true;
+            this.lblcorreoElectronico.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcorreoElectronico.Location = new System.Drawing.Point(292, -105);
+            this.lblcorreoElectronico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblcorreoElectronico.Name = "lblcorreoElectronico";
+            this.lblcorreoElectronico.Size = new System.Drawing.Size(244, 31);
+            this.lblcorreoElectronico.TabIndex = 6;
+            this.lblcorreoElectronico.Text = "Correo Electrónico";
+            // 
+            // txtsegundoApellidoEncargadoMod
+            // 
+            this.txtsegundoApellidoEncargadoMod.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtsegundoApellidoEncargadoMod.Location = new System.Drawing.Point(486, 500);
+            this.txtsegundoApellidoEncargadoMod.Margin = new System.Windows.Forms.Padding(2);
+            this.txtsegundoApellidoEncargadoMod.Multiline = true;
+            this.txtsegundoApellidoEncargadoMod.Name = "txtsegundoApellidoEncargadoMod";
+            this.txtsegundoApellidoEncargadoMod.Size = new System.Drawing.Size(172, 34);
+            this.txtsegundoApellidoEncargadoMod.TabIndex = 14;
+            this.txtsegundoApellidoEncargadoMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsegundoApellidoEncargadoMod_KeyPress);
             // 
             // btnReingreso
             // 
@@ -2465,10 +2657,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.grpReingreso);
-            this.Controls.Add(this.grpListaEstudiantes);
-            this.Controls.Add(this.grpMatriculaPrimerIngreso);
+            this.ClientSize = new System.Drawing.Size(1641, 1035);
             this.Controls.Add(this.grpRegistroEncargados);
             this.Controls.Add(this.grpRegistroEstudiante);
             this.Controls.Add(this.grpListadoEstado);
@@ -2477,8 +2666,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.Controls.Add(this.gbEstudiantes);
             this.Controls.Add(this.btnReingreso);
             this.Controls.Add(this.btnPrimerIngreso);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnActualizarMatricula);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grpReingreso);
+            this.Controls.Add(this.grpListaEstudiantes);
+            this.Controls.Add(this.grpMatriculaPrimerIngreso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IMatriculaIndividual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2677,5 +2869,18 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private System.Windows.Forms.TextBox txtBusquedaIdentidadEstado;
         private System.Windows.Forms.TextBox txtBusquedaNombre;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnImagenAgregarR;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnVerImagenR;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button btnVerImagenPI;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Button btnAgregarImagenPI;
+        private System.Windows.Forms.Label label54;
+        private AltoControls.AltoButton btnRegresarAEstud;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label55;
     }
 }

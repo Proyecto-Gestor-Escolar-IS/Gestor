@@ -52,6 +52,7 @@ estadoCurso int not null
 --Tabla que contiene la informacion relacionada a las secciones
 CREATE TABLE seccion(
 id_Seccion int identity primary key not null,
+fechaCreacion datetime not null,
 id_Curso int not null,
 id_Docente varchar(13) not null,
 nombreSeccion char(1) not null,
@@ -159,6 +160,7 @@ totalMatricula money null,
 tipoMatricula varchar(15) null,
 mesesParaPagar int not null,
 estado int not null,
+BoletaDeCalificaciones image null,
 
 FOREIGN KEY (id_RegistroMatricula) REFERENCES matricula(id_RegistroMatricula),
 FOREIGN KEY (id_Curso) REFERENCES cursos(id_Curso),
@@ -235,18 +237,4 @@ INSERT INTO cargos VALUES('Administrador')
 INSERT INTO cargos VALUES('Docente')
 INSERT INTO cargos VALUES('Medico')
 
-INSERT INTO datosEmpleados VALUES('1010202000035', 'Andre', 'Antonio', 'Ferrera', 'Lopez', 95104555, '06/06/1983', 'antoniof3@gmail.com', 1, '1234')
 
-INSERT INTO detalleCargos VALUES('1010202000035', 3)
-
-INSERT INTO cursos values('Nursery', 3200, 1, 1)
-INSERT INTO cursos values('Maths', 2200, 1, 1)
-INSERT INTO cursos values('Cheems', 3000, 1, 1)
-
-INSERT INTO clases VALUES('MATEMATICAS', 1)
-INSERT INTO clases VALUES('ESPANIOL', 1)
-INSERT INTO clases VALUES('FISICA', 1)
-INSERT INTO clases VALUES('QUIMICA', 1)
-
-INSERT INTO clasesCurso VALUES (1, 1)
-INSERT INTO clasesCurso VALUES (2, 1)

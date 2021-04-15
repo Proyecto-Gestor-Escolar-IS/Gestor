@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestorEscolar.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panelVistaEncargardos.Visible = true;
+
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -44,13 +45,26 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbCurso.SelectedIndex != 0)
-            { 
-                dbConn.llenarDGV(dgvNotas, "SELECT C.[nombreCurso] as 'Curso', B.[nombreClase] as 'Nombre Clase', A.[nota1erParcial] as 'I Parcial', A.[nota2doParcial] as 'II Parcial', A.[nota3erParcial] as 'III Parcial', A.[nota4toParcial] as 'IV Parcial', A.[notaFinal] AS 'Promedio' FROM[dbo].[detalleNotas] A INNER JOIN[dbo].[clasesCurso] B ON A.id_Clase = B.id_Clase INNER JOIN[dbo].[cursos] C ON B.id_Curso = C.id_Curso INNER JOIN[dbo].[detalleMatricula] D ON A.id_DetalleMatricula = D.id_DetalleMatricula INNER JOIN[dbo].[matricula] E ON D.id_RegistroMatricula = E.id_RegistroMatricula WHERE E.id_Estudiante = '" + identidadEstudiante + "' AND C.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'");
+            try
+            {
+                if (cmbCurso.SelectedIndex != 0)
+                {
+                    if (dbConn.obtenerVariableEntera("SELECT count(id_DetalleNotas) FROM[dbo].[detalleNotas] A INNER JOIN[dbo].[clasesCurso] B ON A.id_Clase = B.id_Clase INNER JOIN[dbo].[cursos] C ON B.id_Curso = C.id_Curso INNER JOIN[dbo].[detalleMatricula] D ON A.id_DetalleMatricula = D.id_DetalleMatricula INNER JOIN[dbo].[matricula] E ON D.id_RegistroMatricula = E.id_RegistroMatricula WHERE E.id_Estudiante = '" + identidadEstudiante + "' AND C.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'") != 0)
+                    {
+                        dbConn.llenarDGV(dgvNotas, "SELECT C.[nombreCurso] as 'Curso', B.[nombreClase] as 'Nombre Clase', A.[nota1erParcial] as 'I Parcial', A.[nota2doParcial] as 'II Parcial', A.[nota3erParcial] as 'III Parcial', A.[nota4toParcial] as 'IV Parcial', A.[notaFinal] AS 'Promedio' FROM[dbo].[detalleNotas] A INNER JOIN[dbo].[clasesCurso] B ON A.id_Clase = B.id_Clase INNER JOIN[dbo].[cursos] C ON B.id_Curso = C.id_Curso INNER JOIN[dbo].[detalleMatricula] D ON A.id_DetalleMatricula = D.id_DetalleMatricula INNER JOIN[dbo].[matricula] E ON D.id_RegistroMatricula = E.id_RegistroMatricula WHERE E.id_Estudiante = '" + identidadEstudiante + "' AND C.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'");
+
+                    }
+                }
+                else
+                {
+                    dgvNotas.DataSource = "";
+                }
             }
-            else {
-                dgvNotas.DataSource = "";
+            catch
+            {
+                dgvNotas.DataSource = null; 
             }
+
         }
 
         private void panelPantallaSeleccion_Paint(object sender, PaintEventArgs e)
@@ -60,6 +74,24 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void IVistaFichaEstudiante_Load(object sender, EventArgs e)
         {
+
+            if (Properties.Settings.Default.isModoOscuro == true)
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+    
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
+            }
+
+            ClsCambioTema.cambiarTemaBoton(this);
+            ClsCambioTema.cambiarTemaBoton(panelPantallaSeleccion);
+            ClsCambioTema.cambiarTemaBoton(panelDatosGenerales);
+            ClsCambioTema.cambiarTemaBoton(panelHistorialMedico);
+            ClsCambioTema.cambiarTemaBoton(panelNotas);
+            ClsCambioTema.cambiarTemaBoton(panelVistaEncargardos);
+
             panelNotas.Visible = false;
             panelVistaEncargardos.Visible = false;
             panelHistorialMedico.Visible = false;
@@ -71,53 +103,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void btnSiguienteDGV_Click(object sender, EventArgs e)
         {
             
-            Char genero;
-
-            if (identidadEstudiante != "")
-            {
-
-                panelDatosGenerales.Visible = true;
-                txtNoRegistro.Text = dbConn.obtenerVariableString("SELECT id_Registro FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'");
-                txtNombreEstudiante.Text = dbConn.obtenerVariableString("SELECT CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'");
-                txtIdentidadEstudiante.Text = identidadEstudiante;
-
-                genero = Char.Parse(dbConn.obtenerVariableString("SELECT genero FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'"));
-
-                if (genero == 'M')
-                {
-                    txtGenero.Text = "Masculino";
-
-                }
-                else if (genero == 'F')
-                {
-                    txtGenero.Text = "Femenino";
-                }
-
-
-                txtFechaNacimiento.Text = dbConn.obtenerVariableString("SELECT FORMAT (fechaNacimiento, 'dd-MM-yyyy')  FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'");
-                dbConn.llenarDGV(dgvEncargados, "SELECT identidadEncargado as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre del Encargado', numeroTelefono as 'Telefono Primario', numeroTelefonoAlt as 'Telefono Secundario', direccionTrabajo as 'Direccion de Trabajo' FROM datosEncargado INNER JOIN detalleEncargado ON datosEncargado.identidadEncargado = detalleEncargado.id_encargadoAlumno WHERE  detalleEncargado.id_Estudiante = '" + identidadEstudiante + "'");
-                txtDireccion.Text = dbConn.obtenerVariableString("SELECT direccionTrabajo FROM datosEncargado INNER JOIN detalleEncargado ON datosEncargado.identidadEncargado = detalleEncargado.id_encargadoAlumno WHERE  detalleEncargado.id_Estudiante = '" + identidadEstudiante + "'");
-                
-                dbConn.llenarDGV(dgvHistorialMedico, "SELECT fecha AS 'Fecha', CONCAT(B.primerNombre,' ', B.segundoNombre,' ', B.primerApellido, ' ', B.segundoApellido) AS  'Nombre Médico', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM[dbo].[detalleExpedienteMedico] A INNER JOIN[dbo].[datosEmpleados] B ON A.id_DoctorEncargado = B.identidadPersona INNER JOIN[dbo].[expedienteMedico] C ON A.id_expediente = C.id_expediente WHERE C.id_Estudiante = '" + identidadEstudiante + "'");
-                txtAntecedentesMedicos.Text = dbConn.obtenerVariableString("SELECT A.[antecedentesMedicos] FROM [dbo].[expedienteMedico] A WHERE A.[id_Estudiante] = '" + identidadEstudiante +"'");
-                lblIdentidadEstudiante.Text = txtIdentidadEstudiante.Text;
-                lblNombreEstudiante.Text = txtNombreEstudiante.Text;
-
-                lblIdentidadExpMedico.Text = txtIdentidadEstudiante.Text;
-                lblNombreExpMedico.Text = txtNombreEstudiante.Text;
-
-                lblIdentidadNotas.Text = txtIdentidadEstudiante.Text;
-                lblNombreNotas.Text = txtNombreEstudiante.Text;
-
-                cmbCurso.Items.Clear();
-                dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT A.[nombreCurso] FROM [dbo].[cursos] A INNER JOIN[dbo].[detalleMatricula] B ON A.id_Curso = B.id_Curso INNER JOIN[dbo].[matricula] C ON B.id_RegistroMatricula = C.id_RegistroMatricula WHERE C.id_Estudiante = '" + identidadEstudiante + "'");
-                cmbCurso.SelectedIndex = 0;
-            }
-            else {
-                messageWarning.lblError.Text = "SELECCIONE UN ESTUDIANTE";
-                messageWarning.ShowDialog();
-            }
-  
 
 
         }
@@ -139,29 +124,26 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void btnAtrasGenerales_Click(object sender, EventArgs e)
         {
-            identidadEstudiante = "";
-            txtLikeIdentidad.Clear();
-            panelDatosGenerales.Visible = false;
+
         }
 
         private void btnAtrasEncargados_Click(object sender, EventArgs e)
         {
-            panelVistaEncargardos.Visible = false;
         }
 
         private void btnSiguienteEncargados_Click(object sender, EventArgs e)
         {
-            panelHistorialMedico.Visible = true;
+    
         }
 
         private void btnAtrasExpMedico_Click(object sender, EventArgs e)
         {
-            panelHistorialMedico.Visible = false;
+   
         }
 
         private void btnSiguienteExpMedico_Click(object sender, EventArgs e)
         {
-            panelNotas.Visible = true;
+ 
         }
 
         private void btnAtrasNotas_Click(object sender, EventArgs e)
@@ -216,6 +198,124 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void panelNotas_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            btnAtrasNotas.Visible = false;
+            btnAtras.Visible = true;
+            btnSiguienteParaNotas.Visible = true;
+            panelNotas.Visible = false;
+        }
+
+        private void btnSiguienteParaNotas_Click(object sender, EventArgs e)
+        {
+            btnSiguienteParaNotas.Visible = false;
+            btnAtras.Visible = false;
+            panelNotas.Visible = true;
+        }
+
+        private void altoButton1_Click(object sender, EventArgs e)
+        {
+            panelHistorialMedico.Visible = false;
+            btnAtrasEnc.Visible = true;
+            btnSIguienteEnc.Visible = true;
+        }
+
+        private void btnAtrasEnc_Click(object sender, EventArgs e)
+        {
+            panelVistaEncargardos.Visible = false;
+            btnSiguienteMain.Visible = true;
+            btnAtrasMain.Visible = true;
+
+        }
+
+        private void altoButton1_Click_1(object sender, EventArgs e)
+        {
+            btnSIguienteEnc.Visible = false;
+            btnAtrasEnc.Visible = false;
+            panelHistorialMedico.Visible = true;
+        }
+
+        private void btnAtrasMain_Click(object sender, EventArgs e)
+        {
+            btnDGVNExt.Visible = true;
+            identidadEstudiante = "";
+            txtLikeIdentidad.Clear();
+            panelDatosGenerales.Visible = false;
+        }
+
+        private void altoButton2_Click(object sender, EventArgs e)
+        {
+            btnAtrasMain.Visible = false;
+            btnSiguienteMain.Visible = false;
+            panelVistaEncargardos.Visible = true;
+        }
+
+        private void btnDGVNExt_Click(object sender, EventArgs e)
+        {
+
+            Char genero;
+
+            if (identidadEstudiante != "")
+            {
+
+                panelDatosGenerales.Visible = true;
+                txtNoRegistro.Text = dbConn.obtenerVariableString("SELECT id_Registro FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'");
+                txtNombreEstudiante.Text = dbConn.obtenerVariableString("SELECT CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'");
+                txtIdentidadEstudiante.Text = identidadEstudiante;
+
+                genero = Char.Parse(dbConn.obtenerVariableString("SELECT genero FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'"));
+
+                if (genero == 'M')
+                {
+                    txtGenero.Text = "Masculino";
+
+                }
+                else if (genero == 'F')
+                {
+                    txtGenero.Text = "Femenino";
+                }
+
+
+                txtFechaNacimiento.Text = dbConn.obtenerVariableString("SELECT FORMAT (fechaNacimiento, 'dd-MM-yyyy')  FROM datosEstudiante WHERE identidadEstudiante = '" + identidadEstudiante + "'");
+                dbConn.llenarDGV(dgvEncargados, "SELECT identidadEncargado as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre del Encargado', numeroTelefono as 'Telefono Primario', numeroTelefonoAlt as 'Telefono Secundario', direccionTrabajo as 'Direccion de Trabajo' FROM datosEncargado INNER JOIN detalleEncargado ON datosEncargado.identidadEncargado = detalleEncargado.id_encargadoAlumno WHERE  detalleEncargado.id_Estudiante = '" + identidadEstudiante + "'");
+                txtDireccion.Text = dbConn.obtenerVariableString("SELECT direccionTrabajo FROM datosEncargado INNER JOIN detalleEncargado ON datosEncargado.identidadEncargado = detalleEncargado.id_encargadoAlumno WHERE  detalleEncargado.id_Estudiante = '" + identidadEstudiante + "'");
+
+                dbConn.llenarDGV(dgvHistorialMedico, "SELECT fecha AS 'Fecha', CONCAT(B.primerNombre,' ', B.segundoNombre,' ', B.primerApellido, ' ', B.segundoApellido) AS  'Nombre Médico', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM[dbo].[detalleExpedienteMedico] A INNER JOIN[dbo].[datosEmpleados] B ON A.id_DoctorEncargado = B.identidadPersona INNER JOIN[dbo].[expedienteMedico] C ON A.id_expediente = C.id_expediente WHERE C.id_Estudiante = '" + identidadEstudiante + "'");
+                txtAntecedentesMedicos.Text = dbConn.obtenerVariableString("SELECT A.[antecedentesMedicos] FROM [dbo].[expedienteMedico] A WHERE A.[id_Estudiante] = '" + identidadEstudiante + "'");
+                lblIdentidadEstudiante.Text = txtIdentidadEstudiante.Text;
+                lblNombreEstudiante.Text = txtNombreEstudiante.Text;
+
+                lblIdentidadExpMedico.Text = txtIdentidadEstudiante.Text;
+                lblNombreExpMedico.Text = txtNombreEstudiante.Text;
+
+                lblIdentidadNotas.Text = txtIdentidadEstudiante.Text;
+                lblNombreNotas.Text = txtNombreEstudiante.Text;
+
+                cmbCurso.Items.Clear();
+                dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT A.[nombreCurso] FROM [dbo].[cursos] A INNER JOIN[dbo].[detalleMatricula] B ON A.id_Curso = B.id_Curso INNER JOIN[dbo].[matricula] C ON B.id_RegistroMatricula = C.id_RegistroMatricula WHERE C.id_Estudiante = '" + identidadEstudiante + "'");
+                cmbCurso.SelectedIndex = 0;
+                btnDGVNExt.Visible = false;
+                btnAtrasMenu.Visible = false;
+            }
+            else
+            {
+                messageWarning.lblError.Text = "SELECCIONE UN ESTUDIANTE";
+                messageWarning.ShowDialog();
+            }
+
+        }
+
+        private void btnAtrasMenu_Click(object sender, EventArgs e)
+        {
+            InterfazGraficaPrincipal igp = Application.OpenForms.OfType<InterfazGraficaPrincipal>().SingleOrDefault();
+            igp.panelMostrador.Controls.Clear();
+            igp.panelMostrador.Dock = DockStyle.None;
+            igp.panelMostrador.Visible = false;
+            igp.panSubMenuEstudiante.Visible = true;
+            igp.panSubMenuEstudiante.Dock = DockStyle.Fill;
+            this.Close();
         }
     }
 }

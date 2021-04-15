@@ -59,6 +59,7 @@ namespace SistemaGestorEscolar
             }
 
             ClsCambioTema.cambiarTemaBoton(this);
+            ClsCambioTema.cambiarTemaBoton(panel1);
         }
 
         private void label5_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-USE StaMariaNazarethDatabaseService
+ï»¿USE StaMariaNazarethDatabaseService
 GO
 
 /*PROCEDIMIENTOS OSCAR MEJIA*/
@@ -25,7 +25,7 @@ AS BEGIN
 			SET @idUltimoDetalleMatricula = (SELECT MAX(id_DetalleMatricula) FROM
 											detalleMatricula 
 											INNER JOIN matricula ON detalleMatricula.id_RegistroMatricula = matricula.id_RegistroMatricula
-										    WHERE matricula.id_Estudiante = @identidadEstudiante)
+										    WHERE matricula.id_Estudiante =  @identidadEstudiante)
 
 			SET @totalMatricula = (SELECT totalMatricula FROM 
 										   detalleMatricula 
@@ -33,13 +33,13 @@ AS BEGIN
 
 			SET @idUltimoPago = (SELECT MAX(id_Mensualidad) FROM
 													   detalleMensualidades 
-													   WHERE id_Estudiante = @identidadEstudiante)
+													   WHERE id_Estudiante =  @identidadEstudiante)
 			
 			SET @mesesPago = (SELECT mesesParaPagar FROM 
 										                 detalleMatricula 
 														 INNER JOIN matricula 
 														 ON matricula.id_RegistroMatricula = detalleMatricula.id_RegistroMatricula 
-														 WHERE matricula.id_RegistroMatricula = @idUltimoDetalleMatricula)
+														 WHERE detalleMatricula.id_DetalleMatricula = @idUltimoDetalleMatricula)
 
 			SET @noFacturaActual = (SELECT noFacturaTemporal FROM 
 										                 detalleMensualidades 
@@ -52,13 +52,9 @@ AS BEGIN
 			SET @ultimoSaldo = (SELECT saldoDisponible FROM detalleMensualidades 
 					           WHERE id_Mensualidad = @idUltimoPago)
 			
-			If @noFacturaActual < @mesesPago
+			If @noFacturaActual < 12
 			BEGIN
-				IF @mesesPago = 10
-				BEGIN
-					SET @totalMatricula = @totalMatricula * 12
-					SET @totalMatricula = @totalMatricula / 10
-				END
+
 
 				IF @ultimaDeuda > 0
 				BEGIN
@@ -121,6 +117,23 @@ AS BEGIN
 										   detalleMatricula 
 										   WHERE id_DetalleMatricula = @idUltimoDetalleMatricula)
 
+										   
+			/*SUMAR EL ULTIMO TOTAL ANTERIOR*/
+			SET @ultimaDeuda = (SELECT deudaPendiente FROM detalleMensualidades 
+			WHERE id_Mensualidad = @idUltimoPago)
+
+			IF @ultimaDeuda = ''
+			BEGIN
+			    SET @totalMatricula = @totalMatricula
+
+			END
+			ELSE IF @ultimaDeuda > 0
+			BEGIN
+			    SET @totalMatricula = @totalMatricula + @ultimaDeuda
+			END
+
+			/*SUMAR EL ULTIMO TOTAL ANTERIOR*/
+
 			IF @totalMatricula <= @ultimoSaldo
 			BEGIN
 				SET @ultimoSaldo = @ultimoSaldo - @totalMatricula
@@ -142,7 +155,6 @@ AS BEGIN
 		INSERT INTO detalleMensualidades VALUES(@identidadEstudiante, 1, @fechaFacturacion, null, @totalMatricula, @ultimoSaldo , 0, null)
 END
 GO
-
 /*Procedimiento que registra los pagos de un estudiante*/
 --EXEC PARegistroPago '1001200200094', 4000, '04/25/2020', 0
 
@@ -194,7 +206,7 @@ GO
 
 
 /*PROCEDIMIENTOS PARA INSERTAR EN MATRICULA Y DETALLE MATRICULA*/
-create PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int)
+CREATE PROCEDURE PARegistroMatricula(@identidadAdministracion varchar(13), @identidadEncargado varchar(13), @identidadEstudiante varchar(13), @idCurso int, @idSeccion int, @totalMatricula float, @tipoMatricula int, @mesesPago int, @estado int, @codigoOperacion int, @imagen as image)
 AS BEGIN
 	
 	DECLARE @idMatricula as int, @ultimoDetalleMatricula as int;
@@ -204,14 +216,14 @@ AS BEGIN
 		INSERT INTO matricula VALUES(GETDATE(), @identidadAdministracion, @identidadEncargado, @identidadEstudiante)
 		SET @idMatricula = (SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = @identidadEstudiante)
 		
-		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado)
+		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado, @imagen)
 	END
 	ELSE IF @codigoOperacion = 2
 	BEGIN
 		
 		SET @idMatricula = (SELECT id_RegistroMatricula FROM matricula WHERE id_Estudiante = @identidadEstudiante)
 
-		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado)
+		INSERT INTO detalleMatricula VALUES(@idMatricula, GETDATE(), @idCurso, @idSeccion, @totalMatricula, @tipoMatricula, @mesesPago, @estado, @imagen)
 	END
 
 	ELSE IF @codigoOperacion = 3
@@ -395,7 +407,7 @@ GO
 
 /*YESSY TINOCO*/
 
---------------------------------------------------------- Apertura de Expediente Médico ---------------------------------------------------------------------
+--------------------------------------------------------- Apertura de Expediente Mï¿½dico ---------------------------------------------------------------------
 
 CREATE PROCEDURE abrirExpediente(@id_Estudiante varchar(13), @antecedentesMedicos text)
 AS BEGIN
@@ -403,7 +415,7 @@ AS BEGIN
 		VALUES( @id_Estudiante, GETDATE(), @antecedentesMedicos)
 END
 GO
---------------------------------------------------------- Registro de Visita Médica ---------------------------------------------------------------------
+--------------------------------------------------------- Registro de Visita Mï¿½dica ---------------------------------------------------------------------
 
 CREATE PROCEDURE registroVisitaMedica(@id_expediente int, @id_DoctorEncargado varchar(13), @sintomas text, @posibleEnfermedad text, @medicamentos text)
 AS BEGIN
@@ -418,39 +430,24 @@ GO
 
 --------------------------------------------------------- Registro Notas ---------------------------------------------------------------------
 
-Create Procedure agregarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float null, @nota2doParcial float null, @nota3erParcial float null, @nota4toParcial float null, @notaFinal float null, 
+CREATE PROCEDURE PAOperacionesNotas(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float null, @nota2doParcial float null, @nota3erParcial float null, @nota4toParcial float null, @notaFinal float null, 
 							 @notaA char(1) null, @notaB char(1) null, @notaC char(1) null, @notaD char(1) null, @notaE char(1) null)
-As Begin 
+AS BEGIN
 
-		If exists(select id_DetalleMatricula from detalleNotas Where
-				   (id_DetalleMatricula = @id_DetalleMatricula))
-			 Raiserror('El Alumno ya tiene registro de notas', 16,1)
-
-		else 
-
-		Insert into detalleNotas values(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial, @notaFinal, @notaA, @notaB, @notaC, @notaD, @notaE)
-
-End
-go
-
-Create Procedure modificarNota(@id_DetalleMatricula int, @id_Clase int, @nota1erParcial float null, @nota2doParcial float null, @nota3erParcial float null, @nota4toParcial float null, @notaFinal float null, 
-							 @notaA char(1) null, @notaB char(1) null, @notaC char(1) null, @notaD char(1) null, @notaE char(1) null)
-As Begin 
-
-		If exists(select id_DetalleMatricula from detalleNotas Where
-				  (id_DetalleMatricula = @id_DetalleMatricula))
-				  
-				  update detalleNotas set 
-										  nota1erParcial = @nota1erParcial, nota2doParcial = @nota2doParcial,
-										  nota3erParcial = @nota3erParcial, nota4toParcial = @nota4toParcial,
-										  notaFinal = @notaFinal, notaA = @notaA, notaB = @notaB, notaC = @notaC, 
-										  notaD = @notaD, notaE = @notaE
-					Where id_DetalleMatricula = @id_DetalleMatricula and id_Clase = @id_Clase
-        else 
-				raiserror('¡Revise los datos!, No se encontró el Alumno especificado', 16,1)
-
-End 
-go
+	IF NOT EXISTS(SELECT id_Clase FROM detalleNotas WHERE id_Clase = @id_Clase AND id_DetalleMatricula = @id_DetalleMatricula)
+	BEGIN
+		INSERT INTO detalleNotas VALUES(@id_DetalleMatricula, @id_Clase, @nota1erParcial, @nota2doParcial, @nota3erParcial, @nota4toParcial,
+		@notaFinal, @notaA, @notaB, @notaC, @notaD, @notaE)
+	END
+	ELSE IF EXISTS(SELECT id_DetalleMatricula FROM detalleNotas WHERE id_DetalleMatricula = @id_DetalleMatricula) AND EXISTS(SELECT id_Clase FROM detalleNotas WHERE id_Clase = @id_Clase)
+	BEGIN
+		UPDATE detalleNotas SET nota1erParcial = @nota1erParcial, nota2doParcial = @nota2doParcial, nota3erParcial = @nota3erParcial, nota4toParcial = @nota4toParcial, notaFinal = @notaFinal,
+		notaA = @notaA, notaB = @notaB, notaC = @notaC, notaD = @notaD, notaE = @notaE WHERE id_DetalleMatricula = @id_DetalleMatricula AND id_Clase = @id_Clase
+	END
+	ELSE
+		raiserror('Error de operacion de notas', 16, 2)
+END
+GO
 
 Create Procedure buscarAlumno(@identidadEstudiante varchar(13), @primerNombre varchar(20))
 As Begin 
@@ -462,7 +459,7 @@ As Begin
 			   datosEstudiante.primerNombre like @primerNombre 
 
 	else 
-		raiserror('¡Revise los datos!, No se encontró el Alumno especificado', 16,1)
+		raiserror('ï¿½Revise los datos!, No se encontrï¿½ el Alumno especificado', 16,1)
 
 End
 
@@ -498,7 +495,7 @@ go
 CREATE PROCEDURE insertarSeccion(@idCurso as int, @identidadDocente as varchar(13), @seccion as char(1))
 AS BEGIN
 	
-	INSERT INTO seccion values (@idCurso, @identidadDocente, @seccion, 1)
+	INSERT INTO seccion values (GETDATE(), @idCurso, @identidadDocente, @seccion, 1)
 	
 END
 GO
@@ -528,6 +525,33 @@ CREATE PROCEDURE cambiarEstadoCurso(@idCurso as int, @estado as int)
 AS BEGIN
 	UPDATE cursos SET estadoCurso = @estado WHERE id_Curso = @idCurso
 END
-EXEC cambiarEstadoCurso 1, 2
+GO
 
-SELECT * FROM cursos
+/*HECTOR */
+CREATE PROCEDURE agregarNuevoEncargado(@Numidentidad varchar(13), @primerNombre varchar(20), @segundoNombre varchar(20), @primerApellido varchar(20), 
+@segundoApellido varchar(20), @correoElectronico varchar(20), @numeroTelefono numeric(9,0), @numeroTelefonoAlt numeric(9,0),
+ @direccionTrabajo varchar(MAX), @fechaNacimiento DATE)
+ AS
+BEGIN
+INSERT INTO datosEncargado VALUES(@Numidentidad, @primerNombre, @segundoNombre, @primerApellido, @segundoApellido, @numeroTelefono, @numeroTelefonoAlt,
+	@correoElectronico, @direccionTrabajo, @fechaNacimiento, 1);
+END
+go
+
+/*REPORTES*/
+CREATE PROCEDURE vistaMatriculaCurso(@codigoOperacion as int, @idSeccion as int, @idCurso as int)
+AS BEGIN
+	
+	IF @codigoOperacion = 1
+	BEGIN
+		SELECT B.identidadEstudiante as 'Identidad', CONCAT(B.primerNombre, ' ', B.segundoNombre, ' ', B.primerApellido , ' ', B.segundoApellido) as 'Nombre del Estudiante'
+		FROM datosEstudiante B
+		INNER JOIN matricula A ON A.id_Estudiante = B.identidadEstudiante
+		INNER JOIN detalleMatricula C ON A.id_RegistroMatricula = C.id_RegistroMatricula
+		INNER JOIN cursos D ON D.id_Curso = C.id_Curso 
+		INNER JOIN seccion E ON C.id_Seccion = E.id_Seccion
+		WHERE C.id_Seccion = @idSeccion AND C.id_Curso = @idCurso
+	END
+
+END
+
