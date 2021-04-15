@@ -1366,7 +1366,7 @@ namespace SistemaGestorEscolar
             panelMostrador.Dock = DockStyle.Fill;
             panSubMenuPersonal.Visible = false;
             panSubMenuPersonal.Dock = DockStyle.None;
-            AbrirFormulario<Report_Notas.ReporteNotas>();
+           // AbrirFormulario<Report_Notas.ReporteNotas>();
 
             if (codigoColor == 1)
             {
