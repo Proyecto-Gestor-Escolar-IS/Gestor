@@ -49,8 +49,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         private void IMatriculaIndividual_Load(object sender, EventArgs e)
         {
-            dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT nombreCurso FROM cursos");
-            dbConn.llenarComboBoxValorInicial(cmbCursoR, "SELECT nombreCurso FROM cursos");
+            dbConn.llenarComboBoxValorInicial(cmbCurso, "SELECT nombreCurso FROM cursos where [estadoCurso] = 1");
+            dbConn.llenarComboBoxValorInicial(cmbCursoR, "SELECT nombreCurso FROM cursos where [estadoCurso] = 1");
             cmbCurso.SelectedIndex = 0;
             cmbCursoR.SelectedIndex = 0;
             cmbSeccion.SelectedIndex = 0;
@@ -183,8 +183,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     {
                         if (cmbCurso.SelectedIndex != 0)
                         {
-                            int idCurso = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "'");
-
+                            int idCurso = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'");
 
                             if (cmbSeccion.SelectedIndex != 0)
                             {
@@ -201,7 +200,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                     mesesDePago = 10;
                                 }
 
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString() , txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1, image))
+                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString() , txtIdentidadEstudiante.Text, idCurso, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1, image))
                                 {
                                     dbConn.PAGeneracionPrimerPago(txtIdentidadEstudiante.Text);
                                     message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -263,8 +262,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
             dbConn.llenarComboBoxValorInicial(cmbSeccion, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE estado = 1 and cursos.nombreCurso = '" + cmbCurso.SelectedItem + "'");
             cmbSeccion.SelectedIndex = 0;
+            txtDescuento.Text = "0.00";
 
-            
             txtTotalPagar.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'").ToString();
 
         }
@@ -357,7 +356,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                             {
                                 if (dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "') = E.id_DetalleMatricula") != 1) 
                                     {
-                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2, image))
+
+                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, idCurso, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2, image))
                                         {
                                             dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
                                             message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -622,6 +622,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             cmbSeccionR.Items.Clear();
             dbConn.llenarComboBoxValorInicial(cmbSeccionR, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE estado = 1 and cursos.nombreCurso = '" + cmbCursoR.SelectedItem + "'");
             cmbSeccionR.SelectedIndex = 0;
+            txtDescuentoR.Text = "0.00";
 
 
             txtTotalR.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem + "'").ToString();
@@ -1821,21 +1822,30 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             try
             {
+
                 decimal total;
-            double TotalPagar = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'");
+                double TotalPagar = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'");
 
-            if (txtDescuento.Text == "" || txtDescuento.Text == "0.00")
-            {
-                txtTotalPagar.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'").ToString();
+                if (txtDescuento.Text == "" || txtDescuento.Text == "0.00")
+                {
+                    txtTotalPagar.Text = dbConn.obtenerVariableDouble("SELECT precioCompleto FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem + "'").ToString();
 
-            }
-            else
-            {
+                }
+                else
+                {
+                    total = (decimal.Parse(TotalPagar.ToString()) - decimal.Parse(txtDescuento.Text));
+                    total = decimal.Round(total, 3);
+ 
 
-                total = (decimal.Parse(TotalPagar.ToString()) - decimal.Parse(txtDescuento.Text));
-                total = decimal.Round(total, 3);
-                txtTotalPagar.Text = total.ToString();
-            }
+                    if (total > 100)
+                    {
+                        txtTotalPagar.Text = total.ToString();
+                    }
+                    else if (total <= 100)
+                    {
+                        txtTotalPagar.Text = "" + 100;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -1861,17 +1871,15 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 total = (decimal.Parse(TotalPagar.ToString()) - decimal.Parse(txtDescuentoR.Text));
                 total = decimal.Round(total, 3);
                 
-                    if(total >= 0)
+                    if(total > 100)
                     {
                         txtTotalR.Text = total.ToString();
                     }
-                    else if(total < 0)
+                    else if(total <= 100)
                     {
 
-                        txtTotalR.Text = "" + 0.00;
+                        txtTotalR.Text = "" + 100;
                     }
-
-
             }
 
             }
