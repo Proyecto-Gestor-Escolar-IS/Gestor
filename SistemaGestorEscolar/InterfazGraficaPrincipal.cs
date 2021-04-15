@@ -15,6 +15,7 @@ namespace SistemaGestorEscolar
         }
 
         private MessageBox_Personalizados.IMessageBoxSiNo siNo = new MessageBox_Personalizados.IMessageBoxSiNo();
+        private MessageBox_Personalizados.IMessageBoxCerrarSesion cerrarSesion = new MessageBox_Personalizados.IMessageBoxCerrarSesion();
 
         private Modulos_de_Arranque.verficacionArranque actualizarModulos = new Modulos_de_Arranque.verficacionArranque();
         public static Form formulario = new Form();
@@ -38,7 +39,7 @@ namespace SistemaGestorEscolar
                 panSubMenuPersonal.Visible = false;
                 panSubMenuPagos.Visible = false;
                 panSubMenuEstudiante.Visible = false;
-                
+               
 
                 if (clsVariablesGlobales.CodigoAcceso == 0)
                 {
@@ -1258,9 +1259,7 @@ namespace SistemaGestorEscolar
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-
-            Login.IfrmLogin login = new Login.IfrmLogin();
-            login.Show();
+            cerrarSesion.ShowDialog();
             this.Close();
         }
 
