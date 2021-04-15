@@ -285,7 +285,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label53.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.Location = new System.Drawing.Point(945, 641);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(345, 31);
+            this.label53.Size = new System.Drawing.Size(322, 27);
             this.label53.TabIndex = 118;
             this.label53.Text = "Ver Boleta De Calificaciones";
             this.label53.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -309,7 +309,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label54.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.Location = new System.Drawing.Point(260, 634);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(390, 31);
+            this.label54.Size = new System.Drawing.Size(368, 27);
             this.label54.TabIndex = 116;
             this.label54.Text = "Agregar Boleta de Calficaciones";
             this.label54.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -672,7 +672,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label47.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(971, 658);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(345, 31);
+            this.label47.Size = new System.Drawing.Size(322, 27);
             this.label47.TabIndex = 114;
             this.label47.Text = "Ver Boleta De Calificaciones";
             this.label47.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -696,7 +696,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label11.Font = new System.Drawing.Font("Balsamiq Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(286, 651);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(390, 31);
+            this.label11.Size = new System.Drawing.Size(368, 27);
             this.label11.TabIndex = 112;
             this.label11.Text = "Agregar Boleta de Calficaciones";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1490,48 +1490,6 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.altoButton2.Transparency = false;
             this.altoButton2.Click += new System.EventHandler(this.altoButton2_Click);
             // 
-            // btnSiguienteEstado
-            // 
-            this.btnSiguienteEstado.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteEstado.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.btnSiguienteEstado.BackColor = System.Drawing.Color.Transparent;
-            this.btnSiguienteEstado.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSiguienteEstado.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguienteEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.btnSiguienteEstado.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteEstado.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnSiguienteEstado.Location = new System.Drawing.Point(1287, 895);
-            this.btnSiguienteEstado.Name = "btnSiguienteEstado";
-            this.btnSiguienteEstado.Radius = 20;
-            this.btnSiguienteEstado.Size = new System.Drawing.Size(269, 65);
-            this.btnSiguienteEstado.Stroke = true;
-            this.btnSiguienteEstado.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.btnSiguienteEstado.TabIndex = 85;
-            this.btnSiguienteEstado.Text = "SIGUIENTE";
-            this.btnSiguienteEstado.Transparency = false;
-            this.btnSiguienteEstado.Click += new System.EventHandler(this.altoButton1_Click);
-            // 
-            // altoButton2
-            // 
-            this.altoButton2.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.altoButton2.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(58)))), ((int)(((byte)(82)))));
-            this.altoButton2.BackColor = System.Drawing.Color.Transparent;
-            this.altoButton2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.altoButton2.Font = new System.Drawing.Font("Balsamiq Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
-            this.altoButton2.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.altoButton2.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.altoButton2.Location = new System.Drawing.Point(44, 895);
-            this.altoButton2.Name = "altoButton2";
-            this.altoButton2.Radius = 20;
-            this.altoButton2.Size = new System.Drawing.Size(269, 65);
-            this.altoButton2.Stroke = true;
-            this.altoButton2.StrokeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(158)))), ((int)(((byte)(181)))));
-            this.altoButton2.TabIndex = 82;
-            this.altoButton2.Text = "REGRESAR";
-            this.altoButton2.Transparency = false;
-            this.altoButton2.Click += new System.EventHandler(this.altoButton2_Click);
-            // 
             // grpRegistroEstudiante
             // 
             this.grpRegistroEstudiante.Controls.Add(this.label58);
@@ -1566,7 +1524,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label58.Location = new System.Drawing.Point(951, 523);
             this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(138, 27);
+            this.label58.Size = new System.Drawing.Size(144, 24);
             this.label58.TabIndex = 99;
             this.label58.Text = "dd/mm/aaaa";
             // 
@@ -1799,7 +1757,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label57.Location = new System.Drawing.Point(945, 605);
             this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(138, 27);
+            this.label57.Size = new System.Drawing.Size(144, 24);
             this.label57.TabIndex = 109;
             this.label57.Text = "dd/mm/aaaa";
             // 
@@ -1854,7 +1812,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.btnLimpiarEncargadoMat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(204)))), ((int)(((byte)(221)))));
             this.btnLimpiarEncargadoMat.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
             this.btnLimpiarEncargadoMat.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(72)))));
-            this.btnLimpiarEncargadoMat.Location = new System.Drawing.Point(990, 854);
+            this.btnLimpiarEncargadoMat.Location = new System.Drawing.Point(978, 854);
             this.btnLimpiarEncargadoMat.Name = "btnLimpiarEncargadoMat";
             this.btnLimpiarEncargadoMat.Radius = 20;
             this.btnLimpiarEncargadoMat.Size = new System.Drawing.Size(269, 65);
@@ -2114,7 +2072,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label56.Location = new System.Drawing.Point(958, 540);
             this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(138, 27);
+            this.label56.Size = new System.Drawing.Size(144, 24);
             this.label56.TabIndex = 115;
             this.label56.Text = "dd/mm/aaaa";
             // 
@@ -2359,7 +2317,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.label55.Location = new System.Drawing.Point(1326, 238);
             this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(138, 27);
+            this.label55.Size = new System.Drawing.Size(144, 24);
             this.label55.TabIndex = 116;
             this.label55.Text = "dd/mm/aaaa";
             // 
