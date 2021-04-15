@@ -872,10 +872,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             try
             {
 
-
-                 if (dbConn.obtenerVariableEntera("select count(*) from datosEncargado where identidadEncargado = '"+txtIdentidad.Text+"' and estado = 2") == 1)
+                if (dbConn.obtenerVariableEntera("  select count(*) from datosEncargado where identidadEncargado = '"+txtIdentidad.Text+"' and estado = 1") == 0)
                 {
-                    if (dbConn.ejecutarComandoSQL("update datosEncargado set primerNombre = '"+ txtprimerNombre .Text+ "', segundoNombre = '"+ txtsegundoNombre .Text + "', primerApellido = '"+ txtprimerApellido.Text + "', segundoApellido = '"+ txtsegundoApellido .Text+ "',correoElectronico = '"+ txtCorreoElectronico .Text+ "', numeroTelefono = '"+ txtprimerTelefono .Text+ "', numeroTelefonoAlt = '"+ txtsegundoTelefono.Text+ "', direccionTrabajo = '"+txtDireccion.Text+"', estado = 1 where identidadEncargado = '" +txtIdentidad.Text+"'"))
+                    if (dbConn.AgregarEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtCorreoElectronico.Text, txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text, txtfechaNacimiento.Text))
                     {
 
                         message.lblCheck.Text = "ENCARGADO REGISTRADO";
@@ -889,9 +888,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
                     }
                 }
-                else if (dbConn.obtenerVariableEntera("  select count(*) from datosEncargado where identidadEncargado = '"+txtIdentidad.Text+"' and estado = 1") == 0)
+                else if (dbConn.obtenerVariableEntera("select count(*) from datosEncargado where identidadEncargado = '"+txtIdentidad.Text+"' and estado = 2") >= 1)
                 {
-                    if (dbConn.AgregarEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtCorreoElectronico.Text, txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text, txtfechaNacimiento.Text))
+                    if (dbConn.ejecutarComandoSQL("update datosEncargado set primerNombre = '"+ txtprimerNombre .Text+ "', segundoNombre = '"+ txtsegundoNombre .Text + "', primerApellido = '"+ txtprimerApellido.Text + "', segundoApellido = '"+ txtsegundoApellido .Text+ "',correoElectronico = '"+ txtCorreoElectronico .Text+ "', numeroTelefono = '"+ txtprimerTelefono .Text+ "', numeroTelefonoAlt = '"+ txtsegundoTelefono.Text+ "', direccionTrabajo = '"+txtDireccion.Text+"', estado = 1 where identidadEncargado = '" +txtIdentidad.Text+"'"))
                     {
 
                         message.lblCheck.Text = "ENCARGADO REGISTRADO";
