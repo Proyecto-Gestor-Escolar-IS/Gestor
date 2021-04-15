@@ -193,7 +193,10 @@ namespace SistemaGestorEscolar
                         messageOk.lblCheck.Text = "REGISTRADO CORRECTAMENTE";
                         messageOk.lblCheck.Location = new Point(120, 75);
                         messageOk.ShowDialog();
-                       // dbConn.llenarDGV(dgvHistorialMedico, "SELECT id_detalleExpediente AS 'No.DetalleExpediente', id_expediente AS 'No.Expediente', CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', fecha AS 'Fecha', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
+                        cmbMedicos.SelectedIndex = 0;
+                        txtMedicamentos.Clear();
+                        txtPosibleEnfermedad.Clear();
+                        txtSintomas.Clear();
                         dbConn.llenarDGV(dgvHistorialMedico, "SELECT fecha AS 'Fecha',  CONCAT(primerNombre,' ', segundoNombre,' ', primerApellido, ' ', segundoApellido) AS  'Nombre Médico', sintomas AS 'Síntomas', posibleEnfermadad as 'Posible Enfermedad', medicamentos AS 'Medicamentos' FROM detalleExpedienteMedico INNER JOIN datosEmpleados ON detalleExpedienteMedico.id_DoctorEncargado = datosEmpleados.identidadPersona WHERE id_expediente = " + txtNoExpediente.Text);
                     }
                     else
