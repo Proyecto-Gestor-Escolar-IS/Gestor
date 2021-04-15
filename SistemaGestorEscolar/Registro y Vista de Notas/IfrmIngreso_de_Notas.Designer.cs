@@ -850,10 +850,10 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(141)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1635, 1035);
-            this.Controls.Add(this.gpxSeleccionCurso);
-            this.Controls.Add(this.gpxCuadroNotas);
             this.Controls.Add(this.gpxSeleccionAlumno);
             this.Controls.Add(this.gpxIngreso_Notas);
+            this.Controls.Add(this.gpxSeleccionCurso);
+            this.Controls.Add(this.gpxCuadroNotas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IfrmIngreso_de_Notas";
             this.Text = "IfrmIngreso_de_Notas";
