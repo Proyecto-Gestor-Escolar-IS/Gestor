@@ -166,5 +166,10 @@ namespace SistemaGestorEscolar.Login
         {
             siNo.ShowDialog();
         }
+
+        private void picImagotipo_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

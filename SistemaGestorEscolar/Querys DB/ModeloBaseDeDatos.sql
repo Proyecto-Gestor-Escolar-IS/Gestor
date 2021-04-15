@@ -52,6 +52,7 @@ estadoCurso int not null
 --Tabla que contiene la informacion relacionada a las secciones
 CREATE TABLE seccion(
 id_Seccion int identity primary key not null,
+fechaCreacion datetime not null,
 id_Curso int not null,
 id_Docente varchar(13) not null,
 nombreSeccion char(1) not null,

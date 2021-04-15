@@ -17,7 +17,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         databaseConnection dbConn = new databaseConnection();
         IMessageBoxCheck messageOk = new IMessageBoxCheck();
         IMessageBoxError message = new IMessageBoxError();
-
+        IMessageBoxError messageError = new IMessageBoxError();
 
         public IFrmVista_de_Matricula()
         {
@@ -26,12 +26,13 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
 
         public string CursoElegido;
         public string SeccionElegida;
-
-
+        int idSeccion = 0;
+        int idCurso = 0;
         private void IFrmVista_de_Matricula_Load(object sender, EventArgs e)
         {
             gpVistaM.Visible = false;
-
+            btnAtras.Visible = false;
+            btnImprimir.Visible = false;
             ClsCambioTema.cambiarTemaBoton(gpSeleccionCS);
 
             if(Properties.Settings.Default.isModoOscuro == true)
@@ -43,55 +44,46 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                 gpSeleccionCS.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
             }
 
-            dbConn.llenarComboBox(cmbCurso, "Select nombreCurso from [dbo].[cursos]");
-
+            dbConn.llenarComboBoxValorInicial(cmbCurso, "Select nombreCurso from [dbo].[cursos]");
+            cmbCurso.SelectedIndex = 0;
         }
 
         private void cmbCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            idCurso = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "'");
+
             if (cmbCurso.Items.Count > 0)
             {
-
-                if(cmbCurso.Text != null)
-                {
-                    cmbSeccion.Items.Clear();
-                    dbConn.llenarComboBox(cmbSeccion, "SELECT dbo.seccion.nombreSeccion FROM     dbo.cursos INNER JOIN dbo.seccion ON " +
-                        "dbo.cursos.id_Curso = dbo.seccion.id_Curso Where dbo.cursos.nombreCurso = '" + cmbCurso.SelectedItem + "' ");
-                }
-
+                dbConn.llenarDGV(dgvSecciones, "SELECT A.id_Seccion as 'ID', FORMAT(A.fechaCreacion, 'dd/MM/yyyy') as 'Fecha de Registro', A.nombreSeccion as 'Seccion', CONCAT(B.primerNombre, ' ',B.segundoNombre, ' ',B.primerApellido, ' ', B.segundoApellido) as 'Docente', descripcionEstado as 'Estado' FROM seccion A INNER JOIN datosEmpleados B ON A.id_Docente = B.identidadPersona INNER JOIN estados C ON C.id_Estado = A.estado WHERE A.id_Curso = " + idCurso);
             }
-
-            CursoElegido = cmbCurso.Text;
-
         }
 
         private void cmbSeccion_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            SeccionElegida = cmbSeccion.Text;
+   
 
         }
 
         private void abContinuar_Click_1(object sender, EventArgs e)
         {
 
-            if (cmbCurso.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
-            {
-                message.lblError.Text = "Seleccione un Curso y Sección";
-                message.ShowDialog();
-
-            }
-            else if (cmbSeccion.Text != SeccionElegida)
-            {
-                message.lblError.Text = "Seleccione una Sección";
-                message.ShowDialog();
-            }
-            else
+            if(idSeccion != 0 && idCurso != 0)
             {
                 gpSeleccionCS.Visible = false;
                 gpVistaM.Visible = true;
+                btnAtras.Visible = true;
+                btnImprimir.Visible = true;
+                cargarMatricula();
             }
+            else
+            {
+                messageError.lblError.Text = "SELECCIONE UN CURSO Y SECCION";
+                messageError.ShowDialog();
+            }
+
+
 
         }
 
@@ -99,28 +91,47 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
     
         private void gpVistaM_VisibleChanged(object sender, EventArgs e)
         {
+        }
 
-            dbConn.llenarDGV(dgvVistaMatricula, "SELECT dbo.datosEstudiante.identidadEstudiante as 'Identidad del Estudiante', CONCAT(dbo.datosEstudiante.primerNombre,' ', dbo.datosEstudiante.segundoNombre,' ', dbo.datosEstudiante.primerApellido,' ', dbo.datosEstudiante.segundoApellido) as 'Nobre del Estudiante'," +
-                         " dbo.cursos.nombreCurso as Curso, dbo.seccion.nombreSeccion as Sección FROM     dbo.datosEstudiante INNER JOIN" +
-                         " dbo.matricula ON dbo.datosEstudiante.identidadEstudiante = dbo.matricula.id_Estudiante INNER JOIN " +
-                         "dbo.detalleMatricula ON dbo.matricula.id_RegistroMatricula = dbo.detalleMatricula.id_RegistroMatricula INNER JOIN " +
-                         "dbo.cursos ON dbo.detalleMatricula.id_Curso = dbo.cursos.id_Curso INNER JOIN dbo.seccion ON" +
-                         " dbo.detalleMatricula.id_Seccion = dbo.seccion.id_Seccion AND dbo.cursos.id_Curso = dbo.seccion.id_Curso Where" +
-                         " dbo.cursos.nombreCurso = '" + CursoElegido + "' and dbo.seccion.nombreSeccion = '" + SeccionElegida + "' AND dbo.detalleMatricula.estado = 1");
-
+        private void cargarMatricula()
+        {
+            dbConn.llenarDGV(dgvVistaMatricula, "SELECT A.identidadEstudiante AS 'Identidad', CONCAT(A.primerNombre, ' ', A.segundoNombre, ' ', A.primerApellido, ' ', A.segundoApellido) as 'Nombre del Estudiante' FROM[dbo].[datosEstudiante] A INNER JOIN[dbo].[matricula] B ON A.identidadEstudiante = B.id_Estudiante INNER JOIN[dbo].[detalleMatricula] C ON C.id_RegistroMatricula = B.id_RegistroMatricula WHERE C.id_Curso = " + idCurso + " AND C.id_Seccion = "+ idSeccion);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
             gpVistaM.Visible = false;
             gpSeleccionCS.Visible = true;
             cmbCurso.SelectedItem = 0;
-            cmbSeccion.ResetText();
+        }
 
+        private void gpSeleccionCS_Enter(object sender, EventArgs e)
+        {
 
         }
 
+        private void gpVistaM_Enter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            btnAtras.Visible = false;
+            gpVistaM.Visible = false;
+            gpSeleccionCS.Visible = true;
+            btnImprimir.Visible = false;
+            idSeccion = 0;
+            idCurso = 0;
+            cmbCurso.SelectedIndex = 0;
+        }
+
+        private void dgvSecciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                idSeccion = int.Parse(dgvSecciones.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+        }
     }
 }

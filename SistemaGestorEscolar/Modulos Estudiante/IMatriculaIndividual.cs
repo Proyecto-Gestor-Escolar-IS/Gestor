@@ -182,6 +182,9 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     {
                         if (cmbCurso.SelectedIndex != 0)
                         {
+                            int idCurso = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "'");
+
+
                             if (cmbSeccion.SelectedIndex != 0)
                             {
                                 RegistrarEstudiante();
@@ -197,20 +200,22 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                     mesesDePago = 10;
                                 }
 
-                                if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString() , txtIdentidadEstudiante.Text, cmbCurso.SelectedIndex, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
-                                {
-                                    dbConn.PAGeneracionPrimerPago(txtIdentidadEstudiante.Text);
-                                    message.lblCheck.Text = "MATRICULA REGISTRADA";
-                                    message.ShowDialog();
-                                    recuperarMatricula();
-                                    limpiarPantalla();
-                                    encargados.Clear();
-                                }
-                                else
-                                {
-                                    messageError.lblError.Text = "ERROR INESPERADO";
-                                    messageError.ShowDialog();
-                                }
+
+                                    if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, cmbIdentidadEncargado.SelectedItem.ToString(), txtIdentidadEstudiante.Text, idCurso, idSeccion, float.Parse(txtTotalPagar.Text), 1, mesesDePago, 1, 1))
+                                    {
+                                        dbConn.PAGeneracionPrimerPago(txtIdentidadEstudiante.Text);
+                                        message.lblCheck.Text = "MATRICULA REGISTRADA";
+                                        message.ShowDialog();
+                                        recuperarMatricula();
+                                        limpiarPantalla();
+                                        encargados.Clear();
+                                    }
+                                    else
+                                    {
+                                        messageError.lblError.Text = "ERROR INESPERADO";
+                                        messageError.ShowDialog();
+                                    }
+
                             }
                             else
                             {
@@ -247,7 +252,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             cmbSeccion.Items.Clear();
 
-            dbConn.llenarComboBoxValorInicial(cmbSeccion, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE cursos.nombreCurso = '" + cmbCurso.SelectedItem + "'");
+            dbConn.llenarComboBoxValorInicial(cmbSeccion, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE estado = 1 and cursos.nombreCurso = '" + cmbCurso.SelectedItem + "'");
             cmbSeccion.SelectedIndex = 0;
 
             
@@ -318,6 +323,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                     {
                         if (cmbCursoR.SelectedIndex != 0)
                         {
+                            int idCurso = dbConn.obtenerVariableEntera("SELECT id_Curso FROM cursos WHERE nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "'");
+
                             if (cmbSeccionR.SelectedIndex != 0)
                             {
                                 if (cmbModoPagoR.SelectedIndex != -1)
@@ -331,9 +338,11 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                         mesesDePago = 10;
                                     }
 
-                                    if (dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "') = E.id_DetalleMatricula") != 1) 
+                            if (dbConn.obtenerVariableEntera("select count(*) from detalleMatricula INNER JOIN matricula ON detalleMatricula.id_RegistroMatricula = matricula.id_RegistroMatricula WHERE  id_Curso = " + idCurso + " and id_Seccion = " + idSeccion + " and matricula.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "'") < 1)
+                            {
+                                if (dbConn.obtenerVariableEntera("SELECT estado FROM  [dbo].[detalleMatricula] E WHERE (SELECT MAX(A.id_DetalleMatricula) FROM[dbo].[detalleMatricula] A INNER JOIN[dbo].[matricula] B ON A.id_RegistroMatricula = b.id_RegistroMatricula WHERE B.id_Estudiante = '" + txtIdentidadEstudianteR.Text + "') = E.id_DetalleMatricula") != 1) 
                                     {
-                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, cmbCursoR.SelectedIndex, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2))
+                                        if (dbConn.PARegistrarMatricula(clsVariablesGlobales.numIdentidad, txtIdentidadEncargadoR.Text, txtIdentidadEstudianteR.Text, idCurso, idSeccion, float.Parse(txtTotalR.Text), 2, mesesDePago, 1, 2))
                                         {
                                             dbConn.PAGeneracionPrimerPago(txtIdentidadEstudianteR.Text);
                                             message.lblCheck.Text = "MATRICULA REGISTRADA";
@@ -353,7 +362,12 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
                                         messageWarning.ShowDialog();
                                     }
 
-
+                                    }
+                                    else
+                                    {
+                                        messageWarning.lblError.Text = "ESTE ALUMNO YA ESTA MATRICULADO!";
+                                        messageWarning.ShowDialog();
+                                    }
                                 }
                             else
                             {
@@ -571,7 +585,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         private void cmbCursoR_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbSeccionR.Items.Clear();
-            dbConn.llenarComboBoxValorInicial(cmbSeccionR, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE cursos.nombreCurso = '" + cmbCursoR.SelectedItem + "'");
+            dbConn.llenarComboBoxValorInicial(cmbSeccionR, "SELECT nombreSeccion FROM seccion INNER JOIN cursos ON seccion.id_Curso = cursos.id_Curso WHERE estado = 1 and cursos.nombreCurso = '" + cmbCursoR.SelectedItem + "'");
             cmbSeccionR.SelectedIndex = 0;
 
 
@@ -1621,7 +1635,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             if (cmbSeccion.SelectedIndex != 0)
             {
-                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccion.SelectedItem.ToString() + "'");
+                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where estado = 1 and cursos.nombreCurso = '" + cmbCurso.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccion.SelectedItem.ToString() + "'");
 
 
             }
@@ -1635,7 +1649,7 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
         {
             if (cmbSeccionR.SelectedIndex != 0)
             {
-                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where cursos.nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccionR.SelectedItem.ToString() + "'");
+                idSeccion = dbConn.obtenerVariableEntera("select id_Seccion from seccion inner join cursos on seccion.id_Curso = cursos.id_Curso where estado = 1 and cursos.nombreCurso = '" + cmbCursoR.SelectedItem.ToString() + "' and seccion.nombreSeccion = '" + cmbSeccionR.SelectedItem.ToString() + "'");
 
             }
             else

@@ -92,6 +92,7 @@
             this.picImagotipo.Size = new System.Drawing.Size(859, 1080);
             this.picImagotipo.TabIndex = 22;
             this.picImagotipo.TabStop = false;
+            this.picImagotipo.Click += new System.EventHandler(this.picImagotipo_Click_1);
             // 
             // panel1
             // 

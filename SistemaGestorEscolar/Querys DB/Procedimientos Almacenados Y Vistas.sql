@@ -117,6 +117,23 @@ AS BEGIN
 										   detalleMatricula 
 										   WHERE id_DetalleMatricula = @idUltimoDetalleMatricula)
 
+										   
+			/*SUMAR EL ULTIMO TOTAL ANTERIOR*/
+			SET @ultimaDeuda = (SELECT deudaPendiente FROM detalleMensualidades 
+			WHERE id_Mensualidad = @idUltimoPago)
+
+			IF @ultimaDeuda = ''
+			BEGIN
+			    SET @totalMatricula = @totalMatricula
+
+			END
+			ELSE IF @ultimaDeuda > 0
+			BEGIN
+			    SET @totalMatricula = @totalMatricula + @ultimaDeuda
+			END
+
+			/*SUMAR EL ULTIMO TOTAL ANTERIOR*/
+
 			IF @totalMatricula <= @ultimoSaldo
 			BEGIN
 				SET @ultimoSaldo = @ultimoSaldo - @totalMatricula
@@ -138,7 +155,6 @@ AS BEGIN
 		INSERT INTO detalleMensualidades VALUES(@identidadEstudiante, 1, @fechaFacturacion, null, @totalMatricula, @ultimoSaldo , 0, null)
 END
 GO
-
 /*Procedimiento que registra los pagos de un estudiante*/
 --EXEC PARegistroPago '1001200200094', 4000, '04/25/2020', 0
 
@@ -483,7 +499,7 @@ go
 CREATE PROCEDURE insertarSeccion(@idCurso as int, @identidadDocente as varchar(13), @seccion as char(1))
 AS BEGIN
 	
-	INSERT INTO seccion values (@idCurso, @identidadDocente, @seccion, 1)
+	INSERT INTO seccion values (GETDATE(), @idCurso, @identidadDocente, @seccion, 1)
 	
 END
 GO
@@ -513,6 +529,3 @@ CREATE PROCEDURE cambiarEstadoCurso(@idCurso as int, @estado as int)
 AS BEGIN
 	UPDATE cursos SET estadoCurso = @estado WHERE id_Curso = @idCurso
 END
-EXEC cambiarEstadoCurso 1, 2
-
-SELECT * FROM cursos
