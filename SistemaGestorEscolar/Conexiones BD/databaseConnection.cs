@@ -21,7 +21,7 @@ namespace SistemaGestorEscolar
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
         
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-LEHSHML;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-IFG9AL0\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -657,6 +657,49 @@ namespace SistemaGestorEscolar
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@NumidentidadEstudiante", NumidentidadEstud);
+                comando.Parameters.AddWithValue("@Numidentidad", Numidentidad);
+                comando.Parameters.AddWithValue("@primerNombre", primerNombre);
+                comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);
+                comando.Parameters.AddWithValue("@primerApellido", primerApellido);
+                comando.Parameters.AddWithValue("@segundoApellido", segundoApellido);
+                comando.Parameters.AddWithValue("@correoElectronico", correoElectronico);
+                comando.Parameters.AddWithValue("@numeroTelefono", int.Parse(numeroTelefono));
+                comando.Parameters.AddWithValue("@numeroTelefonoAlt", int.Parse(numeroTelefonoAlt));
+                comando.Parameters.AddWithValue("@direccionTrabajo", direccionTrabajo);
+                comando.Parameters.AddWithValue("@fechaNacimiento", dt);
+
+                databaseIntermediary.Open();
+                if (comando.ExecuteNonQuery() != -1)
+                {
+                    databaseIntermediary.Close();
+                    return true;
+                }
+                else
+                {
+                    databaseIntermediary.Close();
+                    MessageBox.Show("Error de Registro de Encargado", "Error de Insercion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                databaseIntermediary.Close();
+                MessageBox.Show("Error de base de datos! \n" + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool AgregarEncargado(string Numidentidad, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string correoElectronico,
+          string numeroTelefono, string numeroTelefonoAlt, string direccionTrabajo, string fechaNacimiento)
+        {
+            try
+            {
+                SqlCommand comando = databaseIntermediary.CreateCommand();
+                DateTime dt = DateTime.Parse(fechaNacimiento);
+                comando.CommandText = "agregarNuevoEncargado";
+                comando.CommandType = CommandType.StoredProcedure;
+
                 comando.Parameters.AddWithValue("@Numidentidad", Numidentidad);
                 comando.Parameters.AddWithValue("@primerNombre", primerNombre);
                 comando.Parameters.AddWithValue("@segundoNombre", segundoNombre);

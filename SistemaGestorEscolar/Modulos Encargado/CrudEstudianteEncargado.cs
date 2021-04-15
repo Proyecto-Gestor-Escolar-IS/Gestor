@@ -113,7 +113,14 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtprimerNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
- 
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -123,17 +130,38 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtprimerApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtsegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtprimerTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -192,11 +220,12 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         }
 
+        
+
         private void btnRegresarEncargado_Click(object sender, EventArgs e)
         {
-            gbListadoEncargado.Visible = false;
+            gbListadoEncargado.Visible = true;
             gbEncargados.Visible = false;
-            pnlGestionEstudianteEncargado.Visible = true;
             txtIdentidad.ReadOnly = true;
             txtfechaNacimiento.ReadOnly = true;
             btnAgregarNuevoEncargado.Visible = false;
@@ -205,8 +234,9 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             btnLimpiar.Enabled = false;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
+            identidadEncargado = "";
             limpiarPantalla();
-
+            dbConn.llenarDGV(dgvBusquedaEncargado, "SELECT identidadEncargado as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ' , segundoApellido)as 'Nombre', numeroTelefono as 'Teléfono 1', numeroTelefonoAlt as 'Teléfono 2', correoElectronico as 'Correo Electronico', direccionTrabajo as 'Dirección', fechaNacimiento as 'Fecha de Nacimiento' FROM datosEncargado WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) LIKE '" + txtLikeIdentidad.Text + "%' and estado = 1 or identidadEncargado LIKE '" + txtLikeIdentidad.Text + "%' and estado = 1");
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -235,6 +265,11 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                         {
 
                             ActualizarEncargado();
+                            gbListadoEncargado.Visible = false;
+                            gbEncargados.Visible = false;
+                            pnlGestionEstudianteEncargado.Visible = true;
+                             identidadEncargado = "";
+                            limpiarPantalla();
 
                         }
                         else
@@ -268,6 +303,11 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 {
                    
                     EliminarEncargado();
+                    gbListadoEncargado.Visible = false;
+                    gbEncargados.Visible = false;
+                    pnlGestionEstudianteEncargado.Visible = true;
+                    identidadEncargado = "";
+                    limpiarPantalla();
                 }
                    
             }
@@ -310,6 +350,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
                 gbListadoEncargado.Visible = false;
                 gbEncargados.Visible = true;
+                txtLikeIdentidad.Clear();
             }
             else
             {
@@ -354,7 +395,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void btnRegresarEstud_Click(object sender, EventArgs e)
         {
             gbListadoEstudiantes.Visible = false;
-            gbEncargados.Visible = false;
+            gbEstudiantes.Visible = false;
             pnlGestionEstudianteEncargado.Visible = true;
             limpiarPantalla();
         }
@@ -362,9 +403,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void btnRegresarEstudiante_Click(object sender, EventArgs e)
         {
             gbEstudiantes.Visible = false;
-            gbListadoEstudiantes.Visible = false;
-            pnlGestionEstudianteEncargado.Visible = true;
+            gbListadoEstudiantes.Visible = true;
+            identidadEstudiante = "";
             limpiarPantalla();
+            dbConn.llenarDGV(dgvListadoEstudiantes, "SELECT identidadEstudiante as 'Identidad', CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as 'Nombre', fechaNacimiento as 'Fecha de Nacimiento', genero as 'Genero' FROM datosEstudiante WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ' , segundoApellido) LIKE '" + txtLikeidentidadEstud.Text + "%' and estado = 1 or identidadEstudiante LIKE '" + txtLikeidentidadEstud.Text + "%' and estado = 1");
         }
         private void dgvListadoEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -407,6 +449,8 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
                 gbListadoEstudiantes.Visible = false;
                 gbEstudiantes.Visible = true;
+                txtLikeidentidadEstud.Clear();
+             
             }
             else
             {
@@ -429,7 +473,7 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 }
                 else
                 {
-                    if (txtprimerNombreEstud.Text == "" || txtsegundoNombreEstud.Text == "" || txtprimerApellidoEstud.Text == "" || txtsegundoApellidoEstud.Text == "")
+                    if (txtprimerNombreEstud.Text == ""  || txtprimerApellidoEstud.Text == "")
                         {
                         messageError.lblError.Text = "INGRESE TODOS LOS DATOS NECESARIOS";
                         messageError.ShowDialog();
@@ -437,7 +481,12 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                         else
                         {
                         ActualizarEstudiante();
-                        }
+                        gbListadoEstudiantes.Visible = false;
+                        gbEstudiantes.Visible = false;
+                        pnlGestionEstudianteEncargado.Visible = true;
+                        identidadEstudiante = "";
+                        limpiarPantalla();
+                    }
 
                 }
             }
@@ -473,8 +522,13 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void btnEliminarEstud_Click(object sender, EventArgs e)
         {
             try
-            {
-                    EliminarEstudiante();
+            {    
+                EliminarEstudiante();
+                gbListadoEstudiantes.Visible = false;
+                gbEstudiantes.Visible = false;
+                pnlGestionEstudianteEncargado.Visible = true;
+                identidadEstudiante = "";
+                limpiarPantalla();
             }
             catch (Exception ex)
             {
@@ -505,22 +559,50 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         private void txtprimerNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtsegundoNombreEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtprimerApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
- 
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtsegundoApellidoEstud_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
 
+            {
+                e.Handled = true;
+
+                return;
+
+            }
         }
 
         private void txtIdentidadEstud_TextChanged(object sender, EventArgs e)
@@ -678,28 +760,30 @@ namespace SistemaGestorEscolar.Modulos_Encargado
             btnLimpiar.Enabled = true;
             gbEncargados.Visible = true;
             gbListadoEncargado.Visible = false;
-
+            txtLikeIdentidad.Clear();
         }
 
         private void btnAgregarNuevoEncargado_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtIdentidad.Text.Length > 13 || txtIdentidad.Text.Length < 13)
-                {
-                    messageError.lblError.Text = "Error en la identidad";
-                    messageError.ShowDialog();
-
-                }
-                else
-                {
-                    if (txtprimerNombre.Text == "" || txtprimerApellido.Text == "" ||
+                    
+                if (txtIdentidad.Text == "" || txtprimerNombre.Text == "" || txtprimerApellido.Text == "" ||
                      txtCorreoElectronico.Text == "" || txtprimerTelefono.Text == "" ||
                      txtsegundoTelefono.Text == "" || txtDireccion.Text == "" || txtfechaNacimiento.Text == "")
-                    {
+                {
                         messageError.lblError.Text = "DEBE LLENAR LOS CAMPOS NECESARIOS";
                         messageError.lblError.Location = new Point(120, 82);
                         messageError.ShowDialog();
+                
+                }
+                else
+                {
+                    if (txtIdentidad.Text.Length > 13 || txtIdentidad.Text.Length < 13)
+                    {
+                        messageError.lblError.Text = "Error en la identidad";
+                        messageError.ShowDialog();
+
                     }
                     else
                     {
@@ -710,6 +794,21 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                                 if (txtprimerTelefono.Text.Length == 8 && txtsegundoTelefono.Text.Length == 8)
                                 {
                                     RegistrarEncargado();
+                                    
+                                    gbListadoEncargado.Visible = false;
+                                    gbEncargados.Visible = false;
+                                    pnlGestionEstudianteEncargado.Visible = true;
+                                    txtIdentidad.ReadOnly = true;
+                                    txtfechaNacimiento.ReadOnly = true;
+                                    btnAgregarNuevoEncargado.Visible = false;
+                                    btnAgregarNuevoEncargado.Enabled = false;
+                                    btnLimpiar.Visible = false;
+                                    btnLimpiar.Enabled = false;
+                                    btnActualizar.Visible = true;
+                                    btnEliminar.Visible = true;
+                                    identidadEncargado = "";
+                                    limpiarPantalla();
+
                                 }
                                 else
                                 {
@@ -761,9 +860,10 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         {
             try
             {
+
                 if (dbConn.obtenerVariableEntera("  select count(*) from datosEncargado where identidadEncargado = '"+txtIdentidad.Text+"' and estado = 1") == 0)
                 {
-                    if (dbConn.ejecutarComandoSQL("INSERT INTO datosEncargado VALUES('"+ txtIdentidad.Text + "', '"+ txtprimerNombre.Text+ "', '"+ txtsegundoNombre.Text + "', '" + txtprimerApellido.Text + "', '"+ txtsegundoApellido.Text+ "', '"+ txtprimerTelefono.Text+ "', '"+ txtsegundoTelefono.Text+ "', '"+ txtCorreoElectronico.Text+ "', '"+txtDireccion.Text+"', '"+ txtfechaNacimiento.Text+ "', 1)"))
+                    if (dbConn.AgregarEncargado(txtIdentidad.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtCorreoElectronico.Text, txtprimerTelefono.Text, txtsegundoTelefono.Text, txtDireccion.Text, txtfechaNacimiento.Text))
                     {
 
                         message.lblCheck.Text = "ENCARGADO REGISTRADO";
@@ -806,7 +906,15 @@ namespace SistemaGestorEscolar.Modulos_Encargado
 
         }
 
-
-
+        private void btnRegresarMenu_Click(object sender, EventArgs e)
+        {
+            InterfazGraficaPrincipal igp = Application.OpenForms.OfType<InterfazGraficaPrincipal>().SingleOrDefault();
+            igp.panelMostrador.Controls.Clear();
+            igp.panelMostrador.Dock = DockStyle.None;
+            igp.panelMostrador.Visible = false;
+            igp.panSubMenuEstudiante.Visible = true;
+            igp.panSubMenuEstudiante.Dock = DockStyle.Fill;
+            this.Close();
+        }
     }
 }
