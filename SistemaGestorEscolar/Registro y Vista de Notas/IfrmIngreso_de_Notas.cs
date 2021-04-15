@@ -886,7 +886,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     gpxCuadroNotas.Visible = false;
                     gpxIngreso_Notas.Visible = true;
                     txtIdentidadAE.Clear();
-                    txtIdentidadAE.Text = Herencia_de_Variables.identidadG;
+                    txtIdentidadAE.Text = IDcn;
+                    txtNombreAE.Text = nombreCN;
                 }
             }
             else if(formaEvaluacion == 2)
@@ -903,7 +904,8 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
                     gpxCuadroNotas.Visible = false;
                     gpxIngreso_Notas.Visible = true;
                     txtIdentidadAE.Clear();
-                    txtIdentidadAE.Text = Herencia_de_Variables.identidadG;
+                    txtIdentidadAE.Text = ID;
+                    txtNombreAE.Text = NameA;
                 }
             }
 
