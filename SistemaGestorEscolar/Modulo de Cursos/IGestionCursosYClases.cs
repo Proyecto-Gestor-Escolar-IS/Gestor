@@ -745,7 +745,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                 {
                     if(mskNombreSeccionRegistrar.MaskCompleted == true)
                     {
-                        if(dbConn.obtenerVariableString("SELECT id_Seccion from seccion WHERE id_Curso = " + idCursoActualizacionSeccion + " AND nombreSeccion = '" + mskNombreSeccionRegistrar.Text + "' AND estado = 1") == null)
+                        if(dbConn.obtenerVariableString("SELECT id_Seccion from seccion WHERE id_Curso = " + idCursoActualizacionSeccion + " AND nombreSeccion = '" + mskNombreSeccionRegistrar.Text + "'") == null)
                         {
                             if (dbConn.PARegistrarSeccion(idCursoActualizacionSeccion, identidadDocente, char.Parse(mskNombreSeccionRegistrar.Text)))
                             {
@@ -761,7 +761,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
                         }
                         else
                         {
-                            messageError.lblError.Text = "LA SECCION YA EXISTE ";
+                            messageError.lblError.Text = "LA SECCION YA EXISTE";
                             messageError.ShowDialog();
                             mskNombreSeccionRegistrar.ResetText();
                         }
@@ -854,76 +854,38 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         {
 
             int estado;
-            int idCurso;
-
-            idCurso = dbConn.obtenerVariableEntera("SELECT C.id_Curso FROM [dbo].[seccion] A INNER JOIN[dbo].[cursos] C ON A.id_Curso = C.id_Curso WHERE A.id_Seccion = " + idSeccionModificar);
-
-
-
             if(cmbEstadoSeccion.SelectedIndex == 0)
             {
                 estado = 1;
-                if (cmbDocentesActualizacion.SelectedIndex != 0)
-                {
-                    if (dbConn.obtenerVariableEntera("SELECT count(*) from seccion WHERE id_Curso = " + idCurso + " AND nombreSeccion = '" + txtNombreSeccion.Text + "' AND estado = 1") == 0)
-                    {
-
-                        if (dbConn.PAActualizarSeccion(idSeccionModificar, identidadDocenteActualizar, estado))
-                        {
-                            message.lblCheck.Text = "SECCION ACTUALIZADA";
-                            message.ShowDialog();
-                            dbConn.llenarDGV(dgvSecciones, "SELECT A.[id_Seccion] AS 'ID', C.nombreCurso AS 'Curso', A.nombreSeccion as 'Seccion', CONCAT(B.primerNombre, ' ', B.segundoNombre, ' ', B.primerApellido, ' ', B.segundoApellido) AS 'Docente', D.descripcionEstado as 'Estado'  FROM[dbo].[seccion] A INNER JOIN[dbo].[datosEmpleados] B ON A.id_Docente = B.identidadPersona INNER JOIN[dbo].[cursos] C ON A.id_Curso = C.id_Curso INNER JOIN estados D ON A.estado = D.id_Estado ");
-
-                        }
-                        else
-                        {
-                            messageError.lblError.Text = "ERROR INESPERADO";
-                            messageError.ShowDialog();
-                        }
-                    }
-                    else
-                    {
-                        messageError.lblError.Text = "HAY UNA SECCION CON EL MISMO\n NOMBRE REGISTRADO";
-                        messageError.ShowDialog();
-                    }
-
-                }
-                else
-                {
-                    messageError.lblError.Text = "SELECCIONE UN DOCENTE";
-                    messageError.ShowDialog();
-                }
-
             }
             else
             {
                 estado = 2;
-                if (cmbDocentesActualizacion.SelectedIndex != 0)
-                {
-                        if (dbConn.PAActualizarSeccion(idSeccionModificar, identidadDocenteActualizar, estado))
-                        {
-                            message.lblCheck.Text = "SECCION ACTUALIZADA";
-                            message.ShowDialog();
-                            dbConn.llenarDGV(dgvSecciones, "SELECT A.[id_Seccion] AS 'ID', C.nombreCurso AS 'Curso', A.nombreSeccion as 'Seccion', CONCAT(B.primerNombre, ' ', B.segundoNombre, ' ', B.primerApellido, ' ', B.segundoApellido) AS 'Docente', D.descripcionEstado as 'Estado'  FROM[dbo].[seccion] A INNER JOIN[dbo].[datosEmpleados] B ON A.id_Docente = B.identidadPersona INNER JOIN[dbo].[cursos] C ON A.id_Curso = C.id_Curso INNER JOIN estados D ON A.estado = D.id_Estado ");
-
-                        }
-                        else
-                        {
-                            messageError.lblError.Text = "ERROR INESPERADO";
-                            messageError.ShowDialog();
-                        }
-                    }
-                    
-
-                else
-                {
-                    messageError.lblError.Text = "SELECCIONE UN DOCENTE";
-                    messageError.ShowDialog();
-                }
             }
 
+  
 
+                if(cmbDocentesActualizacion.SelectedIndex != 0)
+                {
 
+                    if (dbConn.PAActualizarSeccion(idSeccionModificar, identidadDocenteActualizar, estado)) 
+                    {
+                        message.lblCheck.Text = "SECCION ACTUALIZADA";
+                        message.ShowDialog();
+                        dbConn.llenarDGV(dgvSecciones, "SELECT A.[id_Seccion] AS 'ID', C.nombreCurso AS 'Curso', A.nombreSeccion as 'Seccion', CONCAT(B.primerNombre, ' ', B.segundoNombre, ' ', B.primerApellido, ' ', B.segundoApellido) AS 'Docente', D.descripcionEstado as 'Estado'  FROM[dbo].[seccion] A INNER JOIN[dbo].[datosEmpleados] B ON A.id_Docente = B.identidadPersona INNER JOIN[dbo].[cursos] C ON A.id_Curso = C.id_Curso INNER JOIN estados D ON A.estado = D.id_Estado ");
+
+                    }
+                    else
+                    {
+                        messageError.lblError.Text = "ERROR INESPERADO";
+                        messageError.ShowDialog();
+                    }
+                }
+                else
+                {
+                messageError.lblError.Text = "SELECCIONE UN DOCENTE";
+                messageError.ShowDialog();
+                }
 
         }
   

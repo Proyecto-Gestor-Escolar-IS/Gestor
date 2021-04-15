@@ -619,7 +619,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
+            //AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
 
             if (codigoColor == 1)
             {
@@ -1243,7 +1243,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-            AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
+           // AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
 
             if (codigoColor == 1)
             {

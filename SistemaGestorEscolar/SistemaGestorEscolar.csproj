@@ -132,6 +132,7 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="Controles Personalizados\AltoButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -195,7 +196,7 @@
     <Compile Include="Modulo de Cursos\IGestionCursosYClases.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulo de Cursos\IGestionCursosYClases.Designer.cs">
+    <Compile Include="Modulo de Cursos\IGestionCursosYClases.designer.cs">
       <DependentUpon>IGestionCursosYClases.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos de Empleados\IFrmGestionEmpleados.cs">
@@ -216,12 +217,6 @@
     </Compile>
     <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.Designer.cs">
       <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos Estudiante\IFrmVista_de_Matricula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos Estudiante\IFrmVista_de_Matricula.Designer.cs">
-      <DependentUpon>IFrmVista_de_Matricula.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos Estudiante\IMatriculaIndividual.cs">
       <SubType>Form</SubType>
@@ -279,7 +274,6 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Utilidades\ClsCambioTema.cs" />
     <Compile Include="Utilidades\clsUtilidades.cs" />
-    <Compile Include="Conexiones BD\databaseConnection.cs" />
     <Compile Include="IAperturaExpedienteMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,9 +367,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos de Empleados\IFrmGestionEmpleados.resx">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos Estudiante\IFrmVista_de_Matricula.resx">
-      <DependentUpon>IFrmVista_de_Matricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\IMatriculaIndividual.resx">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
@@ -550,6 +541,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

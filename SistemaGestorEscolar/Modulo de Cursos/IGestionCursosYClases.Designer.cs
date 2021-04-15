@@ -176,11 +176,11 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             // panelGestionClases
             // 
             this.panelGestionClases.Controls.Add(this.grpGestionClases);
-            this.panelGestionClases.Location = new System.Drawing.Point(1422, 183);
+            this.panelGestionClases.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGestionClases.Location = new System.Drawing.Point(0, 0);
             this.panelGestionClases.Name = "panelGestionClases";
-            this.panelGestionClases.Size = new System.Drawing.Size(180, 163);
+            this.panelGestionClases.Size = new System.Drawing.Size(1635, 1035);
             this.panelGestionClases.TabIndex = 39;
-            //this.panelGestionClases.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGestionClases_Paint);
             // 
             // grpGestionClases
             // 
@@ -217,7 +217,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(74, 193);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(158, 21);
+            this.label18.Size = new System.Drawing.Size(159, 24);
             this.label18.TabIndex = 47;
             this.label18.Text = "NOMBRE CLASE";
             // 
@@ -226,7 +226,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(74, 111);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(137, 21);
+            this.label17.Size = new System.Drawing.Size(139, 24);
             this.label17.TabIndex = 46;
             this.label17.Text = "SIGUIENTE ID";
             // 
@@ -266,7 +266,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(165, 59);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(228, 21);
+            this.label15.Size = new System.Drawing.Size(227, 24);
             this.label15.TabIndex = 44;
             this.label15.Text = "CLASE SELECCIONADA";
             // 
@@ -293,7 +293,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(607, 68);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(376, 21);
+            this.label14.Size = new System.Drawing.Size(373, 24);
             this.label14.TabIndex = 42;
             this.label14.Text = "CLASES REGISTRADAS ACTUALMENTE";
             // 
@@ -421,7 +421,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.LblFormaEva.AutoSize = true;
             this.LblFormaEva.Location = new System.Drawing.Point(330, 310);
             this.LblFormaEva.Name = "LblFormaEva";
-            this.LblFormaEva.Size = new System.Drawing.Size(22, 21);
+            this.LblFormaEva.Size = new System.Drawing.Size(25, 24);
             this.LblFormaEva.TabIndex = 24;
             this.LblFormaEva.Text = "...";
             // 
@@ -430,7 +430,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(136, 312);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(170, 21);
+            this.label21.Size = new System.Drawing.Size(176, 24);
             this.label21.TabIndex = 23;
             this.label21.Text = "Forma Evaluación:";
             // 
@@ -439,7 +439,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(153, 321);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(0, 21);
+            this.label20.Size = new System.Drawing.Size(0, 24);
             this.label20.TabIndex = 21;
             // 
             // label13
@@ -465,7 +465,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbCursosExistentes.FormattingEnabled = true;
             this.cmbCursosExistentes.Location = new System.Drawing.Point(326, 156);
             this.cmbCursosExistentes.Name = "cmbCursosExistentes";
-            this.cmbCursosExistentes.Size = new System.Drawing.Size(175, 29);
+            this.cmbCursosExistentes.Size = new System.Drawing.Size(175, 32);
             this.cmbCursosExistentes.TabIndex = 18;
             this.cmbCursosExistentes.SelectedIndexChanged += new System.EventHandler(this.cmbCursosExistentes_SelectedIndexChanged);
             // 
@@ -488,7 +488,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(296, 446);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(160, 21);
+            this.label10.Size = new System.Drawing.Size(164, 24);
             this.label10.TabIndex = 17;
             this.label10.Text = "Clases del Curso";
             // 
@@ -523,7 +523,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(136, 232);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 21);
+            this.label11.Size = new System.Drawing.Size(148, 24);
             this.label11.TabIndex = 6;
             this.label11.Text = "Precio Mensual";
             // 
@@ -532,7 +532,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(136, 164);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 21);
+            this.label12.Size = new System.Drawing.Size(64, 24);
             this.label12.TabIndex = 1;
             this.label12.Text = "Curso";
             // 
@@ -574,7 +574,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(286, 446);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(205, 21);
+            this.label9.Size = new System.Drawing.Size(208, 24);
             this.label9.TabIndex = 17;
             this.label9.Text = "Clases Seleccionadas";
             // 
@@ -621,7 +621,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.radioSinEvaluacion.AutoSize = true;
             this.radioSinEvaluacion.Location = new System.Drawing.Point(34, 165);
             this.radioSinEvaluacion.Name = "radioSinEvaluacion";
-            this.radioSinEvaluacion.Size = new System.Drawing.Size(189, 25);
+            this.radioSinEvaluacion.Size = new System.Drawing.Size(190, 28);
             this.radioSinEvaluacion.TabIndex = 6;
             this.radioSinEvaluacion.TabStop = true;
             this.radioSinEvaluacion.Text = "SIN EVALUACION";
@@ -632,7 +632,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.radioTipoFloat.AutoSize = true;
             this.radioTipoFloat.Location = new System.Drawing.Point(34, 52);
             this.radioTipoFloat.Name = "radioTipoFloat";
-            this.radioTipoFloat.Size = new System.Drawing.Size(256, 25);
+            this.radioTipoFloat.Size = new System.Drawing.Size(258, 28);
             this.radioTipoFloat.TabIndex = 4;
             this.radioTipoFloat.TabStop = true;
             this.radioTipoFloat.Text = "EVALUACION NUMERICA";
@@ -643,7 +643,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.radioTipoChar.AutoSize = true;
             this.radioTipoChar.Location = new System.Drawing.Point(34, 107);
             this.radioTipoChar.Name = "radioTipoChar";
-            this.radioTipoChar.Size = new System.Drawing.Size(280, 25);
+            this.radioTipoChar.Size = new System.Drawing.Size(280, 28);
             this.radioTipoChar.TabIndex = 5;
             this.radioTipoChar.TabStop = true;
             this.radioTipoChar.Text = "EVALUACION CON LETRAS";
@@ -662,7 +662,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(125, 167);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 21);
+            this.label8.Size = new System.Drawing.Size(148, 24);
             this.label8.TabIndex = 6;
             this.label8.Text = "Precio Mensual";
             // 
@@ -671,7 +671,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(125, 102);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 21);
+            this.label5.Size = new System.Drawing.Size(176, 24);
             this.label5.TabIndex = 1;
             this.label5.Text = "Nombre del Curso";
             // 
@@ -687,10 +687,9 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.panelIngresarCurso.Controls.Add(this.grpDGVSecciones);
             this.panelIngresarCurso.Controls.Add(this.grpActualizarSeccion);
             this.panelIngresarCurso.Controls.Add(this.grpRegistrarSeccion);
-            this.panelIngresarCurso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelIngresarCurso.Location = new System.Drawing.Point(0, 0);
+            this.panelIngresarCurso.Location = new System.Drawing.Point(12, 43);
             this.panelIngresarCurso.Name = "panelIngresarCurso";
-            this.panelIngresarCurso.Size = new System.Drawing.Size(1635, 1035);
+            this.panelIngresarCurso.Size = new System.Drawing.Size(253, 77);
             this.panelIngresarCurso.TabIndex = 35;
             // 
             // grpDGVSecciones
@@ -702,7 +701,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.grpDGVSecciones.Font = new System.Drawing.Font("Balsamiq Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDGVSecciones.Location = new System.Drawing.Point(28, 24);
             this.grpDGVSecciones.Name = "grpDGVSecciones";
-            this.grpDGVSecciones.Size = new System.Drawing.Size(1568, 973);
+            this.grpDGVSecciones.Size = new System.Drawing.Size(1568, 983);
             this.grpDGVSecciones.TabIndex = 20;
             this.grpDGVSecciones.TabStop = false;
             // 
@@ -712,7 +711,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label16.Font = new System.Drawing.Font("Balsamiq Sans", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(582, 60);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(445, 36);
+            this.label16.Size = new System.Drawing.Size(432, 41);
             this.label16.TabIndex = 42;
             this.label16.Text = "SECCIONES DISPONIBLES";
             // 
@@ -774,7 +773,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             "INACTIVA"});
             this.cmbEstadoSeccion.Location = new System.Drawing.Point(444, 354);
             this.cmbEstadoSeccion.Name = "cmbEstadoSeccion";
-            this.cmbEstadoSeccion.Size = new System.Drawing.Size(182, 32);
+            this.cmbEstadoSeccion.Size = new System.Drawing.Size(182, 35);
             this.cmbEstadoSeccion.TabIndex = 24;
             // 
             // label19
@@ -783,7 +782,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label19.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(301, 357);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 24);
+            this.label19.Size = new System.Drawing.Size(81, 27);
             this.label19.TabIndex = 23;
             this.label19.Text = "Estado";
             // 
@@ -804,7 +803,6 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.txtCursos.Size = new System.Drawing.Size(359, 33);
             this.txtCursos.TabIndex = 20;
             this.txtCursos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtCursos.TextChanged += new System.EventHandler(this.txtCursos_TextChanged);
             // 
             // label2
             // 
@@ -812,7 +810,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label2.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(178, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
+            this.label2.Size = new System.Drawing.Size(71, 27);
             this.label2.TabIndex = 16;
             this.label2.Text = "Curso";
             // 
@@ -822,7 +820,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label3.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(178, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 24);
+            this.label3.Size = new System.Drawing.Size(98, 27);
             this.label3.TabIndex = 17;
             this.label3.Text = "Docente";
             // 
@@ -832,7 +830,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.label4.Font = new System.Drawing.Font("Balsamiq Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(294, 287);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 24);
+            this.label4.Size = new System.Drawing.Size(92, 27);
             this.label4.TabIndex = 18;
             this.label4.Text = "Seccion";
             // 
@@ -843,7 +841,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.cmbDocentesActualizacion.FormattingEnabled = true;
             this.cmbDocentesActualizacion.Location = new System.Drawing.Point(324, 166);
             this.cmbDocentesActualizacion.Name = "cmbDocentesActualizacion";
-            this.cmbDocentesActualizacion.Size = new System.Drawing.Size(359, 32);
+            this.cmbDocentesActualizacion.Size = new System.Drawing.Size(359, 35);
             this.cmbDocentesActualizacion.TabIndex = 12;
             this.cmbDocentesActualizacion.SelectedIndexChanged += new System.EventHandler(this.cmbDocentesActualizacion_SelectedIndexChanged);
             // 
