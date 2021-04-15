@@ -180,7 +180,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.panelGestionClases.Name = "panelGestionClases";
             this.panelGestionClases.Size = new System.Drawing.Size(180, 163);
             this.panelGestionClases.TabIndex = 39;
-            this.panelGestionClases.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGestionClases_Paint);
+            //this.panelGestionClases.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGestionClases_Paint);
             // 
             // grpGestionClases
             // 
@@ -804,7 +804,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
             this.txtCursos.Size = new System.Drawing.Size(359, 33);
             this.txtCursos.TabIndex = 20;
             this.txtCursos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCursos.TextChanged += new System.EventHandler(this.txtCursos_TextChanged);
+            //this.txtCursos.TextChanged += new System.EventHandler(this.txtCursos_TextChanged);
             // 
             // label2
             // 
