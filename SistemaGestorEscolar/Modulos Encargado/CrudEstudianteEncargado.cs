@@ -301,13 +301,18 @@ namespace SistemaGestorEscolar.Modulos_Encargado
                 }
                 else
                 {
-                   
-                    EliminarEncargado();
-                    gbListadoEncargado.Visible = false;
-                    gbEncargados.Visible = false;
-                    pnlGestionEstudianteEncargado.Visible = true;
-                    identidadEncargado = "";
-                    limpiarPantalla();
+                    messageQuestion.lblError.Text = "¿Esta seguro de eliminar el encargado?";
+                    messageQuestion.ShowDialog();
+                    if (IMessageBoxYesCancel.isCodigoForm)
+                    {
+                        EliminarEncargado();
+                        gbListadoEncargado.Visible = false;
+                        gbEncargados.Visible = false;
+                        pnlGestionEstudianteEncargado.Visible = true;
+                        identidadEncargado = "";
+                        limpiarPantalla();
+                    }
+
                 }
                    
             }
@@ -522,13 +527,19 @@ namespace SistemaGestorEscolar.Modulos_Encargado
         private void btnEliminarEstud_Click(object sender, EventArgs e)
         {
             try
-            {    
-                EliminarEstudiante();
-                gbListadoEstudiantes.Visible = false;
-                gbEstudiantes.Visible = false;
-                pnlGestionEstudianteEncargado.Visible = true;
-                identidadEstudiante = "";
-                limpiarPantalla();
+            {
+                messageQuestion.lblError.Text = "¿Esta seguro de eliminar el estudiante?";
+                messageQuestion.ShowDialog();
+                if (IMessageBoxYesCancel.isCodigoForm)
+                {
+                    EliminarEstudiante();
+                    gbListadoEstudiantes.Visible = false;
+                    gbEstudiantes.Visible = false;
+                    pnlGestionEstudianteEncargado.Visible = true;
+                    identidadEstudiante = "";
+                    limpiarPantalla();
+                }
+
             }
             catch (Exception ex)
             {
