@@ -35,5 +35,13 @@ namespace SistemaGestorEscolar
         //Metodo para acceder a la variable
         public static int CodigoAcceso { get => codigoAcceso; set => codigoAcceso = value; }
 
+        public static int idSeccionImprimir = 0;
+        public static int idCursoImprimir = 0;
+
+        public static int idCursoNotas = 0;
+        public static int idSeccionNotas = 0;
+        public static int idClaseNotas = 0;
+        public static int formaEvaluacion = 0;
+
     }
 }

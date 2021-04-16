@@ -67,6 +67,32 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.BonusSkins.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.2.Drawing, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Export, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.2.UI, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.2.Extensions, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Google.Apis, Version=1.51.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.51.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
@@ -201,6 +227,12 @@
     <Compile Include="MessageBox Personalizados\IMessageBoxYesCancel.Designer.cs">
       <DependentUpon>IMessageBoxYesCancel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos Estudiante\IFrmVista_de_Matricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos Estudiante\IFrmVista_de_Matricula.designer.cs">
+      <DependentUpon>IFrmVista_de_Matricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos Estudiante\IMatriculaIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +251,36 @@
     </Compile>
     <Compile Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.designer.cs">
       <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\boletaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\boletaMatricula.Designer.cs">
+      <DependentUpon>boletaMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\boletaNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\boletaNotas.Designer.cs">
+      <DependentUpon>boletaNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteBoleta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteBoleta.Designer.cs">
+      <DependentUpon>reporteBoleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporteNotas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporteNotas.Designer.cs">
+      <DependentUpon>reporteNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\selectorClasesCursoSeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\selectorClasesCursoSeccion.Designer.cs">
+      <DependentUpon>selectorClasesCursoSeccion.cs</DependentUpon>
     </Compile>
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
@@ -320,6 +382,9 @@
     <EmbeddedResource Include="Modulos de Empleados\IFrmGestionEmpleados.resx">
       <DependentUpon>IFrmGestionEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos Estudiante\IFrmVista_de_Matricula.resx">
+      <DependentUpon>IFrmVista_de_Matricula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos Estudiante\IMatriculaIndividual.resx">
       <DependentUpon>IMatriculaIndividual.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +436,7 @@
     <EmbeddedResource Include="Modulos Encargado\CrudEstudianteEncargado.resx">
       <DependentUpon>CrudEstudianteEncargado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -383,6 +449,21 @@
     </Compile>
     <EmbeddedResource Include="Registro y Vista de Notas\IfrmIngreso_de_Notas.resx">
       <DependentUpon>IfrmIngreso_de_Notas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\boletaMatricula.resx">
+      <DependentUpon>boletaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\boletaNotas.resx">
+      <DependentUpon>boletaNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteBoleta.resx">
+      <DependentUpon>reporteBoleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteNotas.resx">
+      <DependentUpon>reporteNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\selectorClasesCursoSeccion.resx">
+      <DependentUpon>selectorClasesCursoSeccion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -461,8 +542,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

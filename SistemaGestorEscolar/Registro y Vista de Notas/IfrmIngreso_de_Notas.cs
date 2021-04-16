@@ -145,9 +145,10 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             formaEvaluacion = dbConn.obtenerVariableEntera("Select [tipoCalificacion] from [dbo].[cursos] where [nombreCurso] = '" + cursoElegido + "'");
 
 
-            if (cmbCursos.SelectedIndex == -1 && cmbSeccion.SelectedIndex == -1)
-            {
-                message.lblError.Location = new Point(130, 75);
+            if (cmbCursos.SelectedIndex == -1 && (cmbSeccion.SelectedIndex == -1 || cmbSeccion.Text == "<Seleccione>"))
+
+                {
+                    message.lblError.Location = new Point(130, 75);
                 message.lblError.Text = "SELECCIONE UN CURSO Y SECCIÓN";
                 message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 message.ShowDialog();
@@ -644,7 +645,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
         private void mktNotaE_TextChanged(object sender, EventArgs e)
         {
-            mktNotaE.Text = mktNotaE.Text.ToUpper();
+            formatoNota(mktNotaE);
         }
 
         private void txtNotaProm_TextChanged(object sender, EventArgs e)

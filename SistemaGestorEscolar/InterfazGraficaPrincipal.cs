@@ -1243,7 +1243,7 @@ namespace SistemaGestorEscolar
             ocultarBotones();
             panelMostrador.Visible = true;
             panelMostrador.Dock = DockStyle.Fill;
-           // AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
+            AbrirFormulario<Modulos_Estudiante.IFrmVista_de_Matricula>();
 
             if (codigoColor == 1)
             {
@@ -1453,6 +1453,17 @@ namespace SistemaGestorEscolar
         }
 
         private void btnImprimirReporte_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimirNotas_MouseDown(object sender, MouseEventArgs e)
+        {
+            Reportes.selectorClasesCursoSeccion imprimirNotas = new Reportes.selectorClasesCursoSeccion();
+            imprimirNotas.Show();
+        }
+
+        private void btnImprimirNotas_Click(object sender, EventArgs e)
         {
 
         }

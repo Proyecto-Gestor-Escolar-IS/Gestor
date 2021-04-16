@@ -790,7 +790,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         private void cmbDocentes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDocentes.SelectedIndex != 0) {
-                identidadDocente = dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) = '" + cmbDocentes.SelectedItem.ToString() + "'");
+                identidadDocente = dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE identidadPersona <> '0000000000000' AND CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) = '" + cmbDocentes.SelectedItem.ToString() + "'");
             }
             else
             {
@@ -931,7 +931,7 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         {
             if (cmbDocentesActualizacion.SelectedIndex != 0)
             {
-                identidadDocenteActualizar = dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) = '" + cmbDocentesActualizacion.SelectedItem.ToString() + "'");
+                identidadDocenteActualizar = dbConn.obtenerVariableString("SELECT identidadPersona FROM datosEmpleados WHERE identidadPersona <> '0000000000000' AND CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) = '" + cmbDocentesActualizacion.SelectedItem.ToString() + "'");
             }
             else
             {
@@ -1258,6 +1258,11 @@ namespace SistemaGestorEscolar.Modulo_de_Cursos
         private void dgvClasesSelected_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
             e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+        }
+
+        private void panelGestionClases_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
