@@ -186,6 +186,7 @@ namespace SistemaGestorEscolar.Reportes
             DevExpress.Utils.SuperToolTip superToolTip52 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem52 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem52 = new DevExpress.Utils.ToolTipItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(boletaNotas));
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.documentViewerRibbonController1 = new DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -1468,6 +1469,7 @@ namespace SistemaGestorEscolar.Reportes
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "boletaNotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vista Preliminar de Notas";

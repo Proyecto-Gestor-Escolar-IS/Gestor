@@ -45,7 +45,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.panEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
-            this.panEncabezado.Size = new System.Drawing.Size(499, 30);
+            this.panEncabezado.Size = new System.Drawing.Size(458, 30);
             this.panEncabezado.TabIndex = 3;
             // 
             // btnCancelar
@@ -67,7 +67,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Black;
-            this.lblError.Location = new System.Drawing.Point(109, 71);
+            this.lblError.Location = new System.Drawing.Point(96, 73);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(338, 20);
             this.lblError.TabIndex = 16;
@@ -79,7 +79,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(113, 128);
+            this.btnAceptar.Location = new System.Drawing.Point(100, 128);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(107, 41);
             this.btnAceptar.TabIndex = 15;
@@ -103,7 +103,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(274, 128);
+            this.button1.Location = new System.Drawing.Point(266, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 41);
             this.button1.TabIndex = 17;
@@ -115,7 +115,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 193);
+            this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblError);
@@ -123,6 +123,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.Controls.Add(this.pctWarning);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMessageBoxYesCancel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxYesCancel";

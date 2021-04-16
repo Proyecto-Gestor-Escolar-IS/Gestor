@@ -85,12 +85,13 @@ namespace SistemaGestorEscolar
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(499, 193);
+            this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.pctError);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMessageBoxError";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "s";

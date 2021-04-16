@@ -149,7 +149,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
 
                 {
                     message.lblError.Location = new Point(130, 75);
-                message.lblError.Text = "SELECCIONE UN CURSO Y SECCIÓN";
+                message.lblError.Text = "SELECCIONE UN CURSO";
                 message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 message.ShowDialog();
 
@@ -157,7 +157,7 @@ namespace SistemaGestorEscolar.Registro_y_Vista_de_Notas
             else if (cmbSeccion.Text != seccionElegida)
             {
                 message.lblError.Location = new Point(130, 75);
-                message.lblError.Text = "SELECCIONE UNA SECCIÓN";
+                message.lblError.Text = "SELECCIONE UNA SECCION";
                 message.lblError.TextAlign = ContentAlignment.MiddleCenter;
                 message.ShowDialog();
             }

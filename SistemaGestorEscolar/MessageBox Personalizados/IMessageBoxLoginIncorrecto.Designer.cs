@@ -43,7 +43,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.panEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
-            this.panEncabezado.Size = new System.Drawing.Size(432, 30);
+            this.panEncabezado.Size = new System.Drawing.Size(458, 30);
             this.panEncabezado.TabIndex = 2;
             // 
             // lblError
@@ -52,9 +52,9 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(45)))), ((int)(((byte)(44)))));
-            this.lblError.Location = new System.Drawing.Point(111, 68);
+            this.lblError.Location = new System.Drawing.Point(124, 68);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(235, 44);
+            this.lblError.Size = new System.Drawing.Size(252, 40);
             this.lblError.TabIndex = 7;
             this.lblError.Text = "USUARIO O CONTRASEÑA \r\nINCORRECTOS";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,12 +87,13 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 193);
+            this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.pctError);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMessageBoxLoginIncorrecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxLoginIncorrecto";

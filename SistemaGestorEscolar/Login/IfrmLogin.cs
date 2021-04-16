@@ -39,10 +39,11 @@ namespace SistemaGestorEscolar.Login
             ClsCambioTema.cambiarTemaBoton(panel1);
             if (Properties.Settings.Default.isModoOscuro == true)
             {
-   
-
+                
+                   
                 panelPrincipal.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
                 panel1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                picImagotipo.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
 
             }
             else
@@ -51,7 +52,7 @@ namespace SistemaGestorEscolar.Login
 
                 panelPrincipal.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
                 panel1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
-
+                picImagotipo.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
             }
 
             btnSalir.ForeColor = Color.White;
@@ -60,7 +61,7 @@ namespace SistemaGestorEscolar.Login
             btnSalir.Inactive1 = Color.Red;
             btnSalir.Inactive2 = Color.Red;
             btnSalir.StrokeColor = Color.Red;
-            picImagotipo.BackColor = Color.FromArgb(0, 97, 169);
+     
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

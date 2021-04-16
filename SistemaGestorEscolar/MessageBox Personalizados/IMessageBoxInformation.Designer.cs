@@ -50,7 +50,7 @@ namespace SistemaGestorEscolar
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Black;
-            this.lblError.Location = new System.Drawing.Point(119, 70);
+            this.lblError.Location = new System.Drawing.Point(115, 70);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(312, 40);
             this.lblError.TabIndex = 11;
@@ -63,7 +63,7 @@ namespace SistemaGestorEscolar
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(218, 140);
+            this.btnOK.Location = new System.Drawing.Point(197, 140);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(78, 41);
             this.btnOK.TabIndex = 13;
@@ -86,12 +86,13 @@ namespace SistemaGestorEscolar
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(499, 193);
+            this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.pctWarning);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMessageBoxInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxInformation";

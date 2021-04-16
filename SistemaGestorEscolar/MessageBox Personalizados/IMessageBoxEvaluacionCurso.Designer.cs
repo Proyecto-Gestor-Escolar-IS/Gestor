@@ -61,7 +61,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.lblError.ForeColor = System.Drawing.Color.Black;
             this.lblError.Location = new System.Drawing.Point(95, 69);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(289, 44);
+            this.lblError.Size = new System.Drawing.Size(319, 40);
             this.lblError.TabIndex = 26;
             this.lblError.Text = "¿Esta seguro que desea registrar \r\n      un curso Sin Evaluación?";
             // 
@@ -86,7 +86,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.panEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
-            this.panEncabezado.Size = new System.Drawing.Size(432, 30);
+            this.panEncabezado.Size = new System.Drawing.Size(458, 30);
             this.panEncabezado.TabIndex = 23;
             // 
             // label1
@@ -95,9 +95,9 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Location = new System.Drawing.Point(16, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 22);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 23;
             // 
             // pctWarning
@@ -114,13 +114,14 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 193);
+            this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.pctWarning);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMessageBoxEvaluacionCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxEvaluacionCurso";

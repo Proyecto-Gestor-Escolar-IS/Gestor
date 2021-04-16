@@ -31,12 +31,13 @@ namespace SistemaGestorEscolar.Login
             {
 
                 panel1.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
+                picImagotipo.BackColor = System.Drawing.Color.FromArgb(51, 52, 69);
             }
             else
             {
 
                 panel1.BackColor = System.Drawing.Color.FromArgb(9, 141, 216);
-
+                picImagotipo.BackColor = System.Drawing.Color.FromArgb(0, 97, 169);
             }
 
             int codigoTipos = 0;
@@ -186,6 +187,11 @@ namespace SistemaGestorEscolar.Login
         }
 
         private void dgvTiposCargos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void picImagotipo_Click(object sender, EventArgs e)
         {
 
         }

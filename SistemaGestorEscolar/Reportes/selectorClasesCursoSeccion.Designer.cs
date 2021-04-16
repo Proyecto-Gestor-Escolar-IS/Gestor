@@ -29,6 +29,7 @@ namespace SistemaGestorEscolar.Reportes
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(selectorClasesCursoSeccion));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCursos = new System.Windows.Forms.ComboBox();
             this.cmbSeccion = new System.Windows.Forms.ComboBox();
@@ -139,9 +140,10 @@ namespace SistemaGestorEscolar.Reportes
             this.Controls.Add(this.cmbCursos);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "selectorClasesCursoSeccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "selectorClasesCursoSeccion";
+            this.Text = "Seleccion de Modalidad";
             this.Load += new System.EventHandler(this.selectorClasesCursoSeccion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -350,7 +350,8 @@ namespace SistemaGestorEscolar.Modulos_Estudiante
             this.panelNotas.Controls.Add(this.lblNombreNotas);
             this.panelNotas.Controls.Add(this.label16);
             this.panelNotas.Controls.Add(this.dgvNotas);
-            this.panelNotas.Location = new System.Drawing.Point(1607, 0);
+            this.panelNotas.Enabled = false;
+            this.panelNotas.Location = new System.Drawing.Point(1607, 28);
             this.panelNotas.Name = "panelNotas";
             this.panelNotas.Size = new System.Drawing.Size(28, 347);
             this.panelNotas.TabIndex = 40;

@@ -42,7 +42,7 @@ namespace SistemaGestorEscolar
             this.panEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(13)))));
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
-            this.panEncabezado.Size = new System.Drawing.Size(432, 30);
+            this.panEncabezado.Size = new System.Drawing.Size(458, 30);
             this.panEncabezado.TabIndex = 2;
             this.panEncabezado.Paint += new System.Windows.Forms.PaintEventHandler(this.panEncabezado_Paint);
             // 
@@ -53,7 +53,7 @@ namespace SistemaGestorEscolar
             this.lblCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(164)))), ((int)(((byte)(12)))));
             this.lblCheck.Location = new System.Drawing.Point(114, 82);
             this.lblCheck.Name = "lblCheck";
-            this.lblCheck.Size = new System.Drawing.Size(258, 22);
+            this.lblCheck.Size = new System.Drawing.Size(275, 20);
             this.lblCheck.TabIndex = 7;
             this.lblCheck.Text = "ACTUALIZACIÓN REALIZADA";
             // 
@@ -63,7 +63,7 @@ namespace SistemaGestorEscolar
             this.btnOK.FlatAppearance.BorderSize = 0;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(182, 132);
+            this.btnOK.Location = new System.Drawing.Point(198, 131);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(78, 41);
             this.btnOK.TabIndex = 6;
@@ -85,12 +85,13 @@ namespace SistemaGestorEscolar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 193);
+            this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.lblCheck);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.pctError);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMessageBoxCheck";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxCheck";

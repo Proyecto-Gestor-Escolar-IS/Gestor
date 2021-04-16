@@ -34,6 +34,10 @@ namespace SistemaGestorEscolar.Reportes
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reporteBoleta));
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -61,13 +65,15 @@ namespace SistemaGestorEscolar.Reportes
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.SECCION = new DevExpress.XtraReports.Parameters.Parameter();
             this.CURSO = new DevExpress.XtraReports.Parameters.Parameter();
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 114.1667F;
+            this.TopMargin.HeightF = 31.87504F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
@@ -97,16 +103,17 @@ namespace SistemaGestorEscolar.Reportes
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox1,
             this.etiquetaSeccion,
             this.etiquetaCurso,
             this.label1});
-            this.ReportHeader.HeightF = 105.2083F;
+            this.ReportHeader.HeightF = 169.1666F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // etiquetaSeccion
             // 
             this.etiquetaSeccion.Font = new System.Drawing.Font("Balsamiq Sans", 14F, System.Drawing.FontStyle.Bold);
-            this.etiquetaSeccion.LocationFloat = new DevExpress.Utils.PointFloat(325F, 39.99999F);
+            this.etiquetaSeccion.LocationFloat = new DevExpress.Utils.PointFloat(325F, 100.4167F);
             this.etiquetaSeccion.Name = "etiquetaSeccion";
             this.etiquetaSeccion.SizeF = new System.Drawing.SizeF(325F, 39.16667F);
             this.etiquetaSeccion.StyleName = "Title";
@@ -118,7 +125,7 @@ namespace SistemaGestorEscolar.Reportes
             // etiquetaCurso
             // 
             this.etiquetaCurso.Font = new System.Drawing.Font("Balsamiq Sans", 14F, System.Drawing.FontStyle.Bold);
-            this.etiquetaCurso.LocationFloat = new DevExpress.Utils.PointFloat(0F, 39.99999F);
+            this.etiquetaCurso.LocationFloat = new DevExpress.Utils.PointFloat(0F, 100.4167F);
             this.etiquetaCurso.Name = "etiquetaCurso";
             this.etiquetaCurso.SizeF = new System.Drawing.SizeF(308.3333F, 39.16667F);
             this.etiquetaCurso.StyleName = "Title";
@@ -130,9 +137,9 @@ namespace SistemaGestorEscolar.Reportes
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(207.2556F, 27.08333F);
             this.label1.Name = "label1";
-            this.label1.SizeF = new System.Drawing.SizeF(650F, 39.99999F);
+            this.label1.SizeF = new System.Drawing.SizeF(275F, 39.99999F);
             this.label1.StyleName = "Title";
             this.label1.StylePriority.UseFont = false;
             this.label1.StylePriority.UseTextAlignment = false;
@@ -324,6 +331,36 @@ namespace SistemaGestorEscolar.Reportes
             this.CURSO.Type = typeof(int);
             this.CURSO.ValueInfo = "0";
             // 
+            // sqlDataSource2
+            // 
+            this.sqlDataSource2.ConnectionName = "azureStaMaria";
+            this.sqlDataSource2.Name = "sqlDataSource2";
+            storedProcQuery2.Name = "vistaMatriculaCurso";
+            queryParameter4.Name = "@codigoOperacion";
+            queryParameter4.Type = typeof(int);
+            queryParameter4.ValueInfo = "1";
+            queryParameter5.Name = "@idSeccion";
+            queryParameter5.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter5.Value = new DevExpress.DataAccess.Expression("?SECCION", typeof(int));
+            queryParameter6.Name = "@idCurso";
+            queryParameter6.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter6.Value = new DevExpress.DataAccess.Expression("?CURSO", typeof(int));
+            storedProcQuery2.Parameters.Add(queryParameter4);
+            storedProcQuery2.Parameters.Add(queryParameter5);
+            storedProcQuery2.Parameters.Add(queryParameter6);
+            storedProcQuery2.StoredProcName = "vistaMatriculaCurso";
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery2});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(87.99261F, 2.11099F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(82.29166F, 98.30567F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
             // reporteBoleta
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -333,11 +370,12 @@ namespace SistemaGestorEscolar.Reportes
             this.GroupHeader1,
             this.Detail});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
-            this.sqlDataSource1});
+            this.sqlDataSource1,
+            this.sqlDataSource2});
             this.DataMember = "vistaMatriculaCurso";
-            this.DataSource = this.sqlDataSource1;
+            this.DataSource = this.sqlDataSource2;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 114, 100);
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 32, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.SECCION,
             this.CURSO});
@@ -383,5 +421,7 @@ namespace SistemaGestorEscolar.Reportes
         private DevExpress.XtraReports.Parameters.Parameter CURSO;
         private DevExpress.XtraReports.UI.XRLabel etiquetaSeccion;
         private DevExpress.XtraReports.UI.XRLabel etiquetaCurso;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
     }
 }

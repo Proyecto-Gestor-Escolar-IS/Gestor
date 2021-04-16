@@ -34,8 +34,8 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.lblError = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panEncabezado = new System.Windows.Forms.Panel();
-            this.pctWarning = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pctWarning = new System.Windows.Forms.PictureBox();
             this.panEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctWarning)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +46,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Balsamiq Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(243, 140);
+            this.btnCancelar.Location = new System.Drawing.Point(257, 140);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(119, 41);
             this.btnCancelar.TabIndex = 22;
@@ -59,7 +59,7 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Black;
-            this.lblError.Location = new System.Drawing.Point(95, 80);
+            this.lblError.Location = new System.Drawing.Point(95, 78);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(281, 20);
             this.lblError.TabIndex = 21;
@@ -87,8 +87,20 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.panEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.panEncabezado.Location = new System.Drawing.Point(0, 0);
             this.panEncabezado.Name = "panEncabezado";
-            this.panEncabezado.Size = new System.Drawing.Size(432, 30);
+            this.panEncabezado.Size = new System.Drawing.Size(458, 30);
             this.panEncabezado.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(16, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 20);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Cerrar Aplicación";
             // 
             // pctWarning
             // 
@@ -100,29 +112,18 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
             this.pctWarning.TabIndex = 19;
             this.pctWarning.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Balsamiq Sans", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 20);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Cerrar Aplicación";
-            // 
             // IMessageBoxSiNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 193);
+            this.ClientSize = new System.Drawing.Size(458, 193);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.pctWarning);
             this.Controls.Add(this.panEncabezado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IMessageBoxSiNo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IMessageBoxSiNo";

@@ -20,8 +20,12 @@ namespace SistemaGestorEscolar
 
         /*Conexion a la base de datos*/
         //SqlConnection databaseIntermediary = new SqlConnection("server = 192.168.1.105,1433; database = StaMariaNazarethDatabaseService; User ID = mejiasoc; Password=paockyksyp1");
-        
-        SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-IFG9AL0\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+
+        //SqlConnection databaseIntermediary = new SqlConnection("Data Source=DESKTOP-IFG9AL0\\SQLEXPRESS;Initial Catalog=StaMariaNazarethDatabaseService;Integrated Security=True");
+
+        SqlConnection databaseIntermediary = new SqlConnection("Server=tcp:mejiasoc4.database.windows.net;Database=staMariaAzure; User ID =mejiaazu2001; Password=paockyksyp12!;Trusted_Connection=False; Encrypt=True;");
+
+
         public SqlDataAdapter adaptador;
         public DataTable tablaDatos;
         public SqlDataReader lectorVariables;
@@ -33,6 +37,7 @@ namespace SistemaGestorEscolar
             {
                 databaseIntermediary.Open();
                 databaseIntermediary.Close();
+
             }
             catch (Exception ex)
             {

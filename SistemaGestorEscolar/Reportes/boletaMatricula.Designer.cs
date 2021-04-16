@@ -186,6 +186,7 @@ namespace SistemaGestorEscolar.Reportes
             DevExpress.Utils.SuperToolTip superToolTip52 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem52 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem52 = new DevExpress.Utils.ToolTipItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(boletaMatricula));
             this.vistaBoleta = new DevExpress.XtraPrinting.Preview.DocumentViewer();
             this.documentViewerRibbonController1 = new DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -268,10 +269,10 @@ namespace SistemaGestorEscolar.Reportes
             this.vistaBoleta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vistaBoleta.DocumentSource = typeof(SistemaGestorEscolar.Reportes.reporteBoleta);
             this.vistaBoleta.IsMetric = true;
-            this.vistaBoleta.Location = new System.Drawing.Point(0, 150);
+            this.vistaBoleta.Location = new System.Drawing.Point(0, 140);
             this.vistaBoleta.Name = "vistaBoleta";
             this.vistaBoleta.ShowPageMargins = false;
-            this.vistaBoleta.Size = new System.Drawing.Size(1614, 819);
+            this.vistaBoleta.Size = new System.Drawing.Size(1614, 833);
             this.vistaBoleta.TabIndex = 0;
             // 
             // documentViewerRibbonController1
@@ -351,7 +352,7 @@ namespace SistemaGestorEscolar.Reportes
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1614, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(1614, 140);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -1454,10 +1455,10 @@ namespace SistemaGestorEscolar.Reportes
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem52);
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 969);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 973);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1614, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1614, 23);
             // 
             // boletaMatricula
             // 
@@ -1468,6 +1469,7 @@ namespace SistemaGestorEscolar.Reportes
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "boletaMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vista Preliminar ";

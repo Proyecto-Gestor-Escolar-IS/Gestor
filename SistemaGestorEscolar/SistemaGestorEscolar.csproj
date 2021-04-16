@@ -63,6 +63,15 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logoredm2 %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
@@ -475,6 +484,7 @@
       <DependentUpon>selectorClasesCursoSeccion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -516,6 +526,7 @@
     <None Include="Resources\add1.png" />
     <None Include="Resources\Contra.png" />
     <None Include="Resources\contra 2.png" />
+    <Content Include="favicon %281%29.ico" />
     <Content Include="Login\MensajeRecuperacionContra.html" />
     <None Include="Resources\gui_order_pending_icon_158418.png" />
     <None Include="Resources\kisspng-lunar-phase-computer-icons-full-moon-crescent-5b01d45b8b7f60.4401773315268465555714.jpg" />
@@ -525,6 +536,7 @@
     <None Include="Resources\button2.png" />
     <None Include="Resources\buttonHoover.png" />
     <None Include="Resources\buscarIcono.png" />
+    <Content Include="logoredm2 %281%29.ico" />
     <Content Include="Querys DB\ModeloBaseDeDatos.sql" />
     <Content Include="Querys DB\Procedimientos Almacenados Y Vistas.sql" />
     <Content Include="Resources\icons8_refreshblack_32.png" />

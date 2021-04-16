@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IfrmSeleccionarTipoInicio));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtras = new AltoControls.AltoButton();
             this.btnSalir = new AltoControls.AltoButton();
@@ -268,6 +269,7 @@
             this.picImagotipo.Size = new System.Drawing.Size(859, 1080);
             this.picImagotipo.TabIndex = 0;
             this.picImagotipo.TabStop = false;
+            this.picImagotipo.Click += new System.EventHandler(this.picImagotipo_Click);
             // 
             // IfrmSeleccionarTipoInicio
             // 
@@ -277,6 +279,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picImagotipo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IfrmSeleccionarTipoInicio";
             this.Text = "Selección de Inicio";
             this.Load += new System.EventHandler(this.IfrmSeleccionarTipoInicio_Load);
