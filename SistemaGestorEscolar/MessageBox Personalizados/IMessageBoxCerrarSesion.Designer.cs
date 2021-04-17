@@ -1,5 +1,5 @@
 ﻿
-namespace SistemaGestorEscolar.MessageBox_Personalizados
+namespace SistemaGestorEscolar
 {
     partial class IMessageBoxCerrarSesion
     {

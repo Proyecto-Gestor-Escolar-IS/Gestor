@@ -15,7 +15,7 @@ namespace SistemaGestorEscolar
         }
 
         private MessageBox_Personalizados.IMessageBoxSiNo siNo = new MessageBox_Personalizados.IMessageBoxSiNo();
-        private MessageBox_Personalizados.IMessageBoxCerrarSesion cerrarSesion = new MessageBox_Personalizados.IMessageBoxCerrarSesion();
+        private IMessageBoxCerrarSesion cerrarSesion = new IMessageBoxCerrarSesion();
 
         private Modulos_de_Arranque.verficacionArranque actualizarModulos = new Modulos_de_Arranque.verficacionArranque();
         public static Form formulario = new Form();
@@ -1181,7 +1181,6 @@ namespace SistemaGestorEscolar
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             cerrarSesion.ShowDialog();
-            this.Close();
         }
 
         private void btnHistorialPagos_MouseDown(object sender, MouseEventArgs e)

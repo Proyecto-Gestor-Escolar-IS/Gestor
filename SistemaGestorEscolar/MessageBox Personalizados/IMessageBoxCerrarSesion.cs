@@ -8,10 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaGestorEscolar.MessageBox_Personalizados
+
+namespace SistemaGestorEscolar
 {
     public partial class IMessageBoxCerrarSesion : Form
     {
+
+
         public IMessageBoxCerrarSesion()
         {
             InitializeComponent();
@@ -20,14 +23,16 @@ namespace SistemaGestorEscolar.MessageBox_Personalizados
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Login.IfrmLogin login = new Login.IfrmLogin();
-            login.Show();   
+            InterfazGraficaPrincipal igp = Application.OpenForms.OfType<InterfazGraficaPrincipal>().SingleOrDefault();
+
+            login.Show();
+            igp.Close();
+            this.Hide();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            InterfazGraficaPrincipal IGP = new InterfazGraficaPrincipal();
-            IGP.Show();
-          
+            this.Hide();
         }
     }
 }

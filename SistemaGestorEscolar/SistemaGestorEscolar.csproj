@@ -70,7 +70,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logoredm2 %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>Logo1.0.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
@@ -536,6 +536,8 @@
     <None Include="Resources\button2.png" />
     <None Include="Resources\buttonHoover.png" />
     <None Include="Resources\buscarIcono.png" />
+    <Content Include="Logo1.0.ico" />
+    <Content Include="logoPrograma.ico" />
     <Content Include="logoredm2 %281%29.ico" />
     <Content Include="Querys DB\ModeloBaseDeDatos.sql" />
     <Content Include="Querys DB\Procedimientos Almacenados Y Vistas.sql" />
